@@ -85,3 +85,5 @@ Theo ảnh chỉ định tiếp theo, Đề 6 câu 15 (xác định tổng 1 đ�
 Theo ảnh tiếp theo, Đề 5 câu 14 (đếm số lẻ lớn hơn 39) và Đề 2 câu 13 (đếm kết quả lẻ của các phép tính) vào đúng “Nhận biết kết quả chẵn” theo chủ dự án. Chỉ phân loại 2 câu được chỉ định, giữ nguyên dãy số/phép tính/lựa chọn, không tính đáp án hay đổi nhãn nhóm.
 
 Theo ảnh chỉ định tiếp theo, Đề 7 câu 11 (tổng 1 + 2 + 3 + 4 + … + 9 lẻ hay chẵn) vào “Nhận biết kết quả chẵn” trong Number Theory / Lý thuyết số. Nhóm hiện có 8 câu; chỉ phân loại, không tính hoặc nhập đáp án.
+
+Chủ dự án yêu cầu gộp chủ đề nhỏ 04 và 06 của Hình học: “Quan sát khối từ phía trước” (2 câu) và “Đếm khối lập phương xếp chồng” (5 câu) thành “Quan sát và đếm khối lập phương” (7 câu). Giữ id nhóm 04 cũ, nối tham chiếu/bài làm nhóm 06 sang nhóm đích qua resolveTimoTopicId, giữ lựa chọn nguồn và bản ghi dự phòng. Nhóm Đếm đoạn thẳng không đổi. Chưa tự ghép thêm câu khác ngoài 7 câu của hai nhóm trong bước này.

@@ -217,3 +217,6 @@ Theo ảnh chỉ định tiếp theo, Đề 6 câu 7 và 10, Đề 7 câu 9 chuy
 
 
 Theo các ảnh chỉ định của chủ dự án, thêm 6 câu vào “Number Theory / Lý thuyết số / Nhận biết kết quả chẵn”: Đề 4 câu 14; Đề 6 câu 15; Đề 4 câu 12; Đề 5 câu 14; Đề 2 câu 13; Đề 7 câu 11. Nhóm hiện có 8 câu, kể cả các câu về số lẻ do chủ dự án chỉ định rõ. Không sửa tên nhóm, nội dung, lựa chọn hoặc tạo đáp án. Tổng 141 câu có chủ đề nhỏ và 34 câu Chưa phân loại.
+
+
+Gộp hai nhóm Hình học “Quan sát khối từ phía trước” và “Đếm khối lập phương xếp chồng” thành “Quan sát và đếm khối lập phương”, gồm đúng 7 câu. Giữ id nhóm quan sát cũ, chuyển tham chiếu nhóm xếp chồng sang nhóm đích để tiếp tục bài/khôi phục lựa chọn theo id; giữ bản ghi cũ dự phòng. Không đổi nội dung/ảnh/lựa chọn hoặc nhóm Đếm đoạn thẳng.

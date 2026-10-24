@@ -260,7 +260,7 @@ const officialPapers = [
           "8",
           "7"
         ],
-        "subtopic": "Quan sát khối từ phía trước",
+        "subtopic": "Quan sát và đếm khối lập phương",
         "imageAlt": "Cụm các khối lập phương màu xanh nhạt, có các cột cao thấp và các mặt trước nhìn nghiêng theo ảnh câu 18.",
         "image": "./assets/papers/timo-grade2-qualifying-01/q18-front-view.02db79aa7bfb.svg"
       },
@@ -288,7 +288,7 @@ const officialPapers = [
           "12",
           "13"
         ],
-        "subtopic": "Đếm khối lập phương xếp chồng",
+        "subtopic": "Quan sát và đếm khối lập phương",
         "imageAlt": "Hình các khối lập phương giống nhau xếp chồng thành các bậc, dựng theo các mặt nhìn thấy trong ảnh câu 20.",
         "image": "./assets/papers/timo-grade2-qualifying-01/q20-stacked-cubes.d7c889eb0ff3.svg"
       },
@@ -611,7 +611,7 @@ const officialPapers = [
         ],
         "imageAlt": "Các mặt khối lập phương màu xanh lá xếp cao thấp, với cột cao ở bên phải, dựng theo ảnh câu 18.",
         "image": "./assets/papers/timo-grade2-qualifying-02/q18-front-view.b31eb0190096.svg",
-        "subtopic": "Quan sát khối từ phía trước"
+        "subtopic": "Quan sát và đếm khối lập phương"
       },
       {
         "number": 19,
@@ -639,7 +639,7 @@ const officialPapers = [
         ],
         "imageAlt": "Các mặt khối lập phương màu xanh lá xếp chồng, với hai khối ở hàng trước bên trái và một cột ở bên phải như ảnh đề.",
         "image": "./assets/papers/timo-grade2-qualifying-02/q20-stacked-cubes.72b899db0a7e.svg",
-        "subtopic": "Đếm khối lập phương xếp chồng"
+        "subtopic": "Quan sát và đếm khối lập phương"
       },
       {
         "number": 21,
@@ -985,7 +985,7 @@ const officialPapers = [
         ],
         "imageAlt": "Cụm khối màu trắng xám với hai cột phía sau và một khối nhô ra phía trước theo ảnh.",
         "image": "./assets/papers/timo-grade2-qualifying-03/q20-stacked-cubes.5912c10900e5.svg",
-        "subtopic": "Đếm khối lập phương xếp chồng"
+        "subtopic": "Quan sát và đếm khối lập phương"
       },
       {
         "number": 21,
@@ -1272,7 +1272,7 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-04/q16.5d0a2ed562e1.svg",
         "imageAlt": "Khối lập phương trắng xám: hai khối phía trước, cột cao bên trái và khối bên phải như ảnh",
-        "subtopic": "Đếm khối lập phương xếp chồng"
+        "subtopic": "Quan sát và đếm khối lập phương"
       },
       {
         "number": 17,
@@ -1605,7 +1605,7 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-05/q16.14f57a03e3f2.svg",
         "imageAlt": "Cụm khối trắng xám: hai chân hai bên, một khối cao ở giữa và một khối nhô phía trước theo ảnh",
-        "subtopic": "Đếm khối lập phương xếp chồng"
+        "subtopic": "Quan sát và đếm khối lập phương"
       },
       {
         "number": 17,
@@ -2437,7 +2437,8 @@ function buildTimoTopicGroups(papers, grade) {
       if (!topic) {
         // Keep the existing topic ID so saved attempts, question order and reload state survive this label change.
         const stableName = name === 'Có bao nhiêu cách kết hợp khác nhau?' ? 'Phối hợp lựa chọn'
-          : name === 'Tìm giá trị' ? 'Cộng nhiều số' : name;
+          : name === 'Tìm giá trị' ? 'Cộng nhiều số'
+          : name === 'Quan sát và đếm khối lập phương' ? 'Quan sát khối từ phía trước' : name;
         topic = { id: `${group.id}-named-${encodeURIComponent(stableName)}`, name, entries: [] };
         group.topics.push(topic);
       }
@@ -2453,6 +2454,9 @@ function getTimoTopicGroups(grade) {
 // Legacy topic references continue in the surviving group after the owner-requested merge.
 function resolveTimoTopicId(id) {
   const prefix = `${timoTopicGroups[1].id}-named-`;
+  const geometryPrefix = `${timoTopicGroups[3].id}-named-`;
+  if (id === geometryPrefix + encodeURIComponent('Đếm khối lập phương xếp chồng'))
+    return geometryPrefix + encodeURIComponent('Quan sát khối từ phía trước');
   return id === prefix + encodeURIComponent('Biểu thức cộng trừ liên tiếp')
     ? prefix + encodeURIComponent('Cộng nhiều số') : id;
 }
