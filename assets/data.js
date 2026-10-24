@@ -2877,6 +2877,239 @@ const officialPapers = [
         "imageAlt": "Các phép tính 100÷4;15×4;6×7;3×9;2×10;4×17;60÷3"
       }
     ]
+  },
+  {
+    "id": "timo-grade2-national-03",
+    "title": "Đề quốc gia 03",
+    "sourceTitle": "ĐỀ SỐ 3 — VÒNG QUỐC GIA TIMO",
+    "program": "TIMO",
+    "subject": "Toán",
+    "grade": "2",
+    "mode": "Đề quốc gia",
+    "questions": [
+      {
+        "number": 1,
+        "english": "When Ethan was born, mum was 31 years old. His brother was born 3 years later. When mum is 49 years old, how old is Ethan’s brother?",
+        "translation": "Born: Sinh ra; Years old: Tuổi; Later: Sau.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tuổi hiện tại và tương lai"
+      },
+      {
+        "number": 2,
+        "english": "12th June 2022 is Sunday. Which day of the week is 9th July in the same year?",
+        "translation": "June: Tháng 6; Sunday: Chủ nhật; Day of the week: Thứ trong tuần; July: Tháng 7; The same year: Cùng năm.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Các ngày trong tuần"
+      },
+      {
+        "number": 3,
+        "english": "What is the value of the number to represent “?” in the following table?",
+        "translation": "Value: Giá trị; Number: Số; Represent: Biểu diễn; Table: Bảng.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quy luật trong bảng số",
+        "image": "./assets/papers/timo-grade2-national-03/q03.24477fcfc1e8.svg",
+        "imageAlt": "Bảng bốn hàng: 5,3,15;4,5,20;3,7,dấu hỏi;2,9,18"
+      },
+      {
+        "number": 4,
+        "english": "According to the pattern below, what is the English letter in the space provided?",
+        "translation": "Pattern: Quy luật; English letter: Chữ cái tiếng Anh; Space: Chỗ trống.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quy luật dãy số",
+        "image": "./assets/papers/timo-grade2-national-03/q04.4aef97e7ca27.svg",
+        "imageAlt": "D, G, I, L, N, __"
+      },
+      {
+        "number": 5,
+        "english": "29 children form a column. Eleanor and Nicole stand next to each other. There are 13 children in front of them. How many children are standing behind them?",
+        "translation": "Children: Đứa trẻ; Column: Hàng dọc; Next to each other: Cạnh nhau; In front of: Phía trước; Behind: Phía sau.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Bài toán vị trí trong hàng"
+      },
+      {
+        "number": 6,
+        "english": "Find the value of 13 − 7 − 9 + 16 − 5.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 7,
+        "english": "Find the value of 45 × 2 × 6 × 5.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 8,
+        "english": "If A and B are both 1-digit numbers, what is the value of A × B if the equation below is correct?",
+        "translation": "1-digit number: Số có 1 chữ số; Value: Giá trị; Equation: Phép tính; Correct: Đúng.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Phép cộng với chữ số chưa biết",
+        "image": "./assets/papers/timo-grade2-national-03/q08.1272523f3b6a.svg",
+        "imageAlt": "Phép cộng dọc B cộng BA bằng 53"
+      },
+      {
+        "number": 9,
+        "english": "Find the value of 7 × 39 + 7 × 77 − 7 × 21 − 7 × 25.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 10,
+        "english": "Find the value of 7 + 39 + 3 + 31 + 1 + 33 + 5 + 49 + 9 + 37.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 11,
+        "english": "Wendy gave Alan 10 pencils. Fred gave Wendy 6 pencils. Then they all have equal number of pencils. How many pencils did Wendy have more than Alan originally?",
+        "translation": "Gave: Cho; Pencils: Bút chì; Equal: Bằng nhau; More than: Nhiều hơn; Originally: Ban đầu.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Chuyển bớt và so sánh số lượng",
+        "sectionHeading": {
+          "english": "Number Theory",
+          "vietnamese": "Số học"
+        }
+      },
+      {
+        "number": 12,
+        "english": "Determine the result of 5 × 7 − 3 × 9 + 5 × 4 + 9 × 8 − 6 × 2 − 7 × 9 is odd or even number.",
+        "translation": "Determine: Xác định; Result: Kết quả; Odd: Số lẻ; Even: Số chẵn.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Nhận biết kết quả chẵn"
+      },
+      {
+        "number": 13,
+        "english": "The numbers below form an arithmetic sequence. What is the sum of the 6th number and the 8th number in the sequence?",
+        "translation": "Arithmetic sequence: Dãy số cách đều; Sum: Tổng; 6th number: Số thứ 6; 8th number: Số thứ 8.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm số hạng trong dãy số",
+        "image": "./assets/papers/timo-grade2-national-03/q13.96cfdc404dd0.svg",
+        "imageAlt": "96, 89, 82, 75, …"
+      },
+      {
+        "number": 14,
+        "english": "Find the smallest 3-digit odd number with different digits.",
+        "translation": "Smallest: Nhỏ nhất; 3-digit odd number: Số lẻ có 3 chữ số; Different digits: Các chữ số khác nhau.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm số theo điều kiện"
+      },
+      {
+        "number": 15,
+        "english": "Fill the lines with ‘+’ and ‘−’ to make the equation below correct. (Write down the complete equation on the answer sheet)",
+        "translation": "Fill: Điền; Lines: Dòng kẻ; Equation: Phép tính; Correct: Đúng. (Lưu ý: Thí sinh viết toàn bộ phép tính vào phiếu trả lời).",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Điền dấu cộng và trừ",
+        "image": "./assets/papers/timo-grade2-national-03/q15.c3df28545450.svg",
+        "imageAlt": "17 __ 9 __ 6 __ 12 = 14"
+      },
+      {
+        "number": 16,
+        "english": "How many squares are there in the figure below?",
+        "translation": "Squares: Hình vuông; Figure: Hình vẽ.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đếm hình vuông",
+        "image": "./assets/papers/timo-grade2-national-03/q16.be1b6db9409b.svg",
+        "imageAlt": "Lưới các hình vuông và hình chữ nhật chồng nhau, có ô nhô bên trái và hai ô bên phải như ảnh"
+      },
+      {
+        "number": 17,
+        "english": "How many line segments are there in the figure below?",
+        "translation": "Line segments: Đoạn thẳng; Figure: Hình vẽ.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đếm đoạn thẳng",
+        "image": "./assets/papers/timo-grade2-national-03/q17.6bac666f8527.svg",
+        "imageAlt": "Các đoạn xiên qua hai giao điểm, nối thành phần tam giác phía dưới, tám điểm như ảnh"
+      },
+      {
+        "number": 18,
+        "english": "At least how many small squares can be seen if viewing the figure below from the right?",
+        "translation": "At least: Ít nhất; Small squares: Hình vuông nhỏ; Viewing: Quan sát; Figure: Hình vẽ; The right: Bên phải.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quan sát và đếm khối lập phương",
+        "image": "./assets/papers/timo-grade2-national-03/q18.32197f81ea17.svg",
+        "imageAlt": "Cụm khối trắng xám có cột cao bên trái, hai khối nhô phía trước và cột phía sau bên phải như ảnh"
+      },
+      {
+        "number": 19,
+        "english": "A pyramid has 29 vertices. How many faces does this pyramid have?",
+        "translation": "Pyramid: Hình chóp; Vertices: Đỉnh; Faces: Mặt.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đỉnh, cạnh và mặt của hình khối"
+      },
+      {
+        "number": 20,
+        "english": "A pyramid has 19 vertices. How many edges does this pyramid have?",
+        "translation": "Pyramid: Hình chóp; Vertices: Đỉnh; Edges: Cạnh.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đỉnh, cạnh và mặt của hình khối"
+      },
+      {
+        "number": 21,
+        "english": "What is the greatest 4-digit odd number composed of digits 0, 8, 6, 9 or 2? (Each digit can only be used once)",
+        "translation": "Greatest: Lớn nhất; 4-digit odd number: Số lẻ có 4 chữ số; Composed of: Bao gồm; Digit: Chữ số; Once: Một lần.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Lập số lớn nhất và nhỏ nhất"
+      },
+      {
+        "number": 22,
+        "english": "How many different ways to express 17 as the difference of two natural numbers greater than 0 such that one of them is smaller than 18?",
+        "translation": "Different ways: Các cách khác nhau; Express: Biểu diễn; Difference: Hiệu; Natural numbers: Số tự nhiên; Greater than: Lớn hơn; Smaller than: Nhỏ hơn.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Biểu diễn số bằng hiệu hai số"
+      },
+      {
+        "number": 23,
+        "english": "Choose 4 digits, without repetition, from 3, 9, 5, 7, 1, 8 to form two 2-digit odd numbers. What is the minimum value of the difference of these pairs of numbers?",
+        "translation": "Choose: Chọn; Digit: Chữ số; Without repetition: Không lặp lại; 2-digit odd numbers: Số lẻ có 2 chữ số; Minimum value: Giá trị nhỏ nhất; Difference: Hiệu; Pair of numbers: Cặp số.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Lập hai số có hiệu nhỏ nhất"
+      },
+      {
+        "number": 24,
+        "english": "Isaac has 8 $1 coins, 3 $2 coins and 5 $5 coins. If one cup costs $6, at most how many cups can he buy?",
+        "translation": "Coins: Đồng xu; Cup: Chiếc cốc; Cost: Có giá; At most: Nhiều nhất.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Mua hàng theo số tiền có"
+      },
+      {
+        "number": 25,
+        "english": "Among the values of the following expressions, how many even number(s) is / are between 30 and 50?",
+        "translation": "Values: Giá trị; Expression: Phép tính; Even numbers: Số chẵn; Between: Ở giữa.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đếm kết quả theo điều kiện",
+        "image": "./assets/papers/timo-grade2-national-03/q25.e85b25561f40.svg",
+        "imageAlt": "Các phép tính 99÷3;19×2;51÷3;6×8;24×3;5×5;62÷2"
+      }
+    ]
   }
 ];
 function getPapers(program, subject, grade, mode) {
