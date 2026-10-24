@@ -55,3 +55,5 @@ python3 scripts/version-assets.py
 ```
 
 Lệnh chỉ tạo bản sao tệp với mã SHA-256 và cập nhật đường dẫn HTML, không biên dịch và không cài phụ thuộc. Giữ các bản đã xuất bản để các trang còn trong bộ nhớ đệm tiếp tục có tài nguyên khớp phiên bản. Website vẫn xuất bản trực tiếp từ `main / (root)`.
+
+Khung Cài đặt rộng tối đa 1.040px trên máy tính, tự co theo điện thoại. Tên giao diện xuống dòng đầy đủ; cuộn ở khung ngoài. Nút đóng 44×44px được giữ ở đầu khung khi cuộn.
