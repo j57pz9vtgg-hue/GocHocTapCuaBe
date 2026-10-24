@@ -176,3 +176,6 @@ Nút tải lại của trình duyệt giữ màn hình hiện tại trong cùng 
 
 
 Theo chỉ định tiếp theo, Đề 4 câu 4 (Lucy) và Đề 6 câu 5 (Amy) vào “Tuổi hiện tại và tương lai”, tăng nhóm lên 8 câu. Đề 6 câu 3 giữ Chưa phân loại. Ngân hàng hiện có 131 câu đã phân loại và 44 câu Chưa phân loại; không đổi nội dung/lựa chọn/ảnh.
+
+
+Nhóm “Phối hợp lựa chọn” đã đổi tên theo chủ dự án thành “Có bao nhiêu cách kết hợp khác nhau?”. Giữ nguyên 5 câu thuộc nhóm và id chủ đề cũ để tiếp tục bài đã lưu hoặc tải lại màn hình, không thay nội dung, lựa chọn, hình hay đáp án.

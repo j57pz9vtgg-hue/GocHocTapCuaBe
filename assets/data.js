@@ -340,7 +340,7 @@ const officialPapers = [
           "10",
           "8"
         ],
-        "subtopic": "Phối hợp lựa chọn",
+        "subtopic": "Có bao nhiêu cách kết hợp khác nhau?",
         "imageAlt": "Hai khung gồm thịt bò, thịt gà, thịt lợn ở bên trái và khoai tây, cà chua, bắp cải ở bên phải; ở giữa là dấu cộng.",
         "image": "./assets/papers/timo-grade2-qualifying-01/q24-food-choices.cfeb3560b255.svg"
       },
@@ -688,7 +688,7 @@ const officialPapers = [
         ],
         "imageAlt": "Trường học ở bên trái, trạm xe buýt ở giữa phía dưới, ngôi nhà ở bên phải; ba đường nối từ trường tới trạm và hai đường nối từ trạm về nhà.",
         "image": "./assets/papers/timo-grade2-qualifying-02/q24-roads.46b64812b380.svg",
-        "subtopic": "Phối hợp lựa chọn"
+        "subtopic": "Có bao nhiêu cách kết hợp khác nhau?"
       },
       {
         "number": 25,
@@ -1036,7 +1036,7 @@ const officialPapers = [
         ],
         "imageAlt": "Siêu thị, ga tàu và rạp chiếu phim với bốn đường từ siêu thị tới ga và hai đường từ ga tới rạp theo ảnh.",
         "image": "./assets/papers/timo-grade2-qualifying-03/q24-routes.93045e82bb86.svg",
-        "subtopic": "Phối hợp lựa chọn"
+        "subtopic": "Có bao nhiêu cách kết hợp khác nhau?"
       },
       {
         "number": 25,
@@ -1713,7 +1713,7 @@ const officialPapers = [
           "5",
           "8"
         ],
-        "subtopic": "Phối hợp lựa chọn"
+        "subtopic": "Có bao nhiêu cách kết hợp khác nhau?"
       }
     ]
   },
@@ -1986,7 +1986,7 @@ const officialPapers = [
           "9",
           "8"
         ],
-        "subtopic": "Phối hợp lựa chọn"
+        "subtopic": "Có bao nhiêu cách kết hợp khác nhau?"
       },
       {
         "number": 22,
@@ -2425,7 +2425,9 @@ function buildTimoTopicGroups(papers, grade) {
       const name = typeof question.subtopic === 'string' && question.subtopic.trim() ? question.subtopic.trim() : 'Chưa phân loại';
       let topic = group.topics.find(topic => topic.name === name);
       if (!topic) {
-        topic = { id: `${group.id}-named-${encodeURIComponent(name)}`, name, entries: [] };
+        // Keep the existing topic ID so saved attempts, question order and reload state survive this label change.
+        const stableName = name === 'Có bao nhiêu cách kết hợp khác nhau?' ? 'Phối hợp lựa chọn' : name;
+        topic = { id: `${group.id}-named-${encodeURIComponent(stableName)}`, name, entries: [] };
         group.topics.push(topic);
       }
       topic.entries.push({ id: `${paper.id}:${number}`, question, number, paperId: paper.id, paperTitle: paper.title, mode: paper.mode });

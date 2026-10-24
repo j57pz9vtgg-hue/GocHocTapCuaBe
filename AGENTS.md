@@ -55,3 +55,5 @@ Chỉ định riêng tiếp theo của chủ dự án bằng ảnh: chuyển đ�
 Tải lại trang bằng nút trình duyệt phải tiếp tục tại màn hình hiện tại trong cùng tab: giữ bộ lọc, nhóm chủ đề, từ khóa, đề/chủ đề đang mở, thứ tự câu, lựa chọn, thời gian bắt đầu/kết thúc và vị trí đang xem. Ghi tham chiếu id vào sessionStorage riêng theo tab, lấy nội dung mới từ ngân hàng hiện hành khi tải lại; không lưu bản sao đề hoặc mật khẩu. Khôi phục sau khi mở khóa đăng nhập; không tự mở khóa đáp án phụ huynh. Thoát về danh sách/đăng xuất phải ghi trạng thái mới, không kéo lại màn hình cũ.
 
 Chủ dự án tiếp tục chỉ định: Đề 4 câu 4 (Lucy) và Đề 6 câu 5 (Amy) chuyển vào “Tuổi hiện tại và tương lai”. Câu 3 Đề 6 ở giữa ảnh không được yêu cầu chuyển, giữ nguyên Chưa phân loại. Chủ đề tuổi hiện có 8 câu; tổng 131 câu có chủ đề nhỏ, 44 câu Chưa phân loại.
+
+Chủ dự án đổi tên nhóm “Phối hợp lựa chọn” thành “Có bao nhiêu cách kết hợp khác nhau?”. Đổi nhãn trên 5 câu hiện có nhưng giữ id chủ đề cũ để không mất bài đang làm, thứ tự và trạng thái tải lại. Không thêm/bớt hoặc chuyển câu giữa các nhóm trong yêu cầu đổi tên này.
