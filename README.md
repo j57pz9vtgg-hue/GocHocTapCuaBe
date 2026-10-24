@@ -100,3 +100,5 @@ Nguồn: 5 ảnh chụp do chủ dự án gửi trong cuộc trò chuyện. Id: 
 Chủ dự án cho phép đặt một tên chủ đề nhỏ riêng cho mỗi câu chỉ trong bộ đề này. 25 tên được lưu ở `subtopic`, tự phân thành 5 nhóm theo số câu. Chưa phân loại vẫn có trong dữ liệu, nhưng ô trống được ẩn khi nhóm đã có các chủ đề nhỏ chứa câu hỏi.
 
 Các hình/sơ đồ được dựng lại bằng SVG tại `assets/papers/timo-grade2-qualifying-01/`: 15 hình nội dung câu hỏi và 4 hình lựa chọn của câu 17. Nét và vị trí dựa trên ảnh gốc, không bổ sung lời giải hay ngoại suy kết quả. Tên tệp có SHA-256 để không thay đổi tài nguyên đã xuất bản. Bài đầy đủ giữ 5 đề mục lớn; luyện chủ đề giữ số câu và nguồn đề gốc.
+
+Tên 5 nhóm lớn hiển thị trên một dòng, các ô có cùng chiều rộng theo tên dài nhất. Không hiển thị ghi chú khoảng câu trên các ô; quy tắc khoảng câu vẫn giữ nguyên trong dữ liệu phân loại. Đã kiểm tra từ 320px đến 1920px trên đủ 11 giao diện.
