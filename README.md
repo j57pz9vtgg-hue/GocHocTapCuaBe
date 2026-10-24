@@ -198,3 +198,10 @@ Theo yêu cầu gộp nhóm 04 vào 02 của Số học: 6 câu “Biểu thức
 Bài theo chủ đề hiển thị Câu 1…N theo thứ tự hiện tại sau khi đảo, còn id/số câu/nguồn đề gốc giữ trong dữ liệu. Bấm Bắt đầu hoặc Tiếp tục làm bài từ popup chủ đề đặt đồng hồ về 00:00; các lựa chọn đang lưu vẫn ghép theo đúng id. Tải lại trang giữ nguyên thứ tự, lựa chọn, vị trí và thời gian đang chạy. Bộ đề đầy đủ giữ quy tắc số câu và tiếp tục thời gian cũ.
 
 Popup giới thiệu thu nhỏ từ700px xuống tối đa520px, ảnh120px (96px trên điện thoại), tiêu đề Be Vietnam Pro20px/18px, chữ mô tả13px/12px và nút14px. Không đổi nội dung/ảnh/màu chủ đề hoặc phông16px trong tờ đề. Đã kiểm tra 11 giao diện tại1440/390/320px, màn hình ngang844×390, đánh số15câu, mở lại đặt00:00, đồng hồ chạy/tải lại giữ thời gian và dữ liệu nguồn không đổi.
+
+
+## Kích thước cố định và độ nổi cho các nút chủ đề
+
+Năm nút chủ đề lớn giữ chiều cao72px trên máy tính và64px trên điện thoại, cùng chiều rộng đủ tên song ngữ dài nhất trên một dòng. Hàng giãn riêng của lưới chứa phần nội dung cao của khung bên phải; chuyển nhóm không kéo giãn hoặc đổi vị trí các nút bên trái. Thêm bóng đế, nét sáng, trạng thái hover/nhấn cho nút nhóm, ô chủ đề nhỏ và nút Luyện tập; không đổi màu/ảnh riêng của11giao diện hoặc dữ liệu bài.
+
+Đã kiểm tra 5 nhóm trên11giao diện ở1920/1440/1024/800/761/760/538/390/320px: kích thước đồng nhất khi đổi nhóm, tên một dòng không cắt, khung nội dung không tràn lưới hoặc màn hình. Kiểm tra thêm clickthật, bànphím, trạng thái nhấn/giảmchuyểnđộng và mở bài luyện.
