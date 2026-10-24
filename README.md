@@ -1,68 +1,45 @@
 # Góc học tập của bé
 
-Website tĩnh dùng HTML, CSS, JavaScript thuần. Không cần React, Vite, npm hay bước build.
+Website tĩnh HTML/CSS/JavaScript, xuất bản GitHub Pages từ nhánh `main`, thư mục `/(root)`. Không cần npm hay bước build để chạy/xuất bản.
 
-## Xem trên máy
+## Chạy và xuất bản
 
-Mở `index.html` trực tiếp trong trình duyệt, hoặc chạy từ thư mục dự án:
+Mở `index.html` hoặc phục vụ thư mục dự án:
 
 ```sh
 python3 -m http.server 8000 --bind 0.0.0.0
 ```
 
-## Đăng lên GitHub Pages
+GitHub: **Settings → Pages → Deploy from a branch → main → /(root) → Save**. Địa chỉ: https://j57pz9vtgg-hue.github.io/GocHocTapCuaBe/.
 
-1. Đưa `index.html`, toàn bộ thư mục `assets` và `.nojekyll` lên nhánh `main` của kho `j57pz9vtgg-hue/GocHocTapCuaBe`. Giữ đúng cấu trúc thư mục, không chỉ tải mỗi tệp HTML.
-2. Mở **Settings → Pages**.
-3. Chọn **Source → Deploy from a branch**.
-4. Chọn **main → /(root)** rồi bấm **Save**.
-5. Chờ GitHub Pages xuất bản, sau đó mở https://j57pz9vtgg-hue.github.io/GocHocTapCuaBe/.
+## Thiết kế giao diện
 
-Không cần tạo workflow riêng. GitHub có thể hiển thị tác vụ Pages tự động trong tab Actions. Các đường dẫn tài nguyên là tương đối nên chạy được cả ở đường dẫn gốc và dưới tên kho.
+Theo yêu cầu chủ dự án, tái sử dụng trực tiếp bộ thiết kế từ `j57pz9vtgg-hue/Bai_Tap_Ve_Nha`, commit `2b5fdecc94329b5979d8f6f1d375b4b529a73c18`:
 
-## Tính năng và dữ liệu
+- `assets/reference/media/`: 53 tài nguyên hình ảnh gốc, giữ nguyên nội dung tệp.
+- `assets/reference/fonts/`: 4 phông chữ gốc và 2 giấy phép OFL.
+- `assets/reference/styles/`: 7 stylesheet gốc, chỉ đổi đường dẫn tài nguyên để chạy dưới `/GocHocTapCuaBe/`.
+- `assets/icons.js`: biểu tượng Lucide có cùng hình học với giao diện gốc; không cần React ở thời gian chạy.
+- `assets/compat.css`: kết nối giao diện gốc với hành vi của ứng dụng tĩnh hiện tại.
 
-Chọn lớp 1–12, chương trình TIMO/ASMO/Báo bài của trường, môn học và nhóm luyện tập; làm bài mẫu, nộp bài và làm lại. Điểm và lời giải chỉ hiển thị khi có đáp án do chủ dự án cung cấp. Lựa chọn và trạng thái bài được lưu trên trình duyệt hiện tại nếu localStorage được cho phép.
+11 giao diện: Khám phá Bắc Cực, Đồ chơi 3D mềm, Thế giới Pixel, Thỏ con, Đảo pha lê, Thành phố trên mây, Rừng đom đóm, Nhà khám phá khủng long, Phép thuật, Kho báu và Ô tô. Giao diện ban đầu là Bắc Cực. Lựa chọn cũ `space` chuyển thành Đảo pha lê; lựa chọn Rừng vẫn được giữ.
 
-Nội dung hiện là minh họa, chưa có đề TIMO/ASMO chính thức hoặc báo bài của trường. Câu hỏi ngôn ngữ dùng chung giữa các lớp và các chủ đề cần được bổ sung ngân hàng câu hỏi thực tế trước khi dùng chính thức.
+Dùng cấu trúc/thẻ, banner, bộ lọc, sprites và bố cục của giao diện gốc. Dữ liệu bài học và dịch vụ của ứng dụng mẫu không được sao chép. Không nhập cấu hình Firebase, tài khoản, màn hình đăng nhập hay đáp án từ ứng dụng khác. Biểu tượng đám mây quản lý dữ liệu cục bộ/tải bản sao, chưa có đồng bộ trực tuyến; biểu tượng mũi tên đưa về danh sách. Giữ ba tab Giao diện/Mật khẩu/Hướng dẫn theo yêu cầu của chủ dự án.
 
-- `index.html`: trang chính, điều hướng và hộp hướng dẫn.
-- `assets/styles.css`: giao diện, bố cục máy tính/điện thoại.
-- `assets/app.js`: bộ lọc, luồng làm bài và chấm điểm.
-- `assets/data.js`: dữ liệu câu hỏi mẫu.
-- `assets/space-banner.png`, `assets/forest-banner.png`, `assets/space-stickers.png`, `assets/favicon.svg`: hình ảnh.
-- `assets/settings.js`: giao diện, mật khẩu và mở khóa lời giải.
+## Hành vi học tập
 
-Website không cần tài khoản, máy chủ cơ sở dữ liệu hoặc API key.
+- Chọn lớp, chương trình, môn, nội dung; tìm kiếm theo tên bài.
+- Làm bài mở popup với hình của giao diện đang chọn, tên đề, số câu thực tế và thời lượng. Các đề minh họa hiện không giới hạn thời gian.
+- Thời gian bắt đầu khi bấm Bắt đầu/Tiếp tục, gồm thời gian rời trang. Lựa chọn và trạng thái lưu trên trình duyệt nếu localStorage được cho phép. Không đồng bộ sang thiết bị khác.
+- Xem lại bài đã nộp hoặc làm lại từ đầu. Đề chưa có đáp án hiển thị Chờ đáp án.
+- Câu hỏi hỗ trợ `text`/`english`, `translation`/`vietnamese`, `detail`, `image` trong `./assets/` và `imageAlt`. Chỉ hiện dữ liệu đã cung cấp.
 
-## Giao diện và cài đặt phụ huynh
+## Nguyên tắc đáp án và mật khẩu
 
-- Giao diện lưới 15 đề mẫu; chế độ chủ đề hiện có 3 chủ đề mỗi môn.
-- Nút **Cài đặt** cho phép chọn **Vũ trụ xanh** / **Khu rừng kỳ diệu**, đặt/đổi/gỡ mật khẩu, đọc hướng dẫn sử dụng.
-- Không có màn hình đăng nhập. Bé được học và nộp bài bình thường; điểm chỉ có khi đã nhận đáp án của chủ dự án. Nếu đã cài mật khẩu, nút **Xem đáp án và lời giải** sẽ yêu cầu mật khẩu phụ huynh. Khi làm lại bài, lời giải được ẩn lại.
-- Đổi/gỡ mật khẩu cần nhập mật khẩu hiện tại. Nếu chưa cài mật khẩu, lời giải có thể xem trực tiếp.
-- Giao diện và bản băm mật khẩu có salt riêng (PBKDF2/SHA-256) được lưu bằng localStorage trên trình duyệt hiện tại. Không lưu mật khẩu dạng văn bản. Không dùng mật khẩu tài khoản quan trọng khác cho chức năng này.
-- Đây là cơ chế hỗ trợ phụ huynh của web tĩnh, không bảo vệ đáp án khỏi người có khả năng đọc hoặc sửa mã JavaScript. Xóa dữ liệu trang sẽ xóa giao diện đã lưu và mật khẩu. Muốn quản lý an toàn qua nhiều thiết bị cần backend.
-- Đặt và xác nhận mật khẩu cần HTTPS (GitHub Pages) hoặc localhost khi phát triển.
+Đáp án/lời giải chỉ do chủ dự án cung cấp. Không tự giải, suy luận hoặc điền đáp án thiếu. Chưa có đáp án thì không chấm điểm. Khi nhận dữ liệu, nếu không khớp phải báo chủ dự án để xác nhận.
 
-## Quy tắc đáp án
+Đáp án hợp lệ cần `answer` (chỉ số lựa chọn bắt đầu từ 0) và `answerSource: 'user'`. Chỉ lưu `explanation` nếu đã được cung cấp. Hiện dữ liệu minh họa không có đáp án.
 
-Không tự suy luận hoặc tự tạo đáp án/lời giải. Dữ liệu minh họa hiện chỉ có câu hỏi và lựa chọn, không có đáp án. Web hiển thị **Chờ đáp án**, không tự chấm hoặc mở lời giải khi chưa được cung cấp đáp án.
+Mật khẩu phụ huynh chỉ mở đáp án/lời giải; không phải đăng nhập. Đặt/đổi/gỡ trong tab Mật khẩu; đổi/gỡ cần mật khẩu hiện tại. Bản băm có salt riêng dùng PBKDF2/SHA-256 lưu trên trình duyệt; HTTPS hoặc localhost cần cho Web Crypto. Đây là khóa thao tác của web tĩnh, không bảo vệ dữ liệu khỏi công cụ phát triển. Xóa dữ liệu trang sẽ mất bản lưu và mật khẩu.
 
-Khi chủ dự án cung cấp đáp án, lưu `answer` là chỉ số lựa chọn từ 0, `answerSource: 'user'` và chỉ đưa `explanation` nếu đã được cung cấp. Mọi câu hỏi trong bài phải có đáp án hợp lệ trước khi chấm. Nếu dữ liệu không khớp, báo chủ dự án thay vì tự sửa.
-
-Nguyên tắc làm việc của chủ dự án được lưu trong `AGENTS.md`.
-
-## Thẻ đề
-
-Thẻ đề hiển thị số thứ tự, tên đề, trạng thái, kết quả và thời gian làm bài; minh họa nằm bên phải, nút Làm bài ở dưới. Chưa làm hiển thị `—`. Khi nộp bài, thời gian được đo từ lúc mở bài đến khi nộp; chưa có đáp án được cung cấp thì kết quả hiển thị `Chờ đáp án`. Lựa chọn, trạng thái và thời gian làm bài được lưu trên trình duyệt hiện tại nếu được phép; không đồng bộ sang thiết bị khác.
-
-Cửa sổ Cài đặt chia thành ba tab **Giao diện / Mật khẩu / Hướng dẫn**. Chỉ hiện nội dung của tab đang chọn; chuyển tab bằng chuột, phím mũi tên hoặc Home/End. Cửa sổ mở ở tab Giao diện.
-
-## Popup giới thiệu và bố cục câu hỏi
-
-Nhấn Làm bài mở popup giới thiệu, chưa bắt đầu tính thời gian. Popup hiển thị tên đề, số câu thực tế, thời lượng được cấu hình (các đề mẫu hiện không giới hạn), lớp và nút Bắt đầu làm bài/Tiếp tục làm bài. Đóng popup hoặc Escape quay về danh sách.
-
-Bài làm lưu bằng localStorage theo lớp/chương trình/môn/nhóm/nội dung. Khi mở lại bài đang làm, các lựa chọn được phục hồi; Làm lại bắt đầu một lượt mới. Đồng hồ thời gian tính từ lúc bắt đầu, gồm cả thời gian rời trang. Chưa có đáp án do chủ dự án cung cấp thì không chấm điểm.
-
-Câu hỏi hiển thị trên một trang trắng, phân cách bằng đường kẻ; A–D trên một hàng ở máy tính, hai cột trên điện thoại. Hỗ trợ các trường dữ liệu: `text` hoặc `english`, `translation` hoặc `vietnamese`, `detail` (biểu thức/nội dung giữa câu), `image` (đường dẫn ảnh trong `./assets/`) và `imageAlt`. Chỉ hiển thị bản dịch, hình và lời giải khi có dữ liệu; không tự suy luận nội dung đáp án.
+Khóa localStorage riêng của dự án: `goc-hoc-tap.preferences.v1`, `goc-hoc-tap.parent-password.v1`, `goc-hoc-tap.attempts.v1`. Không đọc/ghi dữ liệu của ứng dụng mẫu. Xem các nguyên tắc làm việc trong `AGENTS.md`.
