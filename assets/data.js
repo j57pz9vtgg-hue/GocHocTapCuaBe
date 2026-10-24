@@ -1812,7 +1812,8 @@ const officialPapers = [
           "4",
           "5",
           "6"
-        ]
+        ],
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 8,
@@ -1849,7 +1850,8 @@ const officialPapers = [
           "90",
           "100",
           "110"
-        ]
+        ],
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 11,
@@ -2160,7 +2162,8 @@ const officialPapers = [
           "50",
           "40",
           "70"
-        ]
+        ],
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 10,

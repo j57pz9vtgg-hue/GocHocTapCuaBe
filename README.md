@@ -211,3 +211,6 @@ Theo yêu cầu tăng nhẹ kích thước ô chủ đề lớn: cột bên trá
 
 
 Theo yêu cầu phân loại câu hỏi về tháng, tạo “Các tháng trong năm” trong Logical thinking / Tư duy lô-gic và chuyển đúng Đề 7 câu 1 (tháng trước là tháng 4, hỏi 16 tháng nữa). Nhóm tháng có 1 câu, nhóm tuổi còn 6 câu. Số hiển thị trong lượt luyện có thể khác số câu nguồn; nội dung/lựa chọn không đổi và chưa có đáp án.
+
+
+Theo ảnh chỉ định tiếp theo, Đề 6 câu 7 và 10, Đề 7 câu 9 chuyển vào “Tìm giá trị”. Nhóm có 18 câu; Số học còn đúng 1 câu Chưa phân loại (Đề 5 câu 8). Nội dung, lựa chọn, thứ tự bộ đề và số câu nguồn không đổi. Tổng 135 câu đã phân loại, 40 câu Chưa phân loại.
