@@ -255,3 +255,10 @@ Theo yêu cầu mở toàn bộ nhóm Chưa phân loại, 21 câu còn lại đ�
 | Tổ hợp | Điền số vào bảng có tổng bằng nhau | 7:25 |
 
 Kết quả: 175/175 câu của 7 đề vòng loại TIMO lớp 2 có chủ đề nhỏ, 35 câu mỗi chủ đề lớn; số nhóm nhỏ lần lượt là 8/4/9/8/15. Không còn câu Chưa phân loại trong ngân hàng hiện có. Không thay nội dung, lựa chọn, ảnh, số câu/id nguồn, thứ tự bộ đề hoặc đáp án; chưa có đáp án được cung cấp.
+
+
+## Đề quốc gia 1 — TIMO lớp 2
+
+Nhập từ 4 ảnh do chủ dự án gửi: 25 câu tự luận, giữ nguyên câu tiếng Anh và phần từ vựng tiếng Việt, 11 hình SVG dựng lại theo ảnh. Id timo-grade2-national-01, danh mục Đề quốc gia. Không có lựa chọn A–D hoặc đáp án được tạo thêm; mỗi câu có ô nhập văn bản. Giữ nguồn đề/số câu và phân loại đủ cả 25 câu vào các nhóm luyện phù hợp, tạo nhóm mới cho dạng thời gian, số theo điều kiện, hình khối, góc trong đa giác, đổi tiền và chuyển bớt/so sánh trong Tổ hợp.
+
+Ô trả lời tự luận lưu cùng bài làm và ghép theo id khi đảo/thêm câu trong chủ đề; chặn câu trống, giữ khi tải lại, chỉ mở nộp khi đủ câu, dừng đồng hồ khi nộp và hiển thị Chờ đáp án. Khi có khóa trả lời văn bản do chủ dự án xác nhận, so khớp chính xác sau khi bỏ khoảng trắng hai đầu; không suy luận khóa hoặc tự tạo lời giải. Đã kiểm tra 11 giao diện máy tính/điện thoại, hình ảnh, lưu/khôi phục, nhập/nộp/làm lại và bài luyện trộn tự luận với trắc nghiệm; 7 đề vòng loại giữ nguyên.

@@ -2407,6 +2407,243 @@ const officialPapers = [
         "subtopic": "Điền số vào bảng có tổng bằng nhau"
       }
     ]
+  },
+  {
+    "id": "timo-grade2-national-01",
+    "title": "Đề quốc gia 01",
+    "sourceTitle": "ĐỀ SỐ 1 — VÒNG QUỐC GIA TIMO",
+    "program": "TIMO",
+    "subject": "Toán",
+    "grade": "2",
+    "mode": "Đề quốc gia",
+    "questions": [
+      {
+        "number": 1,
+        "english": "According to the pattern shown below, what is the number in the space provided?",
+        "translation": "Pattern: Quy luật; Space: Chỗ trống.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quy luật dãy số",
+        "image": "./assets/papers/timo-grade2-national-01/q01.cddbe8582e6d.svg",
+        "imageAlt": "20, 23, 27, 32, 38, 45, 53, __"
+      },
+      {
+        "number": 2,
+        "english": "According to the pattern below, what is the English letter in the space provided?",
+        "translation": "Pattern: Quy luật; English letter: Chữ cái tiếng Anh; Space: Chỗ trống.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quy luật dãy số",
+        "image": "./assets/papers/timo-grade2-national-01/q02.4dc53a4d3dc6.svg",
+        "imageAlt": "F, S, I, Q, L, O, O, M, __"
+      },
+      {
+        "number": 3,
+        "english": "Mary needs 20 minutes to draw 1 picture and then rests for 5 minutes. How many minutes does Mary need to draw 4 pictures?",
+        "translation": "Minute: Phút; Draw: Vẽ; Picture: Bức tranh; Rest: Nghỉ.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Bài toán tính thời gian"
+      },
+      {
+        "number": 4,
+        "english": "If 11th August is Monday, which day of the week is 15th October of the same year?",
+        "translation": "August: Tháng 8; Monday: Thứ Hai; Day of the week: Thứ trong tuần; October: Tháng 10; The same year: Cùng năm.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Các ngày trong tuần"
+      },
+      {
+        "number": 5,
+        "english": "According to the pattern shown below, how many * are there in the 7th group?",
+        "translation": "Pattern: Quy luật; 7th group: Nhóm thứ 7.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quy luật sắp xếp hình",
+        "image": "./assets/papers/timo-grade2-national-01/q05.45a572c97c4b.svg",
+        "imageAlt": "Bốn lưới dấu sao: ô cuối phía dưới bên phải trống trong mỗi nhóm, đúng vị trí ảnh"
+      },
+      {
+        "number": 6,
+        "english": "Find the value of 1 + 4 − 7 + 10 − 13 + 16 − 19 + 22 − 25 + 28.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 7,
+        "english": "Find the value of 26 + 48 + 52 + 83 + 84 + 37.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 8,
+        "english": "Find the value of 14 × 15 + 14 × 8 − 10 × 14 + 17 × 14.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 9,
+        "english": "Find the value of 22 − 7 − 6 + 11 − 9 − 3.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 10,
+        "english": "If A and B are different 1-digit numbers, what is the value of B if the equation below is correct?",
+        "translation": "Different: Khác nhau; 1-digit number: Số có 1 chữ số; Value: Giá trị; Equation: Phép tính; Correct: Đúng.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Phép cộng với chữ số chưa biết",
+        "image": "./assets/papers/timo-grade2-national-01/q10.1a96ab25c193.svg",
+        "imageAlt": "Phép cộng dọc AA cộng BA bằng 98"
+      },
+      {
+        "number": 11,
+        "english": "What is the largest 3-digit odd number smaller than 500 with different digits?",
+        "translation": "Largest: Lớn nhất; 3-digit odd number: Số lẻ có 3 chữ số; Smaller than: Nhỏ hơn; Different: Khác nhau; Digit: Chữ số.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm số theo điều kiện",
+        "sectionHeading": {
+          "english": "Number Theory",
+          "vietnamese": "Số học"
+        }
+      },
+      {
+        "number": 12,
+        "english": "In a singing competition, 30 children have an even number of scores in total. For the first 15 children, each child has an odd number of scores. For the following 6 children, each child has an even number of scores. Determine whether the total scores of the remaining children is odd or even.",
+        "translation": "Child / Children: Đứa trẻ; Score: Điểm số; Total: Tổng; Each: Mỗi; First: Đầu tiên; Following: Tiếp theo; Remaining: Còn lại; Determine: Xác định; Even: Chẵn; Odd: Lẻ.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Nhận biết kết quả chẵn"
+      },
+      {
+        "number": 13,
+        "english": "Each box of eggs has 12 eggs. Mom asks Mary to buy 35 eggs. Her neighbor asks her to buy 29 eggs. At least how many boxes of eggs does Mary need to buy?",
+        "translation": "Each: Mỗi; Box: Hộp; Egg: Quả trứng; At least: Ít nhất.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Chia nhóm theo sức chứa"
+      },
+      {
+        "number": 14,
+        "english": "Fill in the blanks with ‘+’ and ‘−’ to make the equation below correct. (Write down the complete equation on the answer sheet)",
+        "translation": "Fill: Điền; Blanks: Chỗ trống; Equation: Phép tính; Correct: Đúng. (Viết lại toàn bộ phép tính vào phiếu trả lời).",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Điền dấu cộng và trừ",
+        "image": "./assets/papers/timo-grade2-national-01/q14.682fe10ba68c.svg",
+        "imageAlt": "9 __ 10 __ 8 __ 5 = 6"
+      },
+      {
+        "number": 15,
+        "english": "The numbers below form an arithmetic sequence. What is the 11th number?",
+        "translation": "Arithmetic sequence: Dãy số cách đều; 11th number: Số thứ 11.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm số hạng trong dãy số",
+        "image": "./assets/papers/timo-grade2-national-01/q15.3498ad516545.svg",
+        "imageAlt": "200, 189, 178, 167, 156, …"
+      },
+      {
+        "number": 16,
+        "english": "A pyramid has 12 vertices. How many edges does this pyramid have?",
+        "translation": "Pyramid: Hình chóp; Vertices: Đỉnh; Edges: Cạnh.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đỉnh, cạnh và mặt của hình khối"
+      },
+      {
+        "number": 17,
+        "english": "Cubes of the same size are placed as shown in the figure below. At least how many square faces can be seen if viewing the figure below from the top?",
+        "translation": "Cube: Hình lập phương; Same size: Cùng kích thước; Placed: Được xếp; Figure: Hình vẽ; At least: Ít nhất; Square face: Mặt hình vuông; Viewing: Quan sát; From the top: Từ bên trên.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quan sát và đếm khối lập phương",
+        "image": "./assets/papers/timo-grade2-national-01/q17.72c4210128af.svg",
+        "imageAlt": "Cụm khối trắng xám có cột cao bên trái, các bậc ở giữa và ba khối hàng trước bên phải theo ảnh"
+      },
+      {
+        "number": 18,
+        "english": "How many line segments are there in the figure below?",
+        "translation": "Line segment: Đoạn thẳng; Figure: Hình vẽ.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đếm đoạn thẳng",
+        "image": "./assets/papers/timo-grade2-national-01/q18.c38bb3472cfd.svg",
+        "imageAlt": "Các đoạn thẳng có chung điểm phía trái, hai đường xiên từ trên xuống và các điểm giao đánh dấu như ảnh"
+      },
+      {
+        "number": 19,
+        "english": "How many interior angles are there in the figure below?",
+        "translation": "Interior angle: Góc trong; Figure: Hình vẽ.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đếm góc trong đa giác",
+        "image": "./assets/papers/timo-grade2-national-01/q19.a4765f443116.svg",
+        "imageAlt": "Đa giác khép kín có các chỗ lõm và hai phần nhô phía dưới, giữ đường biên như ảnh"
+      },
+      {
+        "number": 20,
+        "english": "According to the pattern shown below, what is the figure in the space provided?",
+        "translation": "Pattern: Quy luật; Figure: Hình vẽ; Space: Chỗ trống.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quy luật dãy hình",
+        "image": "./assets/papers/timo-grade2-national-01/q20.3623124aee09.svg",
+        "imageAlt": "Dãy hình vuông đặc, ngôi sao và chấm tròn, có một chỗ trống đúng vị trí trong ảnh"
+      },
+      {
+        "number": 21,
+        "english": "Neo has 6 $1 coins, 3 $2 coins and 6 $5 coins. At most how many $10 notes can he exchange?",
+        "translation": "Coin: Đồng xu; At most: Nhiều nhất; Note: Tờ tiền; Exchange: Đổi.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đổi tiền"
+      },
+      {
+        "number": 22,
+        "english": "How many odd numbers are there from the 5th term to the 18th term in the sequence given below?",
+        "translation": "Odd number: Số lẻ; 5th term: Số thứ 5; 18th term: Số thứ 18; Sequence: Dãy số.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đếm số lẻ trong dãy số",
+        "image": "./assets/papers/timo-grade2-national-01/q22.10a65f3915ee.svg",
+        "imageAlt": "3, 6, 11, 18, 27, 38, …"
+      },
+      {
+        "number": 23,
+        "english": "There are 3 ways from the zoo to the train station. There are 2 ways from the train station to the cinema. There are 3 ways from the cinema to the playground. How many different ways are there to go from the zoo to the playground passing through the train station and the cinema?",
+        "translation": "Way: Đường đi; Zoo: Vườn thú; Train station: Ga tàu; Cinema: Rạp chiếu phim; Playground: Sân chơi; Different: Khác nhau; Passing through: Đi qua.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Có bao nhiêu cách kết hợp khác nhau?"
+      },
+      {
+        "number": 24,
+        "english": "After Mary gives 9 chocolates to Andy and Mary takes 12 chocolates from Eric, they will have an equal number of chocolates. How many chocolates does Eric have more than Andy originally?",
+        "translation": "After: Sau khi; Give: Cho; Take: Lấy; Equal: Bằng nhau; More than: Nhiều hơn; Originally: Ban đầu.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Chuyển bớt và so sánh số lượng"
+      },
+      {
+        "number": 25,
+        "english": "Choose 3 different digits from 0, 3, 4 and 9 to form a 3-digit numbers. What is the difference between the largest number and the smallest number that can be formed?",
+        "translation": "Choose: Chọn; Different: Khác nhau; Digit: Chữ số; Form a 3-digit number: Tạo thành số có 3 chữ số; Difference: Hiệu; Largest: Lớn nhất; Smallest: Nhỏ nhất.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Lập số lớn nhất và nhỏ nhất"
+      }
+    ]
   }
 ];
 function getPapers(program, subject, grade, mode) {

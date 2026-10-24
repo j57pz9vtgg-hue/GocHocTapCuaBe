@@ -239,3 +239,11 @@
 #site-shell .topic-small-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media(max-width:1279px){#site-shell .topic-small-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:900px){#site-shell .topic-small-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Owner-provided national papers use written responses without invented choices. */
+.paper-world .free-answer{clear:both;display:grid;gap:8px;margin:18px 0 8px;max-width:100%}
+.paper-world .free-answer>label{font:400 16px/1.5 'Times New Roman',Times,serif}
+.paper-world .free-answer-input{width:min(100%,400px);min-height:44px;padding:9px 12px;border:1px solid #a9bddd;border-radius:8px;background:#fff;color:#082958;font:400 16px/1.5 'Times New Roman',Times,serif}
+.paper-world .free-answer-input:focus-visible{outline:2px solid #008fba;outline-offset:2px}
+.paper-world .free-answer-input:disabled{opacity:1;background:#f5f9ff;color:#29496b}
+.paper-world .provided-answer{font:400 16px/1.5 'Times New Roman',Times,serif;color:#1d6a44}

@@ -14,7 +14,7 @@ for(const paper of officialPapers){
  if(paper.program==='TIMO'&&[modes[0],modes[1]].includes(paper.mode))issues.push(...getTimoPaperIssues(paper).map(issue=>`${label}: ${issue}`));
  if(!Array.isArray(paper.questions)||!paper.questions.length){issues.push(`${label}: chưa có câu hỏi.`);continue;}
  paper.questions.forEach((q,i)=>{
-  if(!q||(typeof q.english!=='string'&&typeof q.text!=='string')||!Array.isArray(q.options)||q.options.length<2||q.options.some(option=>typeof option!=='string'))issues.push(`${label}, câu ${i+1}: thiếu nội dung hoặc lựa chọn.`);
+  if(!q||(typeof q.english!=='string'&&typeof q.text!=='string')||!Array.isArray(q.options)||(q.responseType==='text'?q.options.length!==0:q.options.length<2)||q.options.some(option=>typeof option!=='string'))issues.push(`${label}, câu ${i+1}: thiếu nội dung hoặc lựa chọn.`);
   const images=q?[q.image,...(Array.isArray(q.optionImages)?q.optionImages:[])].filter(Boolean):[];
   if(q?.optionImages&&(!Array.isArray(q.optionImages)||q.optionImages.length!==q.options?.length))issues.push(`${label}, câu ${i+1}: số hình lựa chọn không khớp.`);
   for(const image of images){
@@ -24,7 +24,7 @@ for(const paper of officialPapers){
    const digest=image.match(/\.([a-f0-9]{12})\.(?:svg|png|webp|jpg|jpeg)$/)?.[1];
    if(digest&&crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex').slice(0,12)!==digest)issues.push(`${label}, câu ${i+1}: mã nội dung ảnh không khớp.`);
   }
-  if(q&&Object.hasOwn(q,'answer')&&(q.answerSource!=='user'||!Number.isInteger(q.answer)||q.answer<0||q.answer>=(q.options?.length||0)))issues.push(`${label}, câu ${i+1}: đáp án không hợp lệ hoặc chưa xác nhận nguồn từ chủ dự án.`);
+  if(q&&Object.hasOwn(q,'answer')&&(q.answerSource!=='user'||(q.responseType==='text'?(typeof q.answer!=='string'||!q.answer.trim()||q.answer.length>200):(!Number.isInteger(q.answer)||q.answer<0||q.answer>=(q.options?.length||0)))))issues.push(`${label}, câu ${i+1}: đáp án không hợp lệ hoặc chưa xác nhận nguồn từ chủ dự án.`);
  });
 }
 if(issues.length){process.stderr.write(issues.join('\n')+'\n');process.exitCode=1}else process.stdout.write(`Dữ liệu hợp lệ: ${officialPapers.length} đề chính thức.\n`);
