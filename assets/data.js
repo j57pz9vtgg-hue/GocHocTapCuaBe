@@ -535,7 +535,8 @@ const officialPapers = [
           "5"
         ],
         "imageAlt": "Năm ô phép tính: 7 + 4; 18 − 6; 14 + 23; 25 − 12; 21 − 2 − 9.",
-        "image": "./assets/papers/timo-grade2-qualifying-02/q13-expressions.00859f8300d3.svg"
+        "image": "./assets/papers/timo-grade2-qualifying-02/q13-expressions.00859f8300d3.svg",
+        "subtopic": "Nhận biết kết quả chẵn"
       },
       {
         "number": 14,
@@ -1576,7 +1577,8 @@ const officialPapers = [
           "1"
         ],
         "image": "./assets/papers/timo-grade2-qualifying-05/q14.afa49cd848c7.svg",
-        "imageAlt": "Các số 12, 15, 28, 93, 35, 41, 90"
+        "imageAlt": "Các số 12, 15, 28, 93, 35, 41, 90",
+        "subtopic": "Nhận biết kết quả chẵn"
       },
       {
         "number": 15,

@@ -81,3 +81,5 @@ Chủ dự án chỉ định 3 câu trong ảnh chuyển vào “Tìm giá trị
 Chủ dự án chỉ định câu “Among the following numbers, how many of them are even numbers greater than 20?” (Đề 4 câu 14, số trong lượt luyện có thể khác) vào “Nhận biết kết quả chẵn” của Number Theory / Lý thuyết số. Chỉ chuyển đúng câu này từ Chưa phân loại, giữ dãy số 14, 31, 22, 19, 52, 93, 70, 54 và các lựa chọn gốc. Không tính hoặc nhập đáp án.
 
 Theo ảnh chỉ định tiếp theo, Đề 6 câu 15 (xác định tổng 1 đến 14 lẻ hay chẵn) và Đề 4 câu 12 (số lẻ lớn nhất có 2 chữ số) đều vào “Nhận biết kết quả chẵn” trong Number Theory / Lý thuyết số. Đây là nhóm được chủ dự án chỉ định cho cả 2 câu trong ảnh, không suy luận đáp án hoặc tự sửa tên nhóm.
+
+Theo ảnh tiếp theo, Đề 5 câu 14 (đếm số lẻ lớn hơn 39) và Đề 2 câu 13 (đếm kết quả lẻ của các phép tính) vào đúng “Nhận biết kết quả chẵn” theo chủ dự án. Chỉ phân loại 2 câu được chỉ định, giữ nguyên dãy số/phép tính/lựa chọn, không tính đáp án hay đổi nhãn nhóm.
