@@ -1,0 +1,2683 @@
+.access-screen {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #d9f5ff url("../media/pixel-world.webp") center/cover fixed;
+}
+.access-card {
+  width: min(440px, 100%);
+  padding: 32px;
+  background: #fffffffa;
+  border: 1px solid #bee5f5;
+  box-shadow: 0 18px 65px #17658c22;
+  border-radius: 22px;
+  text-align: center;
+}
+.access-book {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 14px;
+  background: #e2f7ff;
+  color: #007ea5;
+  border-radius: 22px;
+}
+.access-card h1 {
+  font: 800 34px/1.2 "Baloo 2";
+  margin: 0 0 10px;
+}
+.access-card > p {
+  font-size: 15px;
+  color: #5f7992;
+  line-height: 1.7;
+  margin: 0 0 24px;
+}
+.access-card form {
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+.access-card form > label {
+  font-weight: 600;
+  font-size: 14px;
+}
+.access-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: 1px solid #b1d3e3;
+  border-radius: 10px;
+  padding: 7px 10px;
+  color: #4d7995;
+}
+.access-input input {
+  border: 0;
+  outline: none;
+  min-width: 0;
+  width: 100%;
+  height: 34px;
+  background: transparent;
+}
+.access-input:focus-within {
+  outline: 3px solid #087fb8;
+  outline-offset: 2px;
+}
+.access-card .primary-button {
+  min-height: 46px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+}
+.access-card form > .remember-login {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-block: 4px;
+  min-height: 32px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #365a73;
+  cursor: pointer;
+}
+.remember-login input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #009daf;
+  flex-shrink: 0;
+}
+.remember-login input:focus-visible {
+  outline: 2px solid #087fb8;
+  outline-offset: 3px;
+}
+.access-card .password-error {
+  margin: 0;
+  color: #b13535;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.appearance-button,
+.logout-button {
+  flex-shrink: 0;
+  color: #0b4b80;
+  background: #ffffffd9;
+  border: 1px solid #b8ddee;
+  border-radius: 11px;
+  width: 38px;
+  height: 38px;
+}
+.dialog.password-settings-dialog {
+  width: min(480px, calc(100% - 32px));
+  padding-top: 32px;
+}
+.result-lock {
+  padding: 8px 0 0;
+}
+.theme-picker-dialog {
+  width: min(760px, calc(100% - 32px));
+}
+.learning-theme-picker {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 22px 0;
+  border: 0;
+  padding: 0;
+  min-width: 0;
+}
+.learning-theme-picker label {
+  border: 2px solid #dfedf6;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  background: white;
+}
+.learning-theme-picker label.selected-theme {
+  border-color: #008ca7;
+}
+.learning-theme-picker img {
+  display: block;
+  width: 100%;
+  height: 90px;
+  object-fit: contain;
+  background: #f1f9fc;
+}
+.learning-theme-picker span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.learning-theme-picker input {
+  flex-shrink: 0;
+  margin: 0;
+  accent-color: #038da3;
+  width: 16px;
+  height: 16px;
+}
+.theme-picker-dialog > .primary-button {
+  padding: 11px 22px;
+  border-radius: 9px;
+}
+.modern-hero {
+  display: none;
+}
+:root[data-theme="museum"] {
+  --theme-base: #fbf8f0;
+  --theme-accent: #285984;
+  --theme-action: linear-gradient(#326a99, #234e7a);
+  --theme-action-ink: #fff;
+  --theme-sprites: url("../media/prehistoric-sprites.webp");
+  --theme-edge: #e7e1d6;
+  --theme-button-soft: #e6effc;
+  --theme-ordinal: #103d67;
+}
+:root[data-theme="park"] {
+  --theme-base: #f7fcf9;
+  --theme-accent: #07754b;
+  --theme-action: linear-gradient(#ffdc47, #ffcc1a);
+  --theme-action-ink: #092655;
+  --theme-sprites: url("../media/prehistoric-sprites.webp");
+  --theme-edge: #dfedf0;
+  --theme-button-soft: #e2f2fe;
+  --theme-ordinal: #ff6928;
+}
+:root[data-theme="island"] {
+  --theme-base: #f2fbff;
+  --theme-accent: #0073d5;
+  --theme-action: linear-gradient(#ff964b, #ff6c2b);
+  --theme-action-ink: #fff;
+  --theme-sprites: url("../media/island-sprites.webp");
+  --theme-edge: #e1f1f8;
+  --theme-button-soft: #def3ff;
+  --theme-ordinal: #ff732e;
+}
+:root[data-theme="robot"] {
+  --theme-base: #f0fcff;
+  --theme-accent: #0085e6;
+  --theme-action: linear-gradient(#299dff, #087bf1);
+  --theme-action-ink: #fff;
+  --theme-sprites: url("../media/robot-sprites.webp");
+  --theme-edge: #d9f0ff;
+  --theme-button-soft: #fff0b8;
+  --theme-ordinal: #ff9527;
+}
+:root[data-theme="cosmos"] {
+  --theme-base: #f5f4ff;
+  --theme-accent: #5c63ed;
+  --theme-action: linear-gradient(#747aff, #4a59ea);
+  --theme-action-ink: #fff;
+  --theme-sprites: url("../media/cosmos-sprites.webp");
+  --theme-edge: #e8e6f8;
+  --theme-button-soft: #fff0f0;
+  --theme-ordinal: #ffad67;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) {
+  --theme-base: #fffcf2;
+  --theme-accent: #55814b;
+  --theme-action: linear-gradient(#ffa84b, #f68a2e);
+  --theme-action-ink: #fff;
+  --theme-sprites: url("../media/bunny-sprites.webp");
+  --theme-edge: #e9e3d2;
+  --theme-button-soft: #eaf5df;
+  --theme-ordinal: #ffd16a;
+}
+:root[data-theme]:not([data-theme="pixel"]) .pixel-app {
+  background: var(--theme-base);
+}
+:root[data-theme]:not([data-theme="pixel"]) .catalog-masthead {
+  background: var(--theme-base);
+}
+:root[data-theme]:not([data-theme="pixel"]) .site-header {
+  position: absolute;
+  inset: 0 0 auto;
+  background: transparent;
+  border: 0;
+}
+:root[data-theme]:not([data-theme="pixel"]) .header-inner {
+  height: 195px;
+  align-items: flex-start;
+  padding-top: 24px;
+  gap: 18px;
+}
+:root[data-theme]:not([data-theme="pixel"]) .brand {
+  max-width: 390px;
+  text-align: left;
+  gap: 12px;
+  filter: drop-shadow(0 2px 1px #ffffffde);
+}
+:root[data-theme]:not([data-theme="pixel"]) .brand > span:first-of-type {
+  font-size: 32px;
+  line-height: 1.15;
+  white-space: normal;
+}
+.modern-brand-icon {
+  color: var(--theme-accent);
+  fill: #fff;
+  flex-shrink: 0;
+}
+:root[data-theme]:not([data-theme="pixel"]) .header-tools {
+  margin-top: 14px;
+  gap: 10px;
+}
+:root[data-theme]:not([data-theme="pixel"]) .search-box {
+  width: 260px;
+  background: #fffffff5;
+}
+:root[data-theme]:not([data-theme="pixel"]) .adventure-banner {
+  height: 195px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px 8px;
+  image-rendering: auto;
+}
+:root[data-theme]:not([data-theme="pixel"]) .banner-message {
+  display: none;
+}
+:root[data-theme]:not([data-theme="pixel"]) .modern-hero {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+  min-width: 0;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+}
+:root[data-theme]:not([data-theme="pixel"]) .study-filters {
+  background: #ffffffd9;
+  border-color: var(--theme-edge);
+  box-shadow: 0 3px 10px #176d8c08;
+}
+:root[data-theme]:not([data-theme="pixel"]) .filter-select select {
+  font-weight: 600;
+  border-color: var(--theme-edge);
+}
+:root[data-theme]:not([data-theme="pixel"]) .exercise-card {
+  background: #ffffffed;
+  border-color: var(--theme-edge);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px #166e8c08;
+  min-height: 185px;
+}
+:root[data-theme]:not([data-theme="pixel"]) .card-charm {
+  display: none;
+}
+:root[data-theme]:not([data-theme="pixel"]) .number-badge {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--theme-ordinal);
+  filter: none;
+  box-shadow: inset 0 2px 4px #ffffff3d;
+  flex-shrink: 0;
+}
+:root[data-theme]:not([data-theme="pixel"]) .number-badge > svg {
+  display: none;
+}
+:root[data-theme]:not([data-theme="pixel"]) .number-badge > span {
+  font-family: "Baloo 2", sans-serif;
+  font-size: 23px;
+  letter-spacing: 0;
+  text-indent: 0;
+  text-shadow: none;
+  font-weight: 800;
+  color: #fff;
+}
+:root[data-theme]:not([data-theme="pixel"]) .is-complete .number-badge {
+  background: linear-gradient(#4ac963, #149637);
+}
+:root[data-theme="museum"] .exercise-card:nth-child(3n + 2) .number-badge {
+  background: #7e9276;
+}
+:root[data-theme="museum"] .exercise-card:nth-child(3n) .number-badge {
+  background: linear-gradient(#ff9c68, #e35627);
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"])
+  .exercise-card:nth-child(5n + 1)
+  .number-badge {
+  background: #bfdf8b;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"])
+  .exercise-card:nth-child(5n + 2)
+  .number-badge {
+  background: #9ed4a3;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"])
+  .exercise-card:nth-child(5n + 4)
+  .number-badge {
+  background: #f7b1b7;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"])
+  .exercise-card:nth-child(5n)
+  .number-badge {
+  background: #abcec8;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .number-badge > span {
+  color: #2b4f4c;
+}
+:root[data-theme]:not([data-theme="pixel"]) .exercise-stats {
+  padding-right: 65px;
+  position: relative;
+  font-size: 12px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+.exercise-card-art {
+  display: block;
+  position: absolute;
+  right: 7px;
+  top: 48px;
+  width: 73px;
+  height: 80px;
+  background-image: var(--theme-sprites);
+  background-repeat: no-repeat;
+  background-size: 400% 400%;
+  pointer-events: none;
+}
+:root[data-theme]:not([data-theme="pixel"]) .card-actions .start-button {
+  background: var(--theme-action);
+  color: var(--theme-action-ink);
+  box-shadow: none;
+}
+:root[data-theme]:not([data-theme="pixel"]) .view-result-button {
+  border-color: var(--theme-accent);
+  color: var(--theme-accent);
+}
+:root[data-theme]:not([data-theme="pixel"]) .retry-button {
+  background: var(--theme-button-soft);
+  color: var(--theme-accent);
+  box-shadow: none;
+}
+:root[data-theme]:not([data-theme="pixel"]) .world-footer img {
+  display: none;
+}
+:root[data-theme]:not([data-theme="pixel"]) .world-footer {
+  height: 25px;
+  background: transparent;
+}
+:root[data-theme]:not([data-theme="pixel"]) .paper-world {
+  background: var(--theme-base);
+}
+:root[data-theme]:not([data-theme="pixel"]) .paper-title .exam-number {
+  clip-path: none;
+  border: 0;
+  outline: 0;
+  background: var(--theme-accent);
+  border-radius: 50%;
+  color: white;
+  text-shadow: none;
+  font-family: "Baloo 2", sans-serif;
+}
+:root[data-theme="museum"] .exercise-card-art,
+:root[data-theme="island"] .exercise-card-art {
+  left: 9px;
+  right: auto;
+  top: 62px;
+  width: 80px;
+  height: 80px;
+}
+:root[data-theme="museum"] .exercise-stats,
+:root[data-theme="island"] .exercise-stats {
+  padding-right: 0;
+  margin-left: 80px;
+}
+:root[data-theme="museum"] .card-actions,
+:root[data-theme="island"] .card-actions {
+  margin-left: 70px;
+}
+@media (max-width: 1100px) {
+  :root[data-theme]:not([data-theme="pixel"]) .search-box {
+    width: 190px;
+  }
+  :root[data-theme]:not([data-theme="pixel"]) .brand {
+    max-width: 300px;
+  }
+  :root[data-theme]:not([data-theme="pixel"]) .brand > span:first-of-type {
+    font-size: 28px;
+  }
+  .header-tools {
+    gap: 9px;
+  }
+  .appearance-button,
+  .logout-button {
+    width: 34px;
+    height: 34px;
+  }
+}
+@media (max-width: 760px) {
+  .access-card {
+    padding: 26px 20px;
+  }
+  .access-card h1 {
+    font-size: 30px;
+  }
+  .learning-theme-picker {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .learning-theme-picker img {
+    height: 75px;
+  }
+  .learning-theme-picker span {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .header-tools {
+    gap: 7px;
+  }
+  .appearance-button,
+  .logout-button {
+    width: 32px;
+    height: 36px;
+  }
+  .parent-button {
+    padding-inline: 8px;
+  }
+  .search-box {
+    min-width: 0;
+  }
+  :root[data-theme]:not([data-theme="pixel"]) .site-header {
+    position: relative;
+  }
+  :root[data-theme]:not([data-theme="pixel"]) .header-inner {
+    height: auto;
+    min-height: 105px;
+    align-items: center;
+    padding: 10px 18px 12px;
+    gap: 10px;
+  }
+  :root[data-theme]:not([data-theme="pixel"]) .brand {
+    max-width: none;
+  }
+  :root[data-theme]:not([data-theme="pixel"]) .brand > span:first-of-type {
+    font-size: 24px;
+  }
+  :root[data-theme]:not([data-theme="pixel"]) .header-tools {
+    margin-top: 0;
+    gap: 7px;
+  }
+  :root[data-theme]:not([data-theme="pixel"]) .search-box {
+    width: auto;
+    min-width: 0;
+  }
+  :root[data-theme]:not([data-theme="pixel"]) .adventure-banner {
+    height: 120px;
+    padding: 0 10px 6px;
+  }
+  :root[data-theme]:not([data-theme="pixel"]) .modern-hero {
+    mask-image: none;
+  }
+  .modern-brand-icon {
+    width: 34px;
+    height: 34px;
+  }
+  :root[data-theme]:not([data-theme="pixel"]) .exercise-card {
+    min-height: 190px;
+  }
+  :root[data-theme]:not([data-theme="pixel"]) .exercise-stats {
+    font-size: 12px;
+    padding-right: 62px;
+  }
+  :root[data-theme="museum"] .exercise-stats,
+  :root[data-theme="island"] .exercise-stats {
+    padding-right: 0;
+    margin-left: 72px;
+  }
+  :root[data-theme="museum"] .card-actions,
+  :root[data-theme="island"] .card-actions {
+    margin-left: 0;
+  }
+  .exercise-card-art {
+    width: 66px;
+    height: 72px;
+  }
+  :root[data-theme="museum"] .exercise-card-art,
+  :root[data-theme="island"] .exercise-card-art {
+    width: 72px;
+    height: 72px;
+  }
+  :root[data-theme]:not([data-theme="pixel"]) .exercise-top {
+    gap: 8px;
+  }
+  :root[data-theme]:not([data-theme="pixel"]) .number-badge {
+    width: 36px;
+    height: 36px;
+  }
+  :root[data-theme]:not([data-theme="pixel"]) .number-badge > span {
+    font-size: 22px;
+  }
+}
+
+:root[data-theme]:not([data-theme="pixel"]) .exercise-card {
+  position: relative;
+}
+
+:root[data-theme="museum"] {
+  --theme-hero: url("../media/museum-hero.webp");
+}
+:root[data-theme="park"] {
+  --theme-hero: url("../media/park-hero.webp");
+}
+:root[data-theme="island"] {
+  --theme-hero: url("../media/island-hero.webp");
+}
+:root[data-theme="robot"] {
+  --theme-hero: url("../media/robot-lab-hero.webp");
+}
+:root[data-theme="cosmos"] {
+  --theme-hero: url("../media/cosmos-hero.webp");
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) {
+  --theme-hero: url("../media/bunny-hero.webp");
+}
+:root[data-theme]:not([data-theme="pixel"]) .adventure-banner {
+  overflow: hidden;
+}
+:root[data-theme]:not([data-theme="pixel"]) .adventure-banner::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  background: var(--theme-hero) center / cover no-repeat;
+  opacity: 0.2;
+  filter: blur(6px);
+}
+:root[data-theme]:not([data-theme="pixel"]) .modern-hero {
+  position: relative;
+  width: auto;
+  max-width: 60%;
+  height: 100%;
+  z-index: 1;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 10%,
+    #000 90%,
+    transparent
+  );
+}
+.exercise-card-art {
+  clip-path: inset(3%);
+}
+@media (max-width: 760px) {
+  :root[data-theme]:not([data-theme="pixel"]) .modern-hero {
+    max-width: 100%;
+  }
+}
+
+/* The bunny garden uses a continuous illustrated masthead, never a blurred thumbnail. */
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .pixel-app {
+  background: #fffcf3 url("../media/bunny-garden.webp") center bottom / 100% auto
+    no-repeat;
+  min-height: 100dvh;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .adventure-banner {
+  height: clamp(165px, 11vw, 215px);
+  padding: 0;
+  background: var(--theme-hero) center / cover no-repeat;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .adventure-banner::before,
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .modern-hero {
+  display: none;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .header-inner {
+  height: auto;
+  padding: 16px 28px;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .brand {
+  position: absolute;
+  left: 13%;
+  top: 29px;
+  width: 300px;
+  max-width: 23%;
+  justify-content: center;
+  text-align: center;
+  color: #527d47;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"])
+  .brand
+  > span:first-of-type {
+  font:
+    800 clamp(27px, 2.7vw, 44px)/1.05 "Baloo 2",
+    sans-serif;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .brand-child {
+  display: block;
+  color: #ef8d67;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .modern-brand-icon,
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .brand-spark {
+  display: none;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .header-tools {
+  margin: 0 0 0 auto;
+  gap: 8px;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .search-box {
+  width: clamp(190px, 19vw, 300px);
+  border-color: #93b69b;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .parent-button {
+  border-radius: 26px;
+  color: #284a39;
+  border-color: #9abc9d;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .appearance-button,
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .logout-button {
+  color: #4a7e55;
+  border-color: #c3d6b4;
+  width: 30px;
+  height: 32px;
+}
+.bunny-theme-label {
+  position: absolute;
+  left: 38%;
+  top: 49px;
+  color: #dc8955;
+  font-size: 17px;
+  font-weight: 800;
+  text-align: center;
+  transform: rotate(-5deg);
+}
+.bunny-theme-label strong {
+  display: block;
+  font: 800 25px/1.1 "Baloo 2";
+  color: #ef8d67;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .page-content {
+  padding-inline: 28px;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .study-filters {
+  background: #edf4dbf5;
+  border: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 12px clamp(16px, 6vw, 96px);
+  gap: 32px;
+  border-radius: 24px;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .catalog-filter-bar {
+  padding: 0 24px;
+  background: #fffcf3;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .filter-select select {
+  border-color: #a7c48f;
+  font-weight: 500;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .filter-field label {
+  color: #344a3b;
+  font-weight: 500;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .exercise-section {
+  position: relative;
+  padding-top: 18px;
+}
+.bunny-catalog-title {
+  margin: 0 0 0 14px;
+  color: #335f3b;
+  font: 800 34px/1.15 "Baloo 2";
+  padding-right: 110px;
+}
+.bunny-catalog-subtitle {
+  margin: 0 0 14px 14px;
+  color: #7f8885;
+  font-size: 18px;
+  font-weight: 600;
+}
+.bunny-exercise-count {
+  position: absolute;
+  right: 4px;
+  top: 26px;
+  border-radius: 45% 35%;
+  background: #deedbc;
+  padding: 6px 30px;
+  color: #335f3b;
+  font: 800 25px "Baloo 2";
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .exercise-grid {
+  gap: 14px;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .exercise-card {
+  min-height: 190px;
+  padding: 12px 15px;
+  box-shadow: 0 3px 5px #89763a12;
+  background: linear-gradient(#fff, #fffdf7);
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .exercise-name {
+  padding-right: 0;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .exercise-name h2 {
+  font-size: 14px;
+  color: #1f3046;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .exercise-card-art {
+  width: 106px;
+  height: 108px;
+  right: 8px;
+  top: 13px;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .exercise-top {
+  min-height: 61px;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .exercise-stats {
+  padding-right: 64px;
+  font-size: 12px;
+  color: #586071;
+  margin-top: 7px;
+  margin-bottom: 12px;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .exercise-stats dt {
+  min-width: 0;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .number-badge > span {
+  color: #254c39;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"])
+  .status:not(.done):not(.in-progress) {
+  background: #ff9c2f;
+  color: #fff;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .retry-button {
+  background: linear-gradient(#85c46b, #5ea54f);
+  color: white;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .view-result-button {
+  background: #edf5e5;
+  color: #325e35;
+  border-color: #a5c88d;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .world-footer {
+  height: 80px;
+}
+@media (max-width: 1100px) {
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .exercise-card-art {
+    width: 84px;
+    height: 90px;
+    top: 30px;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .brand {
+    left: 10%;
+    top: 40px;
+  }
+  .bunny-theme-label {
+    left: 39%;
+    top: 75px;
+  }
+}
+@media (max-width: 760px) {
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .site-header {
+    position: relative;
+    background: #f3f7e9;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .header-inner {
+    padding: 10px 14px;
+    min-height: 110px;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .brand {
+    position: static;
+    max-width: none;
+    width: auto;
+    text-align: left;
+    justify-content: flex-start;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"])
+    .brand
+    > span:first-of-type {
+    font-size: 25px;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .brand-child {
+    display: inline;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .header-tools {
+    width: 100%;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .search-box {
+    width: auto;
+    flex: 1;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .adventure-banner {
+    height: 112px;
+    background-size: auto 112px;
+  }
+  .bunny-theme-label {
+    display: none;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .catalog-filter-bar {
+    padding: 0 10px;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .study-filters {
+    padding: 10px;
+    gap: 10px;
+    border-radius: 15px;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"])
+    .page-content:not(.catalog-filter-bar) {
+    padding-inline: 12px;
+  }
+  .bunny-catalog-title {
+    font-size: 26px;
+    margin-left: 0;
+    padding-right: 60px;
+  }
+  .bunny-catalog-subtitle {
+    margin-left: 0;
+    font-size: 15px;
+  }
+  .bunny-exercise-count {
+    font-size: 18px;
+    padding: 4px 12px;
+    right: 0;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .exercise-card {
+    padding: 12px;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .exercise-card-art {
+    width: 85px;
+    height: 90px;
+    top: 29px;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .exercise-name h2 {
+    font-size: 13px;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .exercise-stats {
+    padding-right: 65px;
+  }
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .adventure-banner {
+  background-size: 100% 100%;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .brand {
+  left: 16%;
+  top: 52px;
+  width: 24%;
+  max-width: 24%;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"])
+  .brand
+  > span:first-of-type {
+  font-size: clamp(26px, 2.4vw, 39px);
+}
+@media (max-width: 760px) {
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .brand {
+    width: auto;
+    max-width: none;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"])
+    .brand
+    > span:first-of-type {
+    font-size: 25px;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .adventure-banner {
+    background-size: auto 155px;
+    background-position: center bottom;
+  }
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .exercise-stats {
+  font-size: 13px;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .exercise-name h2 {
+  font-size: 15px;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"])
+  .exercise-card:nth-child(6)
+  .number-badge,
+:root[data-theme="bunny"]:not([data-theme="pixel"])
+  .exercise-card:nth-child(14)
+  .number-badge {
+  background: #a3d6fa;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"])
+  .exercise-card:nth-child(9)
+  .number-badge {
+  background: #d5bcf3;
+}
+@media (max-width: 760px) {
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .exercise-stats {
+    font-size: 13px;
+  }
+}
+
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .adventure-banner {
+  background-size: 100% auto;
+  background-position: center;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"]) .brand {
+  left: 25%;
+  top: 45px;
+  width: 18%;
+  max-width: 18%;
+}
+:root[data-theme="bunny"]:not([data-theme="pixel"])
+  .brand
+  > span:first-of-type {
+  font-size: clamp(25px, 2.3vw, 36px);
+}
+.bunny-theme-label {
+  left: 44%;
+  top: 25px;
+}
+@media (max-width: 760px) {
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .brand {
+    width: auto;
+    max-width: none;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"])
+    .brand
+    > span:first-of-type {
+    font-size: 25px;
+  }
+  :root[data-theme="bunny"]:not([data-theme="pixel"]) .adventure-banner {
+    background-size: auto 330px;
+  }
+}
+
+.access-card .remember-feedback {
+  margin: -4px 0 2px;
+  color: #3c6c65;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Shared illustrated-world components; each theme supplies its own palette and artwork. */
+:root:is(
+  [data-theme="crystal"],
+  [data-theme="cloud"],
+  [data-theme="forest"],
+  [data-theme="magic"],
+  [data-theme="treasure"],
+  [data-theme="cars"]
+) {
+  --theme-base: #eef5ff;
+  --theme-accent: #164fce;
+  --theme-action: linear-gradient(
+    180deg,
+    #b8e9ff 0%,
+    #5599ff 18%,
+    #6154ff 55%,
+    #2967ff 87%,
+    #8ee7ff 100%
+  );
+  --theme-action-ink: white;
+  --theme-sprites: url("../media/crystal-sprites.webp");
+  --theme-hero: url("../media/crystal-hero.webp");
+  --theme-edge: #c4d7f6;
+  --theme-button-soft: #d5f9f0;
+  --theme-ordinal: #609aff;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .pixel-app {
+  min-height: 100dvh;
+  background: #eef5ff url("../media/crystal-world.webp") center top / cover fixed
+    no-repeat;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .catalog-masthead {
+  background: transparent;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .adventure-banner {
+  height: clamp(165px, 13vw, 210px);
+  padding: 0;
+  background: var(--theme-hero) center top / cover no-repeat;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .adventure-banner::before,
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .modern-hero {
+  display: none;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .header-inner {
+  height: auto;
+  padding: 18px 32px;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .brand {
+  width: 340px;
+  max-width: 30%;
+  color: #0864d7;
+  text-shadow:
+    0 2px white,
+    2px 0 white,
+    -2px 0 white,
+    0 -2px white;
+  gap: 6px;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .brand
+  > span:first-of-type {
+  font-size: 31px;
+  line-height: 1.05;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .brand-child {
+  color: #9c43cc;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .crystal-brand-icon {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  image-rendering: auto;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .header-tools {
+  margin-top: 3px;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .search-box,
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .parent-button,
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .appearance-button,
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .logout-button {
+  background: #ffffffdd;
+  border: 2px solid #e1eeff;
+  box-shadow:
+    inset 0 0 0 1px white,
+    0 3px 8px #6786cc3d;
+  color: #1744b3;
+  border-radius: 22px;
+}
+.crystal-theme-label {
+  position: absolute;
+  top: 35px;
+  left: 46%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 9px 25px 13px;
+  color: white;
+  background: linear-gradient(
+    135deg,
+    #b3eaff,
+    #646ef2 35%,
+    #2456c9 65%,
+    #83d9ff
+  );
+  border: 3px solid #e3eeff;
+  outline: 1px solid #86a7f6;
+  clip-path: polygon(8% 0, 92% 0, 100% 50%, 92% 100%, 8% 100%, 0 50%);
+  filter: drop-shadow(0 3px 3px #5265b799);
+  text-shadow: 0 2px 2px #2445ab;
+}
+.crystal-theme-label span {
+  font-size: 12px;
+  font-weight: 700;
+}
+.crystal-theme-label strong {
+  font-size: 22px;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .study-filters {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: -15px 0 12px;
+  gap: 12px;
+  box-shadow: none;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .filter-field {
+  position: relative;
+  background: #ffffffd9;
+  border: 1px solid #bad3f4;
+  border-radius: 16px;
+  padding: 11px 14px 11px 74px;
+  box-shadow:
+    inset 0 0 0 3px #fff,
+    inset 0 0 0 5px #e4edfc,
+    0 4px 8px #5577c33d;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .filter-field
+  label {
+  font-size: 12px;
+  color: #223477;
+  font-weight: 500;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .filter-select
+  select {
+  color: #091e63;
+  background: linear-gradient(#fff, #f2f5ff);
+  border: 1px solid #b7c8ed;
+  height: 36px;
+  padding: 4px 25px 4px 10px;
+  font-size: 15px;
+}
+.crystal-filter-icon {
+  position: absolute;
+  left: 18px;
+  top: 20px;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  color: #5940df;
+  background: linear-gradient(145deg, #f0f6ff, #c5ceff);
+  box-shadow:
+    inset 2px 2px 3px white,
+    0 2px 3px #8091d82e;
+  filter: drop-shadow(0 2px 1px #c5bffc);
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .filter-field:nth-child(2)
+  .crystal-filter-icon {
+  color: #0088ea;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .filter-field:nth-child(3)
+  .crystal-filter-icon {
+  color: #e8a322;
+  background: linear-gradient(145deg, #e0ffe8, #acf0db);
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .exercise-card {
+  background: linear-gradient(145deg, #fffffff5, #f4f8ffef 65%, #e8ebffef);
+  border: 1px solid #b7cef1;
+  border-radius: 17px;
+  box-shadow:
+    inset 0 0 0 3px #fff,
+    inset 0 0 0 5px #e3edfc,
+    0 4px 9px #6e83c53b;
+  padding: 14px 15px 12px;
+  min-height: 195px;
+  color: #11195c;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .exercise-card
+  .number-badge {
+  width: 43px;
+  height: 48px;
+  clip-path: polygon(50% 0, 94% 22%, 94% 76%, 50% 100%, 6% 76%, 6% 22%);
+  border-radius: 0;
+  background: conic-gradient(
+    from 30deg,
+    #bdf6ff,
+    #5e9aff,
+    #8fa4ff,
+    #5e69ed,
+    #d1dfff,
+    #76ceff,
+    #bdf6ff
+  );
+  box-shadow: inset 0 0 0 3px #dff7ff;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .exercise-card
+  .number-badge
+  > span {
+  font-size: 29px;
+  color: white;
+  text-shadow: 0 2px 2px #284cbc;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .exercise-name
+  h2 {
+  font-weight: 800;
+  color: #10195b;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .status {
+  background: #fff1d9;
+  color: #d8660b;
+  border-radius: 22px;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .status.done {
+  background: #d4f7e4;
+  color: #08783e;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .exercise-card-art {
+  left: 15px;
+  right: auto;
+  top: 65px;
+  width: 78px;
+  height: 78px;
+  clip-path: inset(0);
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .exercise-stats {
+  margin-left: 82px;
+  padding-right: 0;
+  font-size: 12px;
+  margin-top: 14px;
+  line-height: 1.6;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .card-actions
+  > button {
+  border: 1px solid #89bcf5;
+  border-radius: 12px;
+  box-shadow:
+    inset 0 0 0 2px #ffffffa8,
+    0 2px 4px #647bd34a;
+  font-weight: 750;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .card-actions
+  .start-button {
+  background: var(--theme-action);
+  text-shadow: 0 1px 2px #1539c8;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .view-result-button {
+  background: linear-gradient(white, #d0eefe);
+  color: #1341a8;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .retry-button {
+  background: linear-gradient(#f4fff6, #bbf4e8);
+  color: #104b88;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .paper-world {
+  background: #f0f5ff url("../media/crystal-world.webp") center top / cover fixed;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .paper-brand {
+  color: #195bc8;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .paper-brand
+  > img {
+  content: url("../media/crystal-book.webp");
+  image-rendering: auto;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .paper-toolbar {
+  background: #f3f9fff5;
+  border-color: #b9d5f8;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .paper-submit {
+  background: var(--theme-action);
+  color: white;
+  border: 1px solid #91baff;
+  box-shadow: inset 0 0 0 2px #ffffff88;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .topic-example-intro {
+  background: #fffefcf7;
+  border-color: #c5baf4;
+}
+@media (max-width: 1100px) {
+  :root:is(
+      [data-theme="crystal"],
+      [data-theme="cloud"],
+      [data-theme="forest"],
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"]
+    )
+    .crystal-theme-label {
+    left: 40%;
+  }
+  :root:is(
+      [data-theme="crystal"],
+      [data-theme="cloud"],
+      [data-theme="forest"],
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"]
+    )
+    .filter-field {
+    padding-left: 54px;
+  }
+  :root:is(
+      [data-theme="crystal"],
+      [data-theme="cloud"],
+      [data-theme="forest"],
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"]
+    )
+    .crystal-filter-icon {
+    left: 10px;
+    width: 34px;
+    height: 38px;
+  }
+}
+@media (max-width: 760px) {
+  :root:is(
+      [data-theme="crystal"],
+      [data-theme="cloud"],
+      [data-theme="forest"],
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"]
+    ):not([data-theme="pixel"])
+    .site-header {
+    position: relative;
+  }
+  :root:is(
+      [data-theme="crystal"],
+      [data-theme="cloud"],
+      [data-theme="forest"],
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"]
+    ):not([data-theme="pixel"])
+    .header-inner {
+    padding: 12px 16px;
+    background: #eef5ffcc;
+  }
+  :root:is(
+      [data-theme="crystal"],
+      [data-theme="cloud"],
+      [data-theme="forest"],
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"]
+    ):not([data-theme="pixel"])
+    .brand {
+    max-width: none;
+    width: auto;
+  }
+  :root:is(
+      [data-theme="crystal"],
+      [data-theme="cloud"],
+      [data-theme="forest"],
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"]
+    ):not([data-theme="pixel"])
+    .brand
+    > span:first-of-type {
+    font-size: 24px;
+  }
+  :root:is(
+      [data-theme="crystal"],
+      [data-theme="cloud"],
+      [data-theme="forest"],
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"]
+    )
+    .crystal-brand-icon {
+    width: 52px;
+    height: 52px;
+  }
+  :root:is(
+      [data-theme="crystal"],
+      [data-theme="cloud"],
+      [data-theme="forest"],
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"]
+    ):not([data-theme="pixel"])
+    .adventure-banner {
+    height: 130px;
+    background-size: auto 160px;
+    background-position: center;
+  }
+  .crystal-theme-label {
+    top: auto;
+    bottom: 18px;
+    left: auto !important;
+    right: 16px;
+    padding: 5px 20px;
+  }
+  .crystal-theme-label strong {
+    font-size: 17px;
+  }
+  :root:is(
+      [data-theme="crystal"],
+      [data-theme="cloud"],
+      [data-theme="forest"],
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"]
+    ):not([data-theme="pixel"])
+    .study-filters {
+    margin: -8px 0 8px;
+    gap: 10px;
+  }
+  :root:is(
+      [data-theme="crystal"],
+      [data-theme="cloud"],
+      [data-theme="forest"],
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"]
+    )
+    .filter-field {
+    padding: 10px;
+  }
+  :root:is(
+      [data-theme="crystal"],
+      [data-theme="cloud"],
+      [data-theme="forest"],
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"]
+    )
+    .crystal-filter-icon {
+    display: none;
+  }
+  :root:is(
+      [data-theme="crystal"],
+      [data-theme="cloud"],
+      [data-theme="forest"],
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"]
+    )
+    .exercise-card-art {
+    width: 80px;
+    height: 80px;
+    top: 60px;
+  }
+  :root:is(
+      [data-theme="crystal"],
+      [data-theme="cloud"],
+      [data-theme="forest"],
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"]
+    ):not([data-theme="pixel"])
+    .exercise-stats {
+    margin-left: 90px;
+    font-size: 13px;
+  }
+  :root:is(
+      [data-theme="crystal"],
+      [data-theme="cloud"],
+      [data-theme="forest"],
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"]
+    ):not([data-theme="pixel"])
+    .pixel-app {
+    background-size: auto 100dvh;
+  }
+}
+
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .brand-child {
+  display: block;
+}
+:root:is(
+    [data-theme="crystal"],
+    [data-theme="cloud"],
+    [data-theme="forest"],
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  )
+  .crystal-theme-label::after {
+  content: "";
+  position: absolute;
+  inset: 4px 8px;
+  border-top: 1px solid #ffffffbd;
+  border-bottom: 1px solid #bad9ff;
+  pointer-events: none;
+}
+
+/* City Above the Clouds: sunrise clouds, golden medallions and blue enamel. */
+:root[data-theme="cloud"] {
+  --theme-base: #fff5ee;
+  --theme-accent: #1269c6;
+  --theme-action: linear-gradient(
+    180deg,
+    #89dcff 0%,
+    #209bff 20%,
+    #0776ee 65%,
+    #095bd8 90%,
+    #66b5ff 100%
+  );
+  --theme-action-ink: white;
+  --theme-sprites: url("../media/cloud-sprites.webp");
+  --theme-hero: url("../media/cloud-hero.webp");
+  --theme-edge: #e8cc9f;
+  --theme-button-soft: #c4f5e2;
+  --theme-ordinal: #efa521;
+}
+:root[data-theme="cloud"]:not([data-theme="pixel"]) .pixel-app {
+  background: #fff4ec url("../media/cloud-world.webp") center top / cover fixed
+    no-repeat;
+}
+:root[data-theme="cloud"]:not([data-theme="pixel"]) .brand {
+  margin-top: 47px;
+  background: #fffdf4ed;
+  border-radius: 50px;
+  padding: 8px 15px 8px 4px;
+  width: 345px;
+  max-width: 29%;
+  color: #0552b0;
+  filter: drop-shadow(0 3px 3px #d2ac6e55);
+}
+:root[data-theme="cloud"]:not([data-theme="pixel"])
+  .brand
+  > span:first-of-type {
+  font-size: 28px;
+}
+:root[data-theme="cloud"] .brand-child {
+  color: #f2911a;
+}
+:root[data-theme="cloud"]:not([data-theme="pixel"]) .header-tools {
+  margin-top: 81px;
+}
+:root[data-theme="cloud"] .search-box,
+:root[data-theme="cloud"] .parent-button,
+:root[data-theme="cloud"] .appearance-button,
+:root[data-theme="cloud"] .logout-button {
+  background: #fffcf8f2;
+  border-color: #fff7ed;
+  box-shadow:
+    inset 0 0 0 1px #e9d7c5,
+    0 3px 7px #b786573b;
+}
+:root[data-theme="cloud"] .cloud-theme-label {
+  top: 101px;
+  left: 43%;
+  clip-path: none;
+  border-radius: 40px;
+  padding: 6px 23px 10px;
+  border-color: #fff7d8;
+  outline: 1px solid #e7b454;
+  background: linear-gradient(#fff8dc, #ffde9b 75%, #f5be62);
+  color: #904308;
+  text-shadow: 0 1px white;
+  box-shadow: inset 0 0 0 2px #e8a54e;
+  filter: drop-shadow(0 3px 2px #c3976866);
+}
+:root[data-theme="cloud"] .cloud-theme-label strong {
+  font-size: 18px;
+}
+:root[data-theme="cloud"] .cloud-theme-label::after {
+  border-color: #fff2c7;
+  border-radius: 24px;
+}
+:root[data-theme="cloud"] .filter-field {
+  background: #fffdf8ed;
+  border-color: #e2c392;
+  box-shadow:
+    inset 0 0 0 3px white,
+    inset 0 0 0 5px #f3e5cf,
+    0 4px 8px #ae82603b;
+  border-radius: 22px;
+}
+:root[data-theme="cloud"] .crystal-filter-icon,
+:root[data-theme="cloud"] .filter-field:nth-child(2) .crystal-filter-icon,
+:root[data-theme="cloud"] .filter-field:nth-child(3) .crystal-filter-icon {
+  color: #087bd4;
+  background: linear-gradient(145deg, #fff8ef, #f5e3cd);
+  box-shadow:
+    inset 2px 2px 3px white,
+    0 2px 3px #d6b58c33;
+  border-radius: 50%;
+  filter: drop-shadow(0 2px 1px #f1d8b5);
+}
+:root[data-theme="cloud"]:not([data-theme="pixel"]) .filter-select select {
+  border-color: #d8d1d6;
+  background: linear-gradient(#fff, #f2eef2);
+}
+:root[data-theme="cloud"]:not([data-theme="pixel"]) .exercise-card {
+  background: linear-gradient(145deg, #fffffff5, #faf7f4f2 70%, #fff5e8f2);
+  border-color: #e0bb7c;
+  border-radius: 22px;
+  box-shadow:
+    inset 0 0 0 3px white,
+    inset 0 0 0 5px #f8e9cb,
+    0 4px 7px #ad805e55;
+}
+:root[data-theme="cloud"]:not([data-theme="pixel"])
+  .exercise-card
+  .number-badge {
+  width: 45px;
+  height: 45px;
+  clip-path: none;
+  border-radius: 50%;
+  border: 2px solid #ffde76;
+  background: radial-gradient(
+    circle at 35% 25%,
+    #fff0b9,
+    #ffbe43 30%,
+    #e99b17 60%,
+    #c97c14 80%,
+    #ffd363 90%
+  );
+  box-shadow:
+    inset 0 0 0 2px #fff3b3,
+    inset 0 0 0 4px #eeb948,
+    0 2px 2px #b8793044;
+}
+:root[data-theme="cloud"]:not([data-theme="pixel"])
+  .exercise-card
+  .number-badge
+  > span {
+  color: #fffdf2;
+  text-shadow: 0 2px 1px #a25a13;
+  font-size: 28px;
+}
+:root[data-theme="cloud"] .status {
+  border-radius: 8px;
+  background: linear-gradient(#ffb951, #ff8b15);
+  color: white;
+  box-shadow: inset 0 0 0 1px #ffe7bf;
+}
+:root[data-theme="cloud"] .status.done {
+  color: white;
+  background: linear-gradient(#73cc63, #26a54d);
+  box-shadow: inset 0 0 0 1px #cbf0c7;
+}
+:root[data-theme="cloud"]:not([data-theme="pixel"]) .card-actions > button {
+  border-radius: 18px;
+  border-color: #9fc6f5;
+}
+:root[data-theme="cloud"]:not([data-theme="pixel"])
+  .card-actions
+  .start-button {
+  text-shadow: 0 1px 2px #1051ad;
+}
+:root[data-theme="cloud"]:not([data-theme="pixel"]) .view-result-button {
+  background: linear-gradient(white, #b7dcff);
+  color: #0756b7;
+}
+:root[data-theme="cloud"]:not([data-theme="pixel"]) .retry-button {
+  background: linear-gradient(#9befce, #17b88b 45%, #079568);
+  color: white;
+  border-color: #8bdec5;
+}
+:root[data-theme="cloud"]:not([data-theme="pixel"]) .paper-world {
+  background: #fff6ec url("../media/cloud-world.webp") center top / cover fixed;
+}
+:root[data-theme="cloud"] .paper-brand {
+  color: #0866b3;
+}
+:root[data-theme="cloud"] .paper-brand > img {
+  content: url("../media/cloud-book.webp");
+}
+:root[data-theme="cloud"] .paper-toolbar {
+  background: #fffaf3f5;
+  border-color: #ebd6b6;
+}
+:root[data-theme="cloud"] .topic-example-intro {
+  border-color: #e9ca92;
+  background: #fffdf5f7;
+}
+@media (max-width: 1100px) and (min-width: 761px) {
+  :root[data-theme="cloud"]:not([data-theme="pixel"]) .brand {
+    max-width: 30%;
+    width: 285px;
+  }
+  :root[data-theme="cloud"]:not([data-theme="pixel"])
+    .brand
+    > span:first-of-type {
+    font-size: 23px;
+  }
+  :root[data-theme="cloud"] .cloud-theme-label {
+    top: 22px;
+    left: 44%;
+  }
+}
+@media (max-width: 760px) {
+  :root[data-theme="cloud"]:not([data-theme="pixel"]) .header-inner {
+    background: #fff8edcc;
+  }
+  :root[data-theme="cloud"]:not([data-theme="pixel"]) .brand {
+    margin-top: 0;
+    width: auto;
+    max-width: none;
+    padding: 2px 12px 2px 2px;
+  }
+  :root[data-theme="cloud"]:not([data-theme="pixel"])
+    .brand
+    > span:first-of-type {
+    font-size: 23px;
+  }
+  :root[data-theme="cloud"]:not([data-theme="pixel"]) .header-tools {
+    margin-top: 0;
+  }
+  :root[data-theme="cloud"] .cloud-theme-label {
+    top: auto;
+    bottom: 15px;
+    left: auto !important;
+    right: 12px;
+    padding: 5px 14px 8px;
+  }
+  :root[data-theme="cloud"] .cloud-theme-label strong {
+    font-size: 14px;
+  }
+  :root[data-theme="cloud"]:not([data-theme="pixel"]) .pixel-app {
+    background-size: auto 100dvh;
+  }
+}
+
+/* Firefly Forest: natural wooden signs, amber lantern light and fresh foliage. */
+:root[data-theme="forest"] {
+  --theme-base: #f4f8eb;
+  --theme-accent: #285e48;
+  --theme-action: linear-gradient(#ffe885, #ffc344 38%, #ffb72c 72%, #f3a51f);
+  --theme-action-ink: #392506;
+  --theme-sprites: url("../media/forest-sprites.webp");
+  --theme-hero: url("../media/forest-hero.webp");
+  --theme-edge: #dfe8d8;
+  --theme-button-soft: #f4e6ca;
+  --theme-ordinal: #c99c57;
+}
+:root[data-theme="forest"]:not([data-theme="pixel"]) .pixel-app {
+  background: #f4f8eb url("../media/forest-world.webp") center top / cover fixed
+    no-repeat;
+}
+:root[data-theme="forest"]:not([data-theme="pixel"]) .adventure-banner {
+  height: 180px;
+}
+:root[data-theme="forest"]:not([data-theme="pixel"]) .brand {
+  margin-left: 240px;
+  margin-top: -8px;
+  width: 310px;
+  max-width: 27%;
+  min-height: 127px;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 24px 13px;
+  background: url("../media/forest-logo-sign.webp") center / 100% 100% no-repeat;
+  color: #fff2c6;
+  text-shadow: 0 2px 2px #703e18;
+  filter: drop-shadow(0 3px 2px #102f2966);
+}
+:root[data-theme="forest"]:not([data-theme="pixel"])
+  .brand
+  > span:first-of-type {
+  font-size: 30px;
+}
+:root[data-theme="forest"] .brand-child {
+  color: #fff0c2;
+}
+:root[data-theme="forest"] .crystal-brand-icon,
+:root[data-theme="forest"] .brand-spark {
+  display: none;
+}
+:root[data-theme="forest"]:not([data-theme="pixel"]) .header-tools {
+  margin-top: 60px;
+}
+:root[data-theme="forest"] .search-box,
+:root[data-theme="forest"] .parent-button,
+:root[data-theme="forest"] .appearance-button,
+:root[data-theme="forest"] .logout-button {
+  border: 1px solid #e6efdf;
+  background: #fffffff0;
+  color: #174a47;
+  box-shadow: 0 3px 7px #112b2526;
+}
+:root[data-theme="forest"] .forest-theme-label {
+  top: 27px;
+  left: 35%;
+  min-width: 220px;
+  min-height: 93px;
+  justify-content: center;
+  padding: 23px 23px 13px;
+  background: url("../media/forest-theme-sign.webp") center / 100% 100% no-repeat;
+  border: 0;
+  outline: 0;
+  border-radius: 0;
+  clip-path: none;
+  color: #fff7ce;
+  text-shadow: 0 2px 2px #17361b;
+  filter: drop-shadow(0 2px 3px #122b2166);
+}
+:root[data-theme="forest"] .forest-theme-label strong {
+  font-size: 21px;
+}
+:root[data-theme="forest"] .forest-theme-label::after {
+  display: none;
+}
+:root[data-theme="forest"]:not([data-theme="pixel"]) .study-filters {
+  background: #f7faeff0;
+  padding: 12px;
+  margin-top: -3px;
+  border-radius: 22px;
+  box-shadow: 0 3px 10px #263f2226;
+  gap: 18px;
+}
+:root[data-theme="forest"] .filter-field {
+  background: #ffffffe8;
+  border: 1px solid #e4eadf;
+  border-radius: 15px;
+  box-shadow: 0 3px 8px #5c785d19;
+}
+:root[data-theme="forest"] .filter-field label {
+  color: #36536a;
+}
+:root[data-theme="forest"] .crystal-filter-icon,
+:root[data-theme="forest"] .filter-field:nth-child(2) .crystal-filter-icon,
+:root[data-theme="forest"] .filter-field:nth-child(3) .crystal-filter-icon {
+  color: #228a65;
+  background: linear-gradient(145deg, #effaf2, #c5e8d6);
+  box-shadow: inset 1px 1px 3px white;
+  filter: drop-shadow(0 2px 1px #c2dcc7);
+  border-radius: 50%;
+}
+:root[data-theme="forest"] .filter-field:nth-child(4) .crystal-filter-icon {
+  color: #7359da;
+  background: #eee8fc;
+}
+:root[data-theme="forest"]:not([data-theme="pixel"]) .filter-select select {
+  border-color: #dce5df;
+  background: #fcfdfb;
+}
+:root[data-theme="forest"]:not([data-theme="pixel"]) .exercise-card {
+  min-height: 185px;
+  background: linear-gradient(#ffffffed, #fbfdf6f2);
+  border: 1px solid #fff;
+  border-radius: 20px;
+  box-shadow: 0 5px 12px #3e703323;
+  padding: 13px 15px 12px;
+}
+:root[data-theme="forest"]:not([data-theme="pixel"])
+  .exercise-card
+  .number-badge {
+  width: 43px;
+  height: 46px;
+  border: 1px solid #dab075;
+  border-radius: 45%;
+  clip-path: polygon(
+    25% 0,
+    75% 0,
+    94% 18%,
+    100% 50%,
+    90% 82%,
+    68% 100%,
+    30% 100%,
+    8% 80%,
+    0 45%,
+    8% 18%
+  );
+  background: #c6964e url("../media/forest-logo-sign.webp") center / 180px 80px;
+  box-shadow:
+    inset 2px 2px 2px #ffe5a6,
+    0 2px 2px #89613744;
+}
+:root[data-theme="forest"]:not([data-theme="pixel"])
+  .exercise-card
+  .number-badge
+  > span {
+  font-size: 30px;
+  color: #fff0cb;
+  text-shadow: 0 2px 2px #8c541a;
+}
+:root[data-theme="forest"] .exercise-card-art {
+  right: 7px;
+  left: auto;
+  top: 53px;
+  width: 83px;
+  height: 83px;
+}
+:root[data-theme="forest"]:not([data-theme="pixel"]) .exercise-stats {
+  margin-left: 0;
+  padding-right: 72px;
+  margin-top: 13px;
+  margin-bottom: 14px;
+  font-size: 12px;
+}
+:root[data-theme="forest"] .status {
+  color: #e77a19;
+  background: #fff1dd;
+  box-shadow: none;
+}
+:root[data-theme="forest"] .status.done {
+  color: #1d7f30;
+  background: #e2f6dc;
+}
+:root[data-theme="forest"]:not([data-theme="pixel"]) .card-actions > button {
+  border-radius: 16px;
+  border: 1px solid #ffdf85;
+  box-shadow:
+    inset 0 2px 2px #ffffffc4,
+    0 2px 4px #a68e4e22;
+}
+:root[data-theme="forest"]:not([data-theme="pixel"])
+  .card-actions
+  .start-button {
+  color: #392608;
+  text-shadow: none;
+}
+:root[data-theme="forest"]:not([data-theme="pixel"]) .view-result-button {
+  background: linear-gradient(#e4f6e9, #b8dfcb);
+  color: #14513d;
+  border-color: #b5d9c3;
+}
+:root[data-theme="forest"]:not([data-theme="pixel"]) .retry-button {
+  background: linear-gradient(#fff8e6, #e9d5ad);
+  color: #62431d;
+  border-color: #f0dfbd;
+}
+:root[data-theme="forest"]:not([data-theme="pixel"]) .paper-world {
+  background: #f4f8eb url("../media/forest-world.webp") center top / cover fixed;
+}
+:root[data-theme="forest"] .paper-brand {
+  color: #2b664e;
+}
+:root[data-theme="forest"] .paper-brand > img {
+  content: url("../media/forest-book.webp");
+}
+:root[data-theme="forest"] .paper-toolbar {
+  background: #f6fbf1f5;
+  border-color: #d6e3ce;
+}
+:root[data-theme="forest"] .paper-submit {
+  color: #392506;
+  border-color: #ebd38f;
+}
+:root[data-theme="forest"] .topic-example-intro {
+  background: #fffef5f5;
+  border-color: #cfdbb8;
+}
+@media (max-width: 1100px) and (min-width: 761px) {
+  :root[data-theme="forest"]:not([data-theme="pixel"]) .brand {
+    margin-left: 70px;
+    width: 250px;
+    max-width: 28%;
+    min-height: 110px;
+    padding: 20px;
+  }
+  :root[data-theme="forest"]:not([data-theme="pixel"])
+    .brand
+    > span:first-of-type {
+    font-size: 24px;
+  }
+  :root[data-theme="forest"] .forest-theme-label {
+    left: 37%;
+    top: 20px;
+    min-width: 175px;
+    min-height: 83px;
+  }
+  :root[data-theme="forest"] .forest-theme-label strong {
+    font-size: 17px;
+  }
+}
+@media (max-width: 760px) {
+  :root[data-theme="forest"]:not([data-theme="pixel"]) .header-inner {
+    background: #123f2bea;
+  }
+  :root[data-theme="forest"]:not([data-theme="pixel"]) .brand {
+    margin: 0;
+    width: 250px;
+    max-width: 85%;
+    min-height: 86px;
+    padding: 15px 25px 10px;
+  }
+  :root[data-theme="forest"]:not([data-theme="pixel"])
+    .brand
+    > span:first-of-type {
+    font-size: 23px;
+  }
+  :root[data-theme="forest"]:not([data-theme="pixel"]) .header-tools {
+    margin-top: 0;
+  }
+  :root[data-theme="forest"]:not([data-theme="pixel"]) .adventure-banner {
+    height: 125px;
+    background-size: auto 145px;
+    background-position: center;
+  }
+  :root[data-theme="forest"] .forest-theme-label {
+    top: auto;
+    bottom: 10px;
+    left: auto !important;
+    right: 12px;
+    min-width: 180px;
+    min-height: 80px;
+    padding: 20px 18px 12px;
+  }
+  :root[data-theme="forest"] .forest-theme-label strong {
+    font-size: 17px;
+  }
+  :root[data-theme="forest"]:not([data-theme="pixel"]) .study-filters {
+    padding: 10px;
+    gap: 10px;
+    margin-top: -3px;
+  }
+  :root[data-theme="forest"] .exercise-card-art {
+    width: 88px;
+    height: 88px;
+  }
+  :root[data-theme="forest"]:not([data-theme="pixel"]) .exercise-stats {
+    padding-right: 90px;
+    margin-left: 0;
+    font-size: 13px;
+  }
+  :root[data-theme="forest"]:not([data-theme="pixel"]) .pixel-app {
+    background-size: auto 100dvh;
+  }
+}
+
+/* Owner-supplied museum, magic, treasure and motoring interfaces. */
+:root[data-theme="magic"] {
+  --theme-base: #f4f0ff;
+  --theme-accent: #5e2bc4;
+  --theme-action: linear-gradient(#9258ef, #7040dc);
+  --theme-action-ink: white;
+  --theme-button-soft: #eae0ff;
+  --theme-edge: #ded0fa;
+  --theme-sprites: url("../media/magic-sprites.webp");
+}
+:root[data-theme="treasure"] {
+  --theme-base: #fff5de;
+  --theme-accent: #00788d;
+  --theme-action: linear-gradient(#ff9628, #ff7919);
+  --theme-action-ink: white;
+  --theme-button-soft: #d8eef5;
+  --theme-edge: #eedfc1;
+  --theme-sprites: url("../media/treasure-sprites.webp");
+}
+:root[data-theme="cars"] {
+  --theme-base: #eaf8ff;
+  --theme-accent: #0065dc;
+  --theme-action: linear-gradient(#ffa214, #ff8700);
+  --theme-action-ink: white;
+  --theme-button-soft: #fff5e7;
+  --theme-edge: #bde6ff;
+  --theme-sprites: url("../media/cars-sprites.webp");
+}
+:root[data-theme="museum"] {
+  --theme-sprites: url("../media/museum-sprites.webp");
+}
+
+:root[data-theme="magic"]:not([data-theme="pixel"]) .pixel-app,
+:root[data-theme="magic"]:not([data-theme="pixel"]) .paper-world {
+  background: var(--theme-base) url("../media/magic-world.webp") center top /
+    cover fixed;
+}
+:root[data-theme="magic"]:not([data-theme="pixel"]) .adventure-banner {
+  background: url("../media/magic-hero.webp") center / cover;
+  height: 190px;
+}
+:root[data-theme="magic"] .paper-brand img {
+  content: url("../media/magic-book.webp");
+}
+
+:root[data-theme="treasure"]:not([data-theme="pixel"]) .pixel-app,
+:root[data-theme="treasure"]:not([data-theme="pixel"]) .paper-world {
+  background: var(--theme-base) url("../media/treasure-world.webp") center top /
+    cover fixed;
+}
+:root[data-theme="treasure"]:not([data-theme="pixel"]) .adventure-banner {
+  background: url("../media/treasure-hero.webp") center / cover;
+  height: 190px;
+}
+:root[data-theme="treasure"] .paper-brand img {
+  content: url("../media/treasure-book.webp");
+}
+
+:root[data-theme="cars"]:not([data-theme="pixel"]) .pixel-app,
+:root[data-theme="cars"]:not([data-theme="pixel"]) .paper-world {
+  background: var(--theme-base) url("../media/cars-world.webp") center top /
+    cover fixed;
+}
+:root[data-theme="cars"]:not([data-theme="pixel"]) .adventure-banner {
+  background: url("../media/cars-hero.webp") center / cover;
+  height: 190px;
+}
+:root[data-theme="cars"] .paper-brand img {
+  content: url("../media/cars-book.webp");
+}
+
+:root[data-theme="museum"]:not([data-theme="pixel"]) .pixel-app,
+:root[data-theme="museum"]:not([data-theme="pixel"]) .paper-world {
+  background: var(--theme-base) url("../media/museum-world.webp") center top /
+    cover fixed;
+}
+:root[data-theme="museum"]:not([data-theme="pixel"]) .adventure-banner {
+  background: url("../media/museum-hero.webp") center / cover;
+  height: 190px;
+}
+:root[data-theme="museum"] .paper-brand img {
+  content: url("../media/museum-book.webp");
+}
+
+:root:is(
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .study-filters {
+  background: #ffffffeb;
+  border: 1px solid var(--theme-edge);
+  border-radius: 20px;
+  padding: 18px 24px;
+  gap: 24px;
+  margin: 0 0 18px;
+  box-shadow: 0 5px 15px #283f6810;
+}
+:root:is(
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .filter-field {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+:root:is(
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .exercise-card {
+  background: #ffffffed;
+  border: 1px solid var(--theme-edge);
+  border-radius: 16px;
+  min-height: 185px;
+  padding: 13px 14px 12px;
+  box-shadow: 0 4px 12px #293c6310;
+}
+:root:is(
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .exercise-card
+  .number-badge {
+  clip-path: none;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(#ffa623, #ff8200);
+  box-shadow: none;
+  color: white;
+  font-size: 21px;
+}
+:root:is(
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .exercise-card.is-complete
+  .number-badge {
+  background: linear-gradient(#48c36b, #1a9c49);
+}
+:root:is([data-theme="magic"], [data-theme="treasure"], [data-theme="cars"])
+  .exercise-card-art {
+  left: auto;
+  right: 10px;
+  top: 12px;
+  width: 55px;
+  height: 55px;
+}
+:root:is([data-theme="magic"], [data-theme="treasure"], [data-theme="cars"])
+  .exercise-card
+  h3 {
+  padding-right: 45px;
+}
+:root:is(
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .exercise-stats {
+  margin-left: 0;
+  padding-right: 0;
+  font-size: 14px;
+}
+:root:is(
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .card-actions
+  button {
+  box-shadow: none;
+  border-radius: 10px;
+}
+:root:is(
+    [data-theme="magic"],
+    [data-theme="treasure"],
+    [data-theme="cars"]
+  ):not([data-theme="pixel"])
+  .card-actions
+  .play-button {
+  background: var(--theme-action);
+  color: white;
+  border-color: transparent;
+}
+:root[data-theme="magic"] .magic-theme-label {
+  background: linear-gradient(#7844cb, #50229b);
+  border-color: #f8cf64;
+  color: #ffe77d;
+  clip-path: none;
+  border-radius: 22px 22px 35px 35px;
+  left: 44%;
+  top: 20px;
+}
+:root[data-theme="magic"]:not([data-theme="pixel"]) .brand {
+  color: #411174;
+  text-shadow: 0 2px white;
+}
+:root[data-theme="treasure"] .treasure-theme-label {
+  background: repeating-linear-gradient(
+    0deg,
+    #865020 0 24px,
+    #a46a32 25px 49px
+  );
+  border-color: #673918;
+  clip-path: none;
+  border-radius: 12px;
+  left: 43%;
+  top: 15px;
+  color: #ffe27b;
+  transform: rotate(-3deg);
+}
+:root[data-theme="treasure"]:not([data-theme="pixel"]) .brand {
+  background: #fff1ceee;
+  border: 3px solid #d9a365;
+  border-radius: 20px;
+  padding: 10px;
+  color: #075878;
+  font-size: 27px;
+  max-width: 29%;
+}
+:root[data-theme="cars"] .cars-theme-label {
+  background: linear-gradient(#1684ed, #0052be);
+  border: 3px solid white;
+  outline: 2px solid #0076da;
+  clip-path: none;
+  border-radius: 10px;
+  left: 24%;
+  top: 15px;
+  transform: rotate(-4deg);
+  color: #fff35e;
+}
+:root[data-theme="cars"]:not([data-theme="pixel"]) .brand-child {
+  color: #ff7900;
+}
+:root[data-theme="museum"]:not([data-theme="pixel"]) .adventure-banner::before,
+:root[data-theme="museum"] .modern-hero {
+  display: none;
+}
+:root[data-theme="museum"]:not([data-theme="pixel"]) .header-inner {
+  height: 190px;
+  padding-top: 45px;
+}
+:root[data-theme="museum"]:not([data-theme="pixel"]) .brand {
+  color: #092e50;
+  text-shadow: 0 2px #fff9;
+}
+:root[data-theme="museum"]:not([data-theme="pixel"]) .study-filters {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  gap: 18px;
+  margin-top: 18px;
+}
+:root[data-theme="museum"]:not([data-theme="pixel"]) .filter-field {
+  background: #ffffffbc;
+  border: 1px solid #dbdcd9;
+  border-radius: 12px;
+  padding: 10px;
+}
+:root[data-theme="museum"]:not([data-theme="pixel"]) .exercise-card {
+  border-radius: 12px;
+}
+@media (max-width: 760px) {
+  :root:is(
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"],
+      [data-theme="museum"]
+    ):not([data-theme="pixel"])
+    .adventure-banner {
+    height: 135px;
+  }
+  :root:is(
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"],
+      [data-theme="museum"]
+    ):not([data-theme="pixel"])
+    .header-inner {
+    height: auto;
+    padding: 14px 16px;
+    background: #ffffffd9;
+  }
+  :root:is(
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"],
+      [data-theme="museum"]
+    ):not([data-theme="pixel"])
+    .brand {
+    max-width: 100%;
+    width: auto;
+    font-size: 24px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+  :root:is([data-theme="magic"], [data-theme="treasure"], [data-theme="cars"])
+    .crystal-theme-label {
+    left: auto;
+    right: 14px;
+    top: auto;
+    bottom: 12px;
+    min-width: 145px;
+    padding: 8px 12px;
+  }
+  :root:is([data-theme="magic"], [data-theme="treasure"], [data-theme="cars"])
+    .crystal-theme-label
+    strong {
+    font-size: 19px;
+  }
+  :root:is(
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"]
+    ):not([data-theme="pixel"])
+    .study-filters {
+    padding: 12px;
+    gap: 12px;
+  }
+  :root:is(
+      [data-theme="magic"],
+      [data-theme="treasure"],
+      [data-theme="cars"]
+    ):not([data-theme="pixel"])
+    .exercise-stats {
+    margin-left: 0;
+    padding-right: 0;
+  }
+}
