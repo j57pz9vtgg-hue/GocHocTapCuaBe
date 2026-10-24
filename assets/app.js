@@ -8,6 +8,7 @@ function activeTheme(){return referenceThemes.find(t=>t.id===document.documentEl
 try{const saved=JSON.parse(localStorage.getItem('goc-hoc-tap.preferences.v1')||'null');document.documentElement.dataset.theme=saved?.theme==='space'?'crystal':referenceThemes.some(t=>t.id===saved?.theme)?saved.theme:'arctic';}catch{document.documentElement.dataset.theme='arctic';}
 state.search='';
 state.topicGroup=0;
+let practiceClock=null;
 const hasProvidedAnswers = questions => questions.length > 0 && questions.every(q => q.answerSource === 'user' && Number.isInteger(q.answer) && q.answer >= 0 && q.answer < q.options.length);
 const key = () => [state.grade,state.program,state.subject,state.mode].join('|');
 const options = (items, selected) => items.map(v=>`<option value="${escapeHTML(v)}" ${String(v)===selected?'selected':''}>${escapeHTML(v)}</option>`).join('');
@@ -17,6 +18,17 @@ function paperTitle(paper) {
 function formatDuration(seconds) {
  return `${Math.floor(seconds/60)} phút ${String(seconds%60).padStart(2,'0')} giây`;
 }
+function elapsedPracticeSeconds(practice=state.practice){
+ if(!practice||!Number.isFinite(practice.startedAt))return 0;
+ const end=Number.isFinite(practice.finishedAt)?practice.finishedAt:Date.now();
+ return Math.max(0,Math.floor((end-practice.startedAt)/1000));
+}
+function formatPracticeClock(seconds){
+ const hours=Math.floor(seconds/3600),minutes=Math.floor(seconds%3600/60),rest=seconds%60;
+ return `${hours?String(hours).padStart(2,'0')+':':''}${String(minutes).padStart(2,'0')}:${String(rest).padStart(2,'0')}`;
+}
+function stopPracticeClock(){if(practiceClock!==null){clearInterval(practiceClock);practiceClock=null;}}
+function refreshPracticeClock(){const target=app.querySelector('[data-practice-clock]');if(target&&state.practice)target.textContent=formatPracticeClock(elapsedPracticeSeconds());}
 function referencePixelIcon(name,size=22){
  if(activeTheme().id!=='pixel')return icon(name,size);
  const paths={book:'<path d="M2 4h8v1h4V4h8v17h-8v1h-4v-1H2z" fill="#083b54"/><path d="M4 3h6v1h4V3h6v15h-6v1h-4v-1H4z" fill="#fcffff" stroke="#0e8095"/><path d="M11 5h2v13h-2zM5 7h4v2H5zm0 4h4v1H5zm0 3h4v1H5z" fill="#52c5d5"/><path d="M16 4h2v2h2v2h-2v7h-2V8h-2V6h2z" fill="#ffc43d"/>',flag:'<path d="M5 2h3v20H5z" fill="#543325"/><path d="M8 3h6v2h7v8h-6v-2H8z" fill="#fc6385" stroke="#7e304f"/><path d="M9 4h4v2H9z" fill="#ffd8e3"/><path d="M3 21h7v2H3z" fill="#a56a34"/>',star:'<path d="M10 2h4v5h2v2h6v4h-3v6h-5v-2h-4v2H5v-6H2V9h6V7h2z" fill="#ffd047" stroke="#74491d"/><path d="M10 5h2v4H8v2H5v-1h5z" fill="#fff4b0"/>'};
@@ -64,6 +76,7 @@ function openTopicIntro(topicId){
  introDialog.showModal();introDialog.querySelector('[data-action="close-intro"]').focus();
 }
 function renderHome(){
+ stopPracticeClock();
  const isTimoTopics=state.program==='TIMO'&&state.mode===modes[2];
  const theme=activeTheme().id,all=getPapers(state.program,state.subject,state.grade,state.mode).map((_,i)=>i);
  const normalized=value=>value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[đĐ]/g,'d').toLowerCase();
@@ -82,13 +95,13 @@ for(const [savedKey,record] of Object.entries(attempts)){
  if(!programs.includes(program)||!getSubjects(program).includes(subject)||!modes.includes(mode))continue;
  const paper=getPapers(program,subject,grade,mode).findIndex(item=>item.id===paperId);if(paper<0)continue;
  const questions=getQuestions(subject,grade,mode,paper,program),score=questions.filter((q,i)=>record.answers[i]===q.answer).length;
- state.completed[`${[grade,program,subject,mode].join('|')}-${paper}`]={result:hasProvidedAnswers(questions)?`${score}/${questions.length} câu đúng`:'Chờ đáp án',duration:Number.isFinite(record.updatedAt)&&Number.isFinite(record.startedAt)?Math.max(1,Math.floor((record.updatedAt-record.startedAt)/1000)):0};
+ state.completed[`${[grade,program,subject,mode].join('|')}-${paper}`]={result:hasProvidedAnswers(questions)?`${score}/${questions.length} câu đúng`:'Chờ đáp án',duration:Number.isFinite(record.updatedAt)&&Number.isFinite(record.startedAt)?Math.max(0,Math.floor(((Number.isFinite(record.finishedAt)?record.finishedAt:record.updatedAt)-record.startedAt)/1000)):0};
 }
 
 function saveAttempt() {
  if(!state.practice)return;
  const p=state.practice;
- attempts[attemptKey(p)]={answers:{...state.answers},questionIds:p.questionIds,submitted:state.submitted,startedAt:p.startedAt,updatedAt:Date.now()};
+ attempts[attemptKey(p)]={answers:{...state.answers},questionIds:p.questionIds,finishedAt:p.finishedAt,submitted:state.submitted,startedAt:p.startedAt,updatedAt:Date.now()};
  try{localStorage.setItem(attemptStorageKey,JSON.stringify(attempts));return true;}catch{return false;}
 }
 let pendingPaper=null, introTrigger=null;
@@ -120,9 +133,11 @@ function renderQuestion(q,i,ready){
  return `${sectionHeading}<fieldset class="paper-question question ${q.optionColumns===2?'options-two-columns':''}"><legend><strong>Câu ${source?.number??i+1}.</strong> <span ${q.english?'lang="en"':''}>${escapeHTML(text)}</span></legend>${translation?`<p class="question-translation">${escapeHTML(translation)}</p>`:''}${q.detail?`<div class="question-illustration diagram-number-line">${escapeHTML(q.detail)}</div>`:''}${q.image&&/^\.\/assets\/[a-zA-Z0-9_./-]+\.(png|webp|jpg|jpeg|svg)$/.test(q.image)?`<figure class="question-illustration"><img src="${escapeHTML(q.image)}" alt="${escapeHTML(q.imageAlt||'Hình minh họa câu hỏi '+(i+1))}"></figure>`:''}<div class="paper-options answers">${q.options.map((option,j)=>`<label class="${state.answers[i]===j?'chosen':''} ${ready&&state.solutionsVisible&&j===q.answer?'paper-correct':''} ${ready&&state.solutionsVisible&&state.answers[i]===j&&j!==q.answer?'paper-wrong':''}"><input type="radio" name="question-${i}" data-question="${i}" value="${j}" ${state.answers[i]===j?'checked':''} ${state.submitted?'disabled':''}><span class="answer-text ${q.optionImages?.[j]?'answer-with-figure':''}">${String.fromCharCode(65+j)}. ${q.optionImages?.[j]&&/^\.\/assets\/[a-zA-Z0-9_./-]+\.(png|webp|jpg|jpeg|svg)$/.test(q.optionImages[j])?`<img src="${escapeHTML(q.optionImages[j])}" alt="${escapeHTML(option)}" width="28" height="28">`:escapeHTML(option)}</span></label>`).join('')}</div>${ready&&state.solutionsVisible&&q.explanation?`<p class="paper-explanation explanation">${escapeHTML(q.explanation)}</p>`:''}</fieldset>`;
 }
 function renderPractice(){
+ stopPracticeClock();
  const p=state.practice,questions=p.questions,answered=Object.keys(state.answers).length,ready=hasProvidedAnswers(questions),score=questions.filter((q,i)=>state.answers[i]===q.answer).length;
  const book='pixel-book';
- app.innerHTML=`<main class="paper-world"><header class="paper-brand"><img src="${publicAsset(book)}" alt=""><strong>Góc học tập <em>của bé</em></strong><button data-action="home">${icon('back',18)} Về góc luyện tập</button></header><section class="paper-shell"><div class="paper-toolbar"><div class="paper-title"><span class="exam-number">${p.paper+1}</span><div><h2 tabindex="-1" id="active-paper-title">${escapeHTML(p.title)}</h2><small>Lớp ${p.grade} · ${p.program} · ${p.subject}</small></div></div><div class="paper-stat">${icon('flag',32)}<div><small>Tiến độ</small><strong id="answer-count">${answered}/${questions.length} câu</strong></div></div><div class="paper-stat">${icon('clock',32)}<div><small>Thời gian</small><strong class="unlimited-time">${p.durationMinutes?p.durationMinutes+' phút':'Không giới hạn'}</strong></div></div><button class="paper-submit" data-action="submit-paper" ${state.submitted||answered!==questions.length?'disabled':''}>Nộp bài ${icon('send',22)}</button></div>${state.submitted?`<section class="result result-view"><h2 tabindex="-1">${ready?`Bé làm đúng ${score}/${questions.length} câu!`:'Bé đã nộp bài!'}</h2><p>${!ready?'Chờ đáp án từ phụ huynh. Bài chưa được chấm điểm.':'Bé đã hoàn thành bài luyện tập.'}</p><div class="result-actions"><button class="start-button" data-action="home">Luyện bài khác ${icon('arrow',18)}</button><button class="secondary-button" data-action="retry">Làm lại</button>${ready&&!state.solutionsVisible?'<button class="primary-button" data-action="solutions">Xem đáp án và lời giải</button>':''}</div></section>`:''}<form id="quiz"><div class="exam-paper">${questions.map((q,i)=>renderQuestion(q,i,ready)).join('')}</div></form></section></main>`;
+ app.innerHTML=`<main class="paper-world"><header class="paper-brand"><img src="${publicAsset(book)}" alt=""><strong>Góc học tập <em>của bé</em></strong><button data-action="home">${icon('back',18)} Về góc luyện tập</button></header><section class="paper-shell"><div class="paper-toolbar"><div class="paper-title"><span class="exam-number">${p.paper+1}</span><div><h2 tabindex="-1" id="active-paper-title">${escapeHTML(p.title)}</h2><small>Lớp ${p.grade} · ${p.program} · ${p.subject}</small></div></div><div class="paper-stat">${icon('flag',32)}<div><small>Tiến độ</small><strong id="answer-count">${answered}/${questions.length} câu</strong></div></div><div class="paper-stat">${icon('clock',32)}<div><small>Thời gian</small><strong class="unlimited-time practice-elapsed" data-practice-clock role="timer" aria-label="Thời gian làm bài" aria-live="off">${formatPracticeClock(elapsedPracticeSeconds(p))}</strong></div></div><button class="paper-submit" data-action="submit-paper" ${state.submitted||answered!==questions.length?'disabled':''}>Nộp bài ${icon('send',22)}</button></div>${state.submitted?`<section class="result result-view"><h2 tabindex="-1">${ready?`Bé làm đúng ${score}/${questions.length} câu!`:'Bé đã nộp bài!'}</h2><p>${!ready?'Chờ đáp án từ phụ huynh. Bài chưa được chấm điểm.':'Bé đã hoàn thành bài luyện tập.'}</p><div class="result-actions"><button class="start-button" data-action="home">Luyện bài khác ${icon('arrow',18)}</button><button class="secondary-button" data-action="retry">Làm lại</button>${ready&&!state.solutionsVisible?'<button class="primary-button" data-action="solutions">Xem đáp án và lời giải</button>':''}</div></section>`:''}<form id="quiz"><div class="exam-paper">${questions.map((q,i)=>renderQuestion(q,i,ready)).join('')}</div></form></section></main>`;
+ refreshPracticeClock();if(!state.submitted)practiceClock=setInterval(refreshPracticeClock,1000);
 }
 function home(){state.practice=null;state.search='';renderHome();window.scrollTo({top:0});}
 document.addEventListener('click',event=>{
@@ -141,7 +156,7 @@ document.addEventListener('click',event=>{
  if(action==='close-intro')introDialog.close();
  if(action==='start-paper')startPendingPaper();
  if(action==='submit-paper')document.querySelector('#quiz').requestSubmit();
- if(action==='retry'){state.answers={};state.submitted=false;state.solutionsVisible=false;state.practice.startedAt=Date.now();saveAttempt();renderPractice();window.scrollTo({top:0});}
+ if(action==='retry'){state.answers={};state.submitted=false;state.solutionsVisible=false;state.practice.startedAt=Date.now();delete state.practice.finishedAt;saveAttempt();renderPractice();window.scrollTo({top:0});}
  if(button.dataset.subject){state.subject=button.dataset.subject;renderHome();app.querySelector(`[data-subject="${state.subject}"]`).focus();}
  if(button.dataset.mode!==undefined){state.mode=modes[Number(button.dataset.mode)];renderHome();app.querySelector(`[data-mode="${button.dataset.mode}"]`).focus();}
  if(button.dataset.review!==undefined)openSavedPaper(Number(button.dataset.review));
@@ -152,13 +167,13 @@ app.addEventListener('change',event=>{
  if(input.dataset.filter){const id=input.id;state[input.dataset.filter]=input.value;if(!getSubjects(state.program).includes(state.subject))state.subject=getSubjects(state.program)[0];state.search='';renderHome();const target=id?document.getElementById(id):app.querySelector(`input[name="program"][value="${state.program}"]`);target?.focus();}
  if(input.dataset.question!==undefined&&!state.submitted){state.answers[Number(input.dataset.question)]=Number(input.value);input.closest('.answers').querySelectorAll('label').forEach(label=>label.classList.toggle('chosen',label.contains(input)));const count=Object.keys(state.answers).length;document.querySelector('#answer-count').textContent=`${count}/${state.practice.questions.length} câu`;document.querySelectorAll('.paper-submit').forEach(button=>button.disabled=count!==state.practice.questions.length);saveAttempt();}
 });
-app.addEventListener('submit',event=>{event.preventDefault();if(!state.practice||!state.practice.questions.length||state.submitted||Object.keys(state.answers).length!==state.practice.questions.length)return;state.submitted=true;const score=state.practice.questions.filter((q,i)=>state.answers[i]===q.answer).length;state.completed[`${key()}-${state.practice.paper}`]={result:hasProvidedAnswers(state.practice.questions)?`${score}/${state.practice.questions.length} câu đúng`:'Chờ đáp án',duration:Math.max(1,Math.floor((Date.now()-state.practice.startedAt)/1000))};saveAttempt();renderPractice();app.querySelector('.result h2').focus();window.scrollTo({top:0,behavior:'smooth'});});
+app.addEventListener('submit',event=>{event.preventDefault();if(!state.practice||!state.practice.questions.length||state.submitted||Object.keys(state.answers).length!==state.practice.questions.length)return;state.submitted=true;state.practice.finishedAt=Date.now();stopPracticeClock();const score=state.practice.questions.filter((q,i)=>state.answers[i]===q.answer).length;state.completed[`${key()}-${state.practice.paper}`]={result:hasProvidedAnswers(state.practice.questions)?`${score}/${state.practice.questions.length} câu đúng`:'Chờ đáp án',duration:elapsedPracticeSeconds(state.practice)};saveAttempt();renderPractice();app.querySelector('.result h2').focus();window.scrollTo({top:0,behavior:'smooth'});});
 app.addEventListener('keydown',event=>{const tab=event.target.closest('[role="tab"]');if(!tab||!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const current=Number(tab.dataset.mode), next=event.key==='Home'?0:event.key==='End'?modes.length-1:(current+(event.key==='ArrowRight'?1:-1)+modes.length)%modes.length;state.mode=modes[next];renderHome();app.querySelector(`[data-mode="${next}"]`).focus();});
 app.addEventListener('input',event=>{if(event.target.id!=='paper-search')return;state.search=event.target.value;const position=event.target.selectionStart;renderHome();const input=document.querySelector('#paper-search');input.focus();try{input.setSelectionRange(position,position);}catch{}});
 function openSavedPaper(paper){
  const selection={grade:state.grade,program:state.program,subject:state.subject,mode:state.mode,paper,title:paperTitle(paper),questions:getQuestions(state.subject,state.grade,state.mode,paper,state.program),durationMinutes:null},record=attempts[attemptKey(selection)];
  if(!record?.submitted)return;
- state.practice={...selection,startedAt:record.startedAt};state.answers=record.answers||{};state.submitted=true;state.solutionsVisible=false;renderPractice();app.querySelector('.result h2').focus();window.scrollTo({top:0});
+ state.practice={...selection,startedAt:record.startedAt,finishedAt:Number.isFinite(record.finishedAt)?record.finishedAt:record.updatedAt};state.answers=record.answers||{};state.submitted=true;state.solutionsVisible=false;renderPractice();app.querySelector('.result h2').focus();window.scrollTo({top:0});
 }
 function openLocalData(){const d=document.querySelector('#local-data');d.innerHTML=`<button class="icon-button dialog-close" data-action="close-local-data" aria-label="Đóng">${icon('close',22)}</button><h2>Dữ liệu trên thiết bị</h2><p class="parent-subtitle">Bài làm được lưu trên trình duyệt này. Ứng dụng hiện chưa kết nối dịch vụ đồng bộ trực tuyến.</p><button class="primary-button" data-action="export-local-data">Tải bản sao bài làm ${icon('arrow',18)}</button>`;d.showModal();}
 document.addEventListener('click',e=>{if(e.target.closest('[data-action="close-local-data"]'))document.querySelector('#local-data').close();if(e.target.closest('[data-action="export-local-data"]')){const blob=new Blob([JSON.stringify({version:2,kind:'official',attempts},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='goc-hoc-tap-bai-lam.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}});

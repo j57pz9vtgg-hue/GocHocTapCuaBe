@@ -39,3 +39,5 @@ Tên của 5 chủ đề lớn TIMO phải hiển thị trọn trên một dòng
 Trang làm bài chỉ giữ nút Nộp bài trên thanh phía trên, không có nút nộp ở cuối bài. Nội dung đề dùng Times New Roman/Times/serif; yêu cầu đổi phông chỉ được đổi font-family, giữ cỡ chữ, màu, độ đậm, giãn dòng, khoảng cách và hình. Điều kiện nộp hiện tại vẫn là trả lời đủ số câu (2/25 bị khóa, 25/25 mở); không tự đổi quy tắc này nếu chưa được yêu cầu.
 
 Không hiển thị ghi chú tên đề nguồn (ví dụ “Đề vòng loại 01”) bên dưới từng câu hỏi. Vẫn giữ nguồn đề, số câu và id câu trong dữ liệu để phân loại, lưu bài và ghép đáp án chính xác.
+
+Đồng hồ làm bài đếm tăng từ 00:00 khi câu hỏi được mở (không tính popup giới thiệu của lượt mới), cập nhật theo giây và dừng khi nộp/xem lại; làm lại đặt về 00:00. Giữ dấu thời gian phiên đã lưu khi tiếp tục bài, không tạo nhiều bộ đếm hoặc để bộ đếm chạy cập nhật sau khi về danh sách. Không tự đặt giới hạn thời gian nếu đề chưa cung cấp.

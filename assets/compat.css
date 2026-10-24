@@ -203,3 +203,4 @@
 @media(max-width:350px){.topic-group-toggle{padding-inline:8px;gap:6px}.topic-group-toggle>.topic-number{width:26px;height:30px}.topic-group-toggle>svg{width:14px;height:14px}}
 /* Only the exam content font changes; sizes, spacing, colors and figures remain intact. */
 .paper-world .exam-paper,.paper-world .exam-paper legend,.paper-world .exam-paper p,.paper-world .exam-paper label,.paper-world .exam-paper .answer-text{font-family:'Times New Roman',Times,serif}
+.paper-world .practice-elapsed{font-variant-numeric:tabular-nums}
