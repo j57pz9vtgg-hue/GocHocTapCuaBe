@@ -37,3 +37,5 @@ Các yêu cầu ngày 24/10/2026 được xử lý theo thứ tự riêng: Đề
 Tên của 5 chủ đề lớn TIMO phải hiển thị trọn trên một dòng (Anh / Việt). Bỏ ghi chú khoảng câu trên ô chọn; khoảng 1–5/6–10/11–15/16–20/21–25 vẫn dùng nội bộ để phân loại. Cả 5 ô cùng chiều rộng, tự đủ cho tên dài nhất; điện thoại vẫn phải vừa màn hình.
 
 Trang làm bài chỉ giữ nút Nộp bài trên thanh phía trên, không có nút nộp ở cuối bài. Nội dung đề dùng Times New Roman/Times/serif; yêu cầu đổi phông chỉ được đổi font-family, giữ cỡ chữ, màu, độ đậm, giãn dòng, khoảng cách và hình. Điều kiện nộp hiện tại vẫn là trả lời đủ số câu (2/25 bị khóa, 25/25 mở); không tự đổi quy tắc này nếu chưa được yêu cầu.
+
+Không hiển thị ghi chú tên đề nguồn (ví dụ “Đề vòng loại 01”) bên dưới từng câu hỏi. Vẫn giữ nguồn đề, số câu và id câu trong dữ liệu để phân loại, lưu bài và ghép đáp án chính xác.
