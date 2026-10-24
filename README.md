@@ -277,3 +277,8 @@ Nhập 25 câu tự luận, từ vựng tiếng Việt và 9 SVG theo 4 ảnh ch
 ## Đề quốc gia 4 — TIMO lớp 2
 
 Nhập đủ 25 câu tự luận, phần từ vựng Việt và 10 SVG từ 4 ảnh chủ dự án gửi. Các bảng số, lưới vuông, đoạn thẳng, khối lập phương, đường biên đa giác và biểu thức được dựng theo nguồn. Phân loại đủ các câu vào nhóm phù hợp, không đổi các bài đã có hoặc thêm lựa chọn/đáp án. Đã kiểm tra nhập/nộp/lưu/tải lại, chủ đề trộn và 11 giao diện.
+
+
+## Đề quốc gia 5 — TIMO lớp 2
+
+Nhập 25 câu tự luận và phần từ vựng Việt, 10 SVG theo 4 ảnh gốc. Giữ chính xác các dấu # trên 4 lưới, hình đoạn thẳng, lưới ô vuông, tầng khối và biểu thức. Phân loại đầy đủ; bổ sung dạng cộng chữ số chưa biết trong Lý thuyết số, chia hình bằng đường thẳng, quan hệ chữ số và chọn nhóm không phân biệt thứ tự. Không tạo lựa chọn/đáp án. Kiểm tra đủ luồng nhập/nộp/lưu/tải lại và chủ đề trộn trên 11 giao diện.

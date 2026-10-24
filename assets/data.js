@@ -3345,6 +3345,237 @@ const officialPapers = [
         "imageAlt": "Các phép tính99÷3;19+19;51−34;6×8;24+48;5×5;15+16"
       }
     ]
+  },
+  {
+    "id": "timo-grade2-national-05",
+    "title": "Đề quốc gia 05",
+    "sourceTitle": "ĐỀ SỐ 5 — VÒNG QUỐC GIA TIMO",
+    "program": "TIMO",
+    "subject": "Toán",
+    "grade": "2",
+    "mode": "Đề quốc gia",
+    "questions": [
+      {
+        "number": 1,
+        "english": "According to the pattern below, what is the English letter in the space?",
+        "translation": "Pattern: Quy luật; English letter: Chữ cái tiếng Anh; Space: Chỗ trống.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quy luật dãy số",
+        "image": "./assets/papers/timo-grade2-national-05/q01.435a4936db27.svg",
+        "imageAlt": "B, D, G, I, L, N, __"
+      },
+      {
+        "number": 2,
+        "english": "23 children form a column. There are 8 children behind Alice. How many child(ren) is / are in front of her?",
+        "translation": "Column: Hàng dọc; Behind: Đằng sau; In front of: Đằng trước.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Bài toán vị trí trong hàng"
+      },
+      {
+        "number": 3,
+        "english": "When Edward was born, mum was 27 years old. Brother was born 1 year later. When mum is 46 years old, how old will brother be?",
+        "translation": "Born: Sinh ra; Years old: Tuổi; Later: Sau.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tuổi hiện tại và tương lai"
+      },
+      {
+        "number": 4,
+        "english": "What is the value of the number to represent “?” in the following table?",
+        "translation": "Value: Giá trị; Represent: Biểu diễn; Table: Bảng.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quy luật trong bảng số",
+        "image": "./assets/papers/timo-grade2-national-05/q04.fd6756042c45.svg",
+        "imageAlt": "Bảng bốn hàng1,2,2;3,4,12;5,6,30;7,8,dấu hỏi"
+      },
+      {
+        "number": 5,
+        "english": "According to the pattern below, how many # is / are there in the 6th Group?",
+        "translation": "Pattern: Quy luật; 6th group: Nhóm thứ 6.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quy luật sắp xếp hình",
+        "image": "./assets/papers/timo-grade2-national-05/q05.19f50ae0a9ae.svg",
+        "imageAlt": "Bốn lưới 2×2,4×4,6×6,8×8 với các dấu # tạo hai đường chéo và hàng cuối đúng ảnh"
+      },
+      {
+        "number": 6,
+        "english": "Find the value of 28 + 11 + 23 + 39 + 32 + 17.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 7,
+        "english": "Find the value of 6 × 23 + 6 × 38 + 6 × 56 − 6 × 18.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 8,
+        "english": "Find the value of 11 + 13 + 15 + 17 + 19 + 21 + 23 + 25.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 9,
+        "english": "Find the value of 12 ÷ 5 + 9 ÷ 5 + 17 ÷ 5 − 3 ÷ 5.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 10,
+        "english": "Find the value of 12 × 5 × 5 × 15 × 2.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 11,
+        "english": "The numbers below follow the arithmetic sequence, what is the sum of the 6th number and the 9th number?",
+        "translation": "Arithmetic sequence: Dãy số cách đều; Sum: Tổng; 6th number: Số thứ 6; 9th number: Số thứ 9.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm số hạng trong dãy số",
+        "image": "./assets/papers/timo-grade2-national-05/q11.02d14d77ec53.svg",
+        "imageAlt": "99, 92, 85, 78, 71, …"
+      },
+      {
+        "number": 12,
+        "english": "Fill the lines with ‘+’ and ‘−’ to make the equation below correct. (Write down the complete equation on the answer sheet)",
+        "translation": "Lines: Dòng kẻ; Equation: Phép tính; Correct: Đúng. (Lưu ý viết toàn bộ phép tính vào phiếu trả lời).",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Điền dấu cộng và trừ",
+        "image": "./assets/papers/timo-grade2-national-05/q12.c0b849a63619.svg",
+        "imageAlt": "23 __ 7 __ 11 __ 3 = 22"
+      },
+      {
+        "number": 13,
+        "english": "Determine the result of 7 × 8 + 8 × 9 + 9 × 10 − 1 × 1 − 2 × 2 − 3 × 3 is odd or even.",
+        "translation": "Determine: Xác định; Result: Kết quả; Odd: Lẻ; Even: Chẵn.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Nhận biết kết quả chẵn"
+      },
+      {
+        "number": 14,
+        "english": "What is the smallest 3-digit number that can be divisible by 7 and 4?",
+        "translation": "The smallest 3-digit number: Số nhỏ nhất có 3 chữ số; Divisible by: Chia hết cho.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm số theo điều kiện"
+      },
+      {
+        "number": 15,
+        "english": "If A, B and C are 1-digit numbers, find the value of B + C.",
+        "translation": "1-digit numbers: Các số có 1 chữ số; Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Phép cộng với chữ số chưa biết",
+        "image": "./assets/papers/timo-grade2-national-05/q15.f4934635345e.svg",
+        "imageAlt": "Phép cộng dọc BA cộng CB bằng162"
+      },
+      {
+        "number": 16,
+        "english": "How many line segments are there in the figure below?",
+        "translation": "Line segment: Đoạn thẳng; Figure: Hình vẽ.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đếm đoạn thẳng",
+        "image": "./assets/papers/timo-grade2-national-05/q16.6639737e8dc2.svg",
+        "imageAlt": "Đường gấp khúc hai đỉnh và một đoạn ngang qua bốn điểm giữa, các điểm đen theo ảnh"
+      },
+      {
+        "number": 17,
+        "english": "A prism has 27 edges, how many faces does this prism have?",
+        "translation": "Prism: Hình lăng trụ; Edge: Cạnh; Faces: Mặt.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đỉnh, cạnh và mặt của hình khối"
+      },
+      {
+        "number": 18,
+        "english": "How many square(s) is / are there in the figure below?",
+        "translation": "Square: Hình vuông; Figure: Hình vẽ.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đếm hình vuông",
+        "image": "./assets/papers/timo-grade2-national-05/q18.19ee3a850497.svg",
+        "imageAlt": "Các ô vuông xếp thành bậc từ phần trên trái xuống phần dưới phải theo ảnh"
+      },
+      {
+        "number": 19,
+        "english": "At least how many squares can be seen if viewing the figure below from top?",
+        "translation": "At least: Ít nhất; Square: Hình vuông; Figure: Hình vẽ; From top: Từ phía trên.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quan sát và đếm khối lập phương",
+        "image": "./assets/papers/timo-grade2-national-05/q19.8e2ef86e4a49.svg",
+        "imageAlt": "Cụm khối nhỏ trắng xám, cột cao phía sau phải và hai khối nhô phía trước, quan sát từ trên theo ảnh"
+      },
+      {
+        "number": 20,
+        "english": "At most how many different triangle(s) can be formed by having 4 straight lines cut a circle?",
+        "translation": "At most: Nhiều nhất; Different triangles: Các hình tam giác khác nhau; Formed: Được tạo ra; Straight lines: Đường thẳng; Cut: Cắt; Circle: Hình tròn.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Chia hình bằng đường thẳng"
+      },
+      {
+        "number": 21,
+        "english": "How many 3-digit number(s) having the unit digit that is larger than the hundreds digit is / are there?",
+        "translation": "3-digit numbers: Số có 3 chữ số; Unit digit: Chữ số hàng đơn vị; Larger than: Lớn hơn; Hundreds digit: Chữ số hàng trăm.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đếm số theo quan hệ chữ số"
+      },
+      {
+        "number": 22,
+        "english": "According to the following answers, how many 2-digit numbers are there?",
+        "translation": "Answers: Kết quả phép tính; 2-digit numbers: Số có 2 chữ số.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đếm kết quả theo điều kiện",
+        "image": "./assets/papers/timo-grade2-national-05/q22.8b05e12dbeb4.svg",
+        "imageAlt": "Các phép tính2×4;42÷7;36÷3;7×2;9×9;39÷3;72÷9"
+      },
+      {
+        "number": 23,
+        "english": "What is the greatest 4-digit odd number by using 0, 2, 4, 6 and 9? (Each digit can only be used once).",
+        "translation": "The greatest 4-digit odd number: Số lẻ lớn nhất có 4 chữ số; Each digit can only be used once: Mỗi chữ số chỉ được dùng một lần.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Lập số lớn nhất và nhỏ nhất"
+      },
+      {
+        "number": 24,
+        "english": "There are 4 different flavors of ice-cream. Now mixing 3 types to make a 3-ball ice-cream. How many different type(s) of ice-cream is / are there? (Strawberry - vanilla - chocolate will be counted the same as strawberry - chocolate - vanilla).",
+        "translation": "Different flavors: Các vị khác nhau; Mixing: Kết hợp; Different types of ice-cream: Các loại kem khác nhau; Counted the same: Được tính là giống nhau.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Chọn nhóm không phân biệt thứ tự"
+      },
+      {
+        "number": 25,
+        "english": "Choose 4 digits, without repetition, from 0, 1, 4, 5, 6 and 7 to form two 2-digit even numbers. What is the minimum value of the difference?",
+        "translation": "Digits: Chữ số; Without repetition: Không lặp lại; 2-digit even numbers: Số chẵn có 2 chữ số; Minimum value of the difference: Hiệu nhỏ nhất.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Lập hai số có hiệu nhỏ nhất"
+      }
+    ]
   }
 ];
 function getPapers(program, subject, grade, mode) {
