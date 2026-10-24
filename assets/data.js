@@ -378,7 +378,8 @@ const officialPapers = [
           "30"
         ],
         "imageAlt": "Dãy số 1, 4, 9, 16, chỗ trống, 36, 49.",
-        "image": "./assets/papers/timo-grade2-qualifying-02/q01-sequence.c68d2e0203cd.svg"
+        "image": "./assets/papers/timo-grade2-qualifying-02/q01-sequence.c68d2e0203cd.svg",
+        "subtopic": "Quy luật dãy số"
       },
       {
         "number": 2,
@@ -389,7 +390,8 @@ const officialPapers = [
           "25",
           "26",
           "27"
-        ]
+        ],
+        "subtopic": "Thêm và gộp số lượng"
       },
       {
         "number": 3,
@@ -413,7 +415,8 @@ const officialPapers = [
           "17"
         ],
         "imageAlt": "Bốn nhóm hoa lần lượt trong các lưới 2 × 2, 3 × 3, 4 × 4 và 5 × 5, giữ các vị trí hoa như ảnh đề.",
-        "image": "./assets/papers/timo-grade2-qualifying-02/q04-flowers.1fdd407eeb3d.svg"
+        "image": "./assets/papers/timo-grade2-qualifying-02/q04-flowers.1fdd407eeb3d.svg",
+        "subtopic": "Quy luật sắp xếp hình"
       },
       {
         "number": 5,
@@ -425,7 +428,8 @@ const officialPapers = [
           "Saturday / Thứ Bảy",
           "Tuesday / Thứ Ba"
         ],
-        "optionColumns": 2
+        "optionColumns": 2,
+        "subtopic": "Các ngày trong tuần"
       },
       {
         "number": 6,
@@ -436,7 +440,8 @@ const officialPapers = [
           "38",
           "41",
           "42"
-        ]
+        ],
+        "subtopic": "Cộng nhiều số"
       },
       {
         "number": 7,
@@ -449,7 +454,8 @@ const officialPapers = [
           "43"
         ],
         "imageAlt": "Hình cái cây trừ 12 bằng 9 cộng 20.",
-        "image": "./assets/papers/timo-grade2-qualifying-02/q07-tree.90dcd04c749a.svg"
+        "image": "./assets/papers/timo-grade2-qualifying-02/q07-tree.90dcd04c749a.svg",
+        "subtopic": "Tìm số bị che trong phép tính"
       },
       {
         "number": 8,
@@ -460,7 +466,8 @@ const officialPapers = [
           "9",
           "7",
           "5"
-        ]
+        ],
+        "subtopic": "Biểu thức cộng trừ liên tiếp"
       },
       {
         "number": 9,
@@ -473,7 +480,8 @@ const officialPapers = [
           "25"
         ],
         "imageAlt": "Bốn ô bầu dục: dấu hỏi, mũi tên trừ 7 tới ô trống, mũi tên trừ 5 tới ô trống, mũi tên cộng 22 tới số 32.",
-        "image": "./assets/papers/timo-grade2-qualifying-02/q09-operations.3f5e10368f22.svg"
+        "image": "./assets/papers/timo-grade2-qualifying-02/q09-operations.3f5e10368f22.svg",
+        "subtopic": "Sơ đồ chuỗi phép tính"
       },
       {
         "number": 10,
@@ -486,7 +494,8 @@ const officialPapers = [
           "9"
         ],
         "imageAlt": "Phép cộng đặt dọc: AB cộng B bằng 48; B ở hàng thứ hai thẳng cột với B ở hàng đầu.",
-        "image": "./assets/papers/timo-grade2-qualifying-02/q10-column-addition.a75d7416ff4b.svg"
+        "image": "./assets/papers/timo-grade2-qualifying-02/q10-column-addition.a75d7416ff4b.svg",
+        "subtopic": "Phép cộng với chữ số chưa biết"
       },
       {
         "number": 11,
@@ -497,7 +506,8 @@ const officialPapers = [
           "5",
           "7",
           "8"
-        ]
+        ],
+        "subtopic": "Số có hai chữ số và tổng chữ số"
       },
       {
         "number": 12,
@@ -510,7 +520,8 @@ const officialPapers = [
           "41"
         ],
         "imageAlt": "Dãy số 77, 68, 59, 50, …",
-        "image": "./assets/papers/timo-grade2-qualifying-02/q12-sequence.60cb8509b4af.svg"
+        "image": "./assets/papers/timo-grade2-qualifying-02/q12-sequence.60cb8509b4af.svg",
+        "subtopic": "Tìm số hạng trong dãy số"
       },
       {
         "number": 13,
@@ -537,7 +548,8 @@ const officialPapers = [
         ],
         "imageAlt": "1, chỗ điền dấu, 8, chỗ điền dấu, 3, chỗ điền dấu, 7 bằng 13.",
         "optionColumns": 2,
-        "image": "./assets/papers/timo-grade2-qualifying-02/q14-signs.1ded52b45aaf.svg"
+        "image": "./assets/papers/timo-grade2-qualifying-02/q14-signs.1ded52b45aaf.svg",
+        "subtopic": "Điền dấu cộng và trừ"
       },
       {
         "number": 15,
@@ -548,7 +560,8 @@ const officialPapers = [
           "10",
           "15",
           "7"
-        ]
+        ],
+        "subtopic": "Chuyển bớt để hai nhóm bằng nhau"
       },
       {
         "number": 16,
@@ -561,7 +574,8 @@ const officialPapers = [
           "13"
         ],
         "imageAlt": "Hai hình vuông chồng lệch nhau, phần chồng chia thành một lưới hai cột và bốn hàng như hình đề.",
-        "image": "./assets/papers/timo-grade2-qualifying-02/q16-squares.e09671f914c1.svg"
+        "image": "./assets/papers/timo-grade2-qualifying-02/q16-squares.e09671f914c1.svg",
+        "subtopic": "Đếm hình vuông"
       },
       {
         "number": 17,
@@ -580,7 +594,8 @@ const officialPapers = [
           "./assets/papers/timo-grade2-qualifying-02/q17-choice-triangle.ceb995c1057d.svg",
           "./assets/papers/timo-grade2-qualifying-02/q17-choice-heart.cb48071b00c0.svg",
           "./assets/papers/timo-grade2-qualifying-02/q17-choice-star.8e510ea5fe66.svg"
-        ]
+        ],
+        "subtopic": "Quy luật dãy hình"
       },
       {
         "number": 18,
@@ -593,7 +608,8 @@ const officialPapers = [
           "7"
         ],
         "imageAlt": "Các mặt khối lập phương màu xanh lá xếp cao thấp, với cột cao ở bên phải, dựng theo ảnh câu 18.",
-        "image": "./assets/papers/timo-grade2-qualifying-02/q18-front-view.b31eb0190096.svg"
+        "image": "./assets/papers/timo-grade2-qualifying-02/q18-front-view.b31eb0190096.svg",
+        "subtopic": "Quan sát khối từ phía trước"
       },
       {
         "number": 19,
@@ -606,7 +622,8 @@ const officialPapers = [
           "10"
         ],
         "imageAlt": "Sáu điểm trên đường ngang và đường gấp khúc, nối bằng các đoạn thẳng và hai đoạn thẳng đứng như ảnh đề.",
-        "image": "./assets/papers/timo-grade2-qualifying-02/q19-segments.d75b54a655d7.svg"
+        "image": "./assets/papers/timo-grade2-qualifying-02/q19-segments.d75b54a655d7.svg",
+        "subtopic": "Đếm đoạn thẳng"
       },
       {
         "number": 20,
@@ -619,7 +636,8 @@ const officialPapers = [
           "13"
         ],
         "imageAlt": "Các mặt khối lập phương màu xanh lá xếp chồng, với hai khối ở hàng trước bên trái và một cột ở bên phải như ảnh đề.",
-        "image": "./assets/papers/timo-grade2-qualifying-02/q20-stacked-cubes.72b899db0a7e.svg"
+        "image": "./assets/papers/timo-grade2-qualifying-02/q20-stacked-cubes.72b899db0a7e.svg",
+        "subtopic": "Đếm khối lập phương xếp chồng"
       },
       {
         "number": 21,
@@ -632,7 +650,8 @@ const officialPapers = [
           "39"
         ],
         "imageAlt": "Các số 24, 47, 98, 39, 62, 75, 80, 17, 33.",
-        "image": "./assets/papers/timo-grade2-qualifying-02/q21-numbers.f10534cb0981.svg"
+        "image": "./assets/papers/timo-grade2-qualifying-02/q21-numbers.f10534cb0981.svg",
+        "subtopic": "Sắp xếp số và xác định thứ hạng"
       },
       {
         "number": 22,
@@ -667,7 +686,8 @@ const officialPapers = [
           "5"
         ],
         "imageAlt": "Trường học ở bên trái, trạm xe buýt ở giữa phía dưới, ngôi nhà ở bên phải; ba đường nối từ trường tới trạm và hai đường nối từ trạm về nhà.",
-        "image": "./assets/papers/timo-grade2-qualifying-02/q24-roads.46b64812b380.svg"
+        "image": "./assets/papers/timo-grade2-qualifying-02/q24-roads.46b64812b380.svg",
+        "subtopic": "Phối hợp lựa chọn"
       },
       {
         "number": 25,
@@ -678,7 +698,8 @@ const officialPapers = [
           "3",
           "4",
           "5"
-        ]
+        ],
+        "subtopic": "Mua hàng và quà tặng"
       }
     ]
   }

@@ -107,7 +107,7 @@ Tên 5 nhóm lớn hiển thị trên một dòng, các ô có cùng chiều r�
 
 Nguồn: 5 ảnh chụp do chủ dự án gửi tiếp theo Đề số 1. Id: `timo-grade2-qualifying-02`. Có 25 câu song ngữ, 100 lựa chọn, 15 hình/sơ đồ và 4 hình lựa chọn của câu 17 trong `assets/papers/timo-grade2-qualifying-02/`.
 
-Không có `subtopic`, `answer`, `answerSource` hay `explanation` trên các câu của Đề số 2. Mỗi nhóm lớn tự nhận đúng 5 câu vào Chưa phân loại. Đề số 1 giữ nguyên 25 tên chủ đề nhỏ đã được cho phép. Tổng ngân hàng lớp 2 hiện là 50 câu, phân biệt bằng id đề và số câu gốc, không trộn bài làm giữa hai đề. Cả hai đề đều chờ đáp án của chủ dự án.
+Theo yêu cầu tiếp theo của chủ dự án, 21 câu Đề số 2 được ghép vào các tên chủ đề nhỏ có sẵn của Đề số 1. Câu 3, 13, 22, 23 chưa phù hợp với tên hiện có nên giữ Chưa phân loại. Không tạo tên mới. Các câu vẫn không có `answer`, `answerSource` hoặc `explanation`. Đề số 1 giữ nguyên 25 tên chủ đề nhỏ đã được cho phép. Tổng ngân hàng lớp 2 hiện là 50 câu, phân biệt bằng id đề và số câu gốc, không trộn bài làm giữa hai đề. Cả hai đề đều chờ đáp án của chủ dự án.
 
 `node scripts/check-data.cjs` còn kiểm tra số lượng hình lựa chọn, sự tồn tại của ảnh và mã SHA-256 trong tên tài nguyên trước khi xuất bản.
 

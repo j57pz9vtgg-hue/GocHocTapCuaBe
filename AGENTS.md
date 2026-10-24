@@ -32,7 +32,7 @@ Chủ dự án sẽ gửi toàn bộ bộ đề trước, rồi mới gửi đá
 
 TIMO có 5 chủ đề lớn cố định theo số câu của mỗi đề 25 câu: Logical thinking / Tư duy lô-gic (1–5); Arithmetic / Số học (6–10); Number Theory / Lý thuyết số (11–15); Geometry / Hình học (16–20); Combinatorics / Tổ hợp (21–25). Mỗi đề chính thức mới tự đưa tham chiếu câu hỏi vào nhóm tương ứng, giữ nguyên nội dung, số câu gốc, lớp và nguồn đề. Không đặt tên chủ đề nhỏ bằng suy luận nếu chưa được yêu cầu; dùng “Chưa phân loại” ở mỗi nhóm. Riêng Đề số 1 vòng loại TIMO lớp 2, chủ dự án đã yêu cầu trợ lý đọc nội dung và đặt một tên chủ đề nhỏ riêng cho mỗi câu; đây là ngoại lệ đặt tên, không phải cho phép suy luận đáp án. Các đề khác tiếp tục dùng Chưa phân loại khi chưa có tên được cung cấp.
 
-Các yêu cầu ngày 24/10/2026 được xử lý theo thứ tự riêng: Đề số 1 vòng loại TIMO lớp 2 (25 tên chủ đề nhỏ riêng, xuất bản ở 40ffeba); bố cục tên nhóm lớn một dòng, cùng chiều rộng và không có ghi chú khoảng câu (xuất bản ở 5aa1e85); sau đó Đề số 2 vòng loại TIMO lớp 2. Đề số 2 không có trường subtopic, mỗi nhóm nhận 5 câu vào Chưa phân loại. Cả hai đề chưa có đáp án, tuyệt đối không tự chấm.
+Các yêu cầu ngày 24/10/2026 được xử lý theo thứ tự riêng: Đề số 1 vòng loại TIMO lớp 2 (25 tên chủ đề nhỏ riêng, xuất bản ở 40ffeba); bố cục tên nhóm lớn một dòng, cùng chiều rộng và không có ghi chú khoảng câu (xuất bản ở 5aa1e85); sau đó Đề số 2 vòng loại TIMO lớp 2. Theo yêu cầu phân loại tiếp theo, Đề số 2 có 21 câu ghép vào các tên chủ đề nhỏ có sẵn của Đề số 1; câu 3, 13, 22, 23 vẫn Chưa phân loại. Không tạo tên mới cho Đề số 2. Cả hai đề chưa có đáp án, tuyệt đối không tự chấm.
 
 Tên của 5 chủ đề lớn TIMO phải hiển thị trọn trên một dòng (Anh / Việt). Bỏ ghi chú khoảng câu trên ô chọn; khoảng 1–5/6–10/11–15/16–20/21–25 vẫn dùng nội bộ để phân loại. Cả 5 ô cùng chiều rộng, tự đủ cho tên dài nhất; điện thoại vẫn phải vừa màn hình.
 
@@ -41,3 +41,5 @@ Trang làm bài chỉ giữ nút Nộp bài trên thanh phía trên, không có 
 Không hiển thị ghi chú tên đề nguồn (ví dụ “Đề vòng loại 01”) bên dưới từng câu hỏi. Vẫn giữ nguồn đề, số câu và id câu trong dữ liệu để phân loại, lưu bài và ghép đáp án chính xác.
 
 Đồng hồ làm bài đếm tăng từ 00:00 khi câu hỏi được mở (không tính popup giới thiệu của lượt mới), cập nhật theo giây và dừng khi nộp/xem lại; làm lại đặt về 00:00. Giữ dấu thời gian phiên đã lưu khi tiếp tục bài, không tạo nhiều bộ đếm hoặc để bộ đếm chạy cập nhật sau khi về danh sách. Không tự đặt giới hạn thời gian nếu đề chưa cung cấp.
+
+Chỉ ghép các câu Đề số 2 vào chủ đề nhỏ đã có khi nội dung phù hợp. Câu 3 nói tuổi quá khứ (tên hiện có nói hiện tại/tương lai), câu 13 nói kết quả lẻ (tên hiện có nói chẵn), câu 22 lập số lẻ (tên hiện có lập số chẵn), câu 23 tìm tổng lớn nhất (tên hiện có nhỏ nhất) chưa phù hợp nên để Chưa phân loại. Đây là phân loại nội dung, không phải lời giải/đáp án. Các đề 3, 4 chưa được yêu cầu ghép tên: vẫn dùng Chưa phân loại.
