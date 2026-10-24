@@ -262,3 +262,8 @@ Kết quả: 175/175 câu của 7 đề vòng loại TIMO lớp 2 có chủ đ�
 Nhập từ 4 ảnh do chủ dự án gửi: 25 câu tự luận, giữ nguyên câu tiếng Anh và phần từ vựng tiếng Việt, 11 hình SVG dựng lại theo ảnh. Id timo-grade2-national-01, danh mục Đề quốc gia. Không có lựa chọn A–D hoặc đáp án được tạo thêm; mỗi câu có ô nhập văn bản. Giữ nguồn đề/số câu và phân loại đủ cả 25 câu vào các nhóm luyện phù hợp, tạo nhóm mới cho dạng thời gian, số theo điều kiện, hình khối, góc trong đa giác, đổi tiền và chuyển bớt/so sánh trong Tổ hợp.
 
 Ô trả lời tự luận lưu cùng bài làm và ghép theo id khi đảo/thêm câu trong chủ đề; chặn câu trống, giữ khi tải lại, chỉ mở nộp khi đủ câu, dừng đồng hồ khi nộp và hiển thị Chờ đáp án. Khi có khóa trả lời văn bản do chủ dự án xác nhận, so khớp chính xác sau khi bỏ khoảng trắng hai đầu; không suy luận khóa hoặc tự tạo lời giải. Đã kiểm tra 11 giao diện máy tính/điện thoại, hình ảnh, lưu/khôi phục, nhập/nộp/làm lại và bài luyện trộn tự luận với trắc nghiệm; 7 đề vòng loại giữ nguyên.
+
+
+## Đề quốc gia 2 — TIMO lớp 2
+
+Nhập 25 câu tự luận và 9 SVG từ 4 ảnh chủ dự án gửi; giữ nguyên câu tiếng Anh/phần từ vựng Việt, bảng số, phép cộng dọc, các hình đếm đoạn thẳng, khối lập phương, hình chữ nhật và biểu thức. Phân loại đủ 25 câu; bổ sung nhóm cho bảng số, đếm hình chữ nhật, số không chứa chữ số cho trước, hiệu nhỏ nhất của hai số, mua hàng theo ngân sách và đếm kết quả theo điều kiện. Không tạo lựa chọn/đáp án. Đã kiểm tra lưu/nộp/tải lại và luyện trộn hai dạng câu trên 11 giao diện; 7 đề vòng loại và Đề quốc gia 1 giữ nguyên.
