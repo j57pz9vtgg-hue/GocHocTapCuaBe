@@ -98,3 +98,6 @@
 #site-shell .exercise-card-art{position:relative;inset:auto;grid-column:2;grid-row:2;align-self:center;justify-self:end;width:64px;height:64px;margin:0;transform:none}
 #site-shell .card-actions{grid-column:1/-1;grid-row:3;align-self:end}
 #site-shell .exercise-card:not(:has(.exercise-card-art)) .exercise-stats{grid-column:1/-1}
+/* Selects keep their normal border without an extra focus frame. */
+#site-shell .filter-select select:focus{outline:none;box-shadow:none}
+#site-shell .filter-select select:focus-visible{border-color:var(--ink,#10356b)}
