@@ -231,3 +231,27 @@ Câu Gordon (Đề 5 câu 8) phù hợp nhóm có sẵn “Tìm số bị che tr
 ## Phân loại đầy đủ Lý thuyết số
 
 Theo yêu cầu tạo chủ đề phù hợp cho các câu còn lại, thêm 4 nhóm: Đếm số theo điều kiện (3 câu), Tìm số còn thiếu trong đẳng thức (1), Chuyển bớt và so sánh số lượng (2), Chia nhóm theo sức chứa (1). Cả 35 câu trong Number Theory / Lý thuyết số đã có chủ đề nhỏ; các nhóm và nội dung đã có giữ nguyên. Chỉ thêm metadata phân loại, không giải bài hoặc thêm đáp án.
+
+
+## Phân loại đầy đủ 5 chủ đề lớn
+
+Theo yêu cầu mở toàn bộ nhóm Chưa phân loại, 21 câu còn lại được ghép vào 14 nhóm mới của Hình học và Tổ hợp. Giữ nguyên các nhóm và phân loại trước đó.
+
+| Chủ đề lớn | Chủ đề nhỏ mới | Câu nguồn (đề:câu) |
+| --- | --- | --- |
+| Hình học | Đếm hình tam giác | 5:18 |
+| Hình học | Tạo hình vuông từ các đường thẳng | 5:19 |
+| Hình học | Cạnh của hình phẳng và hình khối | 6:17, 7:18 |
+| Hình học | Tạo đường thẳng từ các điểm | 6:20 |
+| Tổ hợp | Lập số lẻ không lặp chữ số | 2:22, 5:23 |
+| Tổ hợp | Lập hai số có tổng lớn nhất | 2:23, 4:25 |
+| Tổ hợp | Chia đều và cân bằng các nhóm | 4:21, 5:21, 7:22 |
+| Tổ hợp | Chọn cặp không phân biệt thứ tự | 4:24, 6:24 |
+| Tổ hợp | Phân phối đồ vật vào các nhóm | 5:24 |
+| Tổ hợp | Lập số lớn nhất và nhỏ nhất | 6:22, 7:21 |
+| Tổ hợp | Đếm số lẻ trong dãy số | 6:23 |
+| Tổ hợp | Đếm số có chữ số cho trước | 6:25 |
+| Tổ hợp | Lập số chẵn được lặp chữ số | 7:23 |
+| Tổ hợp | Điền số vào bảng có tổng bằng nhau | 7:25 |
+
+Kết quả: 175/175 câu của 7 đề vòng loại TIMO lớp 2 có chủ đề nhỏ, 35 câu mỗi chủ đề lớn; số nhóm nhỏ lần lượt là 8/4/9/8/15. Không còn câu Chưa phân loại trong ngân hàng hiện có. Không thay nội dung, lựa chọn, ảnh, số câu/id nguồn, thứ tự bộ đề hoặc đáp án; chưa có đáp án được cung cấp.

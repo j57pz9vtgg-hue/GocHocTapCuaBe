@@ -664,7 +664,8 @@ const officialPapers = [
           "9",
           "10",
           "11"
-        ]
+        ],
+        "subtopic": "Lập số lẻ không lặp chữ số"
       },
       {
         "number": 23,
@@ -675,7 +676,8 @@ const officialPapers = [
           "106",
           "85",
           "68"
-        ]
+        ],
+        "subtopic": "Lập hai số có tổng lớn nhất"
       },
       {
         "number": 24,
@@ -1342,7 +1344,8 @@ const officialPapers = [
           "3"
         ],
         "image": "./assets/papers/timo-grade2-qualifying-04/q21.3a12c8d0fd88.svg",
-        "imageAlt": "Mười hai miếng bánh xếp thành hai hàng, mỗi hàng sáu miếng như ảnh"
+        "imageAlt": "Mười hai miếng bánh xếp thành hai hàng, mỗi hàng sáu miếng như ảnh",
+        "subtopic": "Chia đều và cân bằng các nhóm"
       },
       {
         "number": 22,
@@ -1379,7 +1382,8 @@ const officialPapers = [
           "10",
           "15",
           "5"
-        ]
+        ],
+        "subtopic": "Chọn cặp không phân biệt thứ tự"
       },
       {
         "number": 25,
@@ -1390,7 +1394,8 @@ const officialPapers = [
           "135",
           "153",
           "76"
-        ]
+        ],
+        "subtopic": "Lập hai số có tổng lớn nhất"
       }
     ]
   },
@@ -1637,7 +1642,8 @@ const officialPapers = [
           "12"
         ],
         "image": "./assets/papers/timo-grade2-qualifying-05/q18.8bfe4837b58e.svg",
-        "imageAlt": "Ngôi sao năm cánh bằng năm đoạn thẳng giao nhau, theo hình câu 18"
+        "imageAlt": "Ngôi sao năm cánh bằng năm đoạn thẳng giao nhau, theo hình câu 18",
+        "subtopic": "Đếm hình tam giác"
       },
       {
         "number": 19,
@@ -1648,7 +1654,8 @@ const officialPapers = [
           "4",
           "5",
           "6"
-        ]
+        ],
+        "subtopic": "Tạo hình vuông từ các đường thẳng"
       },
       {
         "number": 20,
@@ -1675,7 +1682,8 @@ const officialPapers = [
           "9"
         ],
         "image": "./assets/papers/timo-grade2-qualifying-05/q21.f6ad08bcff92.svg",
-        "imageAlt": "Chín ngôi sao đen xếp thành một hàng như ảnh"
+        "imageAlt": "Chín ngôi sao đen xếp thành một hàng như ảnh",
+        "subtopic": "Chia đều và cân bằng các nhóm"
       },
       {
         "number": 22,
@@ -1700,7 +1708,8 @@ const officialPapers = [
           "4",
           "5",
           "6"
-        ]
+        ],
+        "subtopic": "Lập số lẻ không lặp chữ số"
       },
       {
         "number": 24,
@@ -1711,7 +1720,8 @@ const officialPapers = [
           "9",
           "10",
           "18"
-        ]
+        ],
+        "subtopic": "Phân phối đồ vật vào các nhóm"
       },
       {
         "number": 25,
@@ -1952,7 +1962,8 @@ const officialPapers = [
           "1",
           "2",
           "3"
-        ]
+        ],
+        "subtopic": "Cạnh của hình phẳng và hình khối"
       },
       {
         "number": 18,
@@ -1991,7 +2002,8 @@ const officialPapers = [
           "8",
           "9",
           "10"
-        ]
+        ],
+        "subtopic": "Tạo đường thẳng từ các điểm"
       },
       {
         "number": 21,
@@ -2014,7 +2026,8 @@ const officialPapers = [
           "3049",
           "3940",
           "3490"
-        ]
+        ],
+        "subtopic": "Lập số lớn nhất và nhỏ nhất"
       },
       {
         "number": 23,
@@ -2027,7 +2040,8 @@ const officialPapers = [
           "16"
         ],
         "image": "./assets/papers/timo-grade2-qualifying-06/q23.296150f09baa.svg",
-        "imageAlt": "Dãy 2, 5, 8, 11, 14, 17, …"
+        "imageAlt": "Dãy 2, 5, 8, 11, 14, 17, …",
+        "subtopic": "Đếm số lẻ trong dãy số"
       },
       {
         "number": 24,
@@ -2038,7 +2052,8 @@ const officialPapers = [
           "17",
           "18",
           "20"
-        ]
+        ],
+        "subtopic": "Chọn cặp không phân biệt thứ tự"
       },
       {
         "number": 25,
@@ -2049,7 +2064,8 @@ const officialPapers = [
           "9",
           "10",
           "11"
-        ]
+        ],
+        "subtopic": "Đếm số có chữ số cho trước"
       }
     ]
   },
@@ -2295,7 +2311,8 @@ const officialPapers = [
           "8"
         ],
         "image": "./assets/papers/timo-grade2-qualifying-07/q18.15e837be5343.svg",
-        "imageAlt": "Một khối lập phương màu xanh với mặt trên, mặt trước và mặt bên phải"
+        "imageAlt": "Một khối lập phương màu xanh với mặt trên, mặt trước và mặt bên phải",
+        "subtopic": "Cạnh của hình phẳng và hình khối"
       },
       {
         "number": 19,
@@ -2334,7 +2351,8 @@ const officialPapers = [
           "8999",
           "8352",
           "8694"
-        ]
+        ],
+        "subtopic": "Lập số lớn nhất và nhỏ nhất"
       },
       {
         "number": 22,
@@ -2347,7 +2365,8 @@ const officialPapers = [
           "2"
         ],
         "image": "./assets/papers/timo-grade2-qualifying-07/q22.4e6bfa602fcf.svg",
-        "imageAlt": "Kệ sách ba ngăn: hàng trên 7 quyển, hàng giữa 8 quyển, hàng dưới 3 quyển theo ảnh"
+        "imageAlt": "Kệ sách ba ngăn: hàng trên 7 quyển, hàng giữa 8 quyển, hàng dưới 3 quyển theo ảnh",
+        "subtopic": "Chia đều và cân bằng các nhóm"
       },
       {
         "number": 23,
@@ -2358,7 +2377,8 @@ const officialPapers = [
           "20",
           "24",
           "30"
-        ]
+        ],
+        "subtopic": "Lập số chẵn được lặp chữ số"
       },
       {
         "number": 24,
@@ -2383,7 +2403,8 @@ const officialPapers = [
           "8"
         ],
         "image": "./assets/papers/timo-grade2-qualifying-07/q25.82d57d1c646a.svg",
-        "imageAlt": "Bảng 3×3 với các hàng A, 1, B; 3, C, 7; D, 9, E"
+        "imageAlt": "Bảng 3×3 với các hàng A, 1, B; 3, C, 7; D, 9, E",
+        "subtopic": "Điền số vào bảng có tổng bằng nhau"
       }
     ]
   }
