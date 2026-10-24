@@ -208,3 +208,6 @@ Năm nút chủ đề lớn giữ chiều cao72px trên máy tính và64px trên
 
 
 Theo yêu cầu tăng nhẹ kích thước ô chủ đề lớn: cột bên trái tối thiểu 340 px, các nút cao 80 px (72 px trên điện thoại), giữ đồng nhất khi đổi nhóm. Khung bên phải hẹp hơn tương ứng và padding còn 16 px. Màn hình từ 1280 px hiển thị 4 chủ đề nhỏ mỗi hàng; 901–1279 px dùng 2 cột và dưới đó 1 cột để đọc được trên màn hình nhỏ. Giữ tên chủ đề lớn một dòng, bóng nổi 3D, ảnh/màu từng giao diện và dữ liệu bài. Đã kiểm tra 11 giao diện tại 14 độ rộng từ 320 đến 1920 px, số ô thực tế mỗi hàng, kích thước ổn định, không cắt chữ/tràn màn hình và mở bài luyện.
+
+
+Theo yêu cầu phân loại câu hỏi về tháng, tạo “Các tháng trong năm” trong Logical thinking / Tư duy lô-gic và chuyển đúng Đề 7 câu 1 (tháng trước là tháng 4, hỏi 16 tháng nữa). Nhóm tháng có 1 câu, nhóm tuổi còn 6 câu. Số hiển thị trong lượt luyện có thể khác số câu nguồn; nội dung/lựa chọn không đổi và chưa có đáp án.

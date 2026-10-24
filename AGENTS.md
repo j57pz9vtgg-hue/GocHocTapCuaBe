@@ -73,3 +73,5 @@ Chủ dự án yêu cầu 5 nút chủ đề lớn giữ kích thước khi đ�
 Ẩn dòng lớp/chương trình/môn (ví dụ “Lớp 2 · TIMO · Toán”) dưới tên bài trên thanh màn hình làm bài, áp dụng cả bộ đề và luyện chủ đề. Giữ các trường lớp/chương trình/môn trong dữ liệu, bộ lọc và lưu tiến độ.
 
 Yêu cầu kích thước tiếp theo: chủ đề lớn rộng tối thiểu 340 px và cao 80 px trên máy tính, cao 72 px trên điện thoại, vẫn cố định khi đổi nhóm và tên một dòng. Thu phần rộng của khung chủ đề nhỏ tương ứng, padding 16 px. Lưới chủ đề nhỏ 4 cột từ 1280 px, 2 cột ở 901–1279 px, 1 cột từ 900 px trở xuống; giữ accordion điện thoại và hiệu ứng 3D. Không thay dữ liệu hoặc chức năng làm bài.
+
+Chủ dự án yêu cầu tìm chủ đề phù hợp cho câu “If last month was April…” và cho phép tạo mới. Đề 7 câu 1 (số hiển thị trong lượt luyện có thể khác) chuyển khỏi “Tuổi hiện tại và tương lai” vào chủ đề mới “Các tháng trong năm” trong chủ đề lớn 1 Logical thinking / Tư duy lô-gic. Chỉ chuyển đúng câu này, giữ nguồn/nội dung/lựa chọn; không suy luận đáp án. Nhóm tháng có 1 câu, nhóm tuổi còn 6 câu.
