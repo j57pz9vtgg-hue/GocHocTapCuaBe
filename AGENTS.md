@@ -71,3 +71,5 @@ Quy tắc mới cho Luyện theo chủ đề: đánh lại nhãn hiển thị C�
 Chủ dự án yêu cầu 5 nút chủ đề lớn giữ kích thước khi đổi nhóm: hàng cố định72px trên máy tính,64px trên điện thoại; cùng chiều rộng theo tên song ngữ dài nhất, tên trên một dòng. Khung chủ đề nhỏ có vùng giãn riêng, không kéo giãn các hàng nút trái. Ô chủ đề và nút Luyện tập có bóng/nét sáng tạo độ nổi3D, hover/nhấn bằng bóng không đổi hình học; giữ màu/ảnh riêng11giao diện, focusbànphím rõ và hỗ trợ giảm chuyển động.
 
 Ẩn dòng lớp/chương trình/môn (ví dụ “Lớp 2 · TIMO · Toán”) dưới tên bài trên thanh màn hình làm bài, áp dụng cả bộ đề và luyện chủ đề. Giữ các trường lớp/chương trình/môn trong dữ liệu, bộ lọc và lưu tiến độ.
+
+Yêu cầu kích thước tiếp theo: chủ đề lớn rộng tối thiểu 340 px và cao 80 px trên máy tính, cao 72 px trên điện thoại, vẫn cố định khi đổi nhóm và tên một dòng. Thu phần rộng của khung chủ đề nhỏ tương ứng, padding 16 px. Lưới chủ đề nhỏ 4 cột từ 1280 px, 2 cột ở 901–1279 px, 1 cột từ 900 px trở xuống; giữ accordion điện thoại và hiệu ứng 3D. Không thay dữ liệu hoặc chức năng làm bài.

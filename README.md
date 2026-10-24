@@ -205,3 +205,6 @@ Popup giới thiệu thu nhỏ từ700px xuống tối đa520px, ảnh120px (96p
 Năm nút chủ đề lớn giữ chiều cao72px trên máy tính và64px trên điện thoại, cùng chiều rộng đủ tên song ngữ dài nhất trên một dòng. Hàng giãn riêng của lưới chứa phần nội dung cao của khung bên phải; chuyển nhóm không kéo giãn hoặc đổi vị trí các nút bên trái. Thêm bóng đế, nét sáng, trạng thái hover/nhấn cho nút nhóm, ô chủ đề nhỏ và nút Luyện tập; không đổi màu/ảnh riêng của11giao diện hoặc dữ liệu bài.
 
 Đã kiểm tra 5 nhóm trên11giao diện ở1920/1440/1024/800/761/760/538/390/320px: kích thước đồng nhất khi đổi nhóm, tên một dòng không cắt, khung nội dung không tràn lưới hoặc màn hình. Kiểm tra thêm clickthật, bànphím, trạng thái nhấn/giảmchuyểnđộng và mở bài luyện.
+
+
+Theo yêu cầu tăng nhẹ kích thước ô chủ đề lớn: cột bên trái tối thiểu 340 px, các nút cao 80 px (72 px trên điện thoại), giữ đồng nhất khi đổi nhóm. Khung bên phải hẹp hơn tương ứng và padding còn 16 px. Màn hình từ 1280 px hiển thị 4 chủ đề nhỏ mỗi hàng; 901–1279 px dùng 2 cột và dưới đó 1 cột để đọc được trên màn hình nhỏ. Giữ tên chủ đề lớn một dòng, bóng nổi 3D, ảnh/màu từng giao diện và dữ liệu bài. Đã kiểm tra 11 giao diện tại 14 độ rộng từ 320 đến 1920 px, số ô thực tế mỗi hàng, kích thước ổn định, không cắt chữ/tràn màn hình và mở bài luyện.
