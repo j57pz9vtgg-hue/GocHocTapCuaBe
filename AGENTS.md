@@ -95,3 +95,5 @@ Theo ảnh tiếp theo, Đề 3 câu 18 (khối xanh nhìn từ phải) và Đ�
 Theo ảnh tiếp theo, Đề 7 câu 17 (khối trắng dạng cầu nhìn từ phải) vào chủ đề nhỏ 04 “Quan sát và đếm khối lập phương”. Nhóm hiện có 12 câu; giữ hình và các lựa chọn 4, 3, 7, 6 nguyên bản, không suy luận đáp án.
 
 Chủ dự án yêu cầu tìm chủ đề phù hợp cho câu Gordon (Đề 5 câu 8), cho phép tạo mới nếu chưa có. Câu tìm số ban đầu qua các phép tính được ghép vào tên có sẵn “Tìm số bị che trong phép tính” thuộc Arithmetic / Số học, không tạo nhóm trùng kỹ năng. Nhóm hiện có 8 câu; Số học không còn câu Chưa phân loại. Không giải bài hoặc thay lựa chọn. Tổng 147 câu có chủ đề nhỏ và 28 câu Chưa phân loại.
+
+Chủ dự án yêu cầu phân loại toàn bộ câu Chưa phân loại của chủ đề lớn 3, cho phép tạo tên mới. Thêm 4 nhóm: “Đếm số theo điều kiện” (Đề 5 câu 12, Đề 6 câu 13, Đề 7 câu 12); “Tìm số còn thiếu trong đẳng thức” (Đề 5 câu 15); “Chuyển bớt và so sánh số lượng” (Đề 6 câu 11, Đề 7 câu 14); “Chia nhóm theo sức chứa” (Đề 7 câu 15). Giữ các phân loại cũ, nội dung/ảnh/lựa chọn/id nguồn và đáp án nguyên trạng. Chủ đề 3 đủ 35 câu đã phân loại, còn 21 câu Chưa phân loại ở các nhóm khác.

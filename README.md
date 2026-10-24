@@ -226,3 +226,8 @@ Sau khi gộp hai nhóm hình khối, theo 3 ảnh tiếp theo của chủ dự 
 
 
 Câu Gordon (Đề 5 câu 8) phù hợp nhóm có sẵn “Tìm số bị che trong phép tính” của Số học: tìm số ban đầu qua các phép tính đã cho. Đưa đúng câu này vào nhóm, tăng lên 8 câu; không tạo nhóm mới hoặc sửa nội dung/lựa chọn. Số học đã phân loại đủ 35 câu. Ngân hàng hiện có 147 câu có chủ đề nhỏ, 28 câu Chưa phân loại, chưa có đáp án do chủ dự án gửi.
+
+
+## Phân loại đầy đủ Lý thuyết số
+
+Theo yêu cầu tạo chủ đề phù hợp cho các câu còn lại, thêm 4 nhóm: Đếm số theo điều kiện (3 câu), Tìm số còn thiếu trong đẳng thức (1), Chuyển bớt và so sánh số lượng (2), Chia nhóm theo sức chứa (1). Cả 35 câu trong Number Theory / Lý thuyết số đã có chủ đề nhỏ; các nhóm và nội dung đã có giữ nguyên. Chỉ thêm metadata phân loại, không giải bài hoặc thêm đáp án.

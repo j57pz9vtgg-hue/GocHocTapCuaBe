@@ -1555,7 +1555,8 @@ const officialPapers = [
           "14",
           "15",
           "16"
-        ]
+        ],
+        "subtopic": "Đếm số theo điều kiện"
       },
       {
         "number": 13,
@@ -1594,7 +1595,8 @@ const officialPapers = [
           "71"
         ],
         "image": "./assets/papers/timo-grade2-qualifying-05/q15.f3c6ed679e66.svg",
-        "imageAlt": "Chỗ trống cộng 27 bằng 19 cộng 48 trừ 23"
+        "imageAlt": "Chỗ trống cộng 27 bằng 19 cộng 48 trừ 23",
+        "subtopic": "Tìm số còn thiếu trong đẳng thức"
       },
       {
         "number": 16,
@@ -1870,7 +1872,8 @@ const officialPapers = [
           "4",
           "3",
           "2"
-        ]
+        ],
+        "subtopic": "Chuyển bớt và so sánh số lượng"
       },
       {
         "number": 12,
@@ -1895,7 +1898,8 @@ const officialPapers = [
           "20",
           "21",
           "18"
-        ]
+        ],
+        "subtopic": "Đếm số theo điều kiện"
       },
       {
         "number": 14,
@@ -2211,7 +2215,8 @@ const officialPapers = [
           "16",
           "31",
           "40"
-        ]
+        ],
+        "subtopic": "Đếm số theo điều kiện"
       },
       {
         "number": 13,
@@ -2236,7 +2241,8 @@ const officialPapers = [
           "41",
           "14",
           "40"
-        ]
+        ],
+        "subtopic": "Chuyển bớt và so sánh số lượng"
       },
       {
         "number": 15,
@@ -2247,7 +2253,8 @@ const officialPapers = [
           "3",
           "4",
           "5"
-        ]
+        ],
+        "subtopic": "Chia nhóm theo sức chứa"
       },
       {
         "number": 16,
