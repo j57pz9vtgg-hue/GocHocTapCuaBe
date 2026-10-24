@@ -201,3 +201,5 @@
 .topic-group-toggle>.topic-group-label{white-space:nowrap;overflow-wrap:normal;font-size:13px;font-weight:600;line-height:1.5}
 @media(max-width:760px){.topic-group-toggle{min-height:60px;padding:10px;gap:8px}.topic-group-toggle>.topic-group-label{font-size:clamp(11px,2.9vw,13px)}.topic-group-toggle>.topic-number{width:30px;height:34px}.topic-group-toggle>svg{width:16px;height:16px}}
 @media(max-width:350px){.topic-group-toggle{padding-inline:8px;gap:6px}.topic-group-toggle>.topic-number{width:26px;height:30px}.topic-group-toggle>svg{width:14px;height:14px}}
+/* Only the exam content font changes; sizes, spacing, colors and figures remain intact. */
+.paper-world .exam-paper,.paper-world .exam-paper legend,.paper-world .exam-paper p,.paper-world .exam-paper label,.paper-world .exam-paper .answer-text{font-family:'Times New Roman',Times,serif}

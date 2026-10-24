@@ -35,3 +35,5 @@ TIMO có 5 chủ đề lớn cố định theo số câu của mỗi đề 25 c�
 Các yêu cầu ngày 24/10/2026 được xử lý theo thứ tự riêng: Đề số 1 vòng loại TIMO lớp 2 (25 tên chủ đề nhỏ riêng, xuất bản ở 40ffeba); bố cục tên nhóm lớn một dòng, cùng chiều rộng và không có ghi chú khoảng câu (xuất bản ở 5aa1e85); sau đó Đề số 2 vòng loại TIMO lớp 2. Đề số 2 không có trường subtopic, mỗi nhóm nhận 5 câu vào Chưa phân loại. Cả hai đề chưa có đáp án, tuyệt đối không tự chấm.
 
 Tên của 5 chủ đề lớn TIMO phải hiển thị trọn trên một dòng (Anh / Việt). Bỏ ghi chú khoảng câu trên ô chọn; khoảng 1–5/6–10/11–15/16–20/21–25 vẫn dùng nội bộ để phân loại. Cả 5 ô cùng chiều rộng, tự đủ cho tên dài nhất; điện thoại vẫn phải vừa màn hình.
+
+Trang làm bài chỉ giữ nút Nộp bài trên thanh phía trên, không có nút nộp ở cuối bài. Nội dung đề dùng Times New Roman/Times/serif; yêu cầu đổi phông chỉ được đổi font-family, giữ cỡ chữ, màu, độ đậm, giãn dòng, khoảng cách và hình. Điều kiện nộp hiện tại vẫn là trả lời đủ số câu (2/25 bị khóa, 25/25 mở); không tự đổi quy tắc này nếu chưa được yêu cầu.

@@ -110,3 +110,5 @@ Nguồn: 5 ảnh chụp do chủ dự án gửi tiếp theo Đề số 1. Id: `t
 Không có `subtopic`, `answer`, `answerSource` hay `explanation` trên các câu của Đề số 2. Mỗi nhóm lớn tự nhận đúng 5 câu vào Chưa phân loại. Đề số 1 giữ nguyên 25 tên chủ đề nhỏ đã được cho phép. Tổng ngân hàng lớp 2 hiện là 50 câu, phân biệt bằng id đề và số câu gốc, không trộn bài làm giữa hai đề. Cả hai đề đều chờ đáp án của chủ dự án.
 
 `node scripts/check-data.cjs` còn kiểm tra số lượng hình lựa chọn, sự tồn tại của ảnh và mã SHA-256 trong tên tài nguyên trước khi xuất bản.
+
+Nội dung trang đề dùng Times New Roman (Times/serif dự phòng). Cỡ chữ, màu, độ đậm, giãn dòng và các hình giữ nguyên. Chỉ có một nút Nộp bài ở thanh công cụ phía trên; nút mở khi đã chọn đủ câu và khóa sau khi nộp để tránh nộp lặp.
