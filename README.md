@@ -119,3 +119,8 @@ Nội dung trang đề dùng Times New Roman (Times/serif dự phòng). Cỡ ch�
 ## Đề số 3 vòng loại TIMO lớp 2
 
 Nhập từ 5 ảnh chủ dự án gửi: 25 câu song ngữ, 100 lựa chọn và 19 SVG (gồm 4 hình lựa chọn câu 17). Giữ nguyên thứ tự câu và lựa chọn. Cả 25 câu vào Chưa phân loại theo 5 nhóm lớn; chưa có đáp án hoặc lời giải.
+
+
+## Đề số 4 vòng loại TIMO lớp 2
+
+Nhập 25 câu song ngữ, 100 lựa chọn từ 5 ảnh chủ dự án gửi; 15 hình SVG dựng theo nguồn. Câu hỏi giữ thứ tự gốc và được phân vào Chưa phân loại trong 5 nhóm lớn. Chưa có đáp án/lời giải. Ngân hàng hiện có 4 đề, tổng cộng 100 câu.
