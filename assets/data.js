@@ -1215,7 +1215,8 @@ const officialPapers = [
           "98",
           "10",
           "11"
-        ]
+        ],
+        "subtopic": "Nhận biết kết quả chẵn"
       },
       {
         "number": 13,
@@ -1915,7 +1916,8 @@ const officialPapers = [
           "Both odd and even / Vừa chẵn vừa lẻ",
           "Neither odd not even / Không chẵn, không lẻ"
         ],
-        "optionColumns": 2
+        "optionColumns": 2,
+        "subtopic": "Nhận biết kết quả chẵn"
       },
       {
         "number": 16,

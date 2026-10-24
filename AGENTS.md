@@ -79,3 +79,5 @@ Chủ dự án yêu cầu tìm chủ đề phù hợp cho câu “If last month 
 Chủ dự án chỉ định 3 câu trong ảnh chuyển vào “Tìm giá trị” của Số học: Đề 6 câu 7 (15 : 3 + 25 : 5 − 30 : 5), Đề 6 câu 10 (10 × 1 + 10 × 2 + 10 × 3 + 10 × 4), Đề 7 câu 9 (7 × 2 + 11 × 2 + 2 × 3 + 2 × 9). Nhóm đích có 18 câu; Số học Chưa phân loại còn đúng Đề 5 câu 8 (Gordon). Chỉ chuyển đúng 3 câu, không đổi nội dung/lựa chọn hay thêm đáp án. Tổng 135 câu có chủ đề và 40 câu Chưa phân loại.
 
 Chủ dự án chỉ định câu “Among the following numbers, how many of them are even numbers greater than 20?” (Đề 4 câu 14, số trong lượt luyện có thể khác) vào “Nhận biết kết quả chẵn” của Number Theory / Lý thuyết số. Chỉ chuyển đúng câu này từ Chưa phân loại, giữ dãy số 14, 31, 22, 19, 52, 93, 70, 54 và các lựa chọn gốc. Không tính hoặc nhập đáp án.
+
+Theo ảnh chỉ định tiếp theo, Đề 6 câu 15 (xác định tổng 1 đến 14 lẻ hay chẵn) và Đề 4 câu 12 (số lẻ lớn nhất có 2 chữ số) đều vào “Nhận biết kết quả chẵn” trong Number Theory / Lý thuyết số. Đây là nhóm được chủ dự án chỉ định cho cả 2 câu trong ảnh, không suy luận đáp án hoặc tự sửa tên nhóm.
