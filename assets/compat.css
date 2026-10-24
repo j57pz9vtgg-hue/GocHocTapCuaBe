@@ -207,3 +207,15 @@
 
 /* 12 pt on A4 equals 16 CSS px; apply only inside the exam content. */
 .paper-world .exam-paper,.paper-world .exam-paper legend,.paper-world .exam-paper p,.paper-world .exam-paper label,.paper-world .exam-paper .answer-text,.paper-world .exam-paper .paper-section-heading{font-size:12pt}
+
+/* Compact study introduction; keep exam content typography and each world's artwork. */
+#paper-intro{width:min(520px,calc(100% - 28px));max-height:calc(100dvh - 24px);padding:20px;font-family:'Be Vietnam Pro',Arial,sans-serif;overflow-y:auto}
+#paper-intro .quiz-intro>img{height:120px;border-radius:10px;margin-bottom:12px}
+#paper-intro .intro-kicker{font-size:11px;line-height:1.5;margin-bottom:5px}
+#paper-intro .quiz-intro h2{font:700 20px/1.4 'Be Vietnam Pro',Arial,sans-serif;margin:0 0 10px;overflow-wrap:anywhere}
+#paper-intro .quiz-intro>p{font-size:13px;line-height:1.65}
+#paper-intro .quiz-info{font-size:12px;line-height:1.5;padding:10px 0;margin:14px 0;gap:8px}
+#paper-intro .sample-notice{font-size:10px!important;line-height:1.6!important}
+#paper-intro .quiz-intro .intro-start{font-family:inherit;font-size:14px;line-height:1.5;min-height:42px;padding:10px 14px;margin-top:14px;border-radius:9px}
+#paper-intro .dialog-close{width:44px;height:44px;top:5px;right:5px;z-index:1}
+@media(max-width:480px){#paper-intro{padding:16px}#paper-intro .quiz-intro>img{height:96px}#paper-intro .quiz-intro h2{font-size:18px}#paper-intro .quiz-info{font-size:11px}#paper-intro .quiz-intro>p{font-size:12px}}
