@@ -1501,7 +1501,8 @@ const officialPapers = [
           "25",
           "14",
           "7"
-        ]
+        ],
+        "subtopic": "Tìm số bị che trong phép tính"
       },
       {
         "number": 9,

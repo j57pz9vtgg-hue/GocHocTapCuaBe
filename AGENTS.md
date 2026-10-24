@@ -93,3 +93,5 @@ Theo ảnh chỉ định tiếp theo, thêm Đề 4 câu 17 (khối trắng nhì
 Theo ảnh tiếp theo, Đề 3 câu 18 (khối xanh nhìn từ phải) và Đề 6 câu 19 (khối trắng nhìn từ bên cạnh) vào “Quan sát và đếm khối lập phương”. Nhóm tăng từ 9 lên 11 câu, giữ nguyên hình/nguồn/lựa chọn và không bổ sung đáp án.
 
 Theo ảnh tiếp theo, Đề 7 câu 17 (khối trắng dạng cầu nhìn từ phải) vào chủ đề nhỏ 04 “Quan sát và đếm khối lập phương”. Nhóm hiện có 12 câu; giữ hình và các lựa chọn 4, 3, 7, 6 nguyên bản, không suy luận đáp án.
+
+Chủ dự án yêu cầu tìm chủ đề phù hợp cho câu Gordon (Đề 5 câu 8), cho phép tạo mới nếu chưa có. Câu tìm số ban đầu qua các phép tính được ghép vào tên có sẵn “Tìm số bị che trong phép tính” thuộc Arithmetic / Số học, không tạo nhóm trùng kỹ năng. Nhóm hiện có 8 câu; Số học không còn câu Chưa phân loại. Không giải bài hoặc thay lựa chọn. Tổng 147 câu có chủ đề nhỏ và 28 câu Chưa phân loại.

@@ -223,3 +223,6 @@ Gộp hai nhóm Hình học “Quan sát khối từ phía trước” và “Đ
 
 
 Sau khi gộp hai nhóm hình khối, theo 3 ảnh tiếp theo của chủ dự án thêm đúng 5 câu: Đề 4 câu 17, Đề 5 câu 17, Đề 3 câu 18, Đề 6 câu 19 và Đề 7 câu 17. “Quan sát và đếm khối lập phương” hiện có 12 câu. Các ảnh, lựa chọn, số câu nguồn và bài theo bộ đề không đổi. Tổng 146 câu có chủ đề nhỏ, 29 câu Chưa phân loại.
+
+
+Câu Gordon (Đề 5 câu 8) phù hợp nhóm có sẵn “Tìm số bị che trong phép tính” của Số học: tìm số ban đầu qua các phép tính đã cho. Đưa đúng câu này vào nhóm, tăng lên 8 câu; không tạo nhóm mới hoặc sửa nội dung/lựa chọn. Số học đã phân loại đủ 35 câu. Ngân hàng hiện có 147 câu có chủ đề nhỏ, 28 câu Chưa phân loại, chưa có đáp án do chủ dự án gửi.
