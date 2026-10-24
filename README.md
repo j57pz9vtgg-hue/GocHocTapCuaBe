@@ -162,3 +162,6 @@ Theo yêu cầu tiếp theo của chủ dự án, rà toàn bộ câu Chưa phâ
 | 7 | 11 | 1, 2, 5, 9, 11, 12, 14, 15, 17, 18, 21, 22, 23, 25 |
 
 Các trường hợp còn lại khác phạm vi tên hiện có, ví dụ tuổi có mốc quá khứ; tháng/chữ cái; góc nhìn từ trên/phải/bên; đếm tam giác/cạnh; số lẻ hoặc lặp chữ số; chia/nhân; chuyển giữa ba nhóm; phân phối hoa; bảng 3×3. Không suy luận đáp án để ghép tên, nhất là các câu yêu cầu xác định chẵn hay lẻ. Nội dung, thứ tự bộ đề, hình ảnh, lựa chọn, id và các phân loại đã có được giữ nguyên; chưa có đáp án/lời giải.
+
+
+Theo chỉ định riêng tiếp theo, câu 2 Đề số 7 (dãy chữ A, Z, B, __, C, X, D, W) được chuyển từ Chưa phân loại vào “Quy luật dãy số” trong Tư duy lô-gic. Nội dung/ảnh/lựa chọn giữ nguyên; chủ đề này tăng từ 7 lên 8 câu. Tổng hiện tại 125 câu đã phân loại và 50 câu Chưa phân loại.

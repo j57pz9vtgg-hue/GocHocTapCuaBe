@@ -2064,7 +2064,8 @@ const officialPapers = [
           "Y"
         ],
         "image": "./assets/papers/timo-grade2-qualifying-07/q02.5da736d8f1fb.svg",
-        "imageAlt": "Dãy chữ A, Z, B, chỗ trống, C, X, D, W, …"
+        "imageAlt": "Dãy chữ A, Z, B, chỗ trống, C, X, D, W, …",
+        "subtopic": "Quy luật dãy số"
       },
       {
         "number": 3,
