@@ -1964,6 +1964,320 @@ const officialPapers = [
         ]
       }
     ]
+  },
+  {
+    "id": "timo-grade2-qualifying-07",
+    "title": "Đề vòng loại 07",
+    "sourceTitle": "ĐỀ SỐ 7 — VÒNG LOẠI TIMO",
+    "program": "TIMO",
+    "subject": "Toán",
+    "grade": "2",
+    "mode": "Đề vòng loại",
+    "questions": [
+      {
+        "number": 1,
+        "english": "If last month was April, which month will it be 16 months later (from now)?",
+        "translation": "Biết tháng trước là tháng 4, hỏi 16 tháng nữa là tháng mấy?",
+        "options": [
+          "May / Tháng 5",
+          "September / Tháng 9",
+          "August / Tháng 8",
+          "December / Tháng 12"
+        ],
+        "optionColumns": 2
+      },
+      {
+        "number": 2,
+        "english": "By observing the pattern, what is the English letter in the space (“__”) provided?",
+        "translation": "Quan sát quy luật dưới đây để điền chữ cái Tiếng Anh thích hợp vào chỗ trống (“__”).",
+        "options": [
+          "E",
+          "S",
+          "U",
+          "Y"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-07/q02.5da736d8f1fb.svg",
+        "imageAlt": "Dãy chữ A, Z, B, chỗ trống, C, X, D, W, …"
+      },
+      {
+        "number": 3,
+        "english": "Observe the sequence below to replace the music note with a suitable number.",
+        "translation": "Quan sát dãy số dưới đây để thay thế nốt nhạc bằng số thích hợp.",
+        "options": [
+          "35",
+          "39",
+          "30",
+          "36"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-07/q03.69031f0364cf.svg",
+        "imageAlt": "Dãy 50, 49, 47, 44, 40, ký hiệu nốt nhạc, …"
+      },
+      {
+        "number": 4,
+        "english": "Refer to the pattern below, how many arrows are there in the 5th Group?",
+        "translation": "Dựa vào quy luật dưới đây, hỏi sẽ có bao nhiêu mũi tên trong nhóm thứ 5?",
+        "options": [
+          "15",
+          "20",
+          "21",
+          "16"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-07/q04.2013fa3c2140.svg",
+        "imageAlt": "Bốn lưới 2×2, 3×3, 4×4, 5×5 với các mũi tên rỗng đúng vị trí trong ảnh"
+      },
+      {
+        "number": 5,
+        "english": "Each cupcake costs $2. Alice had $23 and she bought 7 cupcakes. How much money did she have left?",
+        "translation": "Một cái bánh có giá 2 đô. Alice có 23 đô và cô bé mua 7 cái bánh. Hỏi khi mua cô bé còn lại bao nhiêu tiền?",
+        "options": [
+          "$14",
+          "$9",
+          "$21",
+          "$8"
+        ]
+      },
+      {
+        "number": 6,
+        "english": "Find the value of 28 + 43 + 72 + 29 + 11 + 37.",
+        "translation": "Tìm giá trị của 28 + 43 + 72 + 29 + 11 + 37.",
+        "options": [
+          "220",
+          "200",
+          "210",
+          "230"
+        ]
+      },
+      {
+        "number": 7,
+        "english": "Which number should the flower be replaced by to get a correct equation?",
+        "translation": "Hỏi cần thay thế bông hoa dưới đây bởi số nào để được phép tính đúng?",
+        "options": [
+          "23",
+          "46",
+          "2",
+          "40"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-07/q07.b9052bdb3cae.svg",
+        "imageAlt": "Bông hoa cộng bông hoa trừ 22 bằng bông hoa cộng 24"
+      },
+      {
+        "number": 8,
+        "english": "Find the value of 2 + 4 + 6 + … + 16 + 18.",
+        "translation": "Tính giá trị của 2 + 4 + 6 + … + 16 + 18.",
+        "options": [
+          "100",
+          "80",
+          "90",
+          "180"
+        ]
+      },
+      {
+        "number": 9,
+        "english": "Calculate: 7 × 2 + 11 × 2 + 2 × 3 + 2 × 9.",
+        "translation": "Tính: 7 × 2 + 11 × 2 + 2 × 3 + 2 × 9.",
+        "options": [
+          "60",
+          "50",
+          "40",
+          "70"
+        ]
+      },
+      {
+        "number": 10,
+        "english": "A and B represent different 1-digit numbers. What is the value of B if the equation is correct?",
+        "translation": "Biết A và B biểu diễn các số có 1 chữ số khác nhau, hỏi giá trị của B là bao nhiêu để ta được phép tính đúng dưới đây?",
+        "options": [
+          "5",
+          "6",
+          "3",
+          "4"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-07/q10.e276c823d299.svg",
+        "imageAlt": "Phép cộng dọc ABA cộng BB bằng 530"
+      },
+      {
+        "number": 11,
+        "english": "Determine whether the sum 1 + 2 + 3 + 4 + … + 9 is odd or even.",
+        "translation": "Tổng 1 + 2 + 3 + … + 9 là số lẻ hay số chẵn?",
+        "options": [
+          "Odd / Số lẻ",
+          "Even / Số chẵn",
+          "Both odd and even / Vừa chẵn vừa lẻ",
+          "Neither odd nor even / Không lẻ không chẵn"
+        ],
+        "optionColumns": 2
+      },
+      {
+        "number": 12,
+        "english": "A box has balls with consecutive even numbers from 10 to 40. How many balls are there in the box?",
+        "translation": "Một hộp chứa các quả bóng được đánh số chẵn liên tiếp từ 10 đến 40. Hỏi có bao nhiêu quả bóng trong hộp đó?",
+        "options": [
+          "15",
+          "16",
+          "31",
+          "40"
+        ]
+      },
+      {
+        "number": 13,
+        "english": "Find the next number in the arithmetic sequence below.",
+        "translation": "Tìm số tiếp theo trong dãy số cách đều dưới đây.",
+        "options": [
+          "355",
+          "314",
+          "335",
+          "345"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-07/q13.7e0da0dd124b.svg",
+        "imageAlt": "Dãy 419, 398, 377, 356, …"
+      },
+      {
+        "number": 14,
+        "english": "Andy gave Betty 27 marbles and Betty gave Charlie 13 marbles so that they have the same number of marbles. How many marbles does Andy have more than Charlie originally?",
+        "translation": "Andy cho Betty 27 viên bi và Betty cho Charlie 13 viên bi thì ba bạn có số bi bằng nhau. Hỏi lúc đầu Andy có nhiều hơn Charlie bao nhiêu viên bi?",
+        "options": [
+          "27",
+          "41",
+          "14",
+          "40"
+        ]
+      },
+      {
+        "number": 15,
+        "english": "David collected 19 stamps. His brother collected 12 stamps. One page of the collection can contain no more than 9 stamps. At least how many pages are required to present all stamps of 2 brothers?",
+        "translation": "David sưu tầm được 19 cái tem. Anh trai David sưu tầm được 12 cái tem. Mỗi trang của bộ sưu tập không chứa được nhiều hơn 9 cái tem. Hỏi cần ít nhất bao nhiêu trang để trưng bày được toàn bộ số tem của hai anh em?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      {
+        "number": 16,
+        "english": "How many squares are there in the figure below?",
+        "translation": "Hỏi có bao nhiêu hình vuông trong hình dưới đây?",
+        "options": [
+          "21",
+          "22",
+          "16",
+          "19"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-07/q16.2ebfeebeded5.svg",
+        "imageAlt": "Lưới ô vuông với ba ô trên cùng bên phải, hàng ngang năm ô, khoảng trống ở giữa và ba ô dưới cùng theo ảnh"
+      },
+      {
+        "number": 17,
+        "english": "At least how many unit squares are seen if viewing the figure below from the right?",
+        "translation": "Hỏi có thể nhìn thấy ít nhất bao nhiêu hình vuông đơn vị nếu nhìn hình dưới đây từ phía bên phải?",
+        "options": [
+          "4",
+          "3",
+          "7",
+          "6"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-07/q17.0c2dba61cea4.svg",
+        "imageAlt": "Cụm khối trắng xám dạng cầu với hai trụ và hai khối nhô ra hai bên ở chân, nhìn từ bên phải theo ảnh"
+      },
+      {
+        "number": 18,
+        "english": "How many edges does a cube have?",
+        "translation": "Hỏi một hình lập phương có bao nhiêu cạnh?",
+        "options": [
+          "16",
+          "12",
+          "9",
+          "8"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-07/q18.15e837be5343.svg",
+        "imageAlt": "Một khối lập phương màu xanh với mặt trên, mặt trước và mặt bên phải"
+      },
+      {
+        "number": 19,
+        "english": "How many line segments are there in the figure below?",
+        "translation": "Hỏi có bao nhiêu đoạn thẳng trong hình vẽ dưới đây?",
+        "options": [
+          "18",
+          "24",
+          "16",
+          "28"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-07/q19.8af014d34e9b.svg",
+        "imageAlt": "Năm ô vuông dạng dấu cộng, các đỉnh và giao điểm được đánh dấu bằng chấm đen như ảnh"
+      },
+      {
+        "number": 20,
+        "english": "Refer to the figure sequence below. How many triangles are there in the first 23 symbols counting from the left?",
+        "translation": "Dựa vào quy luật dưới đây, hỏi có bao nhiêu hình tam giác trong 23 hình đầu tiên tính từ phía bên trái?",
+        "options": [
+          "9",
+          "10",
+          "8",
+          "6"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-07/q20.4de04fbbfa10.svg",
+        "imageAlt": "Dãy ngôi sao đặc, hình tròn rỗng, tam giác chúc xuống rỗng, hình vuông đặc và tam giác chúc xuống rỗng lặp lại như ảnh"
+      },
+      {
+        "number": 21,
+        "english": "A 4-digit number is formed by choosing 4 numbers without repetition from 0, 1, 3, 7 and 9. What is the difference between the largest and the smallest value?",
+        "translation": "Một số có 4 chữ số được tạo ra bằng cách chọn 4 số không lặp lại từ 0, 1, 3, 7 và 9. Tìm hiệu giữa giá trị lớn nhất và giá trị nhỏ nhất có thể chọn được.",
+        "options": [
+          "9594",
+          "8999",
+          "8352",
+          "8694"
+        ]
+      },
+      {
+        "number": 22,
+        "english": "The librarian needs to move some books so that 3 shelves below have the same number of books. At least how many books does she have to move?",
+        "translation": "Thủ thư cần di chuyển một số sách để cả 3 ngăn sách có số sách bằng nhau. Hỏi cô ấy cần di chuyển ít nhất bao nhiêu quyển sách?",
+        "options": [
+          "5",
+          "6",
+          "3",
+          "2"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-07/q22.4e6bfa602fcf.svg",
+        "imageAlt": "Kệ sách ba ngăn: hàng trên 7 quyển, hàng giữa 8 quyển, hàng dưới 3 quyển theo ảnh"
+      },
+      {
+        "number": 23,
+        "english": "Choose 3 digits, can have repetition, from 0, 1, 3, 6 and 9 to form 3-digit even numbers. How many different numbers can be formed?",
+        "translation": "Chọn 3 chữ số (có thể được chọn lặp lại) từ 0, 1, 3, 6 và 9 để lập thành các số chẵn có 3 chữ số. Hỏi có thể lập được bao nhiêu số khác nhau như vậy?",
+        "options": [
+          "40",
+          "20",
+          "24",
+          "30"
+        ]
+      },
+      {
+        "number": 24,
+        "english": "For every 4 pens, the store gives each customer 2 erasers for free. If Fred buys 15 pens, how many erasers can he get?",
+        "translation": "Cứ mua 4 chiếc bút thì khách hàng được tặng 2 cục tẩy miễn phí. Nếu Fred mua 15 chiếc bút thì anh ấy nhận được bao nhiêu cục tẩy?",
+        "options": [
+          "7",
+          "3",
+          "8",
+          "6"
+        ]
+      },
+      {
+        "number": 25,
+        "english": "The 3 × 3 squares below contains 9 consecutive numbers from 1 to 9 in each cell and the sum of numbers in each column or row is equal. Find the number that should be filled in cell A.",
+        "translation": "Hình vuông 3 × 3 dưới đây gồm 9 số liên tiếp từ 1 đến 9 được điền vào mỗi ô. Tổng các số ở mỗi hàng và mỗi cột là bằng nhau. Hãy tìm số thích hợp để điền vào ô A.",
+        "options": [
+          "2",
+          "4",
+          "6",
+          "8"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-07/q25.82d57d1c646a.svg",
+        "imageAlt": "Bảng 3×3 với các hàng A, 1, B; 3, C, 7; D, 9, E"
+      }
+    ]
   }
 ];
 function getPapers(program, subject, grade, mode) {
