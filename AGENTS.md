@@ -17,3 +17,5 @@ Khung Cài đặt cần đủ rộng để hiện trọn tên giao diện. Khôn
 Bố cục danh sách đề và bộ chọn lớp/chương trình/môn/nội dung dùng Pixel làm chuẩn chung cho cả 11 giao diện: chiều rộng tận dụng màn hình, lề cân hai bên, số cột và khoảng cách đồng nhất theo breakpoint. Giữ màu sắc/hình nền riêng; không thêm lại tiêu đề, lớp/môn và số đề dư thừa trên danh sách.
 
 Nguyên tắc bổ sung ngày 24/10/2026: hoàn tất và xuất bản các yêu cầu đang có trước. Sau đó, với mỗi yêu cầu mới, phải thực hiện, kiểm tra, xuất bản thành công riêng từng yêu cầu rồi mới bắt đầu yêu cầu kế tiếp; không gộp nhiều yêu cầu để xuất bản một lần.
+
+Ô Tìm bài tập và nút Cài đặt dùng cùng một vị trí góc trên bên phải banner trên cả 11 giao diện, không nằm dưới banner hoặc chen vào bộ chọn; màn hình nhỏ phải tránh che tên web.

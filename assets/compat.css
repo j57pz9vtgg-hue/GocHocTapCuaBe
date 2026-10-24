@@ -80,3 +80,12 @@
 .settings-dialog .settings-section h3{font-size:20px;margin-bottom:10px}
 /* Keep the filter panel below the hero toolbar instead of overlapping its bottom edge. */
 #site-shell .study-filters{margin-top:0}
+/* One shared toolbar anchor for every theme, matching the upper-right reference. */
+#site-shell .catalog-masthead>.header-tools{position:absolute;inset:24px 24px auto auto;display:flex;align-items:center;justify-content:flex-end;gap:10px;width:390px;max-width:calc(100% - 48px);height:44px;margin:0;z-index:4;pointer-events:auto;transform:none}
+#site-shell .catalog-masthead>.header-tools .search-box{position:relative;inset:auto;display:flex;align-items:center;flex:1;min-width:0;max-width:none;width:auto;height:44px;margin:0;padding:0 16px;border:2px solid #d6e5ff;border-radius:28px;background:#ffffffed;box-shadow:0 2px 5px #32579620;transform:none;color:#16469f}
+#site-shell .catalog-masthead>.header-tools .search-box input{width:100%;min-width:0;font-size:13px;color:#183e71}
+#site-shell .catalog-masthead>.header-tools>.settings-control{position:relative;inset:auto;display:flex;align-items:center;justify-content:center;gap:8px;flex:0 0 118px;width:118px;min-width:118px;height:44px;min-height:44px;padding:8px 12px;margin:0;border:2px solid #d6e5ff;border-radius:28px;background:#ffffffed;box-shadow:0 2px 5px #32579620;color:#10356b;font-size:13px;transform:none}
+#site-shell .catalog-masthead>.header-tools>.settings-control svg{width:22px;height:22px;color:#16469f}
+@media(max-width:760px){#site-shell .catalog-masthead>.header-tools{top:16px;right:16px;max-width:calc(100% - 32px);gap:8px}#site-shell .catalog-masthead>.header-tools>.settings-control{flex-basis:108px;width:108px;min-width:108px;padding-inline:10px}#site-shell .catalog-masthead>.header-tools .search-box{padding-inline:12px}}
+@media(max-width:900px){:root[data-theme="pixel"] #site-shell .site-header{padding-top:68px}:root[data-theme="pixel"] #site-shell .header-inner{min-height:58px;height:auto;padding-top:8px;padding-bottom:10px}:root[data-theme="pixel"] #site-shell .brand>span:first-of-type{font-size:23px}}
+@media(max-width:900px){:root:not([data-theme="pixel"]) #site-shell .header-inner{height:140px;min-height:140px}:root:not([data-theme="pixel"]) #site-shell .site-header{height:140px;min-height:140px}:root:not([data-theme="pixel"]) #site-shell .brand{position:absolute;top:76px;left:20px;transform:none}}
