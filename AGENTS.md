@@ -25,3 +25,7 @@ Khung bộ chọn lớp/chương trình/môn/nội dung phải thẳng hai mép 
 Giao diện chủ đề TIMO: chỉ Pixel dùng huy hiệu và hình sách Pixel. Mỗi giao diện còn lại dùng màu, kiểu số và ảnh minh họa thuộc bộ chủ đề tương ứng; không tái dùng ảnh Pixel cho các chủ đề khác.
 
 Theo yêu cầu mới, web có màn hình đăng nhập bằng mật khẩu chung riêng do trợ lý đặt và gửi chủ dự án. Không dùng mật khẩu phụ huynh để đăng nhập. Ghi nhớ chỉ sau khi đăng nhập đúng và tích chọn; giữ trên cùng trình duyệt đến khi đăng xuất. Không lưu mật khẩu nguyên văn trong repo hoặc localStorage/sessionStorage. Đăng xuất ở Cài đặt → Hướng dẫn, chỉ xóa trạng thái truy cập, giữ bài làm và mật khẩu đáp án. Đây là khóa giao diện cho web tĩnh, không phải xác thực máy chủ.
+
+TIMO chỉ có môn Toán; không hiển thị hoặc giữ lựa chọn Tiếng Việt/Tiếng Anh khi chuyển sang TIMO. Đã gỡ toàn bộ đề/câu hỏi minh họa và ô đề giả khỏi danh sách đang dùng; danh sách đề chính thức rỗng cho đến khi chủ dự án gửi. Giữ cấu trúc 5 nhóm TIMO nhưng không tự sinh chủ đề nhỏ/nội dung luyện tập. Bài làm chính thức dùng namespace riêng và id đề ổn định để không gán kết quả đề mẫu cho đề mới.
+
+Chủ dự án sẽ gửi toàn bộ bộ đề trước, rồi mới gửi đáp án. Nhập đề đúng nội dung đã gửi; trong thời gian chờ đáp án không suy luận hoặc chấm điểm, chỉ hiển thị “Chờ đáp án”. Khi đáp án được gửi, đối chiếu và báo dữ liệu không khớp, không tự sửa.

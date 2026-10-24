@@ -29,7 +29,7 @@ Dùng cấu trúc/thẻ, banner, bộ lọc, sprites và bố cục của giao d
 ## Hành vi học tập
 
 - Chọn lớp, chương trình, môn, nội dung; tìm kiếm theo tên bài.
-- Làm bài mở popup với hình của giao diện đang chọn, tên đề, số câu thực tế và thời lượng. Các đề minh họa hiện không giới hạn thời gian.
+- Làm bài mở popup với hình của giao diện đang chọn, tên đề, số câu thực tế và thời lượng. Thời lượng được hiển thị theo dữ liệu đề được cung cấp.
 - Thời gian bắt đầu khi bấm Bắt đầu/Tiếp tục, gồm thời gian rời trang. Lựa chọn và trạng thái lưu trên trình duyệt nếu localStorage được cho phép. Không đồng bộ sang thiết bị khác.
 - Xem lại bài đã nộp hoặc làm lại từ đầu. Đề chưa có đáp án hiển thị Chờ đáp án.
 - Câu hỏi hỗ trợ `text`/`english`, `translation`/`vietnamese`, `detail`, `image` trong `./assets/` và `imageAlt`. Chỉ hiện dữ liệu đã cung cấp.
@@ -38,11 +38,11 @@ Dùng cấu trúc/thẻ, banner, bộ lọc, sprites và bố cục của giao d
 
 Đáp án/lời giải chỉ do chủ dự án cung cấp. Không tự giải, suy luận hoặc điền đáp án thiếu. Chưa có đáp án thì không chấm điểm. Khi nhận dữ liệu, nếu không khớp phải báo chủ dự án để xác nhận.
 
-Đáp án hợp lệ cần `answer` (chỉ số lựa chọn bắt đầu từ 0) và `answerSource: 'user'`. Chỉ lưu `explanation` nếu đã được cung cấp. Hiện dữ liệu minh họa không có đáp án.
+Đáp án hợp lệ cần `answer` (chỉ số lựa chọn bắt đầu từ 0) và `answerSource: 'user'`. Chỉ lưu `explanation` nếu đã được cung cấp. Chưa có đề/câu hỏi/đáp án chính thức.
 
 Mật khẩu phụ huynh chỉ mở đáp án/lời giải; không phải đăng nhập. Đặt/đổi/gỡ trong tab Mật khẩu; đổi/gỡ cần mật khẩu hiện tại. Bản băm có salt riêng dùng PBKDF2/SHA-256 lưu trên trình duyệt; HTTPS hoặc localhost cần cho Web Crypto. Đây là khóa thao tác của web tĩnh, không bảo vệ dữ liệu khỏi công cụ phát triển. Xóa dữ liệu trang sẽ mất bản lưu và mật khẩu.
 
-Khóa localStorage riêng của dự án: `goc-hoc-tap.preferences.v1`, `goc-hoc-tap.parent-password.v1`, `goc-hoc-tap.attempts.v1`. Không đọc/ghi dữ liệu của ứng dụng mẫu. Xem các nguyên tắc làm việc trong `AGENTS.md`.
+Khóa localStorage riêng của dự án: `goc-hoc-tap.preferences.v1`, `goc-hoc-tap.parent-password.v1`, `goc-hoc-tap.attempts.official.v1`. Không đọc/ghi dữ liệu của ứng dụng mẫu. Xem các nguyên tắc làm việc trong `AGENTS.md`.
 
 ## Tránh lỗi bộ nhớ đệm sau cập nhật
 
@@ -60,7 +60,7 @@ Khung Cài đặt rộng tối đa 840px trên máy tính, tự co theo điện 
 
 ## Luyện theo chủ đề TIMO
 
-Riêng TIMO có 5 chủ đề lớn, mỗi nhóm hiện có 6 ô chủ đề nhỏ theo mẫu được duyệt. Máy tính chọn nhóm ở cột trái, điện thoại dùng nhóm mở/thu gọn. Tìm kiếm lọc trên cả tên nhóm và tên chủ đề nhỏ. Cấu trúc/tên tạm nằm ở `timoTopicGroups` trong `assets/data.js`. Chưa có nội dung do chủ dự án cung cấp, nút Luyện tập mở thông báo trống; không gán câu hỏi minh họa, đáp án hoặc kết quả cũ cho các chủ đề mới. Các chương trình và chế độ đề khác giữ dữ liệu hiện có.
+Riêng TIMO chỉ có môn Toán, với cấu trúc 5 chủ đề lớn đã được duyệt. Mỗi nhóm hiện để trống chủ đề nhỏ để chủ dự án cung cấp tên và nội dung chính thức. Máy tính chọn nhóm ở cột trái, điện thoại dùng nhóm mở/thu gọn. Cấu trúc/tên nhóm tạm nằm ở `timoTopicGroups` trong `assets/data.js`.
 
 Các ô chủ đề TIMO lấy huy hiệu, màu nền, nút và ảnh minh họa theo giao diện đang chọn. Chỉ Pixel dùng ảnh/huy hiệu Pixel; các giao diện khác dùng sprite của chính bộ đó và banner tương ứng trong popup.
 
@@ -74,3 +74,11 @@ Mật khẩu đăng nhập chung được gửi riêng cho chủ dự án, tách
 - Khóa riêng: `goc-hoc-tap.access.remember.v1`, `goc-hoc-tap.access.session.v1`. Thay bộ kiểm tra mật khẩu sẽ làm trạng thái ghi nhớ cũ không còn hợp lệ.
 
 Đây là khóa giao diện cho website tĩnh trên GitHub Pages, không phải xác thực hoặc phân quyền trên máy chủ. Tài nguyên tĩnh trong kho/trang vẫn có thể được đọc trực tiếp. Không dùng cơ chế này để bảo vệ dữ liệu nhạy cảm.
+
+## Nhận đề chính thức
+
+Toàn bộ câu hỏi minh họa, ô đề tạm và chủ đề nhỏ tạm đã được gỡ khỏi danh sách đang dùng. `officialPapers` trong `assets/data.js` hiện là mảng rỗng. Danh sách chỉ hiển thị các bản ghi khớp chương trình/môn/lớp/nội dung, có `id` ổn định, `title` và `questions` không rỗng. Không sinh tự động 15 ô hoặc câu hỏi thay thế khi chưa có dữ liệu.
+
+Chủ dự án gửi tất cả bộ đề trước rồi mới gửi đáp án. Đề chưa có đáp án vẫn được luyện/nộp khi đã được nhập, kết quả luôn Chờ đáp án. Không tự suy luận đáp án. Chỉ bổ sung đáp án với `answerSource: 'user'` khi đã được cung cấp.
+
+Bài làm chính thức lưu trong `goc-hoc-tap.attempts.official.v1`, khóa gồm lớp/chương trình/môn/nội dung/id đề. Dữ liệu đề minh họa cũ không được nhập lại hay gán cho đề chính thức. Các tài nguyên đã xuất bản được giữ nguyên theo cơ chế bộ nhớ đệm; HTML hiện hành chỉ tải dữ liệu mới không còn câu hỏi mẫu.

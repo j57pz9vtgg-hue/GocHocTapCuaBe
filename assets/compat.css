@@ -174,3 +174,4 @@
 .entry-submit:hover{background:#009ba8}.entry-submit:disabled{opacity:.65;cursor:wait}
 .entry-screen button:focus-visible,.entry-screen input:focus-visible{outline:2px solid #087fb8;outline-offset:3px}
 @media(max-width:479px){.entry-screen{padding:20px 16px}.entry-card{border-radius:16px}.entry-content{padding:20px}.entry-content h1{font-size:29px}.entry-subtitle{font-size:13px;margin-bottom:20px}.entry-hint{font-size:11px}}
+.topic-content-empty{grid-column:1/-1;display:grid;place-items:center;min-height:140px;padding:24px;color:#617b94;text-align:center;font-size:14px}
