@@ -214,3 +214,6 @@ Theo yêu cầu phân loại câu hỏi về tháng, tạo “Các tháng trong 
 
 
 Theo ảnh chỉ định tiếp theo, Đề 6 câu 7 và 10, Đề 7 câu 9 chuyển vào “Tìm giá trị”. Nhóm có 18 câu; Số học còn đúng 1 câu Chưa phân loại (Đề 5 câu 8). Nội dung, lựa chọn, thứ tự bộ đề và số câu nguồn không đổi. Tổng 135 câu đã phân loại, 40 câu Chưa phân loại.
+
+
+Theo các ảnh chỉ định của chủ dự án, thêm 6 câu vào “Number Theory / Lý thuyết số / Nhận biết kết quả chẵn”: Đề 4 câu 14; Đề 6 câu 15; Đề 4 câu 12; Đề 5 câu 14; Đề 2 câu 13; Đề 7 câu 11. Nhóm hiện có 8 câu, kể cả các câu về số lẻ do chủ dự án chỉ định rõ. Không sửa tên nhóm, nội dung, lựa chọn hoặc tạo đáp án. Tổng 141 câu có chủ đề nhỏ và 34 câu Chưa phân loại.

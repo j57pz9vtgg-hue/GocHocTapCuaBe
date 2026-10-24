@@ -83,3 +83,5 @@ Chủ dự án chỉ định câu “Among the following numbers, how many of th
 Theo ảnh chỉ định tiếp theo, Đề 6 câu 15 (xác định tổng 1 đến 14 lẻ hay chẵn) và Đề 4 câu 12 (số lẻ lớn nhất có 2 chữ số) đều vào “Nhận biết kết quả chẵn” trong Number Theory / Lý thuyết số. Đây là nhóm được chủ dự án chỉ định cho cả 2 câu trong ảnh, không suy luận đáp án hoặc tự sửa tên nhóm.
 
 Theo ảnh tiếp theo, Đề 5 câu 14 (đếm số lẻ lớn hơn 39) và Đề 2 câu 13 (đếm kết quả lẻ của các phép tính) vào đúng “Nhận biết kết quả chẵn” theo chủ dự án. Chỉ phân loại 2 câu được chỉ định, giữ nguyên dãy số/phép tính/lựa chọn, không tính đáp án hay đổi nhãn nhóm.
+
+Theo ảnh chỉ định tiếp theo, Đề 7 câu 11 (tổng 1 + 2 + 3 + 4 + … + 9 lẻ hay chẵn) vào “Nhận biết kết quả chẵn” trong Number Theory / Lý thuyết số. Nhóm hiện có 8 câu; chỉ phân loại, không tính hoặc nhập đáp án.

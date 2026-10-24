@@ -2194,7 +2194,8 @@ const officialPapers = [
           "Both odd and even / Vừa chẵn vừa lẻ",
           "Neither odd nor even / Không lẻ không chẵn"
         ],
-        "optionColumns": 2
+        "optionColumns": 2,
+        "subtopic": "Nhận biết kết quả chẵn"
       },
       {
         "number": 12,
