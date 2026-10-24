@@ -61,3 +61,5 @@ Chủ dự án đổi tên nhóm “Phối hợp lựa chọn” thành “Có b
 Chủ dự án yêu cầu tạo chủ đề nhỏ mới “Bài toán vị trí trong hàng” ở chủ đề lớn 1 Logical thinking / Tư duy lô-gic; chuyển đúng Đề 6 câu 3 (lớp 2A có 34 học sinh, 9 bạn sau Amy) vào nhóm này. Đây là tên được chỉ định riêng, không tự mở rộng sang câu khác. Nhóm mới có 1 câu; tổng 132 câu có chủ đề nhỏ, 43 câu Chưa phân loại.
 
 Chủ dự án yêu cầu phân loại lại câu Alice mua bánh (Đề 7 câu 5), cho phép tạo chủ đề phù hợp nếu chưa có. Câu này được chuyển khỏi nhóm tuổi vào chủ đề mới “Bài toán mua hàng và tiền còn lại” ở Logical thinking / Tư duy lô-gic. Yêu cầu này thay chỉ định cũ đưa câu mua bánh vào nhóm tuổi; không áp dụng cho các câu khác. Nhóm mới 1 câu, nhóm tuổi còn 7 câu.
+
+Chủ dự án đổi tên “Cộng nhiều số” thành “Tìm giá trị”. Giữ nguyên 9 câu của nhóm trong Arithmetic / Số học, giữ id chủ đề cũ để bài đã lưu, thứ tự và màn hình tải lại tiếp tục hoạt động. Không tự ghép thêm câu khác chỉ vì tên mới rộng hơn.

@@ -185,3 +185,6 @@ Theo yêu cầu mới, tạo “Bài toán vị trí trong hàng” trong Logica
 
 
 Theo yêu cầu phân loại lại câu Alice mua bánh, Đề 7 câu 5 nay thuộc chủ đề mới “Bài toán mua hàng và tiền còn lại” trong Logical thinking / Tư duy lô-gic. Chuyển khỏi “Tuổi hiện tại và tương lai” (nhóm tuổi còn 7 câu). Nhóm mua hàng mới có đúng 1 câu, giữ nguyên nội dung/lựa chọn, không thêm đáp án hay lời giải.
+
+
+“Cộng nhiều số” đổi tên thành “Tìm giá trị” theo chỉ định của chủ dự án. Giữ đúng 9 câu và id chủ đề cũ, không thay đổi nội dung/ảnh/lựa chọn hoặc tự bổ sung câu khác; bài đang làm và trạng thái tải lại vẫn tiếp tục được.

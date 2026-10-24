@@ -93,7 +93,7 @@ const officialPapers = [
           "40",
           "39"
         ],
-        "subtopic": "Cộng nhiều số"
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 7,
@@ -442,7 +442,7 @@ const officialPapers = [
           "41",
           "42"
         ],
-        "subtopic": "Cộng nhiều số"
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 7,
@@ -788,7 +788,7 @@ const officialPapers = [
           "37",
           "27"
         ],
-        "subtopic": "Cộng nhiều số"
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 7,
@@ -1136,7 +1136,7 @@ const officialPapers = [
           "30",
           "35"
         ],
-        "subtopic": "Cộng nhiều số"
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 7,
@@ -1473,7 +1473,7 @@ const officialPapers = [
           "40",
           "45"
         ],
-        "subtopic": "Cộng nhiều số"
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 7,
@@ -1524,7 +1524,7 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-05/q10.dbbbb5065f9e.svg",
         "imageAlt": "Dãy 1, 1, 2, 3, 5, 8, …",
-        "subtopic": "Cộng nhiều số"
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 11,
@@ -1801,7 +1801,7 @@ const officialPapers = [
           "140",
           "150"
         ],
-        "subtopic": "Cộng nhiều số"
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 7,
@@ -2123,7 +2123,7 @@ const officialPapers = [
           "210",
           "230"
         ],
-        "subtopic": "Cộng nhiều số"
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 7,
@@ -2149,7 +2149,7 @@ const officialPapers = [
           "90",
           "180"
         ],
-        "subtopic": "Cộng nhiều số"
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 9,
@@ -2427,7 +2427,8 @@ function buildTimoTopicGroups(papers, grade) {
       let topic = group.topics.find(topic => topic.name === name);
       if (!topic) {
         // Keep the existing topic ID so saved attempts, question order and reload state survive this label change.
-        const stableName = name === 'Có bao nhiêu cách kết hợp khác nhau?' ? 'Phối hợp lựa chọn' : name;
+        const stableName = name === 'Có bao nhiêu cách kết hợp khác nhau?' ? 'Phối hợp lựa chọn'
+          : name === 'Tìm giá trị' ? 'Cộng nhiều số' : name;
         topic = { id: `${group.id}-named-${encodeURIComponent(stableName)}`, name, entries: [] };
         group.topics.push(topic);
       }
