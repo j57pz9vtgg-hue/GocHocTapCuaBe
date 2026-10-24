@@ -20,6 +20,7 @@
   document.documentElement.dataset.access='open';
   form.reset();password.type='password';toggle.setAttribute('aria-pressed','false');toggle.setAttribute('aria-label','Hiện mật khẩu');status.textContent='';password.removeAttribute('aria-invalid');
   window.scrollTo({top:0});
+  window.dispatchEvent(new Event('learning-access-open'));
  }
  function lock(){
   for(const dialog of document.querySelectorAll('dialog[open]'))dialog.close();

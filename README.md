@@ -168,3 +168,8 @@ Theo chỉ định riêng tiếp theo, câu 2 Đề số 7 (dãy chữ A, Z, B, 
 
 
 Theo ảnh chỉ định tiếp theo, Đề 7 câu 5, Đề 2 câu 3, Đề 5 câu 4 và Đề 7 câu 1 thuộc “Tuổi hiện tại và tương lai”. Chuyển đúng 4 câu, giữ nguyên nội dung/ảnh/lựa chọn. Chủ đề hiện có 6 câu; toàn ngân hàng có 129 câu phân loại và 46 câu Chưa phân loại.
+
+
+## Tiếp tục màn hình sau khi tải lại trang
+
+Nút tải lại của trình duyệt giữ màn hình hiện tại trong cùng tab: lớp/chương trình/môn/nội dung, nhóm mở/từ khóa, đề hoặc chủ đề đang làm, thứ tự câu, lựa chọn đã chọn, đồng hồ và vị trí câu đang xem. Màn hình kết quả giữ trạng thái đã nộp và thời gian đã dừng; giới thiệu bài và tab Cài đặt cũng được khôi phục. Trạng thái dùng sessionStorage, ghép câu theo id với dữ liệu hiện hành; không lưu bản sao đề hoặc mật khẩu. Chỉ khôi phục sau khi xác thực truy cập, không tự mở lời giải phụ huynh. Bản ghi lỗi hoặc đề bị xóa trở về danh sách an toàn. Đã kiểm tra tải lại trên 11 giao diện ở 1440px/390px, tiếp tục bài/chủ đề/intro/kết quả/bộ lọc, ghép lựa chọn, vị trí cuộn và đăng xuất.
