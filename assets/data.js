@@ -1240,7 +1240,8 @@ const officialPapers = [
           "3"
         ],
         "image": "./assets/papers/timo-grade2-qualifying-04/q14.6490fe276d20.svg",
-        "imageAlt": "Các số 14, 31, 22, 19, 52, 93, 70, 54"
+        "imageAlt": "Các số 14, 31, 22, 19, 52, 93, 70, 54",
+        "subtopic": "Nhận biết kết quả chẵn"
       },
       {
         "number": 15,
