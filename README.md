@@ -52,3 +52,7 @@ Không tự suy luận hoặc tự tạo đáp án/lời giải. Dữ liệu min
 Khi chủ dự án cung cấp đáp án, lưu `answer` là chỉ số lựa chọn từ 0, `answerSource: 'user'` và chỉ đưa `explanation` nếu đã được cung cấp. Mọi câu hỏi trong bài phải có đáp án hợp lệ trước khi chấm. Nếu dữ liệu không khớp, báo chủ dự án thay vì tự sửa.
 
 Nguyên tắc làm việc của chủ dự án được lưu trong `AGENTS.md`.
+
+## Thẻ đề
+
+Thẻ đề hiển thị số thứ tự, tên đề, trạng thái, kết quả và thời gian làm bài; minh họa nằm bên phải, nút Làm bài ở dưới. Chưa làm hiển thị `—`. Khi nộp bài, thời gian được đo từ lúc mở bài đến khi nộp; chưa có đáp án được cung cấp thì kết quả hiển thị `Chờ đáp án`. Trạng thái và thời gian hiện chỉ lưu trong phiên trang đang mở.

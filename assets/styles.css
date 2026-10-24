@@ -62,3 +62,24 @@ body:has(.dashboard)>footer{
 @media(max-width:520px){
   .dashboard{padding:12px 10px 0}
 }
+/* Exercise tiles follow the supplied status / result / time / illustration layout. */
+.paper-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.study-card.paper-tile{position:relative;display:flex;flex-direction:column;gap:0;min-height:220px;padding:16px 16px 12px;border-radius:17px;overflow:hidden}
+.tile-heading{display:flex;align-items:flex-start;gap:12px;position:relative;z-index:1;padding-right:94px;min-height:65px}
+.tile-number{display:grid;place-items:center;flex-shrink:0;width:45px;height:45px;background:#bedf86;color:#244e37;border-radius:50%;font-size:22px;font-weight:800}
+.tile-heading h2{font-size:16px;line-height:1.4;margin:3px 0 7px;color:var(--ink);letter-spacing:-.25px}
+.tile-status{display:inline-flex;gap:5px;align-items:center;background:#ff9d27;color:#fff;border-radius:20px;padding:4px 10px;font-size:11px;font-weight:650;line-height:1.2;white-space:nowrap}
+.tile-status.submitted{background:#e4f5e9;color:#277344}.tile-status svg{flex-shrink:0}
+.tile-metrics{margin:14px 0 16px;position:relative;z-index:1;padding-right:108px;color:#4c6b8c;font-size:14px;line-height:1.9}
+.tile-metrics>div{display:flex;gap:10px;flex-wrap:wrap}.tile-metrics dt,.tile-metrics dd{margin:0}.tile-metrics dd{font-weight:550}
+.tile-illustration{position:absolute;right:11px;top:21px;width:112px;height:123px;display:flex;align-items:flex-end;justify-content:center;pointer-events:none}
+.tile-illustration .space-sticker{width:106px;height:106px;clip-path:inset(2px 6px)}
+.woodland-mascot{display:none;width:100%;height:100%;object-fit:contain}
+:root[data-theme=forest] .woodland-mascot{display:block}:root[data-theme=forest] .tile-illustration .space-sticker{display:none}
+:root[data-theme=forest] .tile-metrics{color:#586d56}
+.paper-tile .card-start{margin-top:auto;width:100%;min-height:41px;flex-shrink:0;font-size:14px;border-radius:9px;padding:10px}
+@media(min-width:1800px){.paper-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.study-card.paper-tile{min-height:226px}.tile-heading h2{font-size:17px}.tile-illustration{width:125px;height:135px;right:12px}.tile-illustration .space-sticker{width:116px;height:116px}}
+@media(min-width:801px) and (max-width:1100px){.paper-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:601px) and (max-width:800px){.paper-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.paper-grid{grid-template-columns:1fr}.study-card.paper-tile{min-height:216px;padding:16px 16px 12px}.tile-heading h2{font-size:17px}.tile-heading{padding-right:100px}.tile-metrics{font-size:14px}.tile-illustration{right:17px;width:115px;height:126px}.tile-illustration .space-sticker{width:109px;height:109px}}
+@media(min-width:1101px) and (max-width:1799px){.paper-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}}
