@@ -83,3 +83,12 @@ body:has(.dashboard)>footer{
 @media(min-width:601px) and (max-width:800px){.paper-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.paper-grid{grid-template-columns:1fr}.study-card.paper-tile{min-height:216px;padding:16px 16px 12px}.tile-heading h2{font-size:17px}.tile-heading{padding-right:100px}.tile-metrics{font-size:14px}.tile-illustration{right:17px;width:115px;height:126px}.tile-illustration .space-sticker{width:109px;height:109px}}
 @media(min-width:1101px) and (max-width:1799px){.paper-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}}
+/* Parent settings: one focused panel at a time. */
+.settings-tabs{display:flex;gap:6px;padding:6px;margin:20px 0 0;background:var(--page);border:1px solid var(--border);border-radius:11px}
+.settings-tabs button{flex:1;border:0;border-radius:7px;background:transparent;color:var(--muted);font-size:14px;font-weight:650;padding:11px 8px;white-space:nowrap}
+.settings-tabs button[aria-selected=true]{background:#fff;color:var(--green);box-shadow:0 2px 7px #25485912}
+.settings-dialog>.settings-section{border-bottom:0;padding-bottom:0}
+.settings-dialog [hidden]{display:none!important}
+.settings-dialog .settings-section:focus{outline:none}
+.settings-dialog .settings-section:focus-visible{outline:2px solid var(--green);outline-offset:5px;border-radius:5px}
+@media(max-width:520px){.settings-tabs{margin-top:17px;gap:3px;padding:4px}.settings-tabs button{font-size:12px;padding:10px 4px}.settings-dialog .settings-heading>span{width:40px;height:40px}.settings-heading{gap:10px}}
