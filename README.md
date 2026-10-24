@@ -173,3 +173,6 @@ Theo ảnh chỉ định tiếp theo, Đề 7 câu 5, Đề 2 câu 3, Đề 5 c�
 ## Tiếp tục màn hình sau khi tải lại trang
 
 Nút tải lại của trình duyệt giữ màn hình hiện tại trong cùng tab: lớp/chương trình/môn/nội dung, nhóm mở/từ khóa, đề hoặc chủ đề đang làm, thứ tự câu, lựa chọn đã chọn, đồng hồ và vị trí câu đang xem. Màn hình kết quả giữ trạng thái đã nộp và thời gian đã dừng; giới thiệu bài và tab Cài đặt cũng được khôi phục. Trạng thái dùng sessionStorage, ghép câu theo id với dữ liệu hiện hành; không lưu bản sao đề hoặc mật khẩu. Chỉ khôi phục sau khi xác thực truy cập, không tự mở lời giải phụ huynh. Bản ghi lỗi hoặc đề bị xóa trở về danh sách an toàn. Đã kiểm tra tải lại trên 11 giao diện ở 1440px/390px, tiếp tục bài/chủ đề/intro/kết quả/bộ lọc, ghép lựa chọn, vị trí cuộn và đăng xuất.
+
+
+Theo chỉ định tiếp theo, Đề 4 câu 4 (Lucy) và Đề 6 câu 5 (Amy) vào “Tuổi hiện tại và tương lai”, tăng nhóm lên 8 câu. Đề 6 câu 3 giữ Chưa phân loại. Ngân hàng hiện có 131 câu đã phân loại và 44 câu Chưa phân loại; không đổi nội dung/lựa chọn/ảnh.
