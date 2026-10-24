@@ -114,3 +114,8 @@ Theo yêu cầu tiếp theo của chủ dự án, 21 câu Đề số 2 được 
 Nội dung trang đề dùng Times New Roman (Times/serif dự phòng). Cỡ chữ, màu, độ đậm, giãn dòng và các hình giữ nguyên. Chỉ có một nút Nộp bài ở thanh công cụ phía trên; nút mở khi đã chọn đủ câu và khóa sau khi nộp để tránh nộp lặp.
 
 Đồng hồ trên thanh đề đếm tăng MM:SS (HH:MM:SS khi đủ một giờ), bắt đầu khi hiển thị câu hỏi. Nộp bài lưu `finishedAt` để đóng băng thời gian trên kết quả/xem lại và ô đề; Làm lại đặt lại đồng hồ. Tiếp tục phiên chưa nộp giữ `startedAt` đã lưu, gồm thời gian rời trang như quy tắc đo thời gian hiện có. Bộ đếm được dọn khi quay về danh sách.
+
+
+## Đề số 3 vòng loại TIMO lớp 2
+
+Nhập từ 5 ảnh chủ dự án gửi: 25 câu song ngữ, 100 lựa chọn và 19 SVG (gồm 4 hình lựa chọn câu 17). Giữ nguyên thứ tự câu và lựa chọn. Cả 25 câu vào Chưa phân loại theo 5 nhóm lớn; chưa có đáp án hoặc lời giải.

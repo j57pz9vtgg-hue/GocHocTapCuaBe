@@ -702,6 +702,330 @@ const officialPapers = [
         "subtopic": "Mua hàng và quà tặng"
       }
     ]
+  },
+  {
+    "id": "timo-grade2-qualifying-03",
+    "title": "Đề vòng loại 03",
+    "sourceTitle": "ĐỀ SỐ 3 — VÒNG LOẠI TIMO",
+    "program": "TIMO",
+    "subject": "Toán",
+    "grade": "2",
+    "mode": "Đề vòng loại",
+    "questions": [
+      {
+        "number": 1,
+        "english": "According to the pattern shown below, find the number to replace the question mark.",
+        "translation": "Dựa vào quy luật dưới đây, tìm số để thay thế dấu hỏi chấm.",
+        "options": [
+          "26",
+          "27",
+          "28",
+          "29"
+        ],
+        "imageAlt": "Dãy 2, 5, 9, 14, 20, dấu hỏi, …",
+        "image": "./assets/papers/timo-grade2-qualifying-03/q01-sequence.c3c1b01c42eb.svg"
+      },
+      {
+        "number": 2,
+        "english": "There are 15 boys and 12 girls in Jennie’s class. How many classmates does she have?",
+        "translation": "Lớp của Jennie có 15 học sinh nam và 12 học sinh nữ. Hỏi cô bé có bao nhiêu người bạn cùng lớp?",
+        "options": [
+          "24",
+          "25",
+          "26",
+          "27"
+        ]
+      },
+      {
+        "number": 3,
+        "english": "After 6 years, Linda will be 15 years old. How old is Linda now?",
+        "translation": "6 năm nữa, Linda sẽ 15 tuổi. Hỏi bây giờ Linda bao nhiêu tuổi?",
+        "options": [
+          "6",
+          "21",
+          "11",
+          "9"
+        ]
+      },
+      {
+        "number": 4,
+        "english": "According to the pattern shown below, how many suns are there in the 10th group?",
+        "translation": "Dựa vào quy luật dưới đây, có bao nhiêu hình mặt trời trong nhóm thứ 10?",
+        "options": [
+          "20",
+          "22",
+          "24",
+          "26"
+        ],
+        "imageAlt": "Bốn nhóm mặt trời trong các lưới ô vuông, giữ vị trí theo ảnh của nhóm 1 đến nhóm 4.",
+        "image": "./assets/papers/timo-grade2-qualifying-03/q04-suns.fe9df3c857f5.svg"
+      },
+      {
+        "number": 5,
+        "english": "The day before yesterday was Monday. Which day of the week will it be 4 days later?",
+        "translation": "Ngày hôm kia là thứ Hai. Hỏi 4 ngày nữa là thứ mấy?",
+        "options": [
+          "Tuesday / Thứ Ba",
+          "Wednesday / Thứ Tư",
+          "Saturday / Thứ Bảy",
+          "Sunday / Chủ Nhật"
+        ],
+        "optionColumns": 2
+      },
+      {
+        "number": 6,
+        "english": "Find the value of 12 + 6 + 7 + 13.",
+        "translation": "Tìm giá trị của 12 + 6 + 7 + 13.",
+        "options": [
+          "28",
+          "38",
+          "37",
+          "27"
+        ]
+      },
+      {
+        "number": 7,
+        "english": "Which number is hidden inside the backpack below?",
+        "translation": "Số nào đang bị giấu trong chiếc cặp dưới đây?",
+        "options": [
+          "33",
+          "35",
+          "13",
+          "15"
+        ],
+        "imageAlt": "11 cộng hình chiếc cặp màu xanh bằng 36 trừ 12.",
+        "image": "./assets/papers/timo-grade2-qualifying-03/q07-backpack.d7a05fa4de7c.svg"
+      },
+      {
+        "number": 8,
+        "english": "Find the value of 10 − 9 + 8 − 7 + 6 − 5 + 4 − 3 + 2 − 1.",
+        "translation": "Tìm giá trị của 10 − 9 + 8 − 7 + 6 − 5 + 4 − 3 + 2 − 1.",
+        "options": [
+          "4",
+          "5",
+          "6",
+          "3"
+        ]
+      },
+      {
+        "number": 9,
+        "english": "What is the first number in the sequence?",
+        "translation": "Số đầu tiên trong dãy là số nào?",
+        "options": [
+          "26",
+          "17",
+          "21",
+          "20"
+        ],
+        "imageAlt": "Các hình ngũ giác: dấu hỏi, mũi tên trừ 10, ô trống, mũi tên cộng 7, ô trống, mũi tên cộng 6, số 23.",
+        "image": "./assets/papers/timo-grade2-qualifying-03/q09-operations.35d1a500c149.svg"
+      },
+      {
+        "number": 10,
+        "english": "Given that A and B represent different 1-digit numbers, what is the value of B?",
+        "translation": "Biết A và B biểu diễn các số có 1 chữ số khác nhau, hỏi giá trị của B bằng bao nhiêu?",
+        "options": [
+          "7",
+          "8",
+          "4",
+          "2"
+        ],
+        "imageAlt": "Phép cộng dọc AB cộng B bằng 24.",
+        "image": "./assets/papers/timo-grade2-qualifying-03/q10-column-addition.ac3344cba018.svg"
+      },
+      {
+        "number": 11,
+        "english": "How many 2-digit numbers with 2 digits adding up to 12 are there?",
+        "translation": "Hỏi có bao nhiêu số có 2 chữ số mà khi cộng 2 chữ số đó lại thì được kết quả là 12?",
+        "options": [
+          "6",
+          "12",
+          "8",
+          "7"
+        ]
+      },
+      {
+        "number": 12,
+        "english": "According to the pattern below, find the value of the 6th number in the sequence.",
+        "translation": "Dựa vào quy luật dưới đây, tìm giá trị của số thứ 6 trong dãy.",
+        "options": [
+          "40",
+          "38",
+          "50",
+          "48"
+        ],
+        "imageAlt": "Dãy 98, 86, 74, 62, …",
+        "image": "./assets/papers/timo-grade2-qualifying-03/q12-sequence.fe25d3ed13bf.svg"
+      },
+      {
+        "number": 13,
+        "english": "Among the operations below, how many results are even numbers?",
+        "translation": "Trong các phép tính dưới đây, có bao nhiêu kết quả là số chẵn?",
+        "options": [
+          "3",
+          "2",
+          "4",
+          "1"
+        ],
+        "imageAlt": "Năm phép tính: 12 − 3; 7 + 5; 11 − 3 + 2; 111 + 1; 20 − 17.",
+        "image": "./assets/papers/timo-grade2-qualifying-03/q13-expressions.78c22541e0a4.svg"
+      },
+      {
+        "number": 14,
+        "english": "Fill in the blanks with ‘−’ and ‘+’ to make the equation below correct.",
+        "translation": "Điền dấu ‘−’ và ‘+’ vào chỗ trống để tạo thành một phép tính đúng.",
+        "options": [
+          "4 + 5 + 3 + 6 = 12",
+          "4 + 5 − 3 − 6 = 12",
+          "4 + 5 − 3 + 6 = 12",
+          "4 + 5 + 3 − 6 = 12"
+        ],
+        "imageAlt": "4, chỗ điền dấu, 5, chỗ điền dấu, 3, chỗ điền dấu, 6 bằng 12.",
+        "optionColumns": 2,
+        "image": "./assets/papers/timo-grade2-qualifying-03/q14-signs.143f30da5a24.svg"
+      },
+      {
+        "number": 15,
+        "english": "John has 20 balloons and Jack has 60 balloons. How many balloons should Jack give to John so that they have the same number of balloons?",
+        "translation": "John có 20 quả bóng bay và Jack có 60 quả bóng bay. Hỏi Jack phải cho John bao nhiêu quả bóng bay để họ có số bóng bằng nhau?",
+        "options": [
+          "20",
+          "40",
+          "60",
+          "80"
+        ]
+      },
+      {
+        "number": 16,
+        "english": "How many squares are there in the figure below?",
+        "translation": "Hỏi có bao nhiêu hình vuông trong hình dưới đây?",
+        "options": [
+          "6",
+          "9",
+          "10",
+          "7"
+        ],
+        "imageAlt": "Hình vuông lớn phía trên trái, hình vuông nhỏ chia ô ở giữa và hình vuông dưới phải chồng lên nhau theo ảnh.",
+        "image": "./assets/papers/timo-grade2-qualifying-03/q16-squares.da63e2c48405.svg"
+      },
+      {
+        "number": 17,
+        "english": "According to the pattern shown below, what is the figure in the space (“__”) provided?",
+        "translation": "Dựa vào quy luật dưới đây, hình điền vào chỗ trống (“__”) là hình nào?",
+        "options": [
+          "●",
+          "△",
+          "◆",
+          "○"
+        ],
+        "imageAlt": "Dãy chấm tròn, tam giác rỗng và hình thoi, lặp lại và có một chỗ trống theo ảnh.",
+        "image": "./assets/papers/timo-grade2-qualifying-03/q17-shapes.b18b6bb40b34.svg",
+        "optionImages": [
+          "./assets/papers/timo-grade2-qualifying-03/q17-choice-dot.725f922c2d52.svg",
+          "./assets/papers/timo-grade2-qualifying-03/q17-choice-triangle.e01cebdcb296.svg",
+          "./assets/papers/timo-grade2-qualifying-03/q17-choice-diamond.4834da97d3e0.svg",
+          "./assets/papers/timo-grade2-qualifying-03/q17-choice-circle.87e68b438602.svg"
+        ]
+      },
+      {
+        "number": 18,
+        "english": "At least how many squares can be seen if viewing the figure below from the right?",
+        "translation": "Hỏi có thể nhìn thấy ít nhất bao nhiêu hình vuông nếu nhìn hình dưới đây từ phía bên phải?",
+        "options": [
+          "9",
+          "6",
+          "7",
+          "8"
+        ],
+        "imageAlt": "Cụm khối lập phương màu xanh có cột cao ở phía sau, được hỏi khi nhìn từ bên phải, như ảnh đề.",
+        "image": "./assets/papers/timo-grade2-qualifying-03/q18-right-view.57b3c1f0dd37.svg"
+      },
+      {
+        "number": 19,
+        "english": "How many line segments are there in the figure below?",
+        "translation": "Hỏi có bao nhiêu đoạn thẳng trong hình vẽ dưới đây?",
+        "options": [
+          "12",
+          "14",
+          "13",
+          "11"
+        ],
+        "imageAlt": "Hình thoi lớn và các đoạn thẳng đi qua hai điểm ở giữa, sáu điểm đánh dấu như ảnh.",
+        "image": "./assets/papers/timo-grade2-qualifying-03/q19-segments.eae3bf0e6e7f.svg"
+      },
+      {
+        "number": 20,
+        "english": "Fiona stacks identical cubes on top of each other to get the figure below. At least how many cubes does she need to use?",
+        "translation": "Fiona xếp chồng các khối lập phương y hệt lên nhau để được hình dưới đây. Hỏi cô bé cần ít nhất bao nhiêu khối lập phương?",
+        "options": [
+          "10",
+          "11",
+          "8",
+          "9"
+        ],
+        "imageAlt": "Cụm khối màu trắng xám với hai cột phía sau và một khối nhô ra phía trước theo ảnh.",
+        "image": "./assets/papers/timo-grade2-qualifying-03/q20-stacked-cubes.5912c10900e5.svg"
+      },
+      {
+        "number": 21,
+        "english": "Arrange the numbers in descending order to find the 3rd largest number.",
+        "translation": "Sắp xếp các số sau từ lớn đến bé để tìm số lớn thứ 3.",
+        "options": [
+          "88",
+          "37",
+          "52",
+          "49"
+        ],
+        "imageAlt": "Các số 23, 92, 12, 37, 49, 52, 88, 45.",
+        "image": "./assets/papers/timo-grade2-qualifying-03/q21-numbers.5d826c965731.svg"
+      },
+      {
+        "number": 22,
+        "english": "Choose 2 digits, without repetition, from 2, 3, 4, 5, 6 to form 2-digit numbers. How many even numbers are there?",
+        "translation": "Chọn 2 chữ số không lặp lại từ 2, 3, 4, 5, 6 để tạo thành các số có 2 chữ số. Hỏi có tất cả bao nhiêu số chẵn?",
+        "options": [
+          "12",
+          "24",
+          "10",
+          "20"
+        ]
+      },
+      {
+        "number": 23,
+        "english": "Teacher writes 4 digits 2, 8, 5, 3 on the board. Find the smallest sum of two 2-digit numbers formed by those digits without repetition.",
+        "translation": "Cô giáo viết 4 chữ số 2, 8, 5, 3 trên bảng. Tìm tổng nhỏ nhất có thể của hai số có 2 chữ số tạo từ các chữ số đã cho, biết rằng không có chữ số nào bị lặp lại.",
+        "options": [
+          "61",
+          "81",
+          "63",
+          "83"
+        ]
+      },
+      {
+        "number": 24,
+        "english": "There are 4 ways from the supermarket to the train station and there are 2 ways from the train station to the cinema. How many different ways are there from the supermarket to the cinema through the train station?",
+        "translation": "Có 4 cách đi từ siêu thị đến ga tàu và có 2 cách đi từ ga tàu đến rạp chiếu phim. Hỏi có bao nhiêu cách khác nhau đi từ siêu thị đến rạp chiếu phim mà phải đi qua ga tàu?",
+        "options": [
+          "8",
+          "5",
+          "6",
+          "4"
+        ],
+        "imageAlt": "Siêu thị, ga tàu và rạp chiếu phim với bốn đường từ siêu thị tới ga và hai đường từ ga tới rạp theo ảnh.",
+        "image": "./assets/papers/timo-grade2-qualifying-03/q24-routes.93045e82bb86.svg"
+      },
+      {
+        "number": 25,
+        "english": "Peter wants to buy some pens. Each pen costs $5. For every 2 pens, the store gives 1 eraser for free. Peter has a total of $25. At most how many erasers can Peter get for free?",
+        "translation": "Peter muốn mua một số bút. Mỗi chiếc bút có giá 5 đô. Với mỗi 2 chiếc bút, cửa hàng tặng thêm 1 cục tẩy miễn phí. Peter có tổng cộng 25 đô. Hỏi Peter có thể được tặng nhiều nhất bao nhiêu cục tẩy?",
+        "options": [
+          "5",
+          "2",
+          "3",
+          "4"
+        ]
+      }
+    ]
   }
 ];
 function getPapers(program, subject, grade, mode) {
