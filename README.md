@@ -24,7 +24,7 @@ Theo yêu cầu chủ dự án, tái sử dụng trực tiếp bộ thiết kế
 
 11 giao diện: Khám phá Bắc Cực, Đồ chơi 3D mềm, Thế giới Pixel, Thỏ con, Đảo pha lê, Thành phố trên mây, Rừng đom đóm, Nhà khám phá khủng long, Phép thuật, Kho báu và Ô tô. Giao diện ban đầu là Bắc Cực. Lựa chọn cũ `space` chuyển thành Đảo pha lê; lựa chọn Rừng vẫn được giữ.
 
-Dùng cấu trúc/thẻ, banner, bộ lọc, sprites và bố cục của giao diện gốc. Dữ liệu bài học và dịch vụ của ứng dụng mẫu không được sao chép. Không nhập cấu hình Firebase, tài khoản, màn hình đăng nhập hay đáp án từ ứng dụng khác. Biểu tượng đám mây quản lý dữ liệu cục bộ/tải bản sao, chưa có đồng bộ trực tuyến; biểu tượng mũi tên đưa về danh sách. Giữ ba tab Giao diện/Mật khẩu/Hướng dẫn theo yêu cầu của chủ dự án.
+Dùng cấu trúc/thẻ, banner, bộ lọc, sprites và bố cục của giao diện gốc. Dữ liệu bài học và dịch vụ của ứng dụng mẫu không được sao chép. Không nhập cấu hình Firebase, tài khoản, màn hình đăng nhập hay đáp án từ ứng dụng khác. Thanh trên cùng chỉ có một nút Cài đặt. Ba tab Giao diện/Mật khẩu/Hướng dẫn gom toàn bộ chức năng; trong Hướng dẫn có Dữ liệu trên thiết bị/tải bản sao và Về danh sách bài tập. Chưa có đồng bộ trực tuyến.
 
 ## Hành vi học tập
 
