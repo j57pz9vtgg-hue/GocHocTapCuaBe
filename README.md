@@ -22,7 +22,7 @@ Không cần tạo workflow riêng. GitHub có thể hiển thị tác vụ Page
 
 ## Tính năng và dữ liệu
 
-Chọn lớp 1–12, chương trình TIMO/ASMO/Báo bài của trường, môn học và nhóm luyện tập; làm bài mẫu, nộp bài và làm lại. Điểm và lời giải chỉ hiển thị khi có đáp án do chủ dự án cung cấp. Trạng thái bài chỉ giữ trong phiên trang hiện tại, chưa lưu sau khi tải lại.
+Chọn lớp 1–12, chương trình TIMO/ASMO/Báo bài của trường, môn học và nhóm luyện tập; làm bài mẫu, nộp bài và làm lại. Điểm và lời giải chỉ hiển thị khi có đáp án do chủ dự án cung cấp. Lựa chọn và trạng thái bài được lưu trên trình duyệt hiện tại nếu localStorage được cho phép.
 
 Nội dung hiện là minh họa, chưa có đề TIMO/ASMO chính thức hoặc báo bài của trường. Câu hỏi ngôn ngữ dùng chung giữa các lớp và các chủ đề cần được bổ sung ngân hàng câu hỏi thực tế trước khi dùng chính thức.
 
@@ -55,6 +55,14 @@ Nguyên tắc làm việc của chủ dự án được lưu trong `AGENTS.md`.
 
 ## Thẻ đề
 
-Thẻ đề hiển thị số thứ tự, tên đề, trạng thái, kết quả và thời gian làm bài; minh họa nằm bên phải, nút Làm bài ở dưới. Chưa làm hiển thị `—`. Khi nộp bài, thời gian được đo từ lúc mở bài đến khi nộp; chưa có đáp án được cung cấp thì kết quả hiển thị `Chờ đáp án`. Trạng thái và thời gian hiện chỉ lưu trong phiên trang đang mở.
+Thẻ đề hiển thị số thứ tự, tên đề, trạng thái, kết quả và thời gian làm bài; minh họa nằm bên phải, nút Làm bài ở dưới. Chưa làm hiển thị `—`. Khi nộp bài, thời gian được đo từ lúc mở bài đến khi nộp; chưa có đáp án được cung cấp thì kết quả hiển thị `Chờ đáp án`. Lựa chọn, trạng thái và thời gian làm bài được lưu trên trình duyệt hiện tại nếu được phép; không đồng bộ sang thiết bị khác.
 
 Cửa sổ Cài đặt chia thành ba tab **Giao diện / Mật khẩu / Hướng dẫn**. Chỉ hiện nội dung của tab đang chọn; chuyển tab bằng chuột, phím mũi tên hoặc Home/End. Cửa sổ mở ở tab Giao diện.
+
+## Popup giới thiệu và bố cục câu hỏi
+
+Nhấn Làm bài mở popup giới thiệu, chưa bắt đầu tính thời gian. Popup hiển thị tên đề, số câu thực tế, thời lượng được cấu hình (các đề mẫu hiện không giới hạn), lớp và nút Bắt đầu làm bài/Tiếp tục làm bài. Đóng popup hoặc Escape quay về danh sách.
+
+Bài làm lưu bằng localStorage theo lớp/chương trình/môn/nhóm/nội dung. Khi mở lại bài đang làm, các lựa chọn được phục hồi; Làm lại bắt đầu một lượt mới. Đồng hồ thời gian tính từ lúc bắt đầu, gồm cả thời gian rời trang. Chưa có đáp án do chủ dự án cung cấp thì không chấm điểm.
+
+Câu hỏi hiển thị trên một trang trắng, phân cách bằng đường kẻ; A–D trên một hàng ở máy tính, hai cột trên điện thoại. Hỗ trợ các trường dữ liệu: `text` hoặc `english`, `translation` hoặc `vietnamese`, `detail` (biểu thức/nội dung giữa câu), `image` (đường dẫn ảnh trong `./assets/`) và `imageAlt`. Chỉ hiển thị bản dịch, hình và lời giải khi có dữ liệu; không tự suy luận nội dung đáp án.
