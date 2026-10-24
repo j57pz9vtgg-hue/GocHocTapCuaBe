@@ -89,3 +89,12 @@
 @media(max-width:760px){#site-shell .catalog-masthead>.header-tools{top:16px;right:16px;max-width:calc(100% - 32px);gap:8px}#site-shell .catalog-masthead>.header-tools>.settings-control{flex-basis:108px;width:108px;min-width:108px;padding-inline:10px}#site-shell .catalog-masthead>.header-tools .search-box{padding-inline:12px}}
 @media(max-width:900px){:root[data-theme="pixel"] #site-shell .site-header{padding-top:68px}:root[data-theme="pixel"] #site-shell .header-inner{min-height:58px;height:auto;padding-top:8px;padding-bottom:10px}:root[data-theme="pixel"] #site-shell .brand>span:first-of-type{font-size:23px}}
 @media(max-width:900px){:root:not([data-theme="pixel"]) #site-shell .header-inner{height:140px;min-height:140px}:root:not([data-theme="pixel"]) #site-shell .site-header{height:140px;min-height:140px}:root:not([data-theme="pixel"]) #site-shell .brand{position:absolute;top:76px;left:20px;transform:none}}
+/* Give artwork its own grid cell so it cannot cover results or elapsed time. */
+#site-shell .exercise-card{display:grid;grid-template-columns:minmax(0,1fr) 64px;grid-template-rows:auto 1fr auto;column-gap:8px}
+#site-shell .exercise-top{grid-column:1/-1;grid-row:1}
+#site-shell .exercise-stats{grid-column:1;grid-row:2;align-self:center;min-width:0;margin:8px 0}
+#site-shell .exercise-stats>div{flex-wrap:wrap;column-gap:8px;row-gap:0}
+#site-shell .exercise-stats dd{white-space:normal;overflow-wrap:anywhere}
+#site-shell .exercise-card-art{position:relative;inset:auto;grid-column:2;grid-row:2;align-self:center;justify-self:end;width:64px;height:64px;margin:0;transform:none}
+#site-shell .card-actions{grid-column:1/-1;grid-row:3;align-self:end}
+#site-shell .exercise-card:not(:has(.exercise-card-art)) .exercise-stats{grid-column:1/-1}
