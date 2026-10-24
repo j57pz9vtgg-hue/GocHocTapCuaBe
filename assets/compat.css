@@ -131,3 +131,4 @@
 @media(max-width:390px){.topic-small-card{grid-template-columns:minmax(0,1fr) 88px;gap:6px}.topic-book{display:none}.topic-practice{grid-column:2}.topic-small-heading{gap:6px}.topic-small-heading h4{font-size:12px}.topic-state{padding-left:34px;font-size:10px}}
 /* The filter panel shares exactly the same outer edges as the exercise grid. */
 #site-shell .study-filters{margin-inline:0}
+.paper-world .paper-end{justify-content:flex-end}
