@@ -2273,7 +2273,8 @@ const officialPapers = [
           "6"
         ],
         "image": "./assets/papers/timo-grade2-qualifying-07/q17.0c2dba61cea4.svg",
-        "imageAlt": "Cụm khối trắng xám dạng cầu với hai trụ và hai khối nhô ra hai bên ở chân, nhìn từ bên phải theo ảnh"
+        "imageAlt": "Cụm khối trắng xám dạng cầu với hai trụ và hai khối nhô ra hai bên ở chân, nhìn từ bên phải theo ảnh",
+        "subtopic": "Quan sát và đếm khối lập phương"
       },
       {
         "number": 18,

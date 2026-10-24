@@ -91,3 +91,5 @@ Chủ dự án yêu cầu gộp chủ đề nhỏ 04 và 06 của Hình học: �
 Theo ảnh chỉ định tiếp theo, thêm Đề 4 câu 17 (khối trắng nhìn từ phải) và Đề 5 câu 17 (khối trắng nhìn từ trên) vào chủ đề nhỏ 04 “Quan sát và đếm khối lập phương”. Chỉ chuyển đúng 2 câu trong ảnh, nhóm tăng từ 7 lên 9 câu. Không đổi hình/nguồn/lựa chọn hoặc thêm đáp án.
 
 Theo ảnh tiếp theo, Đề 3 câu 18 (khối xanh nhìn từ phải) và Đề 6 câu 19 (khối trắng nhìn từ bên cạnh) vào “Quan sát và đếm khối lập phương”. Nhóm tăng từ 9 lên 11 câu, giữ nguyên hình/nguồn/lựa chọn và không bổ sung đáp án.
+
+Theo ảnh tiếp theo, Đề 7 câu 17 (khối trắng dạng cầu nhìn từ phải) vào chủ đề nhỏ 04 “Quan sát và đếm khối lập phương”. Nhóm hiện có 12 câu; giữ hình và các lựa chọn 4, 3, 7, 6 nguyên bản, không suy luận đáp án.

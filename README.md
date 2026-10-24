@@ -220,3 +220,6 @@ Theo các ảnh chỉ định của chủ dự án, thêm 6 câu vào “Number 
 
 
 Gộp hai nhóm Hình học “Quan sát khối từ phía trước” và “Đếm khối lập phương xếp chồng” thành “Quan sát và đếm khối lập phương”, gồm đúng 7 câu. Giữ id nhóm quan sát cũ, chuyển tham chiếu nhóm xếp chồng sang nhóm đích để tiếp tục bài/khôi phục lựa chọn theo id; giữ bản ghi cũ dự phòng. Không đổi nội dung/ảnh/lựa chọn hoặc nhóm Đếm đoạn thẳng.
+
+
+Sau khi gộp hai nhóm hình khối, theo 3 ảnh tiếp theo của chủ dự án thêm đúng 5 câu: Đề 4 câu 17, Đề 5 câu 17, Đề 3 câu 18, Đề 6 câu 19 và Đề 7 câu 17. “Quan sát và đếm khối lập phương” hiện có 12 câu. Các ảnh, lựa chọn, số câu nguồn và bài theo bộ đề không đổi. Tổng 146 câu có chủ đề nhỏ, 29 câu Chưa phân loại.
