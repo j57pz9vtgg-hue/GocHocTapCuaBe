@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <meta name="theme-color" content="#246347">
+  <meta name="theme-color" content="#1178ee">
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./assets/styles.css">
   <title>Góc học tập của bé</title>
   <script src="./assets/data.js" defer></script>
   <script src="./assets/app.js" defer></script>
+  <script src="./assets/settings.js" defer></script>
 </head>
 <body>
   <header class="header"><div class="header-inner">
     <a class="brand" href="./" aria-label="Góc học tập - Trang chủ"><span class="brand-icon"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7C8 4 5 4 2 5v16c4-1 7-1 10 1 3-2 6-2 10-1V5c-3-1-6-1-10 2Zm0 0v15"/></svg><i></i></span>Góc học tập</a>
-    <nav aria-label="Điều hướng chính"><button class="active" data-action="home">Góc luyện tập</button><button data-action="help">Hướng dẫn</button></nav>
-    <button class="mobile-menu" aria-label="Mở hướng dẫn" data-action="help">☰</button>
+    <nav aria-label="Điều hướng chính"><button class="active" data-action="home">Góc luyện tập</button><button data-action="settings">Cài đặt</button></nav>
+    <button class="mobile-menu" aria-label="Mở cài đặt" data-action="settings">☰</button>
   </div></header>
   <div id="app"></div>
   <footer>Góc học tập của bé <span>·</span> Niềm vui nhỏ, kiến thức lớn.</footer>
   <dialog class="help-modal" id="help" aria-labelledby="help-title"><button class="close" data-action="close-help" aria-label="Đóng hướng dẫn">×</button><h2 id="help-title">Cùng bé bắt đầu nhé!</h2><ol><li>Chọn lớp, chương trình và môn học.</li><li>Chọn đề vòng loại, đề quốc gia hoặc một chủ đề.</li><li>Nhấn “Bắt đầu”, chọn đáp án rồi nộp bài để xem lời giải.</li></ol><p>Hiện tại là nội dung mẫu để trải nghiệm. Đề mẫu không phải đề thi TIMO/ASMO chính thức hoặc báo bài do trường cung cấp. Câu hỏi ngôn ngữ là mẫu cơ bản dùng chung giữa các lớp.</p><button class="primary" data-action="close-help">Bé đã hiểu</button></dialog>
+  <dialog class="help-modal settings-dialog" id="settings" aria-labelledby="settings-title"></dialog>
+  <dialog class="help-modal" id="solution-dialog" aria-labelledby="solution-title"></dialog>
   <noscript>Vui lòng bật JavaScript để chọn bài và làm bài luyện tập.</noscript>
 </body>
 </html>
