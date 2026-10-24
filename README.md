@@ -182,3 +182,6 @@ Nhóm “Phối hợp lựa chọn” đã đổi tên theo chủ dự án thàn
 
 
 Theo yêu cầu mới, tạo “Bài toán vị trí trong hàng” trong Logical thinking / Tư duy lô-gic, nhận đúng Đề 6 câu 3 từ Chưa phân loại. Nhóm mới có 1 câu; nội dung, nguồn đề, hình và lựa chọn giữ nguyên. Ngân hàng hiện có 132 câu có chủ đề nhỏ và 43 câu Chưa phân loại.
+
+
+Theo yêu cầu phân loại lại câu Alice mua bánh, Đề 7 câu 5 nay thuộc chủ đề mới “Bài toán mua hàng và tiền còn lại” trong Logical thinking / Tư duy lô-gic. Chuyển khỏi “Tuổi hiện tại và tương lai” (nhóm tuổi còn 7 câu). Nhóm mua hàng mới có đúng 1 câu, giữ nguyên nội dung/lựa chọn, không thêm đáp án hay lời giải.
