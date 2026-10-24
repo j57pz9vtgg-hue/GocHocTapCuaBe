@@ -1344,6 +1344,319 @@ const officialPapers = [
         ]
       }
     ]
+  },
+  {
+    "id": "timo-grade2-qualifying-05",
+    "title": "Đề vòng loại 05",
+    "sourceTitle": "ĐỀ SỐ 5 — VÒNG LOẠI TIMO",
+    "program": "TIMO",
+    "subject": "Toán",
+    "grade": "2",
+    "mode": "Đề vòng loại",
+    "questions": [
+      {
+        "number": 1,
+        "english": "Michael’s class has 5 boys and 6 girls. How many classmates does he have?",
+        "translation": "Lớp của Michael có 5 bạn trai và 6 bạn gái. Hỏi Michael có bao nhiêu bạn cùng lớp?",
+        "options": [
+          "11",
+          "10",
+          "12",
+          "9"
+        ]
+      },
+      {
+        "number": 2,
+        "english": "If today is Wednesday and also the first day of March, which day of the week is 9th March?",
+        "translation": "Nếu hôm nay là thứ Tư và cũng là ngày đầu tiên của tháng 3. Vậy ngày 9 tháng 3 là thứ mấy?",
+        "options": [
+          "Wednesday / Thứ Tư",
+          "Saturday / Thứ Bảy",
+          "Friday / Thứ Sáu",
+          "Thursday / Thứ Năm"
+        ],
+        "optionColumns": 2
+      },
+      {
+        "number": 3,
+        "english": "According to the pattern below, find the 15th figure counting from the left.",
+        "translation": "Dựa vào quy luật dưới đây, tìm hình thứ 15 tính từ bên trái.",
+        "options": [
+          "○",
+          "□",
+          "△",
+          "✱"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-05/q03.0b8d093a2adc.svg",
+        "imageAlt": "Dãy tam giác rỗng, dấu sao, hình tròn rỗng, hình vuông rỗng lặp theo ảnh"
+      },
+      {
+        "number": 4,
+        "english": "Dan celebrated his 6th birthday 3 years ago. How old will he be 2 years later?",
+        "translation": "Dan tổ chức sinh nhật lần thứ 6 vào 3 năm trước. Hỏi 2 năm nữa anh ấy mấy tuổi?",
+        "options": [
+          "1",
+          "11",
+          "7",
+          "5"
+        ]
+      },
+      {
+        "number": 5,
+        "english": "According to the pattern below, what is the value of the next number?",
+        "translation": "Dựa vào quy luật của dãy số sau, giá trị của số tiếp theo là số nào?",
+        "options": [
+          "13",
+          "15",
+          "25",
+          "30"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-05/q05.7c3aa09c5752.svg",
+        "imageAlt": "Dãy 50, 3, 45, 6, 40, 9, 35, 12, …"
+      },
+      {
+        "number": 6,
+        "english": "Find the value of 5 + 6 + 7 + 8 + 9 + 10.",
+        "translation": "Tìm giá trị của 5 + 6 + 7 + 8 + 9 + 10.",
+        "options": [
+          "50",
+          "55",
+          "40",
+          "45"
+        ]
+      },
+      {
+        "number": 7,
+        "english": "Calculate 13 − 11 + 9 − 7 + 5 − 3 + 1.",
+        "translation": "Tính 13 − 11 + 9 − 7 + 5 − 3 + 1.",
+        "options": [
+          "14",
+          "6",
+          "7",
+          "10"
+        ]
+      },
+      {
+        "number": 8,
+        "english": "Gordon thinks of a number. He adds 38 then subtracts 42 to get the smallest 2-digit odd number. Find Gordon’s number.",
+        "translation": "Gordon nghĩ ra một số. Anh ấy lấy số đó cộng thêm 38 rồi trừ đi 42 thì được số lẻ nhỏ nhất có hai chữ số. Tìm số đó.",
+        "options": [
+          "15",
+          "25",
+          "14",
+          "7"
+        ]
+      },
+      {
+        "number": 9,
+        "english": "Let X and Y be different 1-digit numbers. If the equation below is correct, find the value of Y.",
+        "translation": "Cho X và Y là các số có một chữ số khác nhau. Biết rằng phép toán dưới đây là đúng, tìm giá trị của Y.",
+        "options": [
+          "4",
+          "8",
+          "9",
+          "7"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-05/q09.95697f5bccae.svg",
+        "imageAlt": "Phép cộng dọc XY cộng Y bằng 48"
+      },
+      {
+        "number": 10,
+        "english": "According to the pattern of the following sequence, find the sum of the first eight numbers.",
+        "translation": "Dựa vào quy luật dãy số dưới đây, hãy tìm tổng của 8 số đầu tiên.",
+        "options": [
+          "21",
+          "54",
+          "44",
+          "34"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-05/q10.dbbbb5065f9e.svg",
+        "imageAlt": "Dãy 1, 1, 2, 3, 5, 8, …"
+      },
+      {
+        "number": 11,
+        "english": "According to the pattern below, find the value of the 7th number in the sequence.",
+        "translation": "Dựa vào quy luật dưới đây, tìm giá trị của số thứ 7 trong dãy.",
+        "options": [
+          "18",
+          "19",
+          "23",
+          "27"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-05/q11.dadce1549f51.svg",
+        "imageAlt": "Dãy 3, 7, 11, 15, …"
+      },
+      {
+        "number": 12,
+        "english": "From 7 to 23, how many 2-digit numbers are there?",
+        "translation": "Trong các số từ 7 đến 23, hỏi có bao nhiêu số có hai chữ số?",
+        "options": [
+          "13",
+          "14",
+          "15",
+          "16"
+        ]
+      },
+      {
+        "number": 13,
+        "english": "Cara has 40 candies and Jolie has 20 candies. How many candies does Cara have to give Jolie to make them have the same number of candies?",
+        "translation": "Cara có 40 cái kẹo và Jolie có 20 cái kẹo. Hỏi Cara phải cho Jolie bao nhiêu cái kẹo để hai bạn có số kẹo bằng nhau?",
+        "options": [
+          "20",
+          "15",
+          "10",
+          "5"
+        ]
+      },
+      {
+        "number": 14,
+        "english": "Refer to these numbers, how many odd numbers greater than 39 are there?",
+        "translation": "Trong các số dưới đây, hỏi có bao nhiêu số lẻ lớn hơn 39?",
+        "options": [
+          "3",
+          "2",
+          "4",
+          "1"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-05/q14.afa49cd848c7.svg",
+        "imageAlt": "Các số 12, 15, 28, 93, 35, 41, 90"
+      },
+      {
+        "number": 15,
+        "english": "Fill in the blank to get a correct equation.",
+        "translation": "Điền số thích hợp vào chỗ trống để được phép toán đúng.",
+        "options": [
+          "17",
+          "27",
+          "61",
+          "71"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-05/q15.f3c6ed679e66.svg",
+        "imageAlt": "Chỗ trống cộng 27 bằng 19 cộng 48 trừ 23"
+      },
+      {
+        "number": 16,
+        "english": "At least how many cubes are there in the figure below?",
+        "translation": "Hình dưới đây có ít nhất bao nhiêu khối lập phương?",
+        "options": [
+          "8",
+          "7",
+          "6",
+          "9"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-05/q16.14f57a03e3f2.svg",
+        "imageAlt": "Cụm khối trắng xám: hai chân hai bên, một khối cao ở giữa và một khối nhô phía trước theo ảnh"
+      },
+      {
+        "number": 17,
+        "english": "At least how many squares can be seen if viewing the figure from top?",
+        "translation": "Nếu nhìn hình dưới đây từ trên xuống thì có thể thấy được ít nhất bao nhiêu hình vuông?",
+        "options": [
+          "3",
+          "4",
+          "6",
+          "5"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-05/q17.66888d272299.svg",
+        "imageAlt": "Cụm khối trắng xám có hàng ngang phía trên, cột đứng phía trước và một khối nhô bên phải phía dưới theo ảnh; nhìn từ trên xuống"
+      },
+      {
+        "number": 18,
+        "english": "How many triangles are there in the figure below?",
+        "translation": "Hình dưới đây có bao nhiêu hình tam giác?",
+        "options": [
+          "5",
+          "8",
+          "10",
+          "12"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-05/q18.8bfe4837b58e.svg",
+        "imageAlt": "Ngôi sao năm cánh bằng năm đoạn thẳng giao nhau, theo hình câu 18"
+      },
+      {
+        "number": 19,
+        "english": "Daniel draws 6 lines on a sheet of paper. At most how many squares can be formed by Daniel?",
+        "translation": "Daniel vẽ 6 đường thẳng trên một tờ giấy. Hỏi anh ấy có thể tạo ra nhiều nhất bao nhiêu hình vuông?",
+        "options": [
+          "1",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      {
+        "number": 20,
+        "english": "According to the pattern shown below, how many circles are there in the first 20 figures?",
+        "translation": "Dựa vào quy luật dưới đây, có bao nhiêu hình tròn trong 20 hình đầu tiên?",
+        "options": [
+          "6",
+          "8",
+          "10",
+          "12"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-05/q20.a083162e756e.svg",
+        "imageAlt": "Dãy hai hình vuông rỗng, tam giác đặc và hai hình tròn rỗng lặp lại như ảnh"
+      },
+      {
+        "number": 21,
+        "english": "Separate the following stars into 3 equal groups. How many stars are there in the first 2 groups?",
+        "translation": "Chia các hình ngôi sao dưới đây thành 3 nhóm bằng nhau. Hỏi có bao nhiêu hình ngôi sao trong 2 nhóm đầu tiên?",
+        "options": [
+          "3",
+          "4",
+          "6",
+          "9"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-05/q21.f6ad08bcff92.svg",
+        "imageAlt": "Chín ngôi sao đen xếp thành một hàng như ảnh"
+      },
+      {
+        "number": 22,
+        "english": "Arrange these numbers in descending order to find the 4th largest number.",
+        "translation": "Sắp xếp các số sau từ lớn đến bé để tìm số lớn thứ tư.",
+        "options": [
+          "39",
+          "50",
+          "46",
+          "73"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-05/q22.25fcba59a751.svg",
+        "imageAlt": "Các số 23, 91, 73, 39, 46, 82, 50"
+      },
+      {
+        "number": 23,
+        "english": "Tom chooses 2 different digits from 1, 4 and 7 to form 2-digit numbers. Among those numbers, how many odd numbers are there?",
+        "translation": "Tom chọn 2 chữ số khác nhau từ 1, 4 và 7 để tạo thành các số có hai chữ số. Hỏi trong số đó có bao nhiêu số lẻ?",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      {
+        "number": 24,
+        "english": "In how many ways can we distribute 6 identical flowers into 3 different vases given that no vases are empty?",
+        "translation": "Hỏi có bao nhiêu cách để cắm 6 bông hoa giống nhau vào 3 lọ hoa khác nhau sao cho lọ nào cũng có hoa?",
+        "options": [
+          "2",
+          "9",
+          "10",
+          "18"
+        ]
+      },
+      {
+        "number": 25,
+        "english": "Kesha has 2 different T-shirts and 3 different pants. Each day, she mixes a shirt with a pant to make a set of clothes. At most how many different sets of clothes can she mix?",
+        "translation": "Kesha có 2 chiếc áo phông khác nhau và 3 chiếc quần khác nhau. Mỗi ngày, cô bé phối 1 chiếc áo với 1 chiếc quần để có một bộ quần áo. Hỏi cô bé có thể phối nhiều nhất bao nhiêu bộ quần áo khác nhau?",
+        "options": [
+          "6",
+          "3",
+          "5",
+          "8"
+        ]
+      }
+    ]
   }
 ];
 function getPapers(program, subject, grade, mode) {

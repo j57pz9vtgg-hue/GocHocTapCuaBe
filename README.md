@@ -130,3 +130,8 @@ Luyện chủ đề nhỏ tự đổi thứ tự câu khi mở lại hoặc làm
 
 
 Theo yêu cầu chỉnh tiếp cỡ chữ, nội dung tờ đề (số câu, câu hỏi, bản dịch, lựa chọn và đề mục) dùng Times New Roman 12pt / 16 CSS px trên máy tính và điện thoại. Chỉ đổi thuộc tính phông/cỡ chữ; giữ hình minh họa, nội dung, màu, độ đậm, quy tắc khoảng cách và thanh công cụ. Đã đối chiếu thuộc tính hiển thị trên cả 11 giao diện tại 1440px và 390px; nút nộp trên cùng vẫn khóa khi chưa đủ câu và nộp được khi đủ 25/25.
+
+
+## Đề số 5 vòng loại TIMO lớp 2
+
+Nguồn: 4 ảnh chủ dự án gửi, gồm 25 câu song ngữ, 100 lựa chọn và 13 hình SVG dựng theo ảnh (dãy hình, dãy số, phép cộng dọc, khối lập phương và ngôi sao). Các câu giữ đúng số gốc và lựa chọn A–D; phân vào Chưa phân loại trong 5 nhóm TIMO. Chưa có đáp án hay lời giải.
