@@ -1762,7 +1762,8 @@ const officialPapers = [
           "24",
           "23",
           "22"
-        ]
+        ],
+        "subtopic": "Bài toán vị trí trong hàng"
       },
       {
         "number": 4,

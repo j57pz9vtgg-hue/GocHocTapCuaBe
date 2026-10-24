@@ -179,3 +179,6 @@ Theo chỉ định tiếp theo, Đề 4 câu 4 (Lucy) và Đề 6 câu 5 (Amy) v
 
 
 Nhóm “Phối hợp lựa chọn” đã đổi tên theo chủ dự án thành “Có bao nhiêu cách kết hợp khác nhau?”. Giữ nguyên 5 câu thuộc nhóm và id chủ đề cũ để tiếp tục bài đã lưu hoặc tải lại màn hình, không thay nội dung, lựa chọn, hình hay đáp án.
+
+
+Theo yêu cầu mới, tạo “Bài toán vị trí trong hàng” trong Logical thinking / Tư duy lô-gic, nhận đúng Đề 6 câu 3 từ Chưa phân loại. Nhóm mới có 1 câu; nội dung, nguồn đề, hình và lựa chọn giữ nguyên. Ngân hàng hiện có 132 câu có chủ đề nhỏ và 43 câu Chưa phân loại.

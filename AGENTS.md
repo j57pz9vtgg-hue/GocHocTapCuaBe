@@ -57,3 +57,5 @@ Tải lại trang bằng nút trình duyệt phải tiếp tục tại màn hìn
 Chủ dự án tiếp tục chỉ định: Đề 4 câu 4 (Lucy) và Đề 6 câu 5 (Amy) chuyển vào “Tuổi hiện tại và tương lai”. Câu 3 Đề 6 ở giữa ảnh không được yêu cầu chuyển, giữ nguyên Chưa phân loại. Chủ đề tuổi hiện có 8 câu; tổng 131 câu có chủ đề nhỏ, 44 câu Chưa phân loại.
 
 Chủ dự án đổi tên nhóm “Phối hợp lựa chọn” thành “Có bao nhiêu cách kết hợp khác nhau?”. Đổi nhãn trên 5 câu hiện có nhưng giữ id chủ đề cũ để không mất bài đang làm, thứ tự và trạng thái tải lại. Không thêm/bớt hoặc chuyển câu giữa các nhóm trong yêu cầu đổi tên này.
+
+Chủ dự án yêu cầu tạo chủ đề nhỏ mới “Bài toán vị trí trong hàng” ở chủ đề lớn 1 Logical thinking / Tư duy lô-gic; chuyển đúng Đề 6 câu 3 (lớp 2A có 34 học sinh, 9 bạn sau Amy) vào nhóm này. Đây là tên được chỉ định riêng, không tự mở rộng sang câu khác. Nhóm mới có 1 câu; tổng 132 câu có chủ đề nhỏ, 43 câu Chưa phân loại.
