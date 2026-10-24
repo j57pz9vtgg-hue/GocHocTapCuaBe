@@ -4,7 +4,7 @@ Website tĩnh HTML/CSS/JavaScript, xuất bản GitHub Pages từ nhánh `main`,
 
 ## Chạy và xuất bản
 
-Mở `index.html` hoặc phục vụ thư mục dự án:
+Phục vụ thư mục dự án qua localhost để dùng Web Crypto cho mật khẩu:
 
 ```sh
 python3 -m http.server 8000 --bind 0.0.0.0
@@ -63,3 +63,14 @@ Khung Cài đặt rộng tối đa 840px trên máy tính, tự co theo điện 
 Riêng TIMO có 5 chủ đề lớn, mỗi nhóm hiện có 6 ô chủ đề nhỏ theo mẫu được duyệt. Máy tính chọn nhóm ở cột trái, điện thoại dùng nhóm mở/thu gọn. Tìm kiếm lọc trên cả tên nhóm và tên chủ đề nhỏ. Cấu trúc/tên tạm nằm ở `timoTopicGroups` trong `assets/data.js`. Chưa có nội dung do chủ dự án cung cấp, nút Luyện tập mở thông báo trống; không gán câu hỏi minh họa, đáp án hoặc kết quả cũ cho các chủ đề mới. Các chương trình và chế độ đề khác giữ dữ liệu hiện có.
 
 Các ô chủ đề TIMO lấy huy hiệu, màu nền, nút và ảnh minh họa theo giao diện đang chọn. Chỉ Pixel dùng ảnh/huy hiệu Pixel; các giao diện khác dùng sprite của chính bộ đó và banner tương ứng trong popup.
+
+## Màn hình đăng nhập
+
+Mật khẩu đăng nhập chung được gửi riêng cho chủ dự án, tách biệt với mật khẩu phụ huynh trong tab Mật khẩu. `assets/access.js` chứa salt và bộ kiểm tra PBKDF2/SHA-256 (210.000 vòng), không chứa mật khẩu nguyên văn. `index.html` ẩn/inert khung học tập ngay từ đầu; không có JavaScript thì nút Đăng nhập bị vô hiệu hóa.
+
+- Đăng nhập đúng khi không chọn ghi nhớ: giữ trạng thái trong tab hiện tại bằng sessionStorage; tab mới yêu cầu mật khẩu.
+- Chọn Ghi nhớ đăng nhập: lưu trạng thái ở localStorage, lần mở sau trên cùng trình duyệt tự vào web, không phải nhập lại. Không lưu chuỗi mật khẩu vào dữ liệu trang.
+- Cài đặt → Hướng dẫn → Đăng xuất: xóa trạng thái phiên và ghi nhớ, giữ bài làm, giao diện và mật khẩu phụ huynh.
+- Khóa riêng: `goc-hoc-tap.access.remember.v1`, `goc-hoc-tap.access.session.v1`. Thay bộ kiểm tra mật khẩu sẽ làm trạng thái ghi nhớ cũ không còn hợp lệ.
+
+Đây là khóa giao diện cho website tĩnh trên GitHub Pages, không phải xác thực hoặc phân quyền trên máy chủ. Tài nguyên tĩnh trong kho/trang vẫn có thể được đọc trực tiếp. Không dùng cơ chế này để bảo vệ dữ liệu nhạy cảm.

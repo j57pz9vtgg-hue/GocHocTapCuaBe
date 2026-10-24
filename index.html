@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="vi">
+<html lang="vi" data-access="locked">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -12,15 +12,36 @@
   <link rel="stylesheet" href="./assets/reference/styles/topics.6b5603b481dd.css">
   <link rel="stylesheet" href="./assets/reference/styles/toys.2d926aca9f18.css">
   <link rel="stylesheet" href="./assets/reference/styles/arctic.2e049ee03170.css">
-  <link rel="stylesheet" href="./assets/compat.090ae7262ab1.css">
+  <link rel="stylesheet" href="./assets/compat.cb2b6fac8e25.css">
   <title>Góc học tập của bé</title>
   <script src="./assets/icons.79d09bdb8423.js" defer></script>
   <script src="./assets/data.2c963c740208.js" defer></script>
   <script src="./assets/app.d1ca8ab8893c.js" defer></script>
-  <script src="./assets/settings.e4a3935e4528.js" defer></script>
+  <script src="./assets/settings.77dc060a4b60.js" defer></script>
+  <script src="./assets/access.b58f57d7e0eb.js" defer></script>
 </head>
 <body>
-  <div class="pixel-app" id="site-shell"><div id="app"></div></div>
+  <main id="access-screen" class="entry-screen" aria-labelledby="access-title">
+    <section class="entry-card">
+      <img class="entry-hero" src="./assets/access-hero.766dbc99c7ba.png" alt="Góc học tập của bé — gấu trắng và chim cánh cụt ở Bắc Cực" width="880" height="460">
+      <div class="entry-content">
+        <h1 id="access-title">Chào mừng bé!</h1>
+        <p class="entry-subtitle">Nhập mật khẩu để mở góc học tập.</p>
+        <form id="access-form" method="post">
+          <label class="entry-label" for="access-password">Mật khẩu</label>
+          <div class="entry-password-field">
+            <input id="access-password" name="password" type="password" autocomplete="current-password" autocapitalize="off" spellcheck="false" maxlength="128" required aria-describedby="access-status">
+            <button type="button" class="entry-eye" data-access-toggle aria-label="Hiện mật khẩu" aria-pressed="false"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+          <label class="entry-remember" for="access-remember"><input id="access-remember" type="checkbox" name="remember"><span>Ghi nhớ đăng nhập</span></label>
+          <p class="entry-hint">Lần sau không cần nhập lại trên trình duyệt này.</p>
+          <p id="access-status" class="entry-status" role="alert"></p>
+          <button type="submit" class="entry-submit" disabled><span>Đăng nhập</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <div class="pixel-app" id="site-shell" hidden inert><div id="app"></div></div>
 
   <dialog class="help-modal" id="help" aria-labelledby="help-title"><button class="close" data-action="close-help" aria-label="Đóng hướng dẫn">×</button><h2 id="help-title">Cùng bé bắt đầu nhé!</h2><ol><li>Chọn lớp, chương trình và môn học.</li><li>Chọn đề vòng loại, đề quốc gia hoặc một chủ đề.</li><li>Nhấn “Bắt đầu”, chọn đáp án rồi nộp bài để xem lời giải.</li></ol><p>Hiện tại là nội dung mẫu để trải nghiệm. Đề mẫu không phải đề thi TIMO/ASMO chính thức hoặc báo bài do trường cung cấp. Câu hỏi ngôn ngữ là mẫu cơ bản dùng chung giữa các lớp.</p><button class="primary" data-action="close-help">Bé đã hiểu</button></dialog>
   <dialog class="dialog quiz-dialog paper-intro" id="paper-intro" aria-labelledby="paper-intro-title"></dialog>

@@ -6,7 +6,7 @@
 
 Website hiện là HTML/CSS/JavaScript tĩnh, xuất bản GitHub Pages từ nhánh main, thư mục /(root). Không thêm bước build nếu không được yêu cầu.
 
-Giao diện được chủ dự án yêu cầu sao chép từ `j57pz9vtgg-hue/Bai_Tap_Ve_Nha`. Ảnh/phông chữ/CSS gốc nằm ở `assets/reference`; chỉ đổi đường dẫn tài nguyên cho GitHub Pages khi cần. Giữ cấu trúc hình thức của bản gốc thay vì tự thiết kế lại. Không nhập đáp án, tài khoản hoặc cấu hình đồng bộ từ ứng dụng mẫu chỉ vì chúng có mặt trong kho nguồn. Mật khẩu hiện tại chỉ dành cho đáp án/lời giải, không phải đăng nhập; giữ ba tab cài đặt theo yêu cầu đã nhận.
+Giao diện được chủ dự án yêu cầu sao chép từ `j57pz9vtgg-hue/Bai_Tap_Ve_Nha`. Ảnh/phông chữ/CSS gốc nằm ở `assets/reference`; chỉ đổi đường dẫn tài nguyên cho GitHub Pages khi cần. Giữ cấu trúc hình thức của bản gốc thay vì tự thiết kế lại. Không nhập đáp án, tài khoản hoặc cấu hình đồng bộ từ ứng dụng mẫu chỉ vì chúng có mặt trong kho nguồn. Mật khẩu phụ huynh trong tab Mật khẩu chỉ dành cho đáp án/lời giải, riêng với mật khẩu đăng nhập; giữ ba tab cài đặt theo yêu cầu đã nhận.
 
 Sau khi sửa bất kỳ tệp JS/CSS nguồn nào, chạy `python3 scripts/version-assets.py` trước khi kiểm tra và đẩy lên GitHub. `index.html` phải dùng các tệp JS/CSS có mã SHA-256 trong tên để tránh trộn HTML/CSS mới với JavaScript cũ trong bộ nhớ đệm. Giữ các bản đã xuất bản, không ghi đè hoặc xóa chúng; tệp nguồn không có mã vẫn dùng để chỉnh sửa. Không chuyển lại sang đường dẫn tài nguyên không có phiên bản.
 
@@ -23,3 +23,5 @@ Nguyên tắc bổ sung ngày 24/10/2026: hoàn tất và xuất bản các yêu
 Khung bộ chọn lớp/chương trình/môn/nội dung phải thẳng hai mép với lưới ô đề trên cả 11 giao diện, dùng chung lề theo màn hình; không dùng margin âm làm khung bộ chọn rộng hơn dãy đề.
 
 Giao diện chủ đề TIMO: chỉ Pixel dùng huy hiệu và hình sách Pixel. Mỗi giao diện còn lại dùng màu, kiểu số và ảnh minh họa thuộc bộ chủ đề tương ứng; không tái dùng ảnh Pixel cho các chủ đề khác.
+
+Theo yêu cầu mới, web có màn hình đăng nhập bằng mật khẩu chung riêng do trợ lý đặt và gửi chủ dự án. Không dùng mật khẩu phụ huynh để đăng nhập. Ghi nhớ chỉ sau khi đăng nhập đúng và tích chọn; giữ trên cùng trình duyệt đến khi đăng xuất. Không lưu mật khẩu nguyên văn trong repo hoặc localStorage/sessionStorage. Đăng xuất ở Cài đặt → Hướng dẫn, chỉ xóa trạng thái truy cập, giữ bài làm và mật khẩu đáp án. Đây là khóa giao diện cho web tĩnh, không phải xác thực máy chủ.
