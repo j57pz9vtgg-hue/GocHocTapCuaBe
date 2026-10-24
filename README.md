@@ -145,3 +145,20 @@ Nguồn: 4 ảnh chủ dự án gửi. Có đủ 25 câu song ngữ, 100 lựa c
 ## Đề số 7 vòng loại TIMO lớp 2
 
 Nguồn: 5 ảnh chủ dự án gửi. Đã nhập 25 câu song ngữ, 100 lựa chọn và 13 SVG (dãy chữ/số/hình, mũi tên trên lưới, phép cộng dọc, khối lập phương, kệ sách và bảng 3×3). Giữ nguyên thứ tự và dữ liệu gốc; tất cả câu của đề này dùng Chưa phân loại theo 5 nhóm TIMO. Chưa có đáp án/lời giải. Ngân hàng hiện gồm 7 đề vòng loại lớp 2, tổng cộng 175 câu.
+
+
+## Rà phân loại vào các chủ đề nhỏ có sẵn
+
+Theo yêu cầu tiếp theo của chủ dự án, rà toàn bộ câu Chưa phân loại của 7 đề vòng loại lớp 2. Chỉ thêm trường `subtopic` khi khớp một trong 25 tên đã có của Đề 1 và trong đúng chủ đề lớn theo số câu; không tạo tên mới hoặc đổi tên. Thêm 78 câu được phân loại, tổng 124/175 câu đã có tên chủ đề nhỏ, còn 51 câu Chưa phân loại.
+
+| Đề | Ghép thêm | Câu vẫn Chưa phân loại |
+| --- | ---: | --- |
+| 1 | 0 | Không còn |
+| 2 | 0 | 3, 13, 22, 23 |
+| 3 | 24 | 18 |
+| 4 | 18 | 4, 12, 14, 17, 21, 24, 25 |
+| 5 | 14 | 4, 8, 12, 14, 15, 17, 18, 19, 21, 23, 24 |
+| 6 | 11 | 3, 5, 7, 10, 11, 13, 15, 17, 19, 20, 22, 23, 24, 25 |
+| 7 | 11 | 1, 2, 5, 9, 11, 12, 14, 15, 17, 18, 21, 22, 23, 25 |
+
+Các trường hợp còn lại khác phạm vi tên hiện có, ví dụ tuổi có mốc quá khứ; tháng/chữ cái; góc nhìn từ trên/phải/bên; đếm tam giác/cạnh; số lẻ hoặc lặp chữ số; chia/nhân; chuyển giữa ba nhóm; phân phối hoa; bảng 3×3. Không suy luận đáp án để ghép tên, nhất là các câu yêu cầu xác định chẵn hay lẻ. Nội dung, thứ tự bộ đề, hình ảnh, lựa chọn, id và các phân loại đã có được giữ nguyên; chưa có đáp án/lời giải.
