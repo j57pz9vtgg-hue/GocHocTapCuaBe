@@ -60,7 +60,7 @@ Khung Cài đặt rộng tối đa 840px trên máy tính, tự co theo điện 
 
 ## Luyện theo chủ đề TIMO
 
-Riêng TIMO chỉ có môn Toán, với cấu trúc 5 chủ đề lớn đã được duyệt. Tên chủ đề nhỏ được bổ sung theo chỉ dẫn của chủ dự án; các câu chưa có tên vào Chưa phân loại. Máy tính chọn nhóm ở cột trái, điện thoại dùng nhóm mở/thu gọn. Cấu trúc/tên nhóm tạm nằm ở `timoTopicGroups` trong `assets/data.js`.
+Riêng TIMO chỉ có môn Toán, với cấu trúc 5 chủ đề lớn đã được duyệt. Tên chủ đề nhỏ được bổ sung theo chỉ dẫn của chủ dự án; các câu chưa có tên vào Chưa phân loại. Máy tính chọn nhóm ở cột trái, điện thoại dùng nhóm mở/thu gọn. Cấu trúc và tên nhóm nằm ở `timoTopicGroups` trong `assets/data.js`.
 
 Các ô chủ đề TIMO lấy huy hiệu, màu nền, nút và ảnh minh họa theo giao diện đang chọn. Chỉ Pixel dùng ảnh/huy hiệu Pixel; các giao diện khác dùng sprite của chính bộ đó và banner tương ứng trong popup.
 
@@ -102,3 +102,11 @@ Chủ dự án cho phép đặt một tên chủ đề nhỏ riêng cho mỗi c�
 Các hình/sơ đồ được dựng lại bằng SVG tại `assets/papers/timo-grade2-qualifying-01/`: 15 hình nội dung câu hỏi và 4 hình lựa chọn của câu 17. Nét và vị trí dựa trên ảnh gốc, không bổ sung lời giải hay ngoại suy kết quả. Tên tệp có SHA-256 để không thay đổi tài nguyên đã xuất bản. Bài đầy đủ giữ 5 đề mục lớn; luyện chủ đề giữ số câu và nguồn đề gốc.
 
 Tên 5 nhóm lớn hiển thị trên một dòng, các ô có cùng chiều rộng theo tên dài nhất. Không hiển thị ghi chú khoảng câu trên các ô; quy tắc khoảng câu vẫn giữ nguyên trong dữ liệu phân loại. Đã kiểm tra từ 320px đến 1920px trên đủ 11 giao diện.
+
+## Đề số 2 vòng loại TIMO lớp 2
+
+Nguồn: 5 ảnh chụp do chủ dự án gửi tiếp theo Đề số 1. Id: `timo-grade2-qualifying-02`. Có 25 câu song ngữ, 100 lựa chọn, 15 hình/sơ đồ và 4 hình lựa chọn của câu 17 trong `assets/papers/timo-grade2-qualifying-02/`.
+
+Không có `subtopic`, `answer`, `answerSource` hay `explanation` trên các câu của Đề số 2. Mỗi nhóm lớn tự nhận đúng 5 câu vào Chưa phân loại. Đề số 1 giữ nguyên 25 tên chủ đề nhỏ đã được cho phép. Tổng ngân hàng lớp 2 hiện là 50 câu, phân biệt bằng id đề và số câu gốc, không trộn bài làm giữa hai đề. Cả hai đề đều chờ đáp án của chủ dự án.
+
+`node scripts/check-data.cjs` còn kiểm tra số lượng hình lựa chọn, sự tồn tại của ảnh và mã SHA-256 trong tên tài nguyên trước khi xuất bản.
