@@ -1657,6 +1657,313 @@ const officialPapers = [
         ]
       }
     ]
+  },
+  {
+    "id": "timo-grade2-qualifying-06",
+    "title": "Đề vòng loại 06",
+    "sourceTitle": "ĐỀ SỐ 6 — VÒNG LOẠI TIMO",
+    "program": "TIMO",
+    "subject": "Toán",
+    "grade": "2",
+    "mode": "Đề vòng loại",
+    "questions": [
+      {
+        "number": 1,
+        "english": "If today is Saturday, which day of the week will 4 days later be?",
+        "translation": "Nếu hôm nay là thứ Bảy, hỏi 4 ngày sau là thứ mấy trong tuần?",
+        "options": [
+          "Monday / Thứ Hai",
+          "Tuesday / Thứ Ba",
+          "Wednesday / Thứ Tư",
+          "Thursday / Thứ Năm"
+        ],
+        "optionColumns": 2
+      },
+      {
+        "number": 2,
+        "english": "According to the pattern shown below, what is the number in the blank?",
+        "translation": "Dựa vào quy luật dưới đây, số ở chỗ trống là số nào?",
+        "options": [
+          "26",
+          "24",
+          "27",
+          "28"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-06/q02.1ab91f310a23.svg",
+        "imageAlt": "Dãy 2, 6, 10, 14, 18, 22, chỗ trống"
+      },
+      {
+        "number": 3,
+        "english": "Class 2A has 34 students queuing up in a row. If there are 9 students behind Amy, how many students are in front of Amy?",
+        "translation": "Lớp 2A có 34 học sinh xếp thành một hàng. Nếu có 9 học sinh phía sau Amy, hỏi có bao nhiêu học sinh đứng trước Amy?",
+        "options": [
+          "25",
+          "24",
+          "23",
+          "22"
+        ]
+      },
+      {
+        "number": 4,
+        "english": "From the pattern shown below, how many ⊗ more than # is / are there in the 15th group?",
+        "translation": "Dựa vào quy luật dưới đây, ⊗ nhiều hơn # bao nhiêu hình trong nhóm thứ 15?",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-06/q04.edc601172a6c.svg",
+        "imageAlt": "Bốn hình chữ thập tăng dần: các ô chứa ⊗ và # xen kẽ đúng vị trí của ảnh, nhóm đầu có một ô ⊗"
+      },
+      {
+        "number": 5,
+        "english": "3 years ago, Amy was 14 years old. How old is Amy now?",
+        "translation": "3 năm trước, Amy 14 tuổi. Hỏi Amy hiện tại bao nhiêu tuổi?",
+        "options": [
+          "11",
+          "14",
+          "13",
+          "17"
+        ]
+      },
+      {
+        "number": 6,
+        "english": "Find the value of 7 + 17 + 27 + 37 + 47 + 3 + 3 + 3 + 3 + 3.",
+        "translation": "Tìm giá trị của 7 + 17 + 27 + 37 + 47 + 3 + 3 + 3 + 3 + 3.",
+        "options": [
+          "130",
+          "135",
+          "140",
+          "150"
+        ]
+      },
+      {
+        "number": 7,
+        "english": "Find the value of 15 : 3 + 25 : 5 − 30 : 5.",
+        "translation": "Tìm giá trị của 15 : 3 + 25 : 5 − 30 : 5.",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      {
+        "number": 8,
+        "english": "Find the value of 1 − 2 + 3 − 4 + 5 − 6 + 7 − 8 + 9.",
+        "translation": "Tìm giá trị của 1 − 2 + 3 − 4 + 5 − 6 + 7 − 8 + 9.",
+        "options": [
+          "3",
+          "7",
+          "5",
+          "9"
+        ]
+      },
+      {
+        "number": 9,
+        "english": "What is the number should be filled in the blank if the equation is correct?",
+        "translation": "Ta cần điền số nào vào chỗ trống dưới đây để được phép tính đúng?",
+        "options": [
+          "2",
+          "6",
+          "72",
+          "32"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-06/q09.ce950daff039.svg",
+        "imageAlt": "Chỗ trống chia 6 bằng 12"
+      },
+      {
+        "number": 10,
+        "english": "Find the value of 10 × 1 + 10 × 2 + 10 × 3 + 10 × 4.",
+        "translation": "Tìm giá trị của 10 × 1 + 10 × 2 + 10 × 3 + 10 × 4.",
+        "options": [
+          "80",
+          "90",
+          "100",
+          "110"
+        ]
+      },
+      {
+        "number": 11,
+        "english": "Amy has 23 apples and John has 11 apples. How many apples does John have to ask Amy to give him so that Amy has 2 more apples than John?",
+        "translation": "Amy có 23 quả táo và John có 11 quả táo. Hỏi John cần xin Amy đưa cho bạn ấy bao nhiêu quả táo để Amy có nhiều hơn John 2 quả táo?",
+        "options": [
+          "5",
+          "4",
+          "3",
+          "2"
+        ]
+      },
+      {
+        "number": 12,
+        "english": "The numbers below follow the arithmetic sequence, what is the 20th number?",
+        "translation": "Các số dưới đây là một dãy số cách đều, số thứ 20 là số nào?",
+        "options": [
+          "138",
+          "139",
+          "140",
+          "141"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-06/q12.f942592e032f.svg",
+        "imageAlt": "Dãy 101, 103, 105, 107, 109, …"
+      },
+      {
+        "number": 13,
+        "english": "How many 2-digit numbers having the tens digit that is smaller than 3 are there?",
+        "translation": "Có bao nhiêu số có 2 chữ số có chữ số hàng chục nhỏ hơn 3?",
+        "options": [
+          "19",
+          "20",
+          "21",
+          "18"
+        ]
+      },
+      {
+        "number": 14,
+        "english": "Fill the lines with ‘+’ and ‘−’ to make the equation below correct.",
+        "translation": "Điền vào dòng kẻ với ‘+’ và ‘−’ để tạo thành một phép tính đúng.",
+        "options": [
+          "1 − 3 − 5 + 7 + 11 = 11",
+          "1 + 3 − 5 − 7 + 11 = 11",
+          "1 − 3 + 5 − 7 + 11 = 11",
+          "1 + 3 + 5 − 7 − 11 = 11"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-06/q14.b61f811fc769.svg",
+        "imageAlt": "1, 3, 5, 7, 11 với các chỗ điền dấu, bằng 11",
+        "optionColumns": 2
+      },
+      {
+        "number": 15,
+        "english": "Determine the result of 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 is odd or even?",
+        "translation": "Hãy xác định kết quả của 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 là lẻ hay chẵn.",
+        "options": [
+          "Odd / Số lẻ",
+          "Even / Số chẵn",
+          "Both odd and even / Vừa chẵn vừa lẻ",
+          "Neither odd not even / Không chẵn, không lẻ"
+        ],
+        "optionColumns": 2
+      },
+      {
+        "number": 16,
+        "english": "How many squares are there in the figure below?",
+        "translation": "Có bao nhiêu hình vuông trong hình dưới đây?",
+        "options": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-06/q16.282c03b67a9e.svg",
+        "imageAlt": "Hai hàng ô vuông lệch nhau: hàng dưới năm ô, hàng trên bốn ô bắt đầu phía trên ô thứ ba của hàng dưới"
+      },
+      {
+        "number": 17,
+        "english": "How many sides does a circle have?",
+        "translation": "Một hình tròn có bao nhiêu cạnh?",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      {
+        "number": 18,
+        "english": "According to the pattern shown below, what is the figure in the space (“?”) provided?",
+        "translation": "Dựa vào quy luật dưới đây, hình điền vào “?” là hình gì?",
+        "options": [
+          "△",
+          "◊",
+          "○",
+          "□"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-06/q18.0bf6b1fb3e60.svg",
+        "imageAlt": "Dãy tam giác, vuông, tròn, hình thoi rỗng và một dấu hỏi đúng vị trí theo ảnh"
+      },
+      {
+        "number": 19,
+        "english": "At least how many squares can be seen if viewing the figure below from the side?",
+        "translation": "Có ít nhất bao nhiêu hình vuông có thể nhìn thấy được nếu nhìn từ phía bên cạnh?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-06/q19.0a0be2b91a13.svg",
+        "imageAlt": "Cụm khối trắng viền đen, cột cao phía trước giữa, hai ô phía trước và các khối lùi phía trái, theo ảnh"
+      },
+      {
+        "number": 20,
+        "english": "At most how many lines can be formed by using 5 points on a plane?",
+        "translation": "Có nhiều nhất bao nhiêu đường thẳng được tạo bởi 5 điểm trên một mặt phẳng?",
+        "options": [
+          "6",
+          "8",
+          "9",
+          "10"
+        ]
+      },
+      {
+        "number": 21,
+        "english": "A restaurant has 2 types of appetizers, 3 types of main courses and 3 types of desserts. How many ways can a customer order an appetizer, a main course and a dessert?",
+        "translation": "Một nhà hàng có 2 món khai vị, 3 món chính và 3 món tráng miệng. Hỏi có bao nhiêu cách một khách hàng gọi 1 món khai vị, 1 món chính và 1 món tráng miệng?",
+        "options": [
+          "18",
+          "6",
+          "9",
+          "8"
+        ]
+      },
+      {
+        "number": 22,
+        "english": "What is the smallest 4-digit number by using 3, 9, 4 and 0 that is divisible by 10? (Each digit can only be used once).",
+        "translation": "Số nhỏ nhất có 4 chữ số tạo bởi các chữ số 3, 9, 4 và 0 mà chia hết cho 10 là số nào? (Mỗi chữ số chỉ dùng một lần).",
+        "options": [
+          "3094",
+          "3049",
+          "3940",
+          "3490"
+        ]
+      },
+      {
+        "number": 23,
+        "english": "How many odd numbers are there in the first 30 numbers of the sequence?",
+        "translation": "Có bao nhiêu số lẻ trong 30 số đầu tiên ở dãy dưới đây?",
+        "options": [
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "image": "./assets/papers/timo-grade2-qualifying-06/q23.296150f09baa.svg",
+        "imageAlt": "Dãy 2, 5, 8, 11, 14, 17, …"
+      },
+      {
+        "number": 24,
+        "english": "Pick 2 from 6 children to take part in mathematics competition. How many different combinations are there?",
+        "translation": "Chọn 2 trong 6 đứa trẻ để tham gia một cuộc thi toán. Hỏi có bao nhiêu cách chọn khác nhau?",
+        "options": [
+          "15",
+          "17",
+          "18",
+          "20"
+        ]
+      },
+      {
+        "number": 25,
+        "english": "How many numbers contain the digit “0” from 1 to 101?",
+        "translation": "Có bao nhiêu số có chứa chữ số 0 từ số 1 đến 101?",
+        "options": [
+          "8",
+          "9",
+          "10",
+          "11"
+        ]
+      }
+    ]
   }
 ];
 function getPapers(program, subject, grade, mode) {

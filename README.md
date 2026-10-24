@@ -135,3 +135,8 @@ Theo yêu cầu chỉnh tiếp cỡ chữ, nội dung tờ đề (số câu, câ
 ## Đề số 5 vòng loại TIMO lớp 2
 
 Nguồn: 4 ảnh chủ dự án gửi, gồm 25 câu song ngữ, 100 lựa chọn và 13 hình SVG dựng theo ảnh (dãy hình, dãy số, phép cộng dọc, khối lập phương và ngôi sao). Các câu giữ đúng số gốc và lựa chọn A–D; phân vào Chưa phân loại trong 5 nhóm TIMO. Chưa có đáp án hay lời giải.
+
+
+## Đề số 6 vòng loại TIMO lớp 2
+
+Nguồn: 4 ảnh chủ dự án gửi. Có đủ 25 câu song ngữ, 100 lựa chọn và 9 hình SVG; giữ thứ tự câu, ký hiệu hình chữ thập và lựa chọn theo nguồn. Các câu vào Chưa phân loại trong 5 nhóm lớn, không có đáp án/lời giải.
