@@ -1285,7 +1285,8 @@ const officialPapers = [
           "9"
         ],
         "image": "./assets/papers/timo-grade2-qualifying-04/q17.4b7fc37a09da.svg",
-        "imageAlt": "Cụm khối trắng xám dùng cho góc nhìn từ bên phải theo ảnh câu 17"
+        "imageAlt": "Cụm khối trắng xám dùng cho góc nhìn từ bên phải theo ảnh câu 17",
+        "subtopic": "Quan sát và đếm khối lập phương"
       },
       {
         "number": 18,
@@ -1618,7 +1619,8 @@ const officialPapers = [
           "5"
         ],
         "image": "./assets/papers/timo-grade2-qualifying-05/q17.66888d272299.svg",
-        "imageAlt": "Cụm khối trắng xám có hàng ngang phía trên, cột đứng phía trước và một khối nhô bên phải phía dưới theo ảnh; nhìn từ trên xuống"
+        "imageAlt": "Cụm khối trắng xám có hàng ngang phía trên, cột đứng phía trước và một khối nhô bên phải phía dưới theo ảnh; nhìn từ trên xuống",
+        "subtopic": "Quan sát và đếm khối lập phương"
       },
       {
         "number": 18,
