@@ -64,11 +64,30 @@ function renderTimoTopics(){
  }).join('')}</div></div></section>`;
  }).join('')}</div>`;
 }
+// Store only question IDs so reordering never changes the source question or its options.
+const topicOrderMemory=new Map();
+function shuffleTopicEntries(entries,grade,topicId){
+ const ordered=entries.slice();
+ if(ordered.length<2)return ordered;
+ const key='goc-hoc-tap.topic-order.v1.'+JSON.stringify([grade,topicId]);
+ let previous=topicOrderMemory.get(key);
+ try{const saved=JSON.parse(localStorage.getItem(key)||'null');if(Array.isArray(saved))previous=saved;}catch{}
+ for(let i=ordered.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[ordered[i],ordered[j]]=[ordered[j],ordered[i]];}
+ if(previous&&previous.length===ordered.length&&ordered.every((entry,i)=>entry.id===previous[i]))ordered.push(ordered.shift());
+ const ids=ordered.map(entry=>entry.id);topicOrderMemory.set(key,ids);
+ try{localStorage.setItem(key,JSON.stringify(ids));}catch{}
+ return ordered;
+}
+function reshuffleTopicPractice(selection){
+ const entries=shuffleTopicEntries(selection.questions.map((question,i)=>({id:selection.questionIds[i],question,source:selection.sources[i]})),selection.grade,selection.topicId);
+ return {...selection,questions:entries.map(entry=>entry.question),questionIds:entries.map(entry=>entry.id),sources:entries.map(entry=>entry.source)};
+}
 function openTopicIntro(topicId){
  const group=getTimoTopicGroups(state.grade).find(group=>group.topics.some(topic=>topic.id===topicId));
  const topic=group?.topics.find(topic=>topic.id===topicId);if(!topic)return;
  if(topic.entries.length){
-  showPracticeIntro({grade:state.grade,program:'TIMO',subject:'Toán',mode:modes[2],paper:timoTopicGroups.findIndex(item=>item.id===group.id),topicId:topic.id,title:`${group.name} / ${topic.name}`,questions:topic.entries.map(entry=>entry.question),questionIds:topic.entries.map(entry=>entry.id),sources:topic.entries.map(({number,paperId,paperTitle})=>({number,paperId,paperTitle})),durationMinutes:null});
+  const entries=shuffleTopicEntries(topic.entries,state.grade,topic.id);
+  showPracticeIntro({grade:state.grade,program:'TIMO',subject:'Toán',mode:modes[2],paper:timoTopicGroups.findIndex(item=>item.id===group.id),topicId:topic.id,title:`${group.name} / ${topic.name}`,questions:entries.map(entry=>entry.question),questionIds:entries.map(entry=>entry.id),sources:entries.map(({number,paperId,paperTitle})=>({number,paperId,paperTitle})),durationMinutes:null});
   return;
  }
  pendingPaper=null;introTrigger=document.activeElement;
@@ -156,7 +175,7 @@ document.addEventListener('click',event=>{
  if(action==='close-intro')introDialog.close();
  if(action==='start-paper')startPendingPaper();
  if(action==='submit-paper')document.querySelector('#quiz').requestSubmit();
- if(action==='retry'){state.answers={};state.submitted=false;state.solutionsVisible=false;state.practice.startedAt=Date.now();delete state.practice.finishedAt;saveAttempt();renderPractice();window.scrollTo({top:0});}
+ if(action==='retry'){if(state.practice.topicId)state.practice=reshuffleTopicPractice(state.practice);state.answers={};state.submitted=false;state.solutionsVisible=false;state.practice.startedAt=Date.now();delete state.practice.finishedAt;saveAttempt();renderPractice();window.scrollTo({top:0});}
  if(button.dataset.subject){state.subject=button.dataset.subject;renderHome();app.querySelector(`[data-subject="${state.subject}"]`).focus();}
  if(button.dataset.mode!==undefined){state.mode=modes[Number(button.dataset.mode)];renderHome();app.querySelector(`[data-mode="${button.dataset.mode}"]`).focus();}
  if(button.dataset.review!==undefined)openSavedPaper(Number(button.dataset.review));

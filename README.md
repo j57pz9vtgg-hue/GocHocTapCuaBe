@@ -124,3 +124,6 @@ Nhập từ 5 ảnh chủ dự án gửi: 25 câu song ngữ, 100 lựa chọn v
 ## Đề số 4 vòng loại TIMO lớp 2
 
 Nhập 25 câu song ngữ, 100 lựa chọn từ 5 ảnh chủ dự án gửi; 15 hình SVG dựng theo nguồn. Câu hỏi giữ thứ tự gốc và được phân vào Chưa phân loại trong 5 nhóm lớn. Chưa có đáp án/lời giải. Ngân hàng hiện có 4 đề, tổng cộng 100 câu.
+
+
+Luyện chủ đề nhỏ tự đổi thứ tự câu khi mở lại hoặc làm lại (từ 2 câu trở lên). Thứ tự cuối lưu riêng theo lớp/chủ đề; câu trả lời đang làm được ghép theo id nguồn, không theo vị trí mới. Bộ đề đầy đủ giữ nguyên thứ tự gốc.
