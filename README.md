@@ -56,4 +56,8 @@ python3 scripts/version-assets.py
 
 Lệnh chỉ tạo bản sao tệp với mã SHA-256 và cập nhật đường dẫn HTML, không biên dịch và không cài phụ thuộc. Giữ các bản đã xuất bản để các trang còn trong bộ nhớ đệm tiếp tục có tài nguyên khớp phiên bản. Website vẫn xuất bản trực tiếp từ `main / (root)`.
 
-Khung Cài đặt rộng tối đa 1.040px trên máy tính, tự co theo điện thoại. Tên giao diện xuống dòng đầy đủ; cuộn ở khung ngoài. Nút đóng 44×44px được giữ ở đầu khung khi cuộn.
+Khung Cài đặt rộng tối đa 840px trên máy tính, tự co theo điện thoại. Tên giao diện xuống dòng đầy đủ; cuộn ở khung ngoài. Nút đóng 44×44px được giữ ở đầu khung khi cuộn.
+
+## Luyện theo chủ đề TIMO
+
+Riêng TIMO có 5 chủ đề lớn, mỗi nhóm hiện có 6 ô chủ đề nhỏ theo mẫu được duyệt. Máy tính chọn nhóm ở cột trái, điện thoại dùng nhóm mở/thu gọn. Tìm kiếm lọc trên cả tên nhóm và tên chủ đề nhỏ. Cấu trúc/tên tạm nằm ở `timoTopicGroups` trong `assets/data.js`. Chưa có nội dung do chủ dự án cung cấp, nút Luyện tập mở thông báo trống; không gán câu hỏi minh họa, đáp án hoặc kết quả cũ cho các chủ đề mới. Các chương trình và chế độ đề khác giữ dữ liệu hiện có.

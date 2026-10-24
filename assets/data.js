@@ -30,3 +30,13 @@ function getQuestions(subject, grade, mode, paper) {
     { text: 'Chọn lời chào phù hợp vào buổi sáng.', options: ['Good night', 'Good morning', 'Goodbye', 'Thank you'] },
   ];
 }
+
+// Names and structure approved as placeholders; do not invent TIMO lesson content or keys.
+const timoTopicGroups = Array.from({ length: 5 }, (_, group) => ({
+  id: `timo-group-${group + 1}`,
+  name: `Chủ đề lớn ${String(group + 1).padStart(2, '0')}`,
+  topics: Array.from({ length: 6 }, (_, topic) => ({
+    id: `timo-topic-${group + 1}-${topic + 1}`,
+    name: `Chủ đề nhỏ ${String(topic + 1).padStart(2, '0')}`,
+  })),
+}));
