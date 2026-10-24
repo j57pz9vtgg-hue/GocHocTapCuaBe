@@ -35,3 +35,30 @@ body{background:radial-gradient(ellipse at top,#d7eeff,var(--page) 70%);min-heig
 @media(max-width:520px){.world-banner{background-position:left center}.card-copy h3{font-size:12px}.card-copy p{font-size:10px}.space-sticker{clip-path:inset(1px 3px)}}
 :root[data-theme=forest] .forest-sticker{font-size:0!important;width:61px;height:61px;border-radius:9px;background:url('./forest-banner.png') left center/auto 100% no-repeat}
 @media(max-width:520px){:root[data-theme=forest] .forest-sticker{width:49px;height:49px}}
+/* Fill the available screen width while retaining a small responsive gutter. */
+.dashboard{
+  width:100%;
+  max-width:none;
+  padding:clamp(12px,1.4vw,26px) clamp(12px,1.6vw,32px) 0;
+}
+body:has(.dashboard)>footer{
+  max-width:none;
+  margin-inline:clamp(12px,1.6vw,32px);
+}
+@media(min-width:1101px){
+  .world-banner{height:clamp(180px,22vh,260px)}
+  .study-card{min-height:clamp(158px,18vh,210px);padding:14px;gap:10px;grid-template-columns:clamp(61px,4.5vw,86px) 1fr}
+  .card-art{min-height:94px}
+  .space-sticker,:root[data-theme=forest] .forest-sticker{width:clamp(61px,4.5vw,86px);height:clamp(61px,4.5vw,86px)}
+  .card-start{padding:10px;font-size:14px}
+}
+@media(min-width:1440px){
+  .card-copy h3{font-size:16px}
+  .card-copy p{font-size:12px}
+  .subject-label{font-size:12px}
+  .filter-bar label{font-size:13px}
+  .filter-bar select{font-size:15px}
+}
+@media(max-width:520px){
+  .dashboard{padding:12px 10px 0}
+}
