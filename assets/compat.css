@@ -175,3 +175,13 @@
 .entry-screen button:focus-visible,.entry-screen input:focus-visible{outline:2px solid #087fb8;outline-offset:3px}
 @media(max-width:479px){.entry-screen{padding:20px 16px}.entry-card{border-radius:16px}.entry-content{padding:20px}.entry-content h1{font-size:29px}.entry-subtitle{font-size:13px;margin-bottom:20px}.entry-hint{font-size:11px}}
 .topic-content-empty{grid-column:1/-1;display:grid;place-items:center;min-height:140px;padding:24px;color:#617b94;text-align:center;font-size:14px}
+/* Bilingual TIMO names and source question ranges remain readable in every world. */
+.timo-topic-browser{grid-template-columns:260px minmax(0,1fr);grid-template-rows:repeat(5,minmax(84px,auto))}
+.topic-group-toggle{height:auto;min-height:84px}
+.topic-group-label>span{display:block;line-height:1.4}
+.topic-group-label>span[lang="en"]{font-size:13px;font-weight:700}
+.topic-group-label>span[lang="vi"]{font-size:12px;font-weight:500;margin-top:2px}
+.topic-group-label>small{display:block;font-size:10px;font-weight:500;line-height:1.5;color:#617b94;margin-top:3px}
+.topic-question-source{font-size:12px;line-height:1.6;color:#617b94;margin:7px 0 12px}
+@media(max-width:1150px) and (min-width:761px){.timo-topic-browser{grid-template-columns:235px minmax(0,1fr)}}
+@media(max-width:760px){.timo-topic-browser{display:block}.topic-group-toggle{height:auto;min-height:84px}.topic-group-label>span[lang="en"]{font-size:14px}.topic-group-label>span[lang="vi"]{font-size:13px}}

@@ -82,3 +82,13 @@ Toàn bộ câu hỏi minh họa, ô đề tạm và chủ đề nhỏ tạm đ�
 Chủ dự án gửi tất cả bộ đề trước rồi mới gửi đáp án. Đề chưa có đáp án vẫn được luyện/nộp khi đã được nhập, kết quả luôn Chờ đáp án. Không tự suy luận đáp án. Chỉ bổ sung đáp án với `answerSource: 'user'` khi đã được cung cấp.
 
 Bài làm chính thức lưu trong `goc-hoc-tap.attempts.official.v1`, khóa gồm lớp/chương trình/môn/nội dung/id đề. Dữ liệu đề minh họa cũ không được nhập lại hay gán cho đề chính thức. Các tài nguyên đã xuất bản được giữ nguyên theo cơ chế bộ nhớ đệm; HTML hiện hành chỉ tải dữ liệu mới không còn câu hỏi mẫu.
+
+## Tự phân chủ đề TIMO
+
+5 nhóm có tên song ngữ và khoảng số câu cố định: Logical thinking / Tư duy lô-gic (1–5), Arithmetic / Số học (6–10), Number Theory / Lý thuyết số (11–15), Geometry / Hình học (16–20), Combinatorics / Tổ hợp (21–25). `getTimoTopicGroups(grade)` tự xây ngân hàng từ các đề TIMO Toán vòng loại/quốc gia cùng lớp trong `officialPapers`.
+
+Câu hỏi giữ tham chiếu tới bản gốc, kèm id đề và số câu nguồn; không sao chép/suy luận đáp án. Có `number` thì dùng số đã khai báo, nếu không dùng vị trí 1–25. Đề thiếu/trùng/sai số câu phải báo để sửa dữ liệu, không âm thầm phân loại. Mỗi nhóm luôn có “Chưa phân loại”; chỉ chuyển sang nhóm nhỏ có tên khi trường `subtopic` được cung cấp. Ngoại lệ chủ dự án yêu cầu: trợ lý đặt tên riêng cho từng câu của Đề số 1 vòng loại TIMO lớp 2; không áp dụng tự đặt tên cho các đề khác.
+
+Các bộ đề mới tự cộng câu hỏi vào nhóm tương ứng; danh sách không nhân bản khi dựng lại giao diện. Luyện theo chủ đề giữ số câu và tên đề nguồn, bài chưa có đáp án tiếp tục Chờ đáp án. Bài làm theo chủ đề lưu danh sách id câu nguồn để khôi phục lựa chọn đúng câu khi ngân hàng được bổ sung hoặc sắp xếp lại.
+
+Kiểm tra dữ liệu trước xuất bản: `node scripts/check-data.cjs`. Kiểm thử quy tắc phân nhóm: `node --test tests/timo-topics.test.cjs`. Không có câu hỏi hoặc đáp án kiểm thử nào được đưa vào dữ liệu xuất bản.
