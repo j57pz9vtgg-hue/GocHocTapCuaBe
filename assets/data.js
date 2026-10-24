@@ -957,7 +957,8 @@ const officialPapers = [
           "8"
         ],
         "imageAlt": "Cụm khối lập phương màu xanh có cột cao ở phía sau, được hỏi khi nhìn từ bên phải, như ảnh đề.",
-        "image": "./assets/papers/timo-grade2-qualifying-03/q18-right-view.57b3c1f0dd37.svg"
+        "image": "./assets/papers/timo-grade2-qualifying-03/q18-right-view.57b3c1f0dd37.svg",
+        "subtopic": "Quan sát và đếm khối lập phương"
       },
       {
         "number": 19,
@@ -1973,7 +1974,8 @@ const officialPapers = [
           "5"
         ],
         "image": "./assets/papers/timo-grade2-qualifying-06/q19.0a0be2b91a13.svg",
-        "imageAlt": "Cụm khối trắng viền đen, cột cao phía trước giữa, hai ô phía trước và các khối lùi phía trái, theo ảnh"
+        "imageAlt": "Cụm khối trắng viền đen, cột cao phía trước giữa, hai ô phía trước và các khối lùi phía trái, theo ảnh",
+        "subtopic": "Quan sát và đếm khối lập phương"
       },
       {
         "number": 20,
