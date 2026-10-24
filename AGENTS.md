@@ -49,3 +49,5 @@ Luyện theo chủ đề nhỏ: mỗi lần mở hoặc Làm lại phải có th
 Lần rà phân loại mới ghép thêm 78 câu của Đề 3–7 vào đúng 25 tên có sẵn, trong nhóm lớn ban đầu. Tổng 175 câu: 124 câu có chủ đề nhỏ và 51 câu Chưa phân loại. Không ghép câu nhìn từ phải/trên/bên vào tên chỉ nói phía trước; không ghép số lẻ hoặc được lặp chữ số vào tên số chẵn không lặp; không ghép tổng lớn nhất vào tổng nhỏ nhất. Giữ nguyên 4 câu chưa khớp của Đề 2 và toàn bộ nội dung/ảnh/lựa chọn/id/đáp án nguồn.
 
 Chủ dự án chỉ định riêng: câu 2 Đề số 7 (dãy chữ A, Z, B, __, C, X, D, W) thuộc chủ đề nhỏ có sẵn “Quy luật dãy số” trong Logical thinking. Chỉ chuyển đúng câu này, không đổi tên chủ đề hoặc tự mở rộng sang các câu khác. Sau chuyển: 125 câu có chủ đề nhỏ, 50 câu Chưa phân loại.
+
+Chỉ định riêng tiếp theo của chủ dự án bằng ảnh: chuyển đúng 4 câu vào “Tuổi hiện tại và tương lai”: Đề 7 câu 5 (Alice mua bánh), Đề 2 câu 3 (Karik), Đề 5 câu 4 (Dan), Đề 7 câu 1 (tháng). Đây là phân loại do chủ dự án chỉ định, kể cả hai câu không nói về tuổi; không tự hoàn tác hoặc mở rộng sang câu khác. Chủ đề tăng từ 2 lên 6 câu; tổng 129 câu có chủ đề, 46 câu Chưa phân loại.

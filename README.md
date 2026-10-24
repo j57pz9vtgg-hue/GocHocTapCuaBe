@@ -165,3 +165,6 @@ Các trường hợp còn lại khác phạm vi tên hiện có, ví dụ tuổi
 
 
 Theo chỉ định riêng tiếp theo, câu 2 Đề số 7 (dãy chữ A, Z, B, __, C, X, D, W) được chuyển từ Chưa phân loại vào “Quy luật dãy số” trong Tư duy lô-gic. Nội dung/ảnh/lựa chọn giữ nguyên; chủ đề này tăng từ 7 lên 8 câu. Tổng hiện tại 125 câu đã phân loại và 50 câu Chưa phân loại.
+
+
+Theo ảnh chỉ định tiếp theo, Đề 7 câu 5, Đề 2 câu 3, Đề 5 câu 4 và Đề 7 câu 1 thuộc “Tuổi hiện tại và tương lai”. Chuyển đúng 4 câu, giữ nguyên nội dung/ảnh/lựa chọn. Chủ đề hiện có 6 câu; toàn ngân hàng có 129 câu phân loại và 46 câu Chưa phân loại.
