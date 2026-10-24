@@ -127,3 +127,6 @@ Nhập 25 câu song ngữ, 100 lựa chọn từ 5 ảnh chủ dự án gửi; 1
 
 
 Luyện chủ đề nhỏ tự đổi thứ tự câu khi mở lại hoặc làm lại (từ 2 câu trở lên). Thứ tự cuối lưu riêng theo lớp/chủ đề; câu trả lời đang làm được ghép theo id nguồn, không theo vị trí mới. Bộ đề đầy đủ giữ nguyên thứ tự gốc.
+
+
+Theo yêu cầu chỉnh tiếp cỡ chữ, nội dung tờ đề (số câu, câu hỏi, bản dịch, lựa chọn và đề mục) dùng Times New Roman 12pt / 16 CSS px trên máy tính và điện thoại. Chỉ đổi thuộc tính phông/cỡ chữ; giữ hình minh họa, nội dung, màu, độ đậm, quy tắc khoảng cách và thanh công cụ. Đã đối chiếu thuộc tính hiển thị trên cả 11 giao diện tại 1440px và 390px; nút nộp trên cùng vẫn khóa khi chưa đủ câu và nộp được khi đủ 25/25.
