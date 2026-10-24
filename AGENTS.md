@@ -63,3 +63,5 @@ Chủ dự án yêu cầu tạo chủ đề nhỏ mới “Bài toán vị trí 
 Chủ dự án yêu cầu phân loại lại câu Alice mua bánh (Đề 7 câu 5), cho phép tạo chủ đề phù hợp nếu chưa có. Câu này được chuyển khỏi nhóm tuổi vào chủ đề mới “Bài toán mua hàng và tiền còn lại” ở Logical thinking / Tư duy lô-gic. Yêu cầu này thay chỉ định cũ đưa câu mua bánh vào nhóm tuổi; không áp dụng cho các câu khác. Nhóm mới 1 câu, nhóm tuổi còn 7 câu.
 
 Chủ dự án đổi tên “Cộng nhiều số” thành “Tìm giá trị”. Giữ nguyên 9 câu của nhóm trong Arithmetic / Số học, giữ id chủ đề cũ để bài đã lưu, thứ tự và màn hình tải lại tiếp tục hoạt động. Không tự ghép thêm câu khác chỉ vì tên mới rộng hơn.
+
+Chủ dự án yêu cầu gộp nhóm 04 “Biểu thức cộng trừ liên tiếp” vào nhóm 02 “Tìm giá trị” trong Arithmetic / Số học. Chuyển đúng 6 câu, nhóm đích có 15 câu; không giữ ô riêng của nhóm cũ. Giữ nội dung/ảnh/lựa chọn/id nguồn, ghép lựa chọn đã lưu theo id từ cả hai nhóm; tham chiếu màn hình cũ phải tiếp tục trong nhóm đích khi tải lại. Giữ bản ghi nhóm cũ làm dự phòng, không đánh dấu tự nộp nhóm đã mở rộng.

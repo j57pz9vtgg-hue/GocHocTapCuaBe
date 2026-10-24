@@ -119,7 +119,7 @@ const officialPapers = [
           "10",
           "8"
         ],
-        "subtopic": "Biểu thức cộng trừ liên tiếp"
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 9,
@@ -468,7 +468,7 @@ const officialPapers = [
           "7",
           "5"
         ],
-        "subtopic": "Biểu thức cộng trừ liên tiếp"
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 9,
@@ -814,7 +814,7 @@ const officialPapers = [
           "6",
           "3"
         ],
-        "subtopic": "Biểu thức cộng trừ liên tiếp"
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 9,
@@ -1148,7 +1148,7 @@ const officialPapers = [
           "20",
           "25"
         ],
-        "subtopic": "Biểu thức cộng trừ liên tiếp"
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 8,
@@ -1485,7 +1485,7 @@ const officialPapers = [
           "7",
           "10"
         ],
-        "subtopic": "Biểu thức cộng trừ liên tiếp"
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 8,
@@ -1824,7 +1824,7 @@ const officialPapers = [
           "5",
           "9"
         ],
-        "subtopic": "Biểu thức cộng trừ liên tiếp"
+        "subtopic": "Tìm giá trị"
       },
       {
         "number": 9,
@@ -2439,4 +2439,11 @@ function buildTimoTopicGroups(papers, grade) {
 }
 function getTimoTopicGroups(grade) {
   return buildTimoTopicGroups(officialPapers, grade);
+}
+
+// Legacy topic references continue in the surviving group after the owner-requested merge.
+function resolveTimoTopicId(id) {
+  const prefix = `${timoTopicGroups[1].id}-named-`;
+  return id === prefix + encodeURIComponent('Biểu thức cộng trừ liên tiếp')
+    ? prefix + encodeURIComponent('Cộng nhiều số') : id;
 }

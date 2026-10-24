@@ -188,3 +188,6 @@ Theo yêu cầu phân loại lại câu Alice mua bánh, Đề 7 câu 5 nay thu�
 
 
 “Cộng nhiều số” đổi tên thành “Tìm giá trị” theo chỉ định của chủ dự án. Giữ đúng 9 câu và id chủ đề cũ, không thay đổi nội dung/ảnh/lựa chọn hoặc tự bổ sung câu khác; bài đang làm và trạng thái tải lại vẫn tiếp tục được.
+
+
+Theo yêu cầu gộp nhóm 04 vào 02 của Số học: 6 câu “Biểu thức cộng trừ liên tiếp” chuyển vào “Tìm giá trị”, tổng 15 câu; bỏ ô riêng của nhóm cũ. Nội dung/lựa chọn/ảnh và số câu nguồn giữ nguyên. Các lựa chọn đã lưu ở hai nhóm được ghép theo id câu; bài đang mở ở nhóm cũ tiếp tục trong nhóm đích khi tải lại. Bản ghi cũ được giữ dự phòng; bài gộp chưa tự nộp.

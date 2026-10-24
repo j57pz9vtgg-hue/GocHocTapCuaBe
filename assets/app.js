@@ -133,8 +133,9 @@ function selectionFromView(saved){
  if(!saved||saved.grade!==state.grade||saved.program!==state.program||saved.subject!==state.subject||saved.mode!==state.mode||!modes.includes(saved.mode))return null;
  if(saved.topicId){
   if(saved.program!=='TIMO'||saved.subject!=='Toán'||saved.mode!==modes[2])return null;
-  const group=getTimoTopicGroups(state.grade).find(g=>g.topics.some(t=>t.id===saved.topicId));
-  const topic=group?.topics.find(t=>t.id===saved.topicId);if(!topic?.entries.length)return null;
+  const topicId=resolveTimoTopicId(saved.topicId);
+  const group=getTimoTopicGroups(state.grade).find(g=>g.topics.some(t=>t.id===topicId));
+  const topic=group?.topics.find(t=>t.id===topicId);if(!topic?.entries.length)return null;
   const byId=new Map(topic.entries.map(e=>[e.id,e])),entries=[];
   for(const id of Array.isArray(saved.questionIds)?saved.questionIds:[]){if(byId.has(id)){entries.push(byId.get(id));byId.delete(id);}}
   entries.push(...byId.values());
@@ -154,9 +155,10 @@ async function restoreCurrentView(){
  const saved=record.practice,selection=selectionFromView(saved);
  if(selection&&Number.isFinite(saved.startedAt)&&saved.startedAt>0){
   state.practice={...selection,startedAt:Math.min(saved.startedAt,Date.now())};state.answers={};state.solutionsVisible=false;
-  const ids=viewQuestionIds(selection);
-  selection.questions.forEach((q,i)=>{const old=Array.isArray(saved.questionIds)?saved.questionIds.indexOf(ids[i]):-1,value=saved.answers?.[old];if(Number.isInteger(value)&&value>=0&&value<q.options.length)state.answers[i]=value;});
-  state.submitted=saved.submitted===true&&Object.keys(state.answers).length===selection.questions.length;
+  const ids=viewQuestionIds(selection),previous=attempts[attemptKey(selection)];
+  const merged=selection.topicId&&(saved.topicId!==selection.topicId||previous?.mergedTopicProgress);
+  selection.questions.forEach((q,i)=>{const old=Array.isArray(saved.questionIds)?saved.questionIds.indexOf(ids[i]):-1,value=saved.answers?.[old];if(Number.isInteger(value)&&value>=0&&value<q.options.length)state.answers[i]=value;else if(merged){const oldIndex=Array.isArray(previous?.questionIds)?previous.questionIds.indexOf(ids[i]):-1,kept=previous?.answers?.[oldIndex];if(Number.isInteger(kept)&&kept>=0&&kept<q.options.length)state.answers[i]=kept;}});
+  state.submitted=!merged&&saved.submitted===true&&Object.keys(state.answers).length===selection.questions.length;
   if(state.submitted)state.practice.finishedAt=Number.isFinite(saved.finishedAt)?Math.max(state.practice.startedAt,saved.finishedAt):state.practice.startedAt;
   renderPractice();saveAttempt();
  }else{state.practice=null;renderHome();}
@@ -181,6 +183,25 @@ const attemptStorageKey='goc-hoc-tap.attempts.official.v1';
 let attempts={};
 try { const saved=JSON.parse(localStorage.getItem(attemptStorageKey)||'{}'); if(saved&&typeof saved==='object'&&!Array.isArray(saved))attempts=saved; } catch {}
 const attemptKey=selection=>[selection.grade,selection.program,selection.subject,selection.mode,selection.topicId||getPapers(selection.program,selection.subject,selection.grade,selection.mode)[selection.paper]?.id||''].join('|');
+// Preserve source-ID answers from both former groups, retaining the old record as a backup.
+let topicAttemptsMigrated=false;
+for(const [oldKey,oldRecord] of Object.entries(attempts)){
+ const parts=oldKey.split('|');if(parts.length!==5||!oldRecord||oldRecord.migratedTo||!Array.isArray(oldRecord.questionIds))continue;
+ const [grade,program,subject,mode,oldId]=parts,newId=resolveTimoTopicId(oldId);
+ if(newId===oldId||program!=='TIMO'||subject!=='Toán'||mode!==modes[2])continue;
+ const topic=getTimoTopicGroups(grade).flatMap(g=>g.topics).find(t=>t.id===newId);if(!topic)continue;
+ const newKey=[grade,program,subject,mode,newId].join('|'),target=attempts[newKey];
+ const allowed=new Map(topic.entries.map(e=>[e.id,e.question])),ids=[],answers={};
+ for(const record of [target,oldRecord]){
+  if(!Array.isArray(record?.questionIds))continue;
+  record.questionIds.forEach((id,i)=>{if(!allowed.has(id))return;let index=ids.indexOf(id);if(index<0){index=ids.length;ids.push(id);}const value=record.answers?.[i];if(Number.isInteger(value)&&value>=0&&value<allowed.get(id).options.length)answers[index]=value;});
+ }
+ const starts=[target?.startedAt,oldRecord.startedAt].filter(value=>Number.isFinite(value)&&value>0&&value<=Date.now());
+ attempts[newKey]={questionIds:ids,answers,startedAt:starts.length?Math.min(...starts):Date.now(),updatedAt:Date.now(),submitted:false,mergedTopicProgress:true};
+ oldRecord.migratedTo=newKey;topicAttemptsMigrated=true;
+}
+if(topicAttemptsMigrated)try{localStorage.setItem(attemptStorageKey,JSON.stringify(attempts));}catch{}
+
 for(const [savedKey,record] of Object.entries(attempts)){
  const parts=savedKey.split('|');if(parts.length!==5||!record||!record.submitted||!record.answers||typeof record.answers!=='object')continue;
  const [grade,program,subject,mode,paperId]=parts;
