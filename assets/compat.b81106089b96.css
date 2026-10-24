@@ -1,0 +1,82 @@
+/* Integration only: source theme styles and art are retained in assets/reference. */
+[hidden]{display:none!important}body:has(dialog[open]){overflow:hidden}.paper-intro .intro-start{width:100%}.paper-intro .quiz-info{flex-wrap:wrap}.question-illustration img{max-width:100%;max-height:340px;object-fit:contain}.paper-world .unlimited-time{font-size:17px}.paper-brand>button{display:flex;align-items:center;gap:7px}.paper-world .paper-options .answer-text{overflow-wrap:anywhere}.paper-world .result-view{max-width:794px;margin:20px auto 0;padding:24px;border:1px solid #c5e9ff;border-radius:12px;background:white;text-align:center}.paper-world .result-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:17px}.paper-world .result-actions button{padding:10px 18px;min-height:42px;border-radius:9px}.paper-world .result-view>p{font-size:14px;line-height:1.7;margin:8px 0}.paper-world .result-view>h2{font-size:27px}.paper-end{align-items:center}.paper-end>p{font-size:13px}.paper-options .chosen:not(.paper-correct):not(.paper-wrong){background:#eef8ff}.paper-question:last-of-type{border-bottom:0}.settings-heading{padding-right:20px}.settings-heading>span{display:none}.settings-heading h2{font-size:28px}.settings-heading p{font-size:14px;margin-top:7px;color:#6b847b}.settings-section h3{font-size:23px;margin-bottom:14px}.settings-section [role=status]{font-size:12px;line-height:1.6;margin-top:12px}.settings-section label{font-size:13px}.settings-section input[type=password],#solution-dialog input{width:100%;min-height:44px;padding:9px 12px;border:1px solid #adcfdc;border-radius:8px;background:white;margin:7px 0 13px}.password-actions{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap}.settings-note{font-size:12px;line-height:1.8;margin-top:15px;color:#627993}.settings-tabs{margin:23px 0 20px}.settings-tabs button{font-size:14px}.settings-section .learning-theme-picker{max-height:47vh;overflow:auto}.usage ol{padding-left:22px;font-size:14px;line-height:1.9}.usage li{margin-bottom:10px}.settings-dialog .settings-section:focus{outline:none}.settings-dialog .settings-section:focus-visible{outline:2px solid #087fb8;outline-offset:4px}.settings-dialog .primary{min-height:42px}.settings-dialog .secondary{font-size:13px;padding:9px 13px;border-radius:8px;border:1px solid #c6dce4;background:white}#solution-dialog h2{padding-right:20px}#solution-dialog label{display:block;margin-top:15px;font-size:14px}#solution-dialog .primary{width:100%;padding:12px;border-radius:9px;background:var(--teal,#00aeb9);color:white;font-weight:700}#solution-dialog .settings-status{font-size:13px;color:#a33d35;margin:10px 0}#local-data .primary-button{margin-top:22px}#local-data>h2{padding-right:25px}.cloud-sync-button{position:relative}.parent-title-icon{margin-bottom:10px}
+@media(max-width:760px){.paper-world .unlimited-time{font-size:13px}.paper-brand>strong{font-size:20px}.paper-brand>button{font-size:12px;padding:8px}.settings-tabs button{font-size:12px;padding:10px 4px}.settings-heading h2{font-size:25px}.settings-section .learning-theme-picker{max-height:45vh}.settings-dialog{padding:25px 20px}.paper-world .paper-options .answer-text{font-size:inherit}.paper-end>p{max-width:150px;font-size:11px}.paper-world .result-view{padding:19px 14px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+/* Header tools are consolidated into the existing three-tab settings dialog. */
+.header-tools>.settings-control{display:flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap}
+.settings-tools{margin-top:22px;padding-top:18px;border-top:1px solid #dce7e5}
+.settings-tools h3{font-size:19px;margin-bottom:12px}
+.settings-tools .secondary-button{display:flex;align-items:center;gap:9px;width:100%;padding:11px 13px;margin-top:9px;font-size:13px;text-align:left;border:1px solid #cbdde4;border-radius:9px;background:#fff}
+:root[data-theme="arctic"]:not([data-theme="pixel"]) .header-tools{grid-template-columns:minmax(0,1fr) auto}
+:root[data-theme="arctic"]:not([data-theme="pixel"]) .header-tools>.settings-control{grid-column:2;grid-row:1;width:auto;min-width:108px}
+@media(max-width:760px){.header-tools>.settings-control{gap:6px}:root[data-theme="arctic"]:not([data-theme="pixel"]) .header-tools{grid-template-columns:minmax(0,1fr) auto}:root[data-theme="arctic"]:not([data-theme="pixel"]) .header-tools>.settings-control{grid-column:2;grid-row:1;min-width:100px;width:auto}}
+/* Keep theme names inside their cards; scroll the dialog, never compress its grid rows. */
+.dialog.settings-dialog{width:min(840px,calc(100% - 40px));max-height:calc(100dvh - 40px);padding:24px;overflow-y:auto;scrollbar-gutter:stable}
+.settings-dialog .settings-topbar{position:sticky;top:-24px;z-index:3;margin:-24px -24px 0;padding:24px 24px 12px;background:inherit;border-radius:22px 22px 0 0}
+.settings-dialog .settings-topbar>.dialog-close{display:grid;place-items:center;width:44px;height:44px;padding:8px;top:12px;right:12px;border-radius:12px;color:#406d87;background:#e4f2fc}
+.settings-dialog .settings-topbar>.dialog-close svg{width:26px;height:26px;stroke-width:2.2}
+.settings-dialog .settings-heading{padding-right:42px}
+.settings-dialog .settings-tabs{margin-top:4px}
+.settings-dialog .learning-theme-picker{max-height:none;overflow:visible;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:auto;align-items:stretch;gap:12px;margin:12px 0 0}
+.settings-dialog .learning-theme-picker label{display:flex;flex-direction:column;min-width:0;min-height:108px;height:auto;overflow:hidden;flex-shrink:0}
+.settings-dialog .learning-theme-picker img{height:64px;min-height:64px;flex-shrink:0;object-fit:contain}
+.settings-dialog .learning-theme-picker span{min-height:44px;flex:1;align-items:center;padding:8px;font-size:12px;line-height:1.5;white-space:normal;overflow-wrap:anywhere}
+.settings-dialog .learning-theme-picker input{width:18px;height:18px;flex-shrink:0}
+.settings-dialog .parent-password-panel{max-width:640px;margin-inline:auto}
+@media(max-width:760px){.dialog.settings-dialog{width:calc(100% - 24px);max-height:calc(100dvh - 24px);padding:22px 20px}.settings-dialog .settings-topbar{top:-22px;margin:-22px -20px 0;padding:22px 20px 16px}.settings-dialog .settings-heading h2{font-size:25px}.settings-dialog .learning-theme-picker{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.settings-dialog .learning-theme-picker label{min-height:112px}.settings-dialog .learning-theme-picker img{height:60px;min-height:60px}.settings-dialog .learning-theme-picker span{min-height:52px;font-size:12px;padding:8px;gap:6px}}
+/* Pixel is the shared catalog geometry; themes retain their palette and artwork. */
+#site-shell .page-content{width:100%;max-width:none;margin-inline:auto;padding:0 clamp(18px,4.2vw,64px) 10px}
+#site-shell .catalog-filter-bar{padding-bottom:0;padding-top:0}
+#site-shell .study-filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding:17px 34px 16px;margin:-13px -20px 0;border:1px solid var(--theme-edge,#d7edf7);border-radius:19px;background:linear-gradient(#ffffffed,#f6fcffed);box-shadow:0 5px 10px #72c8e51d}
+#site-shell .filter-field{min-width:0;min-height:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none}
+#site-shell .crystal-filter-icon{display:none}
+#site-shell .filter-field label{font-size:13px;font-weight:600;line-height:1.5;margin:0 0 4px 4px;min-height:0}
+#site-shell .filter-select{margin:0}
+#site-shell .filter-select select{height:40px;font-size:14px;font-weight:500;padding:0 32px 0 15px;border-width:1px;border-radius:8px}
+#site-shell .filter-select>svg{top:12px;right:12px;width:16px;height:16px}
+#site-shell .exercise-section{padding-top:16px;padding-bottom:0}
+#site-shell .arctic-catalog-subtitle,#site-shell .arctic-catalog-count,#site-shell .toys-catalog-banner{display:none}
+#site-shell .exercise-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+#site-shell .exercise-card{position:relative;display:flex;flex-direction:column;min-width:0;min-height:176px;padding:12px 12px 10px;border-width:1px;border-radius:12px}
+#site-shell .exercise-top{min-height:52px;gap:10px;align-items:flex-start}
+#site-shell .number-badge{width:39px;height:43px;flex-shrink:0}
+#site-shell .exercise-name{min-width:0;position:relative}
+#site-shell .exercise-name h2{font-size:15px;line-height:1.5;margin:0;min-height:21px;padding-right:16px}
+#site-shell .status{font-size:11px;line-height:1.4;padding:4px 10px;margin-top:5px}
+#site-shell .exercise-stats{font-size:13px;line-height:1.7;margin:10px 5px;padding:0;position:relative;z-index:1}
+#site-shell .exercise-stats>div{gap:9px;flex-wrap:nowrap}
+#site-shell .exercise-stats dt{min-width:62px}
+#site-shell .card-actions{margin-top:auto;gap:7px;position:relative;z-index:2}
+#site-shell .card-actions>button{min-height:38px;padding:6px 5px;font-size:13px;line-height:1.4;border-radius:9px}
+#site-shell .exercise-card-art{width:74px;height:74px;top:auto;bottom:42px;right:8px;pointer-events:none}
+@media(min-width:1600px){#site-shell .exercise-card{padding:13px 15px 11px;min-height:182px}}
+@media(min-width:1350px) and (max-width:1499px){#site-shell .page-content{padding-inline:35px}#site-shell .study-filters{margin-inline:-14px;padding-inline:25px;gap:20px}#site-shell .exercise-card{padding:11px 10px 9px}#site-shell .exercise-top{gap:7px}#site-shell .number-badge{width:35px;height:40px}#site-shell .exercise-stats{font-size:11px;margin-inline:3px}#site-shell .exercise-stats dt{min-width:57px}#site-shell .card-actions{gap:5px}}
+@media(max-width:1349px){#site-shell .page-content{padding-inline:30px}#site-shell .exercise-grid{grid-template-columns:repeat(4,minmax(0,1fr))}#site-shell .study-filters{margin-inline:-10px;gap:17px;padding-inline:22px}#site-shell .filter-field label{font-size:12px}#site-shell .exercise-stats{font-size:12px}}
+@media(max-width:1050px){#site-shell .exercise-grid{grid-template-columns:repeat(3,minmax(0,1fr))}#site-shell .study-filters{gap:12px;padding:16px}#site-shell .filter-field label{font-size:11px}#site-shell .filter-select select{font-size:12px;padding-left:11px}}
+@media(max-width:760px){#site-shell .page-content{padding-inline:18px}#site-shell .study-filters{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 -4px;padding:16px 14px;border-radius:13px}#site-shell .filter-field label{margin-left:1px;min-height:17px}#site-shell .filter-select select{padding-left:10px;padding-right:27px}#site-shell .filter-select>svg{right:9px;width:14px}#site-shell .exercise-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#site-shell .exercise-card{padding:11px;min-height:184px}#site-shell .exercise-top{gap:7px;min-height:53px}#site-shell .number-badge{width:34px;height:39px}#site-shell .exercise-name h2{font-size:13px;padding-right:12px}#site-shell .status{font-size:10px;padding:4px 7px}#site-shell .exercise-stats{font-size:11px;margin-inline:0}#site-shell .exercise-stats dt{min-width:53px}#site-shell .exercise-stats>div{gap:5px}#site-shell .card-actions{gap:5px}#site-shell .card-actions>button{font-size:11px;padding-inline:4px}#site-shell .exercise-card-art{width:58px;height:58px;bottom:48px;right:5px}}
+@media(max-width:479px){#site-shell .exercise-grid{grid-template-columns:1fr}#site-shell .exercise-card,#site-shell .exercise-card.is-complete{min-height:168px;padding:13px 14px 11px}#site-shell .exercise-top{gap:10px;min-height:53px}#site-shell .number-badge{width:39px;height:43px}#site-shell .exercise-name h2{font-size:15px;min-height:24px}#site-shell .status{font-size:11px;padding:4px 10px}#site-shell .exercise-stats{font-size:13px;margin:7px 3px 11px}#site-shell .exercise-stats dt{min-width:68px}#site-shell .card-actions>button{font-size:13px;min-height:39px}#site-shell .exercise-card-art{width:74px;height:74px}}
+/* Slightly smaller catalog controls and cards, while retaining the full-width grid. */
+@media(min-width:761px){
+ #site-shell .study-filters{padding-top:12px;padding-bottom:12px;gap:20px}
+ #site-shell .filter-field label{font-size:12px;margin-bottom:3px}
+ #site-shell .filter-select select{height:36px;font-size:13px}
+ #site-shell .filter-select>svg{top:10px}
+ #site-shell .exercise-section{padding-top:12px}
+ #site-shell .exercise-card{min-height:168px;padding:10px 12px 9px}
+ #site-shell .exercise-top{min-height:47px;gap:8px}
+ #site-shell .number-badge{width:35px;height:39px}
+ #site-shell .exercise-name h2{font-size:14px;line-height:1.4}
+ #site-shell .status{font-size:10px;padding:3px 8px;margin-top:4px}
+ #site-shell .exercise-stats{font-size:12px;line-height:1.6;margin:8px 3px}
+ #site-shell .card-actions>button{min-height:34px;font-size:12px;padding:5px}
+ #site-shell .exercise-card-art{width:66px;height:66px;bottom:39px}
+}
+
+/* Compact settings heading and spacing; preserve the 44px close target. */
+.settings-dialog .settings-heading h2{font-size:24px}
+.settings-dialog .settings-heading p{font-size:12px;margin-top:4px}
+.settings-dialog .settings-tabs{margin:4px 0 14px}
+.settings-dialog .settings-tabs button{font-size:13px;padding-block:9px}
+.settings-dialog .settings-section h3{font-size:20px;margin-bottom:10px}
+/* Keep the filter panel below the hero toolbar instead of overlapping its bottom edge. */
+#site-shell .study-filters{margin-top:0}

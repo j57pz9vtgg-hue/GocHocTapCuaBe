@@ -78,3 +78,5 @@
 .settings-dialog .settings-tabs{margin:4px 0 14px}
 .settings-dialog .settings-tabs button{font-size:13px;padding-block:9px}
 .settings-dialog .settings-section h3{font-size:20px;margin-bottom:10px}
+/* Keep the filter panel below the hero toolbar instead of overlapping its bottom edge. */
+#site-shell .study-filters{margin-top:0}
