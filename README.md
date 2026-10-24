@@ -61,3 +61,5 @@ Khung Cài đặt rộng tối đa 840px trên máy tính, tự co theo điện 
 ## Luyện theo chủ đề TIMO
 
 Riêng TIMO có 5 chủ đề lớn, mỗi nhóm hiện có 6 ô chủ đề nhỏ theo mẫu được duyệt. Máy tính chọn nhóm ở cột trái, điện thoại dùng nhóm mở/thu gọn. Tìm kiếm lọc trên cả tên nhóm và tên chủ đề nhỏ. Cấu trúc/tên tạm nằm ở `timoTopicGroups` trong `assets/data.js`. Chưa có nội dung do chủ dự án cung cấp, nút Luyện tập mở thông báo trống; không gán câu hỏi minh họa, đáp án hoặc kết quả cũ cho các chủ đề mới. Các chương trình và chế độ đề khác giữ dữ liệu hiện có.
+
+Các ô chủ đề TIMO lấy huy hiệu, màu nền, nút và ảnh minh họa theo giao diện đang chọn. Chỉ Pixel dùng ảnh/huy hiệu Pixel; các giao diện khác dùng sprite của chính bộ đó và banner tương ứng trong popup.

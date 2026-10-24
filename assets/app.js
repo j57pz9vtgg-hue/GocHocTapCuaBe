@@ -36,6 +36,7 @@ function renderReferenceCard(i){
 }
 function normalizedTopicSearch(value){return value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[đĐ]/g,'d').toLowerCase();}
 function renderTopicBadge(index){
+ if(activeTheme().id!=='pixel')return `<span class="topic-number theme-topic-number" aria-hidden="true">${String(index+1).padStart(2,'0')}</span>`;
  const colors=['#ffae21','#f84e7b','#30bf66','#28a9ef','#a143ec','#ff8627'];
  return `<span class="topic-number" aria-hidden="true" style="color:${colors[index%colors.length]}"><svg viewBox="0 0 40 44" shape-rendering="crispEdges"><path d="M10 2h20v3h5v5h3v24h-3v5h-5v3H10v-3H5v-5H2V10h3V5h5z" fill="#10234b"/><path d="M11 5h18v3h5v4h1v20h-3v5h-5v2H11v-3H7v-5H5V12h3V8h3z" fill="currentColor"/><path d="M11 7h15v2H12v4H9v9H7V12h3V9h1z" fill="#ffffff88"/></svg><span>${String(index+1).padStart(2,'0')}</span></span>`;
 }
@@ -48,7 +49,7 @@ function renderTimoTopics(){
  const open=selected===group.index;
  return `<section class="timo-topic-group" style="--topic-row:${row+1}"><button class="topic-group-toggle ${open?'selected':''}" data-topic-group="${group.index}" id="${group.id}-toggle" aria-expanded="${open}" aria-controls="${group.id}-panel">${renderTopicBadge(group.index)}<span>${escapeHTML(group.name)}</span>${icon(open?'down':'arrow',19)}</button><div class="topic-group-panel" id="${group.id}-panel" aria-labelledby="${group.id}-title" ${open?'':'hidden'}><h3 id="${group.id}-title">${escapeHTML(group.name)}</h3><div class="topic-small-grid">${group.matches.map(topic=>{
  const index=group.topics.indexOf(topic);
- return `<article class="topic-small-card"><div class="topic-small-heading">${renderTopicBadge(index)}<h4>${escapeHTML(topic.name)}</h4></div><p class="topic-state"><span aria-hidden="true"></span>Chưa có bài tập</p><img class="topic-book" src="${publicAsset('pixel-book')}" alt=""><button class="topic-practice" data-topic-open="${topic.id}" aria-label="Luyện tập ${escapeHTML(topic.name)}, ${escapeHTML(group.name)}">Luyện tập</button></article>`;
+ return `<article class="topic-small-card"><div class="topic-small-heading">${renderTopicBadge(index)}<h4>${escapeHTML(topic.name)}</h4></div><p class="topic-state"><span aria-hidden="true"></span>Chưa có bài tập</p>${activeTheme().id==='pixel'?`<img class="topic-book" src="${publicAsset('pixel-book')}" alt="">`:`<span class="topic-book topic-theme-art" aria-hidden="true" style="background-image:url('${publicAsset(activeTheme().id+'-sprites')}');background-position:${(index%4)*100/3}% ${Math.floor(index/4)*100/3}%"></span>`}<button class="topic-practice" data-topic-open="${topic.id}" aria-label="Luyện tập ${escapeHTML(topic.name)}, ${escapeHTML(group.name)}">Luyện tập</button></article>`;
  }).join('')}</div></div></section>`;
  }).join('')}</div>`;
 }
@@ -56,7 +57,7 @@ function openTopicIntro(topicId){
  const group=timoTopicGroups.find(group=>group.topics.some(topic=>topic.id===topicId));
  const topic=group?.topics.find(topic=>topic.id===topicId);if(!topic)return;
  pendingPaper=null;introTrigger=document.activeElement;
- introDialog.innerHTML=`<button class="icon-button dialog-close" data-action="close-intro" aria-label="Đóng giới thiệu chủ đề">${icon('close',22)}</button><div class="topic-empty-intro"><img src="${publicAsset('pixel-book')}" alt=""><h2 id="paper-intro-title">${escapeHTML(topic.name)}</h2><p>${escapeHTML(group.name)} · TIMO · Lớp ${state.grade} · ${escapeHTML(state.subject)}</p><p>Chưa có nội dung luyện tập.</p><button class="primary-button" data-action="close-intro">Đóng</button></div>`;
+ introDialog.innerHTML=`<button class="icon-button dialog-close" data-action="close-intro" aria-label="Đóng giới thiệu chủ đề">${icon('close',22)}</button><div class="topic-empty-intro"><img class="${activeTheme().id==='pixel'?'':'topic-intro-banner'}" src="${publicAsset(activeTheme().id==='pixel'?'pixel-book':activeTheme().hero)}" alt=""><h2 id="paper-intro-title">${escapeHTML(topic.name)}</h2><p>${escapeHTML(group.name)} · TIMO · Lớp ${state.grade} · ${escapeHTML(state.subject)}</p><p>Chưa có nội dung luyện tập.</p><button class="primary-button" data-action="close-intro">Đóng</button></div>`;
  introDialog.showModal();introDialog.querySelector('[data-action="close-intro"]').focus();
 }
 function renderHome(){

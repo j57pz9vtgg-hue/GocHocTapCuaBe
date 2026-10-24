@@ -132,3 +132,22 @@
 /* The filter panel shares exactly the same outer edges as the exercise grid. */
 #site-shell .study-filters{margin-inline:0}
 .paper-world .paper-end{justify-content:flex-end}
+/* Topic hierarchy follows the active world's artwork and component palette. */
+:root:not([data-theme="pixel"]) .topic-group-toggle,:root:not([data-theme="pixel"]) .topic-group-panel,:root:not([data-theme="pixel"]) .topic-small-card{background:color-mix(in srgb,var(--theme-base) 45%,white 55%);border-color:var(--theme-edge)}
+:root:not([data-theme="pixel"]) .topic-group-toggle.selected{background:color-mix(in srgb,var(--theme-accent) 13%,var(--theme-base) 87%);border-color:var(--theme-accent);box-shadow:inset 3px 0 var(--theme-accent);color:var(--ink)}
+:root:not([data-theme="pixel"]) .theme-topic-number{display:grid;place-items:center;width:34px;height:38px;background:var(--theme-ordinal);border:2px solid #ffffffd9;border-radius:10px;box-shadow:0 2px 4px #20356825;color:white;font:800 20px/1 'Baloo 2',sans-serif}
+:root:not([data-theme="pixel"]) .topic-theme-art{background-size:400% 400%;background-repeat:no-repeat;image-rendering:auto;width:54px;height:54px;clip-path:inset(2%);filter:drop-shadow(0 2px 2px #20356818)}
+:root:not([data-theme="pixel"]) .topic-small-card{grid-template-columns:minmax(0,1fr) 54px}
+:root[data-theme="arctic"] .theme-topic-number,:root[data-theme="bunny"] .theme-topic-number{border-radius:50%}
+:root[data-theme="toys"] .theme-topic-number{border-radius:12px;color:#25476c;box-shadow:inset 0 -3px #dca06066,0 2px 4px #20356825}
+:root[data-theme="bunny"] .theme-topic-number{background:#bfe08c;color:#285e48}
+:root[data-theme="crystal"] .theme-topic-number{clip-path:polygon(25% 0,75% 0,100% 25%,100% 75%,75% 100%,25% 100%,0 75%,0 25%);border-radius:0;background:linear-gradient(140deg,#b7eaff,#609aff 60%,#5155cd)}
+:root[data-theme="cloud"] .theme-topic-number{border-radius:16px 16px 10px 10px;background:linear-gradient(#ffe49b,#eeb05c);color:#6e4719}
+:root[data-theme="forest"] .theme-topic-number{border-radius:12px 5px 12px 5px;border-color:#e9d5ad}
+:root[data-theme="museum"] .theme-topic-number{border-radius:8px 15px 8px 15px}
+:root[data-theme="magic"] .theme-topic-number{border-radius:12px 4px;background:linear-gradient(140deg,#b8a3fa,#8054c9)}
+:root[data-theme="treasure"] .theme-topic-number{border-radius:50%;background:linear-gradient(#ffe89a,#d49a28);color:#654513}
+:root[data-theme="cars"] .theme-topic-number{border-radius:8px;background:linear-gradient(#fd7467,#dc3028)}
+.topic-empty-intro>.topic-intro-banner{width:100%;height:150px;border-radius:12px;object-fit:cover;image-rendering:auto}
+@media(max-width:760px){:root:not([data-theme="pixel"]) .topic-small-card{grid-template-columns:minmax(0,1fr) 44px 108px}:root:not([data-theme="pixel"]) .topic-theme-art{width:44px;height:44px}:root:not([data-theme="pixel"]) .topic-small-heading .theme-topic-number{width:28px;height:32px;font-size:17px}}
+@media(max-width:390px){:root:not([data-theme="pixel"]) .topic-small-card{grid-template-columns:minmax(0,1fr) 88px}:root:not([data-theme="pixel"]) .topic-theme-art{display:none}}
