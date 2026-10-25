@@ -4528,7 +4528,7 @@ const officialPapers = [
         "translation": "Line: Dòng kẻ; Equation: Phép tính; Correct: Đúng; Write down the complete equation on the answer sheet: Viết câu trả lời hoàn chỉnh vào phiếu trả lời.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Điền dấu nhân và trừ",
+        "subtopic": "Điền dấu cộng và trừ",
         "image": "./assets/papers/timo-grade2-national-07/q12.e89ee8a60e9b.svg",
         "imageAlt": "7 __ 4 __ 5 __ 3 = 13"
       },
@@ -4728,6 +4728,9 @@ function getTimoTopicGroups(grade) {
 // Legacy topic references continue in the surviving group after the owner-requested merge.
 function resolveTimoTopicId(id) {
   const prefix = `${timoTopicGroups[1].id}-named-`;
+  const numberTheoryPrefix = `${timoTopicGroups[2].id}-named-`;
+  if (id === numberTheoryPrefix + encodeURIComponent('Điền dấu nhân và trừ'))
+    return numberTheoryPrefix + encodeURIComponent('Điền dấu cộng và trừ');
   const geometryPrefix = `${timoTopicGroups[3].id}-named-`;
   if (id === geometryPrefix + encodeURIComponent('Đếm khối lập phương xếp chồng'))
     return geometryPrefix + encodeURIComponent('Quan sát khối từ phía trước');

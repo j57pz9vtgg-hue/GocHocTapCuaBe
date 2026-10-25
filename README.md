@@ -325,3 +325,7 @@ Nhập25 khóa/lời giải và3 SVG theo3 ảnh chủ dự án gửi. Các câu
 ## Đáp án Đề vòng loại 7
 
 Nhập25 khóa/lời giải và4 SVG theo5 ảnh chủ dự án cung cấp. Giữ hai cách giải câu4, các vùng đánh số câu16, mặt nhìn câu17, đoạn thẳng câu19 và các bước giải còn lại. Các bài luyện chủ đề dùng cùng khóa nguồn, giữ đúng khi đảo câu. Hiện cả175 câu của7 đề vòng loại đều có khóa/lời giải của chủ dự án;175 câu của7 đề quốc gia tiếp tục Chờ đáp án. Không thay nội dung, lựa chọn hoặc phân loại của350 câu. Kiểm tra chấm điểm, mật khẩu, hình, lưu/tải lại/làm lại, bài luyện trộn và11 giao diện.
+
+## Gộp chủ đề điền dấu
+
+Gộp “Điền dấu nhân và trừ” vào chủ đề nhỏ4 “Điền dấu cộng và trừ” theo yêu cầu chủ dự án, tổng12 câu. Giữ nội dung/ảnh/đáp án/lời giải và nguồn của350 câu; chỉ đổi nhãn phân loại câu12 Đề quốc gia7. Id cũ chuyển về nhóm4, bài làm lưu theo nguồn được giữ cả lựa chọn trắc nghiệm và văn bản tự luận; đã kiểm tra tải lại và màn hình máy tính/điện thoại.
