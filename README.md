@@ -289,3 +289,10 @@ Nhập 25 câu tự luận và phần từ vựng Việt, 10 SVG theo 4 ảnh g�
 Nhập đủ 25 câu tự luận và phần từ vựng Việt, 12 SVG theo 4 ảnh gốc. Giữ các dòng hội thoại, ký hiệu ※, dãy hình, lưới vuông, phép cộng dọc và tầng khối. Phân loại đủ các câu; bổ sung dạng suy luận chữ số/vị trí, điền dấu nhân và cộng, độ dài cạnh tam giác, chọn và sắp xếp có thứ tự. Không tạo lựa chọn hoặc đáp án. Đã kiểm tra nhập/nộp/lưu/tải lại, chủ đề trộn và 11 giao diện.
 
 Ngân hàng hiện có 13 đề, 325 câu: 7 đề vòng loại (175 câu trắc nghiệm) và 6 đề quốc gia (150 câu tự luận). Toàn bộ câu đã được gắn chủ đề nhỏ phù hợp; nội dung 300 câu trước giữ nguyên khi thêm Đề quốc gia 6. Các đề chưa có khóa trả lời của chủ dự án tiếp tục hiển thị “Chờ đáp án”.
+
+
+## Đề quốc gia 7 — TIMO lớp 2
+
+Nhập 25 câu tự luận, phần từ vựng Việt và 9 SVG theo 3 ảnh chủ dự án gửi. Giữ dãy ký hiệu, phép cộng dọc, biểu thức, lưới vuông, khối lập phương và các điểm trên đoạn thẳng. Phân loại đủ 25 câu; bổ sung chủ đề Suy luận quan hệ gia đình, Số ngày trong tháng, Điền dấu nhân và trừ. Giữ nguyên cả chỗ ghi “1-digit odd number” trong từ vựng câu 14 theo ảnh nguồn; nội dung tiếng Anh hỏi số lẻ có hai chữ số.
+
+Ngân hàng hiện có 14 đề, 350 câu: 7 đề vòng loại và 7 đề quốc gia; 70 câu mỗi nhóm lớn, không còn câu Chưa phân loại. Không thay 325 câu đã có, không tự tạo lựa chọn/đáp án/lời giải. Đã kiểm tra nhập/nộp/lưu/tải lại, hình, luyện trộn hai loại câu và 11 giao diện ở máy tính/điện thoại.

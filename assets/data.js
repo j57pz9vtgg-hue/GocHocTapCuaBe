@@ -3811,6 +3811,235 @@ const officialPapers = [
         "imageAlt": "Các số20196951;20186421;2020345;20198462"
       }
     ]
+  },
+  {
+    "id": "timo-grade2-national-07",
+    "title": "Đề quốc gia 07",
+    "sourceTitle": "ĐỀ SỐ 7 — VÒNG QUỐC GIA TIMO",
+    "program": "TIMO",
+    "subject": "Toán",
+    "grade": "2",
+    "mode": "Đề quốc gia",
+    "questions": [
+      {
+        "number": 1,
+        "english": "Amy’s father has 5 children, how many brothers and sisters does Amy have?",
+        "translation": "Amy’s father: Bố của Amy; Brother: Anh/em trai; Sister: Chị/em gái.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Suy luận quan hệ gia đình"
+      },
+      {
+        "number": 2,
+        "english": "According to the pattern below, how many triangle(s) is / are there within the 26th symbol counting from the left?",
+        "translation": "Pattern: Quy luật; Triangle: Hình tam giác; 26th symbol: Kí hiệu thứ 26; From the left: Từ bên trái.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quy luật sắp xếp hình",
+        "image": "./assets/papers/timo-grade2-national-07/q02.3897689dd7ea.svg",
+        "imageAlt": "○ △ □ ○ △ □ ○ △ □ …"
+      },
+      {
+        "number": 3,
+        "english": "When Amy was born, mum was 34 years old. When Amy will be 15 years old, how old will mum be?",
+        "translation": "Born: Sinh ra; Years old: Tuổi.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tuổi hiện tại và tương lai"
+      },
+      {
+        "number": 4,
+        "english": "In year 2018, how many month(s) is / are there with 31 days?",
+        "translation": "Year: Năm; Month: Tháng; Day: Ngày.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Số ngày trong tháng"
+      },
+      {
+        "number": 5,
+        "english": "According to the pattern below, what is the English letter in the space?",
+        "translation": "Pattern: Quy luật; English letter: Chữ cái tiếng Anh; Space: Chỗ trống.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quy luật dãy số",
+        "image": "./assets/papers/timo-grade2-national-07/q05.df23974b5c4d.svg",
+        "imageAlt": "A, E, I, M, __"
+      },
+      {
+        "number": 6,
+        "english": "Find the value of 2 + 4 + 6 + 8 + 10 + 12 + 14 + 16.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 7,
+        "english": "Find the value of 17 × 11 + 17 × 3 − 17 × 4.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 8,
+        "english": "Find the value of 2 − 5 + 8 − 11 + 14 − 17 + 20 − 23 + 26.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 9,
+        "english": "Find the value of 1 + 2 + 3 + 4 + 5 + 6 + 5 + 4 + 3 + 2 + 1.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 10,
+        "english": "A and B are both 1-digit numbers and A < B. What is the value of A + B?",
+        "translation": "1-digit number: Số có 1 chữ số; Value: Giá trị; Equation: Phép tính.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Phép cộng với chữ số chưa biết",
+        "image": "./assets/papers/timo-grade2-national-07/q10.e42be36add7c.svg",
+        "imageAlt": "Phép cộng dọc B cộng AB bằng66"
+      },
+      {
+        "number": 11,
+        "english": "Determine the result of 3 + 7 + 11 + 15 + 19 + 23 + 27 + 31 is odd or even.",
+        "translation": "Determine: Xác định; Result: Kết quả; Odd: Lẻ; Even: Chẵn.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Nhận biết kết quả chẵn"
+      },
+      {
+        "number": 12,
+        "english": "Fill the lines with ‘×’ and ‘−’ to make the equation below correct. (Write down the complete equation on the answer sheet).",
+        "translation": "Line: Dòng kẻ; Equation: Phép tính; Correct: Đúng; Write down the complete equation on the answer sheet: Viết câu trả lời hoàn chỉnh vào phiếu trả lời.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Điền dấu nhân và trừ",
+        "image": "./assets/papers/timo-grade2-national-07/q12.e89ee8a60e9b.svg",
+        "imageAlt": "7 __ 4 __ 5 __ 3 = 13"
+      },
+      {
+        "number": 13,
+        "english": "The numbers below follow the arithmetic sequence, what is the 9th number?",
+        "translation": "9th number: Số thứ 9; Arithmetic sequence: Dãy số cách đều.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm số hạng trong dãy số",
+        "image": "./assets/papers/timo-grade2-national-07/q13.5af46258f969.svg",
+        "imageAlt": "12, 21, 30, 39, 48, …"
+      },
+      {
+        "number": 14,
+        "english": "How many 2-digit odd number(s) that is / are multiples of 3 is / are there?",
+        "translation": "1-digit odd number: Số lẻ có 2 chữ số; Multiple of 3: Bội của 3.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đếm số theo điều kiện"
+      },
+      {
+        "number": 15,
+        "english": "What is the largest 2-digit number that can be divisible by 4 and 6?",
+        "translation": "Largest 2-digit number: Số có 2 chữ số lớn nhất; Divisible by: Chia hết cho.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm số theo điều kiện"
+      },
+      {
+        "number": 16,
+        "english": "How many squares are there in the figure below?",
+        "translation": "Square: Hình vuông; Figure: Hình vẽ.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đếm hình vuông",
+        "image": "./assets/papers/timo-grade2-national-07/q16.0a5c420360a8.svg",
+        "imageAlt": "Lưới có hàng trên năm ô, hàng dưới bốn ô vuông"
+      },
+      {
+        "number": 17,
+        "english": "A prism has 8 vertices, how many face(s) does this prism have?",
+        "translation": "Prism: Hình lăng trụ; Vertice: Đỉnh; Faces: Mặt.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đỉnh, cạnh và mặt của hình khối"
+      },
+      {
+        "number": 18,
+        "english": "It is known as the lengths of shorter sides for a right-angled triangle are 6cm and 8cm respectively. Find the length of the longest length.",
+        "translation": "Length: Độ dài; Shorter side: Cạnh ngắn hơn; Right-angled triangle: Tam giác vuông; Longest length: Cạnh dài nhất.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Độ dài các cạnh tam giác"
+      },
+      {
+        "number": 19,
+        "english": "At least how many squares can be seen if viewing the figure below from side?",
+        "translation": "At least: Ít nhất; Square: Hình vuông; Figure: Hình vẽ; From side: Từ bên cạnh.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quan sát và đếm khối lập phương",
+        "image": "./assets/papers/timo-grade2-national-07/q19.b992898f1281.svg",
+        "imageAlt": "Khối lập phương trắng, cột sau cao hai tầng và hai ô phía trước theo ảnh"
+      },
+      {
+        "number": 20,
+        "english": "How many line segment(s) is / are there in the figure below?",
+        "translation": "Line segment: Đoạn thẳng; Figure: Hình vẽ.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đếm đoạn thẳng",
+        "image": "./assets/papers/timo-grade2-national-07/q20.da919878ee40.svg",
+        "imageAlt": "Hai đoạn thẳng cắt nhau, một đường có ba điểm và đường kia có bốn điểm theo ảnh"
+      },
+      {
+        "number": 21,
+        "english": "According to the following answers, how many 2-digit numbers are there?",
+        "translation": "Answer: Kết quả; 2-digit number: Số có 2 chữ số.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đếm kết quả theo điều kiện",
+        "image": "./assets/papers/timo-grade2-national-07/q21.e6cb48093e0b.svg",
+        "imageAlt": "Chín biểu thức cộng trừ như ảnh"
+      },
+      {
+        "number": 22,
+        "english": "Choose 2 digits, without repetition, from 0, 3, 4, 5, 7 to form 2-digit numbers. Of these 2-digit numbers, how many of them are odd numbers?",
+        "translation": "Digit: Chữ số; Without repetition: Không lặp lại; 2-digit numbers: Số có 2 chữ số; Odd number: Số lẻ.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Lập số lẻ không lặp chữ số"
+      },
+      {
+        "number": 23,
+        "english": "There are 2 ways from the market to the train station. There are 4 ways from the train station to the cinema. There are 3 ways from the cinema to the library. How many different way(s) is / are from the market to the library through the train station and cinema respectively?",
+        "translation": "Way: Cách.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Có bao nhiêu cách kết hợp khác nhau?"
+      },
+      {
+        "number": 24,
+        "english": "What is the smallest 4-digit number by using 0, 2, 4, 6 and 8? (Each digit can only be used once).",
+        "translation": "Smallest 4-digit number: Số có 4 chữ số nhỏ nhất; Each digit can only be used once: Mỗi chữ số chỉ được sử dụng một lần.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Lập số lớn nhất và nhỏ nhất"
+      },
+      {
+        "number": 25,
+        "english": "Peter has 6 $1 coins, 2 $2 coins and 4 $5 coins. At most how many souvenir(s) can he buy for a souvenir costed $6?",
+        "translation": "Coin: Đồng xu; Souvenir: Quà lưu niệm; At most: Nhiều nhất.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Mua hàng theo số tiền có"
+      }
+    ]
   }
 ];
 function getPapers(program, subject, grade, mode) {
