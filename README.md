@@ -393,3 +393,7 @@ Cả350 câu của14 đề hiện có (7 vòng loại và7 quốc gia) đã có 
 ## Gộp đỉnh, cạnh và mặt vào nhóm4
 
 Gộp8 câu “Đỉnh, cạnh và mặt của hình khối” vào nhóm nhỏ4 “Đếm đoạn thẳng và cạnh”, tổng22 câu. Giữ id nhóm4, chuyển tiếp id nhóm cũ và bài làm theo nguồn; toàn bộ câu hỏi/hình/khóa/lời giải giữ nguyên. Đã kiểm tra mở bài, lưu/tải lại, chấm22/22, xem đủ22 lời giải và máy tính/điện thoại.
+
+## Gộp chia nhóm theo sức chứa
+
+Gộp2 câu “Chia nhóm theo sức chứa” vào nhóm nhỏ6 “Đếm số theo điều kiện”, tổng7 câu. Giữ tên/id nhóm6 và chuyển id cũ để giữ bài làm. Kiểm tra mở nhóm, khôi phục câu trả lời khi tải lại, chấm7/7, xem đủ7 lời giải và máy tính/điện thoại; nội dung/khóa nguồn giữ nguyên.

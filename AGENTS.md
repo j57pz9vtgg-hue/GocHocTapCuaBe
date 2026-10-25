@@ -125,3 +125,5 @@ Theo yêu cầu mới, gộp “Các ngày trong tuần” (10 câu), “Số ng
 Chủ dự án đã gửi khóa văn bản và lời giải chi tiết cho cả7 đề quốc gia1–7 (175 câu). Gắn answerSource=user, giữ nguyên khóa dạng số/chữ/ngày/biểu thức/ký hiệu theo nguồn và nguyên văn các bước giải. Các bài luyện chủ đề tham chiếu cùng câu nên dùng chung khóa/lời giải; Cả350 câu của14 đề hiện có đều đã có khóa và lời giải do chủ dự án cung cấp. Không tự suy luận hoặc điền khóa còn thiếu.
 
 Theo yêu cầu mới, gộp “Đỉnh, cạnh và mặt của hình khối” (8 câu) vào nhóm nhỏ4 “Đếm đoạn thẳng và cạnh” của Hình học, tổng22 câu. Giữ id nhóm4, chuyển id nhóm cũ về nhóm4 để bảo toàn bài làm. Không thay nội dung/ảnh/khóa/lời giải và nguồn câu. Thực hiện sau khi xuất bản xong đáp án quốc gia5–7.
+
+Theo yêu cầu mới, gộp “Chia nhóm theo sức chứa” (2 câu) vào nhóm nhỏ6 “Đếm số theo điều kiện” của Lý thuyết số, tổng7 câu. Giữ id nhóm6, chuyển tiếp id nhóm cũ để bảo toàn bài làm theo nguồn. Không sửa câu hỏi/ảnh/khóa/lời giải hoặc số câu gốc.

@@ -2839,7 +2839,7 @@ const officialPapers = [
           "4",
           "5"
         ],
-        "subtopic": "Chia nhóm theo sức chứa",
+        "subtopic": "Đếm số theo điều kiện",
         "answer": 2,
         "answerSource": "user",
         "explanation": "Tổng số tem của hai anh em là: 19 + 12 = 31 (cái tem).\nTa có 31 = 9 + 9 + 9 + 4 nên cần ít nhất 4 trang để trưng bày được toàn bộ số tem.\nĐáp số: C."
@@ -3177,7 +3177,7 @@ const officialPapers = [
         "translation": "Each: Mỗi; Box: Hộp; Egg: Quả trứng; At least: Ít nhất.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Chia nhóm theo sức chứa",
+        "subtopic": "Đếm số theo điều kiện",
         "answer": "6",
         "answerSource": "user",
         "explanation": "Tổng số trứng Mary cần mua là: 35 + 29 = 64 (quả).\nTa có: 64 = 12 + 12 + 12 + 12 + 12 + 4 = 12 × 5 + 4.\nNếu Mary mua 5 hộp thì không đủ 64 quả trứng.\nVậy Mary cần mua ít nhất 6 hộp.\nĐáp số: 6."
@@ -5333,6 +5333,8 @@ function resolveTimoTopicId(id) {
     return logicalPrefix + encodeURIComponent('Các ngày trong tuần');
   const prefix = `${timoTopicGroups[1].id}-named-`;
   const numberTheoryPrefix = `${timoTopicGroups[2].id}-named-`;
+  if (id === numberTheoryPrefix + encodeURIComponent('Chia nhóm theo sức chứa'))
+    return numberTheoryPrefix + encodeURIComponent('Đếm số theo điều kiện');
   if (id === numberTheoryPrefix + encodeURIComponent('Tìm số còn thiếu trong đẳng thức'))
     return prefix + encodeURIComponent('Tìm số bị che trong phép tính');
   if (id === numberTheoryPrefix + encodeURIComponent('Phép cộng với chữ số chưa biết'))
