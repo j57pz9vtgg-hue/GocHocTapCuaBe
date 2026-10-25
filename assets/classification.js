@@ -122,7 +122,7 @@ const TimoClassification=(()=>{
  }
  function sharingPanel(){
   const report=buildSharingExport();
-  return `<section class="classification-share"><h3>Gửi phân loại để cập nhật ứng dụng</h3><p>Xuất toàn bộ ${report.summary.total} câu trong cả5 nhóm lớn: ${report.summary.classified} câu đã phân loại, ${report.summary.unclassified} câu chưa phân loại. Tệp giữ mã câu nguồn và tên chủ đề bạn đã duyệt.</p><button type="button" data-class-share>Xuất đã/chưa phân loại để gửi cập nhật</button><p>Sau khi tải xuống, gửi tệp JSON này trong cuộc trò chuyện. Phân loại sẽ dùng chung trên máy khác sau khi tôi cập nhật và xuất bản ứng dụng từ tệp bạn gửi.</p></section>`;
+  return `<section class="classification-share"><h3>Gửi phân loại để cập nhật ứng dụng</h3><p>Xuất toàn bộ ${report.summary.total} câu trong cả5 nhóm lớn: ${report.summary.classified} câu đã phân loại, ${report.summary.unclassified} câu chưa phân loại. Tệp giữ mã câu nguồn và tên chủ đề bạn đã duyệt.</p><p>Bấm <strong>Xuất bản sao phân loại</strong> ở phía dưới để tải tệp JSON, rồi gửi tệp này trong cuộc trò chuyện. Phân loại sẽ dùng chung trên máy khác sau khi tôi cập nhật và xuất bản ứng dụng từ tệp bạn gửi.</p></section>`;
  }
  function footer(){return '<div class="classification-backup"><button type="button" data-class-export>Xuất bản sao phân loại</button><label class="classification-file">Nhập bản sao<input type="file" accept="application/json,.json" data-class-import></label></div>';}
  function heading(title,description){return `<header><div><h2 id="classification-title">${html(title)}</h2><p>${html(description)}</p></div><button type="button" data-class-close aria-label="Đóng phân loại">×</button></header>`;}
@@ -194,9 +194,8 @@ const TimoClassification=(()=>{
    if(b.hasAttribute('data-class-confirm-delete'))deleteTopic();
    if(b.hasAttribute('data-class-back'))openReview(draft.groupId,true);
    if(b.hasAttribute('data-class-save-editor'))saveEditor();
-   if(b.hasAttribute('data-class-export'))downloadJSON(saved,'goc-hoc-tap-phan-loai.json');
-   if(b.hasAttribute('data-class-share')){
-    const report=buildSharingExport();downloadJSON(report,'goc-hoc-tap-phan-loai-gui-cap-nhat.json');
+   if(b.hasAttribute('data-class-export')){
+    const report=buildSharingExport();downloadJSON(report,'goc-hoc-tap-phan-loai.json');
     status(`Đã xuất ${report.summary.total} câu (${report.summary.classified} đã phân loại, ${report.summary.unclassified} chưa phân loại). Hãy gửi tệp JSON vừa tải trong cuộc trò chuyện để cập nhật dữ liệu chung của ứng dụng.`);
    }
   }catch(e){status(e.message);}
