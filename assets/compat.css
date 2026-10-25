@@ -426,3 +426,6 @@
 .paper-world .national-question-star{display:inline-block;color:#a56800;font:700 18px/1 'Times New Roman',Times,serif;vertical-align:baseline;margin-right:4px;white-space:nowrap}
 .paper-world .national-question-key{font:13px/1.5 'Be Vietnam Pro',Arial,sans-serif;color:#725000}
 .paper-world .national-question-key>span{color:#a56800;font-size:18px;vertical-align:-1px}
+.classification-topic-actions{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end}
+.classification-dialog .classification-delete{border-color:#edc3c3;background:#fff6f6;color:#9d3030}
+@media(max-width:650px){.classification-topic-list li{align-items:flex-start;flex-wrap:wrap}.classification-topic-actions{width:100%;justify-content:flex-start}}

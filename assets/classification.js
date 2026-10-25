@@ -110,7 +110,7 @@ const TimoClassification=(()=>{
   const group=getTimoTopicGroups(state.grade).find(g=>g.id===groupId);if(!group)return;
   if(!keepTrigger)trigger=document.activeElement;lastGroup=groupId;
   const {proposals,unmatched}=suggest(group);draft={groupId,grade:state.grade,proposals};
-  const d=getDialog();d.innerHTML=heading('Đề xuất phân loại',group.name)+`<div class="classification-body"><p>Đây là đề xuất dựa trên từ khóa trong câu hỏi. Hãy mở từng nhóm để kiểm tra, sửa tên hoặc bỏ chọn câu trước khi duyệt. Chỉ các câu được chọn mới chuyển chủ đề.</p><p class="classification-local">Phân loại đã duyệt lưu trên trình duyệt này. Dùng bản sao để chuyển sang thiết bị khác.</p><div class="classification-status" role="status" tabindex="-1"></div>${proposals.map((p,i)=>`<section class="classification-proposal" data-proposal="${i}"><label>Tên chủ đề đề xuất<input type="text" maxlength="100" value="${html(p.name)}" data-proposal-name="${i}"></label><p>${html(p.reason)}</p><details><summary>Xem và duyệt ${p.entries.length} câu hỏi</summary><label class="classification-select-all"><input type="checkbox" data-select-proposal="${i}" checked>Chọn tất cả trong nhóm</label>${p.entries.map(e=>questionPreview(e,`data-proposal-question="${i}"`)).join('')}</details></section>`).join('')}${unmatched.length?`<p>${unmatched.length} câu chưa có đề xuất phù hợp sẽ giữ trong Chưa phân loại.</p>`:''}${!proposals.length?'<p>Không có đề xuất mới. Những câu chưa rõ nội dung vẫn được giữ nguyên.</p>':''}${group.topics.filter(t=>t.id.includes('-review-')).length?`<h3>Chủ đề đã duyệt</h3><ul class="classification-topic-list">${group.topics.filter(t=>t.id.includes('-review-')).map(t=>`<li><span>${html(t.name)} (${t.entries.length} câu)</span><button type="button" data-class-edit="${html(t.id)}">Chỉnh sửa</button></li>`).join('')}</ul>`:''}</div><footer>${footer()}<div class="classification-actions"><button type="button" data-class-close>Đóng</button><button type="button" class="classification-primary" data-class-apply ${proposals.length?'':'disabled'}>Áp dụng các câu đã chọn</button></div></footer>`;
+  const d=getDialog();d.innerHTML=heading('Đề xuất phân loại',group.name)+`<div class="classification-body"><p>Đây là đề xuất dựa trên từ khóa trong câu hỏi. Hãy mở từng nhóm để kiểm tra, sửa tên hoặc bỏ chọn câu trước khi duyệt. Chỉ các câu được chọn mới chuyển chủ đề.</p><p class="classification-local">Phân loại đã duyệt lưu trên trình duyệt này. Dùng bản sao để chuyển sang thiết bị khác.</p><div class="classification-status" role="status" tabindex="-1"></div>${proposals.map((p,i)=>`<section class="classification-proposal" data-proposal="${i}"><label>Tên chủ đề đề xuất<input type="text" maxlength="100" value="${html(p.name)}" data-proposal-name="${i}"></label><p>${html(p.reason)}</p><details><summary>Xem và duyệt ${p.entries.length} câu hỏi</summary><label class="classification-select-all"><input type="checkbox" data-select-proposal="${i}" checked>Chọn tất cả trong nhóm</label>${p.entries.map(e=>questionPreview(e,`data-proposal-question="${i}"`)).join('')}</details></section>`).join('')}${unmatched.length?`<p>${unmatched.length} câu chưa có đề xuất phù hợp sẽ giữ trong Chưa phân loại.</p>`:''}${!proposals.length?'<p>Không có đề xuất mới. Những câu chưa rõ nội dung vẫn được giữ nguyên.</p>':''}${group.topics.filter(t=>t.id.includes('-review-')).length?`<h3>Chủ đề đã duyệt</h3><ul class="classification-topic-list">${group.topics.filter(t=>t.id.includes('-review-')).map(t=>`<li><span>${html(t.name)} (${t.entries.length} câu)</span><span class="classification-topic-actions"><button type="button" data-class-edit="${html(t.id)}">Đổi tên / chỉnh sửa</button><button type="button" class="classification-delete" data-class-delete="${html(t.id)}">Xóa chủ đề</button></span></li>`).join('')}</ul>`:''}</div><footer>${footer()}<div class="classification-actions"><button type="button" data-class-close>Đóng</button><button type="button" class="classification-primary" data-class-apply ${proposals.length?'':'disabled'}>Áp dụng các câu đã chọn</button></div></footer>`;
   if(!d.open)d.showModal();else d.scrollTop=0;
  }
  function status(message){const el=getDialog().querySelector('.classification-status');if(el){el.textContent=message;el.focus();}}
@@ -141,6 +141,19 @@ const TimoClassification=(()=>{
   const d=getDialog();d.innerHTML=heading('Chỉnh sửa chủ đề',group.name)+`<div class="classification-body"><div class="classification-status" role="status" tabindex="-1"></div><label>Tên chủ đề<input type="text" data-edit-name maxlength="100" value="${html(topic.name)}"></label><p>Chọn câu cần đưa lại về Chưa phân loại. Bỏ chọn các câu muốn giữ trong chủ đề này.</p>${topic.entries.map(e=>questionPreview(e,'data-edit-question',false)).join('')}</div><footer><div class="classification-actions"><button type="button" data-class-back>Quay lại</button><button type="button" class="classification-primary" data-class-save-editor>Lưu thay đổi</button></div></footer>`;
   if(!d.open)d.showModal();
  }
+ function openDelete(id){
+  const topic=saved.topics.find(t=>t.id===id&&t.grade===state.grade);if(!topic)return;
+  const count=Object.values(saved.assignments).filter(value=>value===id).length;
+  draft={groupId:topic.groupId,grade:topic.grade,deleting:id};
+  const d=getDialog();d.innerHTML=heading('Xóa chủ đề',topic.name)+`<div class="classification-body"><div class="classification-status" role="status" tabindex="-1"></div><p>Xóa chủ đề <strong>${html(topic.name)}</strong> và đưa ${count} câu hỏi về <strong>Chưa phân loại</strong> trong cùng nhóm lớn để phân loại lại.</p><p>Câu hỏi, đáp án, lời giải và bài làm đã lưu được giữ nguyên.</p></div><footer><div class="classification-actions"><button type="button" data-class-back>Hủy</button><button type="button" class="classification-delete" data-class-confirm-delete>Xóa chủ đề và đưa câu về Chưa phân loại</button></div></footer>`;
+ }
+ function deleteTopic(){
+  if(!draft?.deleting)return;
+  const id=draft.deleting,groupId=draft.groupId,next=JSON.parse(JSON.stringify(saved));
+  next.topics=next.topics.filter(t=>t.id!==id);
+  let count=0;for(const [questionId,topicId] of Object.entries(next.assignments))if(topicId===id){delete next.assignments[questionId];count++;}
+  commit(next);openReview(groupId,true);status(`Đã xóa chủ đề và đưa ${count} câu về Chưa phân loại.`);
+ }
  function saveEditor(){
   const next=JSON.parse(JSON.stringify(saved)),t=next.topics.find(t=>t.id===draft.editing);if(!t)return;
   const name=getDialog().querySelector('[data-edit-name]').value.trim();if(!name)throw Error('Vui lòng nhập tên chủ đề.');t.name=name;
@@ -153,6 +166,8 @@ const TimoClassification=(()=>{
    if(b.hasAttribute('data-class-close'))getDialog().close();
    if(b.hasAttribute('data-class-apply'))approve();
    if(b.hasAttribute('data-class-edit'))openEditor(b.dataset.classEdit);
+   if(b.hasAttribute('data-class-delete'))openDelete(b.dataset.classDelete);
+   if(b.hasAttribute('data-class-confirm-delete'))deleteTopic();
    if(b.hasAttribute('data-class-back'))openReview(draft.groupId,true);
    if(b.hasAttribute('data-class-save-editor'))saveEditor();
    if(b.hasAttribute('data-class-export')){

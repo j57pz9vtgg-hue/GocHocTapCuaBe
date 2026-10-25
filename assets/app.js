@@ -346,7 +346,12 @@ function refreshClassifiedPractice(){
  const p=state.practice;if(!p?.topicId){renderHome();return;}
  const focusedIndex=document.activeElement?.closest('[data-inline-index]')?.dataset.inlineIndex;
  const scroll=window.scrollY,oldIds=p.questionIds,oldAnswers=new Map(oldIds.map((id,i)=>[id,state.answers[i]]));
- const selection=selectionFromView(viewSelection(p)),newIds=selection?.questionIds||[],changed=oldIds.length!==newIds.length||oldIds.some((id,i)=>id!==newIds[i]);
+ let selection=selectionFromView(viewSelection(p));
+ if(!selection&&!getTimoTopicGroups(p.grade).some(g=>g.topics.some(t=>t.id===p.topicId))){
+  const groupId=p.topicId.match(/^timo-group-[1-5]/)?.[0];
+  if(groupId)selection=selectionFromView({...viewSelection(p),topicId:groupId+'-unclassified'});
+ }
+ const newIds=selection?.questionIds||[],changed=oldIds.length!==newIds.length||oldIds.some((id,i)=>id!==newIds[i]);
  state.practice={...p,...(selection||{questions:[],questionIds:[],sources:[]})};state.answers={};
  const record=attempts[attemptKey(state.practice)];
  state.practice.questions.forEach((q,i)=>{const value=oldAnswers.get(newIds[i]),savedIndex=record?.questionIds?.indexOf(newIds[i]);if(validResponse(q,value))state.answers[i]=value;else if(validResponse(q,record?.answers?.[savedIndex]))state.answers[i]=record.answers[savedIndex];});
