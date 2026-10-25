@@ -413,3 +413,7 @@ Các mục phân loại/gộp ở trên là lịch sử; trạng thái hiện t�
 ## Kết quả và thao tác cùng thanh Nộp bài
 
 Chuyển kết quả làm đúng, Làm lại và Xem đáp án và lời giải vào thanh Nộp bài, bỏ hộp kết quả riêng. Giữ điều kiện nộp, khóa phụ huynh và bài làm. Kiểm tra11 giao diện ở9 độ rộng320–1700px, cùng hàng trên máy tính, không tràn/chồng trên điện thoại; nộp/chấm25/25, mật khẩu sai/đúng,25 lời giải, tải lại và làm lại về00:00 đều đạt. Playwright/Chromium do Browser plugin không có; ảnh kiểm tra lưu ngoài repo.
+
+## Quyển sách để về góc luyện tập
+
+Biểu tượng sách đầu trang làm bài trở thành nút quay về, thay nút chữ riêng. Có tên truy cập/tooltip, vùng bấm44px và hiển thị focus bàn phím. Kiểm tra11 giao diện ở1440/390/320px, bấm/Enter quay về đúng danh sách và tiếp tục giữ bài làm đã lưu.
