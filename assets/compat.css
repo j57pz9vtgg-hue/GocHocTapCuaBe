@@ -368,3 +368,44 @@
 /* Prevent scrolled question text showing through the pinned controls. */
 .paper-world .paper-toolbar{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
 @media(max-width:1199px){.paper-world>.paper-brand{background:#f4faff}}
+/* Review proposals before creating personal practice topics. */
+.classify-group-button,.edit-classified-topic{min-height:44px;border:1px solid var(--theme-edge,#b9e3f9);border-radius:8px;padding:8px 12px;background:#f4faff;color:#155277;font-size:13px;font-weight:600}
+.classify-group-button{margin:0 0 16px}
+.topic-small-card>.edit-classified-topic{grid-column:1/-1;grid-row:4;width:100%;position:relative;z-index:1}
+.classification-dialog{width:min(900px,calc(100% - 24px));max-width:none;max-height:90dvh;padding:0;border:1px solid #b9dff1;border-radius:16px;color:#142d53;background:#fff;box-shadow:0 15px 65px #17385a55;font-family:'Be Vietnam Pro',Arial,sans-serif;overflow:auto}
+.classification-dialog::backdrop{background:#10284b70}
+.classification-dialog>header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:20px 24px;border-bottom:1px solid #dbe8f2;background:#f4faff;position:sticky;top:0;z-index:2}
+.classification-dialog h2{margin:0;font-size:23px;line-height:1.4}
+.classification-dialog h3{font-size:17px;margin:20px 0 12px}
+.classification-dialog p{font-size:14px;line-height:1.65;margin:8px 0 14px}
+.classification-dialog>header p{margin:5px 0 0}
+.classification-dialog button,.classification-file{min-height:44px;border:1px solid #b9dff1;border-radius:8px;padding:9px 12px;background:#f4faff;color:#155277;font-size:13px;line-height:1.5;cursor:pointer}
+.classification-dialog [data-class-close]{min-width:44px;flex-shrink:0}
+.classification-dialog>header [data-class-close]{font-size:27px;line-height:1;padding:5px}
+.classification-body{padding:20px 24px}
+.classification-body>label,.classification-proposal>label{display:grid;gap:7px;font-size:13px;font-weight:600}
+.classification-dialog input[type=text]{width:100%;min-width:0;min-height:44px;padding:9px 12px;border:1px solid #a7c5dd;border-radius:7px;background:white;color:#142d53;font-size:15px}
+.classification-dialog input[type=checkbox]{width:20px;height:20px;flex:0 0 20px;accent-color:#00a5b2;margin:2px 0}
+.classification-local{color:#4b6482;background:#f4faff;border-radius:8px;padding:12px}
+.classification-status:not(:empty){padding:12px;border:1px solid #a8d8e8;background:#f1fbfd;border-radius:8px;margin:12px 0;font-size:14px;line-height:1.6}
+.classification-proposal{border:1px solid #d4e5f2;border-radius:10px;padding:16px;margin:16px 0}
+.classification-proposal summary{cursor:pointer;min-height:44px;padding:10px 0;font-size:14px;font-weight:600}
+.classification-select-all{display:flex;align-items:center;gap:10px;min-height:44px;font-size:13px}
+.classification-question{border-top:1px solid #dfebf4;padding:14px 0}
+.classification-question>label{display:flex;align-items:flex-start;gap:12px;min-height:44px;cursor:pointer}
+.classification-question>label>span{min-width:0;display:grid;gap:7px;font:16px/1.5 'Times New Roman',Times,serif;overflow-wrap:anywhere}
+.classification-question small{font:12px/1.6 'Be Vietnam Pro',Arial,sans-serif;color:#54718d}
+.classification-question img{display:block;max-width:min(100%,500px);max-height:200px;object-fit:contain;margin:12px auto}
+.classification-question .classification-detail{font:600 20px/1.5 'Times New Roman',Times,serif;text-align:center;white-space:pre-wrap;overflow-wrap:anywhere}
+.classification-dialog>footer{position:sticky;bottom:0;z-index:2;background:#fff;border-top:1px solid #dbe8f2;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.classification-actions,.classification-backup{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.classification-dialog .classification-primary{color:white;background:#008f9d;border-color:#008f9d;font-weight:700}
+.classification-dialog button:disabled{opacity:.5;cursor:default}
+.classification-file{display:inline-flex;align-items:center;position:relative;overflow:hidden}
+.classification-file input{position:absolute;inset:0;opacity:0;width:100%;height:100%;cursor:pointer}
+.classification-file:focus-within{outline:3px solid #e5a34a;outline-offset:3px}
+.classification-topic-list{padding:0;list-style:none}
+.classification-topic-list li{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid #dbe8f2;padding:8px 0;font-size:14px;overflow-wrap:anywhere}
+@media(max-width:650px){
+ .classification-dialog>header{padding:14px}.classification-dialog h2{font-size:20px}.classification-body{padding:14px}.classification-proposal{padding:12px}.classification-dialog>footer{padding:10px;gap:8px}.classification-actions{width:100%;justify-content:flex-end}.classification-dialog button,.classification-file{font-size:12px;padding:8px}.classification-question>label{gap:8px}
+}

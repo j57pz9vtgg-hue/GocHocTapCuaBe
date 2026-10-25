@@ -61,8 +61,8 @@ function renderTimoTopics(){
  const selected=groups.some(group=>group.index===state.topicGroup)?state.topicGroup:state.topicGroup===null&&!query?null:groups[0].index;
  return `<div class="timo-topic-browser" aria-label="Các chủ đề luyện tập TIMO">${groups.map((group,row)=>{
  const open=selected===group.index;
- return `<section class="timo-topic-group" style="--topic-row:${row+1}"><button class="topic-group-toggle ${open?'selected':''}" data-topic-group="${group.index}" id="${group.id}-toggle" aria-expanded="${open}" aria-controls="${group.id}-panel">${renderTopicBadge(group.index)}<span class="topic-group-label">${escapeHTML(group.name)}</span>${icon(open?'down':'arrow',19)}</button><div class="topic-group-panel" id="${group.id}-panel" aria-labelledby="${group.id}-title" ${open?'':'hidden'}><h3 id="${group.id}-title">${escapeHTML(group.name)}</h3><div class="topic-small-grid">${!group.matches.length?'<div class="topic-content-empty">Chưa có chủ đề nhỏ</div>':group.matches.map((topic,index)=>{
- return `<article class="topic-small-card"><div class="topic-small-heading">${renderTopicBadge(index)}<h4>${escapeHTML(topic.name)}</h4></div><p class="topic-state"><span aria-hidden="true"></span>${topic.entries.length} câu hỏi</p>${activeTheme().id==='pixel'?`<img class="topic-book" src="${publicAsset('pixel-book')}" alt="">`:`<span class="topic-book topic-theme-art" aria-hidden="true" style="background-image:url('${publicAsset(activeTheme().id+'-sprites')}');background-position:${(index%4)*100/3}% ${Math.floor(index/4)*100/3}%"></span>`}<button class="topic-practice" data-topic-open="${escapeHTML(topic.id)}" aria-label="Luyện tập ${escapeHTML(topic.name)}, ${escapeHTML(group.name)}">Luyện tập</button></article>`;
+ return `<section class="timo-topic-group" style="--topic-row:${row+1}"><button class="topic-group-toggle ${open?'selected':''}" data-topic-group="${group.index}" id="${group.id}-toggle" aria-expanded="${open}" aria-controls="${group.id}-panel">${renderTopicBadge(group.index)}<span class="topic-group-label">${escapeHTML(group.name)}</span>${icon(open?'down':'arrow',19)}</button><div class="topic-group-panel" id="${group.id}-panel" aria-labelledby="${group.id}-title" ${open?'':'hidden'}><h3 id="${group.id}-title">${escapeHTML(group.name)}</h3><button type="button" class="classify-group-button" data-classify-group="${group.id}">Đề xuất và duyệt phân loại</button><div class="topic-small-grid">${!group.matches.length?'<div class="topic-content-empty">Chưa có chủ đề nhỏ</div>':group.matches.map((topic,index)=>{
+ return `<article class="topic-small-card"><div class="topic-small-heading">${renderTopicBadge(index)}<h4>${escapeHTML(topic.name)}</h4></div><p class="topic-state"><span aria-hidden="true"></span>${topic.entries.length} câu hỏi</p>${activeTheme().id==='pixel'?`<img class="topic-book" src="${publicAsset('pixel-book')}" alt="">`:`<span class="topic-book topic-theme-art" aria-hidden="true" style="background-image:url('${publicAsset(activeTheme().id+'-sprites')}');background-position:${(index%4)*100/3}% ${Math.floor(index/4)*100/3}%"></span>`}<button class="topic-practice" data-topic-open="${escapeHTML(topic.id)}" aria-label="Luyện tập ${escapeHTML(topic.name)}, ${escapeHTML(group.name)}">Luyện tập</button>${topic.id.includes("-review-")?`<button type="button" class="edit-classified-topic" data-edit-classified-topic="${escapeHTML(topic.id)}">Chỉnh sửa chủ đề</button>`:topic.id.endsWith("-unclassified")?`<button type="button" class="edit-classified-topic" data-classify-group="${group.id}">Đề xuất phân loại</button>`:""}</article>`;
  }).join('')}</div></div></section>`;
  }).join('')}</div>`;
 }
@@ -316,3 +316,23 @@ function openSavedPaper(paper){
 function openLocalData(){const d=document.querySelector('#local-data');d.innerHTML=`<button class="icon-button dialog-close" data-action="close-local-data" aria-label="Đóng">${icon('close',22)}</button><h2>Dữ liệu trên thiết bị</h2><p class="parent-subtitle">Bài làm được lưu trên trình duyệt này. Ứng dụng hiện chưa kết nối dịch vụ đồng bộ trực tuyến.</p><button class="primary-button" data-action="export-local-data">Tải bản sao bài làm ${icon('arrow',18)}</button>`;d.showModal();}
 document.addEventListener('click',e=>{if(e.target.closest('[data-action="close-local-data"]'))document.querySelector('#local-data').close();if(e.target.closest('[data-action="export-local-data"]')){const blob=new Blob([JSON.stringify({version:2,kind:'official',attempts},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='goc-hoc-tap-bai-lam.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}});
 renderHome();
+
+function preserveClassifiedProgress(previous,next){
+ const records=Object.entries(attempts).filter(([key,record])=>key.split('|').length===5&&key.includes('|TIMO|Toán|Luyện theo chủ đề|')&&Array.isArray(record?.questionIds)).sort((a,b)=>(a[1].updatedAt||0)-(b[1].updatedAt||0));
+ const touched=new Map();
+ for(const id of new Set([...Object.keys(previous.assignments),...Object.keys(next.assignments)])){
+  if(previous.assignments[id]===next.assignments[id])continue;
+  const entry=officialPapers.flatMap(p=>p.questions.map(q=>({id:p.id+':'+q.number,question:q,grade:String(p.grade)}))).find(e=>e.id===id);if(!entry)continue;
+  const group=getTimoTopicGroups(entry.grade).find(g=>g.topics.some(t=>t.entries.some(e=>e.id===id)));
+  const topic=group?.topics.find(t=>t.entries.some(e=>e.id===id));if(!topic)continue;
+  const targetKey=[entry.grade,'TIMO','Toán',modes[2],topic.id].join('|');
+  let value;
+  for(const [key,record] of records){if(!key.startsWith(entry.grade+'|'))continue;const i=record.questionIds.indexOf(id);if(i>=0&&validResponse(entry.question,record.answers?.[i]))value=record.answers[i];}
+  const original=attempts[targetKey];
+  if(!touched.has(targetKey))touched.set(targetKey,{...original,questionIds:original?.questionIds?.slice()||[],answers:{...original?.answers},submitted:false,mergedTopicProgress:true,startedAt:original?.startedAt||Date.now(),updatedAt:Date.now()});
+  const target=touched.get(targetKey);let index=target.questionIds.indexOf(id);if(index<0){index=target.questionIds.length;target.questionIds.push(id);}
+  if(validResponse(entry.question,value)&&!validResponse(entry.question,target.answers[index]))target.answers[index]=value;
+ }
+ for(const [key,record] of touched)attempts[key]=record;
+ try{localStorage.setItem(attemptStorageKey,JSON.stringify(attempts));}catch{}
+}

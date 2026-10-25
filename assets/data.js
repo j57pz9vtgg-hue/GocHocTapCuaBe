@@ -4970,7 +4970,8 @@ function buildTimoTopicGroups(papers, grade) {
   return groups;
 }
 function getTimoTopicGroups(grade) {
-  return buildTimoTopicGroups(officialPapers, grade);
+  const groups = buildTimoTopicGroups(officialPapers, grade);
+  return typeof TimoClassification !== 'undefined' ? TimoClassification.apply(groups, grade) : groups;
 }
 
 // Legacy topic references continue in the surviving group after the owner-requested merge.
