@@ -11,8 +11,11 @@ function getSubjects(program) {
   return program === 'TIMO' ? ['Toán'] : program === 'Báo bài của trường' ? ['Toán', 'Tiếng Việt', 'SCIENCE', 'GLOBAL', 'ESL', 'MATHEMATICS'] : subjects;
 }
 
-function getModes(program) {
-  return program === 'Báo bài của trường' ? ['Báo bài tuần'] : modes;
+function getModes(program, grade) {
+  if (program !== 'Báo bài của trường') return modes;
+  const reports = typeof schoolReports === 'undefined' ? [] : schoolReports;
+  const weeks = [...new Set(reports.filter(report => grade === undefined || String(report.grade) === String(grade)).slice().sort((a,b) => b.start.localeCompare(a.start)).map(report => report.title))];
+  return [...weeks, 'Tất cả các tuần'];
 }
 
 // Only add official papers and answer keys supplied by the project owner.
