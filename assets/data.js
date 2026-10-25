@@ -336,7 +336,7 @@ const officialPapers = [
           "13",
           "15"
         ],
-        "subtopic": "Đếm đoạn thẳng",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "imageAlt": "Hình con thuyền tạo bởi các đoạn thẳng, cột buồm, cánh buồm và các điểm đánh dấu theo ảnh câu 19.",
         "image": "./assets/papers/timo-grade2-qualifying-01/q19-segments.36b55d8b5646.svg",
         "explanationImage": "./assets/solutions/timo-grade2-qualifying-01/q19.836f8aab6a78.svg",
@@ -778,7 +778,7 @@ const officialPapers = [
         ],
         "imageAlt": "Sáu điểm trên đường ngang và đường gấp khúc, nối bằng các đoạn thẳng và hai đoạn thẳng đứng như ảnh đề.",
         "image": "./assets/papers/timo-grade2-qualifying-02/q19-segments.d75b54a655d7.svg",
-        "subtopic": "Đếm đoạn thẳng",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "explanationImage": "./assets/solutions/timo-grade2-qualifying-02/q19.fd8cfc87644d.svg",
         "explanationImageAlt": "Hình đánh số theo lời giải câu 19 do chủ dự án cung cấp",
         "answer": 1,
@@ -1214,7 +1214,7 @@ const officialPapers = [
         ],
         "imageAlt": "Hình thoi lớn và các đoạn thẳng đi qua hai điểm ở giữa, sáu điểm đánh dấu như ảnh.",
         "image": "./assets/papers/timo-grade2-qualifying-03/q19-segments.eae3bf0e6e7f.svg",
-        "subtopic": "Đếm đoạn thẳng",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "explanationImage": "./assets/solutions/timo-grade2-qualifying-03/q19.509dc5f98518.svg",
         "explanationImageAlt": "Hình đánh số theo lời giải câu 19 do chủ dự án cung cấp",
         "answer": 1,
@@ -1644,7 +1644,7 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-04/q19.83871ef79cb5.svg",
         "imageAlt": "Một đoạn thẳng xiên qua hai giao điểm, cắt hai đoạn ngang xiên có các điểm đánh dấu như ảnh",
-        "subtopic": "Đếm đoạn thẳng",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "explanationImage": "./assets/solutions/timo-grade2-qualifying-04/q19.e2d3631d66c9.svg",
         "explanationImageAlt": "Hình đánh số theo lời giải câu 19 do chủ dự án cung cấp",
         "answer": 0,
@@ -2457,7 +2457,7 @@ const officialPapers = [
           "2",
           "3"
         ],
-        "subtopic": "Cạnh của hình phẳng và hình khối",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "answer": 0,
         "answerSource": "user",
         "explanation": "Hình tròn không có cạnh.\nĐáp số: A."
@@ -2894,7 +2894,7 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-07/q18.15e837be5343.svg",
         "imageAlt": "Một khối lập phương màu xanh với mặt trên, mặt trước và mặt bên phải",
-        "subtopic": "Cạnh của hình phẳng và hình khối",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "answer": 1,
         "answerSource": "user",
         "explanation": "Một khối lập phương có 4 cạnh ở mặt trên, 4 cạnh bên, 4 cạnh ở mặt dưới.\nNhư vậy, một khối lập phương có tất cả 12 cạnh.\nĐáp số: B."
@@ -2911,7 +2911,7 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-07/q19.8af014d34e9b.svg",
         "imageAlt": "Năm ô vuông dạng dấu cộng, các đỉnh và giao điểm được đánh dấu bằng chấm đen như ảnh",
-        "subtopic": "Đếm đoạn thẳng",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "explanationImage": "./assets/solutions/timo-grade2-qualifying-07/q19.6620d7592f06.svg",
         "explanationImageAlt": "Hình đánh số theo lời giải câu 19 do chủ dự án cung cấp",
         "answer": 3,
@@ -3185,7 +3185,7 @@ const officialPapers = [
         "translation": "Line segment: Đoạn thẳng; Figure: Hình vẽ.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đếm đoạn thẳng",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "image": "./assets/papers/timo-grade2-national-01/q18.c38bb3472cfd.svg",
         "imageAlt": "Các đoạn thẳng có chung điểm phía trái, hai đường xiên từ trên xuống và các điểm giao đánh dấu như ảnh"
       },
@@ -3410,7 +3410,7 @@ const officialPapers = [
         "translation": "Line segments: Đoạn thẳng; Figure: Hình vẽ.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đếm đoạn thẳng",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "image": "./assets/papers/timo-grade2-national-02/q17.9025d2e05b16.svg",
         "imageAlt": "Hình vuông có bốn đoạn chéo ở các góc và các điểm đánh dấu như ảnh"
       },
@@ -3645,7 +3645,7 @@ const officialPapers = [
         "translation": "Line segments: Đoạn thẳng; Figure: Hình vẽ.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đếm đoạn thẳng",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "image": "./assets/papers/timo-grade2-national-03/q17.6bac666f8527.svg",
         "imageAlt": "Các đoạn xiên qua hai giao điểm, nối thành phần tam giác phía dưới, tám điểm như ảnh"
       },
@@ -3878,7 +3878,7 @@ const officialPapers = [
         "translation": "Line segments: Đoạn thẳng; Figure: Hình vẽ.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đếm đoạn thẳng",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "image": "./assets/papers/timo-grade2-national-04/q17.9b3cfcae3387.svg",
         "imageAlt": "Các đoạn xiên tạo phần tam giác, hai đoạn đi qua các giao điểm và tám điểm đánh dấu như ảnh"
       },
@@ -4102,7 +4102,7 @@ const officialPapers = [
         "translation": "Line segment: Đoạn thẳng; Figure: Hình vẽ.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đếm đoạn thẳng",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "image": "./assets/papers/timo-grade2-national-05/q16.6639737e8dc2.svg",
         "imageAlt": "Đường gấp khúc hai đỉnh và một đoạn ngang qua bốn điểm giữa, các điểm đen theo ảnh"
       },
@@ -4603,7 +4603,7 @@ const officialPapers = [
         "translation": "Line segment: Đoạn thẳng; Figure: Hình vẽ.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đếm đoạn thẳng",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "image": "./assets/papers/timo-grade2-national-07/q20.da919878ee40.svg",
         "imageAlt": "Hai đoạn thẳng cắt nhau, một đường có ba điểm và đường kia có bốn điểm theo ảnh"
       },
@@ -4715,6 +4715,7 @@ function buildTimoTopicGroups(papers, grade) {
       if (!topic) {
         // Keep the existing topic ID so saved attempts, question order and reload state survive this label change.
         const stableName = name === 'Có bao nhiêu cách kết hợp khác nhau?' ? 'Phối hợp lựa chọn'
+          : name === 'Đếm đoạn thẳng và cạnh' ? 'Đếm đoạn thẳng'
           : name === 'Đếm hình' ? 'Đếm hình vuông'
           : name === 'Điền dấu' ? 'Điền dấu cộng và trừ'
           : name === 'Tìm giá trị' ? 'Cộng nhiều số'
@@ -4742,6 +4743,8 @@ function resolveTimoTopicId(id) {
   if (['Điền dấu nhân và trừ', 'Điền dấu nhân và cộng', 'Điền dấu'].some(name => id === numberTheoryPrefix + encodeURIComponent(name)))
     return numberTheoryPrefix + encodeURIComponent('Điền dấu cộng và trừ');
   const geometryPrefix = `${timoTopicGroups[3].id}-named-`;
+  if (['Cạnh của hình phẳng và hình khối', 'Đếm đoạn thẳng và cạnh'].some(name => id === geometryPrefix + encodeURIComponent(name)))
+    return geometryPrefix + encodeURIComponent('Đếm đoạn thẳng');
   if (['Đếm hình tam giác', 'Đếm hình'].some(name => id === geometryPrefix + encodeURIComponent(name)))
     return geometryPrefix + encodeURIComponent('Đếm hình vuông');
   if (id === geometryPrefix + encodeURIComponent('Đếm khối lập phương xếp chồng'))

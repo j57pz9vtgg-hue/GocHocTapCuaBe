@@ -113,3 +113,5 @@ Theo yêu cầu tiếp theo, gộp nhóm7 “Tìm số còn thiếu trong đẳn
 Theo yêu cầu mới, gộp “Điền dấu nhân và cộng” vào nhóm nhỏ4 của Lý thuyết số, đổi tên chung thành “Điền dấu”. Tổng13 câu. Giữ id cũ của “Điền dấu cộng và trừ”; ánh xạ các id điền dấu nhân/cộng, nhân/trừ về id này để bảo toàn bài làm. Không sửa phép tính hoặc đáp án/lời giải.
 
 Theo yêu cầu mới, gộp “Đếm hình tam giác” vào nhóm nhỏ1 “Đếm hình vuông” của Hình học và đổi tên chung thành “Đếm hình”, tổng12 câu. Giữ id gốc của Đếm hình vuông; id nhóm tam giác chuyển về nhóm1. Chỉ gộp hai nhóm được chỉ định, giữ nguyên nội dung/ảnh/khóa/lời giải và nguồn, bảo toàn bài làm đã lưu.
+
+Theo yêu cầu mới, gộp “Đếm đoạn thẳng” (11 câu) và “Cạnh của hình phẳng và hình khối” (2 câu) thành nhóm nhỏ4 “Đếm đoạn thẳng và cạnh” của Hình học, tổng13 câu. Giữ id Đếm đoạn thẳng, chuyển id nhóm cạnh về nhóm4 và bảo toàn bài làm theo nguồn. Giữ nguyên đề, ảnh, lựa chọn, khóa và lời giải.

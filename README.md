@@ -345,3 +345,7 @@ Gộp câu13 Đề quốc gia6 từ “Điền dấu nhân và cộng” vào nh
 ## Nhóm1 Đếm hình
 
 Gộp nhóm Đếm hình vuông (11 câu) và Đếm hình tam giác (1 câu) thành nhóm nhỏ1 “Đếm hình” của Hình học, tổng12 câu. Giữ id nhóm1, chuyển tiếp id nhóm tam giác và bài làm theo câu nguồn. Nội dung, hình, khóa và lời giải giữ nguyên; đã kiểm tra mở nhóm và khôi phục bài làm khi tải lại ở máy tính/điện thoại.
+
+## Gộp nhóm đếm đoạn thẳng và cạnh
+
+Gộp hai nhóm thành nhóm nhỏ4 “Đếm đoạn thẳng và cạnh” của Hình học, tổng13 câu. Giữ id nhóm Đếm đoạn thẳng và chuyển tiếp id nhóm cạnh để giữ bài làm ở cả hai nhóm, kể cả khi tải lại. Chỉ đổi phân loại; nội dung/ảnh/đáp án/lời giải và nguồn câu giữ nguyên. Kiểm tra mở bài, khôi phục tiến độ và máy tính/điện thoại.
