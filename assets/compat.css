@@ -340,3 +340,13 @@
  .paper-world .question-illustration{margin:10px 0 14px}
  .paper-world .diagram-number-line{font-size:21px}
 }
+/* Share the desktop header row while keeping the toolbar and A4 sheet aligned. */
+@media(min-width:1200px){
+ .paper-world{display:grid;grid-template-columns:minmax(280px,1fr) minmax(0,210mm) minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:16px;row-gap:14px;align-content:start}
+ .paper-world>.paper-brand{grid-column:1;grid-row:1;height:auto;min-height:82px;align-self:start;gap:10px;padding-top:12px}
+ .paper-world>.paper-brand>strong{font-size:clamp(20px,1.65vw,29px);white-space:nowrap}
+ .paper-world>.paper-shell{display:contents}
+ .paper-world .paper-toolbar{grid-column:2;grid-row:1;align-self:start;margin:12px 0 0}
+ .paper-world #quiz{grid-column:2;grid-row:2;min-width:0}
+ .paper-world .exam-paper{margin-top:0}
+}
