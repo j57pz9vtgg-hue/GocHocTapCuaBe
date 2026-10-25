@@ -23,6 +23,7 @@ const TimoClassification=(()=>{
   }
   return {version:1,kind:'timo-classification',topics,assignments};
  }
+ try{if(typeof publishedTimoClassification!=='undefined')saved=validate(publishedTimoClassification);}catch{}
  try{const v=JSON.parse(localStorage.getItem(storageKey)||'null');if(v)saved=validate(v);}catch{}
  function apply(groups,grade){
   for(const group of groups){
@@ -100,6 +101,29 @@ const TimoClassification=(()=>{
   d.addEventListener('change',onChange);
   return d;
  }
+ function buildSharingExport(){
+  const groups=[],questions=[];
+  for(const grade of [...new Set(officialPapers.filter(p=>p.program==='TIMO'&&p.subject==='Toán').map(p=>String(p.grade)))]){
+   for(const group of apply(buildTimoTopicGroups(officialPapers,grade),grade)){
+    const groupQuestions=[];
+    for(const topic of group.topics)for(const entry of topic.entries){
+     const q=entry.question,item={id:entry.id,paperId:entry.paperId,paperTitle:entry.paperTitle,round:entry.mode,grade,number:entry.number,groupId:group.id,groupName:group.name,topicId:topic.id,topicName:topic.name,status:topic.id===group.id+'-unclassified'?'unclassified':'classified',english:q.english||q.text||'',translation:q.translation||q.vietnamese||'',detail:q.detail||'',image:q.image||'',imageAlt:q.imageAlt||'',responseType:q.responseType||'choice',options:q.options||[],optionImages:q.optionImages||[]};
+     questions.push(item);groupQuestions.push(item);
+    }
+    groups.push({grade,id:group.id,name:group.name,total:groupQuestions.length,classified:groupQuestions.filter(q=>q.status==='classified').length,unclassified:groupQuestions.filter(q=>q.status==='unclassified').length,topics:group.topics.map(t=>({id:t.id,name:t.name,questionIds:t.entries.map(e=>e.id)}))});
+   }
+  }
+  questions.sort((a,b)=>a.paperId.localeCompare(b.paperId)||a.number-b.number);
+  const classified=questions.filter(q=>q.status==='classified').length;
+  return {...JSON.parse(JSON.stringify(saved)),exportPurpose:'publish-owner-classification',exportedAt:new Date().toISOString(),scope:'all-official-timo-math-questions',summary:{total:questions.length,classified,unclassified:questions.length-classified},groups,questions};
+ }
+ function downloadJSON(value,name){
+  const url=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ }
+ function sharingPanel(){
+  const report=buildSharingExport();
+  return `<section class="classification-share"><h3>Gửi phân loại để cập nhật ứng dụng</h3><p>Xuất toàn bộ ${report.summary.total} câu trong cả5 nhóm lớn: ${report.summary.classified} câu đã phân loại, ${report.summary.unclassified} câu chưa phân loại. Tệp giữ mã câu nguồn và tên chủ đề bạn đã duyệt.</p><button type="button" data-class-share>Xuất đã/chưa phân loại để gửi cập nhật</button><p>Sau khi tải xuống, gửi tệp JSON này trong cuộc trò chuyện. Phân loại sẽ dùng chung trên máy khác sau khi tôi cập nhật và xuất bản ứng dụng từ tệp bạn gửi.</p></section>`;
+ }
  function footer(){return '<div class="classification-backup"><button type="button" data-class-export>Xuất bản sao phân loại</button><label class="classification-file">Nhập bản sao<input type="file" accept="application/json,.json" data-class-import></label></div>';}
  function heading(title,description){return `<header><div><h2 id="classification-title">${html(title)}</h2><p>${html(description)}</p></div><button type="button" data-class-close aria-label="Đóng phân loại">×</button></header>`;}
  function questionPreview(e,checkbox){
@@ -110,7 +134,7 @@ const TimoClassification=(()=>{
   const group=getTimoTopicGroups(state.grade).find(g=>g.id===groupId);if(!group)return;
   if(!keepTrigger)trigger=document.activeElement;lastGroup=groupId;
   const {proposals,unmatched}=suggest(group);draft={groupId,grade:state.grade,proposals};
-  const d=getDialog();d.innerHTML=heading('Đề xuất phân loại',group.name)+`<div class="classification-body"><p>Đây là đề xuất dựa trên từ khóa trong câu hỏi. Hãy mở từng nhóm để kiểm tra, sửa tên và chọn câu trước khi duyệt. Chỉ các câu được chọn mới chuyển chủ đề.</p><p class="classification-local">Phân loại đã duyệt lưu trên trình duyệt này. Dùng bản sao để chuyển sang thiết bị khác.</p><div class="classification-status" role="status" tabindex="-1"></div>${proposals.map((p,i)=>`<section class="classification-proposal" data-proposal="${i}"><label>Tên chủ đề đề xuất<input type="text" maxlength="100" value="${html(p.name)}" data-proposal-name="${i}"></label><p>${html(p.reason)}</p><details><summary>Xem và duyệt ${p.entries.length} câu hỏi</summary><label class="classification-select-all"><input type="checkbox" data-select-proposal="${i}">Chọn tất cả trong nhóm</label>${p.entries.map(e=>questionPreview(e,`data-proposal-question="${i}"`)).join('')}</details></section>`).join('')}${unmatched.length?`<p>${unmatched.length} câu chưa có đề xuất phù hợp sẽ giữ trong Chưa phân loại.</p>`:''}${!proposals.length?'<p>Không có đề xuất mới. Những câu chưa rõ nội dung vẫn được giữ nguyên.</p>':''}${group.topics.filter(t=>t.id.includes('-review-')).length?`<h3>Chủ đề đã duyệt</h3><ul class="classification-topic-list">${group.topics.filter(t=>t.id.includes('-review-')).map(t=>`<li><span>${html(t.name)} (${t.entries.length} câu)</span><span class="classification-topic-actions"><button type="button" data-class-edit="${html(t.id)}">Đổi tên / chỉnh sửa</button><button type="button" class="classification-delete" data-class-delete="${html(t.id)}">Xóa chủ đề</button></span></li>`).join('')}</ul>`:''}</div><footer>${footer()}<div class="classification-actions"><button type="button" data-class-close>Đóng</button><button type="button" class="classification-primary" data-class-apply ${proposals.length?'':'disabled'}>Áp dụng các câu đã chọn</button></div></footer>`;
+  const d=getDialog();d.innerHTML=heading('Đề xuất phân loại',group.name)+`<div class="classification-body"><p>Đây là đề xuất dựa trên từ khóa trong câu hỏi. Hãy mở từng nhóm để kiểm tra, sửa tên và chọn câu trước khi duyệt. Chỉ các câu được chọn mới chuyển chủ đề.</p><p class="classification-local">Phân loại đã duyệt lưu trên trình duyệt này. Dùng bản sao để chuyển sang thiết bị khác.</p>${sharingPanel()}<div class="classification-status" role="status" tabindex="-1"></div>${proposals.map((p,i)=>`<section class="classification-proposal" data-proposal="${i}"><label>Tên chủ đề đề xuất<input type="text" maxlength="100" value="${html(p.name)}" data-proposal-name="${i}"></label><p>${html(p.reason)}</p><details><summary>Xem và duyệt ${p.entries.length} câu hỏi</summary><label class="classification-select-all"><input type="checkbox" data-select-proposal="${i}">Chọn tất cả trong nhóm</label>${p.entries.map(e=>questionPreview(e,`data-proposal-question="${i}"`)).join('')}</details></section>`).join('')}${unmatched.length?`<p>${unmatched.length} câu chưa có đề xuất phù hợp sẽ giữ trong Chưa phân loại.</p>`:''}${!proposals.length?'<p>Không có đề xuất mới. Những câu chưa rõ nội dung vẫn được giữ nguyên.</p>':''}${group.topics.filter(t=>t.id.includes('-review-')).length?`<h3>Chủ đề đã duyệt</h3><ul class="classification-topic-list">${group.topics.filter(t=>t.id.includes('-review-')).map(t=>`<li><span>${html(t.name)} (${t.entries.length} câu)</span><span class="classification-topic-actions"><button type="button" data-class-edit="${html(t.id)}">Đổi tên / chỉnh sửa</button><button type="button" class="classification-delete" data-class-delete="${html(t.id)}">Xóa chủ đề</button></span></li>`).join('')}</ul>`:''}</div><footer>${footer()}<div class="classification-actions"><button type="button" data-class-close>Đóng</button><button type="button" class="classification-primary" data-class-apply ${proposals.length?'':'disabled'}>Áp dụng các câu đã chọn</button></div></footer>`;
   if(!d.open)d.showModal();else d.scrollTop=0;
  }
  function status(message){const el=getDialog().querySelector('.classification-status');if(el){el.textContent=message;el.focus();}}
@@ -170,8 +194,10 @@ const TimoClassification=(()=>{
    if(b.hasAttribute('data-class-confirm-delete'))deleteTopic();
    if(b.hasAttribute('data-class-back'))openReview(draft.groupId,true);
    if(b.hasAttribute('data-class-save-editor'))saveEditor();
-   if(b.hasAttribute('data-class-export')){
-    const url=URL.createObjectURL(new Blob([JSON.stringify(saved,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='goc-hoc-tap-phan-loai.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+   if(b.hasAttribute('data-class-export'))downloadJSON(saved,'goc-hoc-tap-phan-loai.json');
+   if(b.hasAttribute('data-class-share')){
+    const report=buildSharingExport();downloadJSON(report,'goc-hoc-tap-phan-loai-gui-cap-nhat.json');
+    status(`Đã xuất ${report.summary.total} câu (${report.summary.classified} đã phân loại, ${report.summary.unclassified} chưa phân loại). Hãy gửi tệp JSON vừa tải trong cuộc trò chuyện để cập nhật dữ liệu chung của ứng dụng.`);
    }
   }catch(e){status(e.message);}
  }
@@ -220,5 +246,5 @@ const TimoClassification=(()=>{
  document.addEventListener('change',event=>{if(event.target.hasAttribute('data-inline-topic'))event.target.closest('.inline-classification').querySelector('[data-inline-new]').hidden=event.target.value!=='new';});
  document.addEventListener('click',event=>{const button=event.target.closest('[data-inline-apply]');if(button)applyInline(button);});
  document.addEventListener('click',event=>{const b=event.target.closest('[data-classify-group]');if(b)openReview(b.dataset.classifyGroup);const edit=event.target.closest('[data-edit-classified-topic]');if(edit){trigger=edit;openEditor(edit.dataset.editClassifiedTopic)}});
- return {apply,suggest,validate,openReview,renderInline,snapshot:()=>JSON.parse(JSON.stringify(saved))};
+ return {apply,suggest,validate,openReview,renderInline,buildSharingExport,snapshot:()=>JSON.parse(JSON.stringify(saved))};
 })();

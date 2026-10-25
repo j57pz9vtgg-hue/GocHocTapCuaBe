@@ -429,3 +429,7 @@
 .classification-topic-actions{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end}
 .classification-dialog .classification-delete{border-color:#edc3c3;background:#fff6f6;color:#9d3030}
 @media(max-width:650px){.classification-topic-list li{align-items:flex-start;flex-wrap:wrap}.classification-topic-actions{width:100%;justify-content:flex-start}}
+.classification-share{padding:16px;margin:16px 0;border:1px solid #beddea;border-radius:10px;background:#f4fbff}
+.classification-share h3{margin:0 0 10px}
+.classification-share button{background:#008f9d;color:#fff;border-color:#008f9d;font-weight:600}
+.classification-share p:last-child{margin-bottom:0}
