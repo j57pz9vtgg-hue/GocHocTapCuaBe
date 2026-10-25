@@ -139,3 +139,5 @@ Theo yêu cầu mới, kết quả làm đúng, Làm lại và Xem đáp án và
 Theo yêu cầu tiếp theo, biểu tượng quyển sách đầu trang làm bài là nút Về góc luyện tập; bỏ nút chữ quay về riêng bên phải. Nút sách có tên truy cập/tooltip, vùng bấm ít nhất44px và hỗ trợ bàn phím, giữ tiến độ khi quay về.
 
 Theo yêu cầu tiếp theo, thanh tiêu đề/bộ điều khiển của đề phải rộng đúng bằng tờ đề A4 (min(100%,210mm)), căn thẳng hai mép với exam-paper. Khi đã nộp, tiêu đề/tiến độ/thời gian ở hàng trên; kết quả/Làm lại/Xem đáp án/Nộp bài ở cùng hàng dưới trong thanh để vừa794px. Điện thoại được xuống hàng trong cùng khung, không tràn. Không đổi khổ/nội dung tờ đề.
+
+Theo yêu cầu riêng cho Đảo Pha Lê, thu nhỏ cụm lâu đài và bổ sung phần đỉnh vốn bị cắt sẵn trong ảnh gốc để thấy trọn đỉnh, giữ cân đối với cảnh. Dùng ảnh sửa riêng assets/theme-art/crystal-world-open-castle.*.webp cho nền/banner và trang làm bài của crystal; không thay tài nguyên gốc hoặc10 giao diện khác.

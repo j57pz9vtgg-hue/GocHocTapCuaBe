@@ -314,3 +314,7 @@
  .paper-world .paper-toolbar .paper-toolbar-actions{grid-column:1/-1;grid-row:3;width:100%;flex-wrap:wrap}
  .paper-world .paper-toolbar:has(.paper-result-inline) .paper-toolbar-actions{grid-column:1/-1;grid-row:4}
 }
+
+/* Crystal artwork has a smaller castle with its full spire inside the image. */
+:root[data-theme="crystal"] #site-shell,:root[data-theme="crystal"] #site-shell .paper-world{background-image:url("./theme-art/crystal-world-open-castle.0a6e0654f060.webp")}
+:root[data-theme="crystal"] #site-shell .adventure-banner{background-image:url("./theme-art/crystal-world-open-castle.0a6e0654f060.webp");background-size:100% auto;background-position:center top}

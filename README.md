@@ -421,3 +421,7 @@ Biểu tượng sách đầu trang làm bài trở thành nút quay về, thay n
 ## Thanh tiêu đề căn theo A4
 
 Đặt thanh tiêu đề rộng min(100%,210mm) và căn giữa đúng hai mép tờ đề. Kết quả và các thao tác vẫn cùng hàng với Nộp bài trong thanh; màn hình nhỏ xuống hàng. Kiểm tra11 giao diện ở9 độ rộng320–1700px, đo hai mép khớp dưới1px, không chồng/tràn; nộp/chấm25/25 và bài luyện73/73, mật khẩu, lời giải, tải lại và Làm lại đều đạt.
+
+## Đảo Pha Lê — thấy trọn đỉnh lâu đài
+
+Ảnh gốc đã cắt mất đỉnh lâu đài. Tạo bản sửa riêng bằng công cụ sửa ảnh, thu cụm lâu đài và bổ sung đỉnh, giữ bố cục cảnh; mã hóa WebP223KB không đổi kích thước1536×1024. Chỉ giao diện crystal dùng bản mới, giữ file gốc và10 giao diện khác. Kiểm tra trang chọn đề/làm bài,5 độ rộng320–1892px, ảnh tải đủ, không tràn hoặc lỗi runtime.
