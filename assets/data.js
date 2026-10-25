@@ -2,6 +2,11 @@ const programs = ['TIMO', 'ASMO', 'Báo bài của trường'];
 const subjects = ['Toán', 'Tiếng Việt', 'Tiếng Anh'];
 const modes = ['Đề vòng loại', 'Đề quốc gia', 'Luyện theo chủ đề'];
 
+function subjectDisplayName(subject) {
+  const text = String(subject);
+  return text.charAt(0).toLocaleUpperCase('vi-VN') + text.slice(1).toLocaleLowerCase('vi-VN');
+}
+
 function getSubjects(program) {
   return program === 'TIMO' ? ['Toán'] : program === 'Báo bài của trường' ? ['Toán', 'Tiếng Việt', 'SCIENCE', 'GLOBAL', 'ESL', 'MATHEMATICS'] : subjects;
 }
