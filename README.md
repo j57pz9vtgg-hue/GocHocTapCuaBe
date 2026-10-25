@@ -313,3 +313,7 @@ Nhập 25 khóa/lời giải và 6 SVG minh họa theo 4 ảnh chủ dự án g�
 ## Đáp án Đề vòng loại 4
 
 Nhập25 đáp án/lời giải và8 SVG theo5 ảnh chủ dự án gửi. Giữ các cách giải, số đánh trên khối/mặt/ô/đoạn, dãy mũi tên, cách chia bánh và4 bước sơ đồ ghép cặp. Bài chủ đề tham chiếu cùng khóa nguồn. Không sửa đề/lựa chọn/phân loại hoặc các khóa trước. Kiểm tra chấm điểm, mật khẩu, lưu/tải lại/làm lại, bài luyện trộn và11 giao diện.
+
+## Đáp án Đề vòng loại 5
+
+Nhập25 khóa/lời giải và6 SVG từ4 ảnh chủ dự án gửi. Giữ các bước giải, hình đánh số, sơ đồ phép tính, bảng10 cách cắm hoa và các cách giải thay thế. Áp dụng vào đúng câu nguồn của luyện chủ đề. Hiện125 câu của5 đề vòng loại đầu có đáp án do chủ dự án cung cấp;225 câu còn lại tiếp tục chờ đáp án. Không đổi nội dung350 câu, lựa chọn, phân loại hay nguồn đề. Kiểm tra chấm điểm, mở lời giải bằng mật khẩu, bài luyện trộn, lưu/tải lại/làm lại và11 giao diện.
