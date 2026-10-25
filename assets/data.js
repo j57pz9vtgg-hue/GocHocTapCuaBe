@@ -3,7 +3,11 @@ const subjects = ['Toán', 'Tiếng Việt', 'Tiếng Anh'];
 const modes = ['Đề vòng loại', 'Đề quốc gia', 'Luyện theo chủ đề'];
 
 function getSubjects(program) {
-  return program === 'TIMO' ? ['Toán'] : subjects;
+  return program === 'TIMO' ? ['Toán'] : program === 'Báo bài của trường' ? ['Toán', 'Tiếng Việt', 'SCIENCE', 'GLOBAL', 'ESL', 'MATHEMATICS'] : subjects;
+}
+
+function getModes(program) {
+  return program === 'Báo bài của trường' ? ['Báo bài tuần'] : modes;
 }
 
 // Only add official papers and answer keys supplied by the project owner.

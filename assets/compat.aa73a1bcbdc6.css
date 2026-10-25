@@ -1,0 +1,445 @@
+/* Integration only: source theme styles and art are retained in assets/reference. */
+[hidden]{display:none!important}body:has(dialog[open]){overflow:hidden}.paper-intro .intro-start{width:100%}.paper-intro .quiz-info{flex-wrap:wrap}.question-illustration img{max-width:100%;max-height:340px;object-fit:contain}.paper-world .unlimited-time{font-size:17px}.paper-brand>button{display:flex;align-items:center;gap:7px}.paper-world .paper-options .answer-text{overflow-wrap:anywhere}.paper-world .result-view{max-width:794px;margin:20px auto 0;padding:24px;border:1px solid #c5e9ff;border-radius:12px;background:white;text-align:center}.paper-world .result-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:17px}.paper-world .result-actions button{padding:10px 18px;min-height:42px;border-radius:9px}.paper-world .result-view>p{font-size:14px;line-height:1.7;margin:8px 0}.paper-world .result-view>h2{font-size:27px}.paper-end{align-items:center}.paper-end>p{font-size:13px}.paper-options .chosen:not(.paper-correct):not(.paper-wrong){background:#eef8ff}.paper-question:last-of-type{border-bottom:0}.settings-heading{padding-right:20px}.settings-heading>span{display:none}.settings-heading h2{font-size:28px}.settings-heading p{font-size:14px;margin-top:7px;color:#6b847b}.settings-section h3{font-size:23px;margin-bottom:14px}.settings-section [role=status]{font-size:12px;line-height:1.6;margin-top:12px}.settings-section label{font-size:13px}.settings-section input[type=password],#solution-dialog input{width:100%;min-height:44px;padding:9px 12px;border:1px solid #adcfdc;border-radius:8px;background:white;margin:7px 0 13px}.password-actions{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap}.settings-note{font-size:12px;line-height:1.8;margin-top:15px;color:#627993}.settings-tabs{margin:23px 0 20px}.settings-tabs button{font-size:14px}.settings-section .learning-theme-picker{max-height:47vh;overflow:auto}.usage ol{padding-left:22px;font-size:14px;line-height:1.9}.usage li{margin-bottom:10px}.settings-dialog .settings-section:focus{outline:none}.settings-dialog .settings-section:focus-visible{outline:2px solid #087fb8;outline-offset:4px}.settings-dialog .primary{min-height:42px}.settings-dialog .secondary{font-size:13px;padding:9px 13px;border-radius:8px;border:1px solid #c6dce4;background:white}#solution-dialog h2{padding-right:20px}#solution-dialog label{display:block;margin-top:15px;font-size:14px}#solution-dialog .primary{width:100%;padding:12px;border-radius:9px;background:var(--teal,#00aeb9);color:white;font-weight:700}#solution-dialog .settings-status{font-size:13px;color:#a33d35;margin:10px 0}#local-data .primary-button{margin-top:22px}#local-data>h2{padding-right:25px}.cloud-sync-button{position:relative}.parent-title-icon{margin-bottom:10px}
+@media(max-width:760px){.paper-world .unlimited-time{font-size:13px}.paper-brand>strong{font-size:20px}.paper-brand>button{font-size:12px;padding:8px}.settings-tabs button{font-size:12px;padding:10px 4px}.settings-heading h2{font-size:25px}.settings-section .learning-theme-picker{max-height:45vh}.settings-dialog{padding:25px 20px}.paper-world .paper-options .answer-text{font-size:inherit}.paper-end>p{max-width:150px;font-size:11px}.paper-world .result-view{padding:19px 14px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+/* Header tools are consolidated into the existing three-tab settings dialog. */
+.header-tools>.settings-control{display:flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap}
+.settings-tools{margin-top:22px;padding-top:18px;border-top:1px solid #dce7e5}
+.settings-tools h3{font-size:19px;margin-bottom:12px}
+.settings-tools .secondary-button{display:flex;align-items:center;gap:9px;width:100%;padding:11px 13px;margin-top:9px;font-size:13px;text-align:left;border:1px solid #cbdde4;border-radius:9px;background:#fff}
+:root[data-theme="arctic"]:not([data-theme="pixel"]) .header-tools{grid-template-columns:minmax(0,1fr) auto}
+:root[data-theme="arctic"]:not([data-theme="pixel"]) .header-tools>.settings-control{grid-column:2;grid-row:1;width:auto;min-width:108px}
+@media(max-width:760px){.header-tools>.settings-control{gap:6px}:root[data-theme="arctic"]:not([data-theme="pixel"]) .header-tools{grid-template-columns:minmax(0,1fr) auto}:root[data-theme="arctic"]:not([data-theme="pixel"]) .header-tools>.settings-control{grid-column:2;grid-row:1;min-width:100px;width:auto}}
+/* Keep theme names inside their cards; scroll the dialog, never compress its grid rows. */
+.dialog.settings-dialog{width:min(840px,calc(100% - 40px));max-height:calc(100dvh - 40px);padding:24px;overflow-y:auto;scrollbar-gutter:stable}
+.settings-dialog .settings-topbar{position:sticky;top:-24px;z-index:3;margin:-24px -24px 0;padding:24px 24px 12px;background:inherit;border-radius:22px 22px 0 0}
+.settings-dialog .settings-topbar>.dialog-close{display:grid;place-items:center;width:44px;height:44px;padding:8px;top:12px;right:12px;border-radius:12px;color:#406d87;background:#e4f2fc}
+.settings-dialog .settings-topbar>.dialog-close svg{width:26px;height:26px;stroke-width:2.2}
+.settings-dialog .settings-heading{padding-right:42px}
+.settings-dialog .settings-tabs{margin-top:4px}
+.settings-dialog .learning-theme-picker{max-height:none;overflow:visible;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:auto;align-items:stretch;gap:12px;margin:12px 0 0}
+.settings-dialog .learning-theme-picker label{display:flex;flex-direction:column;min-width:0;min-height:108px;height:auto;overflow:hidden;flex-shrink:0}
+.settings-dialog .learning-theme-picker img{height:64px;min-height:64px;flex-shrink:0;object-fit:contain}
+.settings-dialog .learning-theme-picker span{min-height:44px;flex:1;align-items:center;padding:8px;font-size:12px;line-height:1.5;white-space:normal;overflow-wrap:anywhere}
+.settings-dialog .learning-theme-picker input{width:18px;height:18px;flex-shrink:0}
+.settings-dialog .parent-password-panel{max-width:640px;margin-inline:auto}
+@media(max-width:760px){.dialog.settings-dialog{width:calc(100% - 24px);max-height:calc(100dvh - 24px);padding:22px 20px}.settings-dialog .settings-topbar{top:-22px;margin:-22px -20px 0;padding:22px 20px 16px}.settings-dialog .settings-heading h2{font-size:25px}.settings-dialog .learning-theme-picker{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.settings-dialog .learning-theme-picker label{min-height:112px}.settings-dialog .learning-theme-picker img{height:60px;min-height:60px}.settings-dialog .learning-theme-picker span{min-height:52px;font-size:12px;padding:8px;gap:6px}}
+/* Pixel is the shared catalog geometry; themes retain their palette and artwork. */
+#site-shell .page-content{width:100%;max-width:none;margin-inline:auto;padding:0 clamp(18px,4.2vw,64px) 10px}
+#site-shell .catalog-filter-bar{padding-bottom:0;padding-top:0}
+#site-shell .study-filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding:17px 34px 16px;margin:-13px -20px 0;border:1px solid var(--theme-edge,#d7edf7);border-radius:19px;background:linear-gradient(#ffffffed,#f6fcffed);box-shadow:0 5px 10px #72c8e51d}
+#site-shell .filter-field{min-width:0;min-height:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none}
+#site-shell .crystal-filter-icon{display:none}
+#site-shell .filter-field label{font-size:13px;font-weight:600;line-height:1.5;margin:0 0 4px 4px;min-height:0}
+#site-shell .filter-select{margin:0}
+#site-shell .filter-select select{height:40px;font-size:14px;font-weight:500;padding:0 32px 0 15px;border-width:1px;border-radius:8px}
+#site-shell .filter-select>svg{top:12px;right:12px;width:16px;height:16px}
+#site-shell .exercise-section{padding-top:16px;padding-bottom:0}
+#site-shell .arctic-catalog-subtitle,#site-shell .arctic-catalog-count,#site-shell .toys-catalog-banner{display:none}
+#site-shell .exercise-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+#site-shell .exercise-card{position:relative;display:flex;flex-direction:column;min-width:0;min-height:176px;padding:12px 12px 10px;border-width:1px;border-radius:12px}
+#site-shell .exercise-top{min-height:52px;gap:10px;align-items:flex-start}
+#site-shell .number-badge{width:39px;height:43px;flex-shrink:0}
+#site-shell .exercise-name{min-width:0;position:relative}
+#site-shell .exercise-name h2{font-size:15px;line-height:1.5;margin:0;min-height:21px;padding-right:16px}
+#site-shell .status{font-size:11px;line-height:1.4;padding:4px 10px;margin-top:5px}
+#site-shell .exercise-stats{font-size:13px;line-height:1.7;margin:10px 5px;padding:0;position:relative;z-index:1}
+#site-shell .exercise-stats>div{gap:9px;flex-wrap:nowrap}
+#site-shell .exercise-stats dt{min-width:62px}
+#site-shell .card-actions{margin-top:auto;gap:7px;position:relative;z-index:2}
+#site-shell .card-actions>button{min-height:38px;padding:6px 5px;font-size:13px;line-height:1.4;border-radius:9px}
+#site-shell .exercise-card-art{width:74px;height:74px;top:auto;bottom:42px;right:8px;pointer-events:none}
+@media(min-width:1600px){#site-shell .exercise-card{padding:13px 15px 11px;min-height:182px}}
+@media(min-width:1350px) and (max-width:1499px){#site-shell .page-content{padding-inline:35px}#site-shell .study-filters{margin-inline:-14px;padding-inline:25px;gap:20px}#site-shell .exercise-card{padding:11px 10px 9px}#site-shell .exercise-top{gap:7px}#site-shell .number-badge{width:35px;height:40px}#site-shell .exercise-stats{font-size:11px;margin-inline:3px}#site-shell .exercise-stats dt{min-width:57px}#site-shell .card-actions{gap:5px}}
+@media(max-width:1349px){#site-shell .page-content{padding-inline:30px}#site-shell .exercise-grid{grid-template-columns:repeat(4,minmax(0,1fr))}#site-shell .study-filters{margin-inline:-10px;gap:17px;padding-inline:22px}#site-shell .filter-field label{font-size:12px}#site-shell .exercise-stats{font-size:12px}}
+@media(max-width:1050px){#site-shell .exercise-grid{grid-template-columns:repeat(3,minmax(0,1fr))}#site-shell .study-filters{gap:12px;padding:16px}#site-shell .filter-field label{font-size:11px}#site-shell .filter-select select{font-size:12px;padding-left:11px}}
+@media(max-width:760px){#site-shell .page-content{padding-inline:18px}#site-shell .study-filters{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 -4px;padding:16px 14px;border-radius:13px}#site-shell .filter-field label{margin-left:1px;min-height:17px}#site-shell .filter-select select{padding-left:10px;padding-right:27px}#site-shell .filter-select>svg{right:9px;width:14px}#site-shell .exercise-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#site-shell .exercise-card{padding:11px;min-height:184px}#site-shell .exercise-top{gap:7px;min-height:53px}#site-shell .number-badge{width:34px;height:39px}#site-shell .exercise-name h2{font-size:13px;padding-right:12px}#site-shell .status{font-size:10px;padding:4px 7px}#site-shell .exercise-stats{font-size:11px;margin-inline:0}#site-shell .exercise-stats dt{min-width:53px}#site-shell .exercise-stats>div{gap:5px}#site-shell .card-actions{gap:5px}#site-shell .card-actions>button{font-size:11px;padding-inline:4px}#site-shell .exercise-card-art{width:58px;height:58px;bottom:48px;right:5px}}
+@media(max-width:479px){#site-shell .exercise-grid{grid-template-columns:1fr}#site-shell .exercise-card,#site-shell .exercise-card.is-complete{min-height:168px;padding:13px 14px 11px}#site-shell .exercise-top{gap:10px;min-height:53px}#site-shell .number-badge{width:39px;height:43px}#site-shell .exercise-name h2{font-size:15px;min-height:24px}#site-shell .status{font-size:11px;padding:4px 10px}#site-shell .exercise-stats{font-size:13px;margin:7px 3px 11px}#site-shell .exercise-stats dt{min-width:68px}#site-shell .card-actions>button{font-size:13px;min-height:39px}#site-shell .exercise-card-art{width:74px;height:74px}}
+/* Slightly smaller catalog controls and cards, while retaining the full-width grid. */
+@media(min-width:761px){
+ #site-shell .study-filters{padding-top:12px;padding-bottom:12px;gap:20px}
+ #site-shell .filter-field label{font-size:12px;margin-bottom:3px}
+ #site-shell .filter-select select{height:36px;font-size:13px}
+ #site-shell .filter-select>svg{top:10px}
+ #site-shell .exercise-section{padding-top:12px}
+ #site-shell .exercise-card{min-height:168px;padding:10px 12px 9px}
+ #site-shell .exercise-top{min-height:47px;gap:8px}
+ #site-shell .number-badge{width:35px;height:39px}
+ #site-shell .exercise-name h2{font-size:14px;line-height:1.4}
+ #site-shell .status{font-size:10px;padding:3px 8px;margin-top:4px}
+ #site-shell .exercise-stats{font-size:12px;line-height:1.6;margin:8px 3px}
+ #site-shell .card-actions>button{min-height:34px;font-size:12px;padding:5px}
+ #site-shell .exercise-card-art{width:66px;height:66px;bottom:39px}
+}
+
+/* Compact settings heading and spacing; preserve the 44px close target. */
+.settings-dialog .settings-heading h2{font-size:24px}
+.settings-dialog .settings-heading p{font-size:12px;margin-top:4px}
+.settings-dialog .settings-tabs{margin:4px 0 14px}
+.settings-dialog .settings-tabs button{font-size:13px;padding-block:9px}
+.settings-dialog .settings-section h3{font-size:20px;margin-bottom:10px}
+/* Keep the filter panel below the hero toolbar instead of overlapping its bottom edge. */
+#site-shell .study-filters{margin-top:0}
+/* One shared toolbar anchor for every theme, matching the upper-right reference. */
+#site-shell .catalog-masthead>.header-tools{position:absolute;inset:24px 24px auto auto;display:flex;align-items:center;justify-content:flex-end;gap:10px;width:390px;max-width:calc(100% - 48px);height:44px;margin:0;z-index:4;pointer-events:auto;transform:none}
+#site-shell .catalog-masthead>.header-tools .search-box{position:relative;inset:auto;display:flex;align-items:center;flex:1;min-width:0;max-width:none;width:auto;height:44px;margin:0;padding:0 16px;border:2px solid #d6e5ff;border-radius:28px;background:#ffffffed;box-shadow:0 2px 5px #32579620;transform:none;color:#16469f}
+#site-shell .catalog-masthead>.header-tools .search-box input{width:100%;min-width:0;font-size:13px;color:#183e71}
+#site-shell .catalog-masthead>.header-tools>.settings-control{position:relative;inset:auto;display:flex;align-items:center;justify-content:center;gap:8px;flex:0 0 118px;width:118px;min-width:118px;height:44px;min-height:44px;padding:8px 12px;margin:0;border:2px solid #d6e5ff;border-radius:28px;background:#ffffffed;box-shadow:0 2px 5px #32579620;color:#10356b;font-size:13px;transform:none}
+#site-shell .catalog-masthead>.header-tools>.settings-control svg{width:22px;height:22px;color:#16469f}
+@media(max-width:760px){#site-shell .catalog-masthead>.header-tools{top:16px;right:16px;max-width:calc(100% - 32px);gap:8px}#site-shell .catalog-masthead>.header-tools>.settings-control{flex-basis:108px;width:108px;min-width:108px;padding-inline:10px}#site-shell .catalog-masthead>.header-tools .search-box{padding-inline:12px}}
+@media(max-width:900px){:root[data-theme="pixel"] #site-shell .site-header{padding-top:68px}:root[data-theme="pixel"] #site-shell .header-inner{min-height:58px;height:auto;padding-top:8px;padding-bottom:10px}:root[data-theme="pixel"] #site-shell .brand>span:first-of-type{font-size:23px}}
+@media(max-width:900px){:root:not([data-theme="pixel"]) #site-shell .header-inner{height:140px;min-height:140px}:root:not([data-theme="pixel"]) #site-shell .site-header{height:140px;min-height:140px}:root:not([data-theme="pixel"]) #site-shell .brand{position:absolute;top:76px;left:20px;transform:none}}
+/* Give artwork its own grid cell so it cannot cover results or elapsed time. */
+#site-shell .exercise-card{display:grid;grid-template-columns:minmax(0,1fr) 64px;grid-template-rows:auto 1fr auto;column-gap:8px}
+#site-shell .exercise-top{grid-column:1/-1;grid-row:1}
+#site-shell .exercise-stats{grid-column:1;grid-row:2;align-self:center;min-width:0;margin:8px 0}
+#site-shell .exercise-stats>div{flex-wrap:wrap;column-gap:8px;row-gap:0}
+#site-shell .exercise-stats dd{white-space:normal;overflow-wrap:anywhere}
+#site-shell .exercise-card-art{position:relative;inset:auto;grid-column:2;grid-row:2;align-self:center;justify-self:end;width:64px;height:64px;margin:0;transform:none}
+#site-shell .card-actions{grid-column:1/-1;grid-row:3;align-self:end}
+#site-shell .exercise-card:not(:has(.exercise-card-art)) .exercise-stats{grid-column:1/-1}
+/* Selects keep their normal border without an extra focus frame. */
+#site-shell .filter-select select:focus{outline:none;box-shadow:none}
+#site-shell .filter-select select:focus-visible{border-color:var(--ink,#10356b)}
+/* TIMO hierarchy: five group controls beside the selected group's topics. */
+.timo-topic-browser{display:grid;grid-template-columns:230px minmax(0,1fr);grid-template-rows:repeat(5,minmax(62px,auto));gap:10px 14px;align-items:start}
+.timo-topic-group{display:contents}
+.topic-group-toggle{grid-column:1;grid-row:var(--topic-row);display:flex;align-items:center;gap:12px;width:100%;height:62px;padding:10px 12px;border:1px solid var(--theme-edge,#b9e3f9);border-radius:12px;background:#ffffffed;color:var(--ink,#071b52);text-align:left;font-size:14px;font-weight:700}
+.topic-group-toggle>span:not(.topic-number){flex:1;min-width:0;overflow-wrap:anywhere}
+.topic-group-toggle>svg{width:18px;height:18px}
+.topic-group-toggle.selected{background:#b8f2f4;border-color:#27bfc9;color:#082958;box-shadow:inset 3px 0 #08aab8}
+.topic-number{display:block;position:relative;width:34px;height:38px;flex-shrink:0}
+.topic-number>svg{display:block;width:100%;height:100%}
+.topic-number>span{position:absolute;inset:0;display:grid;place-items:center;color:white;font:900 22px/1 monospace;letter-spacing:-2px;text-indent:-2px;text-shadow:2px 2px #203568}
+.topic-group-panel{grid-column:2;grid-row:1/6;min-width:0;padding:18px;background:#ffffffed;border:1px solid var(--theme-edge,#b9e3f9);border-radius:12px}
+.topic-group-panel>h3{font-size:26px;line-height:1.3;color:var(--ink,#071b52);margin-bottom:14px}
+.topic-small-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.topic-small-card{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 50px;grid-template-rows:auto 1fr auto;gap:8px 6px;min-width:0;min-height:150px;padding:13px;border:1px solid var(--theme-edge,#b9e3f9);border-radius:12px;background:#ffffffed;box-shadow:0 2px 3px #6db5db16}
+.topic-small-heading{grid-column:1/-1;display:flex;align-items:center;gap:10px;min-width:0}
+.topic-small-heading h4{font-size:14px;font-weight:700;line-height:1.5;color:var(--ink,#071b52);margin:0;overflow-wrap:anywhere}
+.topic-state{grid-column:1;grid-row:2;display:flex;align-items:center;gap:7px;color:#617b94;font-size:12px;line-height:1.5;align-self:center}
+.topic-state>span{width:9px;height:9px;border-radius:50%;background:#8ba6bc;flex-shrink:0}
+.topic-book{grid-column:2;grid-row:2;width:46px;height:42px;object-fit:contain;align-self:center;justify-self:end;image-rendering:pixelated}
+.topic-practice{grid-column:1/-1;grid-row:3;min-height:36px;width:100%;padding:7px 10px;border-radius:9px;background:var(--theme-action,linear-gradient(#04bcc2,#00a7b1));color:var(--theme-action-ink,#fff);font-size:13px;font-weight:700}
+.topic-empty-intro{text-align:center;padding:12px 0}
+.topic-empty-intro>img{width:72px;height:72px;object-fit:contain;margin:0 auto 16px}
+.topic-empty-intro h2{font-size:28px;margin-bottom:10px}
+.topic-empty-intro p{font-size:14px;line-height:1.8;margin-bottom:16px}
+.topic-empty-intro .primary-button{min-width:150px}
+@media(max-width:1150px){.timo-topic-browser{grid-template-columns:200px minmax(0,1fr)}.topic-small-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.topic-group-panel{padding:14px}.topic-group-toggle{gap:8px;font-size:13px}}
+@media(max-width:760px){.timo-topic-browser{display:block}.timo-topic-group{display:block;margin-bottom:10px}.topic-group-toggle{height:58px;font-size:14px}.topic-group-toggle.selected{border-radius:12px 12px 0 0}.topic-group-panel{padding:10px;border-top:0;border-radius:0 0 12px 12px}.topic-group-panel>h3{display:none}.topic-small-grid{grid-template-columns:1fr;gap:8px}.topic-small-card{grid-template-columns:minmax(0,1fr) 40px 108px;grid-template-rows:auto auto;min-height:85px;padding:10px;gap:4px 8px;align-items:center}.topic-small-heading{grid-column:1;grid-row:1;gap:8px}.topic-small-heading h4{font-size:13px}.topic-small-heading .topic-number{width:28px;height:32px}.topic-small-heading .topic-number>span{font-size:19px}.topic-state{grid-column:1;grid-row:2;font-size:11px;padding-left:36px;gap:5px}.topic-book{grid-column:2;grid-row:1/3;width:38px;height:38px}.topic-practice{grid-column:3;grid-row:1/3;min-height:40px;font-size:12px}}
+@media(max-width:390px){.topic-small-card{grid-template-columns:minmax(0,1fr) 88px;gap:6px}.topic-book{display:none}.topic-practice{grid-column:2}.topic-small-heading{gap:6px}.topic-small-heading h4{font-size:12px}.topic-state{padding-left:34px;font-size:10px}}
+/* The filter panel shares exactly the same outer edges as the exercise grid. */
+#site-shell .study-filters{margin-inline:0}
+.paper-world .paper-end{justify-content:flex-end}
+/* Topic hierarchy follows the active world's artwork and component palette. */
+:root:not([data-theme="pixel"]) .topic-group-toggle,:root:not([data-theme="pixel"]) .topic-group-panel,:root:not([data-theme="pixel"]) .topic-small-card{background:color-mix(in srgb,var(--theme-base) 45%,white 55%);border-color:var(--theme-edge)}
+:root:not([data-theme="pixel"]) .topic-group-toggle.selected{background:color-mix(in srgb,var(--theme-accent) 13%,var(--theme-base) 87%);border-color:var(--theme-accent);box-shadow:inset 3px 0 var(--theme-accent);color:var(--ink)}
+:root:not([data-theme="pixel"]) .theme-topic-number{display:grid;place-items:center;width:34px;height:38px;background:var(--theme-ordinal);border:2px solid #ffffffd9;border-radius:10px;box-shadow:0 2px 4px #20356825;color:white;font:800 20px/1 'Baloo 2',sans-serif}
+:root:not([data-theme="pixel"]) .topic-theme-art{background-size:400% 400%;background-repeat:no-repeat;image-rendering:auto;width:54px;height:54px;clip-path:inset(2%);filter:drop-shadow(0 2px 2px #20356818)}
+:root:not([data-theme="pixel"]) .topic-small-card{grid-template-columns:minmax(0,1fr) 54px}
+:root[data-theme="arctic"] .theme-topic-number,:root[data-theme="bunny"] .theme-topic-number{border-radius:50%}
+:root[data-theme="toys"] .theme-topic-number{border-radius:12px;color:#25476c;box-shadow:inset 0 -3px #dca06066,0 2px 4px #20356825}
+:root[data-theme="bunny"] .theme-topic-number{background:#bfe08c;color:#285e48}
+:root[data-theme="crystal"] .theme-topic-number{clip-path:polygon(25% 0,75% 0,100% 25%,100% 75%,75% 100%,25% 100%,0 75%,0 25%);border-radius:0;background:linear-gradient(140deg,#b7eaff,#609aff 60%,#5155cd)}
+:root[data-theme="cloud"] .theme-topic-number{border-radius:16px 16px 10px 10px;background:linear-gradient(#ffe49b,#eeb05c);color:#6e4719}
+:root[data-theme="forest"] .theme-topic-number{border-radius:12px 5px 12px 5px;border-color:#e9d5ad}
+:root[data-theme="museum"] .theme-topic-number{border-radius:8px 15px 8px 15px}
+:root[data-theme="magic"] .theme-topic-number{border-radius:12px 4px;background:linear-gradient(140deg,#b8a3fa,#8054c9)}
+:root[data-theme="treasure"] .theme-topic-number{border-radius:50%;background:linear-gradient(#ffe89a,#d49a28);color:#654513}
+:root[data-theme="cars"] .theme-topic-number{border-radius:8px;background:linear-gradient(#fd7467,#dc3028)}
+.topic-empty-intro>.topic-intro-banner{width:100%;height:150px;border-radius:12px;object-fit:cover;image-rendering:auto}
+@media(max-width:760px){:root:not([data-theme="pixel"]) .topic-small-card{grid-template-columns:minmax(0,1fr) 44px 108px}:root:not([data-theme="pixel"]) .topic-theme-art{width:44px;height:44px}:root:not([data-theme="pixel"]) .topic-small-heading .theme-topic-number{width:28px;height:32px;font-size:17px}}
+@media(max-width:390px){:root:not([data-theme="pixel"]) .topic-small-card{grid-template-columns:minmax(0,1fr) 88px}:root:not([data-theme="pixel"]) .topic-theme-art{display:none}}
+/* Password entry is a separate, compact screen; the learning shell starts hidden. */
+.entry-screen{position:relative;isolation:isolate;display:grid;place-items:center;min-height:100svh;padding:32px 16px;background:#e4f5ff;color:#0b285d;overflow:hidden}
+.entry-screen::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(#e7f7ffe8,#e7f7ffb8),url('./reference/media/arctic-world.webp') center/cover no-repeat;pointer-events:none}
+.entry-card{width:min(440px,100%);border:2px solid #bde5fb;border-radius:18px;background:#fff;box-shadow:0 12px 42px #4599bf26;overflow:hidden}
+.entry-hero{display:block;width:100%;height:auto;aspect-ratio:880/460;object-fit:cover}
+.entry-content{padding:22px 26px 26px}
+.entry-content h1{font:800 32px/1.2 'Baloo 2',sans-serif;text-align:center;color:#0b285d;margin:0}
+.entry-subtitle{font-size:14px;line-height:1.6;text-align:center;color:#416388;margin:7px 0 22px}
+.entry-label{display:block;font-size:14px;font-weight:700;line-height:1.5;margin-bottom:7px;color:#0b285d}
+.entry-password-field{position:relative}
+.entry-password-field input{width:100%;height:46px;border:1px solid #b0d6f0;border-radius:9px;padding:10px 50px 10px 13px;background:#fff;color:#0b285d;font:400 16px/1.5 'Be Vietnam Pro',sans-serif}
+.entry-eye{position:absolute;top:1px;right:1px;display:grid;place-items:center;width:44px;height:44px;padding:10px;background:transparent;color:#527793;border-radius:8px}
+.entry-eye[aria-pressed="true"]{color:#008b9d;background:#e9f9fc}
+.entry-remember{display:flex;align-items:center;gap:10px;margin-top:17px;font-size:14px;line-height:1.6;color:#0b285d;cursor:pointer}
+.entry-remember input{width:19px;height:19px;accent-color:#00aeba;flex-shrink:0;margin:0}
+.entry-hint{font-size:11px;line-height:1.7;color:#65829d;margin:5px 0 19px}
+.entry-status{color:#ad3830;font-size:12px;line-height:1.6;margin:12px 0}
+.entry-status:empty{display:none}
+.entry-password-field input[aria-invalid="true"]{border-color:#ad3830}
+.entry-submit{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:46px;padding:10px 14px;border-radius:9px;background:#00aeba;color:#fff;font:700 16px/1.4 'Be Vietnam Pro',sans-serif}
+.entry-submit:hover{background:#009ba8}.entry-submit:disabled{opacity:.65;cursor:wait}
+.entry-screen button:focus-visible,.entry-screen input:focus-visible{outline:2px solid #087fb8;outline-offset:3px}
+@media(max-width:479px){.entry-screen{padding:20px 16px}.entry-card{border-radius:16px}.entry-content{padding:20px}.entry-content h1{font-size:29px}.entry-subtitle{font-size:13px;margin-bottom:20px}.entry-hint{font-size:11px}}
+.topic-content-empty{grid-column:1/-1;display:grid;place-items:center;min-height:140px;padding:24px;color:#617b94;text-align:center;font-size:14px}
+/* Bilingual TIMO names and source question ranges remain readable in every world. */
+.timo-topic-browser{grid-template-columns:260px minmax(0,1fr);grid-template-rows:repeat(5,minmax(84px,auto))}
+.topic-group-toggle{height:auto;min-height:84px}
+.topic-group-label>span{display:block;line-height:1.4}
+.topic-group-label>span[lang="en"]{font-size:13px;font-weight:700}
+.topic-group-label>span[lang="vi"]{font-size:12px;font-weight:500;margin-top:2px}
+.topic-group-label>small{display:block;font-size:10px;font-weight:500;line-height:1.5;color:#617b94;margin-top:3px}
+.topic-question-source{font-size:12px;line-height:1.6;color:#617b94;margin:7px 0 12px}
+@media(max-width:1150px) and (min-width:761px){.timo-topic-browser{grid-template-columns:235px minmax(0,1fr)}}
+@media(max-width:760px){.timo-topic-browser{display:block}.topic-group-toggle{height:auto;min-height:84px}.topic-group-label>span[lang="en"]{font-size:14px}.topic-group-label>span[lang="vi"]{font-size:13px}}
+/* Original exam figures are scalable vectors, with the supplied section headings. */
+.paper-world .question-translation{clear:both;font-size:18px;line-height:1.65;margin:10px 0 18px;color:#52708f}
+.paper-world .question-illustration{clear:both;display:flex;align-items:center;justify-content:center;margin:18px 0 24px}
+.paper-world .question-illustration img{display:block;width:auto;height:auto;max-width:100%;max-height:340px;object-fit:contain}
+.paper-world .paper-section-heading{font:700 19px/1.5 'Times New Roman',serif;color:#0c3157;text-align:center;text-decoration:underline;margin:26px 0 4px}
+.paper-world .paper-section-heading:first-child{margin-top:0}
+.paper-world .options-two-columns .paper-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:480px){.paper-world .question-translation{font-size:16px;line-height:1.6}.paper-world .options-two-columns .paper-options{grid-template-columns:1fr}.paper-world .question-illustration{margin:16px 0 20px}.paper-world .paper-section-heading{font-size:17px}}
+.paper-world .answer-with-figure{display:inline-flex;align-items:center;gap:9px}
+.paper-world .answer-with-figure img{width:28px;height:28px;object-fit:contain}
+/* All five major-topic tiles share the longest bilingual name's width. */
+.timo-topic-browser{grid-template-columns:max-content minmax(0,1fr);grid-template-rows:repeat(5,minmax(60px,auto))}
+.topic-group-toggle{min-height:60px;align-self:stretch;gap:10px}
+.topic-group-toggle>.topic-group-label{white-space:nowrap;overflow-wrap:normal;font-size:13px;font-weight:600;line-height:1.5}
+@media(max-width:760px){.topic-group-toggle{min-height:60px;padding:10px;gap:8px}.topic-group-toggle>.topic-group-label{font-size:clamp(11px,2.9vw,13px)}.topic-group-toggle>.topic-number{width:30px;height:34px}.topic-group-toggle>svg{width:16px;height:16px}}
+@media(max-width:350px){.topic-group-toggle{padding-inline:8px;gap:6px}.topic-group-toggle>.topic-number{width:26px;height:30px}.topic-group-toggle>svg{width:14px;height:14px}}
+/* Exam typography follows the supplied A4 papers; keep colors, spacing rules and figures. */
+.paper-world .exam-paper,.paper-world .exam-paper legend,.paper-world .exam-paper p,.paper-world .exam-paper label,.paper-world .exam-paper .answer-text{font-family:'Times New Roman',Times,serif}
+.paper-world .practice-elapsed{font-variant-numeric:tabular-nums}
+
+/* 12 pt on A4 equals 16 CSS px; apply only inside the exam content. */
+.paper-world .exam-paper,.paper-world .exam-paper legend,.paper-world .exam-paper p,.paper-world .exam-paper label,.paper-world .exam-paper .answer-text,.paper-world .exam-paper .paper-section-heading{font-size:12pt}
+
+/* Compact study introduction; keep exam content typography and each world's artwork. */
+#paper-intro{width:min(520px,calc(100% - 28px));max-height:calc(100dvh - 24px);padding:20px;font-family:'Be Vietnam Pro',Arial,sans-serif;overflow-y:auto}
+#paper-intro .quiz-intro>img{height:120px;border-radius:10px;margin-bottom:12px}
+#paper-intro .intro-kicker{font-size:11px;line-height:1.5;margin-bottom:5px}
+#paper-intro .quiz-intro h2{font:700 20px/1.4 'Be Vietnam Pro',Arial,sans-serif;margin:0 0 10px;overflow-wrap:anywhere}
+#paper-intro .quiz-intro>p{font-size:13px;line-height:1.65}
+#paper-intro .quiz-info{font-size:12px;line-height:1.5;padding:10px 0;margin:14px 0;gap:8px}
+#paper-intro .sample-notice{font-size:10px!important;line-height:1.6!important}
+#paper-intro .quiz-intro .intro-start{font-family:inherit;font-size:14px;line-height:1.5;min-height:42px;padding:10px 14px;margin-top:14px;border-radius:9px}
+#paper-intro .dialog-close{width:44px;height:44px;top:5px;right:5px;z-index:1}
+@media(max-width:480px){#paper-intro{padding:16px}#paper-intro .quiz-intro>img{height:96px}#paper-intro .quiz-intro h2{font-size:18px}#paper-intro .quiz-info{font-size:11px}#paper-intro .quiz-intro>p{font-size:12px}}
+
+/* Fixed rail rows decouple the five group buttons from the selected panel's height. */
+#site-shell .timo-topic-browser{grid-template-columns:minmax(340px,max-content) minmax(0,1fr);grid-template-rows:repeat(5,80px) minmax(0,auto);row-gap:12px;align-items:start;align-content:start}
+#site-shell .topic-group-panel{grid-row:1/7;padding:16px}
+#site-shell .topic-group-toggle{height:80px;min-height:80px;max-height:80px;padding:14px 16px;align-self:start;box-shadow:inset 0 1px 0 #ffffffed,inset 0 -3px 0 #16324d0a,0 4px 0 color-mix(in srgb,var(--theme-edge,#b9e3f9) 78%,#183758 22%),0 8px 14px #1837581a;transition:box-shadow .16s ease,border-color .16s ease;transform:none}
+#site-shell .topic-group-toggle>.topic-group-label{white-space:nowrap;overflow-wrap:normal}
+#site-shell .topic-group-toggle:hover{box-shadow:inset 0 1px 0 #fff,inset 0 -3px 0 #16324d0a,0 4px 0 color-mix(in srgb,var(--theme-accent,#00aeba) 45%,var(--theme-edge,#b9e3f9) 55%),0 9px 17px #18375826}
+#site-shell .topic-group-toggle.selected{box-shadow:inset 3px 0 0 var(--theme-accent,#00aeba),inset 0 2px 4px #18375812,inset 0 -1px 0 #ffffffad,0 3px 0 color-mix(in srgb,var(--theme-accent,#00aeba) 45%,var(--theme-edge,#b9e3f9) 55%),0 6px 12px #1837581a}
+#site-shell .topic-small-card{box-shadow:inset 0 1px 0 #fffffff2,0 3px 0 color-mix(in srgb,var(--theme-edge,#b9e3f9) 82%,#183758 18%),0 7px 13px #18375816}
+#site-shell .topic-practice{box-shadow:inset 0 1px 0 #ffffff7a,inset 0 -2px 0 #16324d15,0 3px 0 color-mix(in srgb,var(--theme-accent,#00aeba) 70%,#183758 30%),0 6px 10px #18375821;transition:box-shadow .16s ease}
+#site-shell .topic-practice:hover{box-shadow:inset 0 1px 0 #ffffffa6,inset 0 -2px 0 #16324d15,0 3px 0 color-mix(in srgb,var(--theme-accent,#00aeba) 70%,#183758 30%),0 8px 13px #18375830}
+#site-shell .topic-group-toggle:active,#site-shell .topic-practice:active{box-shadow:inset 0 2px 5px #18375830,0 1px 0 var(--theme-edge,#b9e3f9)}
+#site-shell .topic-group-toggle:focus-visible,#site-shell .topic-practice:focus-visible{outline:2px solid var(--theme-accent,#087fb8);outline-offset:4px}
+@media(max-width:760px){#site-shell .topic-group-toggle{height:72px;min-height:72px;max-height:72px;padding:10px}#site-shell .topic-group-panel{padding:10px}}
+@media(prefers-reduced-motion:reduce){#site-shell .topic-group-toggle,#site-shell .topic-practice{transition:none}}
+
+/* Wider major-topic controls leave a compact panel with four topics per desktop row. */
+#site-shell .topic-small-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:1279px){#site-shell .topic-small-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){#site-shell .topic-small-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Owner-provided national papers use written responses without invented choices. */
+.paper-world .free-answer{clear:both;display:grid;gap:8px;margin:18px 0 8px;max-width:100%}
+.paper-world .free-answer>label{font:400 16px/1.5 'Times New Roman',Times,serif}
+.paper-world .free-answer-input{width:min(100%,400px);min-height:44px;padding:9px 12px;border:1px solid #a9bddd;border-radius:8px;background:#fff;color:#082958;font:400 16px/1.5 'Times New Roman',Times,serif}
+.paper-world .free-answer-input:focus-visible{outline:2px solid #008fba;outline-offset:2px}
+.paper-world .free-answer-input:disabled{opacity:1;background:#f5f9ff;color:#29496b}
+.paper-world .provided-answer{font:400 16px/1.5 'Times New Roman',Times,serif;color:#1d6a44}
+/* Preserve the owner-provided dialogue lines in national paper 6. */
+.paper-world .paper-question legend>span{white-space:pre-line}
+
+.paper-world .paper-explanation{white-space:pre-line;overflow-wrap:anywhere;font-family:"Times New Roman",Times,serif;font-size:16px;line-height:1.65}
+
+/* Results and review actions share the submit toolbar after submission. */
+.paper-world .paper-toolbar{gap:14px}
+.paper-world .paper-toolbar-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-shrink:0}
+.paper-world .paper-toolbar-actions>button{min-height:44px;border-radius:8px;padding:9px 12px;white-space:nowrap;font-size:13px;line-height:1.4}
+.paper-world .paper-toolbar-actions>.secondary-button{border:1px solid #b9dff0;background:#edf8ff;color:#175579}
+.paper-world .paper-toolbar-actions>.primary-button{background:var(--teal,#00aeb9);color:white}
+.paper-world .paper-result-inline{display:block;flex:0 0 auto;padding:0 0 0 12px;margin:0;border:0;border-left:1px solid #d3dff2;border-radius:0;background:transparent;box-shadow:none;text-align:left;color:#082958}
+.paper-world .paper-result-inline h2{margin:0;font:inherit;line-height:1.3;white-space:nowrap}
+.paper-world .paper-result-inline small{display:block;font-size:12px;font-weight:400;color:#416390}
+.paper-world .paper-result-inline strong{display:block;font-size:19px;font-weight:800}
+.paper-world .paper-toolbar:has(.paper-result-inline) .paper-title h2{font-size:22px;overflow-wrap:anywhere}
+.paper-world .paper-toolbar:has(.paper-result-inline) .paper-title{gap:9px}
+.paper-world .paper-toolbar:has(.paper-result-inline) .paper-stat{padding-left:12px;gap:6px;flex-shrink:0}
+.paper-world .paper-toolbar:has(.paper-result-inline) .paper-stat>svg{width:24px;height:24px}
+.paper-world .paper-toolbar:has(.paper-result-inline) .paper-stat strong{font-size:19px}
+@media(max-width:1099px) and (min-width:761px){.paper-world .paper-toolbar:has(.paper-result-inline){flex-wrap:wrap}.paper-world .paper-toolbar:has(.paper-result-inline) .paper-title{flex-basis:100%}.paper-world .paper-toolbar-actions{margin-left:auto}}
+@media(max-width:760px){
+ .paper-world .paper-toolbar .paper-title{padding-right:0}
+ .paper-world .paper-toolbar-actions{grid-column:1/-1;display:flex;flex-wrap:wrap;width:100%;justify-content:flex-start;gap:6px}
+ .paper-world .paper-toolbar-actions>button{font-size:11px;padding:8px;min-height:40px}
+ .paper-world .paper-toolbar-actions>.paper-submit{margin-left:auto;min-width:80px}
+ .paper-world .paper-result-inline{grid-column:1/-1;border:0;padding:0}
+ .paper-world .paper-result-inline h2{display:flex;align-items:baseline;gap:8px}
+ .paper-world .paper-result-inline small{font-size:12px}
+ .paper-world .paper-result-inline strong{font-size:17px}
+ .paper-world .paper-toolbar:has(.paper-result-inline) .paper-stat{padding-left:0}
+}
+@media(max-width:760px){.paper-world .paper-toolbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:12px;gap:10px}.paper-world .paper-toolbar .paper-title{grid-column:1/-1}}
+
+/* The book icon is the practice-to-catalog control. */
+.paper-world .paper-brand>.paper-home-book{display:flex;align-items:center;justify-content:center;flex:0 0 56px;width:56px;height:56px;min-width:44px;min-height:44px;margin:0;padding:2px;border:0;border-radius:10px;background:transparent;box-shadow:none}
+.paper-world .paper-home-book>img{display:block;width:52px;height:52px;object-fit:contain}
+.paper-world .paper-home-book:hover{background:#ffffff40}
+.paper-world .paper-home-book:focus-visible{outline:2px solid #008fba;outline-offset:3px}
+@media(max-width:650px){.paper-world .paper-brand>.paper-home-book{flex-basis:44px;width:44px;height:44px;padding:0}.paper-world .paper-home-book>img{width:42px;height:42px}}
+/* The title and action toolbar follow the same A4 edges as the question sheet. */
+.paper-world .paper-toolbar{width:min(100%,210mm);margin-inline:auto;display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;gap:12px;padding:14px;min-height:0}
+.paper-world .paper-toolbar .paper-title{grid-column:1;grid-row:1;min-width:0;padding-right:0}
+.paper-world .paper-toolbar .paper-title>div{min-width:0}
+.paper-world .paper-toolbar .paper-title h2{font-size:22px;overflow-wrap:anywhere}
+.paper-world .paper-toolbar .paper-stat{padding-left:12px;gap:6px}
+.paper-world .paper-toolbar .paper-stat>svg{width:24px;height:24px}
+.paper-world .paper-toolbar .paper-stat strong{font-size:18px}
+.paper-world .paper-toolbar .paper-stat:has(#answer-count){grid-column:2;grid-row:1}
+.paper-world .paper-toolbar .paper-stat:has([data-practice-clock]){grid-column:3;grid-row:1}
+.paper-world .paper-toolbar .paper-toolbar-actions{grid-column:4;grid-row:1;margin:0;min-width:0}
+.paper-world .paper-toolbar:has(.paper-result-inline) .paper-title{grid-column:1/3;grid-row:1}
+.paper-world .paper-toolbar:has(.paper-result-inline) .paper-stat:has(#answer-count){grid-column:3}
+.paper-world .paper-toolbar:has(.paper-result-inline) .paper-stat:has([data-practice-clock]){grid-column:4}
+.paper-world .paper-toolbar .paper-result-inline{grid-column:1;grid-row:2;border:0;padding:0}
+.paper-world .paper-toolbar:has(.paper-result-inline) .paper-toolbar-actions{grid-column:2/-1;grid-row:2}
+@media(min-width:651px){.paper-world .paper-toolbar-actions{width:auto;flex-wrap:nowrap}.paper-world .paper-result-inline h2{display:block}}
+@media(max-width:650px){
+ .paper-world .paper-toolbar{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:12px}
+ .paper-world .paper-toolbar .paper-title,.paper-world .paper-toolbar:has(.paper-result-inline) .paper-title{grid-column:1/-1;grid-row:1}
+ .paper-world .paper-toolbar .paper-stat:has(#answer-count),.paper-world .paper-toolbar:has(.paper-result-inline) .paper-stat:has(#answer-count){grid-column:1;grid-row:2}
+ .paper-world .paper-toolbar .paper-stat:has([data-practice-clock]),.paper-world .paper-toolbar:has(.paper-result-inline) .paper-stat:has([data-practice-clock]){grid-column:2;grid-row:2}
+ .paper-world .paper-toolbar .paper-stat{padding-left:0}
+ .paper-world .paper-toolbar .paper-result-inline{grid-column:1/-1;grid-row:3}
+ .paper-world .paper-toolbar .paper-toolbar-actions{grid-column:1/-1;grid-row:3;width:100%;flex-wrap:wrap}
+ .paper-world .paper-toolbar:has(.paper-result-inline) .paper-toolbar-actions{grid-column:1/-1;grid-row:4}
+}
+
+/* Crystal artwork has a smaller castle with its full spire inside the image. */
+:root[data-theme="crystal"] #site-shell,:root[data-theme="crystal"] #site-shell .paper-world{background-image:url("./theme-art/crystal-world-open-castle.0a6e0654f060.webp")}
+:root[data-theme="crystal"] #site-shell .adventure-banner{background-image:url("./theme-art/crystal-world-open-castle.0a6e0654f060.webp");background-size:100% auto;background-position:center top}
+
+/* Preserve the original theme book artwork; only its home action is new. */
+.paper-world .paper-home-book>img{image-rendering:auto}
+:root[data-theme="pixel"] .paper-world .paper-home-book>img{image-rendering:pixelated}
+@media(max-width:650px){.paper-world .paper-home-book>img{width:35px;height:35px}}
+
+/* Consistent, compact question typography and proportional source figures. */
+.paper-world .paper-question{padding:20px 0}
+.paper-world .paper-question legend{line-height:1.5;margin-bottom:8px}
+.paper-world .paper-question legend>span[lang="en"]{font-weight:700}
+.paper-world .question-translation{line-height:1.5;margin:0 0 12px}
+.paper-world .question-illustration{margin:12px 0 16px}
+.paper-world .question-illustration:not(.solution-illustration) img{max-width:min(85%,560px);max-height:240px}
+.paper-world .diagram-number-line{font-size:24px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}
+.paper-world .paper-options{gap:10px 12px}
+.paper-world .paper-options label{line-height:1.5}
+@media(max-width:480px){
+ .paper-world .paper-question{padding:16px 0}
+ .paper-world .question-illustration:not(.solution-illustration) img{max-width:100%;max-height:200px}
+ .paper-world .question-illustration{margin:10px 0 14px}
+ .paper-world .diagram-number-line{font-size:21px}
+}
+/* Share the desktop header row while keeping the toolbar and A4 sheet aligned. */
+@media(min-width:1200px){
+ .paper-world{display:grid;grid-template-columns:minmax(280px,1fr) minmax(0,210mm) minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:16px;row-gap:14px;align-content:start}
+ .paper-world>.paper-brand{grid-column:1;grid-row:1;height:auto;min-height:82px;align-self:start;gap:10px;padding-top:12px}
+ .paper-world>.paper-brand>strong{font-size:clamp(20px,1.65vw,29px);white-space:nowrap}
+ .paper-world>.paper-shell{display:contents}
+ .paper-world .paper-toolbar{grid-column:2;grid-row:1;align-self:start;margin:12px 0 0}
+ .paper-world #quiz{grid-column:2;grid-row:2;min-width:0}
+ .paper-world .exam-paper{margin-top:0}
+}
+/* Keep the complete practice heading and controls visible during scrolling. */
+.paper-world>.paper-brand{position:sticky;top:0;z-index:10;align-self:start}
+.paper-world .paper-toolbar{position:sticky;z-index:10}
+@media(min-width:1200px){
+ .paper-world>.paper-brand{top:0}
+ .paper-world .paper-toolbar{top:12px}
+}
+@media(max-width:1199px){
+ .paper-world>.paper-brand{height:72px;min-height:72px;background:#ffffffed;border-radius:0 0 12px 12px}
+ .paper-world .paper-toolbar{top:72px}
+}
+@media(max-width:650px){
+ .paper-world>.paper-brand{height:64px;min-height:64px}
+ .paper-world .paper-toolbar{top:64px}
+}
+/* Prevent scrolled question text showing through the pinned controls. */
+.paper-world .paper-toolbar{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+@media(max-width:1199px){.paper-world>.paper-brand{background:#f4faff}}
+/* Review proposals before creating personal practice topics. */
+.classify-group-button,.edit-classified-topic{min-height:44px;border:1px solid var(--theme-edge,#b9e3f9);border-radius:8px;padding:8px 12px;background:#f4faff;color:#155277;font-size:13px;font-weight:600}
+.classify-group-button{margin:0 0 16px}
+.topic-small-card>.edit-classified-topic{grid-column:1/-1;grid-row:4;width:100%;position:relative;z-index:1}
+.classification-dialog{width:min(900px,calc(100% - 24px));max-width:none;max-height:90dvh;padding:0;border:1px solid #b9dff1;border-radius:16px;color:#142d53;background:#fff;box-shadow:0 15px 65px #17385a55;font-family:'Be Vietnam Pro',Arial,sans-serif;overflow:auto}
+.classification-dialog::backdrop{background:#10284b70}
+.classification-dialog>header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:20px 24px;border-bottom:1px solid #dbe8f2;background:#f4faff;position:sticky;top:0;z-index:2}
+.classification-dialog h2{margin:0;font-size:23px;line-height:1.4}
+.classification-dialog h3{font-size:17px;margin:20px 0 12px}
+.classification-dialog p{font-size:14px;line-height:1.65;margin:8px 0 14px}
+.classification-dialog>header p{margin:5px 0 0}
+.classification-dialog button,.classification-file{min-height:44px;border:1px solid #b9dff1;border-radius:8px;padding:9px 12px;background:#f4faff;color:#155277;font-size:13px;line-height:1.5;cursor:pointer}
+.classification-dialog [data-class-close]{min-width:44px;flex-shrink:0}
+.classification-dialog>header [data-class-close]{font-size:27px;line-height:1;padding:5px}
+.classification-body{padding:20px 24px}
+.classification-body>label,.classification-proposal>label{display:grid;gap:7px;font-size:13px;font-weight:600}
+.classification-dialog input[type=text]{width:100%;min-width:0;min-height:44px;padding:9px 12px;border:1px solid #a7c5dd;border-radius:7px;background:white;color:#142d53;font-size:15px}
+.classification-dialog input[type=checkbox]{width:20px;height:20px;flex:0 0 20px;accent-color:#00a5b2;margin:2px 0}
+.classification-local{color:#4b6482;background:#f4faff;border-radius:8px;padding:12px}
+.classification-status:not(:empty){padding:12px;border:1px solid #a8d8e8;background:#f1fbfd;border-radius:8px;margin:12px 0;font-size:14px;line-height:1.6}
+.classification-proposal{border:1px solid #d4e5f2;border-radius:10px;padding:16px;margin:16px 0}
+.classification-proposal summary{cursor:pointer;min-height:44px;padding:10px 0;font-size:14px;font-weight:600}
+.classification-select-all{display:flex;align-items:center;gap:10px;min-height:44px;font-size:13px}
+.classification-question{border-top:1px solid #dfebf4;padding:14px 0}
+.classification-question>label{display:flex;align-items:flex-start;gap:12px;min-height:44px;cursor:pointer}
+.classification-question>label>span{min-width:0;display:grid;gap:7px;font:16px/1.5 'Times New Roman',Times,serif;overflow-wrap:anywhere}
+.classification-question small{font:12px/1.6 'Be Vietnam Pro',Arial,sans-serif;color:#54718d}
+.classification-question img{display:block;max-width:min(100%,500px);max-height:200px;object-fit:contain;margin:12px auto}
+.classification-question .classification-detail{font:600 20px/1.5 'Times New Roman',Times,serif;text-align:center;white-space:pre-wrap;overflow-wrap:anywhere}
+.classification-dialog>footer{position:sticky;bottom:0;z-index:2;background:#fff;border-top:1px solid #dbe8f2;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.classification-actions,.classification-backup{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.classification-dialog .classification-primary{color:white;background:#008f9d;border-color:#008f9d;font-weight:700}
+.classification-dialog button:disabled{opacity:.5;cursor:default}
+.classification-file{display:inline-flex;align-items:center;position:relative;overflow:hidden}
+.classification-file input{position:absolute;inset:0;opacity:0;width:100%;height:100%;cursor:pointer}
+.classification-file:focus-within{outline:3px solid #e5a34a;outline-offset:3px}
+.classification-topic-list{padding:0;list-style:none}
+.classification-topic-list li{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid #dbe8f2;padding:8px 0;font-size:14px;overflow-wrap:anywhere}
+@media(max-width:650px){
+ .classification-dialog>header{padding:14px}.classification-dialog h2{font-size:20px}.classification-body{padding:14px}.classification-proposal{padding:12px}.classification-dialog>footer{padding:10px;gap:8px}.classification-actions{width:100%;justify-content:flex-end}.classification-dialog button,.classification-file{font-size:12px;padding:8px}.classification-question>label{gap:8px}
+}
+/* Classify directly alongside the original question inside topic practice. */
+.practice-classification-tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 18px;padding-bottom:12px;border-bottom:1px solid #d4dfef}
+.practice-classification-tools button,.inline-classification button{min-height:44px;border:1px solid #b9dff1;border-radius:8px;padding:9px 12px;background:#f4faff;color:#155277;font:600 13px/1.5 'Be Vietnam Pro',Arial,sans-serif}
+.practice-classification-tools [role=status]{font:13px/1.5 'Be Vietnam Pro',Arial,sans-serif;color:#216a62}
+.inline-classification{clear:both;margin-top:14px;border:1px solid #d7e5f1;border-radius:8px;padding:0 12px;background:#f8fcff;font:14px/1.5 'Be Vietnam Pro',Arial,sans-serif;color:#24496d}
+.inline-classification summary{min-height:44px;padding:11px 0;cursor:pointer;font-weight:600}
+.inline-classification-fields{display:grid;gap:10px;padding:0 0 12px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end}
+.paper-world .inline-classification-fields>p{grid-column:1/-1;font:13px/1.5 'Be Vietnam Pro',Arial,sans-serif;margin:0}
+.paper-world .inline-classification label{display:grid;gap:6px;min-width:0;font:13px/1.5 'Be Vietnam Pro',Arial,sans-serif}
+.inline-classification select,.inline-classification input{width:100%;min-width:0;min-height:44px;padding:8px;border:1px solid #adc9dd;border-radius:6px;background:#fff;font:14px/1.5 'Be Vietnam Pro',Arial,sans-serif;color:#142d53}
+.inline-classification button{justify-self:start;background:#008f9d;color:#fff}
+.inline-classification [role=status]{font-size:13px;overflow-wrap:anywhere}
+@media(max-width:650px){.inline-classification-fields{grid-template-columns:minmax(0,1fr)}}
+/* National-round source marker follows each question through topic shuffling. */
+.paper-world .national-question-star{display:inline-block;color:#a56800;font:700 18px/1 'Times New Roman',Times,serif;vertical-align:baseline;margin-right:4px;white-space:nowrap}
+.paper-world .national-question-key{font:13px/1.5 'Be Vietnam Pro',Arial,sans-serif;color:#725000}
+.paper-world .national-question-key>span{color:#a56800;font-size:18px;vertical-align:-1px}
+.classification-topic-actions{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end}
+.classification-dialog .classification-delete{border-color:#edc3c3;background:#fff6f6;color:#9d3030}
+@media(max-width:650px){.classification-topic-list li{align-items:flex-start;flex-wrap:wrap}.classification-topic-actions{width:100%;justify-content:flex-start}}
+.classification-share{padding:16px;margin:16px 0;border:1px solid #beddea;border-radius:10px;background:#f4fbff}
+.classification-share h3{margin:0 0 10px}
+.classification-share button{background:#008f9d;color:#fff;border-color:#008f9d;font-weight:600}
+.classification-share p:last-child{margin-bottom:0}
+.school-week-heading{padding:18px 22px;margin-bottom:18px;border:1px solid var(--theme-edge,#c4dff4);border-radius:14px;background:#ffffffed;color:#122c58}
+.school-week-heading h2{font-size:23px;line-height:1.4;margin:0 0 6px}.school-week-heading p{font-size:14px;margin:0;color:#4d6786}
+.school-lesson-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
+.school-lesson{min-width:0;padding:22px;border:1px solid var(--theme-edge,#c4dff4);border-radius:14px;background:#ffffffef;color:#142f52;box-shadow:0 3px 10px #214e7020}
+.school-lesson>header{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:#486987;font-size:13px;line-height:1.5;margin-bottom:12px}
+.school-lesson>header>span{margin-left:auto}.school-lesson h3{font-size:19px;line-height:1.5;margin:0 0 12px;overflow-wrap:anywhere}.school-lesson h4{font-size:14px;line-height:1.6;margin:12px 0 5px}
+.school-lesson ul{margin:5px 0 12px;padding-left:22px;font-size:14px;line-height:1.7;overflow-wrap:anywhere}.school-lesson li{margin:4px 0}.school-lesson a{color:#006c9c;text-decoration:underline;font-size:14px}
+.school-preparation{padding:10px 14px;margin-top:18px;border:1px solid #d5e6f1;border-radius:9px;background:#f4faff}.school-preparation h4{margin-top:0}.school-preparation ul{margin-bottom:0}
+.school-kind{padding:4px 8px;border-radius:6px;background:#fff1e9;color:#a83a24;font-size:12px}.school-test{border-left:4px solid #c94a31}.school-test h3{color:#ad3428}.school-event{border-left:4px solid #9160c6}
+@media(max-width:760px){.school-lesson-grid{grid-template-columns:minmax(0,1fr);gap:14px}.school-week-heading{padding:16px}.school-week-heading h2{font-size:20px}.school-lesson{padding:17px}.school-lesson h3{font-size:18px}}

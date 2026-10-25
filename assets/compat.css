@@ -433,3 +433,13 @@
 .classification-share h3{margin:0 0 10px}
 .classification-share button{background:#008f9d;color:#fff;border-color:#008f9d;font-weight:600}
 .classification-share p:last-child{margin-bottom:0}
+.school-week-heading{padding:18px 22px;margin-bottom:18px;border:1px solid var(--theme-edge,#c4dff4);border-radius:14px;background:#ffffffed;color:#122c58}
+.school-week-heading h2{font-size:23px;line-height:1.4;margin:0 0 6px}.school-week-heading p{font-size:14px;margin:0;color:#4d6786}
+.school-lesson-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
+.school-lesson{min-width:0;padding:22px;border:1px solid var(--theme-edge,#c4dff4);border-radius:14px;background:#ffffffef;color:#142f52;box-shadow:0 3px 10px #214e7020}
+.school-lesson>header{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:#486987;font-size:13px;line-height:1.5;margin-bottom:12px}
+.school-lesson>header>span{margin-left:auto}.school-lesson h3{font-size:19px;line-height:1.5;margin:0 0 12px;overflow-wrap:anywhere}.school-lesson h4{font-size:14px;line-height:1.6;margin:12px 0 5px}
+.school-lesson ul{margin:5px 0 12px;padding-left:22px;font-size:14px;line-height:1.7;overflow-wrap:anywhere}.school-lesson li{margin:4px 0}.school-lesson a{color:#006c9c;text-decoration:underline;font-size:14px}
+.school-preparation{padding:10px 14px;margin-top:18px;border:1px solid #d5e6f1;border-radius:9px;background:#f4faff}.school-preparation h4{margin-top:0}.school-preparation ul{margin-bottom:0}
+.school-kind{padding:4px 8px;border-radius:6px;background:#fff1e9;color:#a83a24;font-size:12px}.school-test{border-left:4px solid #c94a31}.school-test h3{color:#ad3428}.school-event{border-left:4px solid #9160c6}
+@media(max-width:760px){.school-lesson-grid{grid-template-columns:minmax(0,1fr);gap:14px}.school-week-heading{padding:16px}.school-week-heading h2{font-size:20px}.school-lesson{padding:17px}.school-lesson h3{font-size:18px}}
