@@ -299,4 +299,9 @@ Ngân hàng hiện có 14 đề, 350 câu: 7 đề vòng loại và 7 đề qu�
 
 ## Đáp án Đề vòng loại 1
 
-Nhập 25 đáp án và lời giải đúng theo 4 ảnh chủ dự án cung cấp, kèm 8 hình minh họa lời giải. Chỉ các câu này có answerSource=user; các đề khác tiếp tục chờ đáp án. Luyện theo chủ đề dùng cùng câu nguồn nên nhận đúng khóa/lời giải dù đảo thứ tự. Bài chủ đề chưa đủ khóa vẫn chờ chấm toàn bài, nhưng phụ huynh có thể mở lời giải của riêng các câu đã có khóa. Giữ cơ chế mật khẩu phụ huynh, không hiển thị lời giải trước khi nộp. Đã kiểm tra chấm 25/25, mật khẩu sai/đúng, tải lại/làm lại, bài trộn và 11 giao diện.
+Nhập 25 đáp án và lời giải đúng theo 4 ảnh chủ dự án cung cấp, kèm 7 hình minh họa lời giải. Chỉ các câu này có answerSource=user; các đề khác tiếp tục chờ đáp án. Luyện theo chủ đề dùng cùng câu nguồn nên nhận đúng khóa/lời giải dù đảo thứ tự. Bài chủ đề chưa đủ khóa vẫn chờ chấm toàn bài, nhưng phụ huynh có thể mở lời giải của riêng các câu đã có khóa. Giữ cơ chế mật khẩu phụ huynh, không hiển thị lời giải trước khi nộp. Đã kiểm tra chấm 25/25, mật khẩu sai/đúng, tải lại/làm lại, bài trộn và 11 giao diện.
+
+
+## Đáp án Đề vòng loại 2
+
+Nhập 25 khóa và lời giải theo 4 ảnh chủ dự án cung cấp, kèm 7 SVG minh họa. Khóa/lời giải áp dụng cùng câu nguồn trong bài luyện theo chủ đề. Giữ nguyên đề, lựa chọn và phân loại. Kiểm tra chấm điểm, mở lời giải qua mật khẩu, bài luyện trộn khóa đã có/chưa có, lưu/tải lại/làm lại và 11 giao diện.
