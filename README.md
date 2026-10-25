@@ -309,3 +309,7 @@ Nhập 25 khóa và lời giải theo 4 ảnh chủ dự án cung cấp, kèm 7 
 ## Đáp án Đề vòng loại 3
 
 Nhập 25 khóa/lời giải và 6 SVG minh họa theo 4 ảnh chủ dự án gửi, giữ cả các cách giải thay thế và chú thích mặt khuất/khối khuất. Áp dụng cùng câu nguồn vào luyện chủ đề. Đã kiểm tra chấm25/25, hiển thị đủ25 lời giải, mật khẩu sai/đúng, ảnh, lưu/tải lại/làm lại, bài trộn và11 giao diện. Không thay đề/lựa chọn/phân loại hoặc khóa của các đề trước.
+
+## Đáp án Đề vòng loại 4
+
+Nhập25 đáp án/lời giải và8 SVG theo5 ảnh chủ dự án gửi. Giữ các cách giải, số đánh trên khối/mặt/ô/đoạn, dãy mũi tên, cách chia bánh và4 bước sơ đồ ghép cặp. Bài chủ đề tham chiếu cùng khóa nguồn. Không sửa đề/lựa chọn/phân loại hoặc các khóa trước. Kiểm tra chấm điểm, mật khẩu, lưu/tải lại/làm lại, bài luyện trộn và11 giao diện.
