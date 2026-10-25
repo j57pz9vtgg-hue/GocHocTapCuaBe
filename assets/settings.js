@@ -63,10 +63,10 @@
  async function removePassword(){const status=dialog.querySelector('.settings-status');try{if(!(await verify(dialog.querySelector('#current-password').value))){status.textContent='Nhập đúng mật khẩu hiện tại để gỡ.';return;}localStorage.removeItem(passwordKey);draw();dialog.querySelector('.settings-status').textContent='Đã gỡ mật khẩu.';}catch{status.textContent='Không thể gỡ mật khẩu trên trình duyệt này.';}}
  const solutionDialog=document.querySelector('#solution-dialog');
  let solutionFocus;
- function revealSolutions(){if(!state.practice||!state.submitted||!hasProvidedAnswers(state.practice.questions))return;state.solutionsVisible=true;renderPractice();app.querySelector('.result h2').focus();}
+ function revealSolutions(){if(!state.practice||!state.submitted||!state.practice.questions.some(q=>q.answerSource==='user'&&validResponse(q,q.answer)))return;state.solutionsVisible=true;renderPractice();app.querySelector('.result h2').focus();}
  document.addEventListener('click',e=>{
  if(e.target.closest('[data-action="solutions"]')){
- if(!state.practice||!state.submitted||!hasProvidedAnswers(state.practice.questions))return;
+ if(!state.practice||!state.submitted||!state.practice.questions.some(q=>q.answerSource==='user'&&validResponse(q,q.answer)))return;
  if(!read(passwordKey)){revealSolutions();return;}
  solutionFocus=document.activeElement;
  solutionDialog.innerHTML=`<button class="icon-button dialog-close close" data-close-solutions aria-label="Đóng">×</button><h2 id="solution-title">Xem đáp án và lời giải</h2><p class="settings-note">Phụ huynh nhập mật khẩu để cùng bé xem lại bài.</p><form id="unlock-solutions"><label for="solution-password">Mật khẩu phụ huynh</label><input id="solution-password" type="password" autocomplete="current-password" required><p class="settings-status" role="status"></p><button class="primary-button primary">Xem lời giải</button></form>`;

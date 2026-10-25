@@ -296,3 +296,7 @@ Ngân hàng hiện có 13 đề, 325 câu: 7 đề vòng loại (175 câu trắc
 Nhập 25 câu tự luận, phần từ vựng Việt và 9 SVG theo 3 ảnh chủ dự án gửi. Giữ dãy ký hiệu, phép cộng dọc, biểu thức, lưới vuông, khối lập phương và các điểm trên đoạn thẳng. Phân loại đủ 25 câu; bổ sung chủ đề Suy luận quan hệ gia đình, Số ngày trong tháng, Điền dấu nhân và trừ. Giữ nguyên cả chỗ ghi “1-digit odd number” trong từ vựng câu 14 theo ảnh nguồn; nội dung tiếng Anh hỏi số lẻ có hai chữ số.
 
 Ngân hàng hiện có 14 đề, 350 câu: 7 đề vòng loại và 7 đề quốc gia; 70 câu mỗi nhóm lớn, không còn câu Chưa phân loại. Không thay 325 câu đã có, không tự tạo lựa chọn/đáp án/lời giải. Đã kiểm tra nhập/nộp/lưu/tải lại, hình, luyện trộn hai loại câu và 11 giao diện ở máy tính/điện thoại.
+
+## Đáp án Đề vòng loại 1
+
+Nhập 25 đáp án và lời giải đúng theo 4 ảnh chủ dự án cung cấp, kèm 8 hình minh họa lời giải. Chỉ các câu này có answerSource=user; các đề khác tiếp tục chờ đáp án. Luyện theo chủ đề dùng cùng câu nguồn nên nhận đúng khóa/lời giải dù đảo thứ tự. Bài chủ đề chưa đủ khóa vẫn chờ chấm toàn bài, nhưng phụ huynh có thể mở lời giải của riêng các câu đã có khóa. Giữ cơ chế mật khẩu phụ huynh, không hiển thị lời giải trước khi nộp. Đã kiểm tra chấm 25/25, mật khẩu sai/đúng, tải lại/làm lại, bài trộn và 11 giao diện.
