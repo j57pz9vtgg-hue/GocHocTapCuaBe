@@ -403,3 +403,9 @@ Gộp thêm “Bài toán tính thời gian” vào nhóm nhỏ5 “Ngày, thán
 ## Gộp quy luật bảng số vào nhóm1
 
 Gộp4 câu Quy luật trong bảng số vào nhóm nhỏ1 “Quy luật dãy số”, tổng21 câu. Giữ id nhóm1, chuyển tiếp nhóm cũ theo id câu nguồn để giữ bài làm khi mở/tải lại. Kiểm tra chấm21/21, xem21 lời giải và máy tính/điện thoại; không thay câu hỏi/bảng/khóa/lời giải.
+
+## Bộ chọn và tìm kiếm cùng hàng
+
+Đưa4 ô chọn lớp/chương trình/môn/nội dung luyện tập vào cùng thanh với Tìm bài tập và Cài đặt. Máy tính hiển thị6 điều khiển trên cùng hàng; màn hình vừa tách logo riêng, điện thoại xếp bộ chọn2 cột. Giữ nền/ảnh của từng giao diện, một nút Cài đặt và toàn bộ dữ liệu/bài làm.
+
+Browser plugin not available; dùng Playwright/Chromium trên localhost. Đã kiểm tra11 giao diện tại12 độ rộng từ320 đến1892px, không tràn ngang/chồng điều khiển/che logo, các ô cùng hàng từ761px. Luồng chọn lớp/nội dung → tìm chủ đề → tải lại giữ tìm kiếm → mở Cài đặt → mở đề hoạt động đúng, không có lỗi console/runtime. Ảnh kiểm tra lưu ngoài repo.

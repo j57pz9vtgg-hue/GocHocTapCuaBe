@@ -251,3 +251,43 @@
 .paper-world .paper-question legend>span{white-space:pre-line}
 
 .paper-world .paper-explanation{white-space:pre-line;overflow-wrap:anywhere;font-family:"Times New Roman",Times,serif;font-size:16px;line-height:1.65}
+
+/* One header row for catalog filters, search and settings; wrap on small screens. */
+#site-shell .catalog-masthead{display:grid;grid-template-columns:270px minmax(0,1fr);column-gap:24px;align-items:start;padding:18px 24px 0}
+#site-shell .catalog-masthead>.site-header,#site-shell .catalog-masthead .header-inner{display:contents}
+#site-shell .catalog-masthead .brand{position:static;inset:auto;grid-column:1;grid-row:1;align-self:center;width:auto;max-width:270px;margin:0;padding:0;transform:none}
+#site-shell .catalog-masthead>.header-tools{position:static;inset:auto;grid-column:2;grid-row:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) minmax(0,1fr) minmax(0,1.75fr) minmax(0,1.5fr) 118px;align-items:end;gap:10px;width:auto;max-width:none;height:auto;margin:0;transform:none}
+#site-shell .header-tools>.catalog-filter-bar,#site-shell .header-tools .study-filters{display:contents}
+#site-shell .header-tools .filter-field{display:grid;gap:4px;align-self:end;min-width:0}
+#site-shell .header-tools .filter-field label{display:block;font-size:11px;line-height:1.4;margin:0 0 0 4px;min-height:0}
+#site-shell .header-tools .filter-select select{height:44px;font-size:12px;padding-left:10px;padding-right:27px;background:#fffffff2}
+#site-shell .header-tools .filter-select>svg{top:14px;right:9px}
+#site-shell .catalog-masthead>.header-tools .search-box{height:44px;width:100%;padding-inline:12px;align-self:end}
+#site-shell .catalog-masthead>.header-tools>.settings-control{grid-column:6;grid-row:1;align-self:end}
+#site-shell .catalog-masthead>.adventure-banner{grid-column:1/-1;grid-row:2;width:calc(100% + 48px);margin-inline:-24px}
+@media(max-width:1099px){
+ #site-shell .catalog-masthead{grid-template-columns:minmax(0,1fr);row-gap:16px}
+ #site-shell .catalog-masthead>.header-tools{grid-column:1;grid-row:2}
+ #site-shell .catalog-masthead>.adventure-banner{grid-row:3}
+}
+@media(max-width:760px){
+ #site-shell .catalog-masthead{padding:16px 16px 0;row-gap:14px}
+ #site-shell .catalog-masthead>.header-tools{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ #site-shell .header-tools .filter-field label{font-size:11px;line-height:1.5}
+ #site-shell .catalog-masthead>.header-tools .search-box{grid-column:1;grid-row:3}
+ #site-shell .catalog-masthead>.header-tools>.settings-control{grid-column:2;grid-row:3;justify-self:end}
+ #site-shell .catalog-masthead>.adventure-banner{width:calc(100% + 32px);margin-inline:-16px}
+}
+#site-shell .catalog-masthead>.header-tools{grid-template-rows:auto}
+#site-shell .header-tools .filter-field{grid-row:1}
+#site-shell .catalog-masthead>.header-tools .search-box{grid-column:5;grid-row:1;justify-self:stretch}
+@media(max-width:760px){#site-shell .catalog-masthead>.header-tools{grid-template-rows:repeat(3,auto)}#site-shell .header-tools .filter-field{grid-row:auto}#site-shell .catalog-masthead>.header-tools .search-box{grid-column:1;grid-row:3}}
+:root #site-shell .catalog-masthead .brand{position:static;inset:auto;transform:none}
+/* Keep the original hero as one backdrop behind the unified toolbar. */
+#site-shell .catalog-masthead{position:relative;min-height:195px;align-content:start;grid-template-columns:300px minmax(0,1fr)}
+:root #site-shell .catalog-masthead .brand{max-width:300px;align-self:start;z-index:4}
+#site-shell .catalog-masthead .brand>span:first-of-type{font-size:28px;line-height:1.15}
+#site-shell .catalog-masthead>.adventure-banner{position:absolute;inset:0;grid-column:auto;grid-row:auto;width:100%;height:100%;min-height:0;margin:0;z-index:0}
+#site-shell .catalog-masthead .banner-message{top:60%}
+@media(max-width:1099px){#site-shell .catalog-masthead{grid-template-columns:minmax(0,1fr);min-height:220px;padding-bottom:18px}}
+@media(max-width:760px){#site-shell .catalog-masthead{min-height:320px;padding-bottom:16px}#site-shell .catalog-masthead .brand>span:first-of-type{font-size:25px}#site-shell .catalog-masthead .banner-message{display:none}}
