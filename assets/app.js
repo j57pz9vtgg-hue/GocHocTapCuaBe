@@ -202,6 +202,23 @@ for(const [oldKey,oldRecord] of Object.entries(attempts)){
  attempts[newKey]={questionIds:ids,answers,startedAt:starts.length?Math.min(...starts):Date.now(),updatedAt:Date.now(),submitted:false,mergedTopicProgress:true};
  oldRecord.migratedTo=newKey;topicAttemptsMigrated=true;
 }
+// Return the three owner-identified questions to Number Theory without losing saved responses.
+const returnedNumberTheoryIds=['timo-grade2-qualifying-05:15','timo-grade2-national-05:15','timo-grade2-national-06:15'];
+const returnTargetKey='2|TIMO|Toán|Luyện theo chủ đề|timo-group-3-unclassified';
+for(const [sourceKey,returnSource] of Object.entries(attempts)){
+ if(sourceKey===returnTargetKey||!sourceKey.startsWith('2|TIMO|Toán|Luyện theo chủ đề|')||!Array.isArray(returnSource?.questionIds)||returnSource.returnedNumberTheoryQuestions||!returnedNumberTheoryIds.some(id=>returnSource.questionIds.includes(id)))continue;
+ const target=attempts[returnTargetKey],ids=Array.isArray(target?.questionIds)?target.questionIds.slice():[],answers={...target?.answers};
+ const topic=getTimoTopicGroups('2').find(g=>g.id==='timo-group-3')?.topics.find(t=>t.id==='timo-group-3-unclassified');
+ let copied=false;
+ for(const id of returnedNumberTheoryIds){
+  const oldIndex=returnSource.questionIds.indexOf(id),question=topic?.entries.find(e=>e.id===id)?.question,value=returnSource.answers?.[oldIndex];
+  if(!question||!validResponse(question,value))continue;
+  let index=ids.indexOf(id);if(index<0){index=ids.length;ids.push(id);}
+  if(!validResponse(question,answers[index])){answers[index]=value;copied=true;}
+ }
+ if(copied)attempts[returnTargetKey]={...target,questionIds:ids,answers,startedAt:target?.startedAt||returnSource.startedAt||Date.now(),updatedAt:Date.now(),submitted:false,mergedTopicProgress:true};
+ returnSource.returnedNumberTheoryQuestions=true;topicAttemptsMigrated=true;
+}
 if(topicAttemptsMigrated)try{localStorage.setItem(attemptStorageKey,JSON.stringify(attempts));}catch{}
 
 for(const [savedKey,record] of Object.entries(attempts)){

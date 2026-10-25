@@ -149,3 +149,5 @@ Theo yêu cầu mới, toàn bộ câu hỏi tiếng Anh trong đề/luyện ch�
 Theo yêu cầu tiếp theo, trên máy tính từ1200px tên website và thanh tên đề nằm cùng hàng đầu trang. Tờ đề giữ khổ A4 và thẳng hai mép với thanh tên đề; dưới1200px tiếp tục xếp hàng thích ứng để không chồng lấn. Giữ hình sách gốc và chức năng về góc luyện tập.
 
 Theo yêu cầu mới, cố định toàn bộ hàng đầu trang làm bài khi cuộn: sách/tên website và thanh tên đề/tiến độ/thời gian/kết quả/các nút luôn hiện. Dùng sticky giữ bố cục A4 và vị trí ban đầu; màn hình nhỏ ghim hai phần theo chiều dọc, không chồng lên nhau. Không đổi chức năng điều khiển.
+
+Theo yêu cầu mới, kiểm tra73 câu Số học và chuyển lại đúng3 câu gốc của Lý thuyết số: Đề vòng loại05 câu15, Đề quốc gia05 câu15 và Đề quốc gia06 câu15. Bỏ practiceTopicGroup=timo-group-2 trên3 câu; mỗi nhóm lớn hiện có70 câu, vẫn Chưa phân loại. Chỉ đổi phân nhóm luyện tập, giữ nguyên câu/khóa/lời giải/nguồn; chép câu trả lời đã lưu của3 câu sang nhóm3 theo id, giữ bản ghi nguồn làm dự phòng và ưu tiên đáp án đang lưu ở nhóm đích.

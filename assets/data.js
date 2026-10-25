@@ -1889,8 +1889,7 @@ const officialPapers = [
         "imageAlt": "Chỗ trống cộng 27 bằng 19 cộng 48 trừ 23",
         "answer": 0,
         "answerSource": "user",
-        "explanation": "X + 27 = 19 + 48 − 23\nX + 27 = 44\nX = 44 − 27\nX = 17.\nĐáp số: A.",
-        "practiceTopicGroup": "timo-group-2"
+        "explanation": "X + 27 = 19 + 48 − 23\nX + 27 = 44\nX = 44 − 27\nX = 17.\nĐáp số: A."
       },
       {
         "number": 16,
@@ -4184,7 +4183,6 @@ const officialPapers = [
         "options": [],
         "image": "./assets/papers/timo-grade2-national-05/q15.f4934635345e.svg",
         "imageAlt": "Phép cộng dọc BA cộng CB bằng162",
-        "practiceTopicGroup": "timo-group-2",
         "answer": "15",
         "answerSource": "user",
         "explanation": "Trường hợp 1: Hàng đơn vị là phép cộng không nhớ.\nKhi đó, A + B = 2, suy ra B là 0, 1 hoặc 2.\nMà B + C = 16 nên C là số có 2 chữ số (Không thỏa mãn).\nTrường hợp 2: Hàng đơn vị là phép cộng có nhớ 1.\nKhi đó, A + B = 12.\nDựa vào hàng chục và hàng đơn vị, ta có: B + C + 1 = 16.\nSuy ra B + C = 15.\nĐáp số: 15."
@@ -4480,7 +4478,6 @@ const officialPapers = [
         "options": [],
         "image": "./assets/papers/timo-grade2-national-06/q15.f641b378befd.svg",
         "imageAlt": "Phép cộng dọc BA cộng AB bằngC87",
-        "practiceTopicGroup": "timo-group-2",
         "answer": "17",
         "answerSource": "user",
         "explanation": "Trường hợp 1: Hàng đơn vị là phép cộng không nhớ.\nXét hàng đơn vị, ta có A + B = 7.\nMà ở hàng chục, ta có A + B = C8 (Loại).\nTrường hợp 2: Hàng đơn vị là phép cộng có nhớ 1.\nXét hàng đơn vị, ta có A + B = 17.\nXét hàng chục và hàng trăm, ta có B + A + 1 = C8.\nTa tìm được A = 8, B = 9, C = 1 hoặc A = 9, B = 8, C = 1 (Thỏa mãn).\nVậy A + B = 17.\nĐáp số: 17."
