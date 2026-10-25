@@ -282,3 +282,10 @@ Nhập đủ 25 câu tự luận, phần từ vựng Việt và 10 SVG từ 4 �
 ## Đề quốc gia 5 — TIMO lớp 2
 
 Nhập 25 câu tự luận và phần từ vựng Việt, 10 SVG theo 4 ảnh gốc. Giữ chính xác các dấu # trên 4 lưới, hình đoạn thẳng, lưới ô vuông, tầng khối và biểu thức. Phân loại đầy đủ; bổ sung dạng cộng chữ số chưa biết trong Lý thuyết số, chia hình bằng đường thẳng, quan hệ chữ số và chọn nhóm không phân biệt thứ tự. Không tạo lựa chọn/đáp án. Kiểm tra đủ luồng nhập/nộp/lưu/tải lại và chủ đề trộn trên 11 giao diện.
+
+
+## Đề quốc gia 6 — TIMO lớp 2
+
+Nhập đủ 25 câu tự luận và phần từ vựng Việt, 12 SVG theo 4 ảnh gốc. Giữ các dòng hội thoại, ký hiệu ※, dãy hình, lưới vuông, phép cộng dọc và tầng khối. Phân loại đủ các câu; bổ sung dạng suy luận chữ số/vị trí, điền dấu nhân và cộng, độ dài cạnh tam giác, chọn và sắp xếp có thứ tự. Không tạo lựa chọn hoặc đáp án. Đã kiểm tra nhập/nộp/lưu/tải lại, chủ đề trộn và 11 giao diện.
+
+Ngân hàng hiện có 13 đề, 325 câu: 7 đề vòng loại (175 câu trắc nghiệm) và 6 đề quốc gia (150 câu tự luận). Toàn bộ câu đã được gắn chủ đề nhỏ phù hợp; nội dung 300 câu trước giữ nguyên khi thêm Đề quốc gia 6. Các đề chưa có khóa trả lời của chủ dự án tiếp tục hiển thị “Chờ đáp án”.

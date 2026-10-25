@@ -3576,6 +3576,241 @@ const officialPapers = [
         "subtopic": "Lập hai số có hiệu nhỏ nhất"
       }
     ]
+  },
+  {
+    "id": "timo-grade2-national-06",
+    "title": "Đề quốc gia 06",
+    "sourceTitle": "ĐỀ SỐ 6 — VÒNG QUỐC GIA TIMO",
+    "program": "TIMO",
+    "subject": "Toán",
+    "grade": "2",
+    "mode": "Đề quốc gia",
+    "questions": [
+      {
+        "number": 1,
+        "english": "Alice wrote a 2-digit number on a piece of paper and asked Bobby to guess it.\nBobby asked: “Is the number 68?”\nAlice replied: “One of the digits is correct, the position of that digit is wrong.”\nBobby asked again: “Is the number 17?”\nAlice replied: “One of the digits is correct, the position of that digit is wrong.”\nBobby asked again: “Is the number 79?”\nAlice said: “One of the digits is correct, the position of that digit is correct.”\nWhat is the number written by Alice?",
+        "translation": "2-digit number: Số có 2 chữ số; Digit: Chữ số; Number: Số; The position of that digit: Vị trí của chữ số đó; Correct: Đúng; Wrong: Sai.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Suy luận chữ số và vị trí"
+      },
+      {
+        "number": 2,
+        "english": "When Bruce was born, mum was 29 years old. When Bruce will be 28 years old, how old will mum be?",
+        "translation": "Born: Sinh ra; Years old: Tuổi.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tuổi hiện tại và tương lai"
+      },
+      {
+        "number": 3,
+        "english": "According to the pattern shown below, what is the number in the blank?",
+        "translation": "Pattern: Quy luật; Number: Số; Blank: Chỗ trống.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quy luật dãy số",
+        "image": "./assets/papers/timo-grade2-national-06/q03.c45f7452a576.svg",
+        "imageAlt": "12, 15, 21, 30, 42, 57, __"
+      },
+      {
+        "number": 4,
+        "english": "According to the pattern below, what is the English letter in the space?",
+        "translation": "Pattern: Quy luật; English letter: Chữ cái tiếng Anh; Space: Chỗ trống.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quy luật dãy số",
+        "image": "./assets/papers/timo-grade2-national-06/q04.11f8a969885d.svg",
+        "imageAlt": "P, M, J, G, __"
+      },
+      {
+        "number": 5,
+        "english": "According to the pattern below, how many ※ is / are there in the 7th Group?",
+        "translation": "Pattern: Quy luật; 7th Group: Nhóm thứ 7.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quy luật sắp xếp hình",
+        "image": "./assets/papers/timo-grade2-national-06/q05.a80d78c09a3c.svg",
+        "imageAlt": "Bốn hình dạng thoi tạo bởi các ô vuông, các ký hiệu ※ xen kẽ đúng vị trí trong ảnh"
+      },
+      {
+        "number": 6,
+        "english": "Find the value of 37 + 13 − 68 − 13 + 51.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 7,
+        "english": "Find the value of 24 + 62 + 16 + 29 + 8.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 8,
+        "english": "Find the value of 1 × 113 + 2 × 113 + 3 × 113 + 4 × 113.",
+        "translation": "Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm giá trị"
+      },
+      {
+        "number": 9,
+        "english": "If A and B are both 1-digit numbers, find the value of B.",
+        "translation": "1-digit number: Số có 1 chữ số; Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Phép cộng với chữ số chưa biết",
+        "image": "./assets/papers/timo-grade2-national-06/q09.3224f159759a.svg",
+        "imageAlt": "Phép cộng dọc AA cộng AB bằng72"
+      },
+      {
+        "number": 10,
+        "english": "What is the number in the blank if the equation below is correct?",
+        "translation": "Number: Số; Blank: Chỗ trống; Equation: Phép tính; Correct: Đúng.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Tìm số bị che trong phép tính",
+        "image": "./assets/papers/timo-grade2-national-06/q10.e93b1845ff09.svg",
+        "imageAlt": "Chỗ trống chia2 cộng9 bằng19"
+      },
+      {
+        "number": 11,
+        "english": "How many 2-digit even number(s) that is / are multiples of 3 is / are there?",
+        "translation": "2-digit even number: Số chẵn có 2 chữ số; Multiple of 3: Bội của 3.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đếm số theo điều kiện"
+      },
+      {
+        "number": 12,
+        "english": "Fill the lines with ‘+’ and ‘−’ to make the equation below correct. (Write down the complete equation on the answer sheet)",
+        "translation": "Line: Dòng kẻ; Equation: Phép tính; Correct: Đúng; Write down the complete equation on the answer sheet: Viết phép tính hoàn chỉnh vào phiếu trả lời.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Điền dấu cộng và trừ",
+        "image": "./assets/papers/timo-grade2-national-06/q12.e7a7327e1567.svg",
+        "imageAlt": "15 __ 8 __ 6 __ 1 = 16"
+      },
+      {
+        "number": 13,
+        "english": "Fill the lines with ‘×’ and ‘+’ to make the equation below correct. (Write down the complete equation on the answer sheet)",
+        "translation": "Line: Dòng kẻ; Equation: Phép tính; Correct: Đúng; Write down the complete equation on the answer sheet: Viết phép tính hoàn chỉnh vào phiếu trả lời.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Điền dấu nhân và cộng",
+        "image": "./assets/papers/timo-grade2-national-06/q13.eed3f7e4c7ea.svg",
+        "imageAlt": "6 __ 4 __ 3 __ 2 = 29"
+      },
+      {
+        "number": 14,
+        "english": "If A is odd number, the result of A × (A + 1) × (A + 2) is odd or even?",
+        "translation": "Odd: Lẻ; Determine: Xác định; Result: Kết quả; Even: Chẵn.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Nhận biết kết quả chẵn"
+      },
+      {
+        "number": 15,
+        "english": "If A and B are both 1-digit numbers and C ≠ 0, find the value of A + B.",
+        "translation": "1-digit number: Số có 1 chữ số; Value: Giá trị.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Phép cộng với chữ số chưa biết",
+        "image": "./assets/papers/timo-grade2-national-06/q15.f641b378befd.svg",
+        "imageAlt": "Phép cộng dọc BA cộng AB bằngC87"
+      },
+      {
+        "number": 16,
+        "english": "According to the pattern below, what is the figure in the space (“__”)?",
+        "translation": "Pattern: Quy luật; Figure: Hình vẽ; Space: Chỗ trống.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quy luật dãy hình",
+        "image": "./assets/papers/timo-grade2-national-06/q16.a2856d8ef542.svg",
+        "imageAlt": "Dãy chấm tròn đặc, tam giác đặc, chấm tròn đặc, hình vuông rỗng và một chỗ trống theo ảnh"
+      },
+      {
+        "number": 17,
+        "english": "How many square(s) is / are there in the figure below?",
+        "translation": "Square: Hình vuông; Figure: Hình vẽ.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Đếm hình vuông",
+        "image": "./assets/papers/timo-grade2-national-06/q17.c6b3f8b62cc1.svg",
+        "imageAlt": "Lưới ô vuông có phần nhô trên phải và hai nhánh dưới, giữ từng ô như ảnh"
+      },
+      {
+        "number": 18,
+        "english": "The lengths of two sides for a triangle are 6cm and 10cm respectively and all length are integers. Find the maximum length of the other length.",
+        "translation": "Length: Độ dài; Side: Cạnh; Triangle: Hình tam giác; Integer: Số nguyên; Maximum length: Độ dài lớn nhất.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Độ dài các cạnh tam giác"
+      },
+      {
+        "number": 19,
+        "english": "At least how many squares can be seen if viewing the figure below from side?",
+        "translation": "At least: Ít nhất; Square: Hình vuông; Figure: Hình vẽ; From side: Từ bên cạnh.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Quan sát và đếm khối lập phương",
+        "image": "./assets/papers/timo-grade2-national-06/q19.6c6d6b504881.svg",
+        "imageAlt": "Khối trắng xám dạng hai cột cao nối bằng các khối đáy và hàng trước ba ô, theo góc nhìn bên cạnh của ảnh"
+      },
+      {
+        "number": 20,
+        "english": "At most how many pieces can be formed by using 4 lines to cut a circle?",
+        "translation": "At most: Nhiều nhất; Pieces: Mảnh; Formed by: Tạo ra bởi; Line: Đường thẳng; Circle: Đường tròn.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Chia hình bằng đường thẳng"
+      },
+      {
+        "number": 21,
+        "english": "Choose 2 digits, without repetition, from 0, 3, 5, 7, 8 to form 2-digit numbers. Of these 2-digit numbers, how many of them are odd number?",
+        "translation": "Digits: Chữ số; Without repetition: Không lặp lại; 2-digit numbers: Số có 2 chữ số; Odd number: Số lẻ.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Lập số lẻ không lặp chữ số"
+      },
+      {
+        "number": 22,
+        "english": "What is the greatest 4-digit even number by using 0, 3, 5, 7 and 8? (Each digit can only be used once).",
+        "translation": "Greatest: Lớn nhất; 4-digit even number: Số chẵn có 4 chữ số; Each digit can only be used once: Mỗi chữ số chỉ được sử dụng 1 lần.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Lập số lớn nhất và nhỏ nhất"
+      },
+      {
+        "number": 23,
+        "english": "Pick 3 from 9 competitors to get gold, silver, bronze reward. How many different combination(s) is / are there?",
+        "translation": "Competitor: Vận động viên; Reward: Giải thưởng; Different combinations: Sự lựa chọn khác nhau.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Chọn và sắp xếp có thứ tự"
+      },
+      {
+        "number": 24,
+        "english": "Chris has ten $1 coins, nine $2 coins and three $5 coins, at most how many book(s) can he buy given that each book costs $4?",
+        "translation": "Coin: Đồng xu; Each: Mỗi; At most: Nhiều nhất.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Mua hàng theo số tiền có"
+      },
+      {
+        "number": 25,
+        "english": "Which number below is the greatest?",
+        "translation": "Number: Số; Greatest: Lớn nhất.",
+        "responseType": "text",
+        "options": [],
+        "subtopic": "Sắp xếp số và xác định thứ hạng",
+        "image": "./assets/papers/timo-grade2-national-06/q25.0ec5a6488fb1.svg",
+        "imageAlt": "Các số20196951;20186421;2020345;20198462"
+      }
+    ]
   }
 ];
 function getPapers(program, subject, grade, mode) {

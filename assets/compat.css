@@ -247,3 +247,5 @@
 .paper-world .free-answer-input:focus-visible{outline:2px solid #008fba;outline-offset:2px}
 .paper-world .free-answer-input:disabled{opacity:1;background:#f5f9ff;color:#29496b}
 .paper-world .provided-answer{font:400 16px/1.5 'Times New Roman',Times,serif;color:#1d6a44}
+/* Preserve the owner-provided dialogue lines in national paper 6. */
+.paper-world .paper-question legend>span{white-space:pre-line}
