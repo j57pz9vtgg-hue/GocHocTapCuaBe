@@ -305,3 +305,7 @@ Nhập 25 đáp án và lời giải đúng theo 4 ảnh chủ dự án cung c�
 ## Đáp án Đề vòng loại 2
 
 Nhập 25 khóa và lời giải theo 4 ảnh chủ dự án cung cấp, kèm 7 SVG minh họa. Khóa/lời giải áp dụng cùng câu nguồn trong bài luyện theo chủ đề. Giữ nguyên đề, lựa chọn và phân loại. Kiểm tra chấm điểm, mở lời giải qua mật khẩu, bài luyện trộn khóa đã có/chưa có, lưu/tải lại/làm lại và 11 giao diện.
+
+## Đáp án Đề vòng loại 3
+
+Nhập 25 khóa/lời giải và 6 SVG minh họa theo 4 ảnh chủ dự án gửi, giữ cả các cách giải thay thế và chú thích mặt khuất/khối khuất. Áp dụng cùng câu nguồn vào luyện chủ đề. Đã kiểm tra chấm25/25, hiển thị đủ25 lời giải, mật khẩu sai/đúng, ảnh, lưu/tải lại/làm lại, bài trộn và11 giao diện. Không thay đề/lựa chọn/phân loại hoặc khóa của các đề trước.

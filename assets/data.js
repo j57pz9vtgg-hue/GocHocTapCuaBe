@@ -906,7 +906,10 @@ const officialPapers = [
         ],
         "imageAlt": "Dãy 2, 5, 9, 14, 20, dấu hỏi, …",
         "image": "./assets/papers/timo-grade2-qualifying-03/q01-sequence.c3c1b01c42eb.svg",
-        "subtopic": "Quy luật dãy số"
+        "subtopic": "Quy luật dãy số",
+        "answer": 1,
+        "answerSource": "user",
+        "explanation": "Quy luật: Khoảng cách giữa 2 số liên tiếp trong dãy tăng dần 1 đơn vị.\n2 + 3 = 5; 5 + 4 = 9; 9 + 5 = 14; 14 + 6 = 20; …\nSố cần tìm là: 20 + 7 = 27.\nĐáp số: B."
       },
       {
         "number": 2,
@@ -918,7 +921,10 @@ const officialPapers = [
           "26",
           "27"
         ],
-        "subtopic": "Thêm và gộp số lượng"
+        "subtopic": "Thêm và gộp số lượng",
+        "answer": 2,
+        "answerSource": "user",
+        "explanation": "Lớp của Jennie có tổng số học sinh là: 15 + 12 = 27 (học sinh).\nVậy Jennie có 26 người bạn cùng lớp (không tính Jennie).\nĐáp số: C."
       },
       {
         "number": 3,
@@ -930,7 +936,10 @@ const officialPapers = [
           "11",
           "9"
         ],
-        "subtopic": "Tuổi hiện tại và tương lai"
+        "subtopic": "Tuổi hiện tại và tương lai",
+        "answer": 3,
+        "answerSource": "user",
+        "explanation": "Tuổi của Linda bây giờ là: 15 − 6 = 9 (tuổi).\nĐáp số: D."
       },
       {
         "number": 4,
@@ -944,7 +953,10 @@ const officialPapers = [
         ],
         "imageAlt": "Bốn nhóm mặt trời trong các lưới ô vuông, giữ vị trí theo ảnh của nhóm 1 đến nhóm 4.",
         "image": "./assets/papers/timo-grade2-qualifying-03/q04-suns.fe9df3c857f5.svg",
-        "subtopic": "Quy luật sắp xếp hình"
+        "subtopic": "Quy luật sắp xếp hình",
+        "answer": 1,
+        "answerSource": "user",
+        "explanation": "Cách 1: Quy luật: Số hình mặt trời trong nhóm thứ n là 2 × n + 2.\nNhóm 1: có 2 × 1 + 2 = 4 hình mặt trời.\nNhóm 2: có 2 × 2 + 2 = 6 hình mặt trời.\nNhóm 3: có 2 × 3 + 2 = 8 hình mặt trời.\nNhóm 4: có 2 × 4 + 2 = 10 hình mặt trời.\n…\nVậy nhóm 10 có 2 × 10 + 2 = 22 hình mặt trời.\nCách 2: Số hình mặt trời trong các nhóm lần lượt là: 4, 6, 8, 10, …\nQuy luật: Các số trong dãy tăng dần 2 đơn vị.\nTa liệt kê và tìm được số thứ 10 trong dãy là 22.\nĐáp số: B."
       },
       {
         "number": 5,
@@ -957,7 +969,10 @@ const officialPapers = [
           "Sunday / Chủ Nhật"
         ],
         "optionColumns": 2,
-        "subtopic": "Các ngày trong tuần"
+        "subtopic": "Các ngày trong tuần",
+        "answer": 3,
+        "answerSource": "user",
+        "explanation": "Ngày hôm kia là thứ Hai nên hôm qua là thứ Ba. Hôm nay là thứ Tư.\n1 ngày nữa là thứ Năm. 2 ngày nữa là thứ Sáu. 3 ngày nữa là thứ Bảy.\nVậy 4 ngày nữa là Chủ nhật.\nĐáp số: D."
       },
       {
         "number": 6,
@@ -969,7 +984,10 @@ const officialPapers = [
           "37",
           "27"
         ],
-        "subtopic": "Tìm giá trị"
+        "subtopic": "Tìm giá trị",
+        "answer": 1,
+        "answerSource": "user",
+        "explanation": "12 + 6 + 7 + 13 = (12 + 6) + (7 + 13) = 18 + 20 = 38.\nĐáp số: B."
       },
       {
         "number": 7,
@@ -983,7 +1001,10 @@ const officialPapers = [
         ],
         "imageAlt": "11 cộng hình chiếc cặp màu xanh bằng 36 trừ 12.",
         "image": "./assets/papers/timo-grade2-qualifying-03/q07-backpack.d7a05fa4de7c.svg",
-        "subtopic": "Tìm số bị che trong phép tính"
+        "subtopic": "Tìm số bị che trong phép tính",
+        "answer": 2,
+        "answerSource": "user",
+        "explanation": "Ta có:\n11 + 🎒 = 36 − 12\n11 + 🎒 = 24\n🎒 = 24 − 11\n🎒 = 13.\nĐáp số: C."
       },
       {
         "number": 8,
@@ -995,7 +1016,10 @@ const officialPapers = [
           "6",
           "3"
         ],
-        "subtopic": "Tìm giá trị"
+        "subtopic": "Tìm giá trị",
+        "answer": 1,
+        "answerSource": "user",
+        "explanation": "10 − 9 + 8 − 7 + 6 − 5 + 4 − 3 + 2 − 1\n= (10 − 9) + (8 − 7) + (6 − 5) + (4 − 3) + (2 − 1)\n= 1 + 1 + 1 + 1 + 1 = 5.\nĐáp số: B."
       },
       {
         "number": 9,
@@ -1009,7 +1033,12 @@ const officialPapers = [
         ],
         "imageAlt": "Các hình ngũ giác: dấu hỏi, mũi tên trừ 10, ô trống, mũi tên cộng 7, ô trống, mũi tên cộng 6, số 23.",
         "image": "./assets/papers/timo-grade2-qualifying-03/q09-operations.35d1a500c149.svg",
-        "subtopic": "Sơ đồ chuỗi phép tính"
+        "subtopic": "Sơ đồ chuỗi phép tính",
+        "explanationImage": "./assets/solutions/timo-grade2-qualifying-03/q09.fbca843bd87c.svg",
+        "explanationImageAlt": "Sơ đồ?,A,B,23 cùng các phép tính−10,+7,+6 theo lời giải",
+        "answer": 3,
+        "answerSource": "user",
+        "explanation": "Ta có sơ đồ sau.\nVì B + 6 = 23 nên B = 23 − 6 = 17.\nVì A + 7 = B nên A = B − 7 = 17 − 7 = 10.\nVì ? − 10 = A nên ? = A + 10 = 10 + 10 = 20.\nVậy số cần tìm là 20.\nĐáp số: D."
       },
       {
         "number": 10,
@@ -1023,7 +1052,10 @@ const officialPapers = [
         ],
         "imageAlt": "Phép cộng dọc AB cộng B bằng 24.",
         "image": "./assets/papers/timo-grade2-qualifying-03/q10-column-addition.ac3344cba018.svg",
-        "subtopic": "Phép cộng với chữ số chưa biết"
+        "subtopic": "Phép cộng với chữ số chưa biết",
+        "answer": 0,
+        "answerSource": "user",
+        "explanation": "Trường hợp 1: Phép cộng ở hàng đơn vị là phép cộng không nhớ.\nKhi đó, B + B = 4. Suy ra, B = 2.\nAB + B = 24 nên AB = 24 − B = 24 − 2 = 22, suy ra A = 2 (loại vì A = B = 2).\nTrường hợp 2: Phép cộng ở hàng đơn vị là phép cộng có nhớ 1.\nKhi đó, B + B = 14. Suy ra, B = 7.\nAB + B = 24 nên AB = 24 − B = 24 − 7 = 14, suy ra A = 1 (thỏa mãn A khác B).\nVậy B = 7.\nĐáp số: A."
       },
       {
         "number": 11,
@@ -1035,7 +1067,10 @@ const officialPapers = [
           "8",
           "7"
         ],
-        "subtopic": "Số có hai chữ số và tổng chữ số"
+        "subtopic": "Số có hai chữ số và tổng chữ số",
+        "answer": 3,
+        "answerSource": "user",
+        "explanation": "Các số thỏa mãn yêu cầu là: 39, 48, 57, 66, 75, 84, 93.\nVậy có 7 số thỏa mãn yêu cầu.\nĐáp số: D."
       },
       {
         "number": 12,
@@ -1049,7 +1084,10 @@ const officialPapers = [
         ],
         "imageAlt": "Dãy 98, 86, 74, 62, …",
         "image": "./assets/papers/timo-grade2-qualifying-03/q12-sequence.fe25d3ed13bf.svg",
-        "subtopic": "Tìm số hạng trong dãy số"
+        "subtopic": "Tìm số hạng trong dãy số",
+        "answer": 1,
+        "answerSource": "user",
+        "explanation": "Quy luật: Các số trong dãy giảm dần 12 đơn vị.\n98 − 12 = 86; 86 − 12 = 74; 74 − 12 = 62; …\nSố thứ 5 của dãy là: 62 − 12 = 50.\nSố thứ 6 của dãy là: 50 − 12 = 38.\nĐáp số: B."
       },
       {
         "number": 13,
@@ -1063,7 +1101,10 @@ const officialPapers = [
         ],
         "imageAlt": "Năm phép tính: 12 − 3; 7 + 5; 11 − 3 + 2; 111 + 1; 20 − 17.",
         "image": "./assets/papers/timo-grade2-qualifying-03/q13-expressions.78c22541e0a4.svg",
-        "subtopic": "Nhận biết kết quả chẵn"
+        "subtopic": "Nhận biết kết quả chẵn",
+        "answer": 0,
+        "answerSource": "user",
+        "explanation": "Ta có: 12 − 3 = 9; 7 + 5 = 12; 11 − 3 + 2 = 10; 111 + 1 = 112; 20 − 17 = 3.\nTrong các kết quả ở trên, có 3 kết quả là số chẵn (là 12, 10 và 112).\nĐáp số: A."
       },
       {
         "number": 14,
@@ -1078,7 +1119,10 @@ const officialPapers = [
         "imageAlt": "4, chỗ điền dấu, 5, chỗ điền dấu, 3, chỗ điền dấu, 6 bằng 12.",
         "optionColumns": 2,
         "image": "./assets/papers/timo-grade2-qualifying-03/q14-signs.143f30da5a24.svg",
-        "subtopic": "Điền dấu cộng và trừ"
+        "subtopic": "Điền dấu cộng và trừ",
+        "answer": 2,
+        "answerSource": "user",
+        "explanation": "4 + 5 + 3 + 6 = 9 + 3 + 6 = 12 + 6 = 18 (loại).\n4 + 5 − 3 − 6 = 9 − 3 − 6 = 6 − 6 = 0 (loại).\n4 + 5 − 3 + 6 = 9 − 3 + 6 = 6 + 6 = 12 (thỏa mãn).\n4 + 5 + 3 − 6 = 9 + 3 − 6 = 12 − 6 = 6 (loại).\nVậy phép tính đúng là: 4 + 5 − 3 + 6 = 12.\nĐáp số: C."
       },
       {
         "number": 15,
@@ -1090,7 +1134,10 @@ const officialPapers = [
           "60",
           "80"
         ],
-        "subtopic": "Chuyển bớt để hai nhóm bằng nhau"
+        "subtopic": "Chuyển bớt để hai nhóm bằng nhau",
+        "answer": 0,
+        "answerSource": "user",
+        "explanation": "Tổng số bóng bay của hai bạn là: 20 + 60 = 80 (quả).\nKhi hai bạn có số bóng bay bằng nhau thì mỗi bạn có 80 : 2 = 40 (quả).\nVậy Jack cần cho John số bóng bay là: 60 − 40 = 20 (quả).\nĐáp số: A."
       },
       {
         "number": 16,
@@ -1104,7 +1151,12 @@ const officialPapers = [
         ],
         "imageAlt": "Hình vuông lớn phía trên trái, hình vuông nhỏ chia ô ở giữa và hình vuông dưới phải chồng lên nhau theo ảnh.",
         "image": "./assets/papers/timo-grade2-qualifying-03/q16-squares.da63e2c48405.svg",
-        "subtopic": "Đếm hình vuông"
+        "subtopic": "Đếm hình vuông",
+        "explanationImage": "./assets/solutions/timo-grade2-qualifying-03/q16.e20b992dc6f3.svg",
+        "explanationImageAlt": "Hình đánh số theo lời giải câu 16 do chủ dự án cung cấp",
+        "answer": 3,
+        "answerSource": "user",
+        "explanation": "Ta đánh số các mảnh ghép như dưới đây.\nCác hình vuông tạo bởi 1 mảnh ghép là: 2, 3, 4, 5 ⇒ 4 hình vuông.\nCác hình vuông tạo bởi 2 mảnh ghép là: (5, 6) ⇒ 1 hình vuông.\nCác hình vuông tạo bởi 4 mảnh ghép là: (2, 3, 4, 5) ⇒ 1 hình vuông.\nCác hình vuông tạo bởi 5 mảnh ghép là: (1, 2, 3, 4, 5) ⇒ 1 hình vuông.\nVậy trong hình đã cho có tất cả 4 + 1 + 1 + 1 = 7 hình vuông.\nĐáp số: D."
       },
       {
         "number": 17,
@@ -1124,7 +1176,12 @@ const officialPapers = [
           "./assets/papers/timo-grade2-qualifying-03/q17-choice-diamond.4834da97d3e0.svg",
           "./assets/papers/timo-grade2-qualifying-03/q17-choice-circle.87e68b438602.svg"
         ],
-        "subtopic": "Quy luật dãy hình"
+        "subtopic": "Quy luật dãy hình",
+        "explanationImage": "./assets/solutions/timo-grade2-qualifying-03/q17.0499b762d686.svg",
+        "explanationImageAlt": "Nhóm5 hình lặp lại và chỗ trống như lời giải gốc",
+        "answer": 0,
+        "answerSource": "user",
+        "explanation": "Quy luật: Nhóm gồm 5 hình (● ● △ ◆ △) lặp lại.\nVậy hình cần tìm là ●.\nĐáp số: A."
       },
       {
         "number": 18,
@@ -1138,7 +1195,12 @@ const officialPapers = [
         ],
         "imageAlt": "Cụm khối lập phương màu xanh có cột cao ở phía sau, được hỏi khi nhìn từ bên phải, như ảnh đề.",
         "image": "./assets/papers/timo-grade2-qualifying-03/q18-right-view.57b3c1f0dd37.svg",
-        "subtopic": "Quan sát và đếm khối lập phương"
+        "subtopic": "Quan sát và đếm khối lập phương",
+        "explanationImage": "./assets/solutions/timo-grade2-qualifying-03/q18.8b1cb3d4bc98.svg",
+        "explanationImageAlt": "Hình lời giải đánh số1 đến7 và mũi tên tới các mặt khuất theo ảnh gốc",
+        "answer": 2,
+        "answerSource": "user",
+        "explanation": "Ta đánh số các hình vuông thấy được khi nhìn hình đã cho từ bên phải như dưới đây.\nVậy có thể thấy được ít nhất 7 hình vuông khi nhìn hình đã cho từ bên phải.\nĐáp số: C."
       },
       {
         "number": 19,
@@ -1152,7 +1214,12 @@ const officialPapers = [
         ],
         "imageAlt": "Hình thoi lớn và các đoạn thẳng đi qua hai điểm ở giữa, sáu điểm đánh dấu như ảnh.",
         "image": "./assets/papers/timo-grade2-qualifying-03/q19-segments.eae3bf0e6e7f.svg",
-        "subtopic": "Đếm đoạn thẳng"
+        "subtopic": "Đếm đoạn thẳng",
+        "explanationImage": "./assets/solutions/timo-grade2-qualifying-03/q19.509dc5f98518.svg",
+        "explanationImageAlt": "Hình đánh số theo lời giải câu 19 do chủ dự án cung cấp",
+        "answer": 1,
+        "answerSource": "user",
+        "explanation": "Ta đánh số các đoạn thẳng như hình dưới đây.\nNgoài ra, có 2 đoạn thẳng ghép bởi 2 đoạn thẳng đơn là (5, 6), (6, 7) và 1 đoạn thẳng ghép bởi 3 đoạn thẳng đơn là (5, 6, 7).\nVậy trong hình đã cho có tất cả 11 + 2 + 1 = 14 đoạn thẳng.\nĐáp số: B."
       },
       {
         "number": 20,
@@ -1166,7 +1233,12 @@ const officialPapers = [
         ],
         "imageAlt": "Cụm khối màu trắng xám với hai cột phía sau và một khối nhô ra phía trước theo ảnh.",
         "image": "./assets/papers/timo-grade2-qualifying-03/q20-stacked-cubes.5912c10900e5.svg",
-        "subtopic": "Quan sát và đếm khối lập phương"
+        "subtopic": "Quan sát và đếm khối lập phương",
+        "explanationImage": "./assets/solutions/timo-grade2-qualifying-03/q20.5b8e8c5301de.svg",
+        "explanationImageAlt": "Hình đánh số theo lời giải câu 20 do chủ dự án cung cấp",
+        "answer": 3,
+        "answerSource": "user",
+        "explanation": "Ta đánh số các khối lập phương như hình dưới đây.\nNgoài ra, còn 1 khối lập phương ở ngay bên dưới khối lập phương số 2.\nVậy có ít nhất 8 + 1 = 9 khối lập phương trong hình đã cho.\nĐáp số: D."
       },
       {
         "number": 21,
@@ -1180,7 +1252,10 @@ const officialPapers = [
         ],
         "imageAlt": "Các số 23, 92, 12, 37, 49, 52, 88, 45.",
         "image": "./assets/papers/timo-grade2-qualifying-03/q21-numbers.5d826c965731.svg",
-        "subtopic": "Sắp xếp số và xác định thứ hạng"
+        "subtopic": "Sắp xếp số và xác định thứ hạng",
+        "answer": 2,
+        "answerSource": "user",
+        "explanation": "Các số được sắp xếp theo thứ tự từ lớn đến bé là: 92, 88, 52, 49, 45, 37, 23, 12.\nVậy số lớn thứ 3 là 52.\nĐáp số: C."
       },
       {
         "number": 22,
@@ -1192,7 +1267,10 @@ const officialPapers = [
           "10",
           "20"
         ],
-        "subtopic": "Lập số chẵn không lặp chữ số"
+        "subtopic": "Lập số chẵn không lặp chữ số",
+        "answer": 0,
+        "answerSource": "user",
+        "explanation": "Cách 1: Vì số cần tìm là số chẵn nên có hàng đơn vị là 2, 4 hoặc 6.\nNếu hàng đơn vị là 2, ta tạo được các số sau: 32, 42, 52, 62 ⇒ 4 số.\nNếu hàng đơn vị là 4, ta tạo được các số sau: 24, 34, 54, 64 ⇒ 4 số.\nNếu hàng đơn vị là 6, ta tạo được các số sau: 26, 36, 46, 56 ⇒ 4 số.\nVậy có tất cả 4 + 4 + 4 = 12 số thỏa mãn yêu cầu.\nCách 2: Có 3 cách chọn chữ số hàng đơn vị (là 2, 4, 6).\nSau đó, có 4 cách chọn chữ số hàng chục từ các chữ số còn lại.\nVậy có tất cả 3 × 4 = 12 số thỏa mãn yêu cầu.\nĐáp số: A."
       },
       {
         "number": 23,
@@ -1204,7 +1282,10 @@ const officialPapers = [
           "63",
           "83"
         ],
-        "subtopic": "Lập hai số có tổng nhỏ nhất"
+        "subtopic": "Lập hai số có tổng nhỏ nhất",
+        "answer": 2,
+        "answerSource": "user",
+        "explanation": "Để tổng nhỏ nhất thì ta chọn 2 chữ số nhỏ nhất làm hàng chục (là 2 và 3).\nCòn lại 2 chữ số 8 và 5 làm hàng đơn vị.\nKhi đó, ta có hai số 28 và 35 (hoặc 25 và 38).\nTổng nhỏ nhất cần tìm là: 28 + 35 = 25 + 38 = 63.\nĐáp số: C."
       },
       {
         "number": 24,
@@ -1218,7 +1299,10 @@ const officialPapers = [
         ],
         "imageAlt": "Siêu thị, ga tàu và rạp chiếu phim với bốn đường từ siêu thị tới ga và hai đường từ ga tới rạp theo ảnh.",
         "image": "./assets/papers/timo-grade2-qualifying-03/q24-routes.93045e82bb86.svg",
-        "subtopic": "Có bao nhiêu cách kết hợp khác nhau?"
+        "subtopic": "Có bao nhiêu cách kết hợp khác nhau?",
+        "answer": 0,
+        "answerSource": "user",
+        "explanation": "Có 4 cách chọn đường đi từ siêu thị đến ga tàu và 2 cách chọn đường đi từ ga tàu đến rạp chiếu phim.\nDo đó, có 4 × 2 = 8 cách đi từ siêu thị đến rạp chiếu phim mà phải đi qua ga tàu.\nĐáp số: A."
       },
       {
         "number": 25,
@@ -1230,7 +1314,10 @@ const officialPapers = [
           "3",
           "4"
         ],
-        "subtopic": "Mua hàng và quà tặng"
+        "subtopic": "Mua hàng và quà tặng",
+        "answer": 1,
+        "answerSource": "user",
+        "explanation": "Peter có thể mua được nhiều nhất số chiếc bút là: 25 : 5 = 5 (chiếc bút).\nTa có 5 = 2 + 2 + 1 nên có 2 lần Peter được tặng 1 cục tẩy.\nVậy Peter có thể được tặng nhiều nhất là 2 cục tẩy.\nĐáp số: B."
       }
     ]
   },
