@@ -337,3 +337,7 @@ Gộp2 câu từ nhóm11 của Lý thuyết số vào nhóm4 “Phép cộng v�
 ## Gộp nhóm tìm số còn thiếu
 
 Chuyển câu15 Đề vòng loại5 từ “Tìm số còn thiếu trong đẳng thức” của Lý thuyết số sang chủ đề nhỏ2 “Tìm số bị che trong phép tính” của Số học, tổng10 câu. Giữ nguyên đề nguồn, số câu, nội dung, lựa chọn, đáp án và lời giải. Chuyển tiếp id nhóm cũ, giữ bài làm ở cả hai nhóm khi mở và tải lại.
+
+## Nhóm4 Điền dấu
+
+Gộp câu13 Đề quốc gia6 từ “Điền dấu nhân và cộng” vào nhóm4, đổi tên chung thành “Điền dấu”, tổng13 câu. Giữ id nhóm4, số câu/nguồn/nội dung và khóa/lời giải. Bài làm từ các nhóm cũ được chuyển về nhóm chung theo id nguồn và giữ khi tải lại; kiểm tra máy tính/điện thoại.

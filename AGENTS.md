@@ -109,3 +109,5 @@ Theo yêu cầu gộp mới, chuyển câu12 Đề quốc gia7 từ “Điền d
 Chủ dự án yêu cầu gộp nhóm11 “Phép cộng với chữ số chưa biết” của Lý thuyết số vào nhóm4 cùng tên của Số học. Đây là ngoại lệ chuyển nhóm lớn được chỉ định rõ: câu15 Đề quốc gia5 và câu15 Đề quốc gia6 dùng practiceTopicGroup=timo-group-2; giữ số câu, đề nguồn và tiêu đề phần trong đề thi. Nhóm4 Số học có14 câu; id nhóm cũ chuyển về nhóm4 để giữ bài làm và trạng thái đang mở. Các câu còn lại tiếp tục phân nhóm lớn theo số gốc.
 
 Theo yêu cầu tiếp theo, gộp nhóm7 “Tìm số còn thiếu trong đẳng thức” của Lý thuyết số vào nhóm2 “Tìm số bị che trong phép tính” của Số học. Câu15 Đề vòng loại5 đổi subtopic theo tên đích và dùng practiceTopicGroup=timo-group-2, giữ nguyên câu/khóa/lời giải/nguồn. Nhóm2 có10 câu. Id nhóm cũ chuyển sang nhóm2 để giữ tiến độ.
+
+Theo yêu cầu mới, gộp “Điền dấu nhân và cộng” vào nhóm nhỏ4 của Lý thuyết số, đổi tên chung thành “Điền dấu”. Tổng13 câu. Giữ id cũ của “Điền dấu cộng và trừ”; ánh xạ các id điền dấu nhân/cộng, nhân/trừ về id này để bảo toàn bài làm. Không sửa phép tính hoặc đáp án/lời giải.

@@ -240,7 +240,7 @@ const officialPapers = [
           "3 + 9 + 5 − 1 = 8",
           "3 + 9 − 5 + 1 = 8"
         ],
-        "subtopic": "Điền dấu cộng và trừ",
+        "subtopic": "Điền dấu",
         "imageAlt": "Phép tính 3, chỗ điền dấu, 9, chỗ điền dấu, 5, chỗ điền dấu, 1 bằng 8.",
         "optionColumns": 2,
         "image": "./assets/papers/timo-grade2-qualifying-01/q14-signs.7c0e4999dbee.svg",
@@ -683,7 +683,7 @@ const officialPapers = [
         "imageAlt": "1, chỗ điền dấu, 8, chỗ điền dấu, 3, chỗ điền dấu, 7 bằng 13.",
         "optionColumns": 2,
         "image": "./assets/papers/timo-grade2-qualifying-02/q14-signs.1ded52b45aaf.svg",
-        "subtopic": "Điền dấu cộng và trừ",
+        "subtopic": "Điền dấu",
         "answer": 2,
         "answerSource": "user",
         "explanation": "Ta có: 1 + 8 − 3 + 7 = 9 − 3 + 7 = 6 + 7 = 13.\nVậy phép tính đúng là: 1 + 8 − 3 + 7 = 13.\nĐáp số: C."
@@ -1119,7 +1119,7 @@ const officialPapers = [
         "imageAlt": "4, chỗ điền dấu, 5, chỗ điền dấu, 3, chỗ điền dấu, 6 bằng 12.",
         "optionColumns": 2,
         "image": "./assets/papers/timo-grade2-qualifying-03/q14-signs.143f30da5a24.svg",
-        "subtopic": "Điền dấu cộng và trừ",
+        "subtopic": "Điền dấu",
         "answer": 2,
         "answerSource": "user",
         "explanation": "4 + 5 + 3 + 6 = 9 + 3 + 6 = 12 + 6 = 18 (loại).\n4 + 5 − 3 − 6 = 9 − 3 − 6 = 6 − 6 = 0 (loại).\n4 + 5 − 3 + 6 = 9 − 3 + 6 = 6 + 6 = 12 (thỏa mãn).\n4 + 5 + 3 − 6 = 9 + 3 − 6 = 12 − 6 = 6 (loại).\nVậy phép tính đúng là: 4 + 5 − 3 + 6 = 12.\nĐáp số: C."
@@ -1570,7 +1570,7 @@ const officialPapers = [
         "image": "./assets/papers/timo-grade2-qualifying-04/q15.cadba1a8858a.svg",
         "imageAlt": "5, chỗ điền dấu, 3, chỗ điền dấu, 2, chỗ điền dấu, 4 bằng 6",
         "optionColumns": 2,
-        "subtopic": "Điền dấu cộng và trừ",
+        "subtopic": "Điền dấu",
         "answer": 3,
         "answerSource": "user",
         "explanation": "Ta có: 5 + 3 + 2 − 4 = 8 + 2 − 4 = 10 − 4 = 6.\nĐáp số: D."
@@ -2407,7 +2407,7 @@ const officialPapers = [
         "image": "./assets/papers/timo-grade2-qualifying-06/q14.b61f811fc769.svg",
         "imageAlt": "1, 3, 5, 7, 11 với các chỗ điền dấu, bằng 11",
         "optionColumns": 2,
-        "subtopic": "Điền dấu cộng và trừ",
+        "subtopic": "Điền dấu",
         "answer": 0,
         "answerSource": "user",
         "explanation": "Ta có: 1 − 3 − 5 + 7 + 11 = 1 + 7 + 11 − 3 − 5 = 19 − 3 − 5 = 16 − 5 = 11.\nĐáp số: A."
@@ -3147,7 +3147,7 @@ const officialPapers = [
         "translation": "Fill: Điền; Blanks: Chỗ trống; Equation: Phép tính; Correct: Đúng. (Viết lại toàn bộ phép tính vào phiếu trả lời).",
         "responseType": "text",
         "options": [],
-        "subtopic": "Điền dấu cộng và trừ",
+        "subtopic": "Điền dấu",
         "image": "./assets/papers/timo-grade2-national-01/q14.682fe10ba68c.svg",
         "imageAlt": "9 __ 10 __ 8 __ 5 = 6"
       },
@@ -3392,7 +3392,7 @@ const officialPapers = [
         "translation": "Fill: Điền; Blanks: Chỗ trống; Equation: Phép tính; Correct: Đúng. (Lưu ý: Thí sinh viết toàn bộ phép tính vào phiếu trả lời).",
         "responseType": "text",
         "options": [],
-        "subtopic": "Điền dấu cộng và trừ",
+        "subtopic": "Điền dấu",
         "image": "./assets/papers/timo-grade2-national-02/q15.2b2fccd55284.svg",
         "imageAlt": "15 __ 3 __ 7 __ 24 = 1"
       },
@@ -3625,7 +3625,7 @@ const officialPapers = [
         "translation": "Fill: Điền; Lines: Dòng kẻ; Equation: Phép tính; Correct: Đúng. (Lưu ý: Thí sinh viết toàn bộ phép tính vào phiếu trả lời).",
         "responseType": "text",
         "options": [],
-        "subtopic": "Điền dấu cộng và trừ",
+        "subtopic": "Điền dấu",
         "image": "./assets/papers/timo-grade2-national-03/q15.c3df28545450.svg",
         "imageAlt": "17 __ 9 __ 6 __ 12 = 14"
       },
@@ -3858,7 +3858,7 @@ const officialPapers = [
         "translation": "Fill: Điền; Lines: Dòng kẻ; Equation: Phép tính; Correct: Đúng. (Lưu ý: Thí sinh viết toàn bộ phép tính vào phiếu trả lời).",
         "responseType": "text",
         "options": [],
-        "subtopic": "Điền dấu cộng và trừ",
+        "subtopic": "Điền dấu",
         "image": "./assets/papers/timo-grade2-national-04/q15.5b7e644d94d1.svg",
         "imageAlt": "9 __ 18 __ 3 __ 7 = 23"
       },
@@ -4065,7 +4065,7 @@ const officialPapers = [
         "translation": "Lines: Dòng kẻ; Equation: Phép tính; Correct: Đúng. (Lưu ý viết toàn bộ phép tính vào phiếu trả lời).",
         "responseType": "text",
         "options": [],
-        "subtopic": "Điền dấu cộng và trừ",
+        "subtopic": "Điền dấu",
         "image": "./assets/papers/timo-grade2-national-05/q12.c0b849a63619.svg",
         "imageAlt": "23 __ 7 __ 11 __ 3 = 22"
       },
@@ -4299,7 +4299,7 @@ const officialPapers = [
         "translation": "Line: Dòng kẻ; Equation: Phép tính; Correct: Đúng; Write down the complete equation on the answer sheet: Viết phép tính hoàn chỉnh vào phiếu trả lời.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Điền dấu cộng và trừ",
+        "subtopic": "Điền dấu",
         "image": "./assets/papers/timo-grade2-national-06/q12.e7a7327e1567.svg",
         "imageAlt": "15 __ 8 __ 6 __ 1 = 16"
       },
@@ -4309,7 +4309,7 @@ const officialPapers = [
         "translation": "Line: Dòng kẻ; Equation: Phép tính; Correct: Đúng; Write down the complete equation on the answer sheet: Viết phép tính hoàn chỉnh vào phiếu trả lời.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Điền dấu nhân và cộng",
+        "subtopic": "Điền dấu",
         "image": "./assets/papers/timo-grade2-national-06/q13.eed3f7e4c7ea.svg",
         "imageAlt": "6 __ 4 __ 3 __ 2 = 29"
       },
@@ -4531,7 +4531,7 @@ const officialPapers = [
         "translation": "Line: Dòng kẻ; Equation: Phép tính; Correct: Đúng; Write down the complete equation on the answer sheet: Viết câu trả lời hoàn chỉnh vào phiếu trả lời.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Điền dấu cộng và trừ",
+        "subtopic": "Điền dấu",
         "image": "./assets/papers/timo-grade2-national-07/q12.e89ee8a60e9b.svg",
         "imageAlt": "7 __ 4 __ 5 __ 3 = 13"
       },
@@ -4715,6 +4715,7 @@ function buildTimoTopicGroups(papers, grade) {
       if (!topic) {
         // Keep the existing topic ID so saved attempts, question order and reload state survive this label change.
         const stableName = name === 'Có bao nhiêu cách kết hợp khác nhau?' ? 'Phối hợp lựa chọn'
+          : name === 'Điền dấu' ? 'Điền dấu cộng và trừ'
           : name === 'Tìm giá trị' ? 'Cộng nhiều số'
           : name === 'Quan sát và đếm khối lập phương' ? 'Quan sát khối từ phía trước' : name;
         topic = { id: `${group.id}-named-${encodeURIComponent(stableName)}`, name, entries: [] };
@@ -4737,7 +4738,7 @@ function resolveTimoTopicId(id) {
     return prefix + encodeURIComponent('Tìm số bị che trong phép tính');
   if (id === numberTheoryPrefix + encodeURIComponent('Phép cộng với chữ số chưa biết'))
     return prefix + encodeURIComponent('Phép cộng với chữ số chưa biết');
-  if (id === numberTheoryPrefix + encodeURIComponent('Điền dấu nhân và trừ'))
+  if (['Điền dấu nhân và trừ', 'Điền dấu nhân và cộng', 'Điền dấu'].some(name => id === numberTheoryPrefix + encodeURIComponent(name)))
     return numberTheoryPrefix + encodeURIComponent('Điền dấu cộng và trừ');
   const geometryPrefix = `${timoTopicGroups[3].id}-named-`;
   if (id === geometryPrefix + encodeURIComponent('Đếm khối lập phương xếp chồng'))
