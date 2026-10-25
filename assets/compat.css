@@ -422,3 +422,7 @@
 .inline-classification button{justify-self:start;background:#008f9d;color:#fff}
 .inline-classification [role=status]{font-size:13px;overflow-wrap:anywhere}
 @media(max-width:650px){.inline-classification-fields{grid-template-columns:minmax(0,1fr)}}
+/* National-round source marker follows each question through topic shuffling. */
+.paper-world .national-question-star{display:inline-block;color:#a56800;font:700 18px/1 'Times New Roman',Times,serif;vertical-align:baseline;margin-right:4px;white-space:nowrap}
+.paper-world .national-question-key{font:13px/1.5 'Be Vietnam Pro',Arial,sans-serif;color:#725000}
+.paper-world .national-question-key>span{color:#a56800;font-size:18px;vertical-align:-1px}
