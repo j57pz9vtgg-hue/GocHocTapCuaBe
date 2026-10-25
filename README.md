@@ -333,3 +333,7 @@ Gộp “Điền dấu nhân và trừ” vào chủ đề nhỏ4 “Điền d�
 ## Gộp nhóm phép cộng chữ số chưa biết
 
 Gộp2 câu từ nhóm11 của Lý thuyết số vào nhóm4 “Phép cộng với chữ số chưa biết” của Số học theo chỉ định chủ dự án, tổng14 câu. Chỉ định nhóm luyện riêng cho câu15 Đề quốc gia5 và6; giữ nguyên số câu, đề mục nguồn, nội dung và đáp án/lời giải. Chuyển id nhóm cũ sang nhóm4 để giữ bài làm đã lưu ở cả hai nhóm, kể cả khi tải lại trang.
+
+## Gộp nhóm tìm số còn thiếu
+
+Chuyển câu15 Đề vòng loại5 từ “Tìm số còn thiếu trong đẳng thức” của Lý thuyết số sang chủ đề nhỏ2 “Tìm số bị che trong phép tính” của Số học, tổng10 câu. Giữ nguyên đề nguồn, số câu, nội dung, lựa chọn, đáp án và lời giải. Chuyển tiếp id nhóm cũ, giữ bài làm ở cả hai nhóm khi mở và tải lại.

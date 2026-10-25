@@ -2001,10 +2001,11 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-05/q15.f3c6ed679e66.svg",
         "imageAlt": "Chỗ trống cộng 27 bằng 19 cộng 48 trừ 23",
-        "subtopic": "Tìm số còn thiếu trong đẳng thức",
+        "subtopic": "Tìm số bị che trong phép tính",
         "answer": 0,
         "answerSource": "user",
-        "explanation": "X + 27 = 19 + 48 − 23\nX + 27 = 44\nX = 44 − 27\nX = 17.\nĐáp số: A."
+        "explanation": "X + 27 = 19 + 48 − 23\nX + 27 = 44\nX = 44 − 27\nX = 17.\nĐáp số: A.",
+        "practiceTopicGroup": "timo-group-2"
       },
       {
         "number": 16,
@@ -4732,6 +4733,8 @@ function getTimoTopicGroups(grade) {
 function resolveTimoTopicId(id) {
   const prefix = `${timoTopicGroups[1].id}-named-`;
   const numberTheoryPrefix = `${timoTopicGroups[2].id}-named-`;
+  if (id === numberTheoryPrefix + encodeURIComponent('Tìm số còn thiếu trong đẳng thức'))
+    return prefix + encodeURIComponent('Tìm số bị che trong phép tính');
   if (id === numberTheoryPrefix + encodeURIComponent('Phép cộng với chữ số chưa biết'))
     return prefix + encodeURIComponent('Phép cộng với chữ số chưa biết');
   if (id === numberTheoryPrefix + encodeURIComponent('Điền dấu nhân và trừ'))
