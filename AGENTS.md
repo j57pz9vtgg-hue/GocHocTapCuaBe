@@ -115,3 +115,5 @@ Theo yêu cầu mới, gộp “Điền dấu nhân và cộng” vào nhóm nh�
 Theo yêu cầu mới, gộp “Đếm hình tam giác” vào nhóm nhỏ1 “Đếm hình vuông” của Hình học và đổi tên chung thành “Đếm hình”, tổng12 câu. Giữ id gốc của Đếm hình vuông; id nhóm tam giác chuyển về nhóm1. Chỉ gộp hai nhóm được chỉ định, giữ nguyên nội dung/ảnh/khóa/lời giải và nguồn, bảo toàn bài làm đã lưu.
 
 Theo yêu cầu mới, gộp “Đếm đoạn thẳng” (11 câu) và “Cạnh của hình phẳng và hình khối” (2 câu) thành nhóm nhỏ4 “Đếm đoạn thẳng và cạnh” của Hình học, tổng13 câu. Giữ id Đếm đoạn thẳng, chuyển id nhóm cạnh về nhóm4 và bảo toàn bài làm theo nguồn. Giữ nguyên đề, ảnh, lựa chọn, khóa và lời giải.
+
+Theo yêu cầu tiếp theo, gộp “Tạo đường thẳng từ các điểm” (câu20 Đề vòng loại6) vào nhóm nhỏ4 “Đếm đoạn thẳng và cạnh”, tổng14 câu. Giữ nội dung/khóa/lời giải, chuyển id nhóm cũ về nhóm4 và giữ tiến độ theo nguồn.

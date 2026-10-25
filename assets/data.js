@@ -2510,7 +2510,7 @@ const officialPapers = [
           "9",
           "10"
         ],
-        "subtopic": "Tạo đường thẳng từ các điểm",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "answer": 3,
         "answerSource": "user",
         "explanation": "Số đường thẳng được tạo bởi 5 điểm trên một mặt phẳng là: 5 × (5 − 1) : 2 = 10 (đường).\nĐáp số: D."
@@ -4743,7 +4743,7 @@ function resolveTimoTopicId(id) {
   if (['Điền dấu nhân và trừ', 'Điền dấu nhân và cộng', 'Điền dấu'].some(name => id === numberTheoryPrefix + encodeURIComponent(name)))
     return numberTheoryPrefix + encodeURIComponent('Điền dấu cộng và trừ');
   const geometryPrefix = `${timoTopicGroups[3].id}-named-`;
-  if (['Cạnh của hình phẳng và hình khối', 'Đếm đoạn thẳng và cạnh'].some(name => id === geometryPrefix + encodeURIComponent(name)))
+  if (['Cạnh của hình phẳng và hình khối', 'Tạo đường thẳng từ các điểm', 'Đếm đoạn thẳng và cạnh'].some(name => id === geometryPrefix + encodeURIComponent(name)))
     return geometryPrefix + encodeURIComponent('Đếm đoạn thẳng');
   if (['Đếm hình tam giác', 'Đếm hình'].some(name => id === geometryPrefix + encodeURIComponent(name)))
     return geometryPrefix + encodeURIComponent('Đếm hình vuông');
