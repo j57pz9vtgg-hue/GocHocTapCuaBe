@@ -131,5 +131,3 @@ Theo yêu cầu mới, gộp “Chia nhóm theo sức chứa” (2 câu) vào nh
 Theo yêu cầu mới, gộp “Bài toán tính thời gian” (câu3 Đề quốc gia1) vào nhóm nhỏ5 “Ngày, tháng và lịch” của Tư duy lô-gic, tổng13 câu. Giữ tên/id nhóm5, chuyển tiếp id nhóm thời gian và bài làm đã lưu. Không sửa nội dung, ảnh, khóa/lời giải hoặc nguồn.
 
 Theo yêu cầu mới, gộp “Quy luật trong bảng số” (4 câu) vào nhóm nhỏ1 “Quy luật dãy số” của Tư duy lô-gic, tổng21 câu. Giữ tên/id nhóm1, chuyển id nhóm bảng số về nhóm1 để bảo toàn bài làm. Giữ nguyên bảng, câu hỏi, khóa/lời giải và nguồn câu.
-
-Theo yêu cầu giao diện mới, đưa4 ô chọn lớp/chương trình/môn/nội dung luyện tập lên cùng hàng với Tìm bài tập và Cài đặt trên máy tính. Bộ chọn nằm chung header-tools; giữ một nút Cài đặt và nền/ảnh riêng của11 giao diện. Màn hình vừa đặt logo ở hàng riêng; điện thoại dùng2 cột cho bộ chọn và hàng tìm kiếm/cài đặt bên dưới, không che tên web hoặc tràn ngang. Yêu cầu này thay bố cục bộ chọn toàn chiều rộng bên dưới banner trước đây. Không đổi dữ liệu đề/chủ đề/bài làm.
