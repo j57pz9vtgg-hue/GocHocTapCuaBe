@@ -375,3 +375,7 @@ Nhập25 khóa văn bản/lời giải và4 SVG theo4 ảnh chủ dự án gửi
 Nhập25 khóa văn bản/lời giải và5 SVG theo4 ảnh chủ dự án gửi. Giữ các cách giải chữ số, đếm hình/đoạn/góc, các mặt bị che, bảng chữ cái và các bước giải còn lại. Luyện chủ đề dùng cùng khóa nguồn. Kiểm tra chấm25/25, mật khẩu, hình, lưu/tải lại/làm lại, bài luyện trộn và11 giao diện.
 
 Hiện275/350 câu có đáp án do chủ dự án cung cấp:175 câu của7 đề vòng loại và100 câu của4 đề quốc gia đầu.75 câu của Đề quốc gia5–7 tiếp tục Chờ đáp án, không tự tạo khóa hoặc lời giải.
+
+## Đáp án Đề quốc gia 5
+
+Nhập25 khóa văn bản/lời giải và5 SVG theo4 ảnh chủ dự án cung cấp. Giữ các bước giải, hình đánh số và cách đếm/kết hợp. Câu13: nguồn lời giải dùng2×3 và kết quả202, câu hỏi đã nhập dùng2×2; giữ nguyên cả hai nguồn, nhập đáp sốEven do chủ dự án cung cấp và báo sự khác nhau, không tự sửa. Khóa/lời giải áp dụng cùng câu trong luyện chủ đề. Kiểm tra chấm25/25, mật khẩu, hình, lưu/tải lại/làm lại, bài luyện trộn và11 giao diện.
