@@ -409,3 +409,7 @@ Gộp4 câu Quy luật trong bảng số vào nhóm nhỏ1 “Quy luật dãy s�
 Theo yêu cầu mới nhất, xóa phân loại nhỏ của350 câu để chủ dự án làm lại; mỗi chủ đề lớn hiện chỉ còn “Chưa phân loại”. Giữ nguyên5 nhóm lớn và vị trí câu trong từng nhóm (70/73/67/70/70),14 bộ đề, toàn bộ nội dung/hình/lựa chọn/350 khóa/lời giải. Link chủ đề nhỏ cũ chuyển về Chưa phân loại; bài làm trắc nghiệm/tự luận và bản lưu cũ được giữ. Đã kiểm tra mở cả5 nhóm,350 câu không trùng/mất, khôi phục khi tải lại, tiến độ từ id cũ kể cả các lần chuyển nhóm trước, màn hình máy tính/điện thoại và mở đề quốc gia.
 
 Các mục phân loại/gộp ở trên là lịch sử; trạng thái hiện tại là chưa phân loại toàn bộ câu.
+
+## Kết quả và thao tác cùng thanh Nộp bài
+
+Chuyển kết quả làm đúng, Làm lại và Xem đáp án và lời giải vào thanh Nộp bài, bỏ hộp kết quả riêng. Giữ điều kiện nộp, khóa phụ huynh và bài làm. Kiểm tra11 giao diện ở9 độ rộng320–1700px, cùng hàng trên máy tính, không tràn/chồng trên điện thoại; nộp/chấm25/25, mật khẩu sai/đúng,25 lời giải, tải lại và làm lại về00:00 đều đạt. Playwright/Chromium do Browser plugin không có; ảnh kiểm tra lưu ngoài repo.
