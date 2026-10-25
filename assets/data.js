@@ -3373,7 +3373,7 @@ const officialPapers = [
         "translation": "Represent: Biểu diễn; Table: Bảng.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Quy luật trong bảng số",
+        "subtopic": "Quy luật dãy số",
         "image": "./assets/papers/timo-grade2-national-02/q03.91bb3e37094b.svg",
         "imageAlt": "Bảng bốn hàng: 2,3,6; 5,3,15; 4,4,dấu hỏi; 6,5,30",
         "answer": "16",
@@ -3691,7 +3691,7 @@ const officialPapers = [
         "translation": "Value: Giá trị; Number: Số; Represent: Biểu diễn; Table: Bảng.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Quy luật trong bảng số",
+        "subtopic": "Quy luật dãy số",
         "image": "./assets/papers/timo-grade2-national-03/q03.24477fcfc1e8.svg",
         "imageAlt": "Bảng bốn hàng: 5,3,15;4,5,20;3,7,dấu hỏi;2,9,18",
         "answer": "21",
@@ -4007,7 +4007,7 @@ const officialPapers = [
         "translation": "Value: Giá trị; Number: Số; Represent: Biểu diễn; Table: Bảng.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Quy luật trong bảng số",
+        "subtopic": "Quy luật dãy số",
         "image": "./assets/papers/timo-grade2-national-04/q03.f1241de65eb7.svg",
         "imageAlt": "Bảng bốn hàng:3,2,6;5,4,20;7,6,dấu hỏi;9,8,72",
         "answer": "42",
@@ -4342,7 +4342,7 @@ const officialPapers = [
         "translation": "Value: Giá trị; Represent: Biểu diễn; Table: Bảng.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Quy luật trong bảng số",
+        "subtopic": "Quy luật dãy số",
         "image": "./assets/papers/timo-grade2-national-05/q04.fd6756042c45.svg",
         "imageAlt": "Bảng bốn hàng1,2,2;3,4,12;5,6,30;7,8,dấu hỏi",
         "answer": "56",
@@ -5329,6 +5329,8 @@ function getTimoTopicGroups(grade) {
 // Legacy topic references continue in the surviving group after the owner-requested merge.
 function resolveTimoTopicId(id) {
   const logicalPrefix = `${timoTopicGroups[0].id}-named-`;
+  if (id === logicalPrefix + encodeURIComponent('Quy luật trong bảng số'))
+    return logicalPrefix + encodeURIComponent('Quy luật dãy số');
   if (['Số ngày trong tháng', 'Các tháng trong năm', 'Bài toán tính thời gian', 'Ngày, tháng và lịch'].some(name => id === logicalPrefix + encodeURIComponent(name)))
     return logicalPrefix + encodeURIComponent('Các ngày trong tuần');
   const prefix = `${timoTopicGroups[1].id}-named-`;

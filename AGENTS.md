@@ -129,3 +129,5 @@ Theo yêu cầu mới, gộp “Đỉnh, cạnh và mặt của hình khối” 
 Theo yêu cầu mới, gộp “Chia nhóm theo sức chứa” (2 câu) vào nhóm nhỏ6 “Đếm số theo điều kiện” của Lý thuyết số, tổng7 câu. Giữ id nhóm6, chuyển tiếp id nhóm cũ để bảo toàn bài làm theo nguồn. Không sửa câu hỏi/ảnh/khóa/lời giải hoặc số câu gốc.
 
 Theo yêu cầu mới, gộp “Bài toán tính thời gian” (câu3 Đề quốc gia1) vào nhóm nhỏ5 “Ngày, tháng và lịch” của Tư duy lô-gic, tổng13 câu. Giữ tên/id nhóm5, chuyển tiếp id nhóm thời gian và bài làm đã lưu. Không sửa nội dung, ảnh, khóa/lời giải hoặc nguồn.
+
+Theo yêu cầu mới, gộp “Quy luật trong bảng số” (4 câu) vào nhóm nhỏ1 “Quy luật dãy số” của Tư duy lô-gic, tổng21 câu. Giữ tên/id nhóm1, chuyển id nhóm bảng số về nhóm1 để bảo toàn bài làm. Giữ nguyên bảng, câu hỏi, khóa/lời giải và nguồn câu.
