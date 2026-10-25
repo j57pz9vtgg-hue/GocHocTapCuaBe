@@ -4092,7 +4092,8 @@ const officialPapers = [
         "options": [],
         "subtopic": "Phép cộng với chữ số chưa biết",
         "image": "./assets/papers/timo-grade2-national-05/q15.f4934635345e.svg",
-        "imageAlt": "Phép cộng dọc BA cộng CB bằng162"
+        "imageAlt": "Phép cộng dọc BA cộng CB bằng162",
+        "practiceTopicGroup": "timo-group-2"
       },
       {
         "number": 16,
@@ -4327,7 +4328,8 @@ const officialPapers = [
         "options": [],
         "subtopic": "Phép cộng với chữ số chưa biết",
         "image": "./assets/papers/timo-grade2-national-06/q15.f641b378befd.svg",
-        "imageAlt": "Phép cộng dọc BA cộng AB bằngC87"
+        "imageAlt": "Phép cộng dọc BA cộng AB bằngC87",
+        "practiceTopicGroup": "timo-group-2"
       },
       {
         "number": 16,
@@ -4663,7 +4665,7 @@ function getQuestions(subject, grade, mode, paper, program = 'TIMO') {
   return getPapers(program, subject, grade, mode)[paper]?.questions || [];
 }
 
-// TIMO classification is determined only by the original question number.
+// Original question numbers define the default groups; explicit owner overrides affect topic practice only.
 const timoTopicGroups = [
   ['Logical thinking', 'Tư duy lô-gic', 1, 5],
   ['Arithmetic', 'Số học', 6, 10],
@@ -4705,7 +4707,8 @@ function buildTimoTopicGroups(papers, grade) {
     // Sort a new list, leaving the original paper, question text and answer fields untouched.
     const numbered = paper.questions.map((question, index) => ({ question, number: timoQuestionNumber(question, index) })).sort((a, b) => a.number - b.number);
     for (const { question, number } of numbered) {
-      const group = groups.find(group => number >= group.first && number <= group.last);
+      const group = groups.find(group => group.id === question.practiceTopicGroup)
+        || groups.find(group => number >= group.first && number <= group.last);
       const name = typeof question.subtopic === 'string' && question.subtopic.trim() ? question.subtopic.trim() : 'Chưa phân loại';
       let topic = group.topics.find(topic => topic.name === name);
       if (!topic) {
@@ -4729,6 +4732,8 @@ function getTimoTopicGroups(grade) {
 function resolveTimoTopicId(id) {
   const prefix = `${timoTopicGroups[1].id}-named-`;
   const numberTheoryPrefix = `${timoTopicGroups[2].id}-named-`;
+  if (id === numberTheoryPrefix + encodeURIComponent('Phép cộng với chữ số chưa biết'))
+    return prefix + encodeURIComponent('Phép cộng với chữ số chưa biết');
   if (id === numberTheoryPrefix + encodeURIComponent('Điền dấu nhân và trừ'))
     return numberTheoryPrefix + encodeURIComponent('Điền dấu cộng và trừ');
   const geometryPrefix = `${timoTopicGroups[3].id}-named-`;

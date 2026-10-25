@@ -66,3 +66,17 @@ test('rebuilding does not accumulate duplicates or mutate group definitions', ()
  assert.equal(entries(groups).length, 25);
  assert.equal(entries(timoTopicGroups).length, 0);
 });
+
+test('owner practice group overrides preserve source numbers and share the original question', () => {
+ const source = paper();
+ source.questions[14].practiceTopicGroup = timoTopicGroups[1].id;
+ source.questions[14].subtopic = 'Tên do chủ dự án cung cấp';
+ source.questions[13].practiceTopicGroup = 'unknown-group';
+ const before = JSON.stringify(source), groups = buildTimoTopicGroups([source], '2');
+ assert.strictEqual(groups[1].topics[1].entries[0].question, source.questions[14]);
+ assert.equal(groups[1].topics[1].entries[0].number, 15);
+ assert.deepEqual(numbers(groups[2].topics[0]), [11,12,13,14]);
+ assert.equal(entries(groups).length, 25);
+ assert.equal(new Set(entries(groups).map(entry => entry.id)).size, 25);
+ assert.equal(JSON.stringify(source), before);
+});

@@ -329,3 +329,7 @@ Nhập25 khóa/lời giải và4 SVG theo5 ảnh chủ dự án cung cấp. Gi�
 ## Gộp chủ đề điền dấu
 
 Gộp “Điền dấu nhân và trừ” vào chủ đề nhỏ4 “Điền dấu cộng và trừ” theo yêu cầu chủ dự án, tổng12 câu. Giữ nội dung/ảnh/đáp án/lời giải và nguồn của350 câu; chỉ đổi nhãn phân loại câu12 Đề quốc gia7. Id cũ chuyển về nhóm4, bài làm lưu theo nguồn được giữ cả lựa chọn trắc nghiệm và văn bản tự luận; đã kiểm tra tải lại và màn hình máy tính/điện thoại.
+
+## Gộp nhóm phép cộng chữ số chưa biết
+
+Gộp2 câu từ nhóm11 của Lý thuyết số vào nhóm4 “Phép cộng với chữ số chưa biết” của Số học theo chỉ định chủ dự án, tổng14 câu. Chỉ định nhóm luyện riêng cho câu15 Đề quốc gia5 và6; giữ nguyên số câu, đề mục nguồn, nội dung và đáp án/lời giải. Chuyển id nhóm cũ sang nhóm4 để giữ bài làm đã lưu ở cả hai nhóm, kể cả khi tải lại trang.
