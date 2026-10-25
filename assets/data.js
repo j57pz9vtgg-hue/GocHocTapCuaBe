@@ -2200,7 +2200,10 @@ const officialPapers = [
           "Thursday / Thứ Năm"
         ],
         "optionColumns": 2,
-        "subtopic": "Các ngày trong tuần"
+        "subtopic": "Các ngày trong tuần",
+        "answer": 2,
+        "answerSource": "user",
+        "explanation": "Hôm nay là thứ Bảy nên 1 ngày nữa là Chủ nhật.\n2 ngày nữa là thứ Hai. 3 ngày nữa là thứ Ba. 4 ngày nữa là thứ Tư.\nĐáp số: C."
       },
       {
         "number": 2,
@@ -2214,7 +2217,10 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-06/q02.1ab91f310a23.svg",
         "imageAlt": "Dãy 2, 6, 10, 14, 18, 22, chỗ trống",
-        "subtopic": "Quy luật dãy số"
+        "subtopic": "Quy luật dãy số",
+        "answer": 0,
+        "answerSource": "user",
+        "explanation": "Quy luật: Các số trong dãy tăng dần 4 đơn vị.\n2 + 4 = 6; 6 + 4 = 10; 10 + 4 = 14; 14 + 4 = 18; 18 + 4 = 22; …\nVậy số ở chỗ trống là: 22 + 4 = 26.\nĐáp số: A."
       },
       {
         "number": 3,
@@ -2226,7 +2232,10 @@ const officialPapers = [
           "23",
           "22"
         ],
-        "subtopic": "Bài toán vị trí trong hàng"
+        "subtopic": "Bài toán vị trí trong hàng",
+        "answer": 1,
+        "answerSource": "user",
+        "explanation": "Số học sinh đứng trước Amy là: 34 − 9 − 1 = 24 (học sinh).\nĐáp số: B."
       },
       {
         "number": 4,
@@ -2240,7 +2249,10 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-06/q04.edc601172a6c.svg",
         "imageAlt": "Bốn hình chữ thập tăng dần: các ô chứa ⊗ và # xen kẽ đúng vị trí của ảnh, nhóm đầu có một ô ⊗",
-        "subtopic": "Quy luật sắp xếp hình"
+        "subtopic": "Quy luật sắp xếp hình",
+        "answer": 1,
+        "answerSource": "user",
+        "explanation": "Liệt kê số lượng hình ⊗ nhiều hơn hình # trong mỗi nhóm:\nNhóm 1: số lượng hình ⊗ nhiều hơn hình # là 1 hình.\nNhóm 2: số lượng hình ⊗ nhiều hơn hình # là 3 hình.\nNhóm 3: số lượng hình ⊗ nhiều hơn hình # là 1 hình.\nNhóm 4: số lượng hình ⊗ nhiều hơn hình # là 3 hình.\nTrong nhóm lẻ, số lượng hình ⊗ nhiều hơn hình # là 1 hình.\nTrong nhóm chẵn, số lượng hình ⊗ nhiều hơn hình # là 3 hình.\nNhư vậy trong nhóm thứ 15, số lượng hình ⊗ nhiều hơn hình # là 1 hình.\nĐáp số: B."
       },
       {
         "number": 5,
@@ -2252,7 +2264,10 @@ const officialPapers = [
           "13",
           "17"
         ],
-        "subtopic": "Tuổi hiện tại và tương lai"
+        "subtopic": "Tuổi hiện tại và tương lai",
+        "answer": 3,
+        "answerSource": "user",
+        "explanation": "3 năm trước Amy 14 tuổi nên tuổi của Amy hiện tại là: 14 + 3 = 17 (tuổi).\nĐáp số: D."
       },
       {
         "number": 6,
@@ -2264,7 +2279,10 @@ const officialPapers = [
           "140",
           "150"
         ],
-        "subtopic": "Tìm giá trị"
+        "subtopic": "Tìm giá trị",
+        "answer": 3,
+        "answerSource": "user",
+        "explanation": "7 + 17 + 27 + 37 + 47 + 3 + 3 + 3 + 3 + 3\n= (7 + 3) + (17 + 3) + (27 + 3) + (37 + 3) + (47 + 3)\n= 10 + 20 + 30 + 40 + 50\n= 150.\nĐáp số: D."
       },
       {
         "number": 7,
@@ -2276,7 +2294,10 @@ const officialPapers = [
           "5",
           "6"
         ],
-        "subtopic": "Tìm giá trị"
+        "subtopic": "Tìm giá trị",
+        "answer": 1,
+        "answerSource": "user",
+        "explanation": "15 : 3 + 25 : 5 − 30 : 5 = 5 + 5 − 6 = 10 − 6 = 4.\nĐáp số: B."
       },
       {
         "number": 8,
@@ -2288,7 +2309,10 @@ const officialPapers = [
           "5",
           "9"
         ],
-        "subtopic": "Tìm giá trị"
+        "subtopic": "Tìm giá trị",
+        "answer": 2,
+        "answerSource": "user",
+        "explanation": "1 − 2 + 3 − 4 + 5 − 6 + 7 − 8 + 9 = 1 + (3 − 2) + (5 − 4) + (7 − 6) + (9 − 8)\n= 1 + 1 + 1 + 1 + 1 = 5.\nĐáp số: C."
       },
       {
         "number": 9,
@@ -2302,7 +2326,10 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-06/q09.ce950daff039.svg",
         "imageAlt": "Chỗ trống chia 6 bằng 12",
-        "subtopic": "Tìm số bị che trong phép tính"
+        "subtopic": "Tìm số bị che trong phép tính",
+        "answer": 2,
+        "answerSource": "user",
+        "explanation": "Số cần tìm là: 12 × 6 = 72.\nĐáp số: C."
       },
       {
         "number": 10,
@@ -2314,7 +2341,10 @@ const officialPapers = [
           "100",
           "110"
         ],
-        "subtopic": "Tìm giá trị"
+        "subtopic": "Tìm giá trị",
+        "answer": 2,
+        "answerSource": "user",
+        "explanation": "10 × 1 + 10 × 2 + 10 × 3 + 10 × 4 = 10 × (1 + 2 + 3 + 4) = 10 × 10 = 100.\nĐáp số: C."
       },
       {
         "number": 11,
@@ -2326,7 +2356,10 @@ const officialPapers = [
           "3",
           "2"
         ],
-        "subtopic": "Chuyển bớt và so sánh số lượng"
+        "subtopic": "Chuyển bớt và so sánh số lượng",
+        "answer": 0,
+        "answerSource": "user",
+        "explanation": "Tổng số táo của 2 bạn là: 23 + 11 = 34 (quả).\nNếu không tính 2 quả táo của Amy thì hai bạn có số táo là: 34 − 2 = 32 (quả).\nKhi đó, hai bạn có số táo bằng nhau và đều có 16 quả táo.\nLúc đầu John có 11 quả táo và sau khi xin Amy thì John có 16 quả táo.\nVậy Amy cần cho John số táo là: 16 − 11 = 5 (quả).\nĐáp số: A."
       },
       {
         "number": 12,
@@ -2340,7 +2373,10 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-06/q12.f942592e032f.svg",
         "imageAlt": "Dãy 101, 103, 105, 107, 109, …",
-        "subtopic": "Tìm số hạng trong dãy số"
+        "subtopic": "Tìm số hạng trong dãy số",
+        "answer": 1,
+        "answerSource": "user",
+        "explanation": "Quy luật: Các số trong dãy tăng dần 2 đơn vị.\nSố thứ 20 cách số đầu tiên là 20 − 1 = 19 khoảng, mỗi khoảng bằng 2 đơn vị.\nSố thứ 20 của dãy là: 101 + 19 × 2 = 139.\nĐáp số: B."
       },
       {
         "number": 13,
@@ -2352,7 +2388,10 @@ const officialPapers = [
           "21",
           "18"
         ],
-        "subtopic": "Đếm số theo điều kiện"
+        "subtopic": "Đếm số theo điều kiện",
+        "answer": 1,
+        "answerSource": "user",
+        "explanation": "Hàng chục nhỏ hơn 3 nên hàng chục có thể là 2, 1.\nCác số có 2 chữ số với hàng chục là 2: 20, 21, 22, 23, 24, 25, 26, 27, 28, 29.\nCác số có 2 chữ số với hàng chục là 1: 10, 11, 12, 13, 14, 15, 16, 17, 18, 19.\nVậy có tất cả 20 số thỏa mãn bài toán.\nĐáp số: B."
       },
       {
         "number": 14,
@@ -2367,7 +2406,10 @@ const officialPapers = [
         "image": "./assets/papers/timo-grade2-qualifying-06/q14.b61f811fc769.svg",
         "imageAlt": "1, 3, 5, 7, 11 với các chỗ điền dấu, bằng 11",
         "optionColumns": 2,
-        "subtopic": "Điền dấu cộng và trừ"
+        "subtopic": "Điền dấu cộng và trừ",
+        "answer": 0,
+        "answerSource": "user",
+        "explanation": "Ta có: 1 − 3 − 5 + 7 + 11 = 1 + 7 + 11 − 3 − 5 = 19 − 3 − 5 = 16 − 5 = 11.\nĐáp số: A."
       },
       {
         "number": 15,
@@ -2380,7 +2422,10 @@ const officialPapers = [
           "Neither odd not even / Không chẵn, không lẻ"
         ],
         "optionColumns": 2,
-        "subtopic": "Nhận biết kết quả chẵn"
+        "subtopic": "Nhận biết kết quả chẵn",
+        "answer": 0,
+        "answerSource": "user",
+        "explanation": "1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14\n= (1 + 14) + (2 + 13) + (3 + 12) + (4 + 11) + (5 + 10) + (6 + 9) + (7 + 8)\n= 15 + 15 + 15 + 15 + 15 + 15 + 15\n= (15 + 15) + (15 + 15) + (15 + 15) + 15\n= 30 + 30 + 30 + 15\n= 105.\nVì 105 là số lẻ nên kết quả phép tính đã cho là một số lẻ.\nĐáp số: A."
       },
       {
         "number": 16,
@@ -2394,7 +2439,12 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-06/q16.282c03b67a9e.svg",
         "imageAlt": "Hai hàng ô vuông lệch nhau: hàng dưới năm ô, hàng trên bốn ô bắt đầu phía trên ô thứ ba của hàng dưới",
-        "subtopic": "Đếm hình vuông"
+        "subtopic": "Đếm hình vuông",
+        "explanationImage": "./assets/solutions/timo-grade2-qualifying-06/q16.e743c3e47201.svg",
+        "explanationImageAlt": "Hình đánh số theo lời giải câu 16 do chủ dự án cung cấp",
+        "answer": 2,
+        "answerSource": "user",
+        "explanation": "Ta đánh số các hình vuông như dưới đây.\nHình vuông đơn vị: có 9 hình là 1, 2, 3, 4, 5, 6, 7, 8 và 9.\nHình vuông được ghép bởi 4 hình vuông đơn vị: có 2 hình là (1, 2, 7, 8) và (2, 3, 8, 9).\nVậy có tất cả 9 + 2 = 11 hình vuông.\nĐáp số: C."
       },
       {
         "number": 17,
@@ -2406,7 +2456,10 @@ const officialPapers = [
           "2",
           "3"
         ],
-        "subtopic": "Cạnh của hình phẳng và hình khối"
+        "subtopic": "Cạnh của hình phẳng và hình khối",
+        "answer": 0,
+        "answerSource": "user",
+        "explanation": "Hình tròn không có cạnh.\nĐáp số: A."
       },
       {
         "number": 18,
@@ -2420,7 +2473,12 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-06/q18.0bf6b1fb3e60.svg",
         "imageAlt": "Dãy tam giác, vuông, tròn, hình thoi rỗng và một dấu hỏi đúng vị trí theo ảnh",
-        "subtopic": "Quy luật dãy hình"
+        "subtopic": "Quy luật dãy hình",
+        "explanationImage": "./assets/solutions/timo-grade2-qualifying-06/q18.294692b1342c.svg",
+        "explanationImageAlt": "Nhóm5 hình tam giác,vuông,tròn,thoi,tam giác lặp lại theo lời giải",
+        "answer": 3,
+        "answerSource": "user",
+        "explanation": "Quy luật: Nhóm 5 hình (△ □ ○ ◊ △) lặp lại.\nVậy hình cần điền vào dấu chấm hỏi là □.\nĐáp số: D."
       },
       {
         "number": 19,
@@ -2434,7 +2492,12 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-06/q19.0a0be2b91a13.svg",
         "imageAlt": "Cụm khối trắng viền đen, cột cao phía trước giữa, hai ô phía trước và các khối lùi phía trái, theo ảnh",
-        "subtopic": "Quan sát và đếm khối lập phương"
+        "subtopic": "Quan sát và đếm khối lập phương",
+        "explanationImage": "./assets/solutions/timo-grade2-qualifying-06/q19.1d9614d798e0.svg",
+        "explanationImageAlt": "Hình lời giải đánh dấu4 mặt vuông với mũi tên theo ảnh chủ dự án",
+        "answer": 2,
+        "answerSource": "user",
+        "explanation": "Ta có hình vẽ sau.\nĐáp số: C."
       },
       {
         "number": 20,
@@ -2446,7 +2509,10 @@ const officialPapers = [
           "9",
           "10"
         ],
-        "subtopic": "Tạo đường thẳng từ các điểm"
+        "subtopic": "Tạo đường thẳng từ các điểm",
+        "answer": 3,
+        "answerSource": "user",
+        "explanation": "Số đường thẳng được tạo bởi 5 điểm trên một mặt phẳng là: 5 × (5 − 1) : 2 = 10 (đường).\nĐáp số: D."
       },
       {
         "number": 21,
@@ -2458,7 +2524,10 @@ const officialPapers = [
           "9",
           "8"
         ],
-        "subtopic": "Có bao nhiêu cách kết hợp khác nhau?"
+        "subtopic": "Có bao nhiêu cách kết hợp khác nhau?",
+        "answer": 0,
+        "answerSource": "user",
+        "explanation": "Chọn 1 món khai vị trong 2 món: có 2 cách.\nChọn 1 món chính trong 3 món: có 3 cách.\nChọn 1 món tráng miệng trong 3 món: có 3 cách.\nVậy số cách gọi 1 món khai vị, 1 món chính và 1 món tráng miệng là: 2 × 3 × 3 = 18 (cách).\nĐáp số: A."
       },
       {
         "number": 22,
@@ -2470,7 +2539,10 @@ const officialPapers = [
           "3940",
           "3490"
         ],
-        "subtopic": "Lập số lớn nhất và nhỏ nhất"
+        "subtopic": "Lập số lớn nhất và nhỏ nhất",
+        "answer": 3,
+        "answerSource": "user",
+        "explanation": "Số chia hết cho 10 có chữ số ở hàng đơn vị là 0.\nVậy số nhỏ nhất có 4 chữ số chia hết cho 10 tạo bởi các số đã cho là 3490.\nĐáp số: D."
       },
       {
         "number": 23,
@@ -2484,7 +2556,10 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-06/q23.296150f09baa.svg",
         "imageAlt": "Dãy 2, 5, 8, 11, 14, 17, …",
-        "subtopic": "Đếm số lẻ trong dãy số"
+        "subtopic": "Đếm số lẻ trong dãy số",
+        "answer": 2,
+        "answerSource": "user",
+        "explanation": "Tính chẵn lẻ của dãy số là: Chẵn, Lẻ, Chẵn, Lẻ, Chẵn, Lẻ, …\nQuy luật: Nhóm 2 số (Chẵn, Lẻ) lặp lại.\n30 số đầu tiên gồm 30 : 2 = 15 nhóm.\nMỗi nhóm có 1 số lẻ nên trong 15 nhóm có 15 × 1 = 15 số lẻ.\nĐáp số: C."
       },
       {
         "number": 24,
@@ -2496,7 +2571,10 @@ const officialPapers = [
           "18",
           "20"
         ],
-        "subtopic": "Chọn cặp không phân biệt thứ tự"
+        "subtopic": "Chọn cặp không phân biệt thứ tự",
+        "answer": 0,
+        "answerSource": "user",
+        "explanation": "Chọn đứa trẻ thứ nhất: có 6 cách.\nChọn đứa trẻ thứ hai: có 6 cách.\nTuy nhiên các cặp đứa trẻ được chọn như trên sẽ được tính 2 lần (chọn bạn A rồi chọn bạn B cũng chính là cách chọn bạn B rồi chọn bạn A).\nVậy số cách khác nhau để chọn ra 2 đứa trẻ trong số 6 đứa trẻ là 6 × 5 : 2 = 15 (cách).\nĐáp số: A."
       },
       {
         "number": 25,
@@ -2508,7 +2586,10 @@ const officialPapers = [
           "10",
           "11"
         ],
-        "subtopic": "Đếm số có chữ số cho trước"
+        "subtopic": "Đếm số có chữ số cho trước",
+        "answer": 3,
+        "answerSource": "user",
+        "explanation": "Từ 1 đến 101 có 11 số chứa chữ số 0 là 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 101.\nĐáp số: D."
       }
     ]
   },

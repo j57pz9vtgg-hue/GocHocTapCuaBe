@@ -317,3 +317,7 @@ Nhập25 đáp án/lời giải và8 SVG theo5 ảnh chủ dự án gửi. Giữ
 ## Đáp án Đề vòng loại 5
 
 Nhập25 khóa/lời giải và6 SVG từ4 ảnh chủ dự án gửi. Giữ các bước giải, hình đánh số, sơ đồ phép tính, bảng10 cách cắm hoa và các cách giải thay thế. Áp dụng vào đúng câu nguồn của luyện chủ đề. Hiện125 câu của5 đề vòng loại đầu có đáp án do chủ dự án cung cấp;225 câu còn lại tiếp tục chờ đáp án. Không đổi nội dung350 câu, lựa chọn, phân loại hay nguồn đề. Kiểm tra chấm điểm, mở lời giải bằng mật khẩu, bài luyện trộn, lưu/tải lại/làm lại và11 giao diện.
+
+## Đáp án Đề vòng loại 6
+
+Nhập25 khóa/lời giải và3 SVG theo3 ảnh chủ dự án gửi. Các câu trong luyện chủ đề tham chiếu cùng khóa/lời giải nguồn. Giữ nguyên câu hỏi/lựa chọn/phân loại và khóa các đề trước. Giữ nguyên cả dòng “Chọn đứa trẻ thứ hai: có6 cách” của câu24 dù phép tính trong nguồn dùng6×5:2; đã báo chủ dự án, không tự sửa. Kiểm tra chấm điểm, mật khẩu sai/đúng, hình, lưu/tải lại/làm lại, bài trộn và11 giao diện.
