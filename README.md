@@ -383,3 +383,9 @@ Nhập25 khóa văn bản/lời giải và5 SVG theo4 ảnh chủ dự án cung 
 ## Đáp án Đề quốc gia 6
 
 Nhập25 khóa văn bản/lời giải và5 SVG từ4 ảnh chủ dự án gửi. Giữ hội thoại suy luận, các bước giải, nhóm ký hiệu, ô vuông, mặt khối và11 vùng của hình tròn. Khóa/lời giải dùng chung trong luyện chủ đề, giữ nguyên lập luận của nguồn. Kiểm tra chấm25/25, mật khẩu, hình, lưu/tải lại/làm lại, bài luyện trộn và11 giao diện; không đổi câu nguồn hoặc khóa trước.
+
+## Đáp án Đề quốc gia 7
+
+Nhập25 khóa văn bản/lời giải và6 SVG theo4 ảnh chủ dự án gửi. Giữ các bước giải, nhóm hình, bảng chữ cái, các hình đánh số và tam giác minh họa của lời giải. Các bài luyện chủ đề dùng cùng khóa nguồn. Đã kiểm tra chấm25/25, mật khẩu, hình, lưu/tải lại/làm lại, bài luyện trộn và11 giao diện.
+
+Cả350 câu của14 đề hiện có (7 vòng loại và7 quốc gia) đã có đáp án/lời giải do chủ dự án cung cấp. Không thay nội dung, lựa chọn hoặc phân loại câu khi nhập các khóa quốc gia. Giữ nguyên chỗ khác nhau giữa câu13 Đề quốc gia5 và lời giải nguồn đã báo, không tự sửa.

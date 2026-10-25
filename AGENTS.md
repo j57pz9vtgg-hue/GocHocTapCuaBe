@@ -122,4 +122,4 @@ Theo yêu cầu tiếp theo, gộp “Đếm hình chữ nhật” (câu19 Đề
 
 Theo yêu cầu mới, gộp “Các ngày trong tuần” (10 câu), “Số ngày trong tháng” (1 câu) và “Các tháng trong năm” (1 câu) thành nhóm nhỏ5 “Ngày, tháng và lịch” của Tư duy lô-gic, tổng12 câu. Giữ id Các ngày trong tuần, ánh xạ id hai nhóm còn lại về nhóm5 để giữ bài làm và trạng thái đang mở. Không sửa nội dung, ảnh, khóa/lời giải hoặc nguồn câu.
 
-Chủ dự án đã gửi khóa văn bản và lời giải chi tiết cho Đề quốc gia1–4 (100 câu). Gắn answerSource=user, giữ nguyên khóa dạng số/chữ/ngày/biểu thức/ký hiệu theo nguồn và nguyên văn các bước giải. Các bài luyện chủ đề tham chiếu cùng câu nên dùng chung khóa/lời giải; Đề quốc gia5–7 chưa có khóa. Không tự suy luận hoặc điền khóa còn thiếu.
+Chủ dự án đã gửi khóa văn bản và lời giải chi tiết cho cả7 đề quốc gia1–7 (175 câu). Gắn answerSource=user, giữ nguyên khóa dạng số/chữ/ngày/biểu thức/ký hiệu theo nguồn và nguyên văn các bước giải. Các bài luyện chủ đề tham chiếu cùng câu nên dùng chung khóa/lời giải; Cả350 câu của14 đề hiện có đều đã có khóa và lời giải do chủ dự án cung cấp. Không tự suy luận hoặc điền khóa còn thiếu.
