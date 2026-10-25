@@ -409,3 +409,16 @@
 @media(max-width:650px){
  .classification-dialog>header{padding:14px}.classification-dialog h2{font-size:20px}.classification-body{padding:14px}.classification-proposal{padding:12px}.classification-dialog>footer{padding:10px;gap:8px}.classification-actions{width:100%;justify-content:flex-end}.classification-dialog button,.classification-file{font-size:12px;padding:8px}.classification-question>label{gap:8px}
 }
+/* Classify directly alongside the original question inside topic practice. */
+.practice-classification-tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 18px;padding-bottom:12px;border-bottom:1px solid #d4dfef}
+.practice-classification-tools button,.inline-classification button{min-height:44px;border:1px solid #b9dff1;border-radius:8px;padding:9px 12px;background:#f4faff;color:#155277;font:600 13px/1.5 'Be Vietnam Pro',Arial,sans-serif}
+.practice-classification-tools [role=status]{font:13px/1.5 'Be Vietnam Pro',Arial,sans-serif;color:#216a62}
+.inline-classification{clear:both;margin-top:14px;border:1px solid #d7e5f1;border-radius:8px;padding:0 12px;background:#f8fcff;font:14px/1.5 'Be Vietnam Pro',Arial,sans-serif;color:#24496d}
+.inline-classification summary{min-height:44px;padding:11px 0;cursor:pointer;font-weight:600}
+.inline-classification-fields{display:grid;gap:10px;padding:0 0 12px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end}
+.paper-world .inline-classification-fields>p{grid-column:1/-1;font:13px/1.5 'Be Vietnam Pro',Arial,sans-serif;margin:0}
+.paper-world .inline-classification label{display:grid;gap:6px;min-width:0;font:13px/1.5 'Be Vietnam Pro',Arial,sans-serif}
+.inline-classification select,.inline-classification input{width:100%;min-width:0;min-height:44px;padding:8px;border:1px solid #adc9dd;border-radius:6px;background:#fff;font:14px/1.5 'Be Vietnam Pro',Arial,sans-serif;color:#142d53}
+.inline-classification button{justify-self:start;background:#008f9d;color:#fff}
+.inline-classification [role=status]{font-size:13px;overflow-wrap:anywhere}
+@media(max-width:650px){.inline-classification-fields{grid-template-columns:minmax(0,1fr)}}

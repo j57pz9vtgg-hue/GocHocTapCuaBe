@@ -95,7 +95,7 @@ const TimoClassification=(()=>{
  function getDialog(){
   let d=document.querySelector('#classification-dialog');if(d)return d;
   d=document.createElement('dialog');d.id='classification-dialog';d.className='classification-dialog';d.setAttribute('aria-labelledby','classification-title');document.body.append(d);
-  d.addEventListener('close',()=>{draft=null;if(trigger?.isConnected)trigger.focus();else document.querySelector(`[data-classify-group="${lastGroup}"]`)?.focus()});
+  d.addEventListener('close',()=>{draft=null;if(trigger?.isConnected)trigger.focus();else document.querySelector(`[data-classify-group="${lastGroup}"]`)?.focus({preventScroll:true})});
   d.addEventListener('click',onClick);
   d.addEventListener('change',onChange);
   return d;
@@ -116,10 +116,11 @@ const TimoClassification=(()=>{
  function status(message){const el=getDialog().querySelector('.classification-status');if(el){el.textContent=message;el.focus();}}
  function commit(next){
   const value=validate(next),old=saved;
+  if(state.practice?.topicId)saveAttempt();
   try{localStorage.setItem(storageKey,JSON.stringify(value));}catch{throw Error('Không lưu được phân loại. Hãy kiểm tra dung lượng hoặc quyền lưu dữ liệu của trình duyệt.');}
   saved=value;
   if(typeof preserveClassifiedProgress==='function')preserveClassifiedProgress(old,value);
-  renderHome();return value;
+  if(state.practice?.topicId)refreshClassifiedPractice();else renderHome();return value;
  }
  function approve(){
   if(!draft)return;
@@ -177,6 +178,32 @@ const TimoClassification=(()=>{
    }catch(e){status('Không thể nhập: '+e.message);}
   }
  }
+ function renderInline(index){
+  const p=state.practice,id=p?.questionIds?.[index],groupId=p?.topicId?.match(/^timo-group-[1-5]/)?.[0];if(!id||!groupId)return '';
+  const group=getTimoTopicGroups(p.grade).find(g=>g.id===groupId);if(!group)return '';
+  const proposal=suggest({...group,topics:[{id:groupId+'-unclassified',entries:[{id,question:p.questions[index]}]}]}).proposals[0];
+  const current=saved.assignments[id]||groupId+'-unclassified',topics=saved.topics.filter(t=>t.groupId===groupId&&t.grade===p.grade);
+  const target=proposal?topics.find(t=>norm(t.name)===norm(proposal.name))?.id||'new':current;
+  return `<details class="inline-classification" data-inline-index="${index}"><summary>Phân loại câu này</summary><div class="inline-classification-fields"><p>${proposal?'Đề xuất: '+html(proposal.name):'Chọn chủ đề hoặc tạo chủ đề mới cho câu này.'}</p><label for="class-topic-${index}">Chuyển vào chủ đề<select id="class-topic-${index}" data-inline-topic><option value="${groupId}-unclassified" ${target===groupId+'-unclassified'?'selected':''}>Chưa phân loại</option>${topics.map(t=>`<option value="${html(t.id)}" ${target===t.id?'selected':''}>${html(t.name)}</option>`).join('')}<option value="new" ${target==='new'?'selected':''}>Tạo chủ đề mới</option></select></label><label data-inline-new ${target==='new'?'':'hidden'} for="class-name-${index}">Tên chủ đề mới<input id="class-name-${index}" type="text" data-inline-name maxlength="100" value="${html(proposal?.name||'')}"></label><button type="button" data-inline-apply>Áp dụng cho câu này</button><span role="status" data-inline-status></span></div></details>`;
+ }
+ function applyInline(button){
+  const box=button.closest('[data-inline-index]'),index=Number(box.dataset.inlineIndex),p=state.practice,id=p?.questionIds?.[index],groupId=p?.topicId?.match(/^timo-group-[1-5]/)?.[0];if(!id||!groupId)return;
+  const next=JSON.parse(JSON.stringify(saved)),selected=box.querySelector('[data-inline-topic]').value;let target=selected;
+  try{
+   if(selected==='new'){
+    const name=box.querySelector('[data-inline-name]').value.trim();if(!name)throw Error('Vui lòng nhập tên chủ đề mới.');
+    let topic=next.topics.find(t=>t.groupId===groupId&&t.grade===p.grade&&norm(t.name)===norm(name));
+    if(!topic){topic={id:groupId+'-review-'+crypto.randomUUID(),name,groupId,grade:p.grade};next.topics.push(topic);}target=topic.id;
+   }
+   if(target===groupId+'-unclassified')delete next.assignments[id];else{
+    if(!next.topics.some(t=>t.id===target&&t.groupId===groupId&&t.grade===p.grade))throw Error('Chủ đề không hợp lệ.');next.assignments[id]=target;
+   }
+   commit(next);const message=document.querySelector('[data-inline-classification-notice]');if(message)message.textContent='Đã lưu phân loại câu hỏi.';
+  }catch(e){box.querySelector('[data-inline-status]').textContent=e.message;}
+ }
+ document.addEventListener('keydown',event=>{if(event.key==='Enter'&&event.target.matches('[data-inline-name]')){event.preventDefault();event.target.closest('.inline-classification').querySelector('[data-inline-apply]').click();}});
+ document.addEventListener('change',event=>{if(event.target.hasAttribute('data-inline-topic'))event.target.closest('.inline-classification').querySelector('[data-inline-new]').hidden=event.target.value!=='new';});
+ document.addEventListener('click',event=>{const button=event.target.closest('[data-inline-apply]');if(button)applyInline(button);});
  document.addEventListener('click',event=>{const b=event.target.closest('[data-classify-group]');if(b)openReview(b.dataset.classifyGroup);const edit=event.target.closest('[data-edit-classified-topic]');if(edit){trigger=edit;openEditor(edit.dataset.editClassifiedTopic)}});
- return {apply,suggest,validate,openReview,snapshot:()=>JSON.parse(JSON.stringify(saved))};
+ return {apply,suggest,validate,openReview,renderInline,snapshot:()=>JSON.parse(JSON.stringify(saved))};
 })();
