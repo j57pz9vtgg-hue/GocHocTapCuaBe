@@ -318,3 +318,8 @@
 /* Crystal artwork has a smaller castle with its full spire inside the image. */
 :root[data-theme="crystal"] #site-shell,:root[data-theme="crystal"] #site-shell .paper-world{background-image:url("./theme-art/crystal-world-open-castle.0a6e0654f060.webp")}
 :root[data-theme="crystal"] #site-shell .adventure-banner{background-image:url("./theme-art/crystal-world-open-castle.0a6e0654f060.webp");background-size:100% auto;background-position:center top}
+
+/* Preserve the original theme book artwork; only its home action is new. */
+.paper-world .paper-home-book>img{image-rendering:auto}
+:root[data-theme="pixel"] .paper-world .paper-home-book>img{image-rendering:pixelated}
+@media(max-width:650px){.paper-world .paper-home-book>img{width:35px;height:35px}}

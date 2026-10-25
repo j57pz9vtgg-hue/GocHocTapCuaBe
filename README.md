@@ -425,3 +425,7 @@ Biểu tượng sách đầu trang làm bài trở thành nút quay về, thay n
 ## Đảo Pha Lê — thấy trọn đỉnh lâu đài
 
 Ảnh gốc đã cắt mất đỉnh lâu đài. Tạo bản sửa riêng bằng công cụ sửa ảnh, thu cụm lâu đài và bổ sung đỉnh, giữ bố cục cảnh; mã hóa WebP223KB không đổi kích thước1536×1024. Chỉ giao diện crystal dùng bản mới, giữ file gốc và10 giao diện khác. Kiểm tra trang chọn đề/làm bài,5 độ rộng320–1892px, ảnh tải đủ, không tràn hoặc lỗi runtime.
+
+## Giữ đúng hình sách gốc trong bộ đề
+
+Khôi phục ảnh sách gốc của từng giao diện bên trong nút quay về, riêng Đảo Pha Lê dùng đúng crystal-book.webp như ảnh chủ dự án chỉ định. Không tạo ảnh sách mới. Giữ kích thước ảnh gốc52px/35px và vùng bấm44px. Kiểm tra11 giao diện ở1440/390/320px: đúng tệp ảnh, tải đầy đủ, bấm/Enter quay về đúng danh sách và giữ bài làm.

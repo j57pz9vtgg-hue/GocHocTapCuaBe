@@ -141,3 +141,5 @@ Theo yêu cầu tiếp theo, biểu tượng quyển sách đầu trang làm bà
 Theo yêu cầu tiếp theo, thanh tiêu đề/bộ điều khiển của đề phải rộng đúng bằng tờ đề A4 (min(100%,210mm)), căn thẳng hai mép với exam-paper. Khi đã nộp, tiêu đề/tiến độ/thời gian ở hàng trên; kết quả/Làm lại/Xem đáp án/Nộp bài ở cùng hàng dưới trong thanh để vừa794px. Điện thoại được xuống hàng trong cùng khung, không tràn. Không đổi khổ/nội dung tờ đề.
 
 Theo yêu cầu riêng cho Đảo Pha Lê, thu nhỏ cụm lâu đài và bổ sung phần đỉnh vốn bị cắt sẵn trong ảnh gốc để thấy trọn đỉnh, giữ cân đối với cảnh. Dùng ảnh sửa riêng assets/theme-art/crystal-world-open-castle.*.webp cho nền/banner và trang làm bài của crystal; không thay tài nguyên gốc hoặc10 giao diện khác.
+
+Chủ dự án yêu cầu sách trong trang làm bài phải giữ đúng hình gốc như hình2, chỉ thêm chức năng quay về. Dùng trực tiếp ảnh sách gốc theo giao diện (crystal/cloud/forest/magic/treasure/cars/museum-book), các giao diện còn lại giữ pixel-book như trước. Không thay hình thành sách phẳng khi bọc nút; kích thước ảnh52px máy tính/35px điện thoại, vùng bấm vẫn ít nhất44px.
