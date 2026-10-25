@@ -117,3 +117,5 @@ Theo yêu cầu mới, gộp “Đếm hình tam giác” vào nhóm nhỏ1 “�
 Theo yêu cầu mới, gộp “Đếm đoạn thẳng” (11 câu) và “Cạnh của hình phẳng và hình khối” (2 câu) thành nhóm nhỏ4 “Đếm đoạn thẳng và cạnh” của Hình học, tổng13 câu. Giữ id Đếm đoạn thẳng, chuyển id nhóm cạnh về nhóm4 và bảo toàn bài làm theo nguồn. Giữ nguyên đề, ảnh, lựa chọn, khóa và lời giải.
 
 Theo yêu cầu tiếp theo, gộp “Tạo đường thẳng từ các điểm” (câu20 Đề vòng loại6) vào nhóm nhỏ4 “Đếm đoạn thẳng và cạnh”, tổng14 câu. Giữ nội dung/khóa/lời giải, chuyển id nhóm cũ về nhóm4 và giữ tiến độ theo nguồn.
+
+Theo yêu cầu tiếp theo, gộp “Đếm hình chữ nhật” (câu19 Đề quốc gia2) vào nhóm nhỏ1 “Đếm hình”, tổng13 câu. Giữ tên/id nhóm1; chuyển id nhóm chữ nhật về nhóm1 để giữ bài làm. Không sửa nội dung/hình/khóa/lời giải hoặc nguồn.

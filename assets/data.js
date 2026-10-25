@@ -3430,7 +3430,7 @@ const officialPapers = [
         "translation": "Rectangles: Hình chữ nhật; Figure: Hình vẽ.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đếm hình chữ nhật",
+        "subtopic": "Đếm hình",
         "image": "./assets/papers/timo-grade2-national-02/q19.b676fa872248.svg",
         "imageAlt": "Hình chữ nhật lớn có hai đường đứng toàn chiều cao và hai đường chia phần bên phải như ảnh"
       },
@@ -4745,7 +4745,7 @@ function resolveTimoTopicId(id) {
   const geometryPrefix = `${timoTopicGroups[3].id}-named-`;
   if (['Cạnh của hình phẳng và hình khối', 'Tạo đường thẳng từ các điểm', 'Đếm đoạn thẳng và cạnh'].some(name => id === geometryPrefix + encodeURIComponent(name)))
     return geometryPrefix + encodeURIComponent('Đếm đoạn thẳng');
-  if (['Đếm hình tam giác', 'Đếm hình'].some(name => id === geometryPrefix + encodeURIComponent(name)))
+  if (['Đếm hình tam giác', 'Đếm hình chữ nhật', 'Đếm hình'].some(name => id === geometryPrefix + encodeURIComponent(name)))
     return geometryPrefix + encodeURIComponent('Đếm hình vuông');
   if (id === geometryPrefix + encodeURIComponent('Đếm khối lập phương xếp chồng'))
     return geometryPrefix + encodeURIComponent('Quan sát khối từ phía trước');
