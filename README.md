@@ -361,3 +361,7 @@ Gộp ba nhóm Các ngày trong tuần, Số ngày trong tháng và Các tháng 
 ## Đáp án Đề quốc gia 1
 
 Nhập25 khóa văn bản/lời giải và4 SVG minh họa theo5 ảnh chủ dự án gửi. Giữ các bước giải, bảng chữ cái và hình đánh số mặt khối/đoạn thẳng/đỉnh đa giác. Các câu trong luyện chủ đề dùng chung khóa nguồn, kể cả khi đảo câu. Chỉ thêm khóa do chủ dự án cung cấp, không tự chấm các đề quốc gia còn lại. Kiểm tra nhập/nộp/chấm25/25, mật khẩu sai/đúng, lời giải/hình, lưu/tải lại/làm lại, bài luyện trộn và11 giao diện.
+
+## Đáp án Đề quốc gia 2
+
+Nhập25 khóa văn bản/lời giải và5 SVG theo5 ảnh chủ dự án gửi. Giữ cách giải, bảng chữ cái, chữ số hàng đơn vị, các mặt bị che và các hình đếm chữ nhật/đoạn thẳng. Khóa/lời giải dùng chung trong luyện chủ đề. Không thay câu nguồn hoặc khóa trước. Đã kiểm tra chấm25/25, mở lời giải qua mật khẩu, hình, lưu/tải lại/làm lại, bài luyện trộn và11 giao diện.
