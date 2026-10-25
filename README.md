@@ -341,3 +341,7 @@ Chuyển câu15 Đề vòng loại5 từ “Tìm số còn thiếu trong đẳng
 ## Nhóm4 Điền dấu
 
 Gộp câu13 Đề quốc gia6 từ “Điền dấu nhân và cộng” vào nhóm4, đổi tên chung thành “Điền dấu”, tổng13 câu. Giữ id nhóm4, số câu/nguồn/nội dung và khóa/lời giải. Bài làm từ các nhóm cũ được chuyển về nhóm chung theo id nguồn và giữ khi tải lại; kiểm tra máy tính/điện thoại.
+
+## Nhóm1 Đếm hình
+
+Gộp nhóm Đếm hình vuông (11 câu) và Đếm hình tam giác (1 câu) thành nhóm nhỏ1 “Đếm hình” của Hình học, tổng12 câu. Giữ id nhóm1, chuyển tiếp id nhóm tam giác và bài làm theo câu nguồn. Nội dung, hình, khóa và lời giải giữ nguyên; đã kiểm tra mở nhóm và khôi phục bài làm khi tải lại ở máy tính/điện thoại.

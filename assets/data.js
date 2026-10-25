@@ -273,7 +273,7 @@ const officialPapers = [
           "7",
           "8"
         ],
-        "subtopic": "Đếm hình vuông",
+        "subtopic": "Đếm hình",
         "imageAlt": "Khung chữ nhật có các đường ngang và dọc tạo thành những hình vuông giao nhau, dựng lại theo hình của câu 16.",
         "image": "./assets/papers/timo-grade2-qualifying-01/q16-squares.5e4b037701a7.svg",
         "explanationImage": "./assets/solutions/timo-grade2-qualifying-01/q16.36862be43e16.svg",
@@ -715,7 +715,7 @@ const officialPapers = [
         ],
         "imageAlt": "Hai hình vuông chồng lệch nhau, phần chồng chia thành một lưới hai cột và bốn hàng như hình đề.",
         "image": "./assets/papers/timo-grade2-qualifying-02/q16-squares.e09671f914c1.svg",
-        "subtopic": "Đếm hình vuông",
+        "subtopic": "Đếm hình",
         "explanationImage": "./assets/solutions/timo-grade2-qualifying-02/q16.5ca46fd3ba83.svg",
         "explanationImageAlt": "Năm hình đánh dấu các hình vuông1 đến13 theo lời giải gốc",
         "answer": 3,
@@ -1151,7 +1151,7 @@ const officialPapers = [
         ],
         "imageAlt": "Hình vuông lớn phía trên trái, hình vuông nhỏ chia ô ở giữa và hình vuông dưới phải chồng lên nhau theo ảnh.",
         "image": "./assets/papers/timo-grade2-qualifying-03/q16-squares.da63e2c48405.svg",
-        "subtopic": "Đếm hình vuông",
+        "subtopic": "Đếm hình",
         "explanationImage": "./assets/solutions/timo-grade2-qualifying-03/q16.e20b992dc6f3.svg",
         "explanationImageAlt": "Hình đánh số theo lời giải câu 16 do chủ dự án cung cấp",
         "answer": 3,
@@ -1625,7 +1625,7 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-04/q18.e7c5edbb6d4e.svg",
         "imageAlt": "Lưới ô vuông dạng hình con vật, đầu trên trái, cổ đứng, thân và hai chân như ảnh",
-        "subtopic": "Đếm hình vuông",
+        "subtopic": "Đếm hình",
         "explanationImage": "./assets/solutions/timo-grade2-qualifying-04/q18.4460fd75a588.svg",
         "explanationImageAlt": "Hình đánh số theo lời giải câu 18 do chủ dự án cung cấp",
         "answer": 2,
@@ -2057,7 +2057,7 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-05/q18.8bfe4837b58e.svg",
         "imageAlt": "Ngôi sao năm cánh bằng năm đoạn thẳng giao nhau, theo hình câu 18",
-        "subtopic": "Đếm hình tam giác",
+        "subtopic": "Đếm hình",
         "explanationImage": "./assets/solutions/timo-grade2-qualifying-05/q18.eb4c238d50bd.svg",
         "explanationImageAlt": "Ngôi sao năm cánh đánh số các vùng1 đến6 theo lời giải gốc",
         "answer": 2,
@@ -2440,7 +2440,7 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-06/q16.282c03b67a9e.svg",
         "imageAlt": "Hai hàng ô vuông lệch nhau: hàng dưới năm ô, hàng trên bốn ô bắt đầu phía trên ô thứ ba của hàng dưới",
-        "subtopic": "Đếm hình vuông",
+        "subtopic": "Đếm hình",
         "explanationImage": "./assets/solutions/timo-grade2-qualifying-06/q16.e743c3e47201.svg",
         "explanationImageAlt": "Hình đánh số theo lời giải câu 16 do chủ dự án cung cấp",
         "answer": 2,
@@ -2856,7 +2856,7 @@ const officialPapers = [
         ],
         "image": "./assets/papers/timo-grade2-qualifying-07/q16.2ebfeebeded5.svg",
         "imageAlt": "Lưới ô vuông với ba ô trên cùng bên phải, hàng ngang năm ô, khoảng trống ở giữa và ba ô dưới cùng theo ảnh",
-        "subtopic": "Đếm hình vuông",
+        "subtopic": "Đếm hình",
         "explanationImage": "./assets/solutions/timo-grade2-qualifying-07/q16.e9862f9c8e35.svg",
         "explanationImageAlt": "Hình đánh số theo lời giải câu 16 do chủ dự án cung cấp",
         "answer": 0,
@@ -3635,7 +3635,7 @@ const officialPapers = [
         "translation": "Squares: Hình vuông; Figure: Hình vẽ.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đếm hình vuông",
+        "subtopic": "Đếm hình",
         "image": "./assets/papers/timo-grade2-national-03/q16.be1b6db9409b.svg",
         "imageAlt": "Lưới các hình vuông và hình chữ nhật chồng nhau, có ô nhô bên trái và hai ô bên phải như ảnh"
       },
@@ -3868,7 +3868,7 @@ const officialPapers = [
         "translation": "Squares: Hình vuông; Figure: Hình vẽ.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đếm hình vuông",
+        "subtopic": "Đếm hình",
         "image": "./assets/papers/timo-grade2-national-04/q16.b759e673b657.svg",
         "imageAlt": "Các ô vuông và phần hình chữ nhật xếp thành ba hàng lệch, giữ các đoạn chia như ảnh"
       },
@@ -4120,7 +4120,7 @@ const officialPapers = [
         "translation": "Square: Hình vuông; Figure: Hình vẽ.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đếm hình vuông",
+        "subtopic": "Đếm hình",
         "image": "./assets/papers/timo-grade2-national-05/q18.19ee3a850497.svg",
         "imageAlt": "Các ô vuông xếp thành bậc từ phần trên trái xuống phần dưới phải theo ảnh"
       },
@@ -4348,7 +4348,7 @@ const officialPapers = [
         "translation": "Square: Hình vuông; Figure: Hình vẽ.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đếm hình vuông",
+        "subtopic": "Đếm hình",
         "image": "./assets/papers/timo-grade2-national-06/q17.c6b3f8b62cc1.svg",
         "imageAlt": "Lưới ô vuông có phần nhô trên phải và hai nhánh dưới, giữ từng ô như ảnh"
       },
@@ -4567,7 +4567,7 @@ const officialPapers = [
         "translation": "Square: Hình vuông; Figure: Hình vẽ.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đếm hình vuông",
+        "subtopic": "Đếm hình",
         "image": "./assets/papers/timo-grade2-national-07/q16.0a5c420360a8.svg",
         "imageAlt": "Lưới có hàng trên năm ô, hàng dưới bốn ô vuông"
       },
@@ -4715,6 +4715,7 @@ function buildTimoTopicGroups(papers, grade) {
       if (!topic) {
         // Keep the existing topic ID so saved attempts, question order and reload state survive this label change.
         const stableName = name === 'Có bao nhiêu cách kết hợp khác nhau?' ? 'Phối hợp lựa chọn'
+          : name === 'Đếm hình' ? 'Đếm hình vuông'
           : name === 'Điền dấu' ? 'Điền dấu cộng và trừ'
           : name === 'Tìm giá trị' ? 'Cộng nhiều số'
           : name === 'Quan sát và đếm khối lập phương' ? 'Quan sát khối từ phía trước' : name;
@@ -4741,6 +4742,8 @@ function resolveTimoTopicId(id) {
   if (['Điền dấu nhân và trừ', 'Điền dấu nhân và cộng', 'Điền dấu'].some(name => id === numberTheoryPrefix + encodeURIComponent(name)))
     return numberTheoryPrefix + encodeURIComponent('Điền dấu cộng và trừ');
   const geometryPrefix = `${timoTopicGroups[3].id}-named-`;
+  if (['Đếm hình tam giác', 'Đếm hình'].some(name => id === geometryPrefix + encodeURIComponent(name)))
+    return geometryPrefix + encodeURIComponent('Đếm hình vuông');
   if (id === geometryPrefix + encodeURIComponent('Đếm khối lập phương xếp chồng'))
     return geometryPrefix + encodeURIComponent('Quan sát khối từ phía trước');
   return id === prefix + encodeURIComponent('Biểu thức cộng trừ liên tiếp')
