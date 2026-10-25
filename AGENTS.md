@@ -127,3 +127,5 @@ Chủ dự án đã gửi khóa văn bản và lời giải chi tiết cho cả7
 Theo yêu cầu mới, gộp “Đỉnh, cạnh và mặt của hình khối” (8 câu) vào nhóm nhỏ4 “Đếm đoạn thẳng và cạnh” của Hình học, tổng22 câu. Giữ id nhóm4, chuyển id nhóm cũ về nhóm4 để bảo toàn bài làm. Không thay nội dung/ảnh/khóa/lời giải và nguồn câu. Thực hiện sau khi xuất bản xong đáp án quốc gia5–7.
 
 Theo yêu cầu mới, gộp “Chia nhóm theo sức chứa” (2 câu) vào nhóm nhỏ6 “Đếm số theo điều kiện” của Lý thuyết số, tổng7 câu. Giữ id nhóm6, chuyển tiếp id nhóm cũ để bảo toàn bài làm theo nguồn. Không sửa câu hỏi/ảnh/khóa/lời giải hoặc số câu gốc.
+
+Theo yêu cầu mới, gộp “Bài toán tính thời gian” (câu3 Đề quốc gia1) vào nhóm nhỏ5 “Ngày, tháng và lịch” của Tư duy lô-gic, tổng13 câu. Giữ tên/id nhóm5, chuyển tiếp id nhóm thời gian và bài làm đã lưu. Không sửa nội dung, ảnh, khóa/lời giải hoặc nguồn.

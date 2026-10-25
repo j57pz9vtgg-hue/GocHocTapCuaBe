@@ -3059,7 +3059,7 @@ const officialPapers = [
         "translation": "Minute: Phút; Draw: Vẽ; Picture: Bức tranh; Rest: Nghỉ.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Bài toán tính thời gian",
+        "subtopic": "Ngày, tháng và lịch",
         "answer": "95",
         "answerSource": "user",
         "explanation": "Để hoàn thành 4 bức tranh, Mary cần vẽ 4 lần và nghỉ 3 lần.\nTổng thời gian Mary cần là: 20 + 20 + 20 + 20 + 5 + 5 + 5 = 95 (phút).\nĐáp số: 95."
@@ -5329,7 +5329,7 @@ function getTimoTopicGroups(grade) {
 // Legacy topic references continue in the surviving group after the owner-requested merge.
 function resolveTimoTopicId(id) {
   const logicalPrefix = `${timoTopicGroups[0].id}-named-`;
-  if (['Số ngày trong tháng', 'Các tháng trong năm', 'Ngày, tháng và lịch'].some(name => id === logicalPrefix + encodeURIComponent(name)))
+  if (['Số ngày trong tháng', 'Các tháng trong năm', 'Bài toán tính thời gian', 'Ngày, tháng và lịch'].some(name => id === logicalPrefix + encodeURIComponent(name)))
     return logicalPrefix + encodeURIComponent('Các ngày trong tuần');
   const prefix = `${timoTopicGroups[1].id}-named-`;
   const numberTheoryPrefix = `${timoTopicGroups[2].id}-named-`;

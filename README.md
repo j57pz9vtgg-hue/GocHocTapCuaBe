@@ -397,3 +397,5 @@ Gộp8 câu “Đỉnh, cạnh và mặt của hình khối” vào nhóm nhỏ4
 ## Gộp chia nhóm theo sức chứa
 
 Gộp2 câu “Chia nhóm theo sức chứa” vào nhóm nhỏ6 “Đếm số theo điều kiện”, tổng7 câu. Giữ tên/id nhóm6 và chuyển id cũ để giữ bài làm. Kiểm tra mở nhóm, khôi phục câu trả lời khi tải lại, chấm7/7, xem đủ7 lời giải và máy tính/điện thoại; nội dung/khóa nguồn giữ nguyên.
+
+Gộp thêm “Bài toán tính thời gian” vào nhóm nhỏ5 “Ngày, tháng và lịch”, tổng13 câu. Giữ id nhóm5, chuyển tiếp bài làm từ nhóm cũ theo nguồn; kiểm tra tải lại, chấm13/13, xem13 lời giải và máy tính/điện thoại. Câu hỏi/khóa/lời giải giữ nguyên.
