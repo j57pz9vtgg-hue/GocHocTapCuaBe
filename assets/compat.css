@@ -323,3 +323,20 @@
 .paper-world .paper-home-book>img{image-rendering:auto}
 :root[data-theme="pixel"] .paper-world .paper-home-book>img{image-rendering:pixelated}
 @media(max-width:650px){.paper-world .paper-home-book>img{width:35px;height:35px}}
+
+/* Consistent, compact question typography and proportional source figures. */
+.paper-world .paper-question{padding:20px 0}
+.paper-world .paper-question legend{line-height:1.5;margin-bottom:8px}
+.paper-world .paper-question legend>span[lang="en"]{font-weight:700}
+.paper-world .question-translation{line-height:1.5;margin:0 0 12px}
+.paper-world .question-illustration{margin:12px 0 16px}
+.paper-world .question-illustration:not(.solution-illustration) img{max-width:min(85%,560px);max-height:240px}
+.paper-world .diagram-number-line{font-size:24px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}
+.paper-world .paper-options{gap:10px 12px}
+.paper-world .paper-options label{line-height:1.5}
+@media(max-width:480px){
+ .paper-world .paper-question{padding:16px 0}
+ .paper-world .question-illustration:not(.solution-illustration) img{max-width:100%;max-height:200px}
+ .paper-world .question-illustration{margin:10px 0 14px}
+ .paper-world .diagram-number-line{font-size:21px}
+}

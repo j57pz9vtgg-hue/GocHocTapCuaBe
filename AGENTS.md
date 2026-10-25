@@ -143,3 +143,5 @@ Theo yêu cầu tiếp theo, thanh tiêu đề/bộ điều khiển của đề 
 Theo yêu cầu riêng cho Đảo Pha Lê, thu nhỏ cụm lâu đài và bổ sung phần đỉnh vốn bị cắt sẵn trong ảnh gốc để thấy trọn đỉnh, giữ cân đối với cảnh. Dùng ảnh sửa riêng assets/theme-art/crystal-world-open-castle.*.webp cho nền/banner và trang làm bài của crystal; không thay tài nguyên gốc hoặc10 giao diện khác.
 
 Chủ dự án yêu cầu sách trong trang làm bài phải giữ đúng hình gốc như hình2, chỉ thêm chức năng quay về. Dùng trực tiếp ảnh sách gốc theo giao diện (crystal/cloud/forest/magic/treasure/cars/museum-book), các giao diện còn lại giữ pixel-book như trước. Không thay hình thành sách phẳng khi bọc nút; kích thước ảnh52px máy tính/35px điện thoại, vùng bấm vẫn ít nhất44px.
+
+Theo yêu cầu mới, toàn bộ câu hỏi tiếng Anh trong đề/luyện chủ đề in đậm; dòng câu hỏi/bản dịch giãn1.5, khoảng cách gọn và đều. Hình câu hỏi thu nhỏ theo tỷ lệ, tối đa560px rộng/240px cao máy tính,200px cao điện thoại; không cắt hình hoặc thay nội dung, không áp dụng thu nhỏ này cho hình lời giải.
