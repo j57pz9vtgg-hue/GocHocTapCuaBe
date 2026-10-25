@@ -3985,7 +3985,10 @@ const officialPapers = [
         "translation": "Born: Ra đời; Years old: Tuổi; Later: Sau.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Tuổi hiện tại và tương lai"
+        "subtopic": "Tuổi hiện tại và tương lai",
+        "answer": "27",
+        "answerSource": "user",
+        "explanation": "Khi Ethan sinh ra, mẹ 28 tuổi nên mẹ hơn Ethan 28 tuổi.\nKhi mẹ 56 tuổi, tuổi của Ethan là: 56 − 28 = 28 (tuổi).\nEm gái sinh sau Ethan 1 năm nên em gái kém Ethan 1 tuổi.\nTuổi của em gái là: 28 − 1 = 27 (tuổi).\nĐáp số: 27."
       },
       {
         "number": 2,
@@ -3993,7 +3996,10 @@ const officialPapers = [
         "translation": "May: Tháng 5; Friday: Thứ Sáu; June: Tháng 6; The same year: Cùng năm.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Ngày, tháng và lịch"
+        "subtopic": "Ngày, tháng và lịch",
+        "answer": "Tuesday",
+        "answerSource": "user",
+        "explanation": "Cứ sau 7 ngày thì thứ trong tuần sẽ lặp lại.\nDo đó, các ngày thứ Sáu tiếp theo trong tháng 5 là ngày 14, ngày 21, ngày 28.\nNgày 29 tháng 5 là thứ Bảy. Ngày 30 tháng 5 là Chủ nhật. Ngày 31 tháng 5 là thứ Hai.\nVậy ngày 1 tháng 6 là thứ Ba.\nĐáp số: Tuesday."
       },
       {
         "number": 3,
@@ -4003,7 +4009,10 @@ const officialPapers = [
         "options": [],
         "subtopic": "Quy luật trong bảng số",
         "image": "./assets/papers/timo-grade2-national-04/q03.f1241de65eb7.svg",
-        "imageAlt": "Bảng bốn hàng:3,2,6;5,4,20;7,6,dấu hỏi;9,8,72"
+        "imageAlt": "Bảng bốn hàng:3,2,6;5,4,20;7,6,dấu hỏi;9,8,72",
+        "answer": "42",
+        "answerSource": "user",
+        "explanation": "Quy luật: Trong mỗi hàng, số ở ô thứ 3 bằng các số ở 2 ô đầu nhân với nhau.\n3 × 2 = 6; 5 × 4 = 20; 7 × 6 = 42; 9 × 8 = 72.\nVậy số còn thiếu là 42.\nĐáp số: 42."
       },
       {
         "number": 4,
@@ -4013,7 +4022,12 @@ const officialPapers = [
         "options": [],
         "subtopic": "Quy luật dãy số",
         "image": "./assets/papers/timo-grade2-national-04/q04.405080070787.svg",
-        "imageAlt": "K, N, P, S, U, __"
+        "imageAlt": "K, N, P, S, U, __",
+        "explanationImage": "./assets/solutions/timo-grade2-national-04/q04.39560fa4642f.svg",
+        "explanationImageAlt": "Đoạn bảng chữ cái K đếnZ,gạch chân K,N,P,S,U,X theo lời giải nguồn",
+        "answer": "X",
+        "answerSource": "user",
+        "explanation": "Quy luật: 2 chữ cái liên tiếp trong dãy lần lượt cách nhau 2 chữ cái và 1 chữ cái trong bảng chữ cái tiếng Anh.\n… K L M N O P Q R S T U V W X Y Z.\nVậy chữ cái cần tìm là X.\nĐáp số: X."
       },
       {
         "number": 5,
@@ -4021,7 +4035,10 @@ const officialPapers = [
         "translation": "Children: Đứa trẻ; Line: Hàng; In front of: Đằng trước; Behind: Đằng sau.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Bài toán vị trí trong hàng"
+        "subtopic": "Bài toán vị trí trong hàng",
+        "answer": "16",
+        "answerSource": "user",
+        "explanation": "Có 10 đứa trẻ đứng trước Eleanor nên Eleanor là đứa trẻ thứ 11 trong hàng.\nSố đứa trẻ đứng sau Eleanor là: 27 − 11 = 16 (đứa trẻ).\nĐáp số: 16."
       },
       {
         "number": 6,
@@ -4029,7 +4046,10 @@ const officialPapers = [
         "translation": "Value: Giá trị.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Tìm giá trị"
+        "subtopic": "Tìm giá trị",
+        "answer": "7",
+        "answerSource": "user",
+        "explanation": "1 − 3 + 5 − 7 + 9 − 11 + 13 = 1 + (5 − 3) + (9 − 7) + (13 − 11) = 1 + 2 + 2 + 2 = 1 + 6 = 7.\nĐáp số: 7."
       },
       {
         "number": 7,
@@ -4037,7 +4057,10 @@ const officialPapers = [
         "translation": "Value: Giá trị.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Tìm giá trị"
+        "subtopic": "Tìm giá trị",
+        "answer": "490",
+        "answerSource": "user",
+        "explanation": "7 × 2 × 7 × 5 = (7 × 7) × (2 × 5) = 49 × 10 = 490.\nĐáp số: 490."
       },
       {
         "number": 8,
@@ -4047,7 +4070,10 @@ const officialPapers = [
         "options": [],
         "subtopic": "Phép cộng với chữ số chưa biết",
         "image": "./assets/papers/timo-grade2-national-04/q08.d07244ae090e.svg",
-        "imageAlt": "Phép cộng dọc A cộng BB bằng 73"
+        "imageAlt": "Phép cộng dọc A cộng BB bằng 73",
+        "answer": "1",
+        "answerSource": "user",
+        "explanation": "Trường hợp 1: Hàng đơn vị là phép cộng không nhớ 1.\nDựa vào hàng chục, ta có B = 7.\nKhi đó ta có A + BB = A + 77 = 73 (Loại).\nTrường hợp 2: Hàng đơn vị là phép cộng có nhớ 1.\nDựa vào hàng chục, ta có B + 1 = 7, suy ra B = 6.\nVì A + BB = 73 nên A = 73 − BB = 73 − 66 = 7 (thỏa mãn).\nVậy A − B = 7 − 6 = 1.\nĐáp số: 1."
       },
       {
         "number": 9,
@@ -4055,7 +4081,10 @@ const officialPapers = [
         "translation": "Value: Giá trị.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Tìm giá trị"
+        "subtopic": "Tìm giá trị",
+        "answer": "800",
+        "answerSource": "user",
+        "explanation": "8 × 49 + 8 × 67 − 8 × 11 − 8 × 5 = 8 × (49 + 67 − 11 − 5) = 8 × (116 − 11 − 5) = 8 × 100 = 800.\nĐáp số: 800."
       },
       {
         "number": 10,
@@ -4063,7 +4092,10 @@ const officialPapers = [
         "translation": "Value: Giá trị.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Tìm giá trị"
+        "subtopic": "Tìm giá trị",
+        "answer": "168",
+        "answerSource": "user",
+        "explanation": "14 + 16 + 18 + 20 + 22 + 24 + 26 + 28 = (14 + 26) + (16 + 24) + (18 + 22) + 20 + 28\n= 40 + 40 + 40 + 20 + 28 = 120 + 20 + 28 = 168.\nĐáp số: 168."
       },
       {
         "number": 11,
@@ -4075,7 +4107,10 @@ const officialPapers = [
         "sectionHeading": {
           "english": "Number Theory",
           "vietnamese": "Số học"
-        }
+        },
+        "answer": "19",
+        "answerSource": "user",
+        "explanation": "Hannah cho Peter 5 bút chì và Lucy cho Peter 9 bút chì thì Peter đã nhận được tất cả số bút chì là: 5 + 9 = 14 (bút chì).\nNhận thấy, Hannah cho đi 5 bút chì thì bằng với Peter nhận được 14 bút chì.\nVậy ban đầu Hannah có nhiều hơn Peter là: 5 + 14 = 19 (bút chì).\nĐáp số: 19."
       },
       {
         "number": 12,
@@ -4083,7 +4118,10 @@ const officialPapers = [
         "translation": "Determine: Xác định; Result: Kết quả; Odd: Số lẻ; Even: Số chẵn.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Nhận biết kết quả chẵn"
+        "subtopic": "Nhận biết kết quả chẵn",
+        "answer": "Odd",
+        "answerSource": "user",
+        "explanation": "5 × 5 + 9 × 7 − 4 × 4 + 8 × 8 − 7 × 1 − 2 × 6 = 25 + 63 − 16 + 64 − 7 − 12 = 117.\nVì 117 là số lẻ nên kết quả của phép tính đã cho là số lẻ.\nĐáp số: Odd."
       },
       {
         "number": 13,
@@ -4093,7 +4131,10 @@ const officialPapers = [
         "options": [],
         "subtopic": "Tìm số hạng trong dãy số",
         "image": "./assets/papers/timo-grade2-national-04/q13.1b4f7c5fa250.svg",
-        "imageAlt": "94, 86, 78, 70, 62, …"
+        "imageAlt": "94, 86, 78, 70, 62, …",
+        "answer": "84",
+        "answerSource": "user",
+        "explanation": "Quy luật: Các số trong dãy giảm dần 8 đơn vị.\n94 − 8 = 86; 86 − 8 = 78; 78 − 8 = 70; 70 − 8 = 62; …\nSố thứ 6 là: 62 − 8 = 54.\nSố thứ 7 là: 54 − 8 = 46.\nSố thứ 8 là: 46 − 8 = 38.\nTổng của số thứ 7 và số thứ 8 là: 46 + 38 = 84.\nĐáp số: 84."
       },
       {
         "number": 14,
@@ -4101,7 +4142,10 @@ const officialPapers = [
         "translation": "Smallest: Nhỏ nhất; 3-digit odd number: Số lẻ có 3 chữ số.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Tìm số theo điều kiện"
+        "subtopic": "Tìm số theo điều kiện",
+        "answer": "101",
+        "answerSource": "user",
+        "explanation": "Số lẻ nhỏ nhất có 3 chữ số là 101.\nĐáp số: 101."
       },
       {
         "number": 15,
@@ -4111,7 +4155,10 @@ const officialPapers = [
         "options": [],
         "subtopic": "Điền dấu",
         "image": "./assets/papers/timo-grade2-national-04/q15.5b7e644d94d1.svg",
-        "imageAlt": "9 __ 18 __ 3 __ 7 = 23"
+        "imageAlt": "9 __ 18 __ 3 __ 7 = 23",
+        "answer": "9 + 18 + 3 − 7 = 23",
+        "answerSource": "user",
+        "explanation": "Ta có: 9 + 18 + 3 − 7 = 27 + 3 − 7 = 30 − 7 = 23.\nĐáp số: 9 + 18 + 3 − 7 = 23."
       },
       {
         "number": 16,
@@ -4121,7 +4168,12 @@ const officialPapers = [
         "options": [],
         "subtopic": "Đếm hình",
         "image": "./assets/papers/timo-grade2-national-04/q16.b759e673b657.svg",
-        "imageAlt": "Các ô vuông và phần hình chữ nhật xếp thành ba hàng lệch, giữ các đoạn chia như ảnh"
+        "imageAlt": "Các ô vuông và phần hình chữ nhật xếp thành ba hàng lệch, giữ các đoạn chia như ảnh",
+        "explanationImage": "./assets/solutions/timo-grade2-national-04/q16.e7ed54905f19.svg",
+        "explanationImageAlt": "Hình đánh số theo lời giải câu 16 do chủ dự án cung cấp",
+        "answer": "14",
+        "answerSource": "user",
+        "explanation": "Ta đánh số các mảnh như hình dưới đây.\nHình vuông đơn vị: có 10 hình là 1, 2, 3, 4, 5, 6, 7, 8, 9 và 11.\nHình vuông có kích cỡ bằng 4 hình vuông đơn vị ghép lại: có 3 hình là (2, 3, 5, 6), (4, 5, 7, 8) và (8, 10).\nHình vuông có kích cỡ bằng 9 hình vuông đơn vị ghép lại: có 1 hình là (4, 5, 6, 7, 8, 9, 10).\nVậy có tất cả 10 + 3 + 1 = 14 (hình vuông).\nĐáp số: 14."
       },
       {
         "number": 17,
@@ -4131,7 +4183,12 @@ const officialPapers = [
         "options": [],
         "subtopic": "Đếm đoạn thẳng và cạnh",
         "image": "./assets/papers/timo-grade2-national-04/q17.9b3cfcae3387.svg",
-        "imageAlt": "Các đoạn xiên tạo phần tam giác, hai đoạn đi qua các giao điểm và tám điểm đánh dấu như ảnh"
+        "imageAlt": "Các đoạn xiên tạo phần tam giác, hai đoạn đi qua các giao điểm và tám điểm đánh dấu như ảnh",
+        "explanationImage": "./assets/solutions/timo-grade2-national-04/q17.1df4d2e60380.svg",
+        "explanationImageAlt": "Hình đánh số theo lời giải câu 17 do chủ dự án cung cấp",
+        "answer": "19",
+        "answerSource": "user",
+        "explanation": "Ta đánh dấu các đoạn thẳng như hình dưới đây.\nĐoạn thẳng đơn: có 11 đoạn thẳng là 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 và 11.\nĐoạn thẳng được ghép bởi 2 đoạn thẳng đơn: có 6 đoạn thẳng là (1, 2), (2, 3), (4, 7), (7, 9), (5, 8) và (6, 10).\nĐoạn thẳng được ghép bởi 3 đoạn thẳng đơn: có 2 đoạn thẳng là (1, 2, 3) và (4, 7, 9).\nVậy có tất cả 11 + 6 + 2 = 19 (đoạn thẳng).\nĐáp số: 19."
       },
       {
         "number": 18,
@@ -4141,7 +4198,12 @@ const officialPapers = [
         "options": [],
         "subtopic": "Quan sát và đếm khối lập phương",
         "image": "./assets/papers/timo-grade2-national-04/q18.892ce099c77d.svg",
-        "imageAlt": "Cụm khối trắng xám với cột cao ở giữa phía sau, hai khối nhô trước trái và một khối nhô bên phải theo ảnh"
+        "imageAlt": "Cụm khối trắng xám với cột cao ở giữa phía sau, hai khối nhô trước trái và một khối nhô bên phải theo ảnh",
+        "explanationImage": "./assets/solutions/timo-grade2-national-04/q18.59e9d9f7c833.svg",
+        "explanationImageAlt": "Hình đánh số theo lời giải câu 18 do chủ dự án cung cấp",
+        "answer": "8",
+        "answerSource": "user",
+        "explanation": "Quan sát hình vẽ ta thấy có 9 mặt bên phải.\nTuy nhiên khi nhìn từ bên phải sang, hình vuông số 9 bị hình vuông số 1 che khuất.\nVậy khi nhìn từ bên phải sang, ta chỉ nhìn thấy 8 hình vuông nhỏ.\nĐáp số: 8."
       },
       {
         "number": 19,
@@ -4151,7 +4213,12 @@ const officialPapers = [
         "options": [],
         "subtopic": "Đếm góc trong đa giác",
         "image": "./assets/papers/timo-grade2-national-04/q19.f3466a6cf1d3.svg",
-        "imageAlt": "Đa giác có hai chỗ lõm phía trên, một góc nhô bên phải và bậc ở phía dưới theo ảnh"
+        "imageAlt": "Đa giác có hai chỗ lõm phía trên, một góc nhô bên phải và bậc ở phía dưới theo ảnh",
+        "explanationImage": "./assets/solutions/timo-grade2-national-04/q19.9366376391d1.svg",
+        "explanationImageAlt": "Hình đánh số theo lời giải câu 19 do chủ dự án cung cấp",
+        "answer": "13",
+        "answerSource": "user",
+        "explanation": "Hình đa giác đã cho có 13 đỉnh tương ứng với 13 góc trong, được đánh số như dưới đây.\nĐáp số: 13."
       },
       {
         "number": 20,
@@ -4159,7 +4226,10 @@ const officialPapers = [
         "translation": "Prism: Hình lăng trụ; Vertices: Đỉnh; Faces: Mặt.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đỉnh, cạnh và mặt của hình khối"
+        "subtopic": "Đỉnh, cạnh và mặt của hình khối",
+        "answer": "11",
+        "answerSource": "user",
+        "explanation": "Hình lăng trụ có 18 đỉnh nên mỗi đáy có 18 : 2 = 9 đỉnh.\nDo đó, hình lăng trụ đã cho có 9 mặt bên và 2 mặt đáy.\nVậy hình lăng trụ có 9 + 2 = 11 mặt.\nĐáp số: 11."
       },
       {
         "number": 21,
@@ -4167,7 +4237,10 @@ const officialPapers = [
         "translation": "Greatest: Lớn nhất; 4-digit odd number: Số lẻ có 4 chữ số; Composed of: Bao gồm; Digit: Chữ số; Once: Một lần.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Lập số lớn nhất và nhỏ nhất"
+        "subtopic": "Lập số lớn nhất và nhỏ nhất",
+        "answer": "9845",
+        "answerSource": "user",
+        "explanation": "Số cần lập là số lớn nhất nên ta chọn chữ số hàng nghìn là 9.\nSố cần lập là số lẻ nên ta chọn chữ số hàng đơn vị là 5.\nTa chọn các chữ số hàng trăm và hàng chục lần lượt là 8 và 4.\nVậy số lẻ lớn nhất có 4 chữ số lập được từ các chữ số đề bài cho là 9845.\nĐáp số: 9845."
       },
       {
         "number": 22,
@@ -4175,7 +4248,10 @@ const officialPapers = [
         "translation": "Teacher: Cô giáo; Pens: Bút; Divide: Chia; At least: Ít nhất; Ways: Cách.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Phân phối đồ vật vào các nhóm"
+        "subtopic": "Phân phối đồ vật vào các nhóm",
+        "answer": "16",
+        "answerSource": "user",
+        "explanation": "Cô giáo có thể chia cho John số bút là: 1, 2, 3, 4, 5, …, 15 hoặc 16 cái bút, Bella sẽ nhận số bút còn lại.\nVậy có 16 cách để chia bút.\nĐáp số: 16."
       },
       {
         "number": 23,
@@ -4183,7 +4259,10 @@ const officialPapers = [
         "translation": "Choose: Chọn; Digits: Chữ số; Without repetition: Không lặp lại; 2-digit odd numbers: Số lẻ có 2 chữ số; Minimum value: Giá trị nhỏ nhất; Difference: Hiệu.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Lập hai số có hiệu nhỏ nhất"
+        "subtopic": "Lập hai số có hiệu nhỏ nhất",
+        "answer": "6",
+        "answerSource": "user",
+        "explanation": "Ta chọn 2 chữ số có hiệu nhỏ nhất để làm hàng chục. Có 2 cặp thỏa mãn là (1, 2) và (7, 8).\nTrường hợp 1: Chọn cặp (1, 2) làm hàng chục. Còn lại các chữ số 0, 5, 7, 8.\nChọn chữ số lẻ lớn nhất có thể để làm hàng đơn vị của số nhỏ hơn (là 7).\nChọn chữ số lẻ nhỏ nhất có thể để làm hàng đơn vị của số lớn hơn (là 5).\nKhi đó ta có 2 số là 17 và 25, hiệu là 25 − 17 = 8.\nTrường hợp 2: Chọn cặp (7, 8) làm hàng chục. Còn lại các chữ số 0, 5, 1.\nChọn chữ số lẻ lớn nhất có thể để làm hàng đơn vị của số nhỏ hơn (là 5).\nChọn chữ số lẻ nhỏ nhất có thể để làm hàng đơn vị của số lớn hơn (là 1).\nKhi đó ta có 2 số là 75 và 81, hiệu là 81 − 75 = 6.\nVậy hiệu nhỏ nhất có thể là 6.\nĐáp số: 6."
       },
       {
         "number": 24,
@@ -4191,7 +4270,10 @@ const officialPapers = [
         "translation": "Coins: Đồng xu; At most: Nhiều nhất; Cups: Cốc; Cost: Có giá.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Mua hàng theo số tiền có"
+        "subtopic": "Mua hàng theo số tiền có",
+        "answer": "5",
+        "answerSource": "user",
+        "explanation": "Tổng số tiền Natalie có là: 1 + 1 + 1 + 2 + 2 + 2 + 2 + 5 + 5 = 21 (đô).\nTa có: 21 = 4 + 4 + 4 + 4 + 4 + 1.\nVì 21 có thể tách thành tổng của nhiều nhất 5 số 4 nên Natalie có thể mua được nhiều nhất 5 cái cốc.\nĐáp số: 5."
       },
       {
         "number": 25,
@@ -4201,7 +4283,10 @@ const officialPapers = [
         "options": [],
         "subtopic": "Đếm kết quả theo điều kiện",
         "image": "./assets/papers/timo-grade2-national-04/q25.e1900d2b8c82.svg",
-        "imageAlt": "Các phép tính99÷3;19+19;51−34;6×8;24+48;5×5;15+16"
+        "imageAlt": "Các phép tính99÷3;19+19;51−34;6×8;24+48;5×5;15+16",
+        "answer": "4",
+        "answerSource": "user",
+        "explanation": "Ta có kết quả các phép tính như sau:\n99 : 3 = 33; 19 + 19 = 38; 51 − 34 = 17; 6 × 8 = 48; 24 + 48 = 72; 5 × 5 = 25; 15 + 16 = 31.\nTrong đó có 4 số nằm giữa 30 và 50 là: 33, 38, 48, 31.\nĐáp số: 4."
       }
     ]
   },
