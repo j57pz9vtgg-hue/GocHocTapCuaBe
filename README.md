@@ -379,3 +379,7 @@ Hiện275/350 câu có đáp án do chủ dự án cung cấp:175 câu của7 đ
 ## Đáp án Đề quốc gia 5
 
 Nhập25 khóa văn bản/lời giải và5 SVG theo4 ảnh chủ dự án cung cấp. Giữ các bước giải, hình đánh số và cách đếm/kết hợp. Câu13: nguồn lời giải dùng2×3 và kết quả202, câu hỏi đã nhập dùng2×2; giữ nguyên cả hai nguồn, nhập đáp sốEven do chủ dự án cung cấp và báo sự khác nhau, không tự sửa. Khóa/lời giải áp dụng cùng câu trong luyện chủ đề. Kiểm tra chấm25/25, mật khẩu, hình, lưu/tải lại/làm lại, bài luyện trộn và11 giao diện.
+
+## Đáp án Đề quốc gia 6
+
+Nhập25 khóa văn bản/lời giải và5 SVG từ4 ảnh chủ dự án gửi. Giữ hội thoại suy luận, các bước giải, nhóm ký hiệu, ô vuông, mặt khối và11 vùng của hình tròn. Khóa/lời giải dùng chung trong luyện chủ đề, giữ nguyên lập luận của nguồn. Kiểm tra chấm25/25, mật khẩu, hình, lưu/tải lại/làm lại, bài luyện trộn và11 giao diện; không đổi câu nguồn hoặc khóa trước.
