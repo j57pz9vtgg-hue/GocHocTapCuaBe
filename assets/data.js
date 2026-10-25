@@ -92,7 +92,7 @@ const officialPapers = [
           "Monday / Thứ Hai",
           "Tuesday / Thứ Ba"
         ],
-        "subtopic": "Các ngày trong tuần",
+        "subtopic": "Ngày, tháng và lịch",
         "optionColumns": 2,
         "answer": 1,
         "answerSource": "user",
@@ -533,7 +533,7 @@ const officialPapers = [
           "Tuesday / Thứ Ba"
         ],
         "optionColumns": 2,
-        "subtopic": "Các ngày trong tuần",
+        "subtopic": "Ngày, tháng và lịch",
         "answer": 0,
         "answerSource": "user",
         "explanation": "Ngày mai là thứ Bảy nên hôm nay là thứ Sáu.\n1 ngày trước hôm nay là thứ Năm. 2 ngày trước hôm nay là thứ Tư. 3 ngày trước hôm nay là thứ Ba. 4 ngày trước hôm nay là thứ Hai. 5 ngày trước hôm nay là Chủ nhật.\nĐáp số: A."
@@ -969,7 +969,7 @@ const officialPapers = [
           "Sunday / Chủ Nhật"
         ],
         "optionColumns": 2,
-        "subtopic": "Các ngày trong tuần",
+        "subtopic": "Ngày, tháng và lịch",
         "answer": 3,
         "answerSource": "user",
         "explanation": "Ngày hôm kia là thứ Hai nên hôm qua là thứ Ba. Hôm nay là thứ Tư.\n1 ngày nữa là thứ Năm. 2 ngày nữa là thứ Sáu. 3 ngày nữa là thứ Bảy.\nVậy 4 ngày nữa là Chủ nhật.\nĐáp số: D."
@@ -1356,7 +1356,7 @@ const officialPapers = [
           "Sunday / Chủ Nhật"
         ],
         "optionColumns": 2,
-        "subtopic": "Các ngày trong tuần",
+        "subtopic": "Ngày, tháng và lịch",
         "answer": 2,
         "answerSource": "user",
         "explanation": "Hôm qua là thứ Sáu. Vậy hôm nay là thứ Bảy.\n1 ngày nữa là Chủ nhật. 2 ngày nữa là thứ Hai. 3 ngày nữa là thứ Ba.\nĐáp số: C."
@@ -1790,7 +1790,7 @@ const officialPapers = [
           "Thursday / Thứ Năm"
         ],
         "optionColumns": 2,
-        "subtopic": "Các ngày trong tuần",
+        "subtopic": "Ngày, tháng và lịch",
         "answer": 3,
         "answerSource": "user",
         "explanation": "Sau 7 ngày (tức là 1 tuần) thì thứ trong tuần lặp lại.\nHôm nay là thứ Tư (ngày 1 tháng 3) thì 1 tuần sau (ngày 8 tháng 3) cũng là thứ Tư.\nVậy ngày 9 tháng 3 là thứ Năm.\nĐáp số: D."
@@ -2201,7 +2201,7 @@ const officialPapers = [
           "Thursday / Thứ Năm"
         ],
         "optionColumns": 2,
-        "subtopic": "Các ngày trong tuần",
+        "subtopic": "Ngày, tháng và lịch",
         "answer": 2,
         "answerSource": "user",
         "explanation": "Hôm nay là thứ Bảy nên 1 ngày nữa là Chủ nhật.\n2 ngày nữa là thứ Hai. 3 ngày nữa là thứ Ba. 4 ngày nữa là thứ Tư.\nĐáp số: C."
@@ -2614,7 +2614,7 @@ const officialPapers = [
           "December / Tháng 12"
         ],
         "optionColumns": 2,
-        "subtopic": "Các tháng trong năm",
+        "subtopic": "Ngày, tháng và lịch",
         "answer": 1,
         "answerSource": "user",
         "explanation": "Sau 12 tháng (tức 1 năm) thì tháng trong năm lặp lại.\nTháng trước là tháng 4 nên hiện tại là tháng 5. Do đó, 12 tháng nữa tính từ hiện tại cũng là tháng 5.\n13 tháng nữa là tháng 6. 14 tháng nữa là tháng 7. 15 tháng nữa là tháng 8. 16 tháng nữa là tháng 9.\nĐáp số: B."
@@ -3059,7 +3059,7 @@ const officialPapers = [
         "translation": "August: Tháng 8; Monday: Thứ Hai; Day of the week: Thứ trong tuần; October: Tháng 10; The same year: Cùng năm.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Các ngày trong tuần"
+        "subtopic": "Ngày, tháng và lịch"
       },
       {
         "number": 5,
@@ -3276,7 +3276,7 @@ const officialPapers = [
         "translation": "June: Tháng 6; Friday: Thứ Sáu; Day of the week: Thứ trong tuần; August: Tháng 8.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Các ngày trong tuần"
+        "subtopic": "Ngày, tháng và lịch"
       },
       {
         "number": 3,
@@ -3509,7 +3509,7 @@ const officialPapers = [
         "translation": "June: Tháng 6; Sunday: Chủ nhật; Day of the week: Thứ trong tuần; July: Tháng 7; The same year: Cùng năm.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Các ngày trong tuần"
+        "subtopic": "Ngày, tháng và lịch"
       },
       {
         "number": 3,
@@ -3742,7 +3742,7 @@ const officialPapers = [
         "translation": "May: Tháng 5; Friday: Thứ Sáu; June: Tháng 6; The same year: Cùng năm.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Các ngày trong tuần"
+        "subtopic": "Ngày, tháng và lịch"
       },
       {
         "number": 3,
@@ -4463,7 +4463,7 @@ const officialPapers = [
         "translation": "Year: Năm; Month: Tháng; Day: Ngày.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Số ngày trong tháng"
+        "subtopic": "Ngày, tháng và lịch"
       },
       {
         "number": 5,
@@ -4715,6 +4715,7 @@ function buildTimoTopicGroups(papers, grade) {
       if (!topic) {
         // Keep the existing topic ID so saved attempts, question order and reload state survive this label change.
         const stableName = name === 'Có bao nhiêu cách kết hợp khác nhau?' ? 'Phối hợp lựa chọn'
+          : name === 'Ngày, tháng và lịch' ? 'Các ngày trong tuần'
           : name === 'Đếm đoạn thẳng và cạnh' ? 'Đếm đoạn thẳng'
           : name === 'Đếm hình' ? 'Đếm hình vuông'
           : name === 'Điền dấu' ? 'Điền dấu cộng và trừ'
@@ -4734,6 +4735,9 @@ function getTimoTopicGroups(grade) {
 
 // Legacy topic references continue in the surviving group after the owner-requested merge.
 function resolveTimoTopicId(id) {
+  const logicalPrefix = `${timoTopicGroups[0].id}-named-`;
+  if (['Số ngày trong tháng', 'Các tháng trong năm', 'Ngày, tháng và lịch'].some(name => id === logicalPrefix + encodeURIComponent(name)))
+    return logicalPrefix + encodeURIComponent('Các ngày trong tuần');
   const prefix = `${timoTopicGroups[1].id}-named-`;
   const numberTheoryPrefix = `${timoTopicGroups[2].id}-named-`;
   if (id === numberTheoryPrefix + encodeURIComponent('Tìm số còn thiếu trong đẳng thức'))

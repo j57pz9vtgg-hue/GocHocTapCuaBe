@@ -353,3 +353,7 @@ Gộp hai nhóm thành nhóm nhỏ4 “Đếm đoạn thẳng và cạnh” củ
 Gộp tiếp “Tạo đường thẳng từ các điểm” vào nhóm nhỏ4, tổng14 câu. Chuyển id nhóm cũ về nhóm4, bảo toàn câu nguồn, khóa/lời giải và bài làm đã lưu; kiểm tra tải lại và máy tính/điện thoại.
 
 Gộp “Đếm hình chữ nhật” vào nhóm nhỏ1 “Đếm hình”, tổng13 câu, theo yêu cầu chủ dự án. Giữ nguyên câu nguồn19 Đề quốc gia2, chuyển tiếp id nhóm cũ và bài làm khi tải lại. Đã kiểm tra bài trộn trắc nghiệm/tự luận và máy tính/điện thoại.
+
+## Nhóm5 Ngày, tháng và lịch
+
+Gộp ba nhóm Các ngày trong tuần, Số ngày trong tháng và Các tháng trong năm thành nhóm nhỏ5 “Ngày, tháng và lịch”, tổng12 câu. Giữ id nhóm ngày trong tuần và chuyển tiếp hai id cũ; câu nguồn, khóa/lời giải và bài làm của cả ba nhóm giữ nguyên. Kiểm tra mở bài, khôi phục lựa chọn/văn bản và tải lại trên máy tính/điện thoại.

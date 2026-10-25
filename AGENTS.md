@@ -119,3 +119,5 @@ Theo yêu cầu mới, gộp “Đếm đoạn thẳng” (11 câu) và “Cạn
 Theo yêu cầu tiếp theo, gộp “Tạo đường thẳng từ các điểm” (câu20 Đề vòng loại6) vào nhóm nhỏ4 “Đếm đoạn thẳng và cạnh”, tổng14 câu. Giữ nội dung/khóa/lời giải, chuyển id nhóm cũ về nhóm4 và giữ tiến độ theo nguồn.
 
 Theo yêu cầu tiếp theo, gộp “Đếm hình chữ nhật” (câu19 Đề quốc gia2) vào nhóm nhỏ1 “Đếm hình”, tổng13 câu. Giữ tên/id nhóm1; chuyển id nhóm chữ nhật về nhóm1 để giữ bài làm. Không sửa nội dung/hình/khóa/lời giải hoặc nguồn.
+
+Theo yêu cầu mới, gộp “Các ngày trong tuần” (10 câu), “Số ngày trong tháng” (1 câu) và “Các tháng trong năm” (1 câu) thành nhóm nhỏ5 “Ngày, tháng và lịch” của Tư duy lô-gic, tổng12 câu. Giữ id Các ngày trong tuần, ánh xạ id hai nhóm còn lại về nhóm5 để giữ bài làm và trạng thái đang mở. Không sửa nội dung, ảnh, khóa/lời giải hoặc nguồn câu.
