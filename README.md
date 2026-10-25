@@ -403,3 +403,9 @@ Gộp thêm “Bài toán tính thời gian” vào nhóm nhỏ5 “Ngày, thán
 ## Gộp quy luật bảng số vào nhóm1
 
 Gộp4 câu Quy luật trong bảng số vào nhóm nhỏ1 “Quy luật dãy số”, tổng21 câu. Giữ id nhóm1, chuyển tiếp nhóm cũ theo id câu nguồn để giữ bài làm khi mở/tải lại. Kiểm tra chấm21/21, xem21 lời giải và máy tính/điện thoại; không thay câu hỏi/bảng/khóa/lời giải.
+
+## Đặt lại toàn bộ phân loại nhỏ
+
+Theo yêu cầu mới nhất, xóa phân loại nhỏ của350 câu để chủ dự án làm lại; mỗi chủ đề lớn hiện chỉ còn “Chưa phân loại”. Giữ nguyên5 nhóm lớn và vị trí câu trong từng nhóm (70/73/67/70/70),14 bộ đề, toàn bộ nội dung/hình/lựa chọn/350 khóa/lời giải. Link chủ đề nhỏ cũ chuyển về Chưa phân loại; bài làm trắc nghiệm/tự luận và bản lưu cũ được giữ. Đã kiểm tra mở cả5 nhóm,350 câu không trùng/mất, khôi phục khi tải lại, tiến độ từ id cũ kể cả các lần chuyển nhóm trước, màn hình máy tính/điện thoại và mở đề quốc gia.
+
+Các mục phân loại/gộp ở trên là lịch sử; trạng thái hiện tại là chưa phân loại toàn bộ câu.

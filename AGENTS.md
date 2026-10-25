@@ -131,3 +131,5 @@ Theo yêu cầu mới, gộp “Chia nhóm theo sức chứa” (2 câu) vào nh
 Theo yêu cầu mới, gộp “Bài toán tính thời gian” (câu3 Đề quốc gia1) vào nhóm nhỏ5 “Ngày, tháng và lịch” của Tư duy lô-gic, tổng13 câu. Giữ tên/id nhóm5, chuyển tiếp id nhóm thời gian và bài làm đã lưu. Không sửa nội dung, ảnh, khóa/lời giải hoặc nguồn.
 
 Theo yêu cầu mới, gộp “Quy luật trong bảng số” (4 câu) vào nhóm nhỏ1 “Quy luật dãy số” của Tư duy lô-gic, tổng21 câu. Giữ tên/id nhóm1, chuyển id nhóm bảng số về nhóm1 để bảo toàn bài làm. Giữ nguyên bảng, câu hỏi, khóa/lời giải và nguồn câu.
+
+YÊU CẦU MỚI NHẤT — LÀM LẠI PHÂN LOẠI: Chủ dự án yêu cầu xóa toàn bộ chủ đề nhỏ của cả5 chủ đề lớn và đưa350 câu về “Chưa phân loại” để tự phân loại lại. Đã bỏ trường subtopic khỏi350 câu; giữ nguyên5 nhóm lớn, cả các chỉ định practiceTopicGroup trước đó (số câu từng nhóm70/73/67/70/70), toàn bộ câu/ảnh/lựa chọn/khóa/lời giải và đề nguồn. Không khôi phục các phân loại nhỏ cũ hoặc tự tạo lại khi chưa có yêu cầu mới. Các hướng dẫn phân loại/gộp nhỏ trước đây chỉ là lịch sử, không phải yêu cầu khôi phục. Link/tiến độ nhóm nhỏ cũ chuyển về Chưa phân loại tương ứng, giữ các bản lưu cũ làm dự phòng.
