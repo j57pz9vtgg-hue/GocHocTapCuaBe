@@ -137,3 +137,5 @@ YÊU CẦU MỚI NHẤT — LÀM LẠI PHÂN LOẠI: Chủ dự án yêu cầu x
 Theo yêu cầu mới, kết quả làm đúng, Làm lại và Xem đáp án và lời giải nằm trong cùng thanh với Nộp bài sau khi nộp; bỏ hộp kết quả riêng bên dưới. Chưa nộp thì chưa hiện điểm/lời giải. Giữ điều kiện nộp đủ câu, mật khẩu phụ huynh, lưu/tải lại và đặt lại đồng hồ khi Làm lại. Màn hình nhỏ được xuống hàng trong cùng thanh để không tràn.
 
 Theo yêu cầu tiếp theo, biểu tượng quyển sách đầu trang làm bài là nút Về góc luyện tập; bỏ nút chữ quay về riêng bên phải. Nút sách có tên truy cập/tooltip, vùng bấm ít nhất44px và hỗ trợ bàn phím, giữ tiến độ khi quay về.
+
+Theo yêu cầu tiếp theo, thanh tiêu đề/bộ điều khiển của đề phải rộng đúng bằng tờ đề A4 (min(100%,210mm)), căn thẳng hai mép với exam-paper. Khi đã nộp, tiêu đề/tiến độ/thời gian ở hàng trên; kết quả/Làm lại/Xem đáp án/Nộp bài ở cùng hàng dưới trong thanh để vừa794px. Điện thoại được xuống hàng trong cùng khung, không tràn. Không đổi khổ/nội dung tờ đề.

@@ -417,3 +417,7 @@ Chuyển kết quả làm đúng, Làm lại và Xem đáp án và lời giải 
 ## Quyển sách để về góc luyện tập
 
 Biểu tượng sách đầu trang làm bài trở thành nút quay về, thay nút chữ riêng. Có tên truy cập/tooltip, vùng bấm44px và hiển thị focus bàn phím. Kiểm tra11 giao diện ở1440/390/320px, bấm/Enter quay về đúng danh sách và tiếp tục giữ bài làm đã lưu.
+
+## Thanh tiêu đề căn theo A4
+
+Đặt thanh tiêu đề rộng min(100%,210mm) và căn giữa đúng hai mép tờ đề. Kết quả và các thao tác vẫn cùng hàng với Nộp bài trong thanh; màn hình nhỏ xuống hàng. Kiểm tra11 giao diện ở9 độ rộng320–1700px, đo hai mép khớp dưới1px, không chồng/tràn; nộp/chấm25/25 và bài luyện73/73, mật khẩu, lời giải, tải lại và Làm lại đều đạt.
