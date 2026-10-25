@@ -365,3 +365,7 @@ Nhập25 khóa văn bản/lời giải và4 SVG minh họa theo5 ảnh chủ d�
 ## Đáp án Đề quốc gia 2
 
 Nhập25 khóa văn bản/lời giải và5 SVG theo5 ảnh chủ dự án gửi. Giữ cách giải, bảng chữ cái, chữ số hàng đơn vị, các mặt bị che và các hình đếm chữ nhật/đoạn thẳng. Khóa/lời giải dùng chung trong luyện chủ đề. Không thay câu nguồn hoặc khóa trước. Đã kiểm tra chấm25/25, mở lời giải qua mật khẩu, hình, lưu/tải lại/làm lại, bài luyện trộn và11 giao diện.
+
+## Đáp án Đề quốc gia 3
+
+Nhập25 khóa văn bản/lời giải và4 SVG theo4 ảnh chủ dự án gửi. Giữ các cách giải ngày tháng, bảng chữ cái, mảnh ghép, đoạn thẳng và mặt nhìn được đánh số. Luyện chủ đề dùng cùng khóa nguồn. Đã kiểm tra chấm25/25, mật khẩu, hình, lưu/tải lại/làm lại, bài luyện trộn và11 giao diện; các câu nguồn và khóa trước giữ nguyên.
