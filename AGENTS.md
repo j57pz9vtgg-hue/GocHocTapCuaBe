@@ -147,3 +147,5 @@ Chủ dự án yêu cầu sách trong trang làm bài phải giữ đúng hình 
 Theo yêu cầu mới, toàn bộ câu hỏi tiếng Anh trong đề/luyện chủ đề in đậm; dòng câu hỏi/bản dịch giãn1.5, khoảng cách gọn và đều. Hình câu hỏi thu nhỏ theo tỷ lệ, tối đa560px rộng/240px cao máy tính,200px cao điện thoại; không cắt hình hoặc thay nội dung, không áp dụng thu nhỏ này cho hình lời giải.
 
 Theo yêu cầu tiếp theo, trên máy tính từ1200px tên website và thanh tên đề nằm cùng hàng đầu trang. Tờ đề giữ khổ A4 và thẳng hai mép với thanh tên đề; dưới1200px tiếp tục xếp hàng thích ứng để không chồng lấn. Giữ hình sách gốc và chức năng về góc luyện tập.
+
+Theo yêu cầu mới, cố định toàn bộ hàng đầu trang làm bài khi cuộn: sách/tên website và thanh tên đề/tiến độ/thời gian/kết quả/các nút luôn hiện. Dùng sticky giữ bố cục A4 và vị trí ban đầu; màn hình nhỏ ghim hai phần theo chiều dọc, không chồng lên nhau. Không đổi chức năng điều khiển.

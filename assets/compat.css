@@ -350,3 +350,21 @@
  .paper-world #quiz{grid-column:2;grid-row:2;min-width:0}
  .paper-world .exam-paper{margin-top:0}
 }
+/* Keep the complete practice heading and controls visible during scrolling. */
+.paper-world>.paper-brand{position:sticky;top:0;z-index:10;align-self:start}
+.paper-world .paper-toolbar{position:sticky;z-index:10}
+@media(min-width:1200px){
+ .paper-world>.paper-brand{top:0}
+ .paper-world .paper-toolbar{top:12px}
+}
+@media(max-width:1199px){
+ .paper-world>.paper-brand{height:72px;min-height:72px;background:#ffffffed;border-radius:0 0 12px 12px}
+ .paper-world .paper-toolbar{top:72px}
+}
+@media(max-width:650px){
+ .paper-world>.paper-brand{height:64px;min-height:64px}
+ .paper-world .paper-toolbar{top:64px}
+}
+/* Prevent scrolled question text showing through the pinned controls. */
+.paper-world .paper-toolbar{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+@media(max-width:1199px){.paper-world>.paper-brand{background:#f4faff}}
