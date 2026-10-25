@@ -3214,7 +3214,7 @@ const officialPapers = [
         "translation": "Pyramid: Hình chóp; Vertices: Đỉnh; Edges: Cạnh.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đỉnh, cạnh và mặt của hình khối",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "answer": "22",
         "answerSource": "user",
         "explanation": "Vì hình chóp có 12 đỉnh nên đáy của hình chóp là đa giác có 11 đỉnh.\nDo đó, hình chóp có 11 cạnh bên và 11 cạnh đáy.\nVậy tổng số cạnh của hình chóp là: 11 + 11 = 22 (cạnh).\nĐáp số: 22."
@@ -3534,7 +3534,7 @@ const officialPapers = [
         "translation": "Pyramid: Hình chóp; Vertices: Đỉnh; Faces: Mặt.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đỉnh, cạnh và mặt của hình khối",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "answer": "15",
         "answerSource": "user",
         "explanation": "Số mặt của một hình chóp bằng với số đỉnh của hình chóp đó.\nVì hình chóp đã cho có 15 đỉnh nên hình chóp đó có 15 mặt.\nĐáp số: 15."
@@ -3590,7 +3590,7 @@ const officialPapers = [
         "translation": "Pyramid: Hình chóp; Edges: Cạnh; Vertices: Đỉnh.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đỉnh, cạnh và mặt của hình khối",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "answer": "25",
         "answerSource": "user",
         "explanation": "Vì hình chóp đã cho có 48 cạnh nên hình chóp đó có 24 cạnh bên và 24 cạnh đáy.\nDo đó, đáy của hình chóp này là đa giác có 24 cạnh và 24 đỉnh.\nNgoài ra, hình chóp có 1 đỉnh nằm ngoài mặt đáy.\nVậy hình chóp đã cho có 25 đỉnh.\nĐáp số: 25."
@@ -3895,7 +3895,7 @@ const officialPapers = [
         "translation": "Pyramid: Hình chóp; Vertices: Đỉnh; Faces: Mặt.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đỉnh, cạnh và mặt của hình khối",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "answer": "29",
         "answerSource": "user",
         "explanation": "Trong một hình chóp, số đỉnh bằng với số mặt. Vậy hình chóp đã cho có 29 mặt.\nĐáp số: 29."
@@ -3906,7 +3906,7 @@ const officialPapers = [
         "translation": "Pyramid: Hình chóp; Vertices: Đỉnh; Edges: Cạnh.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đỉnh, cạnh và mặt của hình khối",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "answer": "36",
         "answerSource": "user",
         "explanation": "Hình chóp có 19 đỉnh thì có 1 đỉnh ở trên và đáy là đa giác có 18 đỉnh.\nDo đó, hình chóp này có 18 cạnh bên và 18 cạnh đáy.\nTổng số cạnh của hình chóp là: 18 + 18 = 36 (cạnh).\nĐáp số: 36."
@@ -4226,7 +4226,7 @@ const officialPapers = [
         "translation": "Prism: Hình lăng trụ; Vertices: Đỉnh; Faces: Mặt.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đỉnh, cạnh và mặt của hình khối",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "answer": "11",
         "answerSource": "user",
         "explanation": "Hình lăng trụ có 18 đỉnh nên mỗi đáy có 18 : 2 = 9 đỉnh.\nDo đó, hình lăng trụ đã cho có 9 mặt bên và 2 mặt đáy.\nVậy hình lăng trụ có 9 + 2 = 11 mặt.\nĐáp số: 11."
@@ -4500,7 +4500,7 @@ const officialPapers = [
         "translation": "Prism: Hình lăng trụ; Edge: Cạnh; Faces: Mặt.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đỉnh, cạnh và mặt của hình khối",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "answer": "11",
         "answerSource": "user",
         "explanation": "Nếu đáy của hình lăng trụ có n cạnh thì hình lăng trụ đó có tất cả 3 × n cạnh. (Gồm cạnh ở đáy trên, cạnh bên và cạnh ở đáy dưới).\nNhư vậy, đáy của hình lăng trụ có số cạnh là: 27 : 3 = 9 (cạnh).\nVì đáy của hình lăng trụ có 9 cạnh nên hình có 9 mặt bên và 2 mặt đáy.\nHình lăng trụ đó có số mặt là: 9 + 2 = 11 (mặt).\nĐáp số: 11."
@@ -5137,7 +5137,7 @@ const officialPapers = [
         "translation": "Prism: Hình lăng trụ; Vertice: Đỉnh; Faces: Mặt.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đỉnh, cạnh và mặt của hình khối",
+        "subtopic": "Đếm đoạn thẳng và cạnh",
         "answer": "6",
         "answerSource": "user",
         "explanation": "Một đáy của hình lăng trụ có số đỉnh là: 8 : 2 = 4 (đỉnh).\nSố đỉnh ở đáy đúng bằng số mặt bên của hình lăng trụ.\nNhư vậy, hình lăng trụ có 2 mặt đáy và 4 mặt bên.\nHình lăng trụ đã cho có số mặt là: 4 + 2 = 6 (mặt).\nĐáp số: 6."
@@ -5340,7 +5340,7 @@ function resolveTimoTopicId(id) {
   if (['Điền dấu nhân và trừ', 'Điền dấu nhân và cộng', 'Điền dấu'].some(name => id === numberTheoryPrefix + encodeURIComponent(name)))
     return numberTheoryPrefix + encodeURIComponent('Điền dấu cộng và trừ');
   const geometryPrefix = `${timoTopicGroups[3].id}-named-`;
-  if (['Cạnh của hình phẳng và hình khối', 'Tạo đường thẳng từ các điểm', 'Đếm đoạn thẳng và cạnh'].some(name => id === geometryPrefix + encodeURIComponent(name)))
+  if (['Cạnh của hình phẳng và hình khối', 'Đỉnh, cạnh và mặt của hình khối', 'Tạo đường thẳng từ các điểm', 'Đếm đoạn thẳng và cạnh'].some(name => id === geometryPrefix + encodeURIComponent(name)))
     return geometryPrefix + encodeURIComponent('Đếm đoạn thẳng');
   if (['Đếm hình tam giác', 'Đếm hình chữ nhật', 'Đếm hình'].some(name => id === geometryPrefix + encodeURIComponent(name)))
     return geometryPrefix + encodeURIComponent('Đếm hình vuông');
