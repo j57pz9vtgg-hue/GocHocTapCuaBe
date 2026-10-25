@@ -357,3 +357,7 @@ Gộp “Đếm hình chữ nhật” vào nhóm nhỏ1 “Đếm hình”, tổ
 ## Nhóm5 Ngày, tháng và lịch
 
 Gộp ba nhóm Các ngày trong tuần, Số ngày trong tháng và Các tháng trong năm thành nhóm nhỏ5 “Ngày, tháng và lịch”, tổng12 câu. Giữ id nhóm ngày trong tuần và chuyển tiếp hai id cũ; câu nguồn, khóa/lời giải và bài làm của cả ba nhóm giữ nguyên. Kiểm tra mở bài, khôi phục lựa chọn/văn bản và tải lại trên máy tính/điện thoại.
+
+## Đáp án Đề quốc gia 1
+
+Nhập25 khóa văn bản/lời giải và4 SVG minh họa theo5 ảnh chủ dự án gửi. Giữ các bước giải, bảng chữ cái và hình đánh số mặt khối/đoạn thẳng/đỉnh đa giác. Các câu trong luyện chủ đề dùng chung khóa nguồn, kể cả khi đảo câu. Chỉ thêm khóa do chủ dự án cung cấp, không tự chấm các đề quốc gia còn lại. Kiểm tra nhập/nộp/chấm25/25, mật khẩu sai/đúng, lời giải/hình, lưu/tải lại/làm lại, bài luyện trộn và11 giao diện.

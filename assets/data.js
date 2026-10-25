@@ -3033,7 +3033,10 @@ const officialPapers = [
         "options": [],
         "subtopic": "Quy luật dãy số",
         "image": "./assets/papers/timo-grade2-national-01/q01.cddbe8582e6d.svg",
-        "imageAlt": "20, 23, 27, 32, 38, 45, 53, __"
+        "imageAlt": "20, 23, 27, 32, 38, 45, 53, __",
+        "answer": "62",
+        "answerSource": "user",
+        "explanation": "Quy luật: Khoảng cách giữa 2 số liên tiếp trong dãy tăng dần 1 đơn vị.\n20 + 3 = 23, 23 + 4 = 27, 27 + 5 = 32, 32 + 6 = 38, 38 + 7 = 45, 45 + 8 = 53, …\nVậy số cần tìm là: 53 + 9 = 62.\nĐáp số: 62."
       },
       {
         "number": 2,
@@ -3043,7 +3046,12 @@ const officialPapers = [
         "options": [],
         "subtopic": "Quy luật dãy số",
         "image": "./assets/papers/timo-grade2-national-01/q02.4dc53a4d3dc6.svg",
-        "imageAlt": "F, S, I, Q, L, O, O, M, __"
+        "imageAlt": "F, S, I, Q, L, O, O, M, __",
+        "explanationImage": "./assets/solutions/timo-grade2-national-01/q02.e264efee373c.svg",
+        "explanationImageAlt": "Bảng chữ cái tiếng Anh,gạch chân F,I,L,O,R theo lời giải do chủ dự án cung cấp",
+        "answer": "R",
+        "answerSource": "user",
+        "explanation": "Quy luật: Tách dãy đã cho thành 2 dãy đan xen nhau:\nDãy thứ nhất: F, I, L, O, …\nDãy thứ hai: S, Q, O, M, …\nChữ cái cần tìm là chữ cái tiếp theo của dãy thứ nhất.\nQuy luật của dãy thứ nhất: Hai chữ cái liên tiếp trong dãy cách nhau 2 chữ cái trong bảng chữ cái tiếng Anh.\nA B C D E F G H I J K L M N O P Q R S T U V W X Y Z\nVậy chữ cái cần tìm là R.\nĐáp số: R."
       },
       {
         "number": 3,
@@ -3051,7 +3059,10 @@ const officialPapers = [
         "translation": "Minute: Phút; Draw: Vẽ; Picture: Bức tranh; Rest: Nghỉ.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Bài toán tính thời gian"
+        "subtopic": "Bài toán tính thời gian",
+        "answer": "95",
+        "answerSource": "user",
+        "explanation": "Để hoàn thành 4 bức tranh, Mary cần vẽ 4 lần và nghỉ 3 lần.\nTổng thời gian Mary cần là: 20 + 20 + 20 + 20 + 5 + 5 + 5 = 95 (phút).\nĐáp số: 95."
       },
       {
         "number": 4,
@@ -3059,7 +3070,10 @@ const officialPapers = [
         "translation": "August: Tháng 8; Monday: Thứ Hai; Day of the week: Thứ trong tuần; October: Tháng 10; The same year: Cùng năm.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Ngày, tháng và lịch"
+        "subtopic": "Ngày, tháng và lịch",
+        "answer": "Wednesday",
+        "answerSource": "user",
+        "explanation": "Ngày 11/08 cách ngày 31/08 là 20 ngày.\nNgày 31/08 cách ngày 30/09 là 30 ngày.\nNgày 30/09 cách ngày 15/10 là 15 ngày.\nDo đó, ngày 11/08 cách ngày 15/10 là: 20 + 30 + 15 = 65 (ngày).\nNhận xét: Cứ sau một tuần (7 ngày), thứ trong tuần lặp lại.\nTa có: 65 = 7 + 7 + 7 + 7 + 7 + 7 + 7 + 7 + 7 + 2 = 7 × 9 + 2.\nVì ngày 11/08 là thứ Hai nên 9 tuần sau vẫn là thứ Hai. 2 ngày sau đó là Thứ tư.\nVậy ngày 15/10 là Thứ tư.\nĐáp số: Wednesday."
       },
       {
         "number": 5,
@@ -3069,7 +3083,10 @@ const officialPapers = [
         "options": [],
         "subtopic": "Quy luật sắp xếp hình",
         "image": "./assets/papers/timo-grade2-national-01/q05.45a572c97c4b.svg",
-        "imageAlt": "Bốn lưới dấu sao: ô cuối phía dưới bên phải trống trong mỗi nhóm, đúng vị trí ảnh"
+        "imageAlt": "Bốn lưới dấu sao: ô cuối phía dưới bên phải trống trong mỗi nhóm, đúng vị trí ảnh",
+        "answer": "48",
+        "answerSource": "user",
+        "explanation": "Số dấu ★ trong mỗi nhóm lần lượt là: 0, 3, 8, 15, …\nQuy luật: Khoảng cách giữa 2 số liên tiếp trong dãy tăng dần 2 đơn vị.\n0 + 3 = 3, 3 + 5 = 8, 8 + 7 = 15, …\nSố thứ 5 của dãy là: 15 + 9 = 24.\nSố thứ 6 của dãy là: 24 + 11 = 35.\nSố thứ 7 của dãy là: 35 + 13 = 48.\nVậy nhóm thứ 7 có 48 dấu ★.\nĐáp số: 48."
       },
       {
         "number": 6,
@@ -3077,7 +3094,10 @@ const officialPapers = [
         "translation": "Value: Giá trị.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Tìm giá trị"
+        "subtopic": "Tìm giá trị",
+        "answer": "17",
+        "answerSource": "user",
+        "explanation": "1 + 4 − 7 + 10 − 13 + 16 − 19 + 22 − 25 + 28\n= 1 + 4 + (10 − 7) + (16 − 13) + (22 − 19) + (28 − 25)\n= 1 + 4 + 3 + 3 + 3 + 3\n= (1 + 4) + (3 + 3 + 3 + 3)\n= 5 + 12\n= 17.\nĐáp số: 17."
       },
       {
         "number": 7,
@@ -3085,7 +3105,10 @@ const officialPapers = [
         "translation": "Value: Giá trị.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Tìm giá trị"
+        "subtopic": "Tìm giá trị",
+        "answer": "330",
+        "answerSource": "user",
+        "explanation": "26 + 48 + 52 + 83 + 84 + 37\n= (26 + 84) + (48 + 52) + (83 + 37)\n= 110 + 100 + 120\n= 210 + 120\n= 330.\nĐáp số: 330."
       },
       {
         "number": 8,
@@ -3093,7 +3116,10 @@ const officialPapers = [
         "translation": "Value: Giá trị.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Tìm giá trị"
+        "subtopic": "Tìm giá trị",
+        "answer": "420",
+        "answerSource": "user",
+        "explanation": "14 × 15 + 14 × 8 − 10 × 14 + 17 × 14\n= (15 + 8 − 10 + 17) × 14\n= (23 − 10 + 17) × 14\n= (13 + 17) × 14\n= 30 × 14\n= 3 × 10 × 14\n= 3 × 140\n= 140 + 140 + 140\n= 420.\nĐáp số: 420."
       },
       {
         "number": 9,
@@ -3101,7 +3127,10 @@ const officialPapers = [
         "translation": "Value: Giá trị.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Tìm giá trị"
+        "subtopic": "Tìm giá trị",
+        "answer": "8",
+        "answerSource": "user",
+        "explanation": "22 − 7 − 6 + 11 − 9 − 3\n= 15 − 6 + 11 − 9 − 3\n= 9 + 11 − 9 − 3\n= 20 − 9 − 3\n= 11 − 3\n= 8.\nĐáp số: 8."
       },
       {
         "number": 10,
@@ -3111,7 +3140,10 @@ const officialPapers = [
         "options": [],
         "subtopic": "Phép cộng với chữ số chưa biết",
         "image": "./assets/papers/timo-grade2-national-01/q10.1a96ab25c193.svg",
-        "imageAlt": "Phép cộng dọc AA cộng BA bằng 98"
+        "imageAlt": "Phép cộng dọc AA cộng BA bằng 98",
+        "answer": "5",
+        "answerSource": "user",
+        "explanation": "Trường hợp 1: Hàng đơn vị là phép cộng không nhớ.\nXét hàng đơn vị, ta có: A + A = 8. Do đó, A = 4.\nXét hàng chục, ta có: A + B = 9. Do đó, B = 9 − A = 9 − 4 = 5 (thỏa mãn).\nTrường hợp 2: Hàng đơn vị là phép cộng có nhớ.\nXét hàng đơn vị, ta có: A + A = 18. Do đó, A = 9.\nXét hàng chục, ta có: A + B + 1 = 9. Ta không tìm được giá trị của B.\nVậy giá trị của B cần tìm là 5.\nĐáp số: 5."
       },
       {
         "number": 11,
@@ -3123,7 +3155,10 @@ const officialPapers = [
         "sectionHeading": {
           "english": "Number Theory",
           "vietnamese": "Số học"
-        }
+        },
+        "answer": "497",
+        "answerSource": "user",
+        "explanation": "Số lớn nhất có 3 chữ số nhỏ hơn 500 là 499 (không thỏa mãn có 3 chữ số khác nhau).\nSố lớn nhất tiếp theo là 498 (không thỏa mãn là số lẻ).\nSố lớn nhất tiếp theo là 497 (thỏa mãn là số lẻ có 3 chữ số khác nhau).\nVậy số cần tìm là 497.\nĐáp số: 497."
       },
       {
         "number": 12,
@@ -3131,7 +3166,10 @@ const officialPapers = [
         "translation": "Child / Children: Đứa trẻ; Score: Điểm số; Total: Tổng; Each: Mỗi; First: Đầu tiên; Following: Tiếp theo; Remaining: Còn lại; Determine: Xác định; Even: Chẵn; Odd: Lẻ.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Nhận biết kết quả chẵn"
+        "subtopic": "Nhận biết kết quả chẵn",
+        "answer": "Odd",
+        "answerSource": "user",
+        "explanation": "Tổng của 15 số lẻ là số lẻ nên tổng điểm của 15 đứa trẻ đầu tiên là số lẻ.\nTổng của 6 số chẵn là số chẵn nên tổng điểm của 6 đứa trẻ tiếp theo là số chẵn.\nTổng của một số lẻ và một số chẵn là số lẻ nên tổng điểm của 21 đứa trẻ đầu tiên là số lẻ.\nTổng của 2 số lẻ là số chẵn. Do đó, để tổng điểm của 30 đứa trẻ là số chẵn thì tổng điểm của 9 đứa trẻ còn lại là số lẻ.\nĐáp số: Odd."
       },
       {
         "number": 13,
@@ -3139,7 +3177,10 @@ const officialPapers = [
         "translation": "Each: Mỗi; Box: Hộp; Egg: Quả trứng; At least: Ít nhất.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Chia nhóm theo sức chứa"
+        "subtopic": "Chia nhóm theo sức chứa",
+        "answer": "6",
+        "answerSource": "user",
+        "explanation": "Tổng số trứng Mary cần mua là: 35 + 29 = 64 (quả).\nTa có: 64 = 12 + 12 + 12 + 12 + 12 + 4 = 12 × 5 + 4.\nNếu Mary mua 5 hộp thì không đủ 64 quả trứng.\nVậy Mary cần mua ít nhất 6 hộp.\nĐáp số: 6."
       },
       {
         "number": 14,
@@ -3149,7 +3190,10 @@ const officialPapers = [
         "options": [],
         "subtopic": "Điền dấu",
         "image": "./assets/papers/timo-grade2-national-01/q14.682fe10ba68c.svg",
-        "imageAlt": "9 __ 10 __ 8 __ 5 = 6"
+        "imageAlt": "9 __ 10 __ 8 __ 5 = 6",
+        "answer": "9 + 10 − 8 − 5 = 6",
+        "answerSource": "user",
+        "explanation": "Ta có: 9 + 10 − 8 − 5 = 19 − 8 − 5 = 11 − 5 = 6.\nVậy phép tính đúng là: 9 + 10 − 8 − 5 = 6.\nĐáp số: 9 + 10 − 8 − 5 = 6."
       },
       {
         "number": 15,
@@ -3159,7 +3203,10 @@ const officialPapers = [
         "options": [],
         "subtopic": "Tìm số hạng trong dãy số",
         "image": "./assets/papers/timo-grade2-national-01/q15.3498ad516545.svg",
-        "imageAlt": "200, 189, 178, 167, 156, …"
+        "imageAlt": "200, 189, 178, 167, 156, …",
+        "answer": "90",
+        "answerSource": "user",
+        "explanation": "Quy luật: Các số trong dãy giảm dần 11 đơn vị.\n200 − 11 = 189, 189 − 11 = 178, 178 − 11 = 167, 167 − 11 = 156, …\nCác số tiếp theo của dãy lần lượt là: 145, 134, 123, 112, 101, 90, …\nVậy số thứ 11 của dãy là 90.\nĐáp số: 90."
       },
       {
         "number": 16,
@@ -3167,7 +3214,10 @@ const officialPapers = [
         "translation": "Pyramid: Hình chóp; Vertices: Đỉnh; Edges: Cạnh.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đỉnh, cạnh và mặt của hình khối"
+        "subtopic": "Đỉnh, cạnh và mặt của hình khối",
+        "answer": "22",
+        "answerSource": "user",
+        "explanation": "Vì hình chóp có 12 đỉnh nên đáy của hình chóp là đa giác có 11 đỉnh.\nDo đó, hình chóp có 11 cạnh bên và 11 cạnh đáy.\nVậy tổng số cạnh của hình chóp là: 11 + 11 = 22 (cạnh).\nĐáp số: 22."
       },
       {
         "number": 17,
@@ -3177,7 +3227,12 @@ const officialPapers = [
         "options": [],
         "subtopic": "Quan sát và đếm khối lập phương",
         "image": "./assets/papers/timo-grade2-national-01/q17.72c4210128af.svg",
-        "imageAlt": "Cụm khối trắng xám có cột cao bên trái, các bậc ở giữa và ba khối hàng trước bên phải theo ảnh"
+        "imageAlt": "Cụm khối trắng xám có cột cao bên trái, các bậc ở giữa và ba khối hàng trước bên phải theo ảnh",
+        "explanationImage": "./assets/solutions/timo-grade2-national-01/q17.9993eea5f515.svg",
+        "explanationImageAlt": "Hình đánh số theo lời giải câu 17 do chủ dự án cung cấp",
+        "answer": "11",
+        "answerSource": "user",
+        "explanation": "Ta có hình vẽ sau.\nVậy ta có thể nhìn thấy ít nhất 11 mặt hình vuông từ phía trên.\nĐáp số: 11."
       },
       {
         "number": 18,
@@ -3187,7 +3242,12 @@ const officialPapers = [
         "options": [],
         "subtopic": "Đếm đoạn thẳng và cạnh",
         "image": "./assets/papers/timo-grade2-national-01/q18.c38bb3472cfd.svg",
-        "imageAlt": "Các đoạn thẳng có chung điểm phía trái, hai đường xiên từ trên xuống và các điểm giao đánh dấu như ảnh"
+        "imageAlt": "Các đoạn thẳng có chung điểm phía trái, hai đường xiên từ trên xuống và các điểm giao đánh dấu như ảnh",
+        "explanationImage": "./assets/solutions/timo-grade2-national-01/q18.dbe46dd81f79.svg",
+        "explanationImageAlt": "Hình đánh số theo lời giải câu 18 do chủ dự án cung cấp",
+        "answer": "19",
+        "answerSource": "user",
+        "explanation": "Ta có hình vẽ sau.\nCó 11 đoạn thẳng đơn là: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11.\nCó 6 đoạn thẳng được ghép bởi 2 đoạn thẳng đơn là: (1 + 2), (3 + 4), (4 + 5), (6 + 7), (7 + 8), (10 + 11).\nCó 2 đoạn thẳng được ghép bởi 3 đoạn thẳng đơn là: (3 + 4 + 5), (6 + 7 + 8).\nVậy hình đã cho có tất cả số đoạn thẳng là: 11 + 6 + 2 = 19 (đoạn thẳng).\nĐáp số: 19."
       },
       {
         "number": 19,
@@ -3197,7 +3257,12 @@ const officialPapers = [
         "options": [],
         "subtopic": "Đếm góc trong đa giác",
         "image": "./assets/papers/timo-grade2-national-01/q19.a4765f443116.svg",
-        "imageAlt": "Đa giác khép kín có các chỗ lõm và hai phần nhô phía dưới, giữ đường biên như ảnh"
+        "imageAlt": "Đa giác khép kín có các chỗ lõm và hai phần nhô phía dưới, giữ đường biên như ảnh",
+        "explanationImage": "./assets/solutions/timo-grade2-national-01/q19.f1065ff362b1.svg",
+        "explanationImageAlt": "Đa giác đánh số18 đỉnh theo đúng đường biên và các số trong lời giải nguồn",
+        "answer": "18",
+        "answerSource": "user",
+        "explanation": "Số góc trong của một đa giác bằng với số đỉnh của đa giác đó.\nTa có hình sau.\nVì đa giác đã cho có 18 đỉnh nên có 18 góc trong.\nĐáp số: 18."
       },
       {
         "number": 20,
@@ -3207,7 +3272,10 @@ const officialPapers = [
         "options": [],
         "subtopic": "Quy luật dãy hình",
         "image": "./assets/papers/timo-grade2-national-01/q20.3623124aee09.svg",
-        "imageAlt": "Dãy hình vuông đặc, ngôi sao và chấm tròn, có một chỗ trống đúng vị trí trong ảnh"
+        "imageAlt": "Dãy hình vuông đặc, ngôi sao và chấm tròn, có một chỗ trống đúng vị trí trong ảnh",
+        "answer": "■",
+        "answerSource": "user",
+        "explanation": "Quy luật: Nhóm 5 hình (■ ★ ● ● ★) lặp lại.\n(■ ★ ● ● ★) (■ ★ ● ● ★) (__ ★ ● …)\nVậy hình cần tìm là ■.\nĐáp số: ■."
       },
       {
         "number": 21,
@@ -3215,7 +3283,10 @@ const officialPapers = [
         "translation": "Coin: Đồng xu; At most: Nhiều nhất; Note: Tờ tiền; Exchange: Đổi.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Đổi tiền"
+        "subtopic": "Đổi tiền",
+        "answer": "4",
+        "answerSource": "user",
+        "explanation": "Tổng số tiền Neo có là: 1 × 6 + 2 × 3 + 5 × 6 = 6 + 6 + 30 = 42 (đô-la).\nTa có: 42 = 10 + 10 + 10 + 10 + 2 = 10 × 4 + 2.\nVậy Neo có thể đổi được nhiều nhất 4 tờ tiền 10 đô-la.\nĐáp số: 4."
       },
       {
         "number": 22,
@@ -3225,7 +3296,10 @@ const officialPapers = [
         "options": [],
         "subtopic": "Đếm số lẻ trong dãy số",
         "image": "./assets/papers/timo-grade2-national-01/q22.10a65f3915ee.svg",
-        "imageAlt": "3, 6, 11, 18, 27, 38, …"
+        "imageAlt": "3, 6, 11, 18, 27, 38, …",
+        "answer": "7",
+        "answerSource": "user",
+        "explanation": "Xét tính chẵn lẻ của mỗi số từ trái sang phải, ta có dãy sau:\nLẻ, Chẵn, Lẻ, Chẵn, Lẻ, Chẵn, …\nQuy luật: Các số lẻ và chẵn đan xen nhau, bắt đầu từ số lẻ.\nDo đó, trong các số từ số thứ 5 đến số thứ 18, các số lẻ là số thứ 5, số thứ 7, số thứ 9, số thứ 11, số thứ 13, số thứ 15 và số thứ 17.\nVậy có 7 số lẻ trong các số từ số thứ 5 đến số thứ 18.\nĐáp số: 7."
       },
       {
         "number": 23,
@@ -3233,7 +3307,10 @@ const officialPapers = [
         "translation": "Way: Đường đi; Zoo: Vườn thú; Train station: Ga tàu; Cinema: Rạp chiếu phim; Playground: Sân chơi; Different: Khác nhau; Passing through: Đi qua.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Có bao nhiêu cách kết hợp khác nhau?"
+        "subtopic": "Có bao nhiêu cách kết hợp khác nhau?",
+        "answer": "18",
+        "answerSource": "user",
+        "explanation": "Có 3 cách đi từ vườn thú đến ga tàu.\nCó 2 cách đi từ ga tàu đến rạp chiếu phim.\nCó 3 cách đi từ rạp chiếu phim đến sân chơi.\nVậy số cách đi từ vườn thú đến sân chơi là: 3 × 2 × 3 = 18 (cách).\nĐáp số: 18."
       },
       {
         "number": 24,
@@ -3241,7 +3318,10 @@ const officialPapers = [
         "translation": "After: Sau khi; Give: Cho; Take: Lấy; Equal: Bằng nhau; More than: Nhiều hơn; Originally: Ban đầu.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Chuyển bớt và so sánh số lượng"
+        "subtopic": "Chuyển bớt và so sánh số lượng",
+        "answer": "21",
+        "answerSource": "user",
+        "explanation": "Gọi số thanh sô-cô-la ban đầu của Andy và Eric là A và E.\nVì Eric cho Mary 12 thanh sô-cô-la nên số thanh sô-cô-la lúc sau của Eric là: E − 12.\nVì Andy nhận từ Mary 9 thanh sô-cô-la nên số thanh sô-cô-la lúc sau của Andy là: A + 9.\nVì lúc sau họ có số thanh sô-cô-la bằng nhau nên ta có: E − 12 = A + 9.\nDo đó, E = A + 9 + 12 = A + 21.\nVậy ban đầu Eric có nhiều hơn Andy 21 thanh sô-cô-la.\nĐáp số: 21."
       },
       {
         "number": 25,
@@ -3249,7 +3329,10 @@ const officialPapers = [
         "translation": "Choose: Chọn; Different: Khác nhau; Digit: Chữ số; Form a 3-digit number: Tạo thành số có 3 chữ số; Difference: Hiệu; Largest: Lớn nhất; Smallest: Nhỏ nhất.",
         "responseType": "text",
         "options": [],
-        "subtopic": "Lập số lớn nhất và nhỏ nhất"
+        "subtopic": "Lập số lớn nhất và nhỏ nhất",
+        "answer": "639",
+        "answerSource": "user",
+        "explanation": "Số lớn nhất có 3 chữ số tạo được là 943.\nSố nhỏ nhất có 3 chữ số tạo được là 304.\nHiệu cần tìm là: 943 − 304 = 639.\nĐáp số: 639."
       }
     ]
   },
