@@ -193,3 +193,5 @@ Chỉ định tiếp theo: các câu dãy hình/ký hiệu lặp, tìm hình ti�
 Điều chỉnh khoảng đầu trang Đảo pha lê: giảm chiều cao banner24px trên desktop (clamp141px,13vw-24px,186px),16px trên điện thoại (114px), đưa bộ chọn lớp lên tương ứng; dịch nền banner lên8px desktop/4px mobile. Giữ nguyên chiều rộng/lề bộ lọc, vị trí tìm kiếm/cài đặt và các giao diện khác.
 
 Theo yêu cầu mới: xóa toàn bộ báo bài tuần26–30/10/2026, gồm20 mục của6môn lớp1. schoolReports hiện rỗng; không giữ tuần này trong bộ chọn hoặc nội dung chi tiết. Giữ chức năng báo bài để nhập nội dung mới sau này, không tự khôi phục dữ liệu tuần đã xóa.
+
+Yêu cầu báo bài mới: Lớp1/Báo bài của trường/Tiếng Việt/tuần19/10/2026 -23/10/2026 hiển thị bảng3cột Ngày/Bài học/Tài liệu, Tài liệu để trống. Tin nhắn chưa kèm ảnh nguồn nên chỉ tạo tuần và khung bảng chờ ảnh, không tự điền ngày/bài học. Không khôi phục tuần26–30 đã xóa.

@@ -488,3 +488,10 @@
 /* Lift the Crystal Island filters and scenery slightly while retaining the shared panel edges. */
 :root[data-theme="crystal"] #site-shell .adventure-banner{height:clamp(141px,calc(13vw - 24px),186px);background-position:center -8px}
 @media(max-width:760px){:root[data-theme="crystal"] #site-shell .adventure-banner{height:114px;background-position:center -4px}}
+/* Weekly Vietnamese reports use a simple three-column lesson table. */
+.school-table-wrap{border:1px solid var(--theme-edge,#c4dff4);border-radius:12px;overflow:hidden;background:#fffffff5}
+.school-report-table{width:100%;table-layout:fixed;border-collapse:collapse;color:var(--ink,#142f52);font-size:15px;line-height:1.6}
+.school-report-table th,.school-report-table td{padding:16px;border:1px solid var(--theme-edge,#c4dff4);text-align:left;vertical-align:top;overflow-wrap:anywhere}
+.school-report-table thead th{background:#edf7ff;font-weight:700}.school-report-table th:first-child{width:22%}.school-report-table th:last-child{width:24%}
+.school-report-table .school-table-pending{text-align:center;color:#536c84;font-weight:400;padding:28px 16px}
+@media(max-width:760px){.school-report-table{font-size:13px}.school-report-table th,.school-report-table td{padding:10px 8px}}
