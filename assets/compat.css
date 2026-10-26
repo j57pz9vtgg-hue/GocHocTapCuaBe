@@ -481,3 +481,7 @@
  .paper-world .paper-toolbar{top:150px}
 }
 @media(max-width:650px){.paper-search-tools{top:64px}.paper-world .paper-toolbar{top:142px}}
+/* Put one focus ring around the complete search control, including its icon. */
+.paper-world .paper-search-box:focus-within{border-color:#008fba;outline:2px solid #008fba;outline-offset:2px}
+#site-shell .paper-world .paper-search-box input:focus,#site-shell .paper-world .paper-search-box input:focus-visible,#site-shell .paper-world .paper-search-box button:focus-visible{outline:none;box-shadow:none}
+.paper-world .paper-search-box button:focus-visible{background:#dff4fb}
