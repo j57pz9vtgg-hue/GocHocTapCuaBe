@@ -223,6 +223,17 @@ for(const [sourceKey,returnSource] of Object.entries(attempts)){
  returnSource.returnedNumberTheoryQuestions=true;topicAttemptsMigrated=true;
 }
 if(topicAttemptsMigrated)try{localStorage.setItem(attemptStorageKey,JSON.stringify(attempts));}catch{}
+// Preserve responses from former topic buckets when a device first receives an owner-published revision.
+if(typeof publishedTimoClassification!=='undefined'&&TimoClassification.usesPublished()){
+ try{
+  const revision=publishedTimoClassification.revision,marker='goc-hoc-tap.published-classification-progress.v1';
+  if(revision&&localStorage.getItem(marker)!==revision){
+   if(Object.values(attempts).some(record=>Array.isArray(record?.questionIds)))preserveClassifiedProgress({assignments:{}},TimoClassification.snapshot());
+   localStorage.setItem(marker,revision);
+  }
+ }catch{}
+}
+
 
 for(const [savedKey,record] of Object.entries(attempts)){
  const parts=savedKey.split('|');if(parts.length!==5||!record||!record.submitted||!record.answers||typeof record.answers!=='object')continue;

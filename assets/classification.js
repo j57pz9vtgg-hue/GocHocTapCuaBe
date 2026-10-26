@@ -2,7 +2,7 @@
 const TimoClassification=(()=>{
  const storageKey='goc-hoc-tap.classification.v1';
  const empty=()=>({version:1,kind:'timo-classification',topics:[],assignments:{}});
- let saved=empty(),draft=null,trigger=null,lastGroup=null;
+ let saved=empty(),draft=null,trigger=null,lastGroup=null,hasLocalOverride=false;
  const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').toLowerCase();
  const html=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  function validate(value){
@@ -24,7 +24,7 @@ const TimoClassification=(()=>{
   return {version:1,kind:'timo-classification',topics,assignments};
  }
  try{if(typeof publishedTimoClassification!=='undefined')saved=validate(publishedTimoClassification);}catch{}
- try{const v=JSON.parse(localStorage.getItem(storageKey)||'null');if(v)saved=validate(v);}catch{}
+ try{const v=JSON.parse(localStorage.getItem(storageKey)||'null');if(v){saved=validate(v);hasLocalOverride=true;}}catch{}
  function apply(groups,grade){
   for(const group of groups){
    const all=group.topics.flatMap(t=>t.entries),custom=saved.topics.filter(t=>t.grade===String(grade)&&t.groupId===group.id);
@@ -142,7 +142,7 @@ const TimoClassification=(()=>{
   const value=validate(next),old=saved;
   if(state.practice?.topicId)saveAttempt();
   try{localStorage.setItem(storageKey,JSON.stringify(value));}catch{throw Error('Không lưu được phân loại. Hãy kiểm tra dung lượng hoặc quyền lưu dữ liệu của trình duyệt.');}
-  saved=value;
+  saved=value;hasLocalOverride=true;
   if(typeof preserveClassifiedProgress==='function')preserveClassifiedProgress(old,value);
   if(state.practice?.topicId)refreshClassifiedPractice();else renderHome();return value;
  }
@@ -245,5 +245,5 @@ const TimoClassification=(()=>{
  document.addEventListener('change',event=>{if(event.target.hasAttribute('data-inline-topic'))event.target.closest('.inline-classification').querySelector('[data-inline-new]').hidden=event.target.value!=='new';});
  document.addEventListener('click',event=>{const button=event.target.closest('[data-inline-apply]');if(button)applyInline(button);});
  document.addEventListener('click',event=>{const b=event.target.closest('[data-classify-group]');if(b)openReview(b.dataset.classifyGroup);const edit=event.target.closest('[data-edit-classified-topic]');if(edit){trigger=edit;openEditor(edit.dataset.editClassifiedTopic)}});
- return {apply,suggest,validate,openReview,renderInline,buildSharingExport,snapshot:()=>JSON.parse(JSON.stringify(saved))};
+ return {apply,suggest,validate,openReview,renderInline,buildSharingExport,usesPublished:()=>!hasLocalOverride,snapshot:()=>JSON.parse(JSON.stringify(saved))};
 })();
