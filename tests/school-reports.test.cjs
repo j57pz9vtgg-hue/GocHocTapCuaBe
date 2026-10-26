@@ -1,5 +1,5 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
-const context={document:{addEventListener(){}}};vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/data.js'),'utf8')+'\n'+fs.readFileSync(path.join(__dirname,'../assets/school-reports.js'),'utf8')+'\nglobalThis.api={schoolReports,getSchoolReports,getSubjects,getModes,officialPapers,schoolExerciseWorksheets};',context);const api=context.api;
+const context={document:{addEventListener(){}}};vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/data.js'),'utf8')+'\n'+fs.readFileSync(path.join(__dirname,'../assets/school-reports.js'),'utf8')+'\nglobalThis.api={schoolReports,getSchoolReports,getSubjects,getModes,officialPapers,schoolExerciseWorksheets,schoolLessonContents};',context);const api=context.api;
 test('removed weekly report has no lessons or selectable week for any subject',()=>{
  assert.equal(api.schoolReports.some(r=>r.start==='2026-10-26'),false);
  for(const subject of api.getSubjects('Báo bài của trường')){
@@ -50,4 +50,10 @@ test('remaining three days preserve all supplied subjects, split-page content an
  assert.equal(all.find(e=>e.id==='tieng-viet-2026-10-23').title,'Thực hành');
  for(const r of api.schoolReports)assert.ok(r.entries.every(e=>e.subject===r.subject));
  assert.deepEqual(Object.keys(api.schoolExerciseWorksheets),['tieng-viet-2026-10-19']);
+});
+
+test('Lesson36 matches the two supplied textbook pages without invented explanations or exercises',()=>{
+ const lessons=api.schoolLessonContents;assert.deepEqual(Object.keys(lessons),['tieng-viet-2026-10-19']);const l=lessons['tieng-viet-2026-10-19'];
+ assert.equal(l.recognition,'Hương cốm thơm thôn xóm.');assert.equal(l.blend.word,'xóm');assert.equal(l.words.length,6);assert.deepEqual(Array.from(l.pictureWords),['đom đóm','chó đốm','mâm cơm']);
+ assert.equal(l.reading.join(' '),'Hôm qua, cô Mơ ở xóm Hạ đến thăm nhà Hà. Cô cho Hà giỏ cam. Hà chọn quả cam to phần bố. Mẹ khen và thơm lên má Hà.');assert.equal(l.speaking,'Xin lỗi');assert.equal(l.writing[1],'chó đốm mâm cơm');assert.equal('answers' in l,false);
 });
