@@ -20,6 +20,18 @@ const schoolReports = [
         "preparation": [
           "Đọc SGK tr.84-85"
         ]
+      },
+      {
+        "id": "tieng-viet-2026-10-20",
+        "date": "2026-10-20",
+        "day": "Thứ Ba",
+        "periods": "8,9",
+        "subject": "Tiếng Việt",
+        "title": "Bài 37: em êm im um",
+        "sections": [],
+        "preparation": [
+          "Đọc SGK tr.86-87"
+        ]
       }
     ]
   },
@@ -39,6 +51,16 @@ const schoolReports = [
         "periods": "7",
         "subject": "Toán",
         "title": "Bài 10: Phép cộng trong phạm vi 10 (T.1)",
+        "sections": [],
+        "preparation": []
+      },
+      {
+        "id": "toan-2026-10-20",
+        "date": "2026-10-20",
+        "day": "Thứ Ba",
+        "periods": "7",
+        "subject": "Toán",
+        "title": "Bài 10: Phép cộng trong phạm vi 10 (T.2)",
         "sections": [],
         "preparation": []
       }
@@ -125,6 +147,35 @@ const schoolReports = [
           }
         ],
         "preparation": []
+      },
+      {
+        "id": "esl-2026-10-20",
+        "date": "2026-10-20",
+        "day": "Thứ Ba",
+        "periods": "3,4",
+        "subject": "ESL",
+        "title": "3.4 - Describing ongoing actions",
+        "sections": [
+          {
+            "lines": [
+              "Listen to and understand a description.",
+              "Play a guessing game and speak about what people are doing."
+            ]
+          },
+          {
+            "heading": "Key Vocabulary",
+            "lines": [
+              "Wave, rip, cut, fold, write, use, kick, climb, balance, win, run, hop."
+            ]
+          },
+          {
+            "heading": "Grammar",
+            "lines": [
+              "Present continuous: I like/don’t like ____ing."
+            ]
+          }
+        ],
+        "preparation": []
       }
     ]
   },
@@ -146,7 +197,43 @@ const schoolReports = [
     "end": "2026-10-23",
     "title": "Báo bài tuần 19/10/2026 - 23/10/2026",
     "layout": "table",
-    "entries": []
+    "entries": [
+      {
+        "id": "mathematics-2026-10-20",
+        "date": "2026-10-20",
+        "day": "Thứ Ba",
+        "periods": "1,2",
+        "subject": "MATHEMATICS",
+        "title": "4.1 Carroll diagrams and tally charts",
+        "sections": [
+          {
+            "lines": [
+              "Answer non-statistical and statistical questions;",
+              "Record, organise and represent data using a tally chart and a Caroll diagram; and",
+              "Describe data and discuss conclusions."
+            ]
+          },
+          {
+            "heading": "Key Vocabulary",
+            "lines": [
+              "Carroll diagram, least popular, most popular, non-statistical questions, statistical questions, tally, tally chart"
+            ]
+          },
+          {
+            "heading": "Prerequisite Skills",
+            "lines": [
+              "Sort objects into groups.",
+              "Count objects accurately.",
+              "Record simple information."
+            ]
+          }
+        ],
+        "preparation": [
+          "LB Page: 70-77",
+          "WB Page: 72-77"
+        ]
+      }
+    ]
   }
 ];
 function getSchoolReports(grade,subject,query='',week='Tất cả các tuần'){

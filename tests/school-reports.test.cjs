@@ -12,15 +12,15 @@ test('removed weekly report has no lessons or selectable week for any subject',(
  assert.equal(api.officialPapers.reduce((n,p)=>n+p.questions.length,0),350);
 });
 
-test('Vietnamese Monday lesson matches the provided image remains unchanged',()=>{const rows=api.getSchoolReports('1','Tiếng Việt')[0].entries;assert.equal(rows.length,1);assert.equal(rows[0].date,'2026-10-19');assert.equal(rows[0].day,'Thứ Hai');assert.equal(rows[0].title,'Bài 36: om ôm ơm');assert.equal(rows[0].periods,'8,9');assert.equal(rows[0].preparation[0],'Đọc SGK tr.84-85');});
+test('Vietnamese Monday lesson matches the provided image remains unchanged',()=>{const rows=api.getSchoolReports('1','Tiếng Việt')[0].entries;assert.equal(rows.length,2);assert.equal(rows[0].date,'2026-10-19');assert.equal(rows[0].day,'Thứ Hai');assert.equal(rows[0].title,'Bài 36: om ôm ơm');assert.equal(rows[0].periods,'8,9');assert.equal(rows[0].preparation[0],'Đọc SGK tr.84-85');});
 
 test('other subjects use the same table and only supplied Monday lessons are added',()=>{
  for(const report of api.schoolReports)assert.equal(report.layout,'table');
  assert.equal(api.getSchoolReports('1','Toán')[0].entries[0].title,'Bài 10: Phép cộng trong phạm vi 10 (T.1)');
  const science=api.getSchoolReports('1','SCIENCE')[0].entries[0];assert.equal(science.title,'2.3 Changing Speed');assert.equal(science.links[0].url,'https://wordwall.net/resource/99907940');
  assert.equal(api.getSchoolReports('1','ESL')[0].entries[0].title,'3.4 - Describing ongoing actions');
- for(const subject of ['GLOBAL','MATHEMATICS'])assert.equal(api.getSchoolReports('1',subject)[0].entries.length,0);
- assert.equal(api.schoolReports.flatMap(r=>r.entries).length,4);
+ assert.equal(api.getSchoolReports('1','GLOBAL')[0].entries.length,0);
+ assert.equal(api.schoolReports.flatMap(r=>r.entries).length,8);
 });
 
 test('owner Vietnamese worksheet is attached only to the matching lesson without invented keys',()=>{
@@ -29,4 +29,13 @@ test('owner Vietnamese worksheet is attached only to the matching lesson without
  assert.equal(w.blanks.length,4);assert.equal(w.choices.length,2);assert.equal(w.reading.length,2);
  assert.equal(w.words[1][4],'chum');assert.equal(w.phrases[0][3],'gối xôi');
  assert.equal(w.choices[1][0],'Hải và Hà đi máy bay.');assert.equal('answer' in w,false);assert.equal('answers' in w,false);
+});
+
+test('Tuesday report joins split ESL pages and adds four source lessons without exercises',()=>{
+ const rows=api.schoolReports.flatMap(r=>r.entries).filter(e=>e.date==='2026-10-20');assert.equal(rows.length,4);assert.ok(rows.every(e=>e.day==='Thứ Ba'));
+ const math=rows.find(e=>e.subject==='MATHEMATICS');assert.equal(math.title,'4.1 Carroll diagrams and tally charts');assert.deepEqual(Array.from(math.preparation),['LB Page: 70-77','WB Page: 72-77']);assert.equal(math.sections[2].lines.length,3);
+ const esl=rows.find(e=>e.subject==='ESL');assert.ok(esl.sections[0].lines[1].includes('guessing game'));assert.equal(esl.sections[2].heading,'Grammar');
+ assert.equal(rows.find(e=>e.subject==='Toán').title,'Bài 10: Phép cộng trong phạm vi 10 (T.2)');
+ assert.equal(rows.find(e=>e.subject==='Tiếng Việt').title,'Bài 37: em êm im um');assert.equal(rows.find(e=>e.subject==='Tiếng Việt').preparation[0],'Đọc SGK tr.86-87');
+ for(const row of rows)assert.equal(api.schoolExerciseWorksheets[row.id],undefined);
 });
