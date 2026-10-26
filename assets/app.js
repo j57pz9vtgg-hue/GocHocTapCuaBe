@@ -128,6 +128,7 @@ function saveCurrentView(){
   if(index>=0)record.anchor={id:viewQuestionIds(p)[index],top:app.querySelectorAll('.paper-question')[index].getBoundingClientRect().top};
  }
  if(introDialog.open&&pendingPaper)record.intro=viewSelection(pendingPaper);
+ const schoolExercise=document.querySelector('#school-exercise-dialog');if(schoolExercise?.open){record.schoolExerciseId=schoolExercise.dataset.lessonId;record.schoolExerciseScroll=schoolExercise.scrollTop;}
  if(settings.open)record.settings={tab:settings.querySelector('[aria-selected="true"]')?.dataset.settingsTab,scroll:settings.scrollTop};
  try{sessionStorage.setItem(currentViewKey,JSON.stringify(record));}catch{}
 }
@@ -165,6 +166,7 @@ async function restoreCurrentView(){
   if(state.submitted)state.practice.finishedAt=Number.isFinite(saved.finishedAt)?Math.max(state.practice.startedAt,saved.finishedAt):state.practice.startedAt;
   renderPractice();saveAttempt();
  }else{state.practice=null;renderHome();}
+ if(record.schoolExerciseId&&state.program==='Báo bài của trường'&&!state.practice){openSchoolExercises(record.schoolExerciseId);const dialog=document.querySelector('#school-exercise-dialog');if(dialog?.open&&Number.isFinite(record.schoolExerciseScroll))dialog.scrollTop=record.schoolExerciseScroll;}
  const intro=selectionFromView(record.intro);if(intro&&!state.practice)showPracticeIntro(intro);
  if(record.settings&&!state.practice){app.querySelector('[data-action="settings"]')?.click();document.querySelector(`#settings [data-settings-tab="${['appearance','password','guide'].includes(record.settings.tab)?record.settings.tab:'appearance'}"]`)?.click();}
  // Restore after fonts and diagrams settle, and only after the access gate has opened.

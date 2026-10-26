@@ -1,5 +1,5 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
-const context={document:{addEventListener(){}}};vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/data.js'),'utf8')+'\n'+fs.readFileSync(path.join(__dirname,'../assets/school-reports.js'),'utf8')+'\nglobalThis.api={schoolReports,getSchoolReports,getSubjects,getModes,officialPapers};',context);const api=context.api;
+const context={document:{addEventListener(){}}};vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/data.js'),'utf8')+'\n'+fs.readFileSync(path.join(__dirname,'../assets/school-reports.js'),'utf8')+'\nglobalThis.api={schoolReports,getSchoolReports,getSubjects,getModes,officialPapers,schoolExerciseWorksheets};',context);const api=context.api;
 test('removed weekly report has no lessons or selectable week for any subject',()=>{
  assert.equal(api.schoolReports.some(r=>r.start==='2026-10-26'),false);
  for(const subject of api.getSubjects('Báo bài của trường')){
@@ -21,4 +21,12 @@ test('other subjects use the same table and only supplied Monday lessons are add
  assert.equal(api.getSchoolReports('1','ESL')[0].entries[0].title,'3.4 - Describing ongoing actions');
  for(const subject of ['GLOBAL','MATHEMATICS'])assert.equal(api.getSchoolReports('1',subject)[0].entries.length,0);
  assert.equal(api.schoolReports.flatMap(r=>r.entries).length,4);
+});
+
+test('owner Vietnamese worksheet is attached only to the matching lesson without invented keys',()=>{
+ const sheets=api.schoolExerciseWorksheets;assert.deepEqual(Object.keys(sheets),['tieng-viet-2026-10-19']);
+ const w=sheets['tieng-viet-2026-10-19'];assert.deepEqual(Array.from(w.sounds),['om','ôm','ơm','em','êm','im','um','ai','ay','ây','oi','ôi','ơi']);
+ assert.equal(w.blanks.length,4);assert.equal(w.choices.length,2);assert.equal(w.reading.length,2);
+ assert.equal(w.words[1][4],'chum');assert.equal(w.phrases[0][3],'gối xôi');
+ assert.equal(w.choices[1][0],'Hải và Hà đi máy bay.');assert.equal('answer' in w,false);assert.equal('answers' in w,false);
 });
