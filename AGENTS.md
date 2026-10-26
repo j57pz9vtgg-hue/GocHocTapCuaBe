@@ -219,3 +219,5 @@ Yêu cầu mới: báo bài dùng workspace2cột, mọi ôbài/nútXem bài h�
 Thu gọn ôbài cộttrái báo bài để thấy khoảng5bài cùnglúc: padding5px9px, huyhiệu24x27, hìnhminhhọa24px, dòngngày22px, nútgiữ44px, gapgiữacácô6px. ÔTiếngViệt ngắn khoảng107px thay170px,5ôvừa ởdesktop1440x900; tên dài vẫn tựxuốngdòng, khôngcắt tên/nút. Chỉápdụngschool-report-sidebar, không đổiôđềTIMO hoặc nộidungbênphải.
 
 Bài tậpTiếngViệt phần2điềnai/ay: cả4hình bàn tay/máy bay/máy sấy/gà mái vàôđiềntươngứng xếptrên1hàng, dùng4cột. Màn<=1100 giữ1hàng bằngcuộnngang riêng trong phầncâu, khônglàmtràntrang; khôngthayđổinộidung/id/bàilàmđãlưu.
+
+Theo yêu cầu mới, thay huyhiệusốthứtự01/02/... trênôbáobài bằngnhãn thứ-ngày, vídụ Thứ 2 - 19/10; cácngàytươngứng Thứ3 -20/10/Thứ4 -21/10/Thứ5 -22/10/Thứ6 -23/10. Lấyngày/chữthứtừbảnguồn, áp dụngcácmôn báo bài; khôngđổihuyhiệuđềTIMO hoặc dữliệubàilàm.
