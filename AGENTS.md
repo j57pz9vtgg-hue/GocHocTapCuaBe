@@ -191,3 +191,5 @@ Chỉ định mới của chủ dự án: chuyển12 câu trong ảnh (national0
 Chỉ định tiếp theo: các câu dãy hình/ký hiệu lặp, tìm hình tiếp theo hoặc hình ở vị trí thứn cũng thuộc Quy luật dãy số. Chuyển qualifying04:3, qualifying05:3, national07:2 từ Quy luật hình ảnh sang Quy luật dãy số. Dãy số24câu, hình ảnh8câu; tổng249/101 không đổi. Các câu đếm số hình trong nhóm tăng dần vẫn thuộc Quy luật hình ảnh.
 
 Điều chỉnh khoảng đầu trang Đảo pha lê: giảm chiều cao banner24px trên desktop (clamp141px,13vw-24px,186px),16px trên điện thoại (114px), đưa bộ chọn lớp lên tương ứng; dịch nền banner lên8px desktop/4px mobile. Giữ nguyên chiều rộng/lề bộ lọc, vị trí tìm kiếm/cài đặt và các giao diện khác.
+
+Theo yêu cầu mới: xóa toàn bộ báo bài tuần26–30/10/2026, gồm20 mục của6môn lớp1. schoolReports hiện rỗng; không giữ tuần này trong bộ chọn hoặc nội dung chi tiết. Giữ chức năng báo bài để nhập nội dung mới sau này, không tự khôi phục dữ liệu tuần đã xóa.
