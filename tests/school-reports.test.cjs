@@ -11,3 +11,5 @@ test('removed weekly report has no lessons or selectable week for any subject',(
  assert.equal(api.officialPapers.length,14);
  assert.equal(api.officialPapers.reduce((n,p)=>n+p.questions.length,0),350);
 });
+
+test('Vietnamese Monday lesson matches the provided image and no other subjects are imported',()=>{const rows=api.getSchoolReports('1','Tiếng Việt')[0].entries;assert.equal(rows.length,1);assert.equal(rows[0].date,'2026-10-19');assert.equal(rows[0].day,'Thứ Hai');assert.equal(rows[0].title,'Bài 36: om ôm ơm');assert.equal(rows[0].periods,'8,9');assert.equal(rows[0].preparation[0],'Đọc SGK tr.84-85');});

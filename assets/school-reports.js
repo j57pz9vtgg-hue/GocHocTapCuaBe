@@ -1,6 +1,6 @@
 // School reports are added only from owner-provided content.
 // The owner removed the entire 26–30/10/2026 report.
-const schoolReports = [{id:'school-week-2026-10-19-vietnamese',grade:'1',subject:'Tiếng Việt',start:'2026-10-19',end:'2026-10-23',title:'Báo bài tuần 19/10/2026 - 23/10/2026',layout:'table',entries:[]}];
+const schoolReports = [{id:'school-week-2026-10-19-vietnamese',grade:'1',subject:'Tiếng Việt',start:'2026-10-19',end:'2026-10-23',title:'Báo bài tuần 19/10/2026 - 23/10/2026',layout:'table',entries:[{id:'tieng-viet-2026-10-19',date:'2026-10-19',day:'Thứ Hai',periods:'8,9',subject:'Tiếng Việt',title:'Bài 36: om ôm ơm',sections:[],preparation:['Đọc SGK tr.84-85']}]}];
 function getSchoolReports(grade,subject,query='',week='Tất cả các tuần'){
  const normalize=v=>String(v).normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[đĐ]/g,'d').toLowerCase(),search=normalize(query.trim());
  return schoolReports.filter(r=>String(r.grade)===String(grade)&&(week==='Tất cả các tuần'||r.title===week)).map(report=>({...report,entries:report.entries.filter(e=>e.subject===subject&&(!search||normalize(JSON.stringify(e)+' '+report.title).includes(search)))})).filter(r=>r.entries.length||(r.layout==='table'&&r.subject===subject&&!search));

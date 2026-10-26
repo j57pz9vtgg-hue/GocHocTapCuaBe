@@ -195,3 +195,5 @@ Chỉ định tiếp theo: các câu dãy hình/ký hiệu lặp, tìm hình ti�
 Theo yêu cầu mới: xóa toàn bộ báo bài tuần26–30/10/2026, gồm20 mục của6môn lớp1. schoolReports hiện rỗng; không giữ tuần này trong bộ chọn hoặc nội dung chi tiết. Giữ chức năng báo bài để nhập nội dung mới sau này, không tự khôi phục dữ liệu tuần đã xóa.
 
 Yêu cầu báo bài mới: Lớp1/Báo bài của trường/Tiếng Việt/tuần19/10/2026 -23/10/2026 hiển thị bảng3cột Ngày/Bài học/Tài liệu, Tài liệu để trống. Tin nhắn chưa kèm ảnh nguồn nên chỉ tạo tuần và khung bảng chờ ảnh, không tự điền ngày/bài học. Không khôi phục tuần26–30 đã xóa.
+
+Ảnh báo bài19/10 đã nhận: chỉ nhập mônTiếng Việt theo phạm vi yêu cầu hiện tại, ThứHai19/10/2026 tiết8,9 Bài36: om ôm ơm. Lưu chuẩn bị nguồn Đọc SGK tr.84-85, nhưng cộtTài liệu trên bảng để trống. Chưa có ảnh các ngày còn lại nên không tự thêm. Các môn khác trong ảnh chưa được yêu cầu nhập ở lượt này.
