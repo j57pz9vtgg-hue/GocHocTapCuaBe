@@ -223,3 +223,5 @@ Bài tậpTiếngViệt phần2điềnai/ay: cả4hình bàn tay/máy bay/máy s
 Theo yêu cầu mới, thay huyhiệusốthứtự01/02/... trênôbáobài bằngnhãn thứ-ngày, vídụ Thứ 2 - 19/10; cácngàytươngứng Thứ3 -20/10/Thứ4 -21/10/Thứ5 -22/10/Thứ6 -23/10. Lấyngày/chữthứtừbảnguồn, áp dụngcácmôn báo bài; khôngđổihuyhiệuđềTIMO hoặc dữliệubàilàm.
 
 Thu gọn tiếp cộttrái để thấy6bàiTiếngViệt: bỏ dòngNgày bịlặp dưới nhãnthứ/ngày, chuyển hình24px lên cùnghàngtiêuđề; ôcòn2hàng(header+nút44px),padding4px8px,gap6px. Sáuô ngắn chiếm khoảng520px; tên dài tựxuốngdòng. GiữnhãnThứ2-19/10... vànộidung/bàilàmbênphải.
+
+KhungnhãnThứ2-19/10 dùngmàuhuyhiệusố01cũ: Đảopha lê gradientb7eaff/609aff/5155cd,chữtrắng,cắtgóc6px, mởrộngchiềungangđủchứa thứ/ngày. Cácgiao diệnkhác giữpaletteordinaltươngứng. Giữbốtụcgọn6ô và2nút44px.

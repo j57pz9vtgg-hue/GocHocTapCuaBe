@@ -563,3 +563,12 @@
 #site-shell .school-report-sidebar .school-report-card .exercise-name{flex:1 1 120px}
 #site-shell .school-report-sidebar .exercise-name h2{font-size:12px}
 #site-shell .school-report-sidebar .school-card-date{font-size:11px;padding:2px 4px}
+/* Day labels reuse the numbered badge palette, widened to fit the date. */
+#site-shell .school-report-sidebar .school-card-date{padding:2px 8px;background:var(--theme-ordinal,linear-gradient(140deg,#b7eaff,#609aff 60%,#5155cd));color:#fff;border:1px solid #ffffffd9;box-shadow:inset 0 1px #ffffff80,0 1px 3px #20356825;text-shadow:0 1px 1px #20356835}
+:root[data-theme="crystal"] #site-shell .school-card-date{background:linear-gradient(140deg,#b7eaff,#609aff 60%,#5155cd);border-radius:0;clip-path:polygon(6px 0,calc(100% - 6px) 0,100% 6px,100% calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,0 calc(100% - 6px),0 6px)}
+:root[data-theme="bunny"] #site-shell .school-card-date{background:#bfe08c;color:#285e48;text-shadow:none}
+:root[data-theme="cloud"] #site-shell .school-card-date{background:linear-gradient(#ffe49b,#eeb05c);color:#6e4719;text-shadow:none}
+:root[data-theme="toys"] #site-shell .school-card-date{color:#25476c;text-shadow:none}
+:root[data-theme="magic"] #site-shell .school-card-date{background:linear-gradient(140deg,#b8a3fa,#8054c9)}
+:root[data-theme="treasure"] #site-shell .school-card-date{background:linear-gradient(#ffe89a,#d49a28);color:#654513;text-shadow:none}
+:root[data-theme="cars"] #site-shell .school-card-date{background:linear-gradient(#fd7467,#dc3028)}
