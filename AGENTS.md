@@ -189,3 +189,5 @@ YÊU CẦU MỚI NHẤT: bỏ tính năng tự đề xuất/phân loại chủ �
 Chỉ định mới của chủ dự án: chuyển12 câu trong ảnh (national07:5; national05:1; national02:3; national03:4; national04:3; national05:4; national04:4; national03:3; national01:2; national02:4; qualifying07:2; national06:4) vào chủ đề1 Quy luật dãy số, gồm quy luật chữ cái và bảng số theo yêu cầu trực tiếp. Chủ đề này21câu; tổng249đã phân loại,101chưa phân loại (14/1/30/19/37). Giữ các chủ đề khác và nội dung/đáp án/lời giải.
 
 Chỉ định tiếp theo: các câu dãy hình/ký hiệu lặp, tìm hình tiếp theo hoặc hình ở vị trí thứn cũng thuộc Quy luật dãy số. Chuyển qualifying04:3, qualifying05:3, national07:2 từ Quy luật hình ảnh sang Quy luật dãy số. Dãy số24câu, hình ảnh8câu; tổng249/101 không đổi. Các câu đếm số hình trong nhóm tăng dần vẫn thuộc Quy luật hình ảnh.
+
+Điều chỉnh khoảng đầu trang Đảo pha lê: giảm chiều cao banner24px trên desktop (clamp141px,13vw-24px,186px),16px trên điện thoại (114px), đưa bộ chọn lớp lên tương ứng; dịch nền banner lên8px desktop/4px mobile. Giữ nguyên chiều rộng/lề bộ lọc, vị trí tìm kiếm/cài đặt và các giao diện khác.

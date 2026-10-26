@@ -485,3 +485,6 @@
 .paper-world .paper-search-box:focus-within{border-color:#008fba;outline:2px solid #008fba;outline-offset:2px}
 #site-shell .paper-world .paper-search-box input:focus,#site-shell .paper-world .paper-search-box input:focus-visible,#site-shell .paper-world .paper-search-box button:focus-visible{outline:none;box-shadow:none}
 .paper-world .paper-search-box button:focus-visible{background:#dff4fb}
+/* Lift the Crystal Island filters and scenery slightly while retaining the shared panel edges. */
+:root[data-theme="crystal"] #site-shell .adventure-banner{height:clamp(141px,calc(13vw - 24px),186px);background-position:center -8px}
+@media(max-width:760px){:root[data-theme="crystal"] #site-shell .adventure-banner{height:114px;background-position:center -4px}}
