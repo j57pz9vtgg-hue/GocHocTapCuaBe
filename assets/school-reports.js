@@ -153,31 +153,23 @@ function getSchoolReports(grade,subject,query='',week='Tất cả các tuần'){
  const normalize=v=>String(v).normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[đĐ]/g,'d').toLowerCase(),search=normalize(query.trim());
  return schoolReports.filter(r=>String(r.grade)===String(grade)&&(week==='Tất cả các tuần'||r.title===week)).map(report=>({...report,entries:report.entries.filter(e=>e.subject===subject&&(!search||normalize(JSON.stringify(e)+' '+report.title).includes(search)))})).filter(r=>r.entries.length||(r.layout==='table'&&r.subject===subject&&!search));
 }
-function schoolLessonMeta(entry){
- return `<time datetime="${entry.date}">${escapeHTML(entry.day)} · ${entry.date.slice(8)}/${entry.date.slice(5,7)}</time><span>Tiết ${escapeHTML(entry.periods)}</span>${entry.kind==='test'?'<strong class="school-kind">Kiểm tra</strong>':entry.kind==='event'?'<strong class="school-kind">Hoạt động</strong>':''}`;
-}
-function schoolLessonContent(entry){
- return `${entry.sections.map(section=>`<div class="school-lesson-section">${section.heading?`<h4>${escapeHTML(section.heading)}</h4>`:''}${section.lines.length?`<ul>${section.lines.map(line=>`<li>${escapeHTML(line)}</li>`).join('')}</ul>`:''}</div>`).join('')}${(entry.links||[]).map(link=>`<p><a href="${escapeHTML(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(link.label)} ↗</a></p>`).join('')}${entry.preparation.length?`<aside class="school-preparation"><h4>Chuẩn bị</h4><ul>${entry.preparation.map(line=>`<li>${escapeHTML(line)}</li>`).join('')}</ul></aside>`:''}${!entry.sections.length&&!entry.preparation.length&&!(entry.links||[]).length?'<p class="school-detail-note">Báo bài đã gửi chỉ cung cấp tên bài học/hoạt động này.</p>':''}`;
-}
-function renderSchoolReportTable(report){
- return `<div class="school-table-wrap"><table class="school-report-table" aria-label="${escapeHTML(report.title)}"><thead><tr><th scope="col">Ngày</th><th scope="col">Bài học</th><th scope="col">Tài liệu</th></tr></thead><tbody>${report.entries.length?report.entries.map(entry=>`<tr><th scope="row">${escapeHTML(entry.day)}<br><time datetime="${entry.date}">${escapeHTML(entry.date.slice(8)+'/'+entry.date.slice(5,7))}</time></th><td><strong>${escapeHTML(entry.title)}</strong>${entry.sections.length||(entry.links||[]).length?schoolLessonContent({...entry,preparation:[]}):''}</td><td></td></tr>`).join(''):'<tr><td colspan="3" class="school-table-pending">Chưa có nội dung báo bài. Đang chờ ảnh để bổ sung.</td></tr>'}</tbody></table></div>`;
-}
 function renderSchoolLessonCard(entry,index){
  const theme=activeTheme().id;
- return `<article class="exercise-card school-report-card"><div class="exercise-top">${renderTopicBadge(index)}<div class="exercise-name"><h2>${escapeHTML(entry.title)}</h2></div></div><dl class="exercise-stats"><div><dt>Ngày:</dt><dd>${escapeHTML(entry.day)} · ${escapeHTML(entry.date.slice(8)+'/'+entry.date.slice(5,7))}</dd></div></dl>${theme!=='pixel'?`<span class="exercise-card-art" aria-hidden="true" style="background-position:${(index%4)*100/3}% ${Math.floor(index%16/4)*100/3}%"></span>`:''}<div class="card-actions"><button class="start-button" data-school-lesson="${entry.id}" aria-haspopup="dialog">Xem bài học</button><button class="start-button" data-school-exercises="${entry.id}" aria-controls="${entry.id}-exercises-notice">Làm bài tập</button></div><p id="${entry.id}-exercises-notice" class="school-exercises-notice" role="status" hidden></p></article>`;
+ return `<article class="exercise-card school-report-card"><div class="exercise-top">${renderTopicBadge(index)}<div class="exercise-name"><h2>${escapeHTML(entry.title)}</h2></div></div><dl class="exercise-stats"><div><dt>Ngày:</dt><dd>${escapeHTML(entry.day)} · ${escapeHTML(entry.date.slice(8)+'/'+entry.date.slice(5,7))}</dd></div></dl>${theme!=='pixel'?`<span class="exercise-card-art" aria-hidden="true" style="background-position:${(index%4)*100/3}% ${Math.floor(index%16/4)*100/3}%"></span>`:''}<div class="card-actions"><button class="start-button" data-school-lesson="${entry.id}" aria-controls="${entry.id}-lesson-notice">Xem bài học</button><button class="start-button" data-school-exercises="${entry.id}" aria-controls="${entry.id}-exercises-notice">Làm bài tập</button></div><p id="${entry.id}-lesson-notice" class="school-exercises-notice" role="status" hidden></p><p id="${entry.id}-exercises-notice" class="school-exercises-notice" role="status" hidden></p></article>`;
 }
 function renderSchoolReports(){
  const reports=getSchoolReports(state.grade,state.subject,state.search,state.mode),entries=reports.flatMap(report=>report.entries);
  if(!entries.length)return `<div class="empty-state"><h3>${state.search?'Chưa tìm thấy nội dung báo bài':'Chưa có nội dung báo bài'}</h3><p>${state.search?'Thử từ khóa khác hoặc chọn lại môn học.':'Đang chờ ảnh báo bài để bổ sung cho môn đã chọn.'}</p></div>`;
  return `<div class="exercise-grid school-report-grid">${entries.map((entry,index)=>renderSchoolLessonCard(entry,index)).join('')}</div>`;
 }
-let schoolLessonTrigger=null;
 function openSchoolLesson(id){
- const report=schoolReports.find(r=>String(r.grade)===state.grade&&r.entries.some(e=>e.id===id)),entry=report?.entries.find(e=>e.id===id);if(!entry||state.program!=='Báo bài của trường'||entry.subject!==state.subject)return;
- let dialog=document.querySelector('#school-lesson-dialog');
- if(!dialog){dialog=document.createElement('dialog');dialog.id='school-lesson-dialog';dialog.className='school-lesson-dialog';dialog.setAttribute('aria-labelledby','school-lesson-title');document.body.append(dialog);dialog.addEventListener('close',()=>{if(schoolLessonTrigger?.isConnected)schoolLessonTrigger.focus({preventScroll:true});if(typeof saveCurrentView==='function')saveCurrentView()});}
- schoolLessonTrigger=document.querySelector(`[data-school-lesson="${entry.id}"]`)||document.activeElement;
- dialog.innerHTML=`<header><div><p>${escapeHTML(report.title)} · Lớp ${report.grade} · ${escapeHTML(subjectDisplayName(entry.subject))}</p><h2 id="school-lesson-title">${escapeHTML(entry.title)}</h2></div><button type="button" data-close-school-lesson aria-label="Đóng nội dung bài học">×</button></header><div class="school-lesson school-lesson-detail">${renderSchoolReportTable({...report,entries:[entry]})}</div>`;
- dialog.dataset.lessonId=entry.id;dialog.showModal();if(typeof saveCurrentView==='function')saveCurrentView();
+ const report=schoolReports.find(r=>String(r.grade)===state.grade&&r.entries.some(e=>e.id===id)),entry=report?.entries.find(e=>e.id===id);
+ if(!entry||state.program!=='Báo bài của trường'||entry.subject!==state.subject)return;
+ const notice=document.getElementById(entry.id+'-lesson-notice');
+ if(notice){notice.textContent='Đang chờ nội dung bài học mới để bổ sung.';notice.hidden=false;}
 }
-document.addEventListener('click',event=>{const exercise=event.target.closest('[data-school-exercises]');if(exercise){const notice=exercise.closest('.school-report-card')?.querySelector('.school-exercises-notice');if(notice){notice.textContent='Bài học này chưa có bài tập. Đang chờ bổ sung.';notice.hidden=false;}}const button=event.target.closest('[data-school-lesson]');if(button)openSchoolLesson(button.dataset.schoolLesson);if(event.target.closest('[data-close-school-lesson]'))document.querySelector('#school-lesson-dialog')?.close();});
+document.addEventListener('click',event=>{
+ const exercise=event.target.closest('[data-school-exercises]');
+ if(exercise){const notice=document.getElementById(exercise.dataset.schoolExercises+'-exercises-notice');if(notice){notice.textContent='Bài học này chưa có bài tập. Đang chờ bổ sung.';notice.hidden=false;}}
+ const button=event.target.closest('[data-school-lesson]');if(button)openSchoolLesson(button.dataset.schoolLesson);
+});
