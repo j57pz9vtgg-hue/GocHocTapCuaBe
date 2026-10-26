@@ -32,6 +32,58 @@ const schoolReports = [
         "preparation": [
           "Đọc SGK tr.86-87"
         ]
+      },
+      {
+        "id": "tieng-viet-2026-10-21-a",
+        "date": "2026-10-21",
+        "day": "Thứ Tư",
+        "periods": "1,2",
+        "subject": "Tiếng Việt",
+        "title": "Bài 38: ai ay ây",
+        "sections": [],
+        "preparation": [
+          "Đọc SGK tr.88-89"
+        ]
+      },
+      {
+        "id": "tieng-viet-2026-10-21-b",
+        "date": "2026-10-21",
+        "day": "Thứ Tư",
+        "periods": "3,4",
+        "subject": "Tiếng Việt",
+        "title": "Bài 39: oi ôi ơi",
+        "sections": [],
+        "preparation": [
+          "Đọc SGK tr.90-91"
+        ]
+      },
+      {
+        "id": "tieng-viet-2026-10-22",
+        "date": "2026-10-22",
+        "day": "Thứ Năm",
+        "periods": "5,6",
+        "subject": "Tiếng Việt",
+        "title": "Bài 40: Ôn tập",
+        "sections": [
+          {
+            "lines": [
+              "Bài 40: Kể chuyện: Hai người bạn và con gấu"
+            ]
+          }
+        ],
+        "preparation": [
+          "Đọc SGK tr.92-93"
+        ]
+      },
+      {
+        "id": "tieng-viet-2026-10-23",
+        "date": "2026-10-23",
+        "day": "Thứ Sáu",
+        "periods": "7,8",
+        "subject": "Tiếng Việt",
+        "title": "Thực hành",
+        "sections": [],
+        "preparation": []
       }
     ]
   },
@@ -63,6 +115,16 @@ const schoolReports = [
         "title": "Bài 10: Phép cộng trong phạm vi 10 (T.2)",
         "sections": [],
         "preparation": []
+      },
+      {
+        "id": "toan-2026-10-22",
+        "date": "2026-10-22",
+        "day": "Thứ Năm",
+        "periods": "7",
+        "subject": "Toán",
+        "title": "Bài 10: Phép cộng trong phạm vi 10 (T.3)",
+        "sections": [],
+        "preparation": []
       }
     ]
   },
@@ -80,6 +142,72 @@ const schoolReports = [
         "date": "2026-10-19",
         "day": "Thứ Hai",
         "periods": "1,2",
+        "subject": "SCIENCE",
+        "title": "2.3 Changing Speed",
+        "sections": [
+          {
+            "lines": [
+              "Find out how forces make things go faster or slower.",
+              "Recognize that things will only speed up, slow down or change direction when something else causes it to do so",
+              "Investigate carefully and safely"
+            ]
+          },
+          {
+            "heading": "Key Vocabulary",
+            "lines": [
+              "brakes, explain, fast, faster, pedals, slow, slower, slow down, speed, speed up"
+            ]
+          }
+        ],
+        "preparation": [
+          "LB Page: 47 - 51",
+          "WB Page: 25"
+        ],
+        "links": [
+          {
+            "label": "Pre-Learning Activities",
+            "url": "https://wordwall.net/resource/99907940"
+          }
+        ]
+      },
+      {
+        "id": "science-2026-10-21",
+        "date": "2026-10-21",
+        "day": "Thứ Tư",
+        "periods": "6,7",
+        "subject": "SCIENCE",
+        "title": "2.3 Changing Speed",
+        "sections": [
+          {
+            "lines": [
+              "Find out how forces make things go faster or slower.",
+              "Recognize that things will only speed up, slow down or change direction when something else causes it to do so",
+              "Investigate carefully and safely"
+            ]
+          },
+          {
+            "heading": "Key Vocabulary",
+            "lines": [
+              "brakes, explain, fast, faster, pedals, slow, slower, slow down, speed, speed up"
+            ]
+          }
+        ],
+        "preparation": [
+          "LB Page: 47 - 51",
+          "WB Page: 25"
+        ],
+        "links": [
+          {
+            "label": "Pre-Learning Activities",
+            "url": "https://wordwall.net/resource/99907940"
+          }
+        ]
+      },
+      {
+        "id": "science-2026-10-23",
+        "date": "2026-10-23",
+        "day": "Thứ Sáu",
+        "periods": "5",
         "subject": "SCIENCE",
         "title": "2.3 Changing Speed",
         "sections": [
@@ -176,6 +304,64 @@ const schoolReports = [
           }
         ],
         "preparation": []
+      },
+      {
+        "id": "esl-2026-10-21",
+        "date": "2026-10-21",
+        "day": "Thứ Tư",
+        "periods": "8,9",
+        "subject": "ESL",
+        "title": "3.3 - What can birds do?",
+        "sections": [
+          {
+            "lines": [
+              "Listen, read and understand a talk about birds.",
+              "Describe different birds using basic connectors and determiners."
+            ]
+          },
+          {
+            "heading": "Key Vocabulary",
+            "lines": [
+              "All, most, some."
+            ]
+          },
+          {
+            "heading": "Grammar",
+            "lines": [
+              "Can/can’t for ability, connectives and, or, but, quantifiers."
+            ]
+          }
+        ],
+        "preparation": []
+      },
+      {
+        "id": "esl-2026-10-22",
+        "date": "2026-10-22",
+        "day": "Thứ Năm",
+        "periods": "3,4",
+        "subject": "ESL",
+        "title": "3.3 - What can birds do?",
+        "sections": [
+          {
+            "lines": [
+              "Listen, read and understand a talk about birds.",
+              "Describe different birds using basic connectors and determiners."
+            ]
+          },
+          {
+            "heading": "Key Vocabulary",
+            "lines": [
+              "All, most, some."
+            ]
+          },
+          {
+            "heading": "Grammar",
+            "lines": [
+              "Can/can’t for ability, connectives and, or, but, quantifiers."
+            ]
+          }
+        ],
+        "preparation": []
       }
     ]
   },
@@ -187,7 +373,39 @@ const schoolReports = [
     "end": "2026-10-23",
     "title": "Báo bài tuần 19/10/2026 - 23/10/2026",
     "layout": "table",
-    "entries": []
+    "entries": [
+      {
+        "id": "global-2026-10-23",
+        "date": "2026-10-23",
+        "day": "Thứ Sáu",
+        "periods": "3,4",
+        "subject": "GLOBAL",
+        "title": "2.2 - Where can I find more facts and ideas about waste?",
+        "sections": [
+          {
+            "heading": "Skill Focus: Evaluation",
+            "lines": []
+          },
+          {
+            "heading": "Students will be able to (I can…):",
+            "lines": [
+              "I can find a good source of ideas about how to reduce waste."
+            ]
+          },
+          {
+            "heading": "Key Vocabulary",
+            "lines": [
+              "46: facts, ideas, reduce, poster, corridor",
+              "47: source, information, reduce, recycle, reuse",
+              "48: waste-saving, idea, symbol"
+            ]
+          }
+        ],
+        "preparation": [
+          "LB: 46-49"
+        ]
+      }
+    ]
   },
   {
     "id": "school-week-2026-10-19-mathematics",
@@ -202,6 +420,79 @@ const schoolReports = [
         "id": "mathematics-2026-10-20",
         "date": "2026-10-20",
         "day": "Thứ Ba",
+        "periods": "1,2",
+        "subject": "MATHEMATICS",
+        "title": "4.1 Carroll diagrams and tally charts",
+        "sections": [
+          {
+            "lines": [
+              "Answer non-statistical and statistical questions;",
+              "Record, organise and represent data using a tally chart and a Caroll diagram; and",
+              "Describe data and discuss conclusions."
+            ]
+          },
+          {
+            "heading": "Key Vocabulary",
+            "lines": [
+              "Carroll diagram, least popular, most popular, non-statistical questions, statistical questions, tally, tally chart"
+            ]
+          },
+          {
+            "heading": "Prerequisite Skills",
+            "lines": [
+              "Sort objects into groups.",
+              "Count objects accurately.",
+              "Record simple information."
+            ]
+          }
+        ],
+        "preparation": [
+          "LB Page: 70-77",
+          "WB Page: 72-77"
+        ]
+      },
+      {
+        "id": "mathematics-2026-10-21",
+        "date": "2026-10-21",
+        "day": "Thứ Tư",
+        "periods": "5",
+        "subject": "MATHEMATICS",
+        "title": "5.1 Addition",
+        "sections": [
+          {
+            "lines": [
+              "Add ones or tens to a 2-digit number;",
+              "Add 3 or small numbers together; and",
+              "Use complements of 10 to find a complements of 20 and tens numbers to 100."
+            ]
+          },
+          {
+            "heading": "Key Vocabulary",
+            "lines": [
+              "column addition",
+              "complement (of 10, 20 and tens numbers to 100)",
+              "place value grid"
+            ]
+          },
+          {
+            "heading": "Prerequisite Skills",
+            "lines": [
+              "Add within 20.",
+              "Count on from a number.",
+              "Identify tens and ones.",
+              "Recall number bonds to 10."
+            ]
+          }
+        ],
+        "preparation": [
+          "LB Page: 81-85",
+          "WB Page: 78-85"
+        ]
+      },
+      {
+        "id": "mathematics-2026-10-22",
+        "date": "2026-10-22",
+        "day": "Thứ Năm",
         "periods": "1,2",
         "subject": "MATHEMATICS",
         "title": "4.1 Carroll diagrams and tally charts",

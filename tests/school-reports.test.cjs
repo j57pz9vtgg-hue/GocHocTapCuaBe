@@ -12,15 +12,15 @@ test('removed weekly report has no lessons or selectable week for any subject',(
  assert.equal(api.officialPapers.reduce((n,p)=>n+p.questions.length,0),350);
 });
 
-test('Vietnamese Monday lesson matches the provided image remains unchanged',()=>{const rows=api.getSchoolReports('1','Tiếng Việt')[0].entries;assert.equal(rows.length,2);assert.equal(rows[0].date,'2026-10-19');assert.equal(rows[0].day,'Thứ Hai');assert.equal(rows[0].title,'Bài 36: om ôm ơm');assert.equal(rows[0].periods,'8,9');assert.equal(rows[0].preparation[0],'Đọc SGK tr.84-85');});
+test('Vietnamese Monday lesson matches the provided image remains unchanged',()=>{const rows=api.getSchoolReports('1','Tiếng Việt')[0].entries;assert.equal(rows.length,6);assert.equal(rows[0].date,'2026-10-19');assert.equal(rows[0].day,'Thứ Hai');assert.equal(rows[0].title,'Bài 36: om ôm ơm');assert.equal(rows[0].periods,'8,9');assert.equal(rows[0].preparation[0],'Đọc SGK tr.84-85');});
 
 test('other subjects use the same table and only supplied Monday lessons are added',()=>{
  for(const report of api.schoolReports)assert.equal(report.layout,'table');
  assert.equal(api.getSchoolReports('1','Toán')[0].entries[0].title,'Bài 10: Phép cộng trong phạm vi 10 (T.1)');
  const science=api.getSchoolReports('1','SCIENCE')[0].entries[0];assert.equal(science.title,'2.3 Changing Speed');assert.equal(science.links[0].url,'https://wordwall.net/resource/99907940');
  assert.equal(api.getSchoolReports('1','ESL')[0].entries[0].title,'3.4 - Describing ongoing actions');
- assert.equal(api.getSchoolReports('1','GLOBAL')[0].entries.length,0);
- assert.equal(api.schoolReports.flatMap(r=>r.entries).length,8);
+ assert.equal(api.getSchoolReports('1','GLOBAL')[0].entries.length,1);
+ assert.equal(api.schoolReports.flatMap(r=>r.entries).length,20);
 });
 
 test('owner Vietnamese worksheet is attached only to the matching lesson without invented keys',()=>{
@@ -38,4 +38,16 @@ test('Tuesday report joins split ESL pages and adds four source lessons without 
  assert.equal(rows.find(e=>e.subject==='Toán').title,'Bài 10: Phép cộng trong phạm vi 10 (T.2)');
  assert.equal(rows.find(e=>e.subject==='Tiếng Việt').title,'Bài 37: em êm im um');assert.equal(rows.find(e=>e.subject==='Tiếng Việt').preparation[0],'Đọc SGK tr.86-87');
  for(const row of rows)assert.equal(api.schoolExerciseWorksheets[row.id],undefined);
+});
+
+test('remaining three days preserve all supplied subjects, split-page content and preparation',()=>{
+ const all=api.schoolReports.flatMap(r=>r.entries);assert.equal(new Set(all.map(e=>e.id)).size,20);
+ for(const [date,count] of [['2026-10-21',5],['2026-10-22',4],['2026-10-23',3]])assert.equal(all.filter(e=>e.date===date).length,count);
+ const birds=all.find(e=>e.id==='esl-2026-10-21');assert.ok(birds.sections[2].lines[0].endsWith('quantifiers.'));
+ const friday=all.find(e=>e.id==='science-2026-10-23');assert.equal(friday.links[0].url,'https://wordwall.net/resource/99907940');assert.ok(friday.sections[1].lines[0].includes('speed up'));
+ assert.equal(all.find(e=>e.id==='tieng-viet-2026-10-22').sections[0].lines[0],'Bài 40: Kể chuyện: Hai người bạn và con gấu');
+ assert.equal(all.find(e=>e.id==='global-2026-10-23').preparation[0],'LB: 46-49');
+ assert.equal(all.find(e=>e.id==='tieng-viet-2026-10-23').title,'Thực hành');
+ for(const r of api.schoolReports)assert.ok(r.entries.every(e=>e.subject===r.subject));
+ assert.deepEqual(Object.keys(api.schoolExerciseWorksheets),['tieng-viet-2026-10-19']);
 });
