@@ -225,3 +225,5 @@ Theo yêu cầu mới, thay huyhiệusốthứtự01/02/... trênôbáobài bằ
 Thu gọn tiếp cộttrái để thấy6bàiTiếngViệt: bỏ dòngNgày bịlặp dưới nhãnthứ/ngày, chuyển hình24px lên cùnghàngtiêuđề; ôcòn2hàng(header+nút44px),padding4px8px,gap6px. Sáuô ngắn chiếm khoảng520px; tên dài tựxuốngdòng. GiữnhãnThứ2-19/10... vànộidung/bàilàmbênphải.
 
 KhungnhãnThứ2-19/10 dùngmàuhuyhiệusố01cũ: Đảopha lê gradientb7eaff/609aff/5155cd,chữtrắng,cắtgóc6px, mởrộngchiềungangđủchứa thứ/ngày. Cácgiao diệnkhác giữpaletteordinaltươngứng. Giữbốtụcgọn6ô và2nút44px.
+
+Nới cột danh sách bài báo bài bêntrái và giảm nhẹ khungphải: desktop>=1101 từ340 thành390px, màn761–1100 từ300 thành330px. Giữgap/chếđộxếpdọcđiệnthoại/nộidung/bàilàm, vẫn6ôgọn và4hìnhcùnghàng. Đãkiểmtra11giao diện x5kíchthướckhôngtràntrang.
