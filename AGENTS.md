@@ -221,3 +221,5 @@ Thu gọn ôbài cộttrái báo bài để thấy khoảng5bài cùnglúc: padd
 Bài tậpTiếngViệt phần2điềnai/ay: cả4hình bàn tay/máy bay/máy sấy/gà mái vàôđiềntươngứng xếptrên1hàng, dùng4cột. Màn<=1100 giữ1hàng bằngcuộnngang riêng trong phầncâu, khônglàmtràntrang; khôngthayđổinộidung/id/bàilàmđãlưu.
 
 Theo yêu cầu mới, thay huyhiệusốthứtự01/02/... trênôbáobài bằngnhãn thứ-ngày, vídụ Thứ 2 - 19/10; cácngàytươngứng Thứ3 -20/10/Thứ4 -21/10/Thứ5 -22/10/Thứ6 -23/10. Lấyngày/chữthứtừbảnguồn, áp dụngcácmôn báo bài; khôngđổihuyhiệuđềTIMO hoặc dữliệubàilàm.
+
+Thu gọn tiếp cộttrái để thấy6bàiTiếngViệt: bỏ dòngNgày bịlặp dưới nhãnthứ/ngày, chuyển hình24px lên cùnghàngtiêuđề; ôcòn2hàng(header+nút44px),padding4px8px,gap6px. Sáuô ngắn chiếm khoảng520px; tên dài tựxuốngdòng. GiữnhãnThứ2-19/10... vànộidung/bàilàmbênphải.

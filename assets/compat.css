@@ -555,3 +555,11 @@
 #site-shell .school-report-sidebar .exercise-top{flex-wrap:wrap;gap:3px 7px}
 .school-card-date{display:inline-block;padding:2px 7px;border-radius:6px;background:#e5f5ff;color:#075a89;font-size:12px;font-weight:700;line-height:1.5;white-space:nowrap}
 #site-shell .school-report-sidebar .school-report-card .exercise-name{flex:1 1 140px}
+/* Six lesson cards fit by removing the repeated date row. */
+#site-shell .school-report-sidebar .school-report-card{padding:4px 8px;grid-template-rows:auto 44px;row-gap:3px}
+#site-shell .school-report-sidebar .exercise-top{grid-column:1;grid-row:1;min-height:24px;gap:3px 5px}
+#site-shell .school-report-sidebar .exercise-card-art{grid-column:2;grid-row:1;width:24px;height:24px}
+#site-shell .school-report-sidebar .card-actions{grid-row:2}
+#site-shell .school-report-sidebar .school-report-card .exercise-name{flex:1 1 120px}
+#site-shell .school-report-sidebar .exercise-name h2{font-size:12px}
+#site-shell .school-report-sidebar .school-card-date{font-size:11px;padding:2px 4px}
