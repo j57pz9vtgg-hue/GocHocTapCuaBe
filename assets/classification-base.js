@@ -227,7 +227,7 @@ const publishedTimoClassification = {
     "timo-grade2-national-07:14": "timo-group-3-review-default-1",
     "timo-grade2-national-07:16": "timo-group-4-review-default-1",
     "timo-grade2-national-07:19": "timo-group-4-review-default-4",
-    "timo-grade2-national-07:2": "timo-group-1-review-default-2",
+    "timo-grade2-national-07:2": "timo-group-1-review-default-1",
     "timo-grade2-national-07:20": "timo-group-4-review-default-2",
     "timo-grade2-national-07:21": "timo-group-5-review-default-2",
     "timo-grade2-national-07:22": "timo-group-5-review-default-1",
@@ -303,7 +303,7 @@ const publishedTimoClassification = {
     "timo-grade2-qualifying-04:2": "timo-group-1-review-default-4",
     "timo-grade2-qualifying-04:23": "timo-group-5-review-default-1",
     "timo-grade2-qualifying-04:24": "timo-group-5-review-default-1",
-    "timo-grade2-qualifying-04:3": "timo-group-1-review-default-2",
+    "timo-grade2-qualifying-04:3": "timo-group-1-review-default-1",
     "timo-grade2-qualifying-04:4": "timo-group-1-review-default-3",
     "timo-grade2-qualifying-04:5": "timo-group-1-review-default-1",
     "timo-grade2-qualifying-04:6": "timo-group-2-review-default-1",
@@ -321,7 +321,7 @@ const publishedTimoClassification = {
     "timo-grade2-qualifying-05:23": "timo-group-5-review-default-1",
     "timo-grade2-qualifying-05:24": "timo-group-5-review-default-1",
     "timo-grade2-qualifying-05:25": "timo-group-5-review-default-1",
-    "timo-grade2-qualifying-05:3": "timo-group-1-review-default-2",
+    "timo-grade2-qualifying-05:3": "timo-group-1-review-default-1",
     "timo-grade2-qualifying-05:4": "timo-group-1-review-default-3",
     "timo-grade2-qualifying-05:5": "timo-group-1-review-default-1",
     "timo-grade2-qualifying-05:6": "timo-group-2-review-default-2",
@@ -376,5 +376,5 @@ const publishedTimoClassification = {
     "timo-grade2-qualifying-07:2": "timo-group-1-review-default-1",
     "timo-grade2-national-06:4": "timo-group-1-review-default-1"
   },
-  "revision": "7e907b6593fb"
+  "revision": "2cdd80c8f593"
 };
