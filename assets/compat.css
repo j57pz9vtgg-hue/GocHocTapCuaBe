@@ -546,3 +546,8 @@
 #site-shell .school-report-sidebar .exercise-card-art{width:24px;height:24px}
 #site-shell .school-report-sidebar .card-actions{gap:6px;margin:0}
 #site-shell .school-report-sidebar .card-actions>button{min-height:44px;padding:4px 5px;font-size:12px;line-height:1.3}
+/* Keep the four ai/ay picture prompts in one horizontal row. */
+.school-report-content .school-blanks{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.school-report-content .school-blank-item>label{flex-wrap:nowrap;gap:3px;font-size:16px}
+.school-report-content .school-blanks input{width:60px;flex:0 1 60px}
+@media(max-width:1100px){.school-report-content .school-blanks{grid-template-columns:repeat(4,minmax(128px,1fr));gap:10px;overflow-x:auto;padding-bottom:10px;overscroll-behavior-x:contain}}
