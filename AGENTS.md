@@ -227,3 +227,5 @@ Thu gọn tiếp cộttrái để thấy6bàiTiếngViệt: bỏ dòngNgày bị
 KhungnhãnThứ2-19/10 dùngmàuhuyhiệusố01cũ: Đảopha lê gradientb7eaff/609aff/5155cd,chữtrắng,cắtgóc6px, mởrộngchiềungangđủchứa thứ/ngày. Cácgiao diệnkhác giữpaletteordinaltươngứng. Giữbốtụcgọn6ô và2nút44px.
 
 Nới cột danh sách bài báo bài bêntrái và giảm nhẹ khungphải: desktop>=1101 từ340 thành390px, màn761–1100 từ300 thành330px. Giữgap/chếđộxếpdọcđiệnthoại/nộidung/bàilàm, vẫn6ôgọn và4hìnhcùnghàng. Đãkiểmtra11giao diện x5kíchthướckhôngtràntrang.
+
+Yêu cầu mới: điệnthoại/mànnộidunghẹp khôngcuộnngang đểxem4hìnhai/ay; choxuốngdòng. Màn<=1100 dùng2cột,<=360 dùng1cột,desktoprộngvẫngiữ4hình1hàng. Đãkiểmtra320–1893px, khunghìnhvàtrangkhôngtrànngang,ôđiền/lưu/tảilạigiữnguyên.
