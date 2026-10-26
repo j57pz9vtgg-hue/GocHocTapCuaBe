@@ -20,6 +20,8 @@ if(require.main===module){
  try{
   const args=process.argv.slice(2),check=args.includes('--check'),filename=args.find(a=>a!=='--check');if(!filename)throw Error('Dùng: node scripts/import-classification.cjs <tệp JSON chủ dự án gửi> [--check]');
   const value=prepareOwnerClassification(JSON.parse(fs.readFileSync(filename,'utf8')));
+  const baseline={};vm.runInNewContext(fs.readFileSync(path.join(root,'assets/classification-base.js'),'utf8')+'\nglobalThis.current=publishedTimoClassification;',baseline);
+  if(baseline.current?.resetId)value.resetId=baseline.current.resetId;
   if(!check)fs.writeFileSync(path.join(root,'assets/classification-base.js'),'// Shared classification supplied and approved by the project owner.\nconst publishedTimoClassification = '+JSON.stringify(value,null,2)+';\n');
   console.log(`${check?'Hợp lệ':'Đã cập nhật bản chung'}: ${value.topics.length} chủ đề, ${Object.keys(value.assignments).length} câu đã phân loại. ${check?'':'Tiếp theo: version-assets, kiểm tra, commit/push và xác minh Pages.'}`);
  }catch(e){console.error(e.message);process.exitCode=1;}

@@ -1,6 +1,6 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
 const data=fs.readFileSync(require('node:path').join(__dirname,'../assets/data.js'),'utf8'),code=fs.readFileSync(require('node:path').join(__dirname,'../assets/classification.js'),'utf8');
-function load(record,base){const context={document:{addEventListener(){}},localStorage:{getItem:()=>record?JSON.stringify(record):null},console};vm.createContext(context);vm.runInContext(data+'\n'+(base?'const publishedTimoClassification = '+JSON.stringify(base)+';\n':'')+code+'\nglobalThis.api={classification:TimoClassification,groups:getTimoTopicGroups,papers:officialPapers};',context);return context.api;}
+function load(record,base,store){const memory=store||new Map();if(record)memory.set('goc-hoc-tap.classification.v1',JSON.stringify(record));const context={document:{addEventListener(){}},localStorage:{getItem:key=>memory.get(key)||null,setItem:(key,value)=>memory.set(key,value),removeItem:key=>memory.delete(key)},console};vm.createContext(context);vm.runInContext(data+'\n'+(base?'const publishedTimoClassification = '+JSON.stringify(base)+';\n':'')+code+'\nglobalThis.api={classification:TimoClassification,groups:getTimoTopicGroups,papers:officialPapers};',context);context.api.store=memory;return context.api;}
 const fixture=()=>({version:1,kind:'timo-classification',topics:[{id:'timo-group-1-review-test',groupId:'timo-group-1',grade:'2',name:'Chủ đề được duyệt'}],assignments:{'timo-grade2-qualifying-01:1':'timo-group-1-review-test'}});
 test('review-first suggestions never mutate the bank or apply themselves',()=>{const {classification,groups,papers}=load(),before=JSON.stringify(papers);for(const g of groups('2')){const s=classification.suggest(g);const ids=Array.from(s.proposals).flatMap(p=>Array.from(p.entries,e=>e.id));assert.equal(ids.length,new Set(ids).size);assert.ok(ids.every(id=>g.topics.flatMap(t=>Array.from(t.entries,e=>e.id)).includes(id)));}assert.equal(classification.snapshot().topics.length,0);assert.equal(JSON.stringify(papers),before);});
 test('approved overlay keeps all350 source references once within their five groups',()=>{const api=load(fixture()),groups=api.groups('2'),entries=Array.from(groups).flatMap(g=>Array.from(g.topics).flatMap(t=>Array.from(t.entries)));assert.equal(entries.length,350);assert.equal(new Set(entries.map(e=>e.id)).size,350);assert.deepEqual(Array.from(groups,g=>g.topics.reduce((n,t)=>n+t.entries.length,0)),[70,70,70,70,70]);assert.equal(groups[0].topics.find(t=>t.id==='timo-group-1-review-test').entries.length,1);assert.strictEqual(groups[0].topics.find(t=>t.id==='timo-group-1-review-test').entries[0].question,api.papers[0].questions[0]);});
@@ -32,4 +32,20 @@ test('owner publishing importer checks the complete source snapshot and ignores 
  report.questions[0].english='';assert.deepEqual(prepareOwnerClassification(report),result);
  const incomplete=structuredClone(report);incomplete.questions.pop();assert.throws(()=>prepareOwnerClassification(incomplete));
  const wrong=structuredClone(report);wrong.questions[0].status=wrong.questions[0].status==='classified'?'unclassified':'classified';assert.throws(()=>prepareOwnerClassification(wrong));
+});
+
+test('owner default schema has4/4/3/5/4 visible-ready topics and all350 questions unclassified',()=>{
+ const c={};vm.runInNewContext(fs.readFileSync(require('node:path').join(__dirname,'../assets/classification-base.js'),'utf8')+';globalThis.value=publishedTimoClassification;',c);
+ const api=load(null,JSON.parse(JSON.stringify(c.value))),groups=api.groups('2');
+ assert.deepEqual(Array.from(groups,g=>g.topics.filter(t=>t.id.includes('-review-')).length),[4,4,3,5,4]);
+ assert.equal(api.classification.snapshot().topics.length,20);assert.equal(Object.keys(api.classification.snapshot().assignments).length,0);
+ assert.ok(groups.every(g=>g.topics.find(t=>t.id.endsWith('-unclassified')).entries.length===70));
+ assert.ok(groups.every(g=>g.topics.filter(t=>t.id.includes('-review-')).every(t=>t.entries.length===0)));
+});
+test('explicit owner reset replaces old local classification once, backs it up, and retains later edits',()=>{
+ const c={};vm.runInNewContext(fs.readFileSync(require('node:path').join(__dirname,'../assets/classification-base.js'),'utf8')+';globalThis.value=publishedTimoClassification;',c);const base=JSON.parse(JSON.stringify(c.value));
+ const old=fixture(),api=load(old,base);assert.equal(api.classification.usesPublished(),true);assert.equal(api.classification.snapshot().topics.length,20);
+ assert.equal(api.store.get('goc-hoc-tap.classification-backup.'+base.resetId),JSON.stringify(old));
+ assert.equal(api.store.get('goc-hoc-tap.classification-reset.v1'),base.resetId);
+ const edited=fixture(),again=load(edited,base,api.store);assert.deepEqual(JSON.parse(JSON.stringify(again.classification.snapshot())),edited);assert.equal(again.classification.usesPublished(),false);
 });

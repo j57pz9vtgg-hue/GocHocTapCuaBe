@@ -56,7 +56,7 @@ function renderTopicBadge(index){
 }
 function renderTimoTopics(){
  const query=normalizedTopicSearch(state.search.trim());
- const groups=getTimoTopicGroups(state.grade).map((group,index)=>{const visible=group.topics.some(topic=>topic.entries.length)?group.topics.filter(topic=>topic.entries.length):group.topics;return {...group,index,matches:visible.filter(topic=>!query||normalizedTopicSearch(group.name+' '+topic.name).includes(query))};}).filter(group=>!query||group.matches.length||normalizedTopicSearch(group.name).includes(query));
+ const groups=getTimoTopicGroups(state.grade).map((group,index)=>{const visible=group.topics.filter(topic=>topic.entries.length||topic.id.includes('-review-')||!group.topics.some(t=>t.entries.length)).slice().sort((a,b)=>Number(a.id.endsWith('-unclassified'))-Number(b.id.endsWith('-unclassified')));return {...group,index,matches:visible.filter(topic=>!query||normalizedTopicSearch(group.name+' '+topic.name).includes(query))};}).filter(group=>!query||group.matches.length||normalizedTopicSearch(group.name).includes(query));
  if(!groups.length)return `<div class="empty-state"><h3>Chưa tìm thấy chủ đề</h3><button class="primary-button" data-action="clear-search">Xóa tìm kiếm ${icon('arrow',18)}</button></div>`;
  const selected=groups.some(group=>group.index===state.topicGroup)?state.topicGroup:state.topicGroup===null&&!query?null:groups[0].index;
  return `<div class="timo-topic-browser" aria-label="Các chủ đề luyện tập TIMO">${groups.map((group,row)=>{
@@ -228,7 +228,13 @@ if(typeof publishedTimoClassification!=='undefined'&&TimoClassification.usesPubl
  try{
   const revision=publishedTimoClassification.revision,marker='goc-hoc-tap.published-classification-progress.v1';
   if(revision&&localStorage.getItem(marker)!==revision){
-   if(Object.values(attempts).some(record=>Array.isArray(record?.questionIds)))preserveClassifiedProgress({assignments:{}},TimoClassification.snapshot());
+   const previous={assignments:{}},resetId=publishedTimoClassification.resetId,resetMarker='goc-hoc-tap.classification-reset-progress.v1';
+   if(resetId&&localStorage.getItem(resetMarker)!==resetId){
+    const questions=new Map(officialPapers.flatMap(p=>p.questions.map(q=>[p.id+':'+q.number,q])));
+    for(const record of Object.values(attempts))if(Array.isArray(record?.questionIds))record.questionIds.forEach((id,i)=>{if(questions.has(id)&&validResponse(questions.get(id),record.answers?.[i]))previous.assignments[id]='former-topic';});
+   }
+   if(Object.values(attempts).some(record=>Array.isArray(record?.questionIds)))preserveClassifiedProgress(previous,TimoClassification.snapshot());
+   if(resetId)localStorage.setItem(resetMarker,resetId);
    localStorage.setItem(marker,revision);
   }
  }catch{}

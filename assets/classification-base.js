@@ -1,110 +1,130 @@
-// Shared classification supplied and approved by the project owner.
+// Default topic names supplied by the project owner; questions await owner classification.
 const publishedTimoClassification = {
   "version": 1,
   "kind": "timo-classification",
+  "resetId": "owner-default-topics-2026-10-26",
   "topics": [
     {
-      "id": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
+      "id": "timo-group-1-review-default-1",
       "groupId": "timo-group-1",
       "grade": "2",
-      "name": "Quy luật dãy số và bảng số"
+      "name": "Quy luật dãy số"
     },
     {
-      "id": "timo-group-1-review-973f4fe4-b494-4a59-b46d-9fdeffcbbf1d",
+      "id": "timo-group-1-review-default-2",
       "groupId": "timo-group-1",
       "grade": "2",
-      "name": "Bài toán thêm bớt và so sánh"
+      "name": "Quy luật hình ảnh"
     },
     {
-      "id": "timo-group-1-review-63aa368f-6eb2-45c6-adc8-9d5cd35c9f7a",
+      "id": "timo-group-1-review-default-3",
       "groupId": "timo-group-1",
       "grade": "2",
-      "name": "Bài toán về tuổi"
+      "name": "Bài toán tuổi"
     },
     {
-      "id": "timo-group-1-review-b00d2ed9-4478-4c11-9538-98b0f138fd4a",
+      "id": "timo-group-1-review-default-4",
       "groupId": "timo-group-1",
       "grade": "2",
-      "name": "Quy luật nhóm hình"
+      "name": "Bài toán ngày tháng"
     },
     {
-      "id": "timo-group-1-review-a0fba59a-e3ab-4de9-9a08-e9f9f4d62999",
-      "groupId": "timo-group-1",
+      "id": "timo-group-2-review-default-1",
+      "groupId": "timo-group-2",
       "grade": "2",
-      "name": "Ngày, tháng và lịch"
+      "name": "Tính nhanh nhóm tròn chục"
+    },
+    {
+      "id": "timo-group-2-review-default-2",
+      "groupId": "timo-group-2",
+      "grade": "2",
+      "name": "Tính giá trị biểu thức"
+    },
+    {
+      "id": "timo-group-2-review-default-3",
+      "groupId": "timo-group-2",
+      "grade": "2",
+      "name": "Cân bằng hai vế"
+    },
+    {
+      "id": "timo-group-2-review-default-4",
+      "groupId": "timo-group-2",
+      "grade": "2",
+      "name": "Tìm chữ số ẩn"
+    },
+    {
+      "id": "timo-group-3-review-default-1",
+      "groupId": "timo-group-3",
+      "grade": "2",
+      "name": "Số chẵn - số lẻ"
+    },
+    {
+      "id": "timo-group-3-review-default-2",
+      "groupId": "timo-group-3",
+      "grade": "2",
+      "name": "Cấu tạo số"
+    },
+    {
+      "id": "timo-group-3-review-default-3",
+      "groupId": "timo-group-3",
+      "grade": "2",
+      "name": "Xác định thứ tự số"
+    },
+    {
+      "id": "timo-group-4-review-default-1",
+      "groupId": "timo-group-4",
+      "grade": "2",
+      "name": "Đếm hình vuông"
+    },
+    {
+      "id": "timo-group-4-review-default-2",
+      "groupId": "timo-group-4",
+      "grade": "2",
+      "name": "Đếm đoạn thẳng"
+    },
+    {
+      "id": "timo-group-4-review-default-3",
+      "groupId": "timo-group-4",
+      "grade": "2",
+      "name": "Đếm tam giác"
+    },
+    {
+      "id": "timo-group-4-review-default-4",
+      "groupId": "timo-group-4",
+      "grade": "2",
+      "name": "Khối lập phương"
+    },
+    {
+      "id": "timo-group-4-review-default-5",
+      "groupId": "timo-group-4",
+      "grade": "2",
+      "name": "Đếm góc và cạnh"
+    },
+    {
+      "id": "timo-group-5-review-default-1",
+      "groupId": "timo-group-5",
+      "grade": "2",
+      "name": "Đếm số cách sắp xếp"
+    },
+    {
+      "id": "timo-group-5-review-default-2",
+      "groupId": "timo-group-5",
+      "grade": "2",
+      "name": "Phân loại"
+    },
+    {
+      "id": "timo-group-5-review-default-3",
+      "groupId": "timo-group-5",
+      "grade": "2",
+      "name": "Bài toán trồng cây"
+    },
+    {
+      "id": "timo-group-5-review-default-4",
+      "groupId": "timo-group-5",
+      "grade": "2",
+      "name": "Tư duy logic ngược nâng cao"
     }
   ],
-  "assignments": {
-    "timo-grade2-qualifying-01:1": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-qualifying-02:1": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-qualifying-03:1": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-qualifying-04:5": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-qualifying-05:5": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-qualifying-06:2": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-qualifying-07:3": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-national-01:1": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-national-06:3": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-national-07:2": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-qualifying-01:2": "timo-group-1-review-973f4fe4-b494-4a59-b46d-9fdeffcbbf1d",
-    "timo-grade2-qualifying-02:2": "timo-group-1-review-973f4fe4-b494-4a59-b46d-9fdeffcbbf1d",
-    "timo-grade2-qualifying-03:2": "timo-group-1-review-973f4fe4-b494-4a59-b46d-9fdeffcbbf1d",
-    "timo-grade2-qualifying-04:1": "timo-group-1-review-973f4fe4-b494-4a59-b46d-9fdeffcbbf1d",
-    "timo-grade2-qualifying-05:1": "timo-group-1-review-973f4fe4-b494-4a59-b46d-9fdeffcbbf1d",
-    "timo-grade2-qualifying-07:5": "timo-group-1-review-973f4fe4-b494-4a59-b46d-9fdeffcbbf1d",
-    "timo-grade2-national-07:1": "timo-group-1-review-973f4fe4-b494-4a59-b46d-9fdeffcbbf1d",
-    "timo-grade2-qualifying-01:3": "timo-group-1-review-63aa368f-6eb2-45c6-adc8-9d5cd35c9f7a",
-    "timo-grade2-qualifying-02:3": "timo-group-1-review-63aa368f-6eb2-45c6-adc8-9d5cd35c9f7a",
-    "timo-grade2-qualifying-03:3": "timo-group-1-review-63aa368f-6eb2-45c6-adc8-9d5cd35c9f7a",
-    "timo-grade2-qualifying-04:4": "timo-group-1-review-63aa368f-6eb2-45c6-adc8-9d5cd35c9f7a",
-    "timo-grade2-qualifying-05:4": "timo-group-1-review-63aa368f-6eb2-45c6-adc8-9d5cd35c9f7a",
-    "timo-grade2-qualifying-06:5": "timo-group-1-review-63aa368f-6eb2-45c6-adc8-9d5cd35c9f7a",
-    "timo-grade2-national-02:1": "timo-group-1-review-63aa368f-6eb2-45c6-adc8-9d5cd35c9f7a",
-    "timo-grade2-national-03:1": "timo-group-1-review-63aa368f-6eb2-45c6-adc8-9d5cd35c9f7a",
-    "timo-grade2-national-04:1": "timo-group-1-review-63aa368f-6eb2-45c6-adc8-9d5cd35c9f7a",
-    "timo-grade2-national-05:3": "timo-group-1-review-63aa368f-6eb2-45c6-adc8-9d5cd35c9f7a",
-    "timo-grade2-national-06:2": "timo-group-1-review-63aa368f-6eb2-45c6-adc8-9d5cd35c9f7a",
-    "timo-grade2-national-07:3": "timo-group-1-review-63aa368f-6eb2-45c6-adc8-9d5cd35c9f7a",
-    "timo-grade2-qualifying-01:4": "timo-group-1-review-b00d2ed9-4478-4c11-9538-98b0f138fd4a",
-    "timo-grade2-qualifying-02:4": "timo-group-1-review-b00d2ed9-4478-4c11-9538-98b0f138fd4a",
-    "timo-grade2-qualifying-03:4": "timo-group-1-review-b00d2ed9-4478-4c11-9538-98b0f138fd4a",
-    "timo-grade2-qualifying-06:4": "timo-group-1-review-b00d2ed9-4478-4c11-9538-98b0f138fd4a",
-    "timo-grade2-qualifying-07:4": "timo-group-1-review-b00d2ed9-4478-4c11-9538-98b0f138fd4a",
-    "timo-grade2-national-01:5": "timo-group-1-review-b00d2ed9-4478-4c11-9538-98b0f138fd4a",
-    "timo-grade2-national-06:5": "timo-group-1-review-b00d2ed9-4478-4c11-9538-98b0f138fd4a",
-    "timo-grade2-qualifying-01:5": "timo-group-1-review-a0fba59a-e3ab-4de9-9a08-e9f9f4d62999",
-    "timo-grade2-qualifying-02:5": "timo-group-1-review-a0fba59a-e3ab-4de9-9a08-e9f9f4d62999",
-    "timo-grade2-qualifying-03:5": "timo-group-1-review-a0fba59a-e3ab-4de9-9a08-e9f9f4d62999",
-    "timo-grade2-qualifying-04:2": "timo-group-1-review-a0fba59a-e3ab-4de9-9a08-e9f9f4d62999",
-    "timo-grade2-qualifying-05:2": "timo-group-1-review-a0fba59a-e3ab-4de9-9a08-e9f9f4d62999",
-    "timo-grade2-qualifying-06:1": "timo-group-1-review-a0fba59a-e3ab-4de9-9a08-e9f9f4d62999",
-    "timo-grade2-qualifying-07:1": "timo-group-1-review-a0fba59a-e3ab-4de9-9a08-e9f9f4d62999",
-    "timo-grade2-national-01:4": "timo-group-1-review-a0fba59a-e3ab-4de9-9a08-e9f9f4d62999",
-    "timo-grade2-national-02:2": "timo-group-1-review-a0fba59a-e3ab-4de9-9a08-e9f9f4d62999",
-    "timo-grade2-national-03:2": "timo-group-1-review-a0fba59a-e3ab-4de9-9a08-e9f9f4d62999",
-    "timo-grade2-national-04:2": "timo-group-1-review-a0fba59a-e3ab-4de9-9a08-e9f9f4d62999",
-    "timo-grade2-qualifying-06:3": "timo-group-1-review-973f4fe4-b494-4a59-b46d-9fdeffcbbf1d",
-    "timo-grade2-national-01:3": "timo-group-1-review-973f4fe4-b494-4a59-b46d-9fdeffcbbf1d",
-    "timo-grade2-national-05:5": "timo-group-1-review-b00d2ed9-4478-4c11-9538-98b0f138fd4a",
-    "timo-grade2-national-03:3": "timo-group-1-review-b00d2ed9-4478-4c11-9538-98b0f138fd4a",
-    "timo-grade2-qualifying-05:3": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-qualifying-04:3": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-national-02:4": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-national-07:5": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-national-01:2": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-national-04:4": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-national-05:1": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-national-03:4": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-national-06:4": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-national-07:4": "timo-group-1-review-a0fba59a-e3ab-4de9-9a08-e9f9f4d62999",
-    "timo-grade2-qualifying-07:2": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-national-05:2": "timo-group-1-review-973f4fe4-b494-4a59-b46d-9fdeffcbbf1d",
-    "timo-grade2-national-03:5": "timo-group-1-review-973f4fe4-b494-4a59-b46d-9fdeffcbbf1d",
-    "timo-grade2-national-04:5": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-national-02:5": "timo-group-1-review-04799e06-2120-4a23-ac5e-2c2519bdf99c",
-    "timo-grade2-national-02:3": "timo-group-1-review-b00d2ed9-4478-4c11-9538-98b0f138fd4a",
-    "timo-grade2-national-05:4": "timo-group-1-review-b00d2ed9-4478-4c11-9538-98b0f138fd4a",
-    "timo-grade2-national-04:3": "timo-group-1-review-b00d2ed9-4478-4c11-9538-98b0f138fd4a",
-    "timo-grade2-national-06:1": "timo-group-1-review-973f4fe4-b494-4a59-b46d-9fdeffcbbf1d"
-  },
-  "revision": "25b8067ad7b0"
+  "assignments": {},
+  "revision": "e350b3b24618"
 };

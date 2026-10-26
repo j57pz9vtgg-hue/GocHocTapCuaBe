@@ -24,7 +24,13 @@ const TimoClassification=(()=>{
   return {version:1,kind:'timo-classification',topics,assignments};
  }
  try{if(typeof publishedTimoClassification!=='undefined')saved=validate(publishedTimoClassification);}catch{}
- try{const v=JSON.parse(localStorage.getItem(storageKey)||'null');if(v){saved=validate(v);hasLocalOverride=true;}}catch{}
+ try{
+  const raw=localStorage.getItem(storageKey),resetId=typeof publishedTimoClassification!=='undefined'?publishedTimoClassification.resetId:null;
+  if(resetId&&localStorage.getItem('goc-hoc-tap.classification-reset.v1')!==resetId){
+   if(raw)localStorage.setItem('goc-hoc-tap.classification-backup.'+resetId,raw);
+   localStorage.removeItem(storageKey);localStorage.setItem('goc-hoc-tap.classification-reset.v1',resetId);
+  }else if(raw){saved=validate(JSON.parse(raw));hasLocalOverride=true;}
+ }catch{}
  function apply(groups,grade){
   for(const group of groups){
    const all=group.topics.flatMap(t=>t.entries),custom=saved.topics.filter(t=>t.grade===String(grade)&&t.groupId===group.id);
@@ -38,48 +44,34 @@ const TimoClassification=(()=>{
  // Narrow matches take precedence. A question with no match remains unclassified.
  const rules={
   'timo-group-1':[
-   ['Ngày, tháng và lịch',/day of the week|yesterday|tomorrow|last month|which month|january|february|march|april|calendar|days in/,'Nội dung ngày, tháng hoặc thứ trong tuần'],
-   ['Bài toán về tuổi',/years? old|birthday|was born|how old/,'Nội dung tuổi hoặc năm sinh'],
-   ['Vị trí trong hàng',/queu|in a row|in front of|behind (?:amy|alice|eleanor)|standing|children.*(?:front|behind)/,'Nội dung vị trí trước/sau trong hàng'],
-   ['Quy luật chữ cái',/english letter|alphabet|letter.*(?:blank|sequence)|bang chu cai/,'Nội dung dãy chữ cái'],
-   ['Quy luật hình lặp lại',/figure.*(?:sequence|pattern|counting|space)|next figure|hinh.*lap|day hinh/,'Nội dung quy luật hình'],
-   ['Quy luật nhóm hình',/group.*(?:hat|flower|sun|figure)|(?:5th|7th|10th|15th).*group|nhom.*(?:hinh|hoa|mu|mat troi)/,'Nội dung nhóm hình tăng dần'],
-   ['Quy luật dãy số và bảng số',/pattern|sequence|day so|bang so|number.*blank/,'Nội dung quy luật số'],
-   ['Suy luận số theo điều kiện',/correct digit|correct.*position|digit.*wrong|chu so.*vi tri/,'Nội dung chữ số đúng/sai vị trí'],
-   ['Bài toán thêm bớt và so sánh',/marble|boys|girls|classmate|trees|brother|sister|friend|cake|buy/,'Nội dung đếm, thêm bớt hoặc so sánh số lượng']
+   ['Bài toán ngày tháng',/day of the week|yesterday|tomorrow|last month|which month|january|february|march|april|calendar|days in/,'Nội dung ngày, tháng hoặc thứ trong tuần'],
+   ['Bài toán tuổi',/years? old|birthday|was born|how old/,'Nội dung tuổi hoặc năm sinh'],
+   ['Quy luật hình ảnh',/figure.*(?:sequence|pattern|counting|space)|next figure|group.*(?:hat|flower|sun|figure)|(?:5th|7th|10th|15th).*group|nhom.*(?:hinh|hoa|mu|mat troi)|day hinh/,'Nội dung quy luật hình hoặc nhóm hình'],
+   ['Quy luật dãy số',/pattern|sequence|day so|bang so|number.*blank/,'Nội dung quy luật số']
   ],
   'timo-group-2':[
-   ['Phép tính với chữ số chưa biết',/1-digit|one-digit|if a|if b|if c/,'Đề bài có chữ số biểu diễn bằng chữ'],
-   ['Tìm số chưa biết trong phép tính',/hidden|bell|blank|find.*x|value of x|chuong|che|o trong/,'Đề bài yêu cầu tìm thành phần chưa biết'],
-   ['Bài toán có lời văn',/has |have |buys?|bought|gave|gives|gordon|dollar|cost/,'Phép tính trong bài toán có lời văn'],
+   ['Tính nhanh nhóm tròn chục',/round.*ten|make.*ten|tron chuc|nhom.*chuc/,'Nội dung tính nhanh hoặc nhóm tròn chục'],
+   ['Cân bằng hai vế',/both sides|two sides.*equal|can bang|hai ve/,'Nội dung cân bằng hai vế'],
+   ['Tìm chữ số ẩn',/1-digit|one-digit|hidden|bell|blank|find.*x|value of x|chuong|che|o trong/,'Đề bài có số hoặc chữ số chưa biết'],
    ['Tính giá trị biểu thức',/value|calculate|result|sum|evaluate|gia tri|tinh/,'Đề bài yêu cầu tính giá trị']
   ],
   'timo-group-3':[
-   ['Điền dấu phép tính',/sign|symbol|insert|fill.*(?:\+|−|×)|dien dau/,'Đề bài yêu cầu điền dấu'],
-   ['Phép tính với chữ số chưa biết',/1-digit|one-digit|chu so chua biet/,'Đề bài có chữ số chưa biết'],
-   ['Nhận biết số chẵn và số lẻ',/even|odd|chan|le hay/,'Đề bài có điều kiện chẵn/lẻ'],
-   ['Chia hết và đếm số theo điều kiện',/divisib|multiple|chia het|how many.*numbers|smallest.*digit|largest.*digit/,'Nội dung chia hết hoặc đếm số'],
-   ['Quy luật dãy số',/sequence|term|day so/,'Đề bài về các số hạng của dãy'],
-   ['Bài toán so sánh số lượng',/more than|less than|pencil|peter|hannah/,'Đề bài so sánh số lượng']
+   ['Số chẵn - số lẻ',/even|odd|chan|le hay/,'Đề bài có điều kiện chẵn/lẻ'],
+   ['Cấu tạo số',/1-digit|one-digit|digit|chu so|cau tao so/,'Nội dung chữ số và cấu tạo số'],
+   ['Xác định thứ tự số',/sequence|term|order|day so|thu tu/,'Nội dung số hạng hoặc thứ tự số']
   ],
   'timo-group-4':[
-   ['Quan sát khối từ các hướng',/viewing|viewed|from (?:the )?(?:front|right|side|top)|nhin.*(?:ben|phai|truoc|tren)/,'Đề bài yêu cầu nhìn khối từ một hướng'],
-   ['Đỉnh, cạnh và mặt của hình khối',/prism|vertices|faces?|edges?|lang tru|mat ben/,'Đề bài về đỉnh, cạnh hoặc mặt hình khối'],
-   ['Chia hình thành các phần',/cut.*circle|pieces.*circle|cat.*hinh tron/,'Đề bài cắt hình thành các phần'],
-   ['Đếm đoạn thẳng và đường thẳng',/line segment|straight line|doan thang|duong thang/,'Đề bài yêu cầu đếm đoạn hoặc đường thẳng'],
-   ['Quy luật hình',/pattern|sequence|space|quy luat/,'Đề bài về quy luật hình'],
-   ['Độ dài cạnh và chu vi',/length|perimeter|cm|do dai|chu vi/,'Đề bài về độ dài hoặc chu vi'],
-   ['Đếm hình phẳng',/squares?|triangles?|rectangles?|hinh vuong|tam giac|chu nhat/,'Đề bài đếm các hình phẳng'],
-   ['Đếm khối lập phương',/cubes?|cuboid|lap phuong/,'Đề bài đếm hình khối']
+   ['Khối lập phương',/viewing|viewed|from (?:the )?(?:front|right|side|top)|cubes?|cuboid|lap phuong|nhin.*(?:ben|phai|truoc|tren)/,'Nội dung hình khối hoặc quan sát khối'],
+   ['Đếm góc và cạnh',/vertices|edges?|faces?|angles?|prism|goc|canh.*dem/,'Nội dung góc, đỉnh, cạnh hoặc mặt'],
+   ['Đếm đoạn thẳng',/line segment|how many.*straight line|doan thang/,'Đề bài đếm đoạn hoặc đường thẳng'],
+   ['Đếm tam giác',/how many.*triang|dem.*tam giac/,'Đề bài đếm tam giác'],
+   ['Đếm hình vuông',/how many.*square|hinh vuong/,'Đề bài đếm hình vuông']
   ],
   'timo-group-5':[
-   ['Sắp xếp và so sánh số',/ascending|descending|which number.*greatest|sap xep/,'Đề bài sắp xếp hoặc so sánh số'],
-   ['Bài toán mua hàng và tiền',/coins?|cost|buy|buys|free|customer|dollar|shelves/,'Đề bài về tiền, mua hàng hoặc phân phối đồ vật'],
-   ['Đếm cách đi và phối hợp lựa chọn',/roads?|ways from|ways.*(?:go|home|order)|type.*(?:meat|vegetable)|shirt|pants|flavor|ice-cream|appetizer/,'Đề bài về đường đi hoặc phối hợp lựa chọn'],
-   ['Chọn nhóm và xếp vị trí',/pick|competitor|gold|silver|bronze|match|chess|combinations?/,'Đề bài về chọn nhóm hoặc xếp vị trí'],
-   ['Lập số theo điều kiện',/form.*digit|digit.*(?:form|number|using)|composed of|number cards|minimum.*difference|smallest sum|largest sum/,'Đề bài lập số từ các chữ số'],
-   ['Đếm số và kết quả theo điều kiện',/how many.*(?:numbers?|results?)|how many.*(?:odd|even)|expressions|sequence|does not contain|contain.*digit/,'Đề bài đếm số hoặc kết quả thỏa điều kiện'],
-   ['Chia nhóm và phân phối',/divide|distribute|equal groups|each box|same number|express.*difference/,'Đề bài chia nhóm hoặc phân phối']
+   ['Bài toán trồng cây',/plant.*tree|tree.*plant|trong cay/,'Nội dung trồng cây'],
+   ['Phân loại',/classif|categor|phan loai/,'Nội dung phân loại'],
+   ['Tư duy logic ngược nâng cao',/originally|backward|ban dau|suy luan nguoc/,'Nội dung tìm trạng thái ban đầu hoặc suy luận ngược'],
+   ['Đếm số cách sắp xếp',/how many.*ways|different ways|arrang|combinations?|competitor|gold|silver|bronze/,'Nội dung đếm cách chọn hoặc sắp xếp']
   ]
  };
  function suggest(group){
