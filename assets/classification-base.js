@@ -362,7 +362,19 @@ const publishedTimoClassification = {
     "timo-grade2-qualifying-07:6": "timo-group-2-review-default-1",
     "timo-grade2-qualifying-07:7": "timo-group-2-review-default-3",
     "timo-grade2-qualifying-07:8": "timo-group-2-review-default-1",
-    "timo-grade2-qualifying-07:9": "timo-group-2-review-default-2"
+    "timo-grade2-qualifying-07:9": "timo-group-2-review-default-2",
+    "timo-grade2-national-07:5": "timo-group-1-review-default-1",
+    "timo-grade2-national-05:1": "timo-group-1-review-default-1",
+    "timo-grade2-national-02:3": "timo-group-1-review-default-1",
+    "timo-grade2-national-03:4": "timo-group-1-review-default-1",
+    "timo-grade2-national-04:3": "timo-group-1-review-default-1",
+    "timo-grade2-national-05:4": "timo-group-1-review-default-1",
+    "timo-grade2-national-04:4": "timo-group-1-review-default-1",
+    "timo-grade2-national-03:3": "timo-group-1-review-default-1",
+    "timo-grade2-national-01:2": "timo-group-1-review-default-1",
+    "timo-grade2-national-02:4": "timo-group-1-review-default-1",
+    "timo-grade2-qualifying-07:2": "timo-group-1-review-default-1",
+    "timo-grade2-national-06:4": "timo-group-1-review-default-1"
   },
-  "revision": "7193d9aa545e"
+  "revision": "7e907b6593fb"
 };

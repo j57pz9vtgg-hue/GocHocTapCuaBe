@@ -33,13 +33,16 @@ test('owner publishing importer checks the complete source snapshot and ignores 
  const wrong=structuredClone(report);wrong.questions[0].status=wrong.questions[0].status==='classified'?'unclassified':'classified';assert.throws(()=>prepareOwnerClassification(wrong));
 });
 
-test('reviewed default schema preserves20topics and partitions237classified/113unclassified questions',()=>{
+test('reviewed default schema preserves20topics and partitions249classified/101unclassified questions',()=>{
  const c={};vm.runInNewContext(fs.readFileSync(require('node:path').join(__dirname,'../assets/classification-base.js'),'utf8')+';globalThis.value=publishedTimoClassification;',c);
  const api=load(null,JSON.parse(JSON.stringify(c.value))),groups=api.groups('2');
  assert.deepEqual(Array.from(groups,g=>g.topics.filter(t=>t.id.includes('-review-')).length),[4,4,3,5,4]);
- assert.equal(api.classification.snapshot().topics.length,20);assert.equal(Object.keys(api.classification.snapshot().assignments).length,237);
- assert.deepEqual(Array.from(groups,g=>g.topics.find(t=>t.id.endsWith('-unclassified')).entries.length),[26,1,30,19,37]);
+ assert.equal(api.classification.snapshot().topics.length,20);assert.equal(Object.keys(api.classification.snapshot().assignments).length,249);
+ assert.deepEqual(Array.from(groups,g=>g.topics.find(t=>t.id.endsWith('-unclassified')).entries.length),[14,1,30,19,37]);
  assert.deepEqual(Array.from(groups,g=>g.topics.reduce((n,t)=>n+t.entries.length,0)),[70,70,70,70,70]);
+ assert.equal(groups[0].topics.find(t=>t.id==='timo-group-1-review-default-1').entries.length,21);
+ const requested=["timo-grade2-national-07:5", "timo-grade2-national-05:1", "timo-grade2-national-02:3", "timo-grade2-national-03:4", "timo-grade2-national-04:3", "timo-grade2-national-05:4", "timo-grade2-national-04:4", "timo-grade2-national-03:3", "timo-grade2-national-01:2", "timo-grade2-national-02:4", "timo-grade2-qualifying-07:2", "timo-grade2-national-06:4"];
+ for(const id of requested)assert.equal(api.classification.snapshot().assignments[id],'timo-group-1-review-default-1');
  const ids=Array.from(groups).flatMap(g=>Array.from(g.topics).flatMap(t=>Array.from(t.entries,e=>e.id)));assert.equal(new Set(ids).size,350);
 });
 test('explicit owner reset replaces old local classification once, backs it up, and retains later edits',()=>{
