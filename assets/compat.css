@@ -534,3 +534,15 @@
 .school-panel-empty{padding:28px}.school-panel-empty p,.school-panel-notice{font-size:15px;line-height:1.7;padding:0;margin:14px 0 0}.school-panel-notice{padding:24px;margin:0}
 @media(min-width:761px) and (max-width:1100px){.school-report-workspace{grid-template-columns:300px minmax(0,1fr);gap:14px}.school-report-content .school-picture-choices{grid-template-columns:1fr}.school-report-content .school-exercise-paper{padding:16px;font-size:16px}.school-report-content .school-blanks{gap:14px 8px}}
 @media(max-width:760px){.school-report-workspace{grid-template-columns:minmax(0,1fr);gap:16px}.school-report-sidebar{position:static;max-height:330px;overscroll-behavior:contain}.school-content-heading{padding:16px}.school-content-heading h2,.school-panel-empty h2{font-size:19px}.school-panel-empty{padding:20px}.school-report-content{min-height:180px}}
+/* Compact sidebar cards keep five short lessons visible together. */
+.school-report-sidebar{gap:6px;align-content:start}
+#site-shell .school-report-sidebar .school-report-card{min-height:0;padding:5px 9px;grid-template-columns:minmax(0,1fr) 24px;grid-template-rows:auto 22px 44px;row-gap:2px;column-gap:6px}
+#site-shell .school-report-sidebar .exercise-top{min-height:24px;gap:7px;align-items:center}
+#site-shell .school-report-sidebar .topic-number{width:24px;height:27px;font-size:14px}
+#site-shell .school-report-sidebar .topic-number>span{font-size:16px}
+#site-shell .school-report-sidebar .exercise-name h2{font-size:13px;line-height:1.4;min-height:0;padding:0;margin:0}
+#site-shell .school-report-sidebar .exercise-stats{font-size:11px;line-height:1.5;margin:0}
+#site-shell .school-report-sidebar .exercise-stats dt{min-width:36px}
+#site-shell .school-report-sidebar .exercise-card-art{width:24px;height:24px}
+#site-shell .school-report-sidebar .card-actions{gap:6px;margin:0}
+#site-shell .school-report-sidebar .card-actions>button{min-height:44px;padding:4px 5px;font-size:12px;line-height:1.3}
