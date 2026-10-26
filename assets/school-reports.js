@@ -162,10 +162,14 @@ function schoolLessonContent(entry){
 function renderSchoolReportTable(report){
  return `<div class="school-table-wrap"><table class="school-report-table" aria-label="${escapeHTML(report.title)}"><thead><tr><th scope="col">Ngày</th><th scope="col">Bài học</th><th scope="col">Tài liệu</th></tr></thead><tbody>${report.entries.length?report.entries.map(entry=>`<tr><th scope="row">${escapeHTML(entry.day)}<br><time datetime="${entry.date}">${escapeHTML(entry.date.slice(8)+'/'+entry.date.slice(5,7))}</time></th><td><strong>${escapeHTML(entry.title)}</strong>${entry.sections.length||(entry.links||[]).length?schoolLessonContent({...entry,preparation:[]}):''}</td><td></td></tr>`).join(''):'<tr><td colspan="3" class="school-table-pending">Chưa có nội dung báo bài. Đang chờ ảnh để bổ sung.</td></tr>'}</tbody></table></div>`;
 }
+function renderSchoolLessonCard(entry,index){
+ const theme=activeTheme().id;
+ return `<article class="exercise-card school-report-card"><div class="exercise-top">${renderTopicBadge(index)}<div class="exercise-name"><h2>${escapeHTML(entry.title)}</h2></div></div><dl class="exercise-stats"><div><dt>Ngày:</dt><dd>${escapeHTML(entry.day)} · ${escapeHTML(entry.date.slice(8)+'/'+entry.date.slice(5,7))}</dd></div></dl>${theme!=='pixel'?`<span class="exercise-card-art" aria-hidden="true" style="background-position:${(index%4)*100/3}% ${Math.floor(index%16/4)*100/3}%"></span>`:''}<div class="card-actions"><button class="start-button" data-school-lesson="${entry.id}" aria-haspopup="dialog">Xem bài học</button></div></article>`;
+}
 function renderSchoolReports(){
- const reports=getSchoolReports(state.grade,state.subject,state.search,state.mode);
- if(!reports.length)return `<div class="empty-state"><h3>${state.search?'Chưa tìm thấy nội dung báo bài':'Chưa có báo bài cho lựa chọn này'}</h3><p>${state.search?'Thử từ khóa khác hoặc chọn lại môn học.':'Báo bài sẽ xuất hiện khi được bổ sung cho lớp và môn đã chọn.'}</p></div>`;
- return `<div class="school-reports">${reports.map(report=>`<section aria-label="${escapeHTML(report.title)}" class="school-week">${report.layout==='table'?renderSchoolReportTable(report):`<div class="school-lesson-grid">${report.entries.map(entry=>`<article class="school-lesson ${entry.kind?'school-'+entry.kind:''}"><header>${schoolLessonMeta(entry)}</header><h3><button type="button" class="school-lesson-open" data-school-lesson="${entry.id}" aria-haspopup="dialog">${escapeHTML(entry.title)}<span aria-hidden="true">Xem nội dung bài học →</span></button></h3></article>`).join('')}</div>`}</section>`).join('')}</div>`;
+ const reports=getSchoolReports(state.grade,state.subject,state.search,state.mode),entries=reports.flatMap(report=>report.entries);
+ if(!entries.length)return `<div class="empty-state"><h3>${state.search?'Chưa tìm thấy nội dung báo bài':'Chưa có nội dung báo bài'}</h3><p>${state.search?'Thử từ khóa khác hoặc chọn lại môn học.':'Đang chờ ảnh báo bài để bổ sung cho môn đã chọn.'}</p></div>`;
+ return `<div class="exercise-grid school-report-grid">${entries.map((entry,index)=>renderSchoolLessonCard(entry,index)).join('')}</div>`;
 }
 let schoolLessonTrigger=null;
 function openSchoolLesson(id){
@@ -173,7 +177,7 @@ function openSchoolLesson(id){
  let dialog=document.querySelector('#school-lesson-dialog');
  if(!dialog){dialog=document.createElement('dialog');dialog.id='school-lesson-dialog';dialog.className='school-lesson-dialog';dialog.setAttribute('aria-labelledby','school-lesson-title');document.body.append(dialog);dialog.addEventListener('close',()=>{if(schoolLessonTrigger?.isConnected)schoolLessonTrigger.focus({preventScroll:true});if(typeof saveCurrentView==='function')saveCurrentView()});}
  schoolLessonTrigger=document.querySelector(`[data-school-lesson="${entry.id}"]`)||document.activeElement;
- dialog.innerHTML=`<header><div><p>${escapeHTML(report.title)} · Lớp ${report.grade} · ${escapeHTML(subjectDisplayName(entry.subject))}</p><h2 id="school-lesson-title">${escapeHTML(entry.title)}</h2></div><button type="button" data-close-school-lesson aria-label="Đóng nội dung bài học">×</button></header><div class="school-lesson school-lesson-detail"><header>${schoolLessonMeta(entry)}</header>${schoolLessonContent(entry)}</div>`;
+ dialog.innerHTML=`<header><div><p>${escapeHTML(report.title)} · Lớp ${report.grade} · ${escapeHTML(subjectDisplayName(entry.subject))}</p><h2 id="school-lesson-title">${escapeHTML(entry.title)}</h2></div><button type="button" data-close-school-lesson aria-label="Đóng nội dung bài học">×</button></header><div class="school-lesson school-lesson-detail">${renderSchoolReportTable({...report,entries:[entry]})}</div>`;
  dialog.dataset.lessonId=entry.id;dialog.showModal();if(typeof saveCurrentView==='function')saveCurrentView();
 }
 document.addEventListener('click',event=>{const button=event.target.closest('[data-school-lesson]');if(button)openSchoolLesson(button.dataset.schoolLesson);if(event.target.closest('[data-close-school-lesson]'))document.querySelector('#school-lesson-dialog')?.close();});
