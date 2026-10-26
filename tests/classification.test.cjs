@@ -2,11 +2,10 @@ const test=require('node:test'),assert=require('node:assert/strict'),fs=require(
 const data=fs.readFileSync(require('node:path').join(__dirname,'../assets/data.js'),'utf8'),code=fs.readFileSync(require('node:path').join(__dirname,'../assets/classification.js'),'utf8');
 function load(record,base,store){const memory=store||new Map();if(record)memory.set('goc-hoc-tap.classification.v1',JSON.stringify(record));const context={document:{addEventListener(){}},localStorage:{getItem:key=>memory.get(key)||null,setItem:(key,value)=>memory.set(key,value),removeItem:key=>memory.delete(key)},console};vm.createContext(context);vm.runInContext(data+'\n'+(base?'const publishedTimoClassification = '+JSON.stringify(base)+';\n':'')+code+'\nglobalThis.api={classification:TimoClassification,groups:getTimoTopicGroups,papers:officialPapers};',context);context.api.store=memory;return context.api;}
 const fixture=()=>({version:1,kind:'timo-classification',topics:[{id:'timo-group-1-review-test',groupId:'timo-group-1',grade:'2',name:'Chủ đề được duyệt'}],assignments:{'timo-grade2-qualifying-01:1':'timo-group-1-review-test'}});
-test('review-first suggestions never mutate the bank or apply themselves',()=>{const {classification,groups,papers}=load(),before=JSON.stringify(papers);for(const g of groups('2')){const s=classification.suggest(g);const ids=Array.from(s.proposals).flatMap(p=>Array.from(p.entries,e=>e.id));assert.equal(ids.length,new Set(ids).size);assert.ok(ids.every(id=>g.topics.flatMap(t=>Array.from(t.entries,e=>e.id)).includes(id)));}assert.equal(classification.snapshot().topics.length,0);assert.equal(JSON.stringify(papers),before);});
+test('automatic topic suggestion API is removed and reading topics never changes the bank',()=>{const api=load(),before=JSON.stringify(api.papers);assert.equal(api.classification.suggest,undefined);assert.equal(api.classification.renderInline,undefined);api.groups('2');assert.equal(api.classification.snapshot().topics.length,0);assert.equal(JSON.stringify(api.papers),before);});
 test('approved overlay keeps all350 source references once within their five groups',()=>{const api=load(fixture()),groups=api.groups('2'),entries=Array.from(groups).flatMap(g=>Array.from(g.topics).flatMap(t=>Array.from(t.entries)));assert.equal(entries.length,350);assert.equal(new Set(entries.map(e=>e.id)).size,350);assert.deepEqual(Array.from(groups,g=>g.topics.reduce((n,t)=>n+t.entries.length,0)),[70,70,70,70,70]);assert.equal(groups[0].topics.find(t=>t.id==='timo-group-1-review-test').entries.length,1);assert.strictEqual(groups[0].topics.find(t=>t.id==='timo-group-1-review-test').entries[0].question,api.papers[0].questions[0]);});
 test('backup validation rejects cross-group moves, unknown questions and duplicate names',()=>{const api=load();let f=fixture();f.assignments['timo-grade2-qualifying-01:6']=f.topics[0].id;assert.throws(()=>api.classification.validate(f));f=fixture();f.assignments['missing:1']=f.topics[0].id;assert.throws(()=>api.classification.validate(f));f=fixture();f.topics.push({...f.topics[0],id:'timo-group-1-review-duplicate'});assert.throws(()=>api.classification.validate(f));});
-test('proposals use question content without inspecting provided answers or explanations',()=>{const api=load(),before=api.groups('2').map(g=>api.classification.suggest(g).proposals.map(p=>({name:p.name,ids:p.entries.map(e=>e.id)})));for(const p of api.papers)for(const q of p.questions){delete q.answer;delete q.explanation;delete q.explanationImage;}const after=api.groups('2').map(g=>api.classification.suggest(g).proposals.map(p=>({name:p.name,ids:p.entries.map(e=>e.id)})));assert.deepEqual(JSON.parse(JSON.stringify(after)),JSON.parse(JSON.stringify(before)));});
-
+test('explicit classification references do not depend on answers or explanations',()=>{const api=load(fixture()),mapping=()=>JSON.stringify(api.groups('2').map(g=>g.topics.map(t=>({id:t.id,ids:t.entries.map(e=>e.id)}))));const before=mapping();for(const p of api.papers)for(const q of p.questions){delete q.answer;delete q.explanation;delete q.explanationImage;}assert.equal(mapping(),before);});
 test('sharing export includes every classified and unclassified source question exactly once without private fields',()=>{
  const api=load(fixture()),report=api.classification.buildSharingExport();
  assert.deepEqual(JSON.parse(JSON.stringify(report.summary)),{total:350,classified:1,unclassified:349});
@@ -34,13 +33,14 @@ test('owner publishing importer checks the complete source snapshot and ignores 
  const wrong=structuredClone(report);wrong.questions[0].status=wrong.questions[0].status==='classified'?'unclassified':'classified';assert.throws(()=>prepareOwnerClassification(wrong));
 });
 
-test('owner default schema has4/4/3/5/4 visible-ready topics and all350 questions unclassified',()=>{
+test('reviewed default schema preserves20topics and partitions237classified/113unclassified questions',()=>{
  const c={};vm.runInNewContext(fs.readFileSync(require('node:path').join(__dirname,'../assets/classification-base.js'),'utf8')+';globalThis.value=publishedTimoClassification;',c);
  const api=load(null,JSON.parse(JSON.stringify(c.value))),groups=api.groups('2');
  assert.deepEqual(Array.from(groups,g=>g.topics.filter(t=>t.id.includes('-review-')).length),[4,4,3,5,4]);
- assert.equal(api.classification.snapshot().topics.length,20);assert.equal(Object.keys(api.classification.snapshot().assignments).length,0);
- assert.ok(groups.every(g=>g.topics.find(t=>t.id.endsWith('-unclassified')).entries.length===70));
- assert.ok(groups.every(g=>g.topics.filter(t=>t.id.includes('-review-')).every(t=>t.entries.length===0)));
+ assert.equal(api.classification.snapshot().topics.length,20);assert.equal(Object.keys(api.classification.snapshot().assignments).length,237);
+ assert.deepEqual(Array.from(groups,g=>g.topics.find(t=>t.id.endsWith('-unclassified')).entries.length),[26,1,30,19,37]);
+ assert.deepEqual(Array.from(groups,g=>g.topics.reduce((n,t)=>n+t.entries.length,0)),[70,70,70,70,70]);
+ const ids=Array.from(groups).flatMap(g=>Array.from(g.topics).flatMap(t=>Array.from(t.entries,e=>e.id)));assert.equal(new Set(ids).size,350);
 });
 test('explicit owner reset replaces old local classification once, backs it up, and retains later edits',()=>{
  const c={};vm.runInNewContext(fs.readFileSync(require('node:path').join(__dirname,'../assets/classification-base.js'),'utf8')+';globalThis.value=publishedTimoClassification;',c);const base=JSON.parse(JSON.stringify(c.value));
