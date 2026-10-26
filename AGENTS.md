@@ -203,3 +203,5 @@ Chủ dự án yêu cầu các môn khác làm tương tự Tiếng Việt: tu�
 Bỏ khung tiêu đề báo bài lặp trên bảng (tên tuần và dòng lớp/môn), vì thông tin đã có trong bộ chọn. Giữ nhãn truy cập cho section/table và dữ liệu báo bài.
 
 Theo yêu cầu mới báo bài thiết kế như danh sách đềTIMO: hiển thị từng bài bằng exercise-card/exercise-grid dùng màu/huy hiệu/hình minh họa theo giao diện; nút Xem bài học mở hộp chi tiết. Ngoài danh sách không hiển thị bảng hoặc khung tiêu đề tuần lặp. Trong hộp giữ bảng Ngày/Bài học/Tài liệu, Tài liệu để trống, nội dung nguồn đầy đủ; Escape/đóng trảfocus, tải lại khôi phục bài đang mở. Không thêm kết quả/đồng hồ/chấm điểm hoặc trạng thái bài làm giả cho báo bài. Các môn chưa có bài hiện thông báo chờ, không tạo ô bài giả.
+
+Mỗi ô báo bài có2nút cùng hàng: Xem bài học và Làm bài tập. Xem bài học giữ chức năng mở nội dung. Hiện chưa có bài tập do chủ dự án gửi cho các bài báo bài, nên Làm bài tập hiển thị thông báo chờ bổ sung ngay trong ô (role=status); không tự tạo câu hỏi/đáp án hoặc dùng đềTIMO thay thế. Vùng bấm mỗi nút tối thiểu44px.

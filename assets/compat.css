@@ -503,3 +503,6 @@
 #site-shell .school-report-card .exercise-stats>div{flex-wrap:wrap;gap:4px}
 #site-shell .school-report-card .exercise-stats dd{white-space:normal}
 .school-lesson-dialog .school-report-table{font-family:'Times New Roman',Times,serif;font-size:16px}
+#site-shell .school-report-card .card-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#site-shell .school-report-card .card-actions>button{min-height:44px;white-space:normal}
+#site-shell .school-exercises-notice{grid-column:1/-1;margin:6px 0 0;color:var(--ink,#142f52);font-size:13px;line-height:1.5}
