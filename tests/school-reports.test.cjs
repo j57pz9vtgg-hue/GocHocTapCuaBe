@@ -53,7 +53,7 @@ test('remaining three days preserve all supplied subjects, split-page content an
 });
 
 test('Lesson36 matches the two supplied textbook pages without invented explanations or exercises',()=>{
- const lessons=api.schoolLessonContents;assert.deepEqual(Object.keys(lessons),['tieng-viet-2026-10-19','tieng-viet-2026-10-20']);const l=lessons['tieng-viet-2026-10-19'];
+ const lessons=api.schoolLessonContents;assert.deepEqual(Object.keys(lessons),['tieng-viet-2026-10-19','tieng-viet-2026-10-20','tieng-viet-2026-10-21-a']);const l=lessons['tieng-viet-2026-10-19'];
  assert.equal(l.recognition,'Hương cốm thơm thôn xóm.');assert.equal(l.blend.word,'xóm');assert.equal(l.words.length,6);assert.deepEqual(Array.from(l.pictureWords),['đom đóm','chó đốm','mâm cơm']);
  assert.equal(l.reading.join(' '),'Hôm qua, cô Mơ ở xóm Hạ đến thăm nhà Hà. Cô cho Hà giỏ cam. Hà chọn quả cam to phần bố. Mẹ khen và thơm lên má Hà.');assert.equal(l.speaking,'Xin lỗi');assert.equal(l.writing[1],'chó đốm mâm cơm');assert.equal('answers' in l,false);
 });
@@ -70,4 +70,8 @@ test('moving the worksheet copies saved answers once and preserves subsequent Fr
 test('Lesson37 preserves both supplied pages and two helping-friends illustrations',()=>{
  const l=api.schoolLessonContents['tieng-viet-2026-10-20'];assert.equal(l.number,37);assert.equal(l.pages,'86–87');assert.deepEqual(Array.from(l.sounds),['em','êm','im','um']);assert.equal(l.blend.word,'đếm');assert.equal(l.words.length,8);
  assert.deepEqual(Array.from(l.pictureWords),['tem thư','thềm nhà','tủm tỉm']);assert.equal(l.writing[1],'thềm nhà tủm tỉm');assert.ok(l.reading.join(' ').includes('đem cho nó túm rơm.'));assert.equal(l.speaking,'Giúp bạn');assert.equal(l.speakingImages.length,2);assert.equal(l.artLabels.length,7);assert.equal(api.schoolExerciseWorksheets['tieng-viet-2026-10-20'],undefined);
+});
+
+test('Lesson38 follows pages88–89, including the fawn and hedgehog reading',()=>{
+ const l=api.schoolLessonContents['tieng-viet-2026-10-21-a'];assert.equal(l.number,38);assert.equal(l.pages,'88–89');assert.deepEqual(Array.from(l.sounds),['ai','ay','ây']);assert.equal(l.recognition,'Hai bạn thi nhảy dây.');assert.equal(l.blend.word,'hai');assert.equal(l.words[2],'nảy');assert.deepEqual(Array.from(l.pictureWords),['chùm vải','máy cày','đám mây']);assert.equal(l.writing[1],'chùm vải đám mây');assert.ok(l.reading.join(' ').includes('Bạn nhím đấy, con ạ'));assert.equal(l.speaking,'Xin lỗi');assert.equal(l.artLabels.length,6);
 });

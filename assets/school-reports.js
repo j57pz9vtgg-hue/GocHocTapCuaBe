@@ -618,6 +618,13 @@ const schoolLessonContents={
   reading:['Chim ri cần cù tìm cỏ khô về làm tổ. Đêm qua, nó bị ốm.','Chim sẻ và chim sơn ca đến thăm, đem cho nó túm rơm.','Chim ri cảm ơn sẻ và sơn ca.'],
   speaking:'Giúp bạn',speakingImages:[5,6],
   artLabels:['Hai chị em chơi trốn tìm, chị che mắt đếm và em nấp sau bàn','Tem thư','Thềm nhà','Bạn gái tủm tỉm cười','Các chú chim bên tổ và mang rơm đến','Hai bạn chia sẻ ô khi trời mưa','Bạn giúp bạn sửa lại tóc']
+ },
+ 'tieng-viet-2026-10-21-a':{
+  number:38,pages:'88–89',sounds:['ai','ay','ây'],recognition:'Hai bạn thi nhảy dây.',
+  blend:{initial:'h',sound:'ai',word:'hai'},words:['bài','lái','nảy','tay','đậy','lẫy'],pictureWords:['chùm vải','máy cày','đám mây'],
+  writing:['ai ay ây','chùm vải đám mây'],
+  reading:['Nai con nhìn thấy con gì bé nhỏ, thân đầy gai nhọn trên bãi cỏ.','Nó chạy về nhà, hổn hển kể cho mẹ nghe.','Nai mẹ tủm tỉm: “Bạn nhím đấy, con ạ”.'],speaking:'Xin lỗi',
+  artLabels:['Các bạn nhỏ thi nhảy dây trong sân trường','Chùm vải','Máy cày','Đám mây','Nai con nhìn bạn nhím trên bãi cỏ','Bạn nhỏ cùng diều, người mẹ đi qua và người ngồi trên ghế trong công viên']
  }
 };
 function renderSchoolLessonContent(entry){
