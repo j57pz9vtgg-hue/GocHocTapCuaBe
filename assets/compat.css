@@ -637,3 +637,19 @@
 .school-lesson42 .school-lesson-art-4{background-size:200.000000% 403.260870%;background-position:0.000000% 63.620072%;aspect-ratio:530/368}
 .school-lesson42 .school-lesson-art-5{background-size:200.000000% 403.260870%;background-position:100.000000% 63.620072%;aspect-ratio:530/368}
 .school-lesson42 .school-lesson-art-6{background-size:200.000000% 365.517241%;background-position:0.000000% 100.000000%;aspect-ratio:530/406}
+
+.school-lesson43 .school-lesson-art{background-image:url("./school-art/lesson43.4ba10c73ba19.webp");background-size:200% 400%;aspect-ratio:4/3;clip-path:none}
+.school-lesson43 .school-lesson-art-0{background-position:0 0}.school-lesson43 .school-lesson-art-1{background-position:100% 0}.school-lesson43 .school-lesson-art-2{background-position:0 33.333333%}.school-lesson43 .school-lesson-art-3{background-position:100% 33.333333%}.school-lesson43 .school-lesson-art-4{background-position:0 66.666667%}.school-lesson43 .school-lesson-art-5{background-position:100% 66.666667%}.school-lesson43 .school-lesson-art-6{background-position:0 100%}
+@font-face{font-family:"School Vietnamese Writing";src:url("./reference/fonts/playwrite-vn.42ae55cd156a.ttf") format("truetype");font-style:normal;font-weight:200;font-display:swap}
+.school-writing-model.school-writing-grid{padding:0;background:#fff;border:1px solid #90c9d8}
+.school-writing-line{display:block;width:100%;height:auto;overflow:visible}
+.school-writing-line text{font-family:"School Vietnamese Writing",cursive;font-size:32px;font-weight:200;fill:#354147;font-synthesis:none}
+
+/* Keep each Lesson43 drawing inside its own source panel. */
+.school-lesson43 .school-lesson-art-0{background-size:192.870201% 416.480447%;background-position:1.181102% 0.353045%;aspect-ratio:547/358}
+.school-lesson43 .school-lesson-art-1{background-size:217.078189% 416.480447%;background-position:98.945518% 0.353045%;aspect-ratio:486/358}
+.school-lesson43 .school-lesson-art-2{background-size:192.870201% 442.433234%;background-position:1.181102% 32.409012%;aspect-ratio:547/337}
+.school-lesson43 .school-lesson-art-3{background-size:217.078189% 442.433234%;background-position:98.945518% 32.409012%;aspect-ratio:486/337}
+.school-lesson43 .school-lesson-art-4{background-size:192.870201% 399.731903%;background-position:1.181102% 64.311270%;aspect-ratio:547/373}
+.school-lesson43 .school-lesson-art-5{background-size:217.078189% 399.731903%;background-position:98.945518% 64.311270%;aspect-ratio:486/373}
+.school-lesson43 .school-lesson-art-6{background-size:192.870201% 390.314136%;background-position:1.181102% 99.368801%;aspect-ratio:547/382}

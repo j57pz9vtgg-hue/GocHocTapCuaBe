@@ -42,7 +42,7 @@ test('remaining three days preserve all supplied subjects, split-page content an
 });
 
 test('Lesson36 matches the two supplied textbook pages without invented explanations or exercises',()=>{
- const lessons=api.schoolLessonContents;assert.deepEqual(Object.keys(lessons),['tieng-viet-2026-10-27','tieng-viet-2026-10-26','tieng-viet-2026-10-19','tieng-viet-2026-10-20','tieng-viet-2026-10-21-a','tieng-viet-2026-10-21-b','tieng-viet-2026-10-22']);const l=lessons['tieng-viet-2026-10-19'];
+ const lessons=api.schoolLessonContents;assert.deepEqual(Object.keys(lessons),['tieng-viet-2026-10-28-a','tieng-viet-2026-10-27','tieng-viet-2026-10-26','tieng-viet-2026-10-19','tieng-viet-2026-10-20','tieng-viet-2026-10-21-a','tieng-viet-2026-10-21-b','tieng-viet-2026-10-22']);const l=lessons['tieng-viet-2026-10-19'];
  assert.equal(l.recognition,'Hương cốm thơm thôn xóm.');assert.equal(l.blend.word,'xóm');assert.equal(l.words.length,6);assert.deepEqual(Array.from(l.pictureWords),['đom đóm','chó đốm','mâm cơm']);
  assert.equal(l.reading.join(' '),'Hôm qua, cô Mơ ở xóm Hạ đến thăm nhà Hà. Cô cho Hà giỏ cam. Hà chọn quả cam to phần bố. Mẹ khen và thơm lên má Hà.');assert.equal(l.speaking,'Xin lỗi');assert.equal(l.writing[1],'chó đốm mâm cơm');assert.equal('answers' in l,false);
 });
@@ -86,7 +86,7 @@ test('new report preserves tests, split-page feelings vocabulary and the newly s
  assert.equal(all.find(e=>e.id==='science-2026-10-26').links[0].url,'https://wordwall.net/resource/102902774');assert.ok(all.find(e=>e.id==='esl-2026-10-27').sections[1].lines[0].includes('Happy, unhappy, angry, confused, excited'));
  assert.equal(all.find(e=>e.id==='tieng-viet-2026-10-29').sections[0].lines[0],'Bài 45: Kể chuyện: Sự tích hoa cúc trắng');
  const events=all.filter(e=>e.kind==='event');assert.equal(events.length,0);assert.equal(api.schoolGeneralActivities.length,1);assert.equal(api.schoolGeneralActivities[0].preparation[1],'Mang theo 1 giỏ/túi đựng kẹo để tham gia hoạt động Trick or Treat.');assert.equal('subject' in api.schoolGeneralActivities[0],false);
- for(const e of all){if(!['tieng-viet-2026-10-26','tieng-viet-2026-10-27'].includes(e.id))assert.equal(api.schoolLessonContents[e.id],undefined);assert.equal(api.schoolExerciseWorksheets[e.id],undefined);}
+ for(const e of all){if(!['tieng-viet-2026-10-26','tieng-viet-2026-10-27','tieng-viet-2026-10-28-a'].includes(e.id))assert.equal(api.schoolLessonContents[e.id],undefined);assert.equal(api.schoolExerciseWorksheets[e.id],undefined);}
  assert.deepEqual(Object.keys(api.schoolExerciseWorksheets),['tieng-viet-2026-10-23']);
 });
 
@@ -116,3 +116,5 @@ test('participating in festivals is excluded even when supplied inside a named s
 test('Lesson41 preserves supplied pages94–95 without adding answers',()=>{const l=api.schoolLessonContents['tieng-viet-2026-10-26'];assert.equal(l.pages,'94–95');assert.equal(l.recognition,'Bà gửi cho Hà túi kẹo.');assert.deepEqual(Array.from(l.words),['bùi','mũi','sủi','củi','gửi','ngửi']);assert.equal(l.speaking,'Xin phép');assert.equal(l.reading[2],'Lan mời Hà lên thăm quê Lan.');assert.equal(l.artLabels.length,6);assert.equal(api.schoolExerciseWorksheets['tieng-viet-2026-10-26'],undefined);});
 
 test('Lesson42 follows supplied pages96–97 and maps all four picture words separately',()=>{const l=api.schoolLessonContents['tieng-viet-2026-10-27'];assert.equal(l.pages,'96–97');assert.equal(l.recognition,'Ao thu lạnh lẽo nước trong veo.');assert.deepEqual(Array.from(l.words),['chào','dao','sáo','dẻo','đẽo','kẹo']);assert.deepEqual(Array.from(l.pictureWords),['ngôi sao','quả táo','cái kẹo','ao bèo']);assert.deepEqual(Array.from(l.pictureImages),[1,2,3,4]);assert.equal(l.readingImage,5);assert.equal(l.speakingImages[0],6);assert.equal(l.speaking,'Em chăm chỉ');assert.equal(l.reading[2],'Chú tha rơm khô về khéo léo làm tổ.');assert.equal(api.schoolExerciseWorksheets['tieng-viet-2026-10-27'],undefined);});
+
+test('Lesson43 preserves supplied pages98–99, both permission scenes and original writing',()=>{const l=api.schoolLessonContents['tieng-viet-2026-10-28-a'];assert.equal(l.pages,'98–99');assert.equal(l.recognition,'Đàn sẻ nâu kêu ríu rít ở sau nhà.');assert.deepEqual(Array.from(l.words),['cau','tàu','bầu','gấu','khều','rêu']);assert.deepEqual(Array.from(l.writing),['au âu êu','con trâu chú tễu']);assert.equal(l.blend.word,'sau');assert.equal(l.speakingImages.length,2);assert.equal(l.speaking,'Xin phép');assert.equal(api.schoolExerciseWorksheets['tieng-viet-2026-10-28-a'],undefined);});
