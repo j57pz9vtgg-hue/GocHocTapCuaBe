@@ -53,7 +53,7 @@ test('remaining three days preserve all supplied subjects, split-page content an
 });
 
 test('Lesson36 matches the two supplied textbook pages without invented explanations or exercises',()=>{
- const lessons=api.schoolLessonContents;assert.deepEqual(Object.keys(lessons),['tieng-viet-2026-10-19']);const l=lessons['tieng-viet-2026-10-19'];
+ const lessons=api.schoolLessonContents;assert.deepEqual(Object.keys(lessons),['tieng-viet-2026-10-19','tieng-viet-2026-10-20']);const l=lessons['tieng-viet-2026-10-19'];
  assert.equal(l.recognition,'Hương cốm thơm thôn xóm.');assert.equal(l.blend.word,'xóm');assert.equal(l.words.length,6);assert.deepEqual(Array.from(l.pictureWords),['đom đóm','chó đốm','mâm cơm']);
  assert.equal(l.reading.join(' '),'Hôm qua, cô Mơ ở xóm Hạ đến thăm nhà Hà. Cô cho Hà giỏ cam. Hà chọn quả cam to phần bố. Mẹ khen và thơm lên má Hà.');assert.equal(l.speaking,'Xin lỗi');assert.equal(l.writing[1],'chó đốm mâm cơm');assert.equal('answers' in l,false);
 });
@@ -65,4 +65,9 @@ test('moving the worksheet copies saved answers once and preserves subsequent Fr
  assert.deepEqual(JSON.parse(JSON.stringify(api.readSchoolExerciseDraft('tieng-viet-2026-10-23'))),original);assert.equal(values.get(next),values.get(old));
  values.set(next,JSON.stringify({blanks:['mới'],choices:[]}));assert.equal(api.readSchoolExerciseDraft('tieng-viet-2026-10-23').blanks[0],'mới');assert.equal(values.get(old),JSON.stringify(original));
  assert.equal(api.schoolExerciseWorksheets['tieng-viet-2026-10-19'],undefined);assert.ok(api.schoolLessonContents['tieng-viet-2026-10-19']);
+});
+
+test('Lesson37 preserves both supplied pages and two helping-friends illustrations',()=>{
+ const l=api.schoolLessonContents['tieng-viet-2026-10-20'];assert.equal(l.number,37);assert.equal(l.pages,'86–87');assert.deepEqual(Array.from(l.sounds),['em','êm','im','um']);assert.equal(l.blend.word,'đếm');assert.equal(l.words.length,8);
+ assert.deepEqual(Array.from(l.pictureWords),['tem thư','thềm nhà','tủm tỉm']);assert.equal(l.writing[1],'thềm nhà tủm tỉm');assert.ok(l.reading.join(' ').includes('đem cho nó túm rơm.'));assert.equal(l.speaking,'Giúp bạn');assert.equal(l.speakingImages.length,2);assert.equal(l.artLabels.length,7);assert.equal(api.schoolExerciseWorksheets['tieng-viet-2026-10-20'],undefined);
 });
