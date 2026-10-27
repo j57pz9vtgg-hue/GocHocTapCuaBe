@@ -53,7 +53,7 @@ test('remaining three days preserve all supplied subjects, split-page content an
 });
 
 test('Lesson36 matches the two supplied textbook pages without invented explanations or exercises',()=>{
- const lessons=api.schoolLessonContents;assert.deepEqual(Object.keys(lessons),['tieng-viet-2026-10-19','tieng-viet-2026-10-20','tieng-viet-2026-10-21-a','tieng-viet-2026-10-21-b']);const l=lessons['tieng-viet-2026-10-19'];
+ const lessons=api.schoolLessonContents;assert.deepEqual(Object.keys(lessons),['tieng-viet-2026-10-19','tieng-viet-2026-10-20','tieng-viet-2026-10-21-a','tieng-viet-2026-10-21-b','tieng-viet-2026-10-22']);const l=lessons['tieng-viet-2026-10-19'];
  assert.equal(l.recognition,'Hương cốm thơm thôn xóm.');assert.equal(l.blend.word,'xóm');assert.equal(l.words.length,6);assert.deepEqual(Array.from(l.pictureWords),['đom đóm','chó đốm','mâm cơm']);
  assert.equal(l.reading.join(' '),'Hôm qua, cô Mơ ở xóm Hạ đến thăm nhà Hà. Cô cho Hà giỏ cam. Hà chọn quả cam to phần bố. Mẹ khen và thơm lên má Hà.');assert.equal(l.speaking,'Xin lỗi');assert.equal(l.writing[1],'chó đốm mâm cơm');assert.equal('answers' in l,false);
 });
@@ -78,4 +78,8 @@ test('Lesson38 follows pages88–89, including the fawn and hedgehog reading',()
 
 test('Lesson39 joins pages90–91 and preserves the mother and daughter dialogue',()=>{
  const l=api.schoolLessonContents['tieng-viet-2026-10-21-b'];assert.equal(l.number,39);assert.equal(l.pages,'90–91');assert.deepEqual(Array.from(l.sounds),['oi','ôi','ơi']);assert.equal(l.recognition,'Voi con mời bạn đi xem hội.');assert.equal(l.blend.word,'voi');assert.deepEqual(Array.from(l.pictureWords),['chim bói cá','thổi còi','đồ chơi']);assert.equal(l.writing[1],'thổi còi đồ chơi');assert.equal(l.reading[3],'– Lớn lên, con vẫn là con gái nhỏ của mẹ.');assert.equal(l.speaking,'Xe của mẹ và xe của bé');assert.equal(l.artLabels.length,6);
+});
+
+test('Lesson40 keeps review text and all four supplied story questions without inventing answers',()=>{
+ const l=api.schoolLessonContents['tieng-viet-2026-10-22'];assert.equal(l.kind,'review');assert.equal(l.pages,'92–93');assert.equal(l.reviewWords.flat().length,13);assert.equal(l.flowerWords.length,10);assert.equal(l.writing,'Voi con có vòi dài.');assert.equal(l.storyTitle,'Hai người bạn và con gấu');assert.equal(l.storyQuestions.length,4);assert.equal(l.storyQuestions[2],'Vì sao con gấu bỏ đi?');assert.ok(l.reading.endsWith('Cả hai quay lại, ăn đến no nê.'));assert.equal('answers' in l,false);assert.equal(api.schoolExerciseWorksheets['tieng-viet-2026-10-22'],undefined);
 });
