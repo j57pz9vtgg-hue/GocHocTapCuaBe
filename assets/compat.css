@@ -600,21 +600,3 @@
  .school-report-content:has(.school-exercise-paper){min-height:0}
  .school-report-content .school-exercise-paper{min-height:297mm}
 }
-/* Softer desktop lesson controls retain each world's palette with readable dark text. */
-@media(min-width:761px){
- .school-report-workspace{--school-soft-action:linear-gradient(#d7eef4,#b9dee8);--school-soft-ink:#164156;--school-soft-day:#c4e8f0;--school-soft-day-ink:var(--school-soft-ink)}
- :root[data-theme="pixel"] .school-report-workspace{--school-soft-action:linear-gradient(#cceeee,#a8d9dc);--school-soft-ink:#164d55;--school-soft-day:#c1e8e9}
- :root[data-theme="arctic"] .school-report-workspace,:root[data-theme="toys"] .school-report-workspace{--school-soft-action:linear-gradient(#ffddb8,#f5c18d);--school-soft-ink:#633609;--school-soft-day:#ffdbad}
- :root[data-theme="bunny"] .school-report-workspace{--school-soft-action:linear-gradient(#ffe1bc,#f5c795);--school-soft-ink:#643809;--school-soft-day:#d5e9b7;--school-soft-day-ink:#315335}
- :root[data-theme="crystal"] .school-report-workspace{--school-soft-action:linear-gradient(#d2dfff,#b2c4f4);--school-soft-ink:#173b7d;--school-soft-day:#b6ccf3}
- :root[data-theme="cloud"] .school-report-workspace{--school-soft-action:linear-gradient(#ffedc9,#f8dba6);--school-soft-ink:#654716;--school-soft-day:#f8e4bc}
- :root[data-theme="forest"] .school-report-workspace{--school-soft-action:linear-gradient(#d0e6c8,#b3d3a6);--school-soft-ink:#2e4f27;--school-soft-day:#c9dfb8}
- :root[data-theme="museum"] .school-report-workspace{--school-soft-action:linear-gradient(#eadfcf,#d9c5a8);--school-soft-ink:#564126;--school-soft-day:#e5d3bb}
- :root[data-theme="magic"] .school-report-workspace{--school-soft-action:linear-gradient(#e6dcfa,#cdbcdf);--school-soft-ink:#52366d;--school-soft-day:#d9c6ee}
- :root[data-theme="treasure"] .school-report-workspace{--school-soft-action:linear-gradient(#fae7b5,#eccf8c);--school-soft-ink:#634a16;--school-soft-day:#f0dca5}
- :root[data-theme="cars"] .school-report-workspace{--school-soft-action:linear-gradient(#f9d1cb,#edada3);--school-soft-ink:#71362c;--school-soft-day:#efc2b9}
- #site-shell .school-report-sidebar .school-report-card .card-actions>button{background:var(--school-soft-action);color:var(--school-soft-ink);border:1px solid #ffffffb3;box-shadow:inset 0 1px #ffffff80,0 1px 2px #20356814;text-shadow:none}
- #site-shell .school-report-sidebar .school-report-card .school-card-date{background:var(--school-soft-day);color:var(--school-soft-day-ink);text-shadow:none;box-shadow:inset 0 1px #ffffff80,0 1px 2px #20356814}
- #site-shell .school-report-sidebar .school-report-card [aria-pressed="true"]{box-shadow:inset 0 0 0 2px #397188}
- #site-shell .school-report-sidebar .card-actions>button:hover{filter:brightness(.97)}
-}
