@@ -74,20 +74,6 @@ const schoolReports = [
         "preparation": [
           "Đọc SGK tr.102-103"
         ]
-      },
-      {
-        "id": "tieng-viet-2026-10-30",
-        "date": "2026-10-30",
-        "day": "Thứ Sáu",
-        "periods": "7,8",
-        "subject": "Tiếng Việt",
-        "title": "HS THAM GIA LỄ HỘI HALLOWEEN",
-        "sections": [],
-        "preparation": [
-          "HS mặc trang phục hóa trang Halloween.",
-          "Mang theo 1 giỏ/túi đựng kẹo để tham gia hoạt động Trick or Treat."
-        ],
-        "kind": "event"
       }
     ]
   },
@@ -184,20 +170,6 @@ const schoolReports = [
         "sections": [],
         "preparation": [],
         "kind": "test"
-      },
-      {
-        "id": "science-2026-10-30",
-        "date": "2026-10-30",
-        "day": "Thứ Sáu",
-        "periods": "5",
-        "subject": "SCIENCE",
-        "title": "HS THAM GIA LỄ HỘI HALLOWEEN",
-        "sections": [],
-        "preparation": [
-          "HS mặc trang phục hóa trang Halloween.",
-          "Mang theo 1 giỏ/túi đựng kẹo để tham gia hoạt động Trick or Treat."
-        ],
-        "kind": "event"
       }
     ]
   },
@@ -980,9 +952,28 @@ const schoolReports = [
     ]
   }
 ];
+// General school activities are not inferred to be subject-specific lessons.
+const schoolGeneralActivities = [
+  {
+    "date": "2026-10-30",
+    "day": "Thứ Sáu",
+    "title": "HS THAM GIA LỄ HỘI HALLOWEEN",
+    "preparation": [
+      "HS mặc trang phục hóa trang Halloween.",
+      "Mang theo 1 giỏ/túi đựng kẹo để tham gia hoạt động Trick or Treat."
+    ],
+    "kind": "event",
+    "id": "school-activity-halloween-2026-10-30",
+    "grade": "1"
+  }
+];
 function getSchoolReports(grade,subject,query='',week='Tất cả các tuần'){
  const normalize=v=>String(v).normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[đĐ]/g,'d').toLowerCase(),search=normalize(query.trim());
  return schoolReports.filter(r=>String(r.grade)===String(grade)&&(week==='Tất cả các tuần'||r.title===week)).map(report=>({...report,entries:report.entries.filter(e=>e.subject===subject&&(!search||normalize(JSON.stringify(e)+' '+report.title).includes(search)))})).filter(r=>r.entries.length||(r.layout==='table'&&r.subject===subject&&!search));
+}
+function compareSchoolEntryDates(a,b){return a.date.localeCompare(b.date)||(parseInt(a.periods,10)||0)-(parseInt(b.periods,10)||0);}
+function getSchoolReportEntries(grade,subject,query='',week='Tất cả các tuần'){
+ return getSchoolReports(grade,subject,query,week).flatMap(report=>report.entries).sort(compareSchoolEntryDates);
 }
 let schoolReportSelection=null;
 function renderSchoolLessonCard(entry,index){
@@ -997,14 +988,14 @@ function renderSchoolReportContent(entry,kind){
  return header+`<p class="school-panel-notice" role="status">${kind==='lesson'?'Đang chờ nội dung bài học mới để bổ sung.':'Bài học này chưa có bài tập. Đang chờ bổ sung.'}</p>`;
 }
 function renderSchoolReports(){
- const entries=getSchoolReports(state.grade,state.subject,state.search,state.mode).flatMap(report=>report.entries);
+ const entries=getSchoolReportEntries(state.grade,state.subject,state.search,state.mode);
  if(!entries.length){schoolReportSelection=null;return `<div class="empty-state"><h3>${state.search?'Chưa tìm thấy nội dung báo bài':'Chưa có nội dung báo bài'}</h3><p>${state.search?'Thử từ khóa khác hoặc chọn lại môn học.':'Đang chờ ảnh báo bài để bổ sung cho môn đã chọn.'}</p></div>`;}
  const selected=entries.find(entry=>entry.id===schoolReportSelection?.id);if(!selected)schoolReportSelection=null;
  return `<div class="school-report-workspace"><nav class="school-report-sidebar" aria-label="Danh sách bài học">${entries.map((entry,index)=>renderSchoolLessonCard(entry,index)).join('')}</nav><section id="school-report-content" class="school-report-content" aria-labelledby="school-content-title" data-lesson-id="${selected?.id||''}">${renderSchoolReportContent(selected,schoolReportSelection?.kind)}</section></div>`;
 }
 function activateSchoolReport(id,kind,focus=true){
  if(state.program!=='Báo bài của trường')return;
- const entry=getSchoolReports(state.grade,state.subject,state.search,state.mode).flatMap(r=>r.entries).find(e=>e.id===id),panel=document.querySelector('#school-report-content');
+ const entry=getSchoolReportEntries(state.grade,state.subject,state.search,state.mode).find(e=>e.id===id),panel=document.querySelector('#school-report-content');
  if(!entry||!panel||!['lesson','exercises'].includes(kind))return;
  schoolReportSelection={id,kind};panel.dataset.lessonId=id;panel.innerHTML=renderSchoolReportContent(entry,kind);
  document.querySelectorAll('[data-school-card]').forEach(card=>{const selected=card.dataset.schoolCard===id;card.classList.toggle('school-card-selected',selected);card.querySelector('[data-school-lesson]').setAttribute('aria-pressed',String(selected&&kind==='lesson'));card.querySelector('[data-school-exercises]').setAttribute('aria-pressed',String(selected&&kind==='exercises'));});

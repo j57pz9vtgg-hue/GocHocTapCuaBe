@@ -1,5 +1,5 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
-const context={document:{addEventListener(){}}};vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/data.js'),'utf8')+'\n'+fs.readFileSync(path.join(__dirname,'../assets/school-reports.js'),'utf8')+'\nglobalThis.api={schoolReports,getSchoolReports,getSubjects,getModes,officialPapers,schoolExerciseWorksheets,schoolLessonContents,readSchoolExerciseDraft,schoolExerciseStorageKey};',context);const api=context.api;
+const context={document:{addEventListener(){}}};vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/data.js'),'utf8')+'\n'+fs.readFileSync(path.join(__dirname,'../assets/school-reports.js'),'utf8')+'\nglobalThis.api={schoolReports,getSchoolReports,getSubjects,getModes,officialPapers,schoolExerciseWorksheets,schoolLessonContents,readSchoolExerciseDraft,schoolExerciseStorageKey,schoolGeneralActivities,getSchoolReportEntries};',context);const api=context.api;
 const oldWeek='Báo bài tuần 19/10/2026 - 23/10/2026',newWeek='Báo bài tuần 26/10/2026 - 30/10/2026',oldReports=(grade,subject)=>api.getSchoolReports(grade,subject,'',oldWeek);
 test('Vietnamese Monday lesson matches the provided image remains unchanged',()=>{const rows=oldReports('1','Tiếng Việt')[0].entries;assert.equal(rows.length,6);assert.equal(rows[0].date,'2026-10-19');assert.equal(rows[0].day,'Thứ Hai');assert.equal(rows[0].title,'Bài 36: om ôm ơm');assert.equal(rows[0].periods,'8,9');assert.equal(rows[0].preparation[0],'Đọc SGK tr.84-85');});
 
@@ -75,17 +75,28 @@ test('Lesson40 keeps review text and all four supplied story questions without i
 
 test('newly supplied October26–30 week coexists with the original week and is selected independently',()=>{
  assert.equal(api.schoolReports.length,12);assert.deepEqual(Array.from(api.getModes('Báo bài của trường','1')),[newWeek,oldWeek,'Tất cả các tuần']);assert.deepEqual(Array.from(api.getModes('Báo bài của trường','2')),['Tất cả các tuần']);
- for(const [subject,count] of [['Toán',3],['Tiếng Việt',6],['SCIENCE',3],['GLOBAL',1],['ESL',4],['MATHEMATICS',3]]){
+ for(const [subject,count] of [['Toán',3],['Tiếng Việt',5],['SCIENCE',2],['GLOBAL',1],['ESL',4],['MATHEMATICS',3]]){
   const result=api.getSchoolReports('1',subject,'',newWeek);assert.equal(result.length,1);assert.equal(result[0].entries.length,count);assert.ok(result[0].entries.every(e=>e.subject===subject&&e.date>='2026-10-26'&&e.date<='2026-10-30'));assert.equal(api.getSchoolReports('1',subject).length,2);
  }
- const all=api.schoolReports.flatMap(r=>r.entries);assert.equal(all.length,40);assert.equal(new Set(all.map(e=>e.id)).size,40);assert.equal(api.officialPapers.length,14);assert.equal(api.officialPapers.reduce((n,p)=>n+p.questions.length,0),350);
+ const all=api.schoolReports.flatMap(r=>r.entries);assert.equal(all.length,38);assert.equal(new Set(all.map(e=>e.id)).size,38);assert.equal(api.officialPapers.length,14);assert.equal(api.officialPapers.reduce((n,p)=>n+p.questions.length,0),350);
 });
 test('new report preserves tests, split-page feelings vocabulary and the newly supplied Halloween preparation',()=>{
  const all=api.schoolReports.filter(r=>r.start==='2026-10-26').flatMap(r=>r.entries);
  assert.equal(all.find(e=>e.id==='science-2026-10-28').title,'UNIT TEST 2 - OCTOBER 28, 2026');assert.equal(all.find(e=>e.id==='esl-2026-10-29').title,'UNIT 3 TEST');
  assert.equal(all.find(e=>e.id==='science-2026-10-26').links[0].url,'https://wordwall.net/resource/102902774');assert.ok(all.find(e=>e.id==='esl-2026-10-27').sections[1].lines[0].includes('Happy, unhappy, angry, confused, excited'));
  assert.equal(all.find(e=>e.id==='tieng-viet-2026-10-29').sections[0].lines[0],'Bài 45: Kể chuyện: Sự tích hoa cúc trắng');
- const events=all.filter(e=>e.kind==='event');assert.equal(events.length,2);assert.ok(events.every(e=>e.preparation[1]==='Mang theo 1 giỏ/túi đựng kẹo để tham gia hoạt động Trick or Treat.'));
+ const events=all.filter(e=>e.kind==='event');assert.equal(events.length,0);assert.equal(api.schoolGeneralActivities.length,1);assert.equal(api.schoolGeneralActivities[0].preparation[1],'Mang theo 1 giỏ/túi đựng kẹo để tham gia hoạt động Trick or Treat.');assert.equal('subject' in api.schoolGeneralActivities[0],false);
  for(const e of all){assert.equal(api.schoolLessonContents[e.id],undefined);assert.equal(api.schoolExerciseWorksheets[e.id],undefined);}
  assert.deepEqual(Object.keys(api.schoolExerciseWorksheets),['tieng-viet-2026-10-23']);
+});
+
+test('all-weeks lessons are ordered oldest first and same-day lessons by their first period without mutating source',()=>{
+ const before=JSON.stringify(api.schoolReports);
+ for(const subject of api.getSubjects('Báo bài của trường')){
+  const rows=Array.from(api.getSchoolReportEntries('1',subject));
+  for(let i=1;i<rows.length;i++){assert.ok(rows[i-1].date<=rows[i].date);if(rows[i-1].date===rows[i].date)assert.ok(parseInt(rows[i-1].periods,10)<=parseInt(rows[i].periods,10));}
+  assert.ok(rows.every(e=>e.subject===subject&&!e.title.includes('HALLOWEEN')));
+ }
+ const vietnamese=Array.from(api.getSchoolReportEntries('1','Tiếng Việt'));assert.equal(vietnamese[0].id,'tieng-viet-2026-10-19');assert.equal(vietnamese.at(-1).id,'tieng-viet-2026-10-29');assert.ok(vietnamese.findIndex(e=>e.id==='tieng-viet-2026-10-21-a')<vietnamese.findIndex(e=>e.id==='tieng-viet-2026-10-21-b'));
+ assert.equal(JSON.stringify(api.schoolReports),before);assert.equal(api.getSchoolReportEntries('1','Tiếng Việt','Halloween').length,0);assert.equal(api.getSchoolReportEntries('2','Tiếng Việt').length,0);
 });
