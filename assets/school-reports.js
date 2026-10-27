@@ -625,6 +625,14 @@ const schoolLessonContents={
   writing:['ai ay ây','chùm vải đám mây'],
   reading:['Nai con nhìn thấy con gì bé nhỏ, thân đầy gai nhọn trên bãi cỏ.','Nó chạy về nhà, hổn hển kể cho mẹ nghe.','Nai mẹ tủm tỉm: “Bạn nhím đấy, con ạ”.'],speaking:'Xin lỗi',
   artLabels:['Các bạn nhỏ thi nhảy dây trong sân trường','Chùm vải','Máy cày','Đám mây','Nai con nhìn bạn nhím trên bãi cỏ','Bạn nhỏ cùng diều, người mẹ đi qua và người ngồi trên ghế trong công viên']
+ },
+ 'tieng-viet-2026-10-21-b':{
+  number:39,pages:'90–91',sounds:['oi','ôi','ơi'],recognition:'Voi con mời bạn đi xem hội.',
+  blend:{initial:'v',sound:'oi',word:'voi'},words:['chòi','hội','mỗi','xôi','đợi','mới'],pictureWords:['chim bói cá','thổi còi','đồ chơi'],
+  writing:['oi ôi ơi','thổi còi đồ chơi'],
+  reading:['Hà hỏi mẹ:','– Mẹ ơi, mạ lớn lên gọi là lúa. Bê lớn lên gọi là bò. Còn con lớn lên thì gọi là gì ạ?','Mẹ ôm Hà rồi nói:','– Lớn lên, con vẫn là con gái nhỏ của mẹ.'],
+  speaking:'Xe của mẹ và xe của bé',
+  artLabels:['Voi con và các bạn trong ngày hội có cờ và trống','Chim bói cá','Bạn nhỏ thổi còi','Đồ chơi','Mẹ ôm Hà trên giường và trò chuyện','Mẹ cùng xe máy và bé cùng xe đạp trước nhà']
  }
 };
 function renderSchoolLessonContent(entry){
