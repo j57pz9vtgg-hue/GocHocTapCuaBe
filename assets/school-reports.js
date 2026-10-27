@@ -1,6 +1,459 @@
 // School reports transcribed only from owner-provided content. The removed October26–30 report stays removed.
 const schoolReports = [
   {
+    "id": "school-week-2026-10-26-vietnamese",
+    "grade": "1",
+    "subject": "Tiếng Việt",
+    "start": "2026-10-26",
+    "end": "2026-10-30",
+    "title": "Báo bài tuần 26/10/2026 - 30/10/2026",
+    "layout": "table",
+    "entries": [
+      {
+        "id": "tieng-viet-2026-10-26",
+        "date": "2026-10-26",
+        "day": "Thứ Hai",
+        "periods": "8,9",
+        "subject": "Tiếng Việt",
+        "title": "Bài 41: ui ưi",
+        "sections": [],
+        "preparation": [
+          "Đọc SGK tr.94-95"
+        ]
+      },
+      {
+        "id": "tieng-viet-2026-10-27",
+        "date": "2026-10-27",
+        "day": "Thứ Ba",
+        "periods": "8,9",
+        "subject": "Tiếng Việt",
+        "title": "Bài 42: ao eo",
+        "sections": [],
+        "preparation": [
+          "Đọc SGK tr.96-97"
+        ]
+      },
+      {
+        "id": "tieng-viet-2026-10-28-a",
+        "date": "2026-10-28",
+        "day": "Thứ Tư",
+        "periods": "1,2",
+        "subject": "Tiếng Việt",
+        "title": "Bài 43: au âu êu",
+        "sections": [],
+        "preparation": [
+          "Đọc SGK tr.98-99"
+        ]
+      },
+      {
+        "id": "tieng-viet-2026-10-28-b",
+        "date": "2026-10-28",
+        "day": "Thứ Tư",
+        "periods": "3,4",
+        "subject": "Tiếng Việt",
+        "title": "Bài 44: iu ưu",
+        "sections": [],
+        "preparation": [
+          "Đọc SGK tr.100-101"
+        ]
+      },
+      {
+        "id": "tieng-viet-2026-10-29",
+        "date": "2026-10-29",
+        "day": "Thứ Năm",
+        "periods": "5,6",
+        "subject": "Tiếng Việt",
+        "title": "Bài 45: Ôn tập",
+        "sections": [
+          {
+            "lines": [
+              "Bài 45: Kể chuyện: Sự tích hoa cúc trắng"
+            ]
+          }
+        ],
+        "preparation": [
+          "Đọc SGK tr.102-103"
+        ]
+      },
+      {
+        "id": "tieng-viet-2026-10-30",
+        "date": "2026-10-30",
+        "day": "Thứ Sáu",
+        "periods": "7,8",
+        "subject": "Tiếng Việt",
+        "title": "HS THAM GIA LỄ HỘI HALLOWEEN",
+        "sections": [],
+        "preparation": [
+          "HS mặc trang phục hóa trang Halloween.",
+          "Mang theo 1 giỏ/túi đựng kẹo để tham gia hoạt động Trick or Treat."
+        ],
+        "kind": "event"
+      }
+    ]
+  },
+  {
+    "id": "school-week-2026-10-26-toan",
+    "grade": "1",
+    "subject": "Toán",
+    "start": "2026-10-26",
+    "end": "2026-10-30",
+    "title": "Báo bài tuần 26/10/2026 - 30/10/2026",
+    "layout": "table",
+    "entries": [
+      {
+        "id": "toan-2026-10-26",
+        "date": "2026-10-26",
+        "day": "Thứ Hai",
+        "periods": "7",
+        "subject": "Toán",
+        "title": "Bài 10: Phép cộng trong phạm vi 10 (T.4)",
+        "sections": [],
+        "preparation": []
+      },
+      {
+        "id": "toan-2026-10-27",
+        "date": "2026-10-27",
+        "day": "Thứ Ba",
+        "periods": "7",
+        "subject": "Toán",
+        "title": "Bài 10: Phép cộng trong phạm vi 10 (T.5)",
+        "sections": [],
+        "preparation": []
+      },
+      {
+        "id": "toan-2026-10-29",
+        "date": "2026-10-29",
+        "day": "Thứ Năm",
+        "periods": "7",
+        "subject": "Toán",
+        "title": "Bài 10: Phép cộng trong phạm vi 10 (T.6)",
+        "sections": [],
+        "preparation": []
+      }
+    ]
+  },
+  {
+    "id": "school-week-2026-10-26-science",
+    "grade": "1",
+    "subject": "SCIENCE",
+    "start": "2026-10-26",
+    "end": "2026-10-30",
+    "title": "Báo bài tuần 26/10/2026 - 30/10/2026",
+    "layout": "table",
+    "entries": [
+      {
+        "id": "science-2026-10-26",
+        "date": "2026-10-26",
+        "day": "Thứ Hai",
+        "periods": "1,2",
+        "subject": "SCIENCE",
+        "title": "2.4 Changing Direction",
+        "sections": [
+          {
+            "lines": [
+              "Find out how forces make things change direction.",
+              "Predict the change of direction of a ball.",
+              "Draw a simple diagram to show a prediction and results of the change of direction of a ball."
+            ]
+          },
+          {
+            "heading": "Key Vocabulary",
+            "lines": [
+              "arrow, diagram, direction, turn"
+            ]
+          }
+        ],
+        "preparation": [
+          "LB Page: 52 - 55",
+          "WB Page: 26 - 28"
+        ],
+        "links": [
+          {
+            "label": "Pre-Learning Activities",
+            "url": "https://wordwall.net/resource/102902774"
+          }
+        ]
+      },
+      {
+        "id": "science-2026-10-28",
+        "date": "2026-10-28",
+        "day": "Thứ Tư",
+        "periods": "6,7",
+        "subject": "SCIENCE",
+        "title": "UNIT TEST 2 - OCTOBER 28, 2026",
+        "sections": [],
+        "preparation": [],
+        "kind": "test"
+      },
+      {
+        "id": "science-2026-10-30",
+        "date": "2026-10-30",
+        "day": "Thứ Sáu",
+        "periods": "5",
+        "subject": "SCIENCE",
+        "title": "HS THAM GIA LỄ HỘI HALLOWEEN",
+        "sections": [],
+        "preparation": [
+          "HS mặc trang phục hóa trang Halloween.",
+          "Mang theo 1 giỏ/túi đựng kẹo để tham gia hoạt động Trick or Treat."
+        ],
+        "kind": "event"
+      }
+    ]
+  },
+  {
+    "id": "school-week-2026-10-26-esl",
+    "grade": "1",
+    "subject": "ESL",
+    "start": "2026-10-26",
+    "end": "2026-10-30",
+    "title": "Báo bài tuần 26/10/2026 - 30/10/2026",
+    "layout": "table",
+    "entries": [
+      {
+        "id": "esl-2026-10-26",
+        "date": "2026-10-26",
+        "day": "Thứ Hai",
+        "periods": "3,4",
+        "subject": "ESL",
+        "title": "3.3 - What can birds do? (Review)",
+        "sections": [
+          {
+            "lines": [
+              "Listen, read and understand a talk about birds.",
+              "Describe different birds using basic connectors and determiners."
+            ]
+          },
+          {
+            "heading": "Key Vocabulary",
+            "lines": [
+              "All, most, some."
+            ]
+          },
+          {
+            "heading": "Grammar",
+            "lines": [
+              "Can/can’t for ability, connectives and, or, but, quantifiers."
+            ]
+          }
+        ],
+        "preparation": []
+      },
+      {
+        "id": "esl-2026-10-27",
+        "date": "2026-10-27",
+        "day": "Thứ Ba",
+        "periods": "3,4",
+        "subject": "ESL",
+        "title": "3.5 - Feelings",
+        "sections": [
+          {
+            "lines": [
+              "Recognize and pronounce different feelings",
+              "Talk about how they feel"
+            ]
+          },
+          {
+            "heading": "Key Vocabulary",
+            "lines": [
+              "Happy, unhappy, angry, confused, excited"
+            ]
+          }
+        ],
+        "preparation": []
+      },
+      {
+        "id": "esl-2026-10-28",
+        "date": "2026-10-28",
+        "day": "Thứ Tư",
+        "periods": "8,9",
+        "subject": "ESL",
+        "title": "Unit Test revision",
+        "sections": [],
+        "preparation": []
+      },
+      {
+        "id": "esl-2026-10-29",
+        "date": "2026-10-29",
+        "day": "Thứ Năm",
+        "periods": "3,4",
+        "subject": "ESL",
+        "title": "UNIT 3 TEST",
+        "sections": [],
+        "preparation": [],
+        "kind": "test"
+      }
+    ]
+  },
+  {
+    "id": "school-week-2026-10-26-global",
+    "grade": "1",
+    "subject": "GLOBAL",
+    "start": "2026-10-26",
+    "end": "2026-10-30",
+    "title": "Báo bài tuần 26/10/2026 - 30/10/2026",
+    "layout": "table",
+    "entries": [
+      {
+        "id": "global-2026-10-30",
+        "date": "2026-10-30",
+        "day": "Thứ Sáu",
+        "periods": "3,4",
+        "subject": "GLOBAL",
+        "title": "2.3 - How can I find out if people are reducing waste?",
+        "sections": [
+          {
+            "heading": "Skill Focus: Research",
+            "lines": []
+          },
+          {
+            "heading": "Students will be able to (I can…):",
+            "lines": [
+              "I can find out how people are reducing waste.",
+              "I can show what I found out in a table."
+            ]
+          },
+          {
+            "heading": "Key Vocabulary",
+            "lines": [
+              "50: shopping, compost",
+              "51: tally chart",
+              "52: drink, shop, popular, least"
+            ]
+          }
+        ],
+        "preparation": [
+          "LB: 50-53"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "school-week-2026-10-26-mathematics",
+    "grade": "1",
+    "subject": "MATHEMATICS",
+    "start": "2026-10-26",
+    "end": "2026-10-30",
+    "title": "Báo bài tuần 26/10/2026 - 30/10/2026",
+    "layout": "table",
+    "entries": [
+      {
+        "id": "mathematics-2026-10-27",
+        "date": "2026-10-27",
+        "day": "Thứ Ba",
+        "periods": "1,2",
+        "subject": "MATHEMATICS",
+        "title": "5.1 Addition",
+        "sections": [
+          {
+            "lines": [
+              "Add ones or tens to a 2-digit number;",
+              "Add 3 or small numbers together; and",
+              "Use complements of 10 to find a complements of 20 and tens numbers to 100."
+            ]
+          },
+          {
+            "heading": "Key Vocabulary",
+            "lines": [
+              "column addition",
+              "complement (of 10, 20 and tens numbers to 100)",
+              "place value grid"
+            ]
+          },
+          {
+            "heading": "Prerequisite Skills",
+            "lines": [
+              "Add within 20.",
+              "Count on from a number.",
+              "Identify tens and ones.",
+              "Recall number bonds to 10."
+            ]
+          }
+        ],
+        "preparation": [
+          "LB Page: 81-85",
+          "WB Page: 78-85"
+        ]
+      },
+      {
+        "id": "mathematics-2026-10-28",
+        "date": "2026-10-28",
+        "day": "Thứ Tư",
+        "periods": "5",
+        "subject": "MATHEMATICS",
+        "title": "5.1 Addition",
+        "sections": [
+          {
+            "lines": [
+              "Add ones or tens to a 2-digit number;",
+              "Add 3 or small numbers together; and",
+              "Use complements of 10 to find a complements of 20 and tens numbers to 100."
+            ]
+          },
+          {
+            "heading": "Key Vocabulary",
+            "lines": [
+              "column addition",
+              "complement (of 10, 20 and tens numbers to 100)",
+              "place value grid"
+            ]
+          },
+          {
+            "heading": "Prerequisite Skills",
+            "lines": [
+              "Add within 20.",
+              "Count on from a number.",
+              "Identify tens and ones.",
+              "Recall number bonds to 10."
+            ]
+          }
+        ],
+        "preparation": [
+          "LB Page: 81-85",
+          "WB Page: 78-85"
+        ]
+      },
+      {
+        "id": "mathematics-2026-10-29",
+        "date": "2026-10-29",
+        "day": "Thứ Năm",
+        "periods": "1,2",
+        "subject": "MATHEMATICS",
+        "title": "5.1 Addition",
+        "sections": [
+          {
+            "lines": [
+              "Add ones or tens to a 2-digit number;",
+              "Add 3 or small numbers together; and",
+              "Use complements of 10 to find a complements of 20 and tens numbers to 100."
+            ]
+          },
+          {
+            "heading": "Key Vocabulary",
+            "lines": [
+              "column addition",
+              "complement (of 10, 20 and tens numbers to 100)",
+              "place value grid"
+            ]
+          },
+          {
+            "heading": "Prerequisite Skills",
+            "lines": [
+              "Add within 20.",
+              "Count on from a number.",
+              "Identify tens and ones.",
+              "Recall number bonds to 10."
+            ]
+          }
+        ],
+        "preparation": [
+          "LB Page: 81-85",
+          "WB Page: 78-85"
+        ]
+      }
+    ]
+  },
+  {
     "id": "school-week-2026-10-19-vietnamese",
     "grade": "1",
     "subject": "Tiếng Việt",
