@@ -123,7 +123,7 @@ function saveCurrentView(){
  const p=state.practice,settings=document.querySelector('#settings');
  const record={version:1,filters:{grade:state.grade,program:state.program,subject:state.subject,mode:state.mode,search:state.search,topicGroup:state.topicGroup},scroll:window.scrollY};
  if(p){
-  record.practice={...viewSelection(p),answers:{...state.answers},searchQuery:p.searchQuery||'',startedAt:p.startedAt,finishedAt:p.finishedAt,submitted:state.submitted};
+  record.practice={...viewSelection(p),answers:{...state.answers},searchQuery:p.searchQuery||'',startedAt:p.startedAt,finishedAt:p.finishedAt,submitted:state.submitted,syncRunId:p.syncRunId};
   const index=[...app.querySelectorAll('.paper-question')].findIndex(el=>el.getBoundingClientRect().bottom>110);
   if(index>=0)record.anchor={id:viewQuestionIds(p)[index],top:app.querySelectorAll('.paper-question')[index].getBoundingClientRect().top};
  }
@@ -160,6 +160,7 @@ async function restoreCurrentView(){
  if(selection&&Number.isFinite(saved.startedAt)&&saved.startedAt>0){
   state.practice={...selection,searchQuery:typeof saved.searchQuery==='string'?saved.searchQuery.slice(0,200):'',startedAt:Math.min(saved.startedAt,Date.now())};state.answers={};state.solutionsVisible=false;
   const ids=viewQuestionIds(selection),previous=attempts[attemptKey(selection)];
+  state.practice.syncRunId=saved.syncRunId||previous?.syncRunId||String(saved.startedAt);
   const merged=selection.topicId&&(saved.topicId!==selection.topicId||previous?.mergedTopicProgress);
   selection.questions.forEach((q,i)=>{const old=Array.isArray(saved.questionIds)?saved.questionIds.indexOf(ids[i]):-1,value=saved.answers?.[old];if(validResponse(q,value))state.answers[i]=value;else if(merged){const oldIndex=Array.isArray(previous?.questionIds)?previous.questionIds.indexOf(ids[i]):-1,kept=previous?.answers?.[oldIndex];if(validResponse(q,kept))state.answers[i]=kept;}});
   state.submitted=!merged&&saved.submitted===true&&Object.keys(state.answers).length===selection.questions.length;
@@ -241,6 +242,8 @@ if(typeof publishedTimoClassification!=='undefined'&&TimoClassification.usesPubl
 }
 
 
+function rebuildCompletedAttempts(){
+ state.completed={};
 for(const [savedKey,record] of Object.entries(attempts)){
  const parts=savedKey.split('|');if(parts.length!==5||!record||!record.submitted||!record.answers||typeof record.answers!=='object')continue;
  const [grade,program,subject,mode,paperId]=parts;
@@ -250,12 +253,16 @@ for(const [savedKey,record] of Object.entries(attempts)){
  state.completed[`${[grade,program,subject,mode].join('|')}-${paper}`]={result:hasProvidedAnswers(questions)?`${score}/${questions.length} câu đúng`:'Chờ đáp án',duration:Number.isFinite(record.updatedAt)&&Number.isFinite(record.startedAt)?Math.max(0,Math.floor(((Number.isFinite(record.finishedAt)?record.finishedAt:record.updatedAt)-record.startedAt)/1000)):0};
 }
 
+}
+rebuildCompletedAttempts();
+
 function saveAttempt() {
  if(!state.practice)return;
  const p=state.practice;
- attempts[attemptKey(p)]={answers:{...state.answers},questionIds:p.questionIds,finishedAt:p.finishedAt,submitted:state.submitted,startedAt:p.startedAt,updatedAt:Date.now()};
+ p.syncRunId=p.syncRunId||String(p.startedAt);
+ attempts[attemptKey(p)]={answers:{...state.answers},questionIds:p.questionIds,finishedAt:p.finishedAt,submitted:state.submitted,startedAt:p.startedAt,syncRunId:p.syncRunId,updatedAt:Date.now()};
  saveCurrentView();
- try{localStorage.setItem(attemptStorageKey,JSON.stringify(attempts));return true;}catch{return false;}
+ try{localStorage.setItem(attemptStorageKey,JSON.stringify(attempts));window.LearningSync?.changed('attempt',attemptKey(p),attempts[attemptKey(p)]);return true;}catch{return false;}
 }
 let pendingPaper=null, introTrigger=null;
 const introDialog=document.querySelector('#paper-intro');
@@ -276,7 +283,7 @@ function startPendingPaper() {
  const selection=pendingPaper,previous=attempts[attemptKey(selection)],resume=previous&&!previous.submitted;
  state.answers={};state.submitted=false;state.solutionsVisible=false;
  if(resume&&previous.answers&&typeof previous.answers==='object')selection.questions.forEach((q,i)=>{const originalIndex=selection.topicId&&Array.isArray(previous.questionIds)?previous.questionIds.indexOf(selection.questionIds[i]):i;const value=originalIndex>=0?previous.answers[originalIndex]:undefined;if(validResponse(q,value))state.answers[i]=value;});
- state.practice={...selection,startedAt:!selection.topicId&&resume&&Number.isFinite(previous.startedAt)&&previous.startedAt>0&&previous.startedAt<=Date.now()?previous.startedAt:Date.now()};
+ state.practice={...selection,syncRunId:resume?(previous.syncRunId||String(previous.startedAt)):Date.now()+'.'+crypto.randomUUID(),startedAt:!selection.topicId&&resume&&Number.isFinite(previous.startedAt)&&previous.startedAt>0&&previous.startedAt<=Date.now()?previous.startedAt:Date.now()};
  introDialog.close();saveAttempt();renderPractice();app.querySelector('#active-paper-title').focus();window.scrollTo({top:0});
 }
 function isNationalTopicQuestion(index){
@@ -342,7 +349,7 @@ document.addEventListener('click',event=>{
  if(action==='close-intro')introDialog.close();
  if(action==='start-paper')startPendingPaper();
  if(action==='submit-paper')document.querySelector('#quiz').requestSubmit();
- if(action==='retry'){if(state.practice.topicId)state.practice=reshuffleTopicPractice(state.practice);state.answers={};state.submitted=false;state.solutionsVisible=false;state.practice.startedAt=Date.now();delete state.practice.finishedAt;saveAttempt();renderPractice();window.scrollTo({top:0});}
+ if(action==='retry'){if(state.practice.topicId)state.practice=reshuffleTopicPractice(state.practice);state.answers={};state.submitted=false;state.solutionsVisible=false;state.practice.startedAt=Date.now();state.practice.syncRunId=Date.now()+'.'+crypto.randomUUID();delete state.practice.finishedAt;saveAttempt();renderPractice();window.scrollTo({top:0});}
  if(button.dataset.subject){state.subject=button.dataset.subject;renderHome();app.querySelector(`[data-subject="${state.subject}"]`).focus();}
  if(button.dataset.mode!==undefined){state.mode=modes[Number(button.dataset.mode)];renderHome();app.querySelector(`[data-mode="${button.dataset.mode}"]`).focus();}
  if(button.dataset.review!==undefined)openSavedPaper(Number(button.dataset.review));
@@ -362,10 +369,11 @@ app.addEventListener('input',event=>{const input=event.target;
 function openSavedPaper(paper){
  const selection={grade:state.grade,program:state.program,subject:state.subject,mode:state.mode,paper,title:paperTitle(paper),questions:getQuestions(state.subject,state.grade,state.mode,paper,state.program),durationMinutes:null},record=attempts[attemptKey(selection)];
  if(!record?.submitted)return;
- state.practice={...selection,startedAt:record.startedAt,finishedAt:Number.isFinite(record.finishedAt)?record.finishedAt:record.updatedAt};state.answers=record.answers||{};state.submitted=true;state.solutionsVisible=false;renderPractice();app.querySelector('.result h2').focus();window.scrollTo({top:0});
+ state.practice={...selection,syncRunId:record.syncRunId||String(record.startedAt),startedAt:record.startedAt,finishedAt:Number.isFinite(record.finishedAt)?record.finishedAt:record.updatedAt};state.answers=record.answers||{};state.submitted=true;state.solutionsVisible=false;renderPractice();app.querySelector('.result h2').focus();window.scrollTo({top:0});
 }
-function openLocalData(){const d=document.querySelector('#local-data');d.innerHTML=`<button class="icon-button dialog-close" data-action="close-local-data" aria-label="Đóng">${icon('close',22)}</button><h2>Dữ liệu trên thiết bị</h2><p class="parent-subtitle">Bài làm được lưu trên trình duyệt này. Ứng dụng hiện chưa kết nối dịch vụ đồng bộ trực tuyến.</p><button class="primary-button" data-action="export-local-data">Tải bản sao bài làm ${icon('arrow',18)}</button>`;d.showModal();}
-document.addEventListener('click',e=>{if(e.target.closest('[data-action="close-local-data"]'))document.querySelector('#local-data').close();if(e.target.closest('[data-action="export-local-data"]')){const blob=new Blob([JSON.stringify({version:2,kind:'official',attempts},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='goc-hoc-tap-bai-lam.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}});
+function openLocalData(){const d=document.querySelector('#local-data');d.innerHTML=`<button class="icon-button dialog-close" data-action="close-local-data" aria-label="Đóng">${icon('close',22)}</button><h2>Đồng bộ và dữ liệu</h2><div id="learning-sync-panel"></div><hr><h3>Bản sao trên thiết bị</h3><p>Bạn có thể tải bản sao bài làm và phân loại đang lưu trên máy này.</p><button class="primary-button" data-action="export-local-data">Tải bản sao dữ liệu ${icon('arrow',18)}</button>`;window.LearningSync?.draw();d.showModal();window.LearningSync?.prepare().catch(()=>{});}
+
+document.addEventListener('click',e=>{if(e.target.closest('[data-action="close-local-data"]'))document.querySelector('#local-data').close();if(e.target.closest('[data-action="export-local-data"]')){const blob=new Blob([JSON.stringify(window.LearningSync?.exportData()||{version:2,kind:'official',attempts},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='goc-hoc-tap-bai-lam.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}});
 renderHome();
 
 function preserveClassifiedProgress(previous,next){
@@ -384,7 +392,7 @@ function preserveClassifiedProgress(previous,next){
   const target=touched.get(targetKey);let index=target.questionIds.indexOf(id);if(index<0){index=target.questionIds.length;target.questionIds.push(id);}
   if(validResponse(entry.question,value)&&!validResponse(entry.question,target.answers[index]))target.answers[index]=value;
  }
- for(const [key,record] of touched)attempts[key]=record;
+ for(const [key,record] of touched){attempts[key]=record;window.LearningSync?.changed('attempt',key,record);}
  try{localStorage.setItem(attemptStorageKey,JSON.stringify(attempts));}catch{}
 }
 

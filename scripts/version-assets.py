@@ -6,7 +6,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = [
-    'assets/icons.js', 'assets/data.js', 'assets/school-reports.js', 'assets/classification-base.js', 'assets/classification.js', 'assets/app.js', 'assets/settings.js', 'assets/access.js',
+    'assets/sync-core.js', 'assets/cloud-sync.js', 'assets/icons.js', 'assets/data.js', 'assets/school-reports.js', 'assets/classification-base.js', 'assets/classification.js', 'assets/app.js', 'assets/settings.js', 'assets/access.js',
     *[f'assets/reference/styles/{name}.css' for name in
       ['dialogs', 'pixel', 'paper', 'themes', 'topics', 'toys', 'arctic']],
     'assets/compat.css',

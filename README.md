@@ -429,3 +429,15 @@ Biểu tượng sách đầu trang làm bài trở thành nút quay về, thay n
 ## Giữ đúng hình sách gốc trong bộ đề
 
 Khôi phục ảnh sách gốc của từng giao diện bên trong nút quay về, riêng Đảo Pha Lê dùng đúng crystal-book.webp như ảnh chủ dự án chỉ định. Không tạo ảnh sách mới. Giữ kích thước ảnh gốc52px/35px và vùng bấm44px. Kiểm tra11 giao diện ở1440/390/320px: đúng tệp ảnh, tải đầy đủ, bấm/Enter quay về đúng danh sách và giữ bài làm.
+
+## Tự đồng bộ giữa các thiết bị (Firebase)
+
+Mở Cài đặt → Hướng dẫn → Đồng bộ và dữ liệu, kết nối cùng một tài khoản Google trên mỗi thiết bị. Hướng dẫn bật Google Authentication, thêm tên miền và tạo Firestore nằm tại [firebase-setup.html](firebase-setup.html). Chủ dự án phải đăng [firestore.rules](firestore.rules) trong Firebase Console; cấu hình Firebase công khai không cấp quyền quản trị để thực hiện bước này thay chủ dự án.
+
+Đồng bộ: bài làm theo đề/chủ đề, bài tập Tiếng Việt, phân loại chủ đề theo phiên bản reset hiện hành, giao diện. Không đồng bộ: mật khẩu, phiên mở khóa, tìm kiếm, cuộn hoặc thứ tự xem theo tab. Firebase SDK 10.14.1 được giữ cục bộ trong `assets/vendor`, chỉ tải khi dùng đồng bộ. Không thêm bước build hoặc yêu cầu Firebase Hosting.
+
+Mỗi UID Google có collection riêng `users/{uid}/learning`. Giao dịch Firestore gộp thay đổi từng câu theo mã nguồn (kể cả khi thứ tự chủ đề khác nhau); thao tác xóa có dấu mốc để tránh dữ liệu cũ trở lại. Lượt Làm lại có mã riêng. Phân loại là một bản ghi nguyên khối để giữ tham chiếu chủ đề hợp lệ. Dữ liệu cũ được sao lưu cục bộ trước lần kết nối đầu; khi nhận một lượt mới/phân loại thay thế, giữ tối đa20 phiên bản cục bộ để tải trong bản sao dữ liệu. Thiết bị gắn với một UID không tự gửi dữ liệu sang UID khác.
+
+Khi mất mạng, hàng chờ ở localStorage; khi có mạng, tự tiếp tục. Không báo “Đã đồng bộ” trước khi nhận snapshot máy chủ và hoàn tất các giao dịch. Ngắt đồng bộ/đăng xuất giữ bài làm, dừng listener và đăng xuất Google. Các máy phải dùng cùng tài khoản để chia sẻ dữ liệu.
+
+Kiểm tra: `node --test tests/sync-core.test.cjs tests/school-reports.test.cjs tests/classification.test.cjs tests/timo-topics.test.cjs`. Đã kiểm tra SDK thật khởi tạo và mô phỏng hai trình duyệt độc lập: gộp/offline/reload/retry/nộp bài/chỉnh chủ đề/giao diện/tài khoản khác/không gửi khóa mật khẩu; dialog11giao diện tại1440/390/320px. Chưa xác minh đăng nhập Google hoặc quyền đọc/ghi dự án thật trước khi chủ dự án bật các mục trên Console. Quy tắc bảo mật cần được đăng trước khi sử dụng thật.

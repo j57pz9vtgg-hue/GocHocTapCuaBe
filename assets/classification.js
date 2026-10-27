@@ -78,11 +78,12 @@ const TimoClassification=(()=>{
   if(!d.open)d.showModal();else d.scrollTop=0;
  }
  function status(message){const el=getDialog().querySelector('.classification-status');if(el){el.textContent=message;el.focus();}}
- function commit(next){
+ function commit(next,remote=false){
   const value=validate(next),old=saved;
   if(state.practice?.topicId)saveAttempt();
   try{localStorage.setItem(storageKey,JSON.stringify(value));}catch{throw Error('Không lưu được phân loại. Hãy kiểm tra dung lượng hoặc quyền lưu dữ liệu của trình duyệt.');}
   saved=value;hasLocalOverride=true;
+  if(!remote)window.LearningSync?.changed('classification',publishedTimoClassification.resetId||'classification',value);
   if(typeof preserveClassifiedProgress==='function')preserveClassifiedProgress(old,value);
   if(state.practice?.topicId)refreshClassifiedPractice();else renderHome();return value;
  }
@@ -138,5 +139,5 @@ const TimoClassification=(()=>{
   }
  }
  document.addEventListener('click',event=>{const b=event.target.closest('[data-classify-group]');if(b)openReview(b.dataset.classifyGroup);const edit=event.target.closest('[data-edit-classified-topic]');if(edit){trigger=edit;openEditor(edit.dataset.editClassifiedTopic)}});
- return {apply,validate,openReview,buildSharingExport,usesPublished:()=>!hasLocalOverride,snapshot:()=>JSON.parse(JSON.stringify(saved))};
+ return {apply,validate,openReview,buildSharingExport,acceptSynced:value=>commit(value,true),usesPublished:()=>!hasLocalOverride,snapshot:()=>JSON.parse(JSON.stringify(saved))};
 })();

@@ -1034,8 +1034,8 @@ function readSchoolExerciseDraft(id){
 }
 function saveSchoolExerciseDraft(dialog){
  const inputs=[...dialog.querySelectorAll('[data-school-blank]')],choices=[...dialog.querySelectorAll('[data-school-choice]')];
- const draft={blanks:inputs.map(el=>el.value),choices:choices.map(el=>el.checked)};
- try{localStorage.setItem(schoolExerciseStorageKey(dialog.dataset.lessonId),JSON.stringify(draft));dialog.querySelector('[data-school-save-status]').textContent='Đã lưu bài làm trên thiết bị này.';}catch{dialog.querySelector('[data-school-save-status]').textContent='Trình duyệt chưa lưu được bài làm. Hãy giữ cửa sổ này để tiếp tục.';}
+ const draft={blanks:inputs.map(el=>el.value),choices:choices.map(el=>el.checked),updatedAt:Date.now()};
+ try{localStorage.setItem(schoolExerciseStorageKey(dialog.dataset.lessonId),JSON.stringify(draft));window.LearningSync?.changed('worksheet',dialog.dataset.lessonId,draft);dialog.querySelector('[data-school-save-status]').textContent='Đã lưu bài làm trên thiết bị này.';}catch{dialog.querySelector('[data-school-save-status]').textContent='Trình duyệt chưa lưu được bài làm. Hãy giữ cửa sổ này để tiếp tục.';}
  return draft;
 }
 function renderSchoolWorksheet(entry){

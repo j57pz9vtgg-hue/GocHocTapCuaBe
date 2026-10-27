@@ -653,3 +653,6 @@
 .school-lesson43 .school-lesson-art-4{background-size:192.870201% 399.731903%;background-position:1.181102% 64.311270%;aspect-ratio:547/373}
 .school-lesson43 .school-lesson-art-5{background-size:217.078189% 399.731903%;background-position:98.945518% 64.311270%;aspect-ratio:486/373}
 .school-lesson43 .school-lesson-art-6{background-size:192.870201% 390.314136%;background-position:1.181102% 99.368801%;aspect-ratio:547/382}
+
+#local-data{width:min(600px,calc(100vw - 24px));max-height:calc(100dvh - 32px);overflow:auto;box-sizing:border-box;padding:24px;color:var(--text,#233547)}
+#learning-sync-panel{padding:4px 0 18px}#learning-sync-panel p{line-height:1.6;overflow-wrap:anywhere}.sync-status{background:#edf6ff;padding:12px;border-radius:8px;color:#173c60}.sync-account{font-weight:700}.sync-actions{display:flex;gap:10px;flex-wrap:wrap}.sync-actions button{min-height:44px;white-space:normal}#learning-sync-panel a{display:inline-block;min-height:24px;line-height:1.5}#local-data hr{border:0;border-top:1px solid #cedce8;margin:12px 0 20px}#local-data>.dialog-close{float:right}#local-data>h2{padding-right:32px}
