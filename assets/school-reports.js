@@ -969,7 +969,7 @@ const schoolGeneralActivities = [
 ];
 function getSchoolReports(grade,subject,query='',week='Tất cả các tuần'){
  const normalize=v=>String(v).normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[đĐ]/g,'d').toLowerCase(),search=normalize(query.trim());
- return schoolReports.filter(r=>String(r.grade)===String(grade)&&(week==='Tất cả các tuần'||r.title===week)).map(report=>({...report,entries:report.entries.filter(e=>e.subject===subject&&(!search||normalize(JSON.stringify(e)+' '+report.title).includes(search)))})).filter(r=>r.entries.length||(r.layout==='table'&&r.subject===subject&&!search));
+ return schoolReports.filter(r=>String(r.grade)===String(grade)&&(week==='Tất cả các tuần'||r.title===week)).map(report=>({...report,entries:report.entries.filter(e=>e.subject===subject&&!normalize(e.title).includes('tham gia le hoi')&&(!search||normalize(JSON.stringify(e)+' '+report.title).includes(search)))})).filter(r=>r.entries.length||(r.layout==='table'&&r.subject===subject&&!search));
 }
 function compareSchoolEntryDates(a,b){return a.date.localeCompare(b.date)||(parseInt(a.periods,10)||0)-(parseInt(b.periods,10)||0);}
 function getSchoolReportEntries(grade,subject,query='',week='Tất cả các tuần'){

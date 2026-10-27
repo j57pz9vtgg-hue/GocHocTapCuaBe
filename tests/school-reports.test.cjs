@@ -100,3 +100,15 @@ test('all-weeks lessons are ordered oldest first and same-day lessons by their f
  const vietnamese=Array.from(api.getSchoolReportEntries('1','Tiếng Việt'));assert.equal(vietnamese[0].id,'tieng-viet-2026-10-19');assert.equal(vietnamese.at(-1).id,'tieng-viet-2026-10-29');assert.ok(vietnamese.findIndex(e=>e.id==='tieng-viet-2026-10-21-a')<vietnamese.findIndex(e=>e.id==='tieng-viet-2026-10-21-b'));
  assert.equal(JSON.stringify(api.schoolReports),before);assert.equal(api.getSchoolReportEntries('1','Tiếng Việt','Halloween').length,0);assert.equal(api.getSchoolReportEntries('2','Tiếng Việt').length,0);
 });
+
+test('participating in festivals is excluded even when supplied inside a named subject row',()=>{
+ const report=api.schoolReports.find(r=>r.subject==='Tiếng Việt'&&r.start==='2026-10-26');
+ const entry={id:'qa-festival',date:'2026-10-30',day:'Thứ Sáu',periods:'7,8',subject:'Tiếng Việt',title:'HS THAM GIA LỄ HỘI HALLOWEEN',sections:[],preparation:[]};
+ report.entries.push(entry);
+ try{
+  for(const week of [newWeek,'Tất cả các tuần']){
+   assert.ok(api.getSchoolReportEntries('1','Tiếng Việt','',week).every(e=>e.id!==entry.id));
+   assert.equal(api.getSchoolReportEntries('1','Tiếng Việt','Halloween',week).length,0);
+  }
+ }finally{report.entries.pop();}
+});
