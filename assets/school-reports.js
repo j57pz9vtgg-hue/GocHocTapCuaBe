@@ -1046,6 +1046,13 @@ function renderSchoolWorksheet(entry){
 }
 // Lesson 36, pages84–85, transcribed from the owner's two textbook pages.
 const schoolLessonContents={
+ 'tieng-viet-2026-10-26':{
+  number:41,pages:'94–95',sounds:['ui','ưi'],recognition:'Bà gửi cho Hà túi kẹo.',
+  blend:{initial:'t',sound:'ui',word:'túi'},words:['bùi','mũi','sủi','củi','gửi','ngửi'],pictureWords:['dãy núi','bụi cỏ','gửi thư'],
+  writing:['ui ưi','dãy núi gửi thư'],
+  reading:['Lan gửi thư cho Hà kể về quê Lan. Ở đó, có nhà sàn nằm ven đồi.','Mùa này, chim ca rộn rã, sim nở rộ tím cả núi đồi.','Lan mời Hà lên thăm quê Lan.'],speaking:'Xin phép',
+  artLabels:['Hà ăn kẹo, nghĩ đến bà gửi túi kẹo; bên cạnh có điện thoại và lịch','Dãy núi','Bụi cỏ','Bạn nhỏ gửi thư vào hòm thư','Lan giữa núi đồi, nhà sàn, hoa sim và chim bay','Bạn nhỏ xin phép mẹ ra chơi cùng hai bạn ở cổng']
+ },
  'tieng-viet-2026-10-19':{
   sounds:['om','ôm','ơm'],recognition:'Hương cốm thơm thôn xóm.',
   blend:{initial:'x',sound:'om',word:'xóm'},
