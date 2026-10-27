@@ -105,7 +105,6 @@ function renderHome(){
  app.innerHTML=`<a class="skip-link" href="#main-content">Đến nội dung chính</a>${renderReferenceHeader()}<main id="main-content" class="page-content"><section class="exercise-section" aria-labelledby="catalog-title"><h2 id="catalog-title" class="visually-hidden">${title}</h2>${state.program==='Báo bài của trường'?renderSchoolReports():isTimoTopics?renderTimoTopics():papers.length?`<div class="exercise-grid">${papers.map(renderReferenceCard).join('')}</div>`:!state.search.trim()?`<div class="empty-state">${icon('book',38)}<h3>Chưa có đề chính thức</h3></div>`:`<div class="empty-state">${icon('book',38)}<h3>Chưa tìm thấy bài tập</h3><p>Thử từ khóa khác hoặc chọn lại nội dung luyện tập.</p><button class="primary-button" data-action="clear-search">Xóa tìm kiếm ${icon('arrow',18)}</button></div>`}</section></main><footer class="world-footer" aria-hidden="true"><img src="${publicAsset('pixel-ground')}" alt=""></footer>`;
  // Anchor shared tools to the masthead, independent of theme-specific header wrappers.
  app.querySelector(".catalog-masthead").append(app.querySelector(".header-tools"));
- watchSchoolMasthead();
  saveCurrentView();
 }
 // Per-tab navigation state stores references, never a copy of the exam or passwords.
@@ -129,7 +128,7 @@ function saveCurrentView(){
   if(index>=0)record.anchor={id:viewQuestionIds(p)[index],top:app.querySelectorAll('.paper-question')[index].getBoundingClientRect().top};
  }
  if(introDialog.open&&pendingPaper)record.intro=viewSelection(pendingPaper);
- if(state.program==='Báo bài của trường'&&schoolReportSelection){record.schoolReportSelection={...schoolReportSelection};record.schoolReportScroll=app.querySelector('#school-report-content')?.scrollTop||0;}
+ if(state.program==='Báo bài của trường'&&schoolReportSelection)record.schoolReportSelection={...schoolReportSelection};
  if(settings.open)record.settings={tab:settings.querySelector('[aria-selected="true"]')?.dataset.settingsTab,scroll:settings.scrollTop};
  try{sessionStorage.setItem(currentViewKey,JSON.stringify(record));}catch{}
 }
@@ -167,7 +166,7 @@ async function restoreCurrentView(){
   if(state.submitted)state.practice.finishedAt=Number.isFinite(saved.finishedAt)?Math.max(state.practice.startedAt,saved.finishedAt):state.practice.startedAt;
   renderPractice();saveAttempt();
  }else{state.practice=null;renderHome();}
- if(state.program==='Báo bài của trường'&&!state.practice){const selected=record.schoolReportSelection||(record.schoolExerciseId?{id:record.schoolExerciseId,kind:'exercises'}:null);if(selected){activateSchoolReport(selected.id,selected.kind,false);const panel=app.querySelector('#school-report-content');if(panel&&Number.isFinite(record.schoolReportScroll))panel.scrollTop=record.schoolReportScroll;}}
+ if(state.program==='Báo bài của trường'&&!state.practice){const selected=record.schoolReportSelection||(record.schoolExerciseId?{id:record.schoolExerciseId,kind:'exercises'}:null);if(selected)activateSchoolReport(selected.id,selected.kind,false);}
  const intro=selectionFromView(record.intro);if(intro&&!state.practice)showPracticeIntro(intro);
  if(record.settings&&!state.practice){app.querySelector('[data-action="settings"]')?.click();document.querySelector(`#settings [data-settings-tab="${['appearance','password','guide'].includes(record.settings.tab)?record.settings.tab:'appearance'}"]`)?.click();}
  // Restore after fonts and diagrams settle, and only after the access gate has opened.

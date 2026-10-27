@@ -241,3 +241,5 @@ Yêu cầu27/10 ghimdanhsáchtrái khiđọcnộidungphải: desktop>=761 nộid
 Yêu cầu27/10 làmnhạttôngmáytínhbớtchóimắt: chỉdesktop/tablet>=761, nútXembàihọc/Làmbàitập vànhãnthứ/ngàycủacộtbáobàidùngpasteltheopalette11giao diện, chữđậm tối tươngứng. Arctic/Toystừcamrực sangffddb8/f5c18d chữ633609, Bunnycamnhạtvàngấmnhãnxanhlá,Crystalxanhpastel,cácgiao diệnkhácgiữsắcriêngnhẹhơn. Điệnthoạigiữmàucũ. Kiểmtra11themesdesktop/tablet/mobile, độ tươngphảnchữnútvànhãn>=4.5,cả2đầugradient;6ô/2nút/nộidung vàcuộnphảighimtráigiữnguyên.
 
 Chủdựán yêu cầu quaylạibảncũ ngay sauđổimàupastel: bỏtoànbộCSSpastelcủad10cbee, khôiphụcmàunút/nhãnnhưa425678. GiữkhungA4 vàcuộnriêngphảighimdanhsáchtrái,khôngxóadữliệunộidung/bàilàm. Yêucầunàythaychỉđịnhlàmnhạtmàudesktoptrướđó.
+
+Chủdựánlàmrõquaylạitrướcyêucầughimdanhsáchbêntrái: khôiphụcbaseline3f46714 (A4) choapp.js/compat.css/school-reports.js, bỏcuộnriêngpanelphải/offsetResizeObserver/recordschoolReportScroll vàmàupastel. Khôiphụccuộntrangtựnhiênnhưtrướcyêucầu,giữ20báobài,bàihọc36/bàitập/hình/dữliệucâuhỏi vànamespacebàilàmcũ. Yêucầunàythaycácyêucầughim/pasteltrướđó.
