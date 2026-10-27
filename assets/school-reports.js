@@ -568,7 +568,7 @@ document.addEventListener('click',event=>{
 document.addEventListener('input',event=>{if(event.target.matches('[data-school-blank],[data-school-choice]')){const panel=event.target.closest('#school-report-content');if(panel)saveSchoolExerciseDraft(panel);}});
 // Exercise text transcribed from the owner's worksheet. No answer key has been supplied.
 const schoolExerciseWorksheets={
- 'tieng-viet-2026-10-19':{
+ 'tieng-viet-2026-10-23':{
   sounds:['om','ôm','ơm','em','êm','im','um','ai','ay','ây','oi','ôi','ơi'],
   words:[['khom','tôm','cơm','kem','nệm','chai','tay','môi'],['mới','may','bờm','đêm','chum','bay','xây','chơi']],
   phrases:[['lom khom','mềm mại','bơi lội','gối xôi'],['quả thơm','êm đềm','xóm nhỏ','bơm xe']],
@@ -578,7 +578,16 @@ const schoolExerciseWorksheets={
  }
 };
 function schoolExerciseStorageKey(id){return 'goc-hoc-tap.school-exercise.v1.'+id;}
-function readSchoolExerciseDraft(id){try{return JSON.parse(localStorage.getItem(schoolExerciseStorageKey(id))||'{}')||{};}catch{return {};}}
+function readSchoolExerciseDraft(id){
+ try{
+  const key=schoolExerciseStorageKey(id);let raw=localStorage.getItem(key);
+  if(raw===null&&id==='tieng-viet-2026-10-23'){
+   raw=localStorage.getItem(schoolExerciseStorageKey('tieng-viet-2026-10-19'));
+   if(raw!==null){JSON.parse(raw);try{localStorage.setItem(key,raw);}catch{}}
+  }
+  return JSON.parse(raw||'{}')||{};
+ }catch{return {};}
+}
 function saveSchoolExerciseDraft(dialog){
  const inputs=[...dialog.querySelectorAll('[data-school-blank]')],choices=[...dialog.querySelectorAll('[data-school-choice]')];
  const draft={blanks:inputs.map(el=>el.value),choices:choices.map(el=>el.checked)};

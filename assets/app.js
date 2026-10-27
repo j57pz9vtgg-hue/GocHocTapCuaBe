@@ -166,7 +166,7 @@ async function restoreCurrentView(){
   if(state.submitted)state.practice.finishedAt=Number.isFinite(saved.finishedAt)?Math.max(state.practice.startedAt,saved.finishedAt):state.practice.startedAt;
   renderPractice();saveAttempt();
  }else{state.practice=null;renderHome();}
- if(state.program==='Báo bài của trường'&&!state.practice){const selected=record.schoolReportSelection||(record.schoolExerciseId?{id:record.schoolExerciseId,kind:'exercises'}:null);if(selected)activateSchoolReport(selected.id,selected.kind,false);}
+ if(state.program==='Báo bài của trường'&&!state.practice){const selected=record.schoolReportSelection||(record.schoolExerciseId?{id:record.schoolExerciseId,kind:'exercises'}:null);if(selected){const id=selected.kind==='exercises'&&selected.id==='tieng-viet-2026-10-19'?'tieng-viet-2026-10-23':selected.id;activateSchoolReport(id,selected.kind,false);}}
  const intro=selectionFromView(record.intro);if(intro&&!state.practice)showPracticeIntro(intro);
  if(record.settings&&!state.practice){app.querySelector('[data-action="settings"]')?.click();document.querySelector(`#settings [data-settings-tab="${['appearance','password','guide'].includes(record.settings.tab)?record.settings.tab:'appearance'}"]`)?.click();}
  // Restore after fonts and diagrams settle, and only after the access gate has opened.

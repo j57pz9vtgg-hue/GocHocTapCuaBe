@@ -1,5 +1,5 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
-const context={document:{addEventListener(){}}};vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/data.js'),'utf8')+'\n'+fs.readFileSync(path.join(__dirname,'../assets/school-reports.js'),'utf8')+'\nglobalThis.api={schoolReports,getSchoolReports,getSubjects,getModes,officialPapers,schoolExerciseWorksheets,schoolLessonContents};',context);const api=context.api;
+const context={document:{addEventListener(){}}};vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/data.js'),'utf8')+'\n'+fs.readFileSync(path.join(__dirname,'../assets/school-reports.js'),'utf8')+'\nglobalThis.api={schoolReports,getSchoolReports,getSubjects,getModes,officialPapers,schoolExerciseWorksheets,schoolLessonContents,readSchoolExerciseDraft,schoolExerciseStorageKey};',context);const api=context.api;
 test('removed weekly report has no lessons or selectable week for any subject',()=>{
  assert.equal(api.schoolReports.some(r=>r.start==='2026-10-26'),false);
  for(const subject of api.getSubjects('Báo bài của trường')){
@@ -24,8 +24,8 @@ test('other subjects use the same table and only supplied Monday lessons are add
 });
 
 test('owner Vietnamese worksheet is attached only to the matching lesson without invented keys',()=>{
- const sheets=api.schoolExerciseWorksheets;assert.deepEqual(Object.keys(sheets),['tieng-viet-2026-10-19']);
- const w=sheets['tieng-viet-2026-10-19'];assert.deepEqual(Array.from(w.sounds),['om','ôm','ơm','em','êm','im','um','ai','ay','ây','oi','ôi','ơi']);
+ const sheets=api.schoolExerciseWorksheets;assert.deepEqual(Object.keys(sheets),['tieng-viet-2026-10-23']);
+ const w=sheets['tieng-viet-2026-10-23'];assert.deepEqual(Array.from(w.sounds),['om','ôm','ơm','em','êm','im','um','ai','ay','ây','oi','ôi','ơi']);
  assert.equal(w.blanks.length,4);assert.equal(w.choices.length,2);assert.equal(w.reading.length,2);
  assert.equal(w.words[1][4],'chum');assert.equal(w.phrases[0][3],'gối xôi');
  assert.equal(w.choices[1][0],'Hải và Hà đi máy bay.');assert.equal('answer' in w,false);assert.equal('answers' in w,false);
@@ -49,11 +49,20 @@ test('remaining three days preserve all supplied subjects, split-page content an
  assert.equal(all.find(e=>e.id==='global-2026-10-23').preparation[0],'LB: 46-49');
  assert.equal(all.find(e=>e.id==='tieng-viet-2026-10-23').title,'Thực hành');
  for(const r of api.schoolReports)assert.ok(r.entries.every(e=>e.subject===r.subject));
- assert.deepEqual(Object.keys(api.schoolExerciseWorksheets),['tieng-viet-2026-10-19']);
+ assert.deepEqual(Object.keys(api.schoolExerciseWorksheets),['tieng-viet-2026-10-23']);
 });
 
 test('Lesson36 matches the two supplied textbook pages without invented explanations or exercises',()=>{
  const lessons=api.schoolLessonContents;assert.deepEqual(Object.keys(lessons),['tieng-viet-2026-10-19']);const l=lessons['tieng-viet-2026-10-19'];
  assert.equal(l.recognition,'Hương cốm thơm thôn xóm.');assert.equal(l.blend.word,'xóm');assert.equal(l.words.length,6);assert.deepEqual(Array.from(l.pictureWords),['đom đóm','chó đốm','mâm cơm']);
  assert.equal(l.reading.join(' '),'Hôm qua, cô Mơ ở xóm Hạ đến thăm nhà Hà. Cô cho Hà giỏ cam. Hà chọn quả cam to phần bố. Mẹ khen và thơm lên má Hà.');assert.equal(l.speaking,'Xin lỗi');assert.equal(l.writing[1],'chó đốm mâm cơm');assert.equal('answers' in l,false);
+});
+
+test('moving the worksheet copies saved answers once and preserves subsequent Friday edits',()=>{
+ const values=new Map(),old=api.schoolExerciseStorageKey('tieng-viet-2026-10-19'),next=api.schoolExerciseStorageKey('tieng-viet-2026-10-23');
+ context.localStorage={getItem:k=>values.get(k)??null,setItem:(k,v)=>values.set(k,v)};
+ const original={blanks:['ai','','ay',''],choices:[false,true,true,false]};values.set(old,JSON.stringify(original));
+ assert.deepEqual(JSON.parse(JSON.stringify(api.readSchoolExerciseDraft('tieng-viet-2026-10-23'))),original);assert.equal(values.get(next),values.get(old));
+ values.set(next,JSON.stringify({blanks:['mới'],choices:[]}));assert.equal(api.readSchoolExerciseDraft('tieng-viet-2026-10-23').blanks[0],'mới');assert.equal(values.get(old),JSON.stringify(original));
+ assert.equal(api.schoolExerciseWorksheets['tieng-viet-2026-10-19'],undefined);assert.ok(api.schoolLessonContents['tieng-viet-2026-10-19']);
 });
