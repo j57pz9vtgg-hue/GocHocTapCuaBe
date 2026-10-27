@@ -553,7 +553,7 @@ function activateSchoolReport(id,kind,focus=true){
  if(state.program!=='Báo bài của trường')return;
  const entry=getSchoolReports(state.grade,state.subject,state.search,state.mode).flatMap(r=>r.entries).find(e=>e.id===id),panel=document.querySelector('#school-report-content');
  if(!entry||!panel||!['lesson','exercises'].includes(kind))return;
- schoolReportSelection={id,kind};panel.dataset.lessonId=id;panel.innerHTML=renderSchoolReportContent(entry,kind);
+ schoolReportSelection={id,kind};panel.dataset.lessonId=id;panel.innerHTML=renderSchoolReportContent(entry,kind);panel.scrollTop=0;
  document.querySelectorAll('[data-school-card]').forEach(card=>{const selected=card.dataset.schoolCard===id;card.classList.toggle('school-card-selected',selected);card.querySelector('[data-school-lesson]').setAttribute('aria-pressed',String(selected&&kind==='lesson'));card.querySelector('[data-school-exercises]').setAttribute('aria-pressed',String(selected&&kind==='exercises'));});
  if(focus){if(matchMedia('(max-width:760px)').matches)panel.scrollIntoView({block:'start'});panel.querySelector('h2')?.focus({preventScroll:true});}
  saveCurrentView();
@@ -604,4 +604,13 @@ const schoolLessonContents={
 function renderSchoolLessonContent(entry){
  const lesson=schoolLessonContents[entry.id],art=(index,label)=>`<span class="school-lesson-art school-lesson-art-${index}" role="img" aria-label="${escapeHTML(label)}"></span>`;
  return `<article class="school-lesson36"><div class="school-lesson-sounds">${lesson.sounds.map(sound=>`<span>${sound}</span>`).join('')}</div><section aria-labelledby="school-recognition"><h3 id="school-recognition"><span>1</span> Nhận biết</h3>${art(0,'Bà và em bé bên những mẹt cốm và lá sen trong sân nhà')}<p class="school-lesson-recognition">${escapeHTML(lesson.recognition)}</p></section><section aria-labelledby="school-read-words"><h3 id="school-read-words"><span>2</span> Đọc</h3><div class="school-lesson-phonics"><p>${lesson.sounds.map(sound=>`<span>${sound}</span>`).join('')}</p><div class="school-lesson-blend"><span>${lesson.blend.initial}</span><span>${lesson.blend.sound}</span><strong>${lesson.blend.word}</strong></div><div class="school-lesson-wordlist">${lesson.words.map(word=>`<span>${word}</span>`).join('')}</div><div class="school-lesson-picturewords">${lesson.pictureWords.map((word,i)=>`<figure>${art([1,2,3][i],word)}<figcaption>${word}</figcaption></figure>`).join('')}</div></div></section><section aria-labelledby="school-writing"><h3 id="school-writing"><span>3</span> Viết</h3><div class="school-writing-model">${lesson.writing.map(line=>`<p>${escapeHTML(line)}</p>`).join('')}</div></section><section aria-labelledby="school-read-passage"><h3 id="school-read-passage"><span>4</span> Đọc</h3>${art(4,'Cô Mơ trao giỏ cam cho Hà trước hiên nhà')}<div class="school-lesson-passage">${lesson.reading.map(line=>`<p>${escapeHTML(line)}</p>`).join('')}</div></section><section aria-labelledby="school-speaking"><h3 id="school-speaking"><span>5</span> Nói</h3><p class="school-speaking-topic">${escapeHTML(lesson.speaking)}</p>${art(5,'Bạn nhỏ đá bóng trong nhà làm lọ hoa đổ, mẹ đứng ở cửa')}</section><footer>Trang 84–85</footer></article>`;
+}
+// Offset sticky lesson navigation below the catalog's pinned banner and filters.
+let schoolMastheadObserver=null;
+function watchSchoolMasthead(){
+ schoolMastheadObserver?.disconnect();schoolMastheadObserver=null;
+ const workspace=document.querySelector('.school-report-workspace'),masthead=document.querySelector('.catalog-masthead');if(!workspace||!masthead)return;
+ const update=()=>workspace.style.setProperty('--school-masthead-height',masthead.getBoundingClientRect().height+'px');update();
+ schoolMastheadObserver=new ResizeObserver(update);schoolMastheadObserver.observe(masthead);
+ document.querySelector('#school-report-content')?.addEventListener('scroll',()=>saveCurrentView(),{passive:true});
 }

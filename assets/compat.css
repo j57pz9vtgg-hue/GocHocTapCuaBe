@@ -593,3 +593,10 @@
 .school-report-content{width:100%;max-width:210mm;justify-self:center}
 .school-report-content:has(.school-exercise-paper){min-height:297mm}
 @media(max-width:760px){.school-report-content:has(.school-exercise-paper){min-height:0}}
+/* Keep lesson navigation pinned while reading the long right-hand content. */
+@media(min-width:761px){#site-shell .school-report-sidebar{position:sticky;align-self:start;top:calc(var(--school-masthead-height,0px) + 12px);max-height:calc(100dvh - var(--school-masthead-height,0px) - 24px);overscroll-behavior-y:contain;z-index:2}}
+@media(min-width:761px){
+ .school-report-content{max-height:calc(100dvh - var(--school-masthead-height,0px) - 24px);overflow-y:auto;overscroll-behavior-y:contain}
+ .school-report-content:has(.school-exercise-paper){min-height:0}
+ .school-report-content .school-exercise-paper{min-height:297mm}
+}
