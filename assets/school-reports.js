@@ -25,7 +25,7 @@ const schoolReports = [
       "day": "Thứ Năm",
       "periods": "",
       "subject": "MATHEMATICS",
-      "title": "Bài 5",
+      "title": "Bài 5: Multiplication and division",
       "sections": [],
       "preparation": []
     }
