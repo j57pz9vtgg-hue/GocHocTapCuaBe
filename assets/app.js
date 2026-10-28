@@ -105,6 +105,7 @@ function renderHome(){
  app.innerHTML=`<a class="skip-link" href="#main-content">Đến nội dung chính</a>${renderReferenceHeader()}<main id="main-content" class="page-content"><section class="exercise-section" aria-labelledby="catalog-title"><h2 id="catalog-title" class="visually-hidden">${title}</h2>${state.program==='Báo bài của trường'?renderSchoolReports():isTimoTopics?renderTimoTopics():papers.length?`<div class="exercise-grid">${papers.map(renderReferenceCard).join('')}</div>`:!state.search.trim()?`<div class="empty-state">${icon('book',38)}<h3>Chưa có đề chính thức</h3></div>`:`<div class="empty-state">${icon('book',38)}<h3>Chưa tìm thấy bài tập</h3><p>Thử từ khóa khác hoặc chọn lại nội dung luyện tập.</p><button class="primary-button" data-action="clear-search">Xóa tìm kiếm ${icon('arrow',18)}</button></div>`}</section></main><footer class="world-footer" aria-hidden="true"><img src="${publicAsset('pixel-ground')}" alt=""></footer>`;
  // Anchor shared tools to the masthead, independent of theme-specific header wrappers.
  app.querySelector(".catalog-masthead").append(app.querySelector(".header-tools"));
+ restoreSchoolMathCompletion();
  saveCurrentView();
 }
 // Per-tab navigation state stores references, never a copy of the exam or passwords.

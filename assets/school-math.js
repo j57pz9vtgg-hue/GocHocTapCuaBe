@@ -46,7 +46,7 @@ function mathInkPaths(strokes){return (strokes||[]).map(points=>`<path d="${poin
 function mathInput(d,key,label,numeric=false){return `<input type="text" class="math-answer" data-math-answer="${key}" aria-label="${escapeHTML(label)}" maxlength="${numeric?5:160}" ${numeric?'inputmode="numeric"':''} autocomplete="off" value="${escapeHTML(d.answers[key]||'')}">`;}
 function mathText(d,key,label,rows=3){return `<textarea class="math-response" data-math-answer="${key}" aria-label="${escapeHTML(label)}" rows="${rows}" maxlength="2000">${escapeHTML(d.answers[key]||'')}</textarea>`;}
 function mathPad(d,key,label,trace){return `<div class="math-drawing"><svg class="math-ink-pad" data-math-pad="${key}" viewBox="0 0 500 260" role="img" aria-label="${escapeHTML(label)}"><rect x="1" y="1" width="498" height="258" rx="10" fill="white" stroke="#888" stroke-width="1"/>${trace?`<svg x="120" y="20" width="260" height="220" viewBox="0 0 170 125" aria-hidden="true"><g fill="none" stroke="#888" stroke-width="1.3" stroke-dasharray="4 3">${schoolMathShapeContent(trace)}</g></svg>`:''}<g class="math-ink-strokes">${mathInkPaths(d.drawings[key])}</g></svg><div class="math-draw-tools"><span>${escapeHTML(label)}</span><button type="button" data-math-undo="${key}" aria-label="Undo drawing: ${escapeHTML(label)}">Undo</button><button type="button" data-math-clear="${key}" aria-label="Clear drawing: ${escapeHTML(label)}">Clear</button></div></div>`;}
-function mathQuestion(n,title,body){return `<section class="math-question" data-math-question="${n}"><h4><span>${String(n).split('-').pop()}</span> ${title}</h4>${body}</section>`;}
+function mathQuestion(n,title,body){return `<section class="math-question" data-math-question="${n}"><div class="math-question-body"><h4><span>${String(n).split('-').pop()}</span> ${title}</h4>${body}</div><aside class="math-question-feedback" aria-label="Đáp án tham khảo câu ${String(n).split('-').pop()}" hidden></aside></section>`;}
 function mathShapeGrid(d,prefix,shapes,ring=false){return `<div class="math-shape-grid">${shapes.map((type,i)=>{const letter=String.fromCharCode(97+i),key=prefix+'-'+letter;return `<div class="math-shape-item"><span class="math-item-letter">${letter}</span>${ring?`<button type="button" class="math-ring-shape ${d.answers[key+'-ring']?'is-ringed':''}" data-math-toggle="${key}-ring" aria-label="Ring shape ${letter}" aria-pressed="${d.answers[key+'-ring']===true}">${schoolMathShape(type,'Shape '+letter)}</button>`:schoolMathShape(type,'Shape '+letter)}${mathInput(d,key+'-name','Name of shape '+letter)}</div>`;}).join('')}</div>`;}
 function renderSchoolMath4(d){
  const worked=['pyramid4','cylinder','pyramid6','football','pyramid6','cube'],model=answered=>`<div class="math-worked-shapes">${worked.map((type,i)=>`<figure><span>${'abcdef'[i]}</span><div class="${answered&&[1,3,5].includes(i)?'math-worked-ring':''}">${schoolMathShape(type,'Worked example shape '+'abcdef'[i])}</div></figure>`).join('')}</div>`;
@@ -109,12 +109,14 @@ function schoolMathGrade(id,draft){
  return {...rule,status};});
 }
 function applySchoolMathCompletion(panel,draft){
- let box=panel.querySelector('.math-completion');if(!box){box=document.createElement('div');box.className='math-completion';box.tabIndex=-1;box.setAttribute('role','status');panel.querySelector('.math-input-help').after(box);}
+ let box=panel.querySelector('.math-completion');if(!box){box=document.createElement('div');box.className='math-completion';box.tabIndex=-1;box.setAttribute('role','status');panel.querySelector('footer').prepend(box);}
  panel.querySelectorAll('.math-graded-correct,.math-graded-wrong,.math-graded-blank').forEach(el=>{el.classList.remove('math-graded-correct','math-graded-wrong','math-graded-blank');el.removeAttribute('aria-invalid');});
+ panel.querySelectorAll('.math-question-feedback').forEach(el=>{el.hidden=true;el.innerHTML='';el.closest('.math-question').classList.remove('has-math-feedback');});
  box.hidden=!draft.completedAt;if(!draft.completedAt){box.innerHTML='';return;}
  const results=schoolMathGrade(panel.dataset.mathWorksheet,draft),auto=results.filter(r=>r.status!=='review'),correct=auto.filter(r=>r.status==='correct').length,wrong=auto.filter(r=>r.status==='wrong').length,blank=auto.filter(r=>r.status==='blank').length,reviews=results.filter(r=>r.status==='review');
  const title=correct===auto.length?'Bé làm đúng toàn bộ phần chấm tự động.':'Bé đã hoàn thành. Hãy xem lại những phần chưa đúng.';
- box.innerHTML=`<strong>${title}</strong><p><strong>Điểm phần chấm tự động: ${(auto.length?correct/auto.length*10:0).toFixed(1)}/10</strong></p><p>Đúng: ${correct}/${auto.length} · Sai: ${wrong} · Chưa làm: ${blank}</p><p class="math-result-review">${reviews.length} nội dung vẽ hoặc giải thích mở cần phụ huynh kiểm tra. Kết quả trên chỉ tính phần chấm tự động.</p><details><summary>Kết quả từng câu</summary><ul class="math-result-list">${results.map(r=>`<li class="math-result-${r.status}">${escapeHTML(r.label)}: <strong>${{correct:'Đúng',wrong:'Sai',blank:'Chưa làm',review:'Chờ phụ huynh kiểm tra'}[r.status]}</strong></li>`).join('')}</ul></details><p class="math-input-help">Đáp án tự chấm là đáp án tham khảo, chưa có đáp án chính thức của sách.</p>`;
+ box.innerHTML=`<strong>${title}</strong><p><strong>Điểm phần chấm tự động: ${(auto.length?correct/auto.length*10:0).toFixed(1)}/10</strong></p><p>Đúng: ${correct}/${auto.length} · Sai: ${wrong} · Chưa làm: ${blank}</p><p class="math-result-review">${reviews.length} nội dung vẽ hoặc giải thích mở cần phụ huynh kiểm tra. Kết quả trên chỉ tính phần chấm tự động.</p><p class="math-input-help">Đáp án tự chấm là đáp án tham khảo, chưa có đáp án chính thức của sách.</p>`;
+ renderSchoolMathQuestionFeedback(panel,results);
  for(const r of auto)if(r.kind==='flags'){for(const key of r.fields){const el=panel.querySelector(`[data-math-toggle="${key}"]`);if(!el)continue;const selected=draft.answers[key]===true,expected=r.expected.includes(key);if(selected||expected){const cls=selected===expected?'correct':selected?'wrong':'blank';el.classList.add('math-graded-'+cls);if(cls!=='correct')el.setAttribute('aria-invalid','true');}}}
  for(const r of auto)if(r.kind!=='flags')for(const key of r.fields){const el=panel.querySelector(`[data-math-answer="${key}"]`);if(el){el.classList.add('math-graded-'+r.status);if(r.status!=='correct')el.setAttribute('aria-invalid','true');}}
 }
@@ -196,19 +198,19 @@ function mathIsProduct(value,a,b){const f=mathParseFact(value);return !!f&&f.op=
 function mathFactsIn(value){return (String(value??'').match(/\d+\s*[×x*÷/:+−-]\s*\d+\s*=\s*\d+|\d+\s*=\s*\d+\s*[×x*÷/:+−-]\s*\d+/g)||[]);}
 function mathLength(value,expected,unit){const s=String(value??'').trim().toLowerCase(),m=s.match(/^([+]?[0-9]+(?:\.[0-9]+)?)\s*(cm|mm|m|centimetres?|centimeters?|metres?|meters?)?$/);if(!m)return false;const scales={cm:1,mm:0.1,m:100},u=m[2]?m[2].startsWith('cent')?'cm':m[2].startsWith('met')?'m':m[2]:unit;return Math.abs(Number(m[1])*scales[u]-expected*scales[unit])<1e-8;}
 function schoolMath5Rubric(){
- const r=[],one=(key,label,expected)=>r.push({key,label,fields:[key],expected}),custom=(key,label,check,fields=[key])=>r.push({key,label,fields,check}),review=(key,label,draw=false)=>r.push({key,label,fields:[key],kind:'review',draw}),product=(key,label,a,b)=>custom(key,label,v=>mathIsProduct(v[0],a,b)),total=(key,label,a,b,unit)=>custom(key,label,v=>{if(mathLength(v[0],a*b,unit))return true;const fact=mathParseFact(v[0]);if(!mathIsProduct(v[0],a,b)||!fact)return false;const suffix=String(v[0]).trim().match(/(?:cm|mm|m|centimetres?|centimeters?|metres?|meters?)$/i);return !suffix||mathLength(fact.result+suffix[0],a*b,unit);}),seq=(key,label,values)=>values.forEach((v,i)=>one(key+'-'+i,label+' · '+(i+1),v));
+ const r=[],one=(key,label,expected)=>r.push({key,label,fields:[key],expected}),custom=(key,label,check,fields=[key],answer='')=>r.push({key,label,fields,check,answer}),review=(key,label,draw=false)=>r.push({key,label,fields:[key],kind:'review',draw}),product=(key,label,a,b)=>custom(key,label,v=>mathIsProduct(v[0],a,b),[key],`${a} × ${b} = ${a*b}`),total=(key,label,a,b,unit)=>custom(key,label,v=>{if(mathLength(v[0],a*b,unit))return true;const fact=mathParseFact(v[0]);if(!mathIsProduct(v[0],a,b)||!fact)return false;const suffix=String(v[0]).trim().match(/(?:cm|mm|m|centimetres?|centimeters?|metres?|meters?)$/i);return !suffix||mathLength(fact.result+suffix[0],a*b,unit);},[key],`${a*b} ${unit}`),seq=(key,label,values)=>values.forEach((v,i)=>one(key+'-'+i,label+' · '+(i+1),v));
  r.push({key:'51-q1',label:'5.1 · 1 · Multiples of 5',kind:'flags',fields:[15,72,125,230,86,157,390,269,95,414].map(n=>'51-q1-'+n),expected:[15,125,230,390,95].map(n=>'51-q1-'+n)});
  [[35,'five'],[36,'two'],[37,'neither'],[38,'two'],[39,'neither'],[40,'both']].forEach(([n,v])=>one('51-q2-'+n,'5.1 · 2 · '+n,[v]));
  for(const kind of ['m','d'])for(let i=0;i<4;i++){
-  const key='51-q3-'+kind+i;custom(key,'5.1 · 3 · '+(kind==='m'?'Multiplication':'Division')+' fact '+(i+1),(v,d)=>{const n=v.map(mathNumeric);let valid;if(kind==='m')valid=i<2?n[0]*n[1]===8&&[n[0],n[1]].sort((a,b)=>a-b).join(',')==='2,4'&&n[2]===8:n[0]===8&&n[1]*n[2]===8&&[n[1],n[2]].sort((a,b)=>a-b).join(',')==='2,4';else valid=i<2?n[0]===8&&n[0]/n[1]===n[2]&&[n[1],n[2]].sort((a,b)=>a-b).join(',')==='2,4':n[1]===8&&n[1]/n[2]===n[0]&&[n[0],n[2]].sort((a,b)=>a-b).join(',')==='2,4';if(!valid)return false;if(i%2===1){const earlier=[0,1,2].map(j=>mathNumeric(d.answers['51-q3-'+kind+(i-1)+'-'+j]));if(earlier.every((x,j)=>x===n[j]))return false;}return true;},[0,1,2].map(j=>key+'-'+j));
+  const key='51-q3-'+kind+i;custom(key,'5.1 · 3 · '+(kind==='m'?'Multiplication':'Division')+' fact '+(i+1),(v,d)=>{const n=v.map(mathNumeric);let valid;if(kind==='m')valid=i<2?n[0]*n[1]===8&&[n[0],n[1]].sort((a,b)=>a-b).join(',')==='2,4'&&n[2]===8:n[0]===8&&n[1]*n[2]===8&&[n[1],n[2]].sort((a,b)=>a-b).join(',')==='2,4';else valid=i<2?n[0]===8&&n[0]/n[1]===n[2]&&[n[1],n[2]].sort((a,b)=>a-b).join(',')==='2,4':n[1]===8&&n[1]/n[2]===n[0]&&[n[0],n[2]].sort((a,b)=>a-b).join(',')==='2,4';if(!valid)return false;if(i%2===1){const earlier=[0,1,2].map(j=>mathNumeric(d.answers['51-q3-'+kind+(i-1)+'-'+j]));if(earlier.every((x,j)=>x===n[j]))return false;}return true;},[0,1,2].map(j=>key+'-'+j));r[r.length-1].answer=(kind==='m'?['4 × 2 = 8','2 × 4 = 8','8 = 4 × 2','8 = 2 × 4']:['8 ÷ 2 = 4','8 ÷ 4 = 2','4 = 8 ÷ 2','2 = 8 ÷ 4'])[i];
  }
  product('51-q4-0','5.1 · 4 · First fact',7,10);product('51-q4-1','5.1 · 4 · Second fact',19,10);
  review('51-q5-describe','5.1 · 5 · Odd and even');review('51-q5-compare','5.1 · 5 · Compare the multiples');one('51-q6','5.1 · 6 · Odd number',75);
  review('51-q7','5.1 · 7 · Four facts and a fact family');
  [[74,9,56],[6,82,29],[17,38,5],[3,94,61]].forEach((row,i)=>row.forEach((n,j)=>one('51-q8-'+i+'-'+j,'5.1 · 8 · Row '+(i+1)+' column '+(j+1),n*10)));
  one('51-q9','5.1 · 9 · Even number',380);review('51-q10','5.1 · 10 · Special multiplication fact');total('51-q11','5.1 · 11 · Timber',10,65,'cm');review('51-q12','5.1 · 12 · Arun’s statement');
- custom('52-q1','5.2 · 1 · Three fours',v=>{const n=v.map(mathNumeric);return n[2]===12&&n[0]*n[1]===12&&[n[0],n[1]].sort((a,b)=>a-b).join(',')==='3,4';},[0,1,2].map(j=>'52-q1-'+j));
- custom('52-q2','5.2 · 2 · Table for 4',v=>{const facts=mathFactsIn(v[0]);return facts.length===10&&Array.from({length:10},(_,i)=>i+1).every(n=>facts.some(f=>mathIsProduct(f,4,n)));});
+ custom('52-q1','5.2 · 1 · Three fours',v=>{const n=v.map(mathNumeric);return n[2]===12&&n[0]*n[1]===12&&[n[0],n[1]].sort((a,b)=>a-b).join(',')==='3,4';},[0,1,2].map(j=>'52-q1-'+j),'3 × 4 = 12');
+ custom('52-q2','5.2 · 2 · Table for 4',v=>{const facts=mathFactsIn(v[0]);return facts.length===10&&Array.from({length:10},(_,i)=>i+1).every(n=>facts.some(f=>mathIsProduct(f,4,n)));},['52-q2'],Array.from({length:10},(_,i)=>`4 × ${i+1} = ${4*(i+1)}`).join('\n'));
  r.push({key:'52-q3',label:'5.2 · 3 · Multiples of 8',kind:'flags',fields:Array.from({length:50},(_,i)=>'52-q3-'+(i+1)),expected:[8,16,24,32,40,48].map(n=>'52-q3-'+n)});
  product('52-q4','5.2 · 4 · Spiders’ legs',6,8);seq('52-q5','5.2 · 5 · Add 4',[7,11,15,19,23]);review('52-q5-describe','5.2 · 5 · Describe the sequence');
  one('52-q6-third','5.2 · 6 · Third multiple of 4',12);one('52-q6-seventh','5.2 · 6 · Seventh multiple of 4',28);seq('52-q7','5.2 · 7 · Next multiples of 4',[44,48,52,56,60]);review('52-q8','5.2 · 8 · Pattern');one('52-q9-fifth','5.2 · 9 · Fifth multiple of 8',40);one('52-q9-ninth','5.2 · 9 · Ninth multiple of 8',72);
@@ -221,6 +223,69 @@ function schoolMath5Rubric(){
  [['53-q4-a',3,3,9],['53-q4-b',9,2,18],['53-q6-a',6,6,36],['53-q6-b',3,9,27]].forEach(([key,left,right,top])=>{one(key+'-left',key.replace('53-q','5.3 · ')+' · Left brick',left);one(key+'-right',key.replace('53-q','5.3 · ')+' · Right brick',right);one(key+'-top',key.replace('53-q','5.3 · ')+' · Top brick',top);});
  seq('53-q5','5.3 · 5 · Add 9',[17,26,35,44,53]);review('53-q5-describe','5.3 · 5 · Describe the sequence');product('53-q7','5.3 · 7 · Ruby',7,9);review('53-q8','5.3 · 8 · Picture showing 9 × 6',true);
  [[0,0,3,3],[0,4,9,3],[1,2,6,10],[1,4,9,10],[2,0,3,9],[2,4,9,9],[3,2,6,0],[3,4,9,0]].forEach(([i,j,a,b])=>product('53-q9-'+i+'-'+j,'5.3 · 9 · Row '+(i+1)+' column '+(j+1),a,b));
- for(const n of [102,108,114,120])custom('53-q10-'+n,'5.3 · 10 · '+n,v=>{const facts=mathFactsIn(v[0]),a=n/3,b=n/6;if(facts.length===2){const p3=facts.some(f=>mathIsProduct(f,3,a)||(()=>{const q=mathParseFact(f);return q?.op==='/'&&q.a===n&&q.b===3&&q.result===a;})()),p6=facts.some(f=>mathIsProduct(f,6,b)||(()=>{const q=mathParseFact(f);return q?.op==='/'&&q.a===n&&q.b===6&&q.result===b;})());return p3&&p6;}const digits=(String(v[0]).match(/\d+/g)||[]).map(Number).join(',');return [[a,b],[a,3,b,6],[3,a,6,b],[b,6,a,3],[6,b,3,a]].some(pattern=>pattern.join(',')===digits);});
+ for(const n of [102,108,114,120])custom('53-q10-'+n,'5.3 · 10 · '+n,v=>{const facts=mathFactsIn(v[0]),a=n/3,b=n/6;if(facts.length===2){const p3=facts.some(f=>mathIsProduct(f,3,a)||(()=>{const q=mathParseFact(f);return q?.op==='/'&&q.a===n&&q.b===3&&q.result===a;})()),p6=facts.some(f=>mathIsProduct(f,6,b)||(()=>{const q=mathParseFact(f);return q?.op==='/'&&q.a===n&&q.b===6&&q.result===b;})());return p3&&p6;}const digits=(String(v[0]).match(/\d+/g)||[]).map(Number).join(',');return [[a,b],[a,3,b,6],[3,a,6,b],[b,6,a,3],[6,b,3,a]].some(pattern=>pattern.join(',')===digits);},['53-q10-'+n],`3 × ${n/3} = ${n}\n6 × ${n/6} = ${n}`);
  seq('53-q11','5.3 · 11 · Subtract 9',[91,82,73,64,55]);review('53-q11-explain','5.3 · 11 · Is 1 part of the sequence?');review('53-q12','5.3 · 12 · Zara’s explanation');return r;
+}
+function schoolMathQuestionId(rule){const m=rule.key.match(/^(\d+)-q(\d+)/);return m?m[1]+'-'+m[2]:null;}
+function schoolMathReviewAnswer(rule){
+ const hints={
+  '41-q3b':'Ví dụ: vẽ một hình lập phương và một hình chóp; chỉ đánh dấu hình là lăng trụ. Cần ít nhất một lăng trụ.',
+  '41-q4-blocks':'Chọn các hình có thể ghép bằng bộ khối đang dùng, rồi kiểm tra sản phẩm thực tế.',
+  '41-q4-choice1':'Học sinh tự chọn hình có thể làm được với vật liệu đang có.',
+  '41-q4-choice2':'Học sinh tự chọn hình thứ hai và làm theo lựa chọn đó.',
+  '41-q9':'Ví dụ: hai lon/ống hình trụ; một hộp chữ nhật và một khối lập phương là lăng trụ; một quả bóng và một hình chóp không thuộc hai nhóm đó.',
+  '41-q9-names':'Tên phải phù hợp với sáu đồ vật/hình đã vẽ và các nhóm đã yêu cầu.',
+  '41-q10':'Vẽ đúng khối gồm bốn hộp nối tiếp theo mẫu; giữ các mặt và các chi tiết nhìn thấy.',
+  '51-q5-describe':'Bội của 2 là số chẵn. Bội của 5 có tận cùng 0 hoặc 5, có thể chẵn hoặc lẻ. Bội của 10 là số chẵn có tận cùng 0.',
+  '51-q5-compare':'Bội của 2 và 10 đều chẵn. Bội của 5 xen kẽ chẵn, lẻ; có tận cùng 0 hoặc 5.',
+  '51-q7':'Các thừa số bằng nhau: 1 × 1, 2 × 2, 5 × 5, 10 × 10. Ví dụ với 2 × 2 = 4: 2 × 2 = 4; 4 = 2 × 2; 4 ÷ 2 = 2; 2 = 4 ÷ 2.',
+  '51-q10':'Ví dụ: 5 × 5 = 25 có hai thừa số bằng nhau. Chấp nhận ví dụ khác kèm nhận xét đúng, phù hợp câu hỏi.',
+  '51-q12':'Không đồng ý: 0 × 10 = 0. Nhân số 0 với 10 vẫn bằng 0.',
+  '52-q5-describe':'7, 11, 15, 19, 23 đều là số lẻ.',
+  '52-q8':'Mỗi số tăng 4. Các bội đều chẵn; chữ số hàng đơn vị lặp theo chu kỳ 4, 8, 2, 6, 0.',
+  '52-q11-describe':'7, 15, 23, 31, 39, 47 đều là số lẻ; mỗi bước tăng 8.',
+  '52-q16':'Kiểm tra dãy số theo đúng quy luật, số bắt đầu và số lượng số hạng học sinh đã chọn.',
+  '53-q1-describe':'Các bội của 3 xen kẽ số lẻ, số chẵn.',
+  '53-q2-describe':'Các bội của 6 đều là số chẵn.',
+  '53-q5-describe':'17, 26, 35, 44, 53 xen kẽ số lẻ và số chẵn; mỗi bước tăng 9.',
+  '53-q8':'Hình cần thể hiện 9 × 6 = 5 × 6 + 4 × 6 = 30 + 24 = 54.',
+  '53-q11-explain':'Có: 100 − 9 × 11 = 1. Số 1 là số hạng thứ 12 nếu tính 100 là số hạng đầu tiên.',
+  '53-q12':'Không đồng ý: 9 × n = 10 × n − n, không phải luôn trừ 1. Ví dụ: 9 × 2 = 20 − 2 = 18.'
+ };
+ if(hints[rule.key])return hints[rule.key];
+ if(rule.key.startsWith('41-q3a-'))return 'Đồ nét đúng theo hình mẫu, giữ các cạnh và nét khuất.';
+ const house=rule.key.match(/^41-q4-([0-5])$/);if(house)return ['Ví dụ: xúc xắc hình lập phương.','Ví dụ: hộp giày hình hộp chữ nhật.','Ví dụ: quả bóng hình cầu.','Ví dụ: hộp có tiết diện không đổi, hai đầu là đa giác giống nhau.','Ví dụ: vật trang trí hình chóp.','Ví dụ: lon đồ hộp hình trụ.'][Number(house[1])];
+ if(/^41-q6-\d$/.test(rule.key))return 'Vẽ đúng hình phù hợp các tính chất trong câu hỏi; đối chiếu hình tham khảo.';
+ if(rule.key==='41-q7-cube')return 'Vẽ khối lập phương: các mặt là hình vuông, thể hiện được ba chiều.';
+ if(rule.key==='41-q7-cuboid')return 'Vẽ khối hộp chữ nhật: các mặt là hình chữ nhật, thể hiện được ba chiều.';
+ return 'Phụ huynh đối chiếu bài làm với yêu cầu của câu hỏi.';
+}
+function schoolMathRuleAnswer(rule){
+ if(rule.kind==='review')return schoolMathReviewAnswer(rule);
+ if(rule.answer)return rule.answer;
+ if(rule.kind==='flags')return rule.expected.map(k=>rule.key==='41-q1-rings'?k.split('-').at(-2):k.split('-').at(-1)).join(', ');
+ if(rule.key.startsWith('51-q2-'))return {two:'Multiple of 2 only',five:'Multiple of 5 only',both:'Both: multiple of 2 and 5',neither:'Neither multiple of 2 nor 5'}[rule.expected[0]];
+ if(typeof rule.expected==='number')return String(rule.expected);
+ if(Array.isArray(rule.expected))return String(rule.expected[0]);
+ return '';
+}
+function schoolMathRuleIllustration(rule){
+ const types={'41-q3a-0':'cylinder','41-q3a-1':'cube','41-q3a-2':'pyramid4','41-q3a-3':'hexprism','41-q6-0':'cube','41-q6-1':'cuboid','41-q6-2':'cylinder','41-q6-3':'sphere','41-q7-cube':'cube','41-q7-cuboid':'cuboid','41-q10':'blocks'};
+ return types[rule.key]?schoolMathShape(types[rule.key],'Hình tham khảo'):'';
+}
+function schoolMathShortAnswerLabel(rule){
+ let m=rule.key.match(/^41-q8-(\d+)-(faces|edges|vertices)$/);if(m)return `${Number(m[1])+1} · ${{faces:'mặt',edges:'cạnh',vertices:'đỉnh'}[m[2]]}`;
+ m=rule.key.match(/^51-q8-(\d+)-(\d+)$/);if(m)return `${Number(m[1])+1}.${Number(m[2])+1}`;
+ m=rule.key.match(/^53-q[46]-([ab])-(left|right|top)$/);if(m)return `${m[1]} · ${{left:'trái',right:'phải',top:'trên'}[m[2]]}`;
+ if(rule.key.startsWith('52-q12-'))return rule.label.split(' · ').at(-1);
+ m=rule.key.match(/-(\d+)$/);return m?'Số '+(Number(m[1])+1):rule.label;
+}
+function renderSchoolMathQuestionFeedback(panel,results){
+ const groups=new Map();for(const r of results){const id=schoolMathQuestionId(r);if(!groups.has(id))groups.set(id,[]);groups.get(id).push(r);}
+ const names={correct:'Đúng',wrong:'Sai',blank:'Chưa làm',review:'Chờ phụ huynh kiểm tra'},symbols={correct:'✓',wrong:'✕',blank:'—'};
+ for(const [id,rules]of groups){const question=panel.querySelector(`[data-math-question="${id}"]`),aside=question?.querySelector('.math-question-feedback');if(!aside)continue;
+  question.classList.add('has-math-feedback');aside.hidden=false;
+  const compact=rules.length>=4&&rules.every(r=>r.kind!=='review'&&typeof r.expected==='number');
+  aside.innerHTML=`<h5>Đáp án tham khảo</h5><div class="${compact?'math-feedback-values':'math-feedback-items'}">${rules.map(r=>`<div class="math-question-result" data-math-result="${r.key}" ${compact?`aria-label="${escapeHTML(r.label+': '+names[r.status])}"`:''}><p class="math-feedback-label" title="${escapeHTML(r.label)}">${escapeHTML(compact?schoolMathShortAnswerLabel(r):r.label.replace(/^\d\.\d\s*·\s*/,''))}</p><strong class="math-result-${r.status}" ${compact?`aria-label="${names[r.status]}" title="${names[r.status]}"`:''}>${compact?symbols[r.status]:names[r.status]}</strong><p class="math-reference-answer">${escapeHTML(schoolMathRuleAnswer(r))}</p>${r.kind==='review'?schoolMathRuleIllustration(r):''}</div>`).join('')}</div>${compact?'<p class="math-feedback-legend">✓ Đúng · ✕ Sai · — Chưa làm</p>':''}`;
+ }
 }
