@@ -441,3 +441,7 @@ Mỗi UID Google có collection riêng `users/{uid}/learning`. Giao dịch Fires
 Khi mất mạng, hàng chờ ở localStorage; khi có mạng, tự tiếp tục. Không báo “Đã đồng bộ” trước khi nhận snapshot máy chủ và hoàn tất các giao dịch. Ngắt đồng bộ/đăng xuất giữ bài làm, dừng listener và đăng xuất Google. Các máy phải dùng cùng tài khoản để chia sẻ dữ liệu.
 
 Kiểm tra: `node --test tests/sync-core.test.cjs tests/school-reports.test.cjs tests/classification.test.cjs tests/timo-topics.test.cjs`. Đã kiểm tra SDK thật khởi tạo và mô phỏng hai trình duyệt độc lập: gộp/offline/reload/retry/nộp bài/chỉnh chủ đề/giao diện/tài khoản khác/không gửi khóa mật khẩu; dialog11giao diện tại1440/390/320px. Chưa xác minh đăng nhập Google hoặc quyền đọc/ghi dự án thật trước khi chủ dự án bật các mục trên Console. Quy tắc bảo mật cần được đăng trước khi sử dụng thật.
+
+## Mathematics lớp2, báo bài29/10
+
+Hai mục Bài4/Bài5 ở môn Mathematics, cùng workspace như lớp1. Ảnh bài tập được nhập vào Làm bài tập; Xem bài học chờ nguồn bài học riêng. Bài4 Exercise4.1 có10câu,19vùngvẽ/lưuvector, tênhình/khoanhhình/đếmđỉnh/bảngmặt-cạnh-đỉnh. SVGbámsátcấutrúcmẫu,khôngcamkếtgiốngpixel100%. Ngoại lệ chủdựán28/10: chỉ2idbàitậplớp2ngày29/10đượcphépsuyluậnđápán;nguồnkhóa`assistant-authorized-by-owner`,khôngthay350khóaTIMOđãcó. NútHoànthànhchấm48mụckínBài4,điểmphầntựđộng0–10,23mụcvẽ/giảithíchchờphụhuynhkiểmtra. Bàilàmtựlưu,tảilạigiữđượchìnhvẽ/vòngkhoanh/đápán/kếtquả,sửabàitựbỏkếtquảcũđểchấmlại. ĐồngbộworksheetMathcùngcollectionFirebase,khônggửiphầnkhóađápán.

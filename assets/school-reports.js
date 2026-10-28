@@ -15,7 +15,7 @@ const schoolReports = [
       "day": "Thứ Năm",
       "periods": "",
       "subject": "MATHEMATICS",
-      "title": "Bài 4",
+      "title": "Bài 4: 3D shapes",
       "sections": [],
       "preparation": []
     },
@@ -1015,6 +1015,7 @@ function renderSchoolReportContent(entry,kind){
  if(!entry)return '<div class="school-panel-empty"><h2 id="school-content-title" tabindex="-1">Nội dung bài học và bài tập</h2><p>Chọn Xem bài học hoặc Làm bài tập ở danh sách bên trái.</p></div>';
  const header=`<header class="school-content-heading"><p>${kind==='exercises'?'Làm bài tập':'Xem bài học'} · ${escapeHTML(entry.day)} · ${escapeHTML(entry.date.slice(8)+'/'+entry.date.slice(5,7))}</p><h2 id="school-content-title" tabindex="-1">${escapeHTML(entry.title)}</h2></header>`;
  if(kind==='lesson'&&schoolLessonContents[entry.id])return header+renderSchoolLessonContent(entry);
+ if(kind==='exercises'&&schoolMathWorksheets[entry.id])return header+renderSchoolMathWorksheet(entry);
  if(kind==='exercises'&&schoolExerciseWorksheets[entry.id])return header+renderSchoolWorksheet(entry);
  return header+`<p class="school-panel-notice" role="status">${kind==='lesson'?'Đang chờ nội dung bài học mới để bổ sung.':'Bài học này chưa có bài tập. Đang chờ bổ sung.'}</p>`;
 }
@@ -1031,6 +1032,7 @@ function activateSchoolReport(id,kind,focus=true){
  schoolReportSelection={id,kind};panel.dataset.lessonId=id;panel.innerHTML=renderSchoolReportContent(entry,kind);
  document.querySelectorAll('[data-school-card]').forEach(card=>{const selected=card.dataset.schoolCard===id;card.classList.toggle('school-card-selected',selected);card.querySelector('[data-school-lesson]').setAttribute('aria-pressed',String(selected&&kind==='lesson'));card.querySelector('[data-school-exercises]').setAttribute('aria-pressed',String(selected&&kind==='exercises'));});
  if(focus){if(matchMedia('(max-width:760px)').matches)panel.scrollIntoView({block:'start'});panel.querySelector('h2')?.focus({preventScroll:true});}
+ restoreSchoolMathCompletion();
  saveCurrentView();
 }
 function openSchoolLesson(id){activateSchoolReport(id,'lesson');}

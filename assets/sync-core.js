@@ -20,11 +20,13 @@ const LearningSyncCore=(()=>{
   if(!plain(value))throw Error('Invalid learning record');
   if(kind==='classification')return {value:JSON.stringify(value)};
   if(kind==='preferences')return {theme:value.theme};
+  if(kind==='worksheet'&&value.type==='school-math-v1')return copy(value);
   if(kind==='worksheet')return {blanks:Object.fromEntries((value.blanks||[]).map((v,i)=>[i,v])),choices:Object.fromEntries((value.choices||[]).map((v,i)=>[i,v])),updatedAt:value.updatedAt||0};
   const v=copy(value),answers={};for(const [index,answer]of Object.entries(v.answers||{}))answers[v.questionIds?.[Number(index)]??index]=answer;v.answers=answers;return v;
  }
  function decode(doc){
   let value=expand(doc.fields);if(doc.kind==='classification')return JSON.parse(value.value);
+  if(doc.kind==='worksheet'&&value.type==='school-math-v1')return value;
   if(doc.kind==='worksheet')return {blanks:Array.from({length:4},(_,i)=>String(value.blanks?.[i]??'')),choices:Array.from({length:4},(_,i)=>value.choices?.[i]===true),updatedAt:value.updatedAt||0};
   if(doc.kind==='attempt'){const answers={};for(const [id,answer]of Object.entries(value.answers||{})){const i=Array.isArray(value.questionIds)?value.questionIds.indexOf(id):Number(id);if(i>=0&&Number.isInteger(i))answers[i]=answer;}value.answers=answers;}
   return value;
