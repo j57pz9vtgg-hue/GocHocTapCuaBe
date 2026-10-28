@@ -1,5 +1,36 @@
-// School reports transcribed only from owner-provided content. The removed October26–30 report stays removed.
+// School reports contain only owner-provided dates, subjects and lesson content.
 const schoolReports = [
+{
+  "id": "school-grade2-week-2026-10-26-mathematics",
+  "grade": "2",
+  "subject": "MATHEMATICS",
+  "start": "2026-10-26",
+  "end": "2026-10-30",
+  "title": "Báo bài tuần 26/10/2026 - 30/10/2026",
+  "layout": "table",
+  "entries": [
+    {
+      "id": "grade2-mathematics-2026-10-29-4",
+      "date": "2026-10-29",
+      "day": "Thứ Năm",
+      "periods": "",
+      "subject": "MATHEMATICS",
+      "title": "Bài 4",
+      "sections": [],
+      "preparation": []
+    },
+    {
+      "id": "grade2-mathematics-2026-10-29-5",
+      "date": "2026-10-29",
+      "day": "Thứ Năm",
+      "periods": "",
+      "subject": "MATHEMATICS",
+      "title": "Bài 5",
+      "sections": [],
+      "preparation": []
+    }
+  ]
+},
   {
     "id": "school-week-2026-10-26-vietnamese",
     "grade": "1",
