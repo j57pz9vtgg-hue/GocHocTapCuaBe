@@ -680,3 +680,10 @@
 .school-reading-audio p{margin:4px 0}
 .school-reading-playback{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
 .school-reading-playback audio{max-width:100%;width:300px;height:44px}
+
+/* Let school lessons use the phone viewport instead of sitting under pinned filters. */
+@media(max-width:760px),(max-width:960px) and (max-height:500px){
+ html:has(.school-report-workspace){scroll-padding-top:0}
+ #site-shell:has(.school-report-workspace) .catalog-masthead{position:relative;top:auto}
+ #site-shell .school-report-sidebar{position:static;top:auto}
+}

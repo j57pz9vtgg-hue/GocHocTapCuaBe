@@ -1031,7 +1031,7 @@ function activateSchoolReport(id,kind,focus=true){
  if(!entry||!panel||!['lesson','exercises'].includes(kind))return;
  schoolReportSelection={id,kind};panel.dataset.lessonId=id;panel.innerHTML=renderSchoolReportContent(entry,kind);
  document.querySelectorAll('[data-school-card]').forEach(card=>{const selected=card.dataset.schoolCard===id;card.classList.toggle('school-card-selected',selected);card.querySelector('[data-school-lesson]').setAttribute('aria-pressed',String(selected&&kind==='lesson'));card.querySelector('[data-school-exercises]').setAttribute('aria-pressed',String(selected&&kind==='exercises'));});
- if(focus){if(matchMedia('(max-width:760px)').matches)panel.scrollIntoView({block:'start'});panel.querySelector('h2')?.focus({preventScroll:true});}
+ if(focus){if(matchMedia('(max-width:760px),(max-width:960px) and (max-height:500px)').matches)panel.scrollIntoView({block:'start'});panel.querySelector('h2')?.focus({preventScroll:true});}
  restoreSchoolMathCompletion();
  saveCurrentView();
 }
