@@ -669,3 +669,14 @@
 @media(max-width:760px){.math-completion{scroll-margin-top:470px}}
 .math-feedback-values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.math-feedback-values .math-question-result{margin:0;padding:6px 2px;border:1px solid #cfdeeb;border-radius:5px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:3px}.school-math-paper .math-feedback-values .math-feedback-label{font-size:11px;margin:0}.math-feedback-values .math-reference-answer{order:1;font-weight:700}.math-feedback-values .math-question-result>strong{order:2;font-size:14px}.math-question-feedback .math-shape{max-height:90px}
 .school-math-paper .math-feedback-legend{font-size:11px;line-height:1.5;color:#52677b;margin:10px 0 0}
+
+/* Separate microphone controls for every Vietnamese reading section. */
+.school-lesson-page h3.school-reading-heading{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.school-lesson-page .school-reading-record,.school-reading-playback button{font:600 14px 'Be Vietnam Pro',sans-serif;min-height:44px;padding:8px 12px;border:1px solid #a8248b;border-radius:10px;background:#fff2fb;color:#842071;cursor:pointer}
+.school-reading-record[aria-pressed="true"]{background:#b42335!important;color:white!important;border-color:#b42335!important}
+.school-reading-record:focus-visible,.school-reading-playback button:focus-visible{outline:3px solid #1672d4;outline-offset:3px}
+.school-reading-audio{font:14px/1.5 'Be Vietnam Pro',sans-serif;color:#485669;margin-bottom:12px}
+.school-reading-audio:has(p:empty):not(:has(audio)){display:none}
+.school-reading-audio p{margin:4px 0}
+.school-reading-playback{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.school-reading-playback audio{max-width:100%;width:300px;height:44px}
