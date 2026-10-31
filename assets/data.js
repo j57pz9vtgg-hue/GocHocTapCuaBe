@@ -5033,7 +5033,7 @@ const officialPapers = [
       "optionColumns": 2,
       "sourcePart": 1,
       "sourceNumber": 8,
-      "answer": 3,
+      "answer": 0,
       "answerSource": "user"
     },
     {
