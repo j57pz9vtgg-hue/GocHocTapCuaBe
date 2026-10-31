@@ -5234,6 +5234,66 @@ const officialPapers = [
       "options": [],
       "sourcePart": 2,
       "sourceNumber": 3
+    },
+    {
+      "number": 24,
+      "sourcePart": 2,
+      "sourceNumber": 4,
+      "text": "Hình nào có nhiều quả xoài nhất?",
+      "options": [
+        "Hình thứ nhất",
+        "Hình thứ hai",
+        "Hình thứ ba",
+        "Hình thứ tư"
+      ],
+      "optionImages": [
+        "./assets/violympic/grade1-round4-game2-q4-a.73961be9a031.svg",
+        "./assets/violympic/grade1-round4-game2-q4-b.50537cea317b.svg",
+        "./assets/violympic/grade1-round4-game2-q4-c.d3cf4117fa9d.svg",
+        "./assets/violympic/grade1-round4-game2-q4-d.210781ac5eb1.svg"
+      ],
+      "largeOptionImages": true,
+      "optionColumns": 2
+    },
+    {
+      "number": 25,
+      "sourcePart": 2,
+      "sourceNumber": 5,
+      "text": "Hình nào có ít quả dứa nhất?",
+      "options": [
+        "Hình thứ nhất",
+        "Hình thứ hai",
+        "Hình thứ ba",
+        "Hình thứ tư"
+      ],
+      "optionImages": [
+        "./assets/violympic/grade1-round4-game2-q5-a.c7ae361bf413.svg",
+        "./assets/violympic/grade1-round4-game2-q5-b.f2c67d80d6eb.svg",
+        "./assets/violympic/grade1-round4-game2-q5-c.9911e40a4eb6.svg",
+        "./assets/violympic/grade1-round4-game2-q5-d.ff43d3152471.svg"
+      ],
+      "largeOptionImages": true,
+      "optionColumns": 2
+    },
+    {
+      "number": 26,
+      "sourcePart": 2,
+      "sourceNumber": 6,
+      "text": "Hình nào có nhiều ngôi sao nhất?",
+      "options": [
+        "Hình thứ nhất",
+        "Hình thứ hai",
+        "Hình thứ ba",
+        "Hình thứ tư"
+      ],
+      "optionImages": [
+        "./assets/violympic/grade1-round4-game2-q6-a.f325f63e80d1.svg",
+        "./assets/violympic/grade1-round4-game2-q6-b.b9be6f56e84f.svg",
+        "./assets/violympic/grade1-round4-game2-q6-c.516845c68faf.svg",
+        "./assets/violympic/grade1-round4-game2-q6-d.4bda7e38e5da.svg"
+      ],
+      "largeOptionImages": true,
+      "optionColumns": 2
     }
   ]
 }
