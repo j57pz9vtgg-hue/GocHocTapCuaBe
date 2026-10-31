@@ -5294,6 +5294,54 @@ const officialPapers = [
       ],
       "largeOptionImages": true,
       "optionColumns": 2
+    },
+    {
+      "number": 27,
+      "sourcePart": 2,
+      "sourceNumber": 7,
+      "text": "Hình nào có nhiều chiếc cúp nhất?",
+      "options": [
+        "Hình thứ nhất",
+        "Hình thứ hai",
+        "Hình thứ ba",
+        "Hình thứ tư"
+      ],
+      "optionImages": [
+        "./assets/violympic/grade1-round4-game2-q7-a.f0a07f09576b.svg",
+        "./assets/violympic/grade1-round4-game2-q7-b.ae0a02a48084.svg",
+        "./assets/violympic/grade1-round4-game2-q7-c.df83f4185344.svg",
+        "./assets/violympic/grade1-round4-game2-q7-d.622321cea080.svg"
+      ],
+      "largeOptionImages": true,
+      "optionColumns": 2
+    },
+    {
+      "number": 28,
+      "sourcePart": 2,
+      "sourceNumber": 8,
+      "text": "Từ vị trí nào có thể đi đến cây nến?",
+      "image": "./assets/violympic/grade1-round4-game2-q8.9a3f5bc8f563.svg",
+      "imageAlt": "Mê cung với ba lối vào A ở trên, B ở giữa, C ở dưới bên trái và cây nến ở khoang giữa.",
+      "options": [
+        "C",
+        "B",
+        "Không có vị trí nào",
+        "A"
+      ],
+      "optionColumns": 2
+    },
+    {
+      "number": 29,
+      "sourcePart": 2,
+      "sourceNumber": 9,
+      "text": "Mạnh có một người em gái. Biết người em gái có đúng 3 người anh em trai. Hỏi gia đình Mạnh có ít nhất bao nhiêu người con?",
+      "options": [
+        "5",
+        "2",
+        "3",
+        "4"
+      ],
+      "optionColumns": 2
     }
   ]
 }
