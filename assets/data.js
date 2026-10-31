@@ -4930,6 +4930,89 @@ const officialPapers = [
         "="
       ],
       "optionColumns": 2
+    },
+    {
+      "number": 2,
+      "text": "Chọn hình có số lượng nhiều nhất:",
+      "options": [
+        "Hình súp lơ",
+        "Hình cà tím",
+        "Hình cà rốt",
+        "Hình quả ớt"
+      ],
+      "optionImages": [
+        "./assets/violympic/grade1-round4-q2-a.1e6cb2694d08.svg",
+        "./assets/violympic/grade1-round4-q2-b.c061dcf24b2e.svg",
+        "./assets/violympic/grade1-round4-q2-c.46bad5497082.svg",
+        "./assets/violympic/grade1-round4-q2-d.1b4ce22513c7.svg"
+      ],
+      "optionColumns": 2,
+      "largeOptionImages": true
+    },
+    {
+      "number": 3,
+      "text": "Số ?",
+      "responseType": "text",
+      "options": [],
+      "image": "./assets/violympic/grade1-round4-q3.6501cd8bf33e.svg",
+      "imageAlt": "Các chú chó trong khung cam, gồm ba tư thế ngồi, nằm và đứng. Chú chó nằm được ghi 6; ô số của chú chó ngồi là dấu hỏi."
+    },
+    {
+      "number": 4,
+      "text": "Chọn dấu thích hợp điền vào dấu ba chấm:",
+      "image": "./assets/violympic/grade1-round4-q4.3a1cb2610995.svg",
+      "imageAlt": "Hai khay, mỗi khay có hai hàng, mỗi hàng năm quả đỏ; ở giữa là dấu ba chấm.",
+      "options": [
+        "Không so sánh được",
+        "<",
+        "=",
+        ">"
+      ],
+      "optionColumns": 2
+    },
+    {
+      "number": 5,
+      "text": "Số ? Con chó có ... cái chân.",
+      "responseType": "text",
+      "options": []
+    },
+    {
+      "number": 6,
+      "text": "Số ? Con cò có ... cái chân.",
+      "responseType": "text",
+      "options": []
+    },
+    {
+      "number": 7,
+      "text": "Số ?",
+      "responseType": "text",
+      "options": [],
+      "image": "./assets/violympic/grade1-round4-q7.0ab8ec379d24.svg",
+      "imageAlt": "Dấu hỏi trong hình tròn vàng, dấu bé hơn, số 1 trong hình tròn vàng."
+    },
+    {
+      "number": 8,
+      "text": "Đổi chỗ hai hình nào để được sắp xếp từ lớn đến bé?",
+      "image": "./assets/violympic/grade1-round4-q8.595c5e778320.svg",
+      "imageAlt": "Từ trái sang phải: hình vuông cam ghi 10, hình tròn vàng ghi 4, hình tam giác xanh ghi 7, hình chữ nhật đỏ ghi 3.",
+      "options": [
+        "Hình tròn và hình tam giác",
+        "Hình vuông và hình chữ nhật",
+        "Hình vuông và hình tam giác",
+        "Hình tròn và hình chữ nhật"
+      ],
+      "optionColumns": 2
+    },
+    {
+      "number": 9,
+      "text": "Khi cần cứu hỏa em gọi số",
+      "options": [
+        "114",
+        "110",
+        "113",
+        "111"
+      ],
+      "optionColumns": 2
     }
   ]
 }
