@@ -4932,7 +4932,9 @@ const officialPapers = [
       "optionColumns": 2,
       "sourcePart": 1,
       "sourceNumber": 1,
-      "sectionTitle": "Bài 1: Đừng để điểm rơi"
+      "sectionTitle": "Bài 1: Đừng để điểm rơi",
+      "answer": 1,
+      "answerSource": "user"
     },
     {
       "number": 2,
@@ -4952,7 +4954,9 @@ const officialPapers = [
       "optionColumns": 2,
       "largeOptionImages": true,
       "sourcePart": 1,
-      "sourceNumber": 2
+      "sourceNumber": 2,
+      "answer": 3,
+      "answerSource": "user"
     },
     {
       "number": 3,
@@ -4962,7 +4966,9 @@ const officialPapers = [
       "image": "./assets/violympic/grade1-round4-q3.6501cd8bf33e.svg",
       "imageAlt": "Các chú chó trong khung cam, gồm ba tư thế ngồi, nằm và đứng. Chú chó nằm được ghi 6; ô số của chú chó ngồi là dấu hỏi.",
       "sourcePart": 1,
-      "sourceNumber": 3
+      "sourceNumber": 3,
+      "answer": "13",
+      "answerSource": "user"
     },
     {
       "number": 4,
@@ -4977,7 +4983,9 @@ const officialPapers = [
       ],
       "optionColumns": 2,
       "sourcePart": 1,
-      "sourceNumber": 4
+      "sourceNumber": 4,
+      "answer": 2,
+      "answerSource": "user"
     },
     {
       "number": 5,
@@ -4985,7 +4993,9 @@ const officialPapers = [
       "responseType": "text",
       "options": [],
       "sourcePart": 1,
-      "sourceNumber": 5
+      "sourceNumber": 5,
+      "answer": "4",
+      "answerSource": "user"
     },
     {
       "number": 6,
@@ -4993,7 +5003,9 @@ const officialPapers = [
       "responseType": "text",
       "options": [],
       "sourcePart": 1,
-      "sourceNumber": 6
+      "sourceNumber": 6,
+      "answer": "2",
+      "answerSource": "user"
     },
     {
       "number": 7,
@@ -5003,7 +5015,9 @@ const officialPapers = [
       "image": "./assets/violympic/grade1-round4-q7.0ab8ec379d24.svg",
       "imageAlt": "Dấu hỏi trong hình tròn vàng, dấu bé hơn, số 1 trong hình tròn vàng.",
       "sourcePart": 1,
-      "sourceNumber": 7
+      "sourceNumber": 7,
+      "answer": "0",
+      "answerSource": "user"
     },
     {
       "number": 8,
@@ -5018,7 +5032,9 @@ const officialPapers = [
       ],
       "optionColumns": 2,
       "sourcePart": 1,
-      "sourceNumber": 8
+      "sourceNumber": 8,
+      "answer": 3,
+      "answerSource": "user"
     },
     {
       "number": 9,
@@ -5031,7 +5047,9 @@ const officialPapers = [
       ],
       "optionColumns": 2,
       "sourcePart": 1,
-      "sourceNumber": 9
+      "sourceNumber": 9,
+      "answer": 0,
+      "answerSource": "user"
     },
     {
       "number": 10,
@@ -5044,7 +5062,9 @@ const officialPapers = [
       ],
       "optionColumns": 2,
       "sourcePart": 1,
-      "sourceNumber": 10
+      "sourceNumber": 10,
+      "answer": 2,
+      "answerSource": "user"
     },
     {
       "number": 11,
@@ -5059,7 +5079,9 @@ const officialPapers = [
       ],
       "optionColumns": 2,
       "sourcePart": 1,
-      "sourceNumber": 11
+      "sourceNumber": 11,
+      "answer": 2,
+      "answerSource": "user"
     },
     {
       "number": 12,
@@ -5081,7 +5103,9 @@ const officialPapers = [
       "largeOptionImages": true,
       "optionColumns": 2,
       "sourcePart": 1,
-      "sourceNumber": 12
+      "sourceNumber": 12,
+      "answer": 0,
+      "answerSource": "user"
     },
     {
       "number": 13,
@@ -5091,7 +5115,9 @@ const officialPapers = [
       "responseType": "text",
       "options": [],
       "sourcePart": 1,
-      "sourceNumber": 13
+      "sourceNumber": 13,
+      "answer": "8",
+      "answerSource": "user"
     },
     {
       "number": 14,
@@ -5101,7 +5127,9 @@ const officialPapers = [
       "responseType": "text",
       "options": [],
       "sourcePart": 1,
-      "sourceNumber": 14
+      "sourceNumber": 14,
+      "answer": "8",
+      "answerSource": "user"
     },
     {
       "number": 15,
@@ -5111,7 +5139,9 @@ const officialPapers = [
       "image": "./assets/violympic/grade1-round4-q15.6e9f007bc73d.svg",
       "imageAlt": "Ba hình tròn xanh nhạt: 5, dấu bé hơn, dấu hỏi, dấu bé hơn, 7.",
       "sourcePart": 1,
-      "sourceNumber": 15
+      "sourceNumber": 15,
+      "answer": "6",
+      "answerSource": "user"
     },
     {
       "number": 16,
@@ -5121,7 +5151,9 @@ const officialPapers = [
       "image": "./assets/violympic/grade1-round4-q16.77c011a33a8f.svg",
       "imageAlt": "Ba hình tròn vàng: 2, dấu bé hơn, dấu hỏi, dấu bé hơn, 4.",
       "sourcePart": 1,
-      "sourceNumber": 16
+      "sourceNumber": 16,
+      "answer": "3",
+      "answerSource": "user"
     },
     {
       "number": 17,
@@ -5136,7 +5168,9 @@ const officialPapers = [
       ],
       "optionColumns": 2,
       "sourcePart": 1,
-      "sourceNumber": 17
+      "sourceNumber": 17,
+      "answer": 1,
+      "answerSource": "user"
     },
     {
       "number": 18,
@@ -5158,7 +5192,9 @@ const officialPapers = [
       "largeOptionImages": true,
       "optionColumns": 2,
       "sourcePart": 1,
-      "sourceNumber": 18
+      "sourceNumber": 18,
+      "answer": 2,
+      "answerSource": "user"
     },
     {
       "number": 19,
@@ -5180,7 +5216,9 @@ const officialPapers = [
       "largeOptionImages": true,
       "optionColumns": 2,
       "sourcePart": 1,
-      "sourceNumber": 19
+      "sourceNumber": 19,
+      "answer": 2,
+      "answerSource": "user"
     },
     {
       "number": 20,
@@ -5190,7 +5228,9 @@ const officialPapers = [
       "image": "./assets/violympic/grade1-round4-q20.b1628cdc755e.svg",
       "imageAlt": "Bảng bốn hàng, sáu cột gồm túi đỏ, quả sồi, mũ len. Bên dưới: quả sồi = 8; mũ len = dấu hỏi.",
       "sourcePart": 1,
-      "sourceNumber": 20
+      "sourceNumber": 20,
+      "answer": "6",
+      "answerSource": "user"
     },
     {
       "number": 21,
@@ -5213,7 +5253,9 @@ const officialPapers = [
       "optionColumns": 2,
       "sourcePart": 2,
       "sourceNumber": 1,
-      "sectionTitle": "Bài 2"
+      "sectionTitle": "Bài 2",
+      "answer": 3,
+      "answerSource": "user"
     },
     {
       "number": 22,
@@ -5223,7 +5265,9 @@ const officialPapers = [
       "responseType": "text",
       "options": [],
       "sourcePart": 2,
-      "sourceNumber": 2
+      "sourceNumber": 2,
+      "answer": "8",
+      "answerSource": "user"
     },
     {
       "number": 23,
@@ -5233,7 +5277,9 @@ const officialPapers = [
       "responseType": "text",
       "options": [],
       "sourcePart": 2,
-      "sourceNumber": 3
+      "sourceNumber": 3,
+      "answer": "8",
+      "answerSource": "user"
     },
     {
       "number": 24,
