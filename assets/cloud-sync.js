@@ -64,7 +64,7 @@
       else{
        app.querySelectorAll('[data-question]').forEach(el=>{el.checked=state.answers[Number(el.dataset.question)]===Number(el.value);el.closest('label')?.classList.toggle('chosen',el.checked);});
        app.querySelectorAll('[data-free-question]').forEach(el=>{const v=state.answers[Number(el.dataset.freeQuestion)]??'';if(el.value!==v)el.value=v;});
-       const count=Object.keys(state.answers).length;const label=app.querySelector('#answer-count');if(label)label.textContent=`${count}/${p.questions.length} câu`;app.querySelectorAll('.paper-submit').forEach(el=>el.disabled=state.submitted||count===0);
+       const count=Object.keys(state.answers).length;const label=app.querySelector('#answer-count');if(label)label.textContent=`${count}/${p.questions.length} câu`;app.querySelectorAll('[data-action="submit-paper"]').forEach(el=>el.disabled=state.submitted||count===0);
        if(focusIndex!==undefined&&Number.isInteger(caret)){const el=app.querySelector(`[data-free-question="${focusIndex}"]`);el?.focus({preventScroll:true});try{el?.setSelectionRange(caret,caret);}catch{}}
       }
      }
