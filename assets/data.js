@@ -5073,6 +5073,55 @@ const officialPapers = [
       "imageAlt": "Hình một con nhện với các chân tỏa ra hai phía thân.",
       "responseType": "text",
       "options": []
+    },
+    {
+      "number": 15,
+      "text": "Số ?",
+      "responseType": "text",
+      "options": [],
+      "image": "./assets/violympic/grade1-round4-q15.6e9f007bc73d.svg",
+      "imageAlt": "Ba hình tròn xanh nhạt: 5, dấu bé hơn, dấu hỏi, dấu bé hơn, 7."
+    },
+    {
+      "number": 16,
+      "text": "Số ?",
+      "responseType": "text",
+      "options": [],
+      "image": "./assets/violympic/grade1-round4-q16.77c011a33a8f.svg",
+      "imageAlt": "Ba hình tròn vàng: 2, dấu bé hơn, dấu hỏi, dấu bé hơn, 4."
+    },
+    {
+      "number": 17,
+      "text": "Đổi chỗ hai hình nào để được sắp xếp từ bé đến lớn?",
+      "image": "./assets/violympic/grade1-round4-q17.e290cc1d4e5f.svg",
+      "imageAlt": "Từ trái sang phải: vuông xanh ghi 6, tròn vàng ghi 3, tam giác xanh dương ghi 1, chữ nhật tím ghi 9.",
+      "options": [
+        "Hình vuông và hình tam giác",
+        "Hình tròn và hình tam giác",
+        "Hình tròn và hình chữ nhật",
+        "Hình vuông và hình chữ nhật"
+      ],
+      "optionColumns": 2
+    },
+    {
+      "number": 18,
+      "text": "Chọn câu đúng: Bỏ thêm bánh vào đĩa để trên đĩa có 5 cái bánh.",
+      "image": "./assets/violympic/grade1-round4-q18-plate.5b8fc549c336.svg",
+      "imageAlt": "Một chiếc đĩa xanh nhạt có hai cái bánh tròn.",
+      "options": [
+        "Nhóm bánh thứ nhất",
+        "Nhóm bánh thứ hai",
+        "Nhóm bánh thứ ba",
+        "Nhóm bánh thứ tư"
+      ],
+      "optionImages": [
+        "./assets/violympic/grade1-round4-q18-a.c1ad7d69cbc9.svg",
+        "./assets/violympic/grade1-round4-q18-b.a0711bea8467.svg",
+        "./assets/violympic/grade1-round4-q18-c.f781414b0e3b.svg",
+        "./assets/violympic/grade1-round4-q18-d.6bc231006ad0.svg"
+      ],
+      "largeOptionImages": true,
+      "optionColumns": 2
     }
   ]
 }
