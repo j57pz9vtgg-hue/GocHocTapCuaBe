@@ -690,5 +690,5 @@
 
 /* Countable picture choices need the whole source illustration, not a tiny icon. */
 .paper-world .options-figure-cards .answer-with-figure{min-width:0;max-width:100%;flex-wrap:wrap}
-.paper-world .options-figure-cards .answer-with-figure img{width:220px;height:auto;max-width:100%;max-height:none}
+.paper-world .options-figure-cards .answer-with-figure img{width:auto;height:auto;max-width:100%;max-height:160px}
 .paper-world .options-figure-cards .paper-options label{min-width:0;align-items:center}

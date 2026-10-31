@@ -134,6 +134,7 @@ function saveCurrentView(){
  try{sessionStorage.setItem(currentViewKey,JSON.stringify(record));}catch{}
 }
 function selectionFromView(saved){
+ if(saved?.program==='Violympic'&&saved.mode==='Vòng 4')saved={...saved,mode:'Vòng loại'};
  if(!saved||saved.grade!==state.grade||saved.program!==state.program||saved.subject!==state.subject||saved.mode!==state.mode||!getModes(saved.program,saved.grade).includes(saved.mode))return null;
  if(saved.topicId){
   if(saved.program!=='TIMO'||saved.subject!=='Toán'||saved.mode!==modes[2])return null;
@@ -154,7 +155,7 @@ async function restoreCurrentView(){
  let record;try{record=JSON.parse(sessionStorage.getItem(currentViewKey)||'null');}catch{}
  if(record?.version!==1){currentViewReady=true;saveCurrentView();return;}
  const f=record.filters;
- const restoredMode=f?.program==='Báo bài của trường'&&f.mode==='Báo bài tuần'?getModes(f.program,f.grade)[0]:f?.mode;
+ const restoredMode=f?.program==='Violympic'&&f.mode==='Vòng 4'?'Vòng loại':f?.program==='Báo bài của trường'&&f.mode==='Báo bài tuần'?getModes(f.program,f.grade)[0]:f?.mode;
  if(!f||!/^([1-9]|1[0-2])$/.test(f.grade)||!programs.includes(f.program)||!getSubjects(f.program).includes(f.subject)||!getModes(f.program,f.grade).includes(restoredMode)){currentViewReady=true;saveCurrentView();return;}
  Object.assign(state,{grade:f.grade,program:f.program,subject:f.subject,mode:restoredMode,search:typeof f.search==='string'?f.search.slice(0,200):'',topicGroup:f.topicGroup===null?null:Number.isInteger(f.topicGroup)&&f.topicGroup>=0&&f.topicGroup<5?f.topicGroup:0});
  const saved=record.practice,selection=selectionFromView(saved);
@@ -189,6 +190,14 @@ window.addEventListener('scroll',()=>{clearTimeout(viewScrollTimer);viewScrollTi
 const attemptStorageKey='goc-hoc-tap.attempts.official.v1';
 let attempts={};
 try { const saved=JSON.parse(localStorage.getItem(attemptStorageKey)||'{}'); if(saved&&typeof saved==='object'&&!Array.isArray(saved))attempts=saved; } catch {}
+// Preserve drafts from the initial round-only dropdown when moving Round4 into Vòng loại.
+let violympicModeMigrated=false;
+for(const [oldKey,oldRecord]of Object.entries(attempts)){
+ const parts=oldKey.split('|');if(parts.length!==5||parts[1]!=='Violympic'||parts[3]!=='Vòng 4'||!oldRecord||typeof oldRecord!=='object')continue;
+ parts[3]='Vòng loại';const target=parts.join('|');
+ if(!attempts[target]||(Number(oldRecord.updatedAt)||0)>(Number(attempts[target].updatedAt)||0)){attempts[target]={...oldRecord};violympicModeMigrated=true;}
+}
+if(violympicModeMigrated)try{localStorage.setItem(attemptStorageKey,JSON.stringify(attempts));}catch{}
 const attemptKey=selection=>[selection.grade,selection.program,selection.subject,selection.mode,selection.topicId||getPapers(selection.program,selection.subject,selection.grade,selection.mode)[selection.paper]?.id||''].join('|');
 // Preserve source-ID answers from both former groups, retaining the old record as a backup.
 let topicAttemptsMigrated=false;
@@ -296,9 +305,9 @@ function isNationalTopicQuestion(index){
 function renderQuestion(q,i,ready){
  ready=q.answerSource==='user'&&validResponse(q,q.answer);
  const text=q.english||q.text||'',translation=q.translation||q.vietnamese||'';
- const section=!state.practice?.topicId&&state.practice?.program==='TIMO'?timoTopicGroups.find(group=>group.first===(q.number??i+1)):null;
- const sectionHeading=section?`<h3 class="paper-section-heading"><span lang="en">${escapeHTML(q.sectionHeading?.english||section.english)}</span> / <em>${escapeHTML(q.sectionHeading?.vietnamese||section.vietnamese)}</em></h3>`:'';
- return `${sectionHeading}<fieldset class="paper-question question ${q.optionColumns===2?'options-two-columns':''} ${q.largeOptionImages?'options-figure-cards':''}"><legend><strong>Câu ${state.practice?.topicId?i+1:(q.number??i+1)}.</strong> ${isNationalTopicQuestion(i)?'<span class="national-question-star" role="img" aria-label="Câu hỏi Vòng quốc gia" title="Câu hỏi Vòng quốc gia"><span aria-hidden="true">★</span></span> ':''}<span ${q.english?'lang="en"':''}>${escapeHTML(text)}</span></legend>${translation?`<p class="question-translation">${escapeHTML(translation)}</p>`:''}${q.detail?`<div class="question-illustration diagram-number-line">${escapeHTML(q.detail)}</div>`:''}${q.image&&/^\.\/assets\/[a-zA-Z0-9_./-]+\.(png|webp|jpg|jpeg|svg)$/.test(q.image)?`<figure class="question-illustration"><img src="${escapeHTML(q.image)}" alt="${escapeHTML(q.imageAlt||'Hình minh họa câu hỏi '+(i+1))}"></figure>`:''}${q.responseType==='text'?`<div class="free-answer"><label for="free-answer-${i}">Câu trả lời</label><input id="free-answer-${i}" class="free-answer-input" type="text" data-free-question="${i}" value="${escapeHTML(state.answers[i]??'')}" maxlength="200" autocomplete="off" spellcheck="false" placeholder="Nhập câu trả lời" ${state.submitted?'disabled':''} required>${ready&&state.solutionsVisible?`<p class="provided-answer">Đáp án: ${escapeHTML(q.answer)}</p>`:''}</div>`:`<div class="paper-options answers">${q.options.map((option,j)=>`<label class="${state.answers[i]===j?'chosen':''} ${ready&&state.solutionsVisible&&j===q.answer?'paper-correct':''} ${ready&&state.solutionsVisible&&state.answers[i]===j&&j!==q.answer?'paper-wrong':''}"><input type="radio" name="question-${i}" data-question="${i}" value="${j}" ${state.answers[i]===j?'checked':''} ${state.submitted?'disabled':''}><span class="answer-text ${q.optionImages?.[j]?'answer-with-figure':''}">${String.fromCharCode(65+j)}. ${q.optionImages?.[j]&&/^\.\/assets\/[a-zA-Z0-9_./-]+\.(png|webp|jpg|jpeg|svg)$/.test(q.optionImages[j])?`<img src="${escapeHTML(q.optionImages[j])}" alt="${escapeHTML(option)}" width="28" height="28">`:escapeHTML(option)}</span></label>`).join('')}</div>`}${ready&&state.solutionsVisible&&q.explanation?`<p class="paper-explanation explanation">${escapeHTML(q.explanation)}</p>${q.explanationImage&&/^\.\/assets\/[a-zA-Z0-9_./-]+\.svg$/.test(q.explanationImage)?`<figure class="question-illustration solution-illustration"><img src="${escapeHTML(q.explanationImage)}" alt="${escapeHTML(q.explanationImageAlt||'Hình lời giải do phụ huynh cung cấp')}"></figure>`:''}`:''}</fieldset>`;
+ const section=!state.practice?.topicId&&state.practice?.program==='TIMO'?timoTopicGroups.find(group=>group.first===(q.sourceNumber??q.number??i+1)):null;
+ const sectionHeading=q.sectionTitle?`<h3 class="paper-section-heading">${escapeHTML(q.sectionTitle)}</h3>`:section?`<h3 class="paper-section-heading"><span lang="en">${escapeHTML(q.sectionHeading?.english||section.english)}</span> / <em>${escapeHTML(q.sectionHeading?.vietnamese||section.vietnamese)}</em></h3>`:'';
+ return `${sectionHeading}<fieldset class="paper-question question ${q.optionColumns===2?'options-two-columns':''} ${q.largeOptionImages?'options-figure-cards':''}"><legend><strong>Câu ${state.practice?.topicId?i+1:(q.sourceNumber??q.number??i+1)}.</strong> ${isNationalTopicQuestion(i)?'<span class="national-question-star" role="img" aria-label="Câu hỏi Vòng quốc gia" title="Câu hỏi Vòng quốc gia"><span aria-hidden="true">★</span></span> ':''}<span ${q.english?'lang="en"':''}>${escapeHTML(text)}</span></legend>${translation?`<p class="question-translation">${escapeHTML(translation)}</p>`:''}${q.detail?`<div class="question-illustration diagram-number-line">${escapeHTML(q.detail)}</div>`:''}${q.image&&/^\.\/assets\/[a-zA-Z0-9_./-]+\.(png|webp|jpg|jpeg|svg)$/.test(q.image)?`<figure class="question-illustration"><img src="${escapeHTML(q.image)}" alt="${escapeHTML(q.imageAlt||'Hình minh họa câu hỏi '+(i+1))}"></figure>`:''}${q.responseType==='text'?`<div class="free-answer"><label for="free-answer-${i}">Câu trả lời</label><input id="free-answer-${i}" class="free-answer-input" type="text" data-free-question="${i}" value="${escapeHTML(state.answers[i]??'')}" maxlength="200" autocomplete="off" spellcheck="false" placeholder="Nhập câu trả lời" ${state.submitted?'disabled':''} required>${ready&&state.solutionsVisible?`<p class="provided-answer">Đáp án: ${escapeHTML(q.answer)}</p>`:''}</div>`:`<div class="paper-options answers">${q.options.map((option,j)=>`<label class="${state.answers[i]===j?'chosen':''} ${ready&&state.solutionsVisible&&j===q.answer?'paper-correct':''} ${ready&&state.solutionsVisible&&state.answers[i]===j&&j!==q.answer?'paper-wrong':''}"><input type="radio" name="question-${i}" data-question="${i}" value="${j}" ${state.answers[i]===j?'checked':''} ${state.submitted?'disabled':''}><span class="answer-text ${q.optionImages?.[j]?'answer-with-figure':''}">${String.fromCharCode(65+j)}. ${q.optionImages?.[j]&&/^\.\/assets\/[a-zA-Z0-9_./-]+\.(png|webp|jpg|jpeg|svg)$/.test(q.optionImages[j])?`<img src="${escapeHTML(q.optionImages[j])}" alt="${escapeHTML(option)}" width="28" height="28">`:escapeHTML(option)}</span></label>`).join('')}</div>`}${ready&&state.solutionsVisible&&q.explanation?`<p class="paper-explanation explanation">${escapeHTML(q.explanation)}</p>${q.explanationImage&&/^\.\/assets\/[a-zA-Z0-9_./-]+\.svg$/.test(q.explanationImage)?`<figure class="question-illustration solution-illustration"><img src="${escapeHTML(q.explanationImage)}" alt="${escapeHTML(q.explanationImageAlt||'Hình lời giải do phụ huynh cung cấp')}"></figure>`:''}`:''}</fieldset>`;
 }
 function applyPracticeSearch(value){
  const p=state.practice;if(!p)return;
@@ -306,7 +315,7 @@ function applyPracticeSearch(value){
  const tokens=normalizedTopicSearch(p.searchQuery.trim()).split(/\s+/).filter(Boolean);
  let visible=0;
  app.querySelectorAll('.paper-question').forEach((element,i)=>{
-  const q=p.questions[i],source=p.sources?.[i],label=`Câu ${p.topicId?i+1:q.number??i+1}`;
+  const q=p.questions[i],source=p.sources?.[i],label=`Câu ${p.topicId?i+1:q.sourceNumber??q.number??i+1}`;
   const text=normalizedTopicSearch([label,q.english,q.text,q.translation,q.vietnamese,q.detail,q.imageAlt,source?.paperTitle,...(q.options||[])].filter(Boolean).join(' '));
   element.hidden=!tokens.every(token=>text.includes(token));if(!element.hidden)visible++;
  });

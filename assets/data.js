@@ -1,6 +1,6 @@
 const programs = ['TIMO', 'ASMO', 'Violympic', 'Báo bài của trường'];
 const subjects = ['Toán', 'Tiếng Việt', 'Tiếng Anh'];
-const modes = ['Đề vòng loại', 'Đề quốc gia', 'Luyện theo chủ đề', 'Vòng 4'];
+const modes = ['Đề vòng loại', 'Đề quốc gia', 'Luyện theo chủ đề', 'Vòng loại'];
 
 function subjectDisplayName(subject) {
   const text = String(subject);
@@ -12,7 +12,7 @@ function getSubjects(program) {
 }
 
 function getModes(program, grade) {
-  if (program === 'Violympic') return ['Vòng 4'];
+  if (program === 'Violympic') return ['Vòng loại'];
   if (program !== 'Báo bài của trường') return modes.slice(0,3);
   const reports = typeof schoolReports === 'undefined' ? [] : schoolReports;
   const weeks = [...new Set(reports.filter(report => grade === undefined || String(report.grade) === String(grade)).slice().sort((a,b) => b.start.localeCompare(a.start)).map(report => report.title))];
@@ -4906,12 +4906,12 @@ const officialPapers = [
   },
 {
   "id": "violympic-grade1-math-round4-game1",
-  "title": "Đừng để điểm rơi",
-  "sourceTitle": "Violympic lớp 1 — Toán — Vòng 4 — Đừng để điểm rơi",
+  "title": "Vòng 4",
+  "sourceTitle": "Violympic lớp 1 — Toán — Vòng loại — Vòng 4",
   "program": "Violympic",
   "subject": "Toán",
   "grade": "1",
-  "mode": "Vòng 4",
+  "mode": "Vòng loại",
   "instructions": "Bạn khởi đầu với 100 điểm và cần bảo toàn 100 điểm này. Về tới đích bằng cách vượt qua các câu hỏi của trò chơi. Với mỗi câu hỏi trả lời sai sẽ bị trừ đi 10 điểm. Trò chơi sẽ kết thúc khi bạn vượt qua tất cả các chướng ngại vật, trừ hết số điểm hoặc hết thời gian làm bài.",
   "sourceRules": {
     "initialPoints": 100,
@@ -4929,7 +4929,10 @@ const officialPapers = [
         ">",
         "="
       ],
-      "optionColumns": 2
+      "optionColumns": 2,
+      "sourcePart": 1,
+      "sourceNumber": 1,
+      "sectionTitle": "Bài 1: Đừng để điểm rơi"
     },
     {
       "number": 2,
@@ -4947,7 +4950,9 @@ const officialPapers = [
         "./assets/violympic/grade1-round4-q2-d.1b4ce22513c7.svg"
       ],
       "optionColumns": 2,
-      "largeOptionImages": true
+      "largeOptionImages": true,
+      "sourcePart": 1,
+      "sourceNumber": 2
     },
     {
       "number": 3,
@@ -4955,7 +4960,9 @@ const officialPapers = [
       "responseType": "text",
       "options": [],
       "image": "./assets/violympic/grade1-round4-q3.6501cd8bf33e.svg",
-      "imageAlt": "Các chú chó trong khung cam, gồm ba tư thế ngồi, nằm và đứng. Chú chó nằm được ghi 6; ô số của chú chó ngồi là dấu hỏi."
+      "imageAlt": "Các chú chó trong khung cam, gồm ba tư thế ngồi, nằm và đứng. Chú chó nằm được ghi 6; ô số của chú chó ngồi là dấu hỏi.",
+      "sourcePart": 1,
+      "sourceNumber": 3
     },
     {
       "number": 4,
@@ -4968,19 +4975,25 @@ const officialPapers = [
         "=",
         ">"
       ],
-      "optionColumns": 2
+      "optionColumns": 2,
+      "sourcePart": 1,
+      "sourceNumber": 4
     },
     {
       "number": 5,
       "text": "Số ? Con chó có ... cái chân.",
       "responseType": "text",
-      "options": []
+      "options": [],
+      "sourcePart": 1,
+      "sourceNumber": 5
     },
     {
       "number": 6,
       "text": "Số ? Con cò có ... cái chân.",
       "responseType": "text",
-      "options": []
+      "options": [],
+      "sourcePart": 1,
+      "sourceNumber": 6
     },
     {
       "number": 7,
@@ -4988,7 +5001,9 @@ const officialPapers = [
       "responseType": "text",
       "options": [],
       "image": "./assets/violympic/grade1-round4-q7.0ab8ec379d24.svg",
-      "imageAlt": "Dấu hỏi trong hình tròn vàng, dấu bé hơn, số 1 trong hình tròn vàng."
+      "imageAlt": "Dấu hỏi trong hình tròn vàng, dấu bé hơn, số 1 trong hình tròn vàng.",
+      "sourcePart": 1,
+      "sourceNumber": 7
     },
     {
       "number": 8,
@@ -5001,7 +5016,9 @@ const officialPapers = [
         "Hình vuông và hình tam giác",
         "Hình tròn và hình chữ nhật"
       ],
-      "optionColumns": 2
+      "optionColumns": 2,
+      "sourcePart": 1,
+      "sourceNumber": 8
     },
     {
       "number": 9,
@@ -5012,7 +5029,9 @@ const officialPapers = [
         "113",
         "111"
       ],
-      "optionColumns": 2
+      "optionColumns": 2,
+      "sourcePart": 1,
+      "sourceNumber": 9
     },
     {
       "number": 10,
@@ -5023,7 +5042,9 @@ const officialPapers = [
         "4",
         "3"
       ],
-      "optionColumns": 2
+      "optionColumns": 2,
+      "sourcePart": 1,
+      "sourceNumber": 10
     },
     {
       "number": 11,
@@ -5036,7 +5057,9 @@ const officialPapers = [
         ">",
         "="
       ],
-      "optionColumns": 2
+      "optionColumns": 2,
+      "sourcePart": 1,
+      "sourceNumber": 11
     },
     {
       "number": 12,
@@ -5056,7 +5079,9 @@ const officialPapers = [
         "./assets/violympic/grade1-round4-q12-d.9e191408f619.svg"
       ],
       "largeOptionImages": true,
-      "optionColumns": 2
+      "optionColumns": 2,
+      "sourcePart": 1,
+      "sourceNumber": 12
     },
     {
       "number": 13,
@@ -5064,7 +5089,9 @@ const officialPapers = [
       "image": "./assets/violympic/grade1-round4-q13.2c16f38bc886.svg",
       "imageAlt": "Các con vịt xếp thành hai hàng trong khung chữ nhật nâu.",
       "responseType": "text",
-      "options": []
+      "options": [],
+      "sourcePart": 1,
+      "sourceNumber": 13
     },
     {
       "number": 14,
@@ -5072,7 +5099,9 @@ const officialPapers = [
       "image": "./assets/violympic/grade1-round4-q14.391ee5a7fbe9.svg",
       "imageAlt": "Hình một con nhện với các chân tỏa ra hai phía thân.",
       "responseType": "text",
-      "options": []
+      "options": [],
+      "sourcePart": 1,
+      "sourceNumber": 14
     },
     {
       "number": 15,
@@ -5080,7 +5109,9 @@ const officialPapers = [
       "responseType": "text",
       "options": [],
       "image": "./assets/violympic/grade1-round4-q15.6e9f007bc73d.svg",
-      "imageAlt": "Ba hình tròn xanh nhạt: 5, dấu bé hơn, dấu hỏi, dấu bé hơn, 7."
+      "imageAlt": "Ba hình tròn xanh nhạt: 5, dấu bé hơn, dấu hỏi, dấu bé hơn, 7.",
+      "sourcePart": 1,
+      "sourceNumber": 15
     },
     {
       "number": 16,
@@ -5088,7 +5119,9 @@ const officialPapers = [
       "responseType": "text",
       "options": [],
       "image": "./assets/violympic/grade1-round4-q16.77c011a33a8f.svg",
-      "imageAlt": "Ba hình tròn vàng: 2, dấu bé hơn, dấu hỏi, dấu bé hơn, 4."
+      "imageAlt": "Ba hình tròn vàng: 2, dấu bé hơn, dấu hỏi, dấu bé hơn, 4.",
+      "sourcePart": 1,
+      "sourceNumber": 16
     },
     {
       "number": 17,
@@ -5101,7 +5134,9 @@ const officialPapers = [
         "Hình tròn và hình chữ nhật",
         "Hình vuông và hình chữ nhật"
       ],
-      "optionColumns": 2
+      "optionColumns": 2,
+      "sourcePart": 1,
+      "sourceNumber": 17
     },
     {
       "number": 18,
@@ -5121,7 +5156,84 @@ const officialPapers = [
         "./assets/violympic/grade1-round4-q18-d.6bc231006ad0.svg"
       ],
       "largeOptionImages": true,
-      "optionColumns": 2
+      "optionColumns": 2,
+      "sourcePart": 1,
+      "sourceNumber": 18
+    },
+    {
+      "number": 19,
+      "text": "Hình tiếp theo là",
+      "image": "./assets/violympic/grade1-round4-q19.a6d22a5c263a.svg",
+      "imageAlt": "Dãy hình chữ số: 2, 3, 1, 2, 1, 3, 2, 3, 1, 2, 1, ô dấu hỏi.",
+      "options": [
+        "Hình số 1",
+        "Hình số 2",
+        "Hình số 3 thứ nhất",
+        "Hình số 3 thứ hai"
+      ],
+      "optionImages": [
+        "./assets/violympic/grade1-round4-q19-a.938e0fbdc885.svg",
+        "./assets/violympic/grade1-round4-q19-b.efd0dc3d2817.svg",
+        "./assets/violympic/grade1-round4-q19-c.b87187b64ebb.svg",
+        "./assets/violympic/grade1-round4-q19-d.1ca53f8b947a.svg"
+      ],
+      "largeOptionImages": true,
+      "optionColumns": 2,
+      "sourcePart": 1,
+      "sourceNumber": 19
+    },
+    {
+      "number": 20,
+      "text": "Điền số thích hợp vào dấu hỏi.",
+      "responseType": "text",
+      "options": [],
+      "image": "./assets/violympic/grade1-round4-q20.b1628cdc755e.svg",
+      "imageAlt": "Bảng bốn hàng, sáu cột gồm túi đỏ, quả sồi, mũ len. Bên dưới: quả sồi = 8; mũ len = dấu hỏi.",
+      "sourcePart": 1,
+      "sourceNumber": 20
+    },
+    {
+      "number": 21,
+      "text": "Tìm phần còn thiếu:",
+      "image": "./assets/violympic/grade1-round4-game2-q1-head.256073b44df1.svg",
+      "imageAlt": "Phần bên trái của một con vật vàng nâu có hai râu mắt.",
+      "options": [
+        "Hình thứ nhất",
+        "Hình thứ hai",
+        "Hình thứ ba",
+        "Hình thứ tư"
+      ],
+      "optionImages": [
+        "./assets/violympic/grade1-round4-game2-q1-a.9d063c19a296.svg",
+        "./assets/violympic/grade1-round4-game2-q1-b.4131b385e040.svg",
+        "./assets/violympic/grade1-round4-game2-q1-c.9c8f5d1f7a70.svg",
+        "./assets/violympic/grade1-round4-game2-q1-d.4c364b7421cf.svg"
+      ],
+      "largeOptionImages": true,
+      "optionColumns": 2,
+      "sourcePart": 2,
+      "sourceNumber": 1,
+      "sectionTitle": "Bài 2"
+    },
+    {
+      "number": 22,
+      "text": "Điền số: Có ... chiếc bánh như hình mẫu bên dưới.",
+      "image": "./assets/violympic/grade1-round4-game2-q2.40003c521ea4.svg",
+      "imageAlt": "Bảng bốn hàng, tám cột gồm bốn loại bánh. Hình mẫu cần đếm là bánh vòng phủ sô cô la.",
+      "responseType": "text",
+      "options": [],
+      "sourcePart": 2,
+      "sourceNumber": 2
+    },
+    {
+      "number": 23,
+      "text": "Điền số: Có ... chiếc bánh như hình mẫu bên dưới.",
+      "image": "./assets/violympic/grade1-round4-game2-q3.ce0e0ec19cad.svg",
+      "imageAlt": "Cùng bảng bốn hàng, tám cột gồm bốn loại bánh. Hình mẫu cần đếm là bánh kem trắng có quả đỏ trên đỉnh.",
+      "responseType": "text",
+      "options": [],
+      "sourcePart": 2,
+      "sourceNumber": 3
     }
   ]
 }
