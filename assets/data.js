@@ -5013,6 +5013,66 @@ const officialPapers = [
         "111"
       ],
       "optionColumns": 2
+    },
+    {
+      "number": 10,
+      "text": "Phong có 2 người chị em gái. Biết mỗi người chị hoặc em gái có đúng 2 người anh em trai. Hỏi gia đình Phong có bao nhiêu người con?",
+      "options": [
+        "5",
+        "2",
+        "4",
+        "3"
+      ],
+      "optionColumns": 2
+    },
+    {
+      "number": 11,
+      "text": "Hãy chọn 1 đáp án đúng.",
+      "image": "./assets/violympic/grade1-round4-q11.31a5c018e0aa.svg",
+      "imageAlt": "Khung lục giác bên trái có sáu quả cam, bên phải có năm quả cam, khung ở giữa để trống.",
+      "options": [
+        "<",
+        "Không có đáp án",
+        ">",
+        "="
+      ],
+      "optionColumns": 2
+    },
+    {
+      "number": 12,
+      "text": "Đâu là bóng của con chó?",
+      "image": "./assets/violympic/grade1-round4-q12-dog.d5a30f362914.svg",
+      "imageAlt": "Chú chó màu vàng nâu đứng nghiêng, đầu hướng sang trái, trong khung vuông chấm vàng.",
+      "options": [
+        "Bóng hình thứ nhất",
+        "Bóng hình thứ hai",
+        "Bóng hình thứ ba",
+        "Bóng hình thứ tư"
+      ],
+      "optionImages": [
+        "./assets/violympic/grade1-round4-q12-a.d0511fe11f33.svg",
+        "./assets/violympic/grade1-round4-q12-b.c553a472a2e1.svg",
+        "./assets/violympic/grade1-round4-q12-c.ddb77d81ff20.svg",
+        "./assets/violympic/grade1-round4-q12-d.9e191408f619.svg"
+      ],
+      "largeOptionImages": true,
+      "optionColumns": 2
+    },
+    {
+      "number": 13,
+      "text": "Điền số thích hợp: Có ... con vịt.",
+      "image": "./assets/violympic/grade1-round4-q13.2c16f38bc886.svg",
+      "imageAlt": "Các con vịt xếp thành hai hàng trong khung chữ nhật nâu.",
+      "responseType": "text",
+      "options": []
+    },
+    {
+      "number": 14,
+      "text": "Số ? Con nhện có ... cái chân.",
+      "image": "./assets/violympic/grade1-round4-q14.391ee5a7fbe9.svg",
+      "imageAlt": "Hình một con nhện với các chân tỏa ra hai phía thân.",
+      "responseType": "text",
+      "options": []
     }
   ]
 }
