@@ -5299,7 +5299,9 @@ const officialPapers = [
         "./assets/violympic/grade1-round4-game2-q4-d.210781ac5eb1.svg"
       ],
       "largeOptionImages": true,
-      "optionColumns": 2
+      "optionColumns": 2,
+      "answer": 0,
+      "answerSource": "user"
     },
     {
       "number": 25,
@@ -5319,7 +5321,9 @@ const officialPapers = [
         "./assets/violympic/grade1-round4-game2-q5-d.ff43d3152471.svg"
       ],
       "largeOptionImages": true,
-      "optionColumns": 2
+      "optionColumns": 2,
+      "answer": 3,
+      "answerSource": "user"
     },
     {
       "number": 26,
@@ -5339,7 +5343,9 @@ const officialPapers = [
         "./assets/violympic/grade1-round4-game2-q6-d.4bda7e38e5da.svg"
       ],
       "largeOptionImages": true,
-      "optionColumns": 2
+      "optionColumns": 2,
+      "answer": 0,
+      "answerSource": "user"
     },
     {
       "number": 27,
@@ -5359,7 +5365,9 @@ const officialPapers = [
         "./assets/violympic/grade1-round4-game2-q7-d.622321cea080.svg"
       ],
       "largeOptionImages": true,
-      "optionColumns": 2
+      "optionColumns": 2,
+      "answer": 2,
+      "answerSource": "user"
     },
     {
       "number": 28,
@@ -5387,7 +5395,9 @@ const officialPapers = [
         "3",
         "4"
       ],
-      "optionColumns": 2
+      "optionColumns": 2,
+      "answer": 3,
+      "answerSource": "user"
     }
   ]
 }
