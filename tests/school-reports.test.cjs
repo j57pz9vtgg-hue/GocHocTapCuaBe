@@ -78,7 +78,7 @@ test('newly supplied October26–30 week coexists with the original week and is 
  for(const [subject,count] of [['Toán',3],['Tiếng Việt',5],['SCIENCE',2],['GLOBAL',1],['ESL',4],['MATHEMATICS',3]]){
   const result=api.getSchoolReports('1',subject,'',newWeek);assert.equal(result.length,1);assert.equal(result[0].entries.length,count);assert.ok(result[0].entries.every(e=>e.subject===subject&&e.date>='2026-10-26'&&e.date<='2026-10-30'));assert.equal(api.getSchoolReports('1',subject).length,2);
  }
- const all=api.schoolReports.filter(r=>r.grade==='1').flatMap(r=>r.entries);assert.equal(all.length,38);assert.equal(new Set(all.map(e=>e.id)).size,38);assert.equal(api.officialPapers.length,14);assert.equal(api.officialPapers.reduce((n,p)=>n+p.questions.length,0),350);
+ const all=api.schoolReports.filter(r=>r.grade==='1').flatMap(r=>r.entries);assert.equal(all.length,38);assert.equal(new Set(all.map(e=>e.id)).size,38);const timo=api.officialPapers.filter(p=>p.program==='TIMO');assert.equal(timo.length,14);assert.equal(timo.reduce((n,p)=>n+p.questions.length,0),350);
 });
 test('new report preserves tests, split-page feelings vocabulary and the newly supplied Halloween preparation',()=>{
  const all=api.schoolReports.filter(r=>r.start==='2026-10-26').flatMap(r=>r.entries);

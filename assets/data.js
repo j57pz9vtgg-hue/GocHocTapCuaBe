@@ -1,6 +1,6 @@
-const programs = ['TIMO', 'ASMO', 'Báo bài của trường'];
+const programs = ['TIMO', 'ASMO', 'Violympic', 'Báo bài của trường'];
 const subjects = ['Toán', 'Tiếng Việt', 'Tiếng Anh'];
-const modes = ['Đề vòng loại', 'Đề quốc gia', 'Luyện theo chủ đề'];
+const modes = ['Đề vòng loại', 'Đề quốc gia', 'Luyện theo chủ đề', 'Vòng 4'];
 
 function subjectDisplayName(subject) {
   const text = String(subject);
@@ -8,11 +8,12 @@ function subjectDisplayName(subject) {
 }
 
 function getSubjects(program) {
-  return program === 'TIMO' ? ['Toán'] : program === 'Báo bài của trường' ? ['Toán', 'Tiếng Việt', 'SCIENCE', 'GLOBAL', 'ESL', 'MATHEMATICS'] : subjects;
+  return ['TIMO','Violympic'].includes(program) ? ['Toán'] : program === 'Báo bài của trường' ? ['Toán', 'Tiếng Việt', 'SCIENCE', 'GLOBAL', 'ESL', 'MATHEMATICS'] : subjects;
 }
 
 function getModes(program, grade) {
-  if (program !== 'Báo bài của trường') return modes;
+  if (program === 'Violympic') return ['Vòng 4'];
+  if (program !== 'Báo bài của trường') return modes.slice(0,3);
   const reports = typeof schoolReports === 'undefined' ? [] : schoolReports;
   const weeks = [...new Set(reports.filter(report => grade === undefined || String(report.grade) === String(grade)).slice().sort((a,b) => b.start.localeCompare(a.start)).map(report => report.title))];
   return [...weeks, 'Tất cả các tuần'];
@@ -4902,7 +4903,36 @@ const officialPapers = [
         "explanation": "Tổng số tiền của Peter là: 6 × $1 + 2 × $2 + 4 × $5 = $30.\nVì $30 = $6 × 5 nên Peter có thể mua nhiều nhất 5 món quà lưu niệm.\nĐáp số: 5."
       }
     ]
-  }
+  },
+{
+  "id": "violympic-grade1-math-round4-game1",
+  "title": "Đừng để điểm rơi",
+  "sourceTitle": "Violympic lớp 1 — Toán — Vòng 4 — Đừng để điểm rơi",
+  "program": "Violympic",
+  "subject": "Toán",
+  "grade": "1",
+  "mode": "Vòng 4",
+  "instructions": "Bạn khởi đầu với 100 điểm và cần bảo toàn 100 điểm này. Về tới đích bằng cách vượt qua các câu hỏi của trò chơi. Với mỗi câu hỏi trả lời sai sẽ bị trừ đi 10 điểm. Trò chơi sẽ kết thúc khi bạn vượt qua tất cả các chướng ngại vật, trừ hết số điểm hoặc hết thời gian làm bài.",
+  "sourceRules": {
+    "initialPoints": 100,
+    "wrongPenalty": 10
+  },
+  "questions": [
+    {
+      "number": 1,
+      "text": "Hãy chọn 1 đáp án đúng.",
+      "image": "./assets/violympic/grade1-round4-q1.f4f129389894.svg",
+      "imageAlt": "Hai nhóm quả trong khung lục giác nét đứt: bên trái 3 quả, bên phải 5 quả; khung lục giác ở giữa để trống.",
+      "options": [
+        "Không có đáp án",
+        "<",
+        ">",
+        "="
+      ],
+      "optionColumns": 2
+    }
+  ]
+}
 ];
 function getPapers(program, subject, grade, mode) {
   if (!getSubjects(program).includes(subject)) return [];
