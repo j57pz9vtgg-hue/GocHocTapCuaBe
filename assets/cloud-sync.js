@@ -58,13 +58,13 @@
      else{
       const focused=document.activeElement,focusIndex=focused?.dataset?.freeQuestion,caret=focused?.selectionStart;
       state.answers={};p.questions.forEach((q,i)=>{const j=p.questionIds?value.questionIds?.indexOf(p.questionIds[i]):i,v=value.answers?.[j];if(validResponse(q,v))state.answers[i]=v;});
-      state.submitted=value.submitted===true&&Object.keys(state.answers).length===p.questions.length;
+      state.submitted=value.submitted===true&&Object.keys(state.answers).length>0;
       if(state.submitted&&Number.isFinite(value.finishedAt))p.finishedAt=value.finishedAt;
       if(state.submitted||value.submitted!==current?.submitted){const top=scrollY;renderPractice();scrollTo({top,behavior:'instant'});}
       else{
        app.querySelectorAll('[data-question]').forEach(el=>{el.checked=state.answers[Number(el.dataset.question)]===Number(el.value);el.closest('label')?.classList.toggle('chosen',el.checked);});
        app.querySelectorAll('[data-free-question]').forEach(el=>{const v=state.answers[Number(el.dataset.freeQuestion)]??'';if(el.value!==v)el.value=v;});
-       const count=Object.keys(state.answers).length;const label=app.querySelector('#answer-count');if(label)label.textContent=`${count}/${p.questions.length} câu`;app.querySelectorAll('.paper-submit').forEach(el=>el.disabled=count!==p.questions.length);
+       const count=Object.keys(state.answers).length;const label=app.querySelector('#answer-count');if(label)label.textContent=`${count}/${p.questions.length} câu`;app.querySelectorAll('.paper-submit').forEach(el=>el.disabled=state.submitted||count===0);
        if(focusIndex!==undefined&&Number.isInteger(caret)){const el=app.querySelector(`[data-free-question="${focusIndex}"]`);el?.focus({preventScroll:true});try{el?.setSelectionRange(caret,caret);}catch{}}
       }
      }
