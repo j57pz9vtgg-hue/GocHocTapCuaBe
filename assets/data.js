@@ -5382,7 +5382,9 @@ const officialPapers = [
         "Không có vị trí nào",
         "A"
       ],
-      "optionColumns": 2
+      "optionColumns": 2,
+      "answer": 3,
+      "answerSource": "user"
     },
     {
       "number": 29,
