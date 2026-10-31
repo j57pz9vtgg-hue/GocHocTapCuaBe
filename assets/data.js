@@ -5169,7 +5169,7 @@ const officialPapers = [
       "optionColumns": 2,
       "sourcePart": 1,
       "sourceNumber": 17,
-      "answer": 1,
+      "answer": 0,
       "answerSource": "user"
     },
     {
