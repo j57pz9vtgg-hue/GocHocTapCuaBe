@@ -730,3 +730,9 @@
 .school-lesson61 .school-lesson-wordlist{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 4px}
 .school-lesson61 .school-lesson-picturewords{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.school-lesson61 .school-lesson-picturewords figcaption{font-size:clamp(14px,2.3vw,18px)}
 @media(max-width:480px){.school-lesson61 .school-lesson-phonics>p{font-size:22px}.school-lesson61 .school-lesson-wordlist{font-size:16px}}
+
+/* Source page135 completes the reading and market/supermarket speaking scenes. */
+.school-lesson61 .school-lesson-art-4,.school-lesson61 .school-lesson-art-5,.school-lesson61 .school-lesson-art-6{background-image:url("./school-art/lesson61-page2.881eb0d5a5d4.webp");clip-path:none}
+.school-lesson61 .school-lesson-art-4{background-size:100% 200%;background-position:center top;aspect-ratio:1448/543}
+.school-lesson61 .school-lesson-art-5,.school-lesson61 .school-lesson-art-6{background-size:200% 200%;aspect-ratio:1448/1086;border-radius:14px}
+.school-lesson61 .school-lesson-art-5{background-position:left bottom}.school-lesson61 .school-lesson-art-6{background-position:right bottom}

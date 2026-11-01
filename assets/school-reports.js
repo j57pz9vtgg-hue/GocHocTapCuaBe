@@ -1584,13 +1584,15 @@ function renderSchoolWorksheet(entry){
 // Lesson 36, pages84–85, transcribed from the owner's two textbook pages.
 const schoolLessonContents={
  'planned-tieng-viet-lesson-61':{
-  number:61,pages:'134',partial:true,sounds:['ong','ông','ung','ưng'],
+  number:61,pages:'134–135',partial:false,sounds:['ong','ông','ung','ưng'],
   recognition:'Những bông hồng rung rinh trong gió.',
   blend:{initial:'tr',sound:'ong',word:'trong'},
   words:['dòng','vòng','bỗng','cộng','thúng','vững','đựng','hừng'],wordColumns:4,
   pictureWords:['chong chóng','bông súng','bánh chưng'],
   writing:['ong ông ung ưng','bông súng bánh chưng'],
-  artLabels:['Bụi hoa hồng đỏ rung rinh bên lối đi, hàng rào và đồi cỏ','Chong chóng nhiều màu trên nền trời xanh','Bông súng hồng và lá trên mặt nước','Bánh chưng vuông gói lá xanh, buộc lạt vàng']
+  reading:['Nam theo mẹ đi chợ. Chợ đông vui và bán đủ thứ.','Ngay từ cổng là những dãy hàng đồ dùng gia đình.','Bên trong là hàng rau, thịt và cá. Nam thích lắm vì lần đầu cùng mẹ đi chợ.'],
+  speaking:'Chợ và siêu thị',speakingImages:[5,6],
+  artLabels:['Bụi hoa hồng đỏ rung rinh bên lối đi, hàng rào và đồi cỏ','Chong chóng nhiều màu trên nền trời xanh','Bông súng hồng và lá trên mặt nước','Bánh chưng vuông gói lá xanh, buộc lạt vàng','Nam cùng mẹ đi chợ, các quầy rau, thịt, cá và đồ dùng gia đình','Người bán thịt, người bán cá và các chậu cá ở chợ','Mẹ đẩy xe hàng có con ngồi trong siêu thị']
  },
  'tieng-viet-2026-10-28-a':{
   number:43,pages:'98–99',sounds:['au','âu','êu'],recognition:'Đàn sẻ nâu kêu ríu rít ở sau nhà.',
