@@ -32,6 +32,7 @@
   if(!value||typeof value!=='object'||Array.isArray(value))return false;
   if(kind==='classification'){if(key!==classificationKey)return false;TimoClassification.validate(value);return true;}
   if(kind==='preferences')return key==='theme'&&referenceThemes.some(t=>t.id===value.theme);
+  if(kind==='worksheet'&&typeof isSchoolPlanId==='function'&&isSchoolPlanId(key))return validSchoolPlanDraft(key,value);
   if(kind==='worksheet'&&schoolMathWorksheets[key])return validSchoolMathDraft(key,value);
   if(kind==='worksheet')return !!schoolExerciseWorksheets[key]&&Array.isArray(value.blanks)&&value.blanks.length<=4&&value.blanks.every(v=>typeof v==='string'&&v.length<=20)&&Array.isArray(value.choices)&&value.choices.length<=4&&value.choices.every(v=>typeof v==='boolean');
   const [grade,program,subject,mode,paper]=key.split('|');
@@ -72,6 +73,7 @@
     }else if(!state.practice)renderHome();
    }else if(doc.kind==='worksheet'){
     write(worksheetPrefix+doc.key,value);
+    if(value.type==='school-plan-v1'){refreshSchoolPlanView(doc.key);return;}
     if(value.type==='school-math-v1'){applySchoolMathDraft(doc.key,value);return;}
     const panel=document.querySelector('#school-report-content');if(panel?.dataset.lessonId===doc.key){panel.querySelectorAll('[data-school-blank]').forEach(el=>{const caret=el.selectionStart,v=value.blanks[Number(el.dataset.schoolBlank)]||'';if(el.value!==v){el.value=v;if(el===document.activeElement)try{el.setSelectionRange(caret,caret);}catch{}}});panel.querySelectorAll('[data-school-choice]').forEach(el=>{el.checked=value.choices[Number(el.dataset.schoolChoice)]===true;});}
    }else if(doc.kind==='classification')TimoClassification.acceptSynced(value);

@@ -11,11 +11,11 @@ function getSubjects(program) {
   return ['TIMO','Violympic'].includes(program) ? ['Toán'] : program === 'Báo bài của trường' ? ['Toán', 'Tiếng Việt', 'SCIENCE', 'GLOBAL', 'ESL', 'MATHEMATICS'] : subjects;
 }
 
-function getModes(program, grade) {
+function getModes(program, grade, subject) {
   if (program === 'Violympic') return ['Vòng loại'];
   if (program !== 'Báo bài của trường') return modes.slice(0,3);
-  const reports = typeof schoolReports === 'undefined' ? [] : schoolReports;
-  const weeks = [...new Set(reports.filter(report => grade === undefined || String(report.grade) === String(grade)).slice().sort((a,b) => b.start.localeCompare(a.start)).map(report => report.title))];
+  const reports = typeof schoolReportSources === 'function' ? schoolReportSources() : typeof schoolReports === 'undefined' ? [] : schoolReports;
+  const weeks = [...new Set(reports.filter(report => (grade === undefined || String(report.grade) === String(grade)) && (!report.projected || !subject || report.subject === subject)).slice().sort((a,b) => Number(!!a.projected)-Number(!!b.projected)||(a.projected?a.start.localeCompare(b.start):b.start.localeCompare(a.start))).map(report => report.title))];
   return [...weeks, 'Tất cả các tuần'];
 }
 
