@@ -1,6 +1,510 @@
 // School reports contain only owner-provided dates, subjects and lesson content.
 const schoolReports = [
 {
+  "id": "school-week-2026-11-02-vietnamese",
+  "grade": "1",
+  "subject": "Tiếng Việt",
+  "start": "2026-11-02",
+  "end": "2026-11-06",
+  "title": "Báo bài tuần 02/11/2026 - 06/11/2026",
+  "layout": "table",
+  "entries": [
+    {
+      "id": "tieng-viet-2026-11-02",
+      "date": "2026-11-02",
+      "day": "Thứ Hai",
+      "periods": "8,9",
+      "subject": "Tiếng Việt",
+      "title": "Bài 46: ac ăc âc",
+      "sections": [],
+      "preparation": [
+        "Đọc SGK tr.104-105"
+      ]
+    },
+    {
+      "id": "tieng-viet-2026-11-03",
+      "date": "2026-11-03",
+      "day": "Thứ Ba",
+      "periods": "8,9",
+      "subject": "Tiếng Việt",
+      "title": "Bài 47: oc ôc uc ưc",
+      "sections": [],
+      "preparation": [
+        "Đọc SGK tr.106-107"
+      ]
+    },
+    {
+      "id": "tieng-viet-2026-11-04-a",
+      "date": "2026-11-04",
+      "day": "Thứ Tư",
+      "periods": "1,2",
+      "subject": "Tiếng Việt",
+      "title": "Bài 48: at ăt ât",
+      "sections": [],
+      "preparation": [
+        "Đọc SGK tr.108-109"
+      ]
+    },
+    {
+      "id": "tieng-viet-2026-11-04-b",
+      "date": "2026-11-04",
+      "day": "Thứ Tư",
+      "periods": "3,4",
+      "subject": "Tiếng Việt",
+      "title": "Bài 49: ot ôt ơt",
+      "sections": [],
+      "preparation": [
+        "Đọc SGK tr.110-111"
+      ]
+    },
+    {
+      "id": "tieng-viet-2026-11-05",
+      "date": "2026-11-05",
+      "day": "Thứ Năm",
+      "periods": "5,6",
+      "subject": "Tiếng Việt",
+      "title": "Bài 50: Ôn tập",
+      "sections": [
+        {
+          "lines": [
+            "Bài 50: Kể chuyện: Bài học đầu tiên của thỏ con"
+          ]
+        }
+      ],
+      "preparation": [
+        "Đọc SGK tr.112-113"
+      ]
+    },
+    {
+      "id": "tieng-viet-2026-11-06",
+      "date": "2026-11-06",
+      "day": "Thứ Sáu",
+      "periods": "7,8",
+      "subject": "Tiếng Việt",
+      "title": "Thực hành",
+      "sections": [],
+      "preparation": []
+    }
+  ]
+},
+{
+  "id": "school-week-2026-11-02-toan",
+  "grade": "1",
+  "subject": "Toán",
+  "start": "2026-11-02",
+  "end": "2026-11-06",
+  "title": "Báo bài tuần 02/11/2026 - 06/11/2026",
+  "layout": "table",
+  "entries": [
+    {
+      "id": "toan-2026-11-02",
+      "date": "2026-11-02",
+      "day": "Thứ Hai",
+      "periods": "7",
+      "subject": "Toán",
+      "title": "Bài 11: Phép trừ trong phạm vi 10 (T.1)",
+      "sections": [],
+      "preparation": []
+    },
+    {
+      "id": "toan-2026-11-03",
+      "date": "2026-11-03",
+      "day": "Thứ Ba",
+      "periods": "7",
+      "subject": "Toán",
+      "title": "Bài 11: Phép trừ trong phạm vi 10 (T.2)",
+      "sections": [],
+      "preparation": []
+    },
+    {
+      "id": "toan-2026-11-05",
+      "date": "2026-11-05",
+      "day": "Thứ Năm",
+      "periods": "7",
+      "subject": "Toán",
+      "title": "Bài 11: Phép trừ trong phạm vi 10 (T.3)",
+      "sections": [],
+      "preparation": []
+    }
+  ]
+},
+{
+  "id": "school-week-2026-11-02-science",
+  "grade": "1",
+  "subject": "SCIENCE",
+  "start": "2026-11-02",
+  "end": "2026-11-06",
+  "title": "Báo bài tuần 02/11/2026 - 06/11/2026",
+  "layout": "table",
+  "entries": [
+    {
+      "id": "science-2026-11-02",
+      "date": "2026-11-02",
+      "day": "Thứ Hai",
+      "periods": "1,2",
+      "subject": "SCIENCE",
+      "title": "3.1 Natural And Made Materials",
+      "sections": [
+        {
+          "lines": [
+            "Learn about where materials come from.",
+            "Learn about the difference of natural and man made materials.",
+            "Identify natural and made materials."
+          ]
+        },
+        {
+          "heading": "Key Vocabulary",
+          "lines": [
+            "cotton, glass, natural, oil, paper, plastic, rubber, sand, water, wood"
+          ]
+        }
+      ],
+      "preparation": [
+        "LB Page: 59 - 63",
+        "WB Page: 29 - 31"
+      ],
+      "links": [
+        {
+          "label": "Pre-Learning Activities",
+          "url": "https://wordwall.net/resource/93430256"
+        }
+      ]
+    },
+    {
+      "id": "science-2026-11-04",
+      "date": "2026-11-04",
+      "day": "Thứ Tư",
+      "periods": "6,7",
+      "subject": "SCIENCE",
+      "title": "3.1 Natural And Made Materials",
+      "sections": [
+        {
+          "lines": [
+            "Learn about where materials come from.",
+            "Learn about the difference of natural and man made materials.",
+            "Identify natural and made materials."
+          ]
+        },
+        {
+          "heading": "Key Vocabulary",
+          "lines": [
+            "cotton, glass, natural, oil, paper, plastic, rubber, sand, water, wood"
+          ]
+        }
+      ],
+      "preparation": [
+        "LB Page: 59 - 63",
+        "WB Page: 29 - 31"
+      ],
+      "links": [
+        {
+          "label": "Pre-Learning Activities",
+          "url": "https://wordwall.net/resource/93430256"
+        }
+      ]
+    },
+    {
+      "id": "science-2026-11-06",
+      "date": "2026-11-06",
+      "day": "Thứ Sáu",
+      "periods": "5",
+      "subject": "SCIENCE",
+      "title": "3.1 Natural And Made Materials",
+      "sections": [
+        {
+          "lines": [
+            "Learn about where materials come from.",
+            "Learn about the difference of natural and man made materials.",
+            "Identify natural and made materials."
+          ]
+        },
+        {
+          "heading": "Key Vocabulary",
+          "lines": [
+            "cotton, glass, natural, oil, paper, plastic, rubber, sand, water, wood"
+          ]
+        }
+      ],
+      "preparation": [
+        "LB Page: 59 - 63",
+        "WB Page: 29 - 31"
+      ],
+      "links": [
+        {
+          "label": "Pre-Learning Activities",
+          "url": "https://wordwall.net/resource/93430256"
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "school-week-2026-11-02-esl",
+  "grade": "1",
+  "subject": "ESL",
+  "start": "2026-11-02",
+  "end": "2026-11-06",
+  "title": "Báo bài tuần 02/11/2026 - 06/11/2026",
+  "layout": "table",
+  "entries": [
+    {
+      "id": "esl-2026-11-02",
+      "date": "2026-11-02",
+      "day": "Thứ Hai",
+      "periods": "3,4",
+      "subject": "ESL",
+      "title": "Unit 3 Project:",
+      "sections": [
+        {
+          "lines": [
+            "Demonstrate their understanding of the unit topic through a creative task or presentation.",
+            "Activities may be completed individually or in groups and encourage deeper exploration of key themes."
+          ]
+        }
+      ],
+      "preparation": []
+    },
+    {
+      "id": "esl-2026-11-03",
+      "date": "2026-11-03",
+      "day": "Thứ Ba",
+      "periods": "3,4",
+      "subject": "ESL",
+      "title": "4.1 - What do you know about shadows?",
+      "sections": [
+        {
+          "lines": [
+            "Listen, understand and recite a poem.",
+            "Ask and answer questions about shadows."
+          ]
+        },
+        {
+          "heading": "Key Vocabulary",
+          "lines": [
+            "Morning, midday, evening, sky, low, high, shadow, long, short, sun, cloud."
+          ]
+        }
+      ],
+      "preparation": []
+    },
+    {
+      "id": "esl-2026-11-04",
+      "date": "2026-11-04",
+      "day": "Thứ Tư",
+      "periods": "8,9",
+      "subject": "ESL",
+      "title": "4.1 - What do you know about shadows?",
+      "sections": [
+        {
+          "lines": [
+            "Listen, understand and recite a poem.",
+            "Ask and answer questions about shadows."
+          ]
+        },
+        {
+          "heading": "Key Vocabulary",
+          "lines": [
+            "Morning, midday, evening, sky, low, high, shadow, long, short, sun, cloud."
+          ]
+        }
+      ],
+      "preparation": []
+    },
+    {
+      "id": "esl-2026-11-05",
+      "date": "2026-11-05",
+      "day": "Thứ Năm",
+      "periods": "3,4",
+      "subject": "ESL",
+      "title": "4.2 - Light and shadow",
+      "sections": [
+        {
+          "lines": [
+            "Listen to and follow instructions.",
+            "Carry out experiments.",
+            "Talk about cause and effect."
+          ]
+        },
+        {
+          "heading": "Key Vocabulary",
+          "lines": [
+            "Morning, midday, evening, sky, low, high, shadow, long, short, sun, cloud, torch."
+          ]
+        }
+      ],
+      "preparation": []
+    }
+  ]
+},
+{
+  "id": "school-week-2026-11-02-global",
+  "grade": "1",
+  "subject": "GLOBAL",
+  "start": "2026-11-02",
+  "end": "2026-11-06",
+  "title": "Báo bài tuần 02/11/2026 - 06/11/2026",
+  "layout": "table",
+  "entries": [
+    {
+      "id": "global-2026-11-06",
+      "date": "2026-11-06",
+      "day": "Thứ Sáu",
+      "periods": "3,4",
+      "subject": "GLOBAL",
+      "title": "2.4 - How can we make posters with a message?",
+      "sections": [
+        {
+          "heading": "Skill Focus: Collaboration",
+          "lines": []
+        },
+        {
+          "heading": "Students will be able to (I can…):",
+          "lines": [
+            "I can think of ideas to help my group make posters."
+          ]
+        },
+        {
+          "heading": "Key Vocabulary",
+          "lines": [
+            "54: message",
+            "55: school canteen",
+            "56: Glass, Container, Single-use, Cardboard, compost box, rubbish",
+            "57: plan, less, unopened, bin, chat"
+          ]
+        }
+      ],
+      "preparation": [
+        "LB: 54-57"
+      ]
+    }
+  ]
+},
+{
+  "id": "school-week-2026-11-02-mathematics",
+  "grade": "1",
+  "subject": "MATHEMATICS",
+  "start": "2026-11-02",
+  "end": "2026-11-06",
+  "title": "Báo bài tuần 02/11/2026 - 06/11/2026",
+  "layout": "table",
+  "entries": [
+    {
+      "id": "mathematics-2026-11-03",
+      "date": "2026-11-03",
+      "day": "Thứ Ba",
+      "periods": "1,2",
+      "subject": "MATHEMATICS",
+      "title": "5.1 Addition",
+      "sections": [
+        {
+          "lines": [
+            "Add ones or tens to a 2-digit number;",
+            "Add 3 or small numbers together; and",
+            "Use complements of 10 to find a complements of 20 and tens numbers to 100."
+          ]
+        },
+        {
+          "heading": "Key Vocabulary",
+          "lines": [
+            "column addition",
+            "complement (of 10, 20 and tens numbers to 100)",
+            "place value grid"
+          ]
+        },
+        {
+          "heading": "Prerequisite Skills",
+          "lines": [
+            "Add within 20.",
+            "Count on from a number.",
+            "Identify tens and ones.",
+            "Recall number bonds to 10."
+          ]
+        }
+      ],
+      "preparation": [
+        "LB Page: 81-85",
+        "WB Page: 78-85"
+      ]
+    },
+    {
+      "id": "mathematics-2026-11-04",
+      "date": "2026-11-04",
+      "day": "Thứ Tư",
+      "periods": "5",
+      "subject": "MATHEMATICS",
+      "title": "5.1 Addition",
+      "sections": [
+        {
+          "lines": [
+            "Add ones or tens to a 2-digit number;",
+            "Add 3 or small numbers together; and",
+            "Use complements of 10 to find a complements of 20 and tens numbers to 100."
+          ]
+        },
+        {
+          "heading": "Key Vocabulary",
+          "lines": [
+            "column addition",
+            "complement (of 10, 20 and tens numbers to 100)",
+            "place value grid"
+          ]
+        },
+        {
+          "heading": "Prerequisite Skills",
+          "lines": [
+            "Add within 20.",
+            "Count on from a number.",
+            "Identify tens and ones.",
+            "Recall number bonds to 10."
+          ]
+        }
+      ],
+      "preparation": [
+        "LB Page: 81-85",
+        "WB Page: 78-85"
+      ]
+    },
+    {
+      "id": "mathematics-2026-11-05",
+      "date": "2026-11-05",
+      "day": "Thứ Năm",
+      "periods": "1,2",
+      "subject": "MATHEMATICS",
+      "title": "5.1 Addition",
+      "sections": [
+        {
+          "lines": [
+            "Add ones or tens to a 2-digit number;",
+            "Add 3 or small numbers together; and",
+            "Use complements of 10 to find a complements of 20 and tens numbers to 100."
+          ]
+        },
+        {
+          "heading": "Key Vocabulary",
+          "lines": [
+            "column addition",
+            "complement (of 10, 20 and tens numbers to 100)",
+            "place value grid"
+          ]
+        },
+        {
+          "heading": "Prerequisite Skills",
+          "lines": [
+            "Add within 20.",
+            "Count on from a number.",
+            "Identify tens and ones.",
+            "Recall number bonds to 10."
+          ]
+        }
+      ],
+      "preparation": [
+        "LB Page: 81-85",
+        "WB Page: 78-85"
+      ]
+    }
+  ]
+},
+{
   "id": "school-grade2-week-2026-10-26-mathematics",
   "grade": "2",
   "subject": "MATHEMATICS",
