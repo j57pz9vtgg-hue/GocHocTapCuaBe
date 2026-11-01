@@ -736,3 +736,11 @@
 .school-lesson61 .school-lesson-art-4{background-size:100% 200%;background-position:center top;aspect-ratio:1448/543}
 .school-lesson61 .school-lesson-art-5,.school-lesson61 .school-lesson-art-6{background-size:200% 200%;aspect-ratio:1448/1086;border-radius:14px}
 .school-lesson61 .school-lesson-art-5{background-position:left bottom}.school-lesson61 .school-lesson-art-6{background-position:right bottom}
+
+/* Keep the mandatory parent-password prompt usable with a phone or tablet keyboard. */
+#solution-dialog{box-sizing:border-box;width:min(480px,calc(100% - 24px));max-width:calc(100% - 24px);max-height:calc(100dvh - 24px);overflow:auto;padding:24px}
+#solution-dialog h2{font-size:24px;line-height:1.3;margin-top:0;padding-right:42px}
+#solution-dialog input{box-sizing:border-box;font-size:16px;min-height:44px;max-width:100%}
+#solution-dialog [data-close-solutions]{width:44px;height:44px;min-width:44px;min-height:44px;top:8px;right:8px;display:grid;place-items:center}
+#solution-dialog button{min-height:44px}#solution-dialog .settings-status{overflow-wrap:anywhere}
+.settings-dialog .parent-password-panel input[type=password]{font-size:16px}
