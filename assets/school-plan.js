@@ -10,7 +10,7 @@ const schoolPlanBaseEntries=(()=>{
  for(let week=0;number<=83;week++){
   const monday=schoolPlanOffset('2026-11-09',week*7);
   for(const [offset,periods]of [[0,'8,9'],[1,'8,9'],[2,'1,2'],[2,'3,4'],[3,'5,6']]){
-   if(number>83)break;entries.push({id:`planned-tieng-viet-lesson-${number}`,date:schoolPlanOffset(monday,offset),periods,title:`Bài ${number}`,lessonNumber:number++,subject:'Tiếng Việt',projected:true,sections:[],preparation:[]});
+   if(number>83)break;entries.push({id:`planned-tieng-viet-lesson-${number}`,date:schoolPlanOffset(monday,offset),periods,title:schoolLessonContents[`planned-tieng-viet-lesson-${number}`]?.sounds?`Bài ${number}: ${schoolLessonContents[`planned-tieng-viet-lesson-${number}`].sounds.join(' ')}`:`Bài ${number}`,lessonNumber:number++,subject:'Tiếng Việt',projected:true,sections:[],preparation:[]});
   }
   const friday=schoolPlanOffset(monday,4);entries.push({id:`planned-tieng-viet-practice-${friday}`,date:friday,periods:'7,8',title:'Thực hành',subject:'Tiếng Việt',projected:true,sections:[],preparation:[]});
  }
