@@ -1590,7 +1590,7 @@ const schoolLessonContents={
   words:['dòng','vòng','bỗng','cộng','thúng','vững','đựng','hừng'],wordColumns:4,
   pictureWords:['chong chóng','bông súng','bánh chưng'],
   writing:['ong ông ung ưng','bông súng bánh chưng'],
-  reading:['Nam theo mẹ đi chợ. Chợ đông vui và bán đủ thứ.','Ngay từ cổng là những dãy hàng đồ dùng gia đình.','Bên trong là hàng rau, thịt và cá. Nam thích lắm vì lần đầu cùng mẹ đi chợ.'],
+  reading:['Nam theo mẹ đi chợ. Chợ đông vui và bán đủ thứ. Ngay từ cổng là những dãy hàng đồ dùng gia đình. Bên trong là hàng rau, thịt và cá. Nam thích lắm vì lần đầu cùng mẹ đi chợ.'],
   speaking:'Chợ và siêu thị',speakingImages:[5,6],
   artLabels:['Bụi hoa hồng đỏ rung rinh bên lối đi, hàng rào và đồi cỏ','Chong chóng nhiều màu trên nền trời xanh','Bông súng hồng và lá trên mặt nước','Bánh chưng vuông gói lá xanh, buộc lạt vàng','Nam cùng mẹ đi chợ, các quầy rau, thịt, cá và đồ dùng gia đình','Người bán thịt, người bán cá và các chậu cá ở chợ','Mẹ đẩy xe hàng có con ngồi trong siêu thị']
  },
