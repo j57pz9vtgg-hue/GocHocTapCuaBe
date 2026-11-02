@@ -41,11 +41,17 @@ function schoolReadingHeading(lessonId,headingId,number){
  }
  document.addEventListener('click',async event=>{const button=event.target.closest('[data-reading-record]');if(button){start(button);return;}const remove=event.target.closest('[data-reading-delete]');if(remove){const key=remove.dataset.readingDelete;remove.disabled=true;try{await store(key,null,true);release(key);elements(key).forEach(el=>el.querySelector('.school-reading-playback')?.remove());status(key,'Đã xóa bản ghi.');}catch{remove.disabled=false;status(key,'Chưa xóa được bản ghi. Hãy thử lại.');}}});
  function hydrate(){
+ if(globalThis.LearningAccounts?.isBlocked())return;
  if(active&&!active.button.isConnected)stop();
  for(const key of urls.keys())if(!elements(key).length)release(key);
  document.querySelectorAll('[data-reading-audio]:not([data-reading-ready])').forEach(async el=>{el.dataset.readingReady='true';const key=el.dataset.readingAudio;try{const record=await store(key);if(el.isConnected&&record){show(key,record);status(key,'Bản ghi đã lưu trên trình duyệt này.');}}catch{status(key,'Không mở được bộ nhớ bản ghi trên trình duyệt này.');}});
  }
  new MutationObserver(hydrate).observe(document.body,{childList:true,subtree:true});hydrate();
- window.LearningReading={async settle(){stop();await Promise.all([...pendingSaves]);}};
+ window.LearningReading={async settle(){stop();await Promise.all([...pendingSaves]);},async eraseCurrent(){
+  await this.settle();const audioPrefix=globalThis.LearningAccounts?.audioKey('')||'',database=await db();
+  await new Promise((resolve,reject)=>{const tx=database.transaction('recordings','readwrite'),request=tx.objectStore('recordings').openCursor();request.onsuccess=()=>{const cursor=request.result;if(!cursor)return;const key=String(cursor.key);if(audioPrefix?key.startsWith(audioPrefix):!key.startsWith('account:'))cursor.delete();cursor.continue();};tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error);});
+  for(const key of [...urls.keys()])release(key);
+ }};
+ if(globalThis.LearningAccounts?.isBlocked())window.LearningReading.eraseCurrent().catch(()=>{});
  window.addEventListener('pagehide',stop);
 })();

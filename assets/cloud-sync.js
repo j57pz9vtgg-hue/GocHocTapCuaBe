@@ -11,7 +11,7 @@
  let device=read(deviceKey);if(!device){device=crypto.randomUUID();try{write(deviceKey,device);}catch{}}
  device=device+'.'+crypto.randomUUID();
  let owner=read(ownerKey),enabled=read(enabledKey,false),records={},dirty=new Set(),counter=0,logicalTime=0,applying=false;
- let auth,db,collection,user=null,unsubscribe=null,authUnsubscribe=null,sdkPromise=null,serverReady=false,flushing=false,timer=null,generation=0,retryDelay=2000,phase='off',message='',lastSynced=null,busy=false,emailMode='login',emailDraft='',emailNotice='';
+ let auth,db,collection,user=null,unsubscribe=null,authUnsubscribe=null,sdkPromise=null,serverReady=false,flushing=false,timer=null,generation=0,retryDelay=2000,phase='off',message='',lastSynced=null,busy=false,emailMode='login',emailDraft='',emailNotice='',deleteFormOpen=false,deletionPending=false,deletionRunning=false;
  const id=(kind,key)=>kind+'_'+encodeURIComponent(key);
  const metaKey=()=>prefix+'sync-state.v1.'+owner.uid;
  function persist(){if(owner)write(metaKey(),records);}
@@ -81,7 +81,7 @@
   }finally{applying=false;}
  }
  function changed(kind,key,value){
-  if(applying||!LearningAccounts.isCurrent()||!owner||!accepts(kind,key,value))return;
+  if(applying||deletionPending||!LearningAccounts.isCurrent()||!owner||!accepts(kind,key,value))return;
   try{const k=id(kind,key),previous=records[k],next=C.update(previous,kind,key,value,clock());if(C.equal(previous,next))return;records[k]=next;dirty.add(k);persist();schedule();}
   catch{status('error','Không lưu được hàng chờ đồng bộ. Bài làm vẫn ở trên thiết bị này.');}
  }
@@ -124,7 +124,9 @@
  function receive(snapshot,token){
   if(token!==generation||!user)return;
   try{
-   for(const item of snapshot.docChanges()){
+   const changes=snapshot.docChanges();
+   if(changes.some(item=>item.doc.id===LearningAccountDeletion.markerId&&item.type!=='removed')){quarantineDeletion();return;}
+   for(const item of changes){
     if(item.type==='removed')continue;const remote=C.validate(JSON.parse(item.doc.data().body));if(item.doc.id!==id(remote.kind,remote.key))throw Error('Invalid record ID');
     if(remote.kind==='classification'&&remote.key!==classificationKey)continue;
     const k=item.doc.id,merged=C.merge(records[k],remote);observe(remote);
@@ -136,6 +138,7 @@
  }
  function stop(){generation++;serverReady=false;clearTimeout(timer);unsubscribe?.();unsubscribe=null;collection=null;}
  async function signedIn(account){
+  if(deletionRunning){user=account;return;}
   stop();const authGeneration=generation;user=account;if(!enabled||!account){status(enabled?'signedout':'off');return;}
   if(!LearningAccounts.isCurrent()){LearningAccounts.reload();return;}
   try{
@@ -145,7 +148,9 @@
    if(LearningAccounts.activate(account)){LearningAccounts.reload();return;}
   }catch(error){user=null;status('error',error.message);return;}
   try{
-   owner={uid:account.uid,email:account.email||''};write(ownerKey,owner);loadRecords();backup();seed();
+   owner={uid:account.uid,email:account.email||''};write(ownerKey,owner);
+   if(LearningAccounts.isBlocked()){deletionPending=true;deleteFormOpen=true;await window.LearningReading?.eraseCurrent();status('error','Tài khoản này đang được xóa. Chọn Tiếp tục xóa hoặc đổi sang tài khoản khác.');return;}
+   loadRecords();backup();seed();
    collection=db.collection('users').doc(account.uid).collection('learning');status('syncing');const token=generation;
    unsubscribe=collection.onSnapshot({includeMetadataChanges:true},snapshot=>receive(snapshot,token),error=>{if(token===generation){serverReady=false;status('error',explain(error));}});
   }catch(error){status('error',explain(error));}
@@ -177,6 +182,37 @@
    const box=document.querySelector('#learning-sync-panel');if(box)delete box.dataset.syncView;
   }catch(error){emailNotice=error.message;}
   finally{busy=false;notify();document.querySelector('[data-sync-email]')?.focus();}
+ }
+ async function quarantineDeletion(){
+  if(deletionRunning)return;deletionPending=true;stop();
+  try{await window.LearningReading?.settle();LearningAccounts.blockWrites();await window.LearningReading?.eraseCurrent();LearningAccounts.clearData();LearningAccounts.reload();}
+  catch{status('error','Tài khoản đang được xóa. Hãy tải lại trang để dọn dữ liệu trên thiết bị này.');}
+ }
+ function deletionForm(){
+  return `<form class="sync-email-form sync-delete-form" data-sync-delete-form><h4>${deletionPending?'Tiếp tục xóa tài khoản':'Xóa tài khoản'}</h4><p>Bạn sẽ xóa vĩnh viễn tài khoản <strong>${escapeHTML(user.email||'')}</strong>, bài làm và tiến độ đã đồng bộ, cùng dữ liệu và bản ghi âm của tài khoản này trên thiết bị này. Các tài khoản khác được giữ nguyên. Tài khoản Google hoặc email gốc của bạn không bị xóa.</p><label>Nhập lại email tài khoản cần xóa<input type="email" data-delete-email autocomplete="off" autocapitalize="off" spellcheck="false" required></label>${hasPasswordProvider(user)?'<label>Mật khẩu đồng bộ để xác nhận<input type="password" data-delete-password autocomplete="current-password" required maxlength="128"></label>':'<p>Bạn sẽ xác nhận lại bằng tài khoản Google đang đăng nhập.</p>'}<label class="sync-delete-ack"><input type="checkbox" data-delete-ack required> Tôi hiểu rằng không thể khôi phục dữ liệu đã xóa.</label><p class="sync-email-status" role="status" aria-live="polite"></p><div class="sync-actions"><button class="sync-danger-button" type="submit">${deletionPending?'Tiếp tục xóa':'Xóa vĩnh viễn tài khoản này'}</button>${!deletionPending?'<button class="secondary-button" type="button" data-sync-delete-cancel>Hủy</button>':''}</div><p class="settings-note">Nếu xóa bị gián đoạn, đăng nhập lại đúng tài khoản để tiếp tục. Các thiết bị khác dọn bản lưu khi kết nối lại với bản web mới.</p></form>`;
+ }
+ async function deleteAccount(form){
+  if(busy)return;
+  const account=auth?.currentUser,email=form.querySelector('[data-delete-email]').value.trim(),password=form.querySelector('[data-delete-password]')?.value||'';
+  if(!account||account.uid!==owner?.uid||!LearningAccounts.isCurrent()){emailNotice='Hãy đăng nhập đúng tài khoản cần xóa.';draw();return;}
+  if(!form.reportValidity())return;
+  if(email.toLowerCase()!==String(account.email||'').toLowerCase()){emailNotice='Email xác nhận chưa trùng với tài khoản đang đăng nhập.';draw();return;}
+  busy=true;deletionRunning=true;emailNotice='';notify();
+  const assertIdentity=()=>{if(auth.currentUser?.uid!==account.uid||!LearningAccounts.isCurrent())throw Error('Tài khoản đang mở đã thay đổi. Chưa thể tiếp tục xóa.');};
+  try{
+   if(!navigator.onLine)throw Error('Cần kết nối mạng để xóa tài khoản.');
+   if(hasPasswordProvider(account))await account.reauthenticateWithCredential(firebase.auth.EmailAuthProvider.credential(account.email,password));
+   else await account.reauthenticateWithPopup(new firebase.auth.GoogleAuthProvider());
+   assertIdentity();await window.LearningReading?.settle();stop();
+   await LearningAccountDeletion.run({db,account,timestamp:()=>firebase.firestore.FieldValue.serverTimestamp(),assertIdentity,onMarked:async()=>{deletionPending=true;LearningAccounts.blockWrites();status('loading','Đang xóa tài khoản và bài làm…');},beforeAuthDelete:async()=>{await window.LearningReading?.eraseCurrent();LearningAccounts.clearData();}});
+   enabled=false;write(enabledKey,false);LearningAccounts.clearOwner();
+   records={};dirty.clear();owner=null;user=null;await auth.signOut();LearningAccounts.reload();
+  }catch(error){
+   const code=String(error?.code||'');
+   emailNotice=code.includes('permission-denied')?'Chưa có quyền xóa dữ liệu. Hãy cập nhật Firestore Rules theo Hướng dẫn bật đồng bộ lần đầu rồi thử lại.':code.includes('requires-recent-login')?'Hãy nhập lại mật khẩu hoặc xác nhận Google để tiếp tục xóa.':code?explainEmail(error):error.message||'Chưa xóa xong tài khoản. Hãy thử lại.';
+   status('error',emailNotice);
+   if(!deletionPending&&auth.currentUser){deletionRunning=false;await signedIn(auth.currentUser);status('error',emailNotice);}
+  }finally{deletionRunning=false;busy=false;form.querySelectorAll('[data-delete-password]').forEach(el=>el.value='');notify();}
  }
  function hasPasswordProvider(account){return account?.providerData?.some(p=>p.providerId==='password')===true;}
  function explainEmail(error){
@@ -210,7 +246,7 @@
    }else if(mode==='register')await auth.createUserWithEmailAndPassword(email,password);
    else await auth.signInWithEmailAndPassword(email,password);
   }catch(error){emailNotice=explainEmail(error);status('error',emailNotice);}
-  finally{busy=false;document.querySelectorAll('#learning-sync-panel [data-sync-password],#learning-sync-panel [data-sync-confirm]').forEach(el=>el.value='');notify();}
+  finally{busy=false;document.querySelectorAll('#learning-sync-panel [data-sync-password],#learning-sync-panel [data-sync-confirm],#learning-sync-panel [data-delete-password]').forEach(el=>el.value='');notify();}
  }
  async function resetEmailPassword(){
   if(busy)return;const box=document.querySelector('#learning-sync-panel'),email=validEmailInput(box);if(!email){emailNotice='Nhập email của bạn trước khi chọn Quên mật khẩu.';draw();return;}
@@ -226,18 +262,20 @@
  function draw(){
   const box=document.querySelector('#learning-sync-panel');if(!box)return;
   const labels={off:'Chưa kết nối đồng bộ',loading:'Đang mở kết nối…',signedout:'Hãy đăng nhập bằng Google hoặc email để đồng bộ',syncing:'Đang đồng bộ…',synced:'Đã đồng bộ'+(lastSynced?' lúc '+new Date(lastSynced).toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'}):''),offline:'Đang ngoại tuyến',error:'Cần kiểm tra kết nối'};
-  const password=hasPasswordProvider(user),view=user?user.uid+':'+password:'signedout:'+emailMode;
+  const password=hasPasswordProvider(user),view=user?user.uid+':'+password+':delete:'+deleteFormOpen+':pending:'+deletionPending:'signedout:'+emailMode;
   if(box.dataset.syncView!==view||!box.querySelector('.sync-status')){
    box.dataset.syncView=view;
-   box.innerHTML=`<h3>Đồng bộ giữa các máy</h3><p>Dùng cùng một tài khoản Google hoặc email trên các máy để tiếp tục bài làm. Khi mất mạng, bài làm vẫn lưu trên máy và sẽ tự đồng bộ khi có mạng trở lại.</p>${user?`<p class="sync-account">${escapeHTML(user.email||'Tài khoản đã kết nối')}</p>`:''}<p class="sync-status" role="status" aria-live="polite"></p>${owner?`<p class="settings-note">Dữ liệu trên máy: <strong>${escapeHTML(owner.email||'Tài khoản hiện tại')}</strong>. Mỗi tài khoản có bài làm và tiến độ riêng.</p><button type="button" class="secondary-button" data-sync-switch>Đổi tài khoản</button>`:''}<div class="sync-actions">${!user?'<button type="button" class="primary-button" data-sync-connect>Kết nối tài khoản Google</button>':'<button type="button" class="primary-button" data-sync-now>Đồng bộ ngay</button><button type="button" class="secondary-button" data-sync-disconnect>Ngắt đồng bộ</button>'}</div>${!user?`<p class="sync-method-divider">Hoặc</p>${emailForm(emailMode)}`:!password?emailForm('link'):'<button type="button" class="sync-text-button" data-sync-reset>Gửi email đặt lại mật khẩu</button><p class="sync-email-status" role="status" aria-live="polite"></p>'}<p class="settings-note">Đồng bộ bài làm, lịch dự kiến, phân loại chủ đề và giao diện. Mật khẩu phụ huynh và vị trí đang xem giữ riêng trên mỗi máy. Ngắt đồng bộ vẫn giữ bài làm trên thiết bị.</p><a href="./firebase-setup.html" target="_blank" rel="noopener">Hướng dẫn bật đồng bộ lần đầu</a>`;
+   box.innerHTML=`<h3>Đồng bộ giữa các máy</h3><p>Dùng cùng một tài khoản Google hoặc email trên các máy để tiếp tục bài làm. Khi mất mạng, bài làm vẫn lưu trên máy và sẽ tự đồng bộ khi có mạng trở lại.</p>${user?`<p class="sync-account">${escapeHTML(user.email||'Tài khoản đã kết nối')}</p>`:''}<p class="sync-status" role="status" aria-live="polite"></p>${owner?`<p class="settings-note">Dữ liệu trên máy: <strong>${escapeHTML(owner.email||'Tài khoản hiện tại')}</strong>. Mỗi tài khoản có bài làm và tiến độ riêng.</p><button type="button" class="secondary-button" data-sync-switch>Đổi tài khoản</button>`:''}<div class="sync-actions">${!user?'<button type="button" class="primary-button" data-sync-connect>Kết nối tài khoản Google</button>':'<button type="button" class="primary-button" data-sync-now>Đồng bộ ngay</button><button type="button" class="secondary-button" data-sync-disconnect>Ngắt đồng bộ</button>'}</div>${user&&deleteFormOpen?deletionForm():!user?`<p class="sync-method-divider">Hoặc</p>${emailForm(emailMode)}`:!password?emailForm('link'):'<button type="button" class="sync-text-button" data-sync-reset>Gửi email đặt lại mật khẩu</button><p class="sync-email-status" role="status" aria-live="polite"></p>'}${user&&!deleteFormOpen?'<button type="button" class="sync-text-button sync-delete-link" data-sync-delete-open>Xóa tài khoản</button>':''}<p class="settings-note">Đồng bộ bài làm, lịch dự kiến, phân loại chủ đề và giao diện. Mật khẩu phụ huynh và vị trí đang xem giữ riêng trên mỗi máy. Ngắt đồng bộ vẫn giữ bài làm trên thiết bị.</p><a href="./firebase-setup.html" target="_blank" rel="noopener">Hướng dẫn bật đồng bộ lần đầu</a>`;
   }
   box.querySelector('.sync-status').textContent=message||labels[phase]||labels.off;
   const notice=box.querySelector('.sync-email-status');if(notice)notice.textContent=emailNotice;
-  box.querySelectorAll('button,input').forEach(el=>el.disabled=busy);
+  box.querySelectorAll('button,input').forEach(el=>el.disabled=busy);if(deletionPending){const sync=box.querySelector('[data-sync-now]');if(sync)sync.disabled=true;}
  }
  window.LearningSync={changed,connect,disconnect,draw,prepare};
- document.addEventListener('submit',event=>{if(event.target.matches('[data-sync-email-form]')){event.preventDefault();submitEmail(event.target);}});
+ document.addEventListener('submit',event=>{if(event.target.matches('[data-sync-delete-form]')){event.preventDefault();deleteAccount(event.target);return;}if(event.target.matches('[data-sync-email-form]')){event.preventDefault();submitEmail(event.target);}});
  document.addEventListener('click',e=>{
+  if(e.target.closest('[data-sync-delete-open]')&&!busy){deleteFormOpen=true;emailNotice='';draw();}
+  if(e.target.closest('[data-sync-delete-cancel]')&&!busy&&!deletionPending){deleteFormOpen=false;emailNotice='';draw();}
   if(e.target.closest('[data-sync-connect]')){emailNotice='';connect();}
   if(e.target.closest('[data-sync-switch]')){switchAccount();}
   if(e.target.closest('[data-sync-disconnect]')){emailNotice='';disconnect().catch(error=>status('error',explain(error)));}
@@ -246,7 +284,7 @@
   if(e.target.closest('[data-sync-now]')){if(state.practice)saveAttempt();if(serverReady)schedule(0);else if(auth?.currentUser)signedIn(auth.currentUser);}
   if(e.target.closest('[data-action="access-logout"]'))disconnect().catch(()=>{});
  });
- document.querySelector('#local-data').addEventListener('close',()=>{document.querySelectorAll('#learning-sync-panel [data-sync-password],#learning-sync-panel [data-sync-confirm]').forEach(el=>el.value='');});
+ document.querySelector('#local-data').addEventListener('close',()=>{document.querySelectorAll('#learning-sync-panel [data-sync-password],#learning-sync-panel [data-sync-confirm],#learning-sync-panel [data-delete-password]').forEach(el=>el.value='');});
  window.addEventListener('online',()=>{if(enabled&&user){if(serverReady)schedule(0);else signedIn(user);}});
  window.addEventListener('offline',()=>{if(enabled&&user)status('offline','Đang ngoại tuyến. Bài làm đã lưu trên máy và sẽ tự đồng bộ khi có mạng.');});
  window.addEventListener('focus',()=>{if(enabled&&user&&serverReady)schedule();});

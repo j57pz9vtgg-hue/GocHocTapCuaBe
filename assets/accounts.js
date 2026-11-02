@@ -15,7 +15,7 @@
  function copyLegacySession(){const marker=namespace+'session-migrated';if(!session.getItem(marker)){const original=raw.getItem(migrationKey),adopted=raw.getItem(prefix+'account-first-login.v1');if(original===profile||original==='local'&&adopted===profile)copyLegacy(session);session.setItem(marker,'1');}}
  function facade(store){return {
   getItem(key){return store.getItem(scoped(String(key))?currentBucket+key:key);},
-  setItem(key,value){store.setItem(scoped(String(key))?currentBucket+key:key,String(value));},
+  setItem(key,value){if(scoped(String(key))&&isBlocked())throw Error('Tài khoản này đang được xóa, không thể lưu thêm bài làm.');store.setItem(scoped(String(key))?currentBucket+key:key,String(value));},
   removeItem(key){store.removeItem(scoped(String(key))?currentBucket+key:key);},
   key(index){return visible()[index]??null;},get length(){return visible().length;}
  };function visible(){return keys(store).flatMap(key=>key.startsWith(currentBucket)?[key.slice(currentBucket.length)]:key.startsWith(namespace)||scoped(key)?[]:[key]);}}
@@ -31,11 +31,22 @@
   }
   raw.setItem(ownerKey,JSON.stringify({uid:account.uid,email:account.email||''}));return true;
  }
+ function isBlocked(){try{return raw.getItem(prefix+'account-deleting.v1.'+profile)==='1';}catch{return true;}}
+ function blockWrites(){raw.setItem(prefix+'account-deleting.v1.'+profile,'1');}
+ function clearData(){
+  if(!isCurrent())throw Error('Tài khoản đang mở đã thay đổi. Hãy tải lại trang.');
+  const original=raw.getItem(migrationKey),legacy=original===profile||original==='local'&&raw.getItem(prefix+'account-first-login.v1')===profile;
+  for(const store of [raw,session])for(const key of keys(store))if(key.startsWith(currentBucket)||legacy&&(scoped(key)||key.startsWith(bucket('local'))))store.removeItem(key);
+  for(const name of ['sync-state.v1.','sync-recovery.v1.','sync-backup.v1.'])raw.removeItem(prefix+name+profile);
+ }
+ function clearOwner(){if(!isCurrent())throw Error('Tài khoản đang mở đã thay đổi.');raw.setItem(prefix+'sync-enabled.v1','false');raw.removeItem(ownerKey);}
  function audioKey(key){let scope=profile;try{scope=raw.getItem(prefix+'account-audio.v1.'+profile)||profile;}catch{}return scope==='legacy'?key:'account:'+encodeURIComponent(scope)+':'+key;}
- globalThis.LearningAccounts={storage:facade(raw),session:facade(session),profileId:profile,activate,isCurrent,audioKey,reload};
+ if(profile!=='local'&&isBlocked())try{clearData();}catch{}
+ globalThis.LearningAccounts={storage:facade(raw),session:facade(session),profileId:profile,activate,isCurrent,isBlocked,blockWrites,clearData,clearOwner,audioKey,reload};
  let reloading=false;
  async function reload(){if(reloading)return;reloading=true;document.documentElement.dataset.access='locked';document.querySelector('#site-shell')?.setAttribute('inert','');await window.LearningReading?.settle();location.reload();}
  window.addEventListener('storage',event=>{
+  if(event.key===prefix+'account-deleting.v1.'+profile){event.stopImmediatePropagation();reload();return;}
   if(event.key===ownerKey&&!isCurrent()){event.stopImmediatePropagation();reload();return;}
   if(event.key?.startsWith(namespace)){
    event.stopImmediatePropagation();if(!isCurrent()){reload();return;}
