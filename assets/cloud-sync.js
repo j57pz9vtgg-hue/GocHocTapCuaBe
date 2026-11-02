@@ -165,15 +165,15 @@
   catch(error){status('error',explain(error));}finally{busy=false;notify();}
  }
  async function disconnect(){
-  enabled=false;try{write(enabledKey,false);}catch{}stop();user=null;status('off');if(auth)try{await auth.signOut();}catch{}
+  enabled=false;try{write(enabledKey,false);}catch{}stop();user=null;const panel=document.querySelector('#learning-sync-panel');if(panel)delete panel.dataset.syncView;status('off');if(auth)await auth.signOut();
  }
 
  async function switchAccount(){
   if(busy)return;busy=true;notify();
   try{
    if(state.practice&&!saveAttempt())throw Error('Chưa lưu được bài làm. Hãy kiểm tra bộ nhớ trình duyệt.');
-   await window.LearningReading?.settle();
-   await disconnect();emailMode='login';emailDraft='';emailNotice='Đăng nhập hoặc đăng ký tài khoản của người dùng khác. Bài làm hiện tại được giữ riêng cho tài khoản cũ.';
+   emailMode='login';emailDraft='';
+   await disconnect();emailNotice='Đăng nhập hoặc đăng ký tài khoản của người dùng khác. Bài làm hiện tại được giữ riêng cho tài khoản cũ.';
    const box=document.querySelector('#learning-sync-panel');if(box)delete box.dataset.syncView;
   }catch(error){emailNotice=error.message;}
   finally{busy=false;notify();document.querySelector('[data-sync-email]')?.focus();}
@@ -240,11 +240,11 @@
  document.addEventListener('click',e=>{
   if(e.target.closest('[data-sync-connect]')){emailNotice='';connect();}
   if(e.target.closest('[data-sync-switch]')){switchAccount();}
-  if(e.target.closest('[data-sync-disconnect]')){emailNotice='';disconnect();}
+  if(e.target.closest('[data-sync-disconnect]')){emailNotice='';disconnect().catch(error=>status('error',explain(error)));}
   if(e.target.closest('[data-sync-reset]'))resetEmailPassword();
   const toggle=e.target.closest('[data-sync-email-mode]');if(toggle&&!busy){emailDraft=document.querySelector('#learning-sync-panel [data-sync-email]')?.value.trim()||emailDraft;emailMode=toggle.dataset.syncEmailMode;emailNotice='';draw();}
   if(e.target.closest('[data-sync-now]')){if(state.practice)saveAttempt();if(serverReady)schedule(0);else if(auth?.currentUser)signedIn(auth.currentUser);}
-  if(e.target.closest('[data-action="access-logout"]'))disconnect();
+  if(e.target.closest('[data-action="access-logout"]'))disconnect().catch(()=>{});
  });
  document.querySelector('#local-data').addEventListener('close',()=>{document.querySelectorAll('#learning-sync-panel [data-sync-password],#learning-sync-panel [data-sync-confirm]').forEach(el=>el.value='');});
  window.addEventListener('online',()=>{if(enabled&&user){if(serverReady)schedule(0);else signedIn(user);}});
@@ -253,7 +253,7 @@
  window.addEventListener('storage',event=>{
   if(applying)return;
   if(event.key===ownerKey){const next=read(ownerKey);if(next?.uid!==LearningAccounts.profileId){stop();LearningAccounts.reload();}return;}
-  if(event.key===enabledKey&&!read(enabledKey,false)){disconnect();return;}
+  if(event.key===enabledKey&&!read(enabledKey,false)){enabled=false;stop();user=null;status('off');return;}
   if(event.key===attemptStore){const value=read(attemptStore,{});Object.assign(attempts,value);for(const [key,v]of Object.entries(value))changed('attempt',key,v);rebuildCompletedAttempts();}
   else if(event.key?.startsWith(worksheetPrefix))changed('worksheet',event.key.slice(worksheetPrefix.length),read(event.key));
   else if(event.key===classificationStore)changed('classification',classificationKey,read(event.key));
