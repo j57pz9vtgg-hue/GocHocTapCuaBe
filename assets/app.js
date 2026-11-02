@@ -5,7 +5,7 @@ const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;'
 const icon=(name,size=21)=> (referenceIcons[name]||referenceIcons.book).replace('width="24"',`width="${size}"`).replace('height="24"',`height="${size}"`);
 const publicAsset=name=>`./assets/reference/media/${name}.webp`;
 function activeTheme(){return referenceThemes.find(t=>t.id===document.documentElement.dataset.theme)||referenceThemes[0];}
-try{const saved=JSON.parse(localStorage.getItem('goc-hoc-tap.preferences.v1')||'null');document.documentElement.dataset.theme=saved?.theme==='space'?'crystal':referenceThemes.some(t=>t.id===saved?.theme)?saved.theme:'arctic';}catch{document.documentElement.dataset.theme='arctic';}
+try{const saved=JSON.parse((globalThis.LearningAccounts?.storage||localStorage).getItem('goc-hoc-tap.preferences.v1')||'null');document.documentElement.dataset.theme=saved?.theme==='space'?'crystal':referenceThemes.some(t=>t.id===saved?.theme)?saved.theme:'arctic';}catch{document.documentElement.dataset.theme='arctic';}
 state.search='';
 state.topicGroup=0;
 let practiceClock=null;
@@ -81,11 +81,11 @@ function shuffleTopicEntries(entries,grade,topicId){
  if(ordered.length<2)return ordered;
  const key='goc-hoc-tap.topic-order.v1.'+JSON.stringify([grade,topicId]);
  let previous=topicOrderMemory.get(key);
- try{const saved=JSON.parse(localStorage.getItem(key)||'null');if(Array.isArray(saved))previous=saved;}catch{}
+ try{const saved=JSON.parse((globalThis.LearningAccounts?.storage||localStorage).getItem(key)||'null');if(Array.isArray(saved))previous=saved;}catch{}
  for(let i=ordered.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[ordered[i],ordered[j]]=[ordered[j],ordered[i]];}
  if(previous&&previous.length===ordered.length&&ordered.every((entry,i)=>entry.id===previous[i]))ordered.push(ordered.shift());
  const ids=ordered.map(entry=>entry.id);topicOrderMemory.set(key,ids);
- try{localStorage.setItem(key,JSON.stringify(ids));}catch{}
+ try{(globalThis.LearningAccounts?.storage||localStorage).setItem(key,JSON.stringify(ids));}catch{}
  return ordered;
 }
 function reshuffleTopicPractice(selection){
@@ -139,7 +139,7 @@ function saveCurrentView(){
  if(introDialog.open&&pendingPaper)record.intro=viewSelection(pendingPaper);
  if(state.program==='Báo bài của trường'&&schoolReportSelection)record.schoolReportSelection={...schoolReportSelection};
  if(settings.open)record.settings={tab:settings.querySelector('[aria-selected="true"]')?.dataset.settingsTab,scroll:settings.scrollTop};
- try{sessionStorage.setItem(currentViewKey,JSON.stringify(record));}catch{}
+ try{(globalThis.LearningAccounts?.session||sessionStorage).setItem(currentViewKey,JSON.stringify(record));}catch{}
 }
 function selectionFromView(saved){
  if(saved?.program==='Violympic'&&saved.mode==='Vòng 4')saved={...saved,mode:'Vòng loại'};
@@ -160,7 +160,7 @@ function selectionFromView(saved){
 }
 async function restoreCurrentView(){
  if(currentViewRestored)return;currentViewRestored=true;
- let record;try{record=JSON.parse(sessionStorage.getItem(currentViewKey)||'null');}catch{}
+ let record;try{record=JSON.parse((globalThis.LearningAccounts?.session||sessionStorage).getItem(currentViewKey)||'null');}catch{}
  if(record?.version!==1){currentViewReady=true;saveCurrentView();return;}
  const f=record.filters;
  const restoredMode=f?.program==='Violympic'&&f.mode==='Vòng 4'?'Vòng loại':f?.program==='Báo bài của trường'&&f.mode==='Báo bài tuần'?getModes(f.program,f.grade,f.subject)[0]:f?.mode;
@@ -197,7 +197,7 @@ window.addEventListener('scroll',()=>{clearTimeout(viewScrollTimer);viewScrollTi
 
 const attemptStorageKey='goc-hoc-tap.attempts.official.v1';
 let attempts={};
-try { const saved=JSON.parse(localStorage.getItem(attemptStorageKey)||'{}'); if(saved&&typeof saved==='object'&&!Array.isArray(saved))attempts=saved; } catch {}
+try { const saved=JSON.parse((globalThis.LearningAccounts?.storage||localStorage).getItem(attemptStorageKey)||'{}'); if(saved&&typeof saved==='object'&&!Array.isArray(saved))attempts=saved; } catch {}
 // Preserve drafts from the initial round-only dropdown when moving Round4 into Vòng loại.
 let violympicModeMigrated=false;
 for(const [oldKey,oldRecord]of Object.entries(attempts)){
@@ -205,7 +205,7 @@ for(const [oldKey,oldRecord]of Object.entries(attempts)){
  parts[3]='Vòng loại';const target=parts.join('|');
  if(!attempts[target]||(Number(oldRecord.updatedAt)||0)>(Number(attempts[target].updatedAt)||0)){attempts[target]={...oldRecord};violympicModeMigrated=true;}
 }
-if(violympicModeMigrated)try{localStorage.setItem(attemptStorageKey,JSON.stringify(attempts));}catch{}
+if(violympicModeMigrated)try{(globalThis.LearningAccounts?.storage||localStorage).setItem(attemptStorageKey,JSON.stringify(attempts));}catch{}
 const attemptKey=selection=>[selection.grade,selection.program,selection.subject,selection.mode,selection.topicId||getPapers(selection.program,selection.subject,selection.grade,selection.mode)[selection.paper]?.id||''].join('|');
 // Preserve source-ID answers from both former groups, retaining the old record as a backup.
 let topicAttemptsMigrated=false;
@@ -241,20 +241,20 @@ for(const [sourceKey,returnSource] of Object.entries(attempts)){
  if(copied)attempts[returnTargetKey]={...target,questionIds:ids,answers,startedAt:target?.startedAt||returnSource.startedAt||Date.now(),updatedAt:Date.now(),submitted:false,mergedTopicProgress:true};
  returnSource.returnedNumberTheoryQuestions=true;topicAttemptsMigrated=true;
 }
-if(topicAttemptsMigrated)try{localStorage.setItem(attemptStorageKey,JSON.stringify(attempts));}catch{}
+if(topicAttemptsMigrated)try{(globalThis.LearningAccounts?.storage||localStorage).setItem(attemptStorageKey,JSON.stringify(attempts));}catch{}
 // Preserve responses from former topic buckets when a device first receives an owner-published revision.
 if(typeof publishedTimoClassification!=='undefined'&&TimoClassification.usesPublished()){
  try{
   const revision=publishedTimoClassification.revision,marker='goc-hoc-tap.published-classification-progress.v1';
-  if(revision&&localStorage.getItem(marker)!==revision){
+  if(revision&&(globalThis.LearningAccounts?.storage||localStorage).getItem(marker)!==revision){
    const previous={assignments:{}},resetId=publishedTimoClassification.resetId,resetMarker='goc-hoc-tap.classification-reset-progress.v1';
-   if(resetId&&localStorage.getItem(resetMarker)!==resetId){
+   if(resetId&&(globalThis.LearningAccounts?.storage||localStorage).getItem(resetMarker)!==resetId){
     const questions=new Map(officialPapers.flatMap(p=>p.questions.map(q=>[p.id+':'+q.number,q])));
     for(const record of Object.values(attempts))if(Array.isArray(record?.questionIds))record.questionIds.forEach((id,i)=>{if(questions.has(id)&&validResponse(questions.get(id),record.answers?.[i]))previous.assignments[id]='former-topic';});
    }
    if(Object.values(attempts).some(record=>Array.isArray(record?.questionIds)))preserveClassifiedProgress(previous,TimoClassification.snapshot());
-   if(resetId)localStorage.setItem(resetMarker,resetId);
-   localStorage.setItem(marker,revision);
+   if(resetId)(globalThis.LearningAccounts?.storage||localStorage).setItem(resetMarker,resetId);
+   (globalThis.LearningAccounts?.storage||localStorage).setItem(marker,revision);
   }
  }catch{}
 }
@@ -280,7 +280,7 @@ function saveAttempt() {
  p.syncRunId=p.syncRunId||String(p.startedAt);
  attempts[attemptKey(p)]={answers:{...state.answers},questionIds:p.questionIds,finishedAt:p.finishedAt,submitted:state.submitted,startedAt:p.startedAt,syncRunId:p.syncRunId,updatedAt:Date.now()};
  saveCurrentView();
- try{localStorage.setItem(attemptStorageKey,JSON.stringify(attempts));window.LearningSync?.changed('attempt',attemptKey(p),attempts[attemptKey(p)]);return true;}catch{return false;}
+ try{(globalThis.LearningAccounts?.storage||localStorage).setItem(attemptStorageKey,JSON.stringify(attempts));window.LearningSync?.changed('attempt',attemptKey(p),attempts[attemptKey(p)]);return true;}catch{return false;}
 }
 let pendingPaper=null, introTrigger=null;
 const introDialog=document.querySelector('#paper-intro');
@@ -365,7 +365,7 @@ document.addEventListener('click',event=>{
  if(action==='close-help')document.querySelector('#help').close();
  if(action==='home'){if(document.querySelector('#settings').open)document.querySelector('#settings').close();home();}
  if(action==='clear-search'){state.search='';renderHome();document.querySelector('#paper-search').focus();}
- if(action==='local-data')openLocalData();
+ if(action==='local-data'||action==='accounts')openLocalData();
  if(action==='close-intro')introDialog.close();
  if(action==='start-paper')startPendingPaper();
  if(action==='submit-paper')document.querySelector('#quiz').requestSubmit();
@@ -391,7 +391,7 @@ function openSavedPaper(paper){
  if(!record?.submitted)return;
  state.practice={...selection,syncRunId:record.syncRunId||String(record.startedAt),startedAt:record.startedAt,finishedAt:Number.isFinite(record.finishedAt)?record.finishedAt:record.updatedAt};state.answers=record.answers||{};state.submitted=true;state.solutionsVisible=false;renderPractice();app.querySelector('.result h2').focus();window.scrollTo({top:0});
 }
-function openLocalData(){const d=document.querySelector('#local-data');d.innerHTML=`<button class="icon-button dialog-close" data-action="close-local-data" aria-label="Đóng">${icon('close',22)}</button><h2>Đồng bộ và dữ liệu</h2><div id="learning-sync-panel"></div>`;window.LearningSync?.draw();d.showModal();window.LearningSync?.prepare().catch(()=>{});}
+function openLocalData(){const d=document.querySelector('#local-data');d.innerHTML=`<button class="icon-button dialog-close" data-action="close-local-data" aria-label="Đóng">${icon('close',22)}</button><h2>Tài khoản và đồng bộ</h2><div id="learning-sync-panel"></div>`;window.LearningSync?.draw();d.showModal();window.LearningSync?.prepare().catch(()=>{});}
 
 document.addEventListener('click',e=>{if(e.target.closest('[data-action="close-local-data"]'))document.querySelector('#local-data').close();});
 renderHome();
@@ -413,7 +413,7 @@ function preserveClassifiedProgress(previous,next){
   if(validResponse(entry.question,value)&&!validResponse(entry.question,target.answers[index]))target.answers[index]=value;
  }
  for(const [key,record] of touched){attempts[key]=record;window.LearningSync?.changed('attempt',key,record);}
- try{localStorage.setItem(attemptStorageKey,JSON.stringify(attempts));}catch{}
+ try{(globalThis.LearningAccounts?.storage||localStorage).setItem(attemptStorageKey,JSON.stringify(attempts));}catch{}
 }
 
 function refreshClassifiedPractice(){

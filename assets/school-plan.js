@@ -25,7 +25,7 @@ function validSchoolPlanDraft(id,value){
 }
 function schoolPlanEntry(id){
  const base=schoolPlanBaseEntries.find(e=>e.id===id);if(!base)return null;let draft;
- try{draft=JSON.parse(localStorage.getItem(schoolExerciseStorageKey(id))||'null');}catch{}
+ try{draft=JSON.parse((globalThis.LearningAccounts?.storage||localStorage).getItem(schoolExerciseStorageKey(id))||'null');}catch{}
  const entry=validSchoolPlanDraft(id,draft)?{...base,...draft}:{...base};return {...entry,day:schoolPlanDay(entry.date)};
 }
 function schoolReportSources(){
@@ -42,7 +42,7 @@ function refreshSchoolPlanView(id){
 }
 function saveSchoolPlanDraft(id,value){
  if(!validSchoolPlanDraft(id,value))throw Error('Vui lòng nhập tên bài, ngày từ thứ Hai đến thứ Sáu và các tiết từ 1 đến 12, cách nhau bằng dấu phẩy.');
- localStorage.setItem(schoolExerciseStorageKey(id),JSON.stringify(value));schoolReportSelection={id,kind:schoolReportSelection?.id===id?schoolReportSelection.kind:'lesson'};window.LearningSync?.changed('worksheet',id,value);refreshSchoolPlanView(id);
+ (globalThis.LearningAccounts?.storage||localStorage).setItem(schoolExerciseStorageKey(id),JSON.stringify(value));schoolReportSelection={id,kind:schoolReportSelection?.id===id?schoolReportSelection.kind:'lesson'};window.LearningSync?.changed('worksheet',id,value);refreshSchoolPlanView(id);
 }
 function openSchoolPlanEditor(id){
  const entry=schoolPlanEntry(id);if(!entry)return;

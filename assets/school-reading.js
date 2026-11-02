@@ -5,9 +5,9 @@ function schoolReadingHeading(lessonId,headingId,number){
 }
 (()=>{
  let database,active=null;
- const urls=new Map();
+ const urls=new Map(),pendingSaves=new Set();
  function db(){return database||(database=new Promise((resolve,reject)=>{const request=indexedDB.open('goc-hoc-tap.reading-audio.v1',1);request.onupgradeneeded=()=>request.result.createObjectStore('recordings');request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error);}));}
- async function store(key,value,remove=false){const database=await db();return new Promise((resolve,reject)=>{const tx=database.transaction('recordings',value||remove?'readwrite':'readonly'),table=tx.objectStore('recordings'),request=remove?table.delete(key):value?table.put(value,key):table.get(key);let result;request.onsuccess=()=>result=request.result;tx.oncomplete=()=>resolve(result);tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error);});}
+ async function store(key,value,remove=false){key=globalThis.LearningAccounts?.audioKey(key)||key;const database=await db();return new Promise((resolve,reject)=>{const tx=database.transaction('recordings',value||remove?'readwrite':'readonly'),table=tx.objectStore('recordings'),request=remove?table.delete(key):value?table.put(value,key):table.get(key);let result;request.onsuccess=()=>result=request.result;tx.oncomplete=()=>resolve(result);tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error);});}
  function elements(key){return [...document.querySelectorAll('[data-reading-audio]')].filter(el=>el.dataset.readingAudio===key);}
  function status(key,message){elements(key).forEach(el=>el.querySelector('[role="status"]').textContent=message);}
  function release(key){if(urls.has(key)){URL.revokeObjectURL(urls.get(key));urls.delete(key);}}
@@ -22,20 +22,22 @@ function schoolReadingHeading(lessonId,headingId,number){
  const stream=await navigator.mediaDevices.getUserMedia({audio:true});session.stream=stream;
  if(session.stopping||!button.isConnected){stream.getTracks().forEach(track=>track.stop());active=null;return;}
  const mime=['audio/webm;codecs=opus','audio/mp4','audio/webm'].find(type=>MediaRecorder.isTypeSupported(type));
- const recorder=new MediaRecorder(stream,mime?{mimeType:mime}:undefined),chunks=[];session.recorder=recorder;
+ const recorder=new MediaRecorder(stream,mime?{mimeType:mime}:undefined),chunks=[];session.recorder=recorder;session.saved=new Promise(resolve=>session.finishSave=resolve);pendingSaves.add(session.saved);
  recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
  recorder.onerror=()=>{session.failed=true;status(key,'Không ghi được âm thanh. Hãy thử lại.');stop();};
  recorder.onstop=async()=>{
+ try{
  clearInterval(session.timer);stream.getTracks().forEach(track=>track.stop());active=null;button.disabled=false;button.textContent='● Ghi âm';button.setAttribute('aria-label','Ghi âm bài đọc');button.removeAttribute('aria-pressed');
  if(session.failed)return;
  const blob=new Blob(chunks,{type:recorder.mimeType||chunks[0]?.type||'audio/webm'});
  if(!blob.size){status(key,'Chưa thu được âm thanh. Hãy thử lại.');return;}
  const record={blob,updatedAt:Date.now()};show(key,record);
  try{await store(key,record);status(key,'Đã lưu bản ghi trên trình duyệt này. Bấm Ghi âm để ghi lại.');}catch{status(key,'Chưa lưu được bản ghi. Hãy tải bản ghi xuống trước khi rời trang.');elements(key).forEach(el=>{const link=document.createElement('a');link.href=urls.get(key);link.download='bai-doc.'+(blob.type.includes('mp4')?'m4a':'webm');link.textContent='Tải bản ghi';el.append(link);});}
+ }finally{session.finishSave?.();pendingSaves.delete(session.saved);}
  };
  recorder.start();button.disabled=false;button.textContent='■ Dừng ghi';button.setAttribute('aria-pressed','true');button.setAttribute('aria-label','Dừng ghi âm bài đọc');session.started=Date.now();
  const tick=()=>{const seconds=Math.floor((Date.now()-session.started)/1000);status(key,`Đang ghi ${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')} · Tối đa 5 phút`);if(seconds>=300)stop();};tick();session.timer=setInterval(tick,1000);
- }catch(error){session.stream?.getTracks().forEach(track=>track.stop());active=null;button.disabled=false;status(key,error.name==='NotAllowedError'?'Micro chưa được cho phép. Hãy cho phép micro trong cài đặt trình duyệt rồi bấm Ghi âm.':'Không mở được micro. Kiểm tra micro rồi thử lại.');}
+ }catch(error){session.finishSave?.();pendingSaves.delete(session.saved);session.stream?.getTracks().forEach(track=>track.stop());active=null;button.disabled=false;status(key,error.name==='NotAllowedError'?'Micro chưa được cho phép. Hãy cho phép micro trong cài đặt trình duyệt rồi bấm Ghi âm.':'Không mở được micro. Kiểm tra micro rồi thử lại.');}
  }
  document.addEventListener('click',async event=>{const button=event.target.closest('[data-reading-record]');if(button){start(button);return;}const remove=event.target.closest('[data-reading-delete]');if(remove){const key=remove.dataset.readingDelete;remove.disabled=true;try{await store(key,null,true);release(key);elements(key).forEach(el=>el.querySelector('.school-reading-playback')?.remove());status(key,'Đã xóa bản ghi.');}catch{remove.disabled=false;status(key,'Chưa xóa được bản ghi. Hãy thử lại.');}}});
  function hydrate(){
@@ -44,5 +46,6 @@ function schoolReadingHeading(lessonId,headingId,number){
  document.querySelectorAll('[data-reading-audio]:not([data-reading-ready])').forEach(async el=>{el.dataset.readingReady='true';const key=el.dataset.readingAudio;try{const record=await store(key);if(el.isConnected&&record){show(key,record);status(key,'Bản ghi đã lưu trên trình duyệt này.');}}catch{status(key,'Không mở được bộ nhớ bản ghi trên trình duyệt này.');}});
  }
  new MutationObserver(hydrate).observe(document.body,{childList:true,subtree:true});hydrate();
+ window.LearningReading={async settle(){stop();await Promise.all([...pendingSaves]);}};
  window.addEventListener('pagehide',stop);
 })();

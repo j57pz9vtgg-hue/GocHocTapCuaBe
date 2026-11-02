@@ -25,10 +25,10 @@ const TimoClassification=(()=>{
  }
  try{if(typeof publishedTimoClassification!=='undefined')saved=validate(publishedTimoClassification);}catch{}
  try{
-  const raw=localStorage.getItem(storageKey),resetId=typeof publishedTimoClassification!=='undefined'?publishedTimoClassification.resetId:null;
-  if(resetId&&localStorage.getItem('goc-hoc-tap.classification-reset.v1')!==resetId){
-   if(raw)localStorage.setItem('goc-hoc-tap.classification-backup.'+resetId,raw);
-   localStorage.removeItem(storageKey);localStorage.setItem('goc-hoc-tap.classification-reset.v1',resetId);
+  const raw=(globalThis.LearningAccounts?.storage||localStorage).getItem(storageKey),resetId=typeof publishedTimoClassification!=='undefined'?publishedTimoClassification.resetId:null;
+  if(resetId&&(globalThis.LearningAccounts?.storage||localStorage).getItem('goc-hoc-tap.classification-reset.v1')!==resetId){
+   if(raw)(globalThis.LearningAccounts?.storage||localStorage).setItem('goc-hoc-tap.classification-backup.'+resetId,raw);
+   (globalThis.LearningAccounts?.storage||localStorage).removeItem(storageKey);(globalThis.LearningAccounts?.storage||localStorage).setItem('goc-hoc-tap.classification-reset.v1',resetId);
   }else if(raw){saved=validate(JSON.parse(raw));hasLocalOverride=true;}
  }catch{}
  function apply(groups,grade){
@@ -81,7 +81,7 @@ const TimoClassification=(()=>{
  function commit(next,remote=false){
   const value=validate(next),old=saved;
   if(state.practice?.topicId)saveAttempt();
-  try{localStorage.setItem(storageKey,JSON.stringify(value));}catch{throw Error('Không lưu được phân loại. Hãy kiểm tra dung lượng hoặc quyền lưu dữ liệu của trình duyệt.');}
+  try{(globalThis.LearningAccounts?.storage||localStorage).setItem(storageKey,JSON.stringify(value));}catch{throw Error('Không lưu được phân loại. Hãy kiểm tra dung lượng hoặc quyền lưu dữ liệu của trình duyệt.');}
   saved=value;hasLocalOverride=true;
   if(!remote)window.LearningSync?.changed('classification',publishedTimoClassification.resetId||'classification',value);
   if(typeof preserveClassifiedProgress==='function')preserveClassifiedProgress(old,value);

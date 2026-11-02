@@ -6,8 +6,8 @@
  const prefix='goc-hoc-tap.',ownerKey=prefix+'sync-owner.v1',enabledKey=prefix+'sync-enabled.v1',deviceKey=prefix+'sync-device.v1';
  const attemptStore=prefix+'attempts.official.v1',worksheetPrefix=prefix+'school-exercise.v1.',classificationStore=prefix+'classification.v1',preferenceStore=prefix+'preferences.v1';
  const classificationKey=publishedTimoClassification.resetId||'classification';
- const read=(key,fallback=null)=>{try{return JSON.parse(localStorage.getItem(key))??fallback;}catch{return fallback;}};
- const write=(key,value)=>{localStorage.setItem(key,JSON.stringify(value));};
+ const read=(key,fallback=null)=>{try{return JSON.parse((globalThis.LearningAccounts?.storage||localStorage).getItem(key))??fallback;}catch{return fallback;}};
+ const write=(key,value)=>{(globalThis.LearningAccounts?.storage||localStorage).setItem(key,JSON.stringify(value));};
  let device=read(deviceKey);if(!device){device=crypto.randomUUID();try{write(deviceKey,device);}catch{}}
  device=device+'.'+crypto.randomUUID();
  let owner=read(ownerKey),enabled=read(enabledKey,false),records={},dirty=new Set(),counter=0,logicalTime=0,applying=false;
@@ -23,7 +23,7 @@
  loadRecords();
  function collect(){
   const result=[];for(const [key,value]of Object.entries(attempts))if(value&&typeof value==='object')result.push(['attempt',key,value]);
-  for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(key?.startsWith(worksheetPrefix)){const value=read(key);if(value)result.push(['worksheet',key.slice(worksheetPrefix.length),value]);}}
+  for(let i=0;i<(globalThis.LearningAccounts?.storage||localStorage).length;i++){const key=(globalThis.LearningAccounts?.storage||localStorage).key(i);if(key?.startsWith(worksheetPrefix)){const value=read(key);if(value)result.push(['worksheet',key.slice(worksheetPrefix.length),value]);}}
   const classification=read(classificationStore);if(classification)result.push(['classification',classificationKey,classification]);
   const prefs=read(preferenceStore);if(prefs?.theme)result.push(['preferences','theme',{theme:prefs.theme}]);return result;
  }
@@ -81,7 +81,7 @@
   }finally{applying=false;}
  }
  function changed(kind,key,value){
-  if(applying||!owner||!accepts(kind,key,value))return;
+  if(applying||!LearningAccounts.isCurrent()||!owner||!accepts(kind,key,value))return;
   try{const k=id(kind,key),previous=records[k],next=C.update(previous,kind,key,value,clock());if(C.equal(previous,next))return;records[k]=next;dirty.add(k);persist();schedule();}
   catch{status('error','Không lưu được hàng chờ đồng bộ. Bài làm vẫn ở trên thiết bị này.');}
  }
@@ -93,7 +93,7 @@
    records[k]=C.update(previous,kind,key,value,previous?clock(time):{t:time,n:0,d:device});observe(records[k]);dirty.add(k);
   }persist();
  }
- function backup(){const key=prefix+'sync-backup.v1.'+owner.uid;if(localStorage.getItem(key)===null)write(key,{version:1,at:Date.now(),records:collect()});}
+ function backup(){const key=prefix+'sync-backup.v1.'+owner.uid;if((globalThis.LearningAccounts?.storage||localStorage).getItem(key)===null)write(key,{version:1,at:Date.now(),records:collect()});}
  function schedule(delay=1200){clearTimeout(timer);if(!enabled||!user||!serverReady)return;if(!navigator.onLine){status('offline','Đang ngoại tuyến. Bài làm đã lưu trên máy và sẽ tự đồng bộ khi có mạng.');return;}status('syncing');timer=setTimeout(flush,delay);}
  function explain(error){
   const code=String(error?.code||'');
@@ -136,8 +136,14 @@
  }
  function stop(){generation++;serverReady=false;clearTimeout(timer);unsubscribe?.();unsubscribe=null;collection=null;}
  async function signedIn(account){
-  stop();user=account;if(!enabled||!account){status(enabled?'signedout':'off');return;}
-  if(owner&&owner.uid!==account.uid){status('error','Máy này đang giữ dữ liệu của tài khoản '+(owner.email||'tài khoản đã kết nối')+'. Hãy kết nối lại đúng tài khoản đó để tránh trộn bài làm.');await auth.signOut();status('error','Máy này đang giữ dữ liệu của '+(owner.email||'tài khoản đã kết nối')+'. Hãy kết nối đúng tài khoản để tránh trộn bài làm.');return;}
+  stop();const authGeneration=generation;user=account;if(!enabled||!account){status(enabled?'signedout':'off');return;}
+  if(!LearningAccounts.isCurrent()){LearningAccounts.reload();return;}
+  try{
+   if(state.practice&&!saveAttempt())throw Error('Chưa lưu được bài làm. Hãy kiểm tra bộ nhớ trình duyệt trước khi đổi tài khoản.');
+   await window.LearningReading?.settle();
+   if(authGeneration!==generation||auth.currentUser?.uid!==account.uid)return;
+   if(LearningAccounts.activate(account)){LearningAccounts.reload();return;}
+  }catch(error){user=null;status('error',error.message);return;}
   try{
    owner={uid:account.uid,email:account.email||''};write(ownerKey,owner);loadRecords();backup();seed();
    collection=db.collection('users').doc(account.uid).collection('learning');status('syncing');const token=generation;
@@ -162,6 +168,16 @@
   enabled=false;try{write(enabledKey,false);}catch{}stop();user=null;status('off');if(auth)try{await auth.signOut();}catch{}
  }
 
+ async function switchAccount(){
+  if(busy)return;busy=true;notify();
+  try{
+   if(state.practice&&!saveAttempt())throw Error('Chưa lưu được bài làm. Hãy kiểm tra bộ nhớ trình duyệt.');
+   await window.LearningReading?.settle();
+   await disconnect();emailMode='login';emailDraft='';emailNotice='Đăng nhập hoặc đăng ký tài khoản của người dùng khác. Bài làm hiện tại được giữ riêng cho tài khoản cũ.';
+   const box=document.querySelector('#learning-sync-panel');if(box)delete box.dataset.syncView;
+  }catch(error){emailNotice=error.message;}
+  finally{busy=false;notify();document.querySelector('[data-sync-email]')?.focus();}
+ }
  function hasPasswordProvider(account){return account?.providerData?.some(p=>p.providerId==='password')===true;}
  function explainEmail(error){
   const code=String(error?.code||'');
@@ -184,7 +200,6 @@
   if(busy)return;const email=validEmailInput(form),mode=form.dataset.syncEmailForm,password=form.querySelector('[data-sync-password]')?.value||'',confirmation=form.querySelector('[data-sync-confirm]')?.value;
   if(!email||!form.reportValidity())return;
   if(mode!=='login'&&password!==confirmation){emailNotice='Hai mật khẩu chưa giống nhau.';draw();return;}
-  if(mode==='register'&&owner){emailNotice='Thiết bị đã gắn với '+(owner.email||'một tài khoản')+'. Hãy đăng nhập tài khoản đó hoặc kết nối Google để thêm mật khẩu.';draw();return;}
   emailDraft=email;emailNotice='';busy=true;status('loading','Đang xác nhận tài khoản…');
   try{
    enabled=true;write(enabledKey,true);await prepare();
@@ -214,7 +229,7 @@
   const password=hasPasswordProvider(user),view=user?user.uid+':'+password:'signedout:'+emailMode;
   if(box.dataset.syncView!==view||!box.querySelector('.sync-status')){
    box.dataset.syncView=view;
-   box.innerHTML=`<h3>Đồng bộ giữa các máy</h3><p>Dùng cùng một tài khoản Google hoặc email trên các máy để tiếp tục bài làm. Khi mất mạng, bài làm vẫn lưu trên máy và sẽ tự đồng bộ khi có mạng trở lại.</p>${user?`<p class="sync-account">${escapeHTML(user.email||'Tài khoản đã kết nối')}</p>`:''}<p class="sync-status" role="status" aria-live="polite"></p><div class="sync-actions">${!user?'<button type="button" class="primary-button" data-sync-connect>Kết nối tài khoản Google</button>':'<button type="button" class="primary-button" data-sync-now>Đồng bộ ngay</button><button type="button" class="secondary-button" data-sync-disconnect>Ngắt đồng bộ</button>'}</div>${!user?`<p class="sync-method-divider">Hoặc</p>${emailForm(emailMode)}`:!password?emailForm('link'):'<button type="button" class="sync-text-button" data-sync-reset>Gửi email đặt lại mật khẩu</button><p class="sync-email-status" role="status" aria-live="polite"></p>'}<p class="settings-note">Đồng bộ bài làm, lịch dự kiến, phân loại chủ đề và giao diện. Mật khẩu phụ huynh và vị trí đang xem giữ riêng trên mỗi máy. Ngắt đồng bộ vẫn giữ bài làm trên thiết bị.</p><a href="./firebase-setup.html" target="_blank" rel="noopener">Hướng dẫn bật đồng bộ lần đầu</a>`;
+   box.innerHTML=`<h3>Đồng bộ giữa các máy</h3><p>Dùng cùng một tài khoản Google hoặc email trên các máy để tiếp tục bài làm. Khi mất mạng, bài làm vẫn lưu trên máy và sẽ tự đồng bộ khi có mạng trở lại.</p>${user?`<p class="sync-account">${escapeHTML(user.email||'Tài khoản đã kết nối')}</p>`:''}<p class="sync-status" role="status" aria-live="polite"></p>${owner?`<p class="settings-note">Dữ liệu trên máy: <strong>${escapeHTML(owner.email||'Tài khoản hiện tại')}</strong>. Mỗi tài khoản có bài làm và tiến độ riêng.</p><button type="button" class="secondary-button" data-sync-switch>Đổi tài khoản</button>`:''}<div class="sync-actions">${!user?'<button type="button" class="primary-button" data-sync-connect>Kết nối tài khoản Google</button>':'<button type="button" class="primary-button" data-sync-now>Đồng bộ ngay</button><button type="button" class="secondary-button" data-sync-disconnect>Ngắt đồng bộ</button>'}</div>${!user?`<p class="sync-method-divider">Hoặc</p>${emailForm(emailMode)}`:!password?emailForm('link'):'<button type="button" class="sync-text-button" data-sync-reset>Gửi email đặt lại mật khẩu</button><p class="sync-email-status" role="status" aria-live="polite"></p>'}<p class="settings-note">Đồng bộ bài làm, lịch dự kiến, phân loại chủ đề và giao diện. Mật khẩu phụ huynh và vị trí đang xem giữ riêng trên mỗi máy. Ngắt đồng bộ vẫn giữ bài làm trên thiết bị.</p><a href="./firebase-setup.html" target="_blank" rel="noopener">Hướng dẫn bật đồng bộ lần đầu</a>`;
   }
   box.querySelector('.sync-status').textContent=message||labels[phase]||labels.off;
   const notice=box.querySelector('.sync-email-status');if(notice)notice.textContent=emailNotice;
@@ -224,6 +239,7 @@
  document.addEventListener('submit',event=>{if(event.target.matches('[data-sync-email-form]')){event.preventDefault();submitEmail(event.target);}});
  document.addEventListener('click',e=>{
   if(e.target.closest('[data-sync-connect]')){emailNotice='';connect();}
+  if(e.target.closest('[data-sync-switch]')){switchAccount();}
   if(e.target.closest('[data-sync-disconnect]')){emailNotice='';disconnect();}
   if(e.target.closest('[data-sync-reset]'))resetEmailPassword();
   const toggle=e.target.closest('[data-sync-email-mode]');if(toggle&&!busy){emailDraft=document.querySelector('#learning-sync-panel [data-sync-email]')?.value.trim()||emailDraft;emailMode=toggle.dataset.syncEmailMode;emailNotice='';draw();}
@@ -236,7 +252,7 @@
  window.addEventListener('focus',()=>{if(enabled&&user&&serverReady)schedule();});
  window.addEventListener('storage',event=>{
   if(applying)return;
-  if(event.key===ownerKey){const next=read(ownerKey);if(owner&&next?.uid!==owner.uid){disconnect();location.reload();}return;}
+  if(event.key===ownerKey){const next=read(ownerKey);if(next?.uid!==LearningAccounts.profileId){stop();LearningAccounts.reload();}return;}
   if(event.key===enabledKey&&!read(enabledKey,false)){disconnect();return;}
   if(event.key===attemptStore){const value=read(attemptStore,{});Object.assign(attempts,value);for(const [key,v]of Object.entries(value))changed('attempt',key,v);rebuildCompletedAttempts();}
   else if(event.key?.startsWith(worksheetPrefix))changed('worksheet',event.key.slice(worksheetPrefix.length),read(event.key));
