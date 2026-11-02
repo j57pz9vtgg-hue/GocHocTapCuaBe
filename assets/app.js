@@ -391,9 +391,9 @@ function openSavedPaper(paper){
  if(!record?.submitted)return;
  state.practice={...selection,syncRunId:record.syncRunId||String(record.startedAt),startedAt:record.startedAt,finishedAt:Number.isFinite(record.finishedAt)?record.finishedAt:record.updatedAt};state.answers=record.answers||{};state.submitted=true;state.solutionsVisible=false;renderPractice();app.querySelector('.result h2').focus();window.scrollTo({top:0});
 }
-function openLocalData(){const d=document.querySelector('#local-data');d.innerHTML=`<button class="icon-button dialog-close" data-action="close-local-data" aria-label="Đóng">${icon('close',22)}</button><h2>Đồng bộ và dữ liệu</h2><div id="learning-sync-panel"></div><hr><h3>Bản sao trên thiết bị</h3><p>Bạn có thể tải bản sao bài làm và phân loại đang lưu trên máy này.</p><button class="primary-button" data-action="export-local-data">Tải bản sao dữ liệu ${icon('arrow',18)}</button>`;window.LearningSync?.draw();d.showModal();window.LearningSync?.prepare().catch(()=>{});}
+function openLocalData(){const d=document.querySelector('#local-data');d.innerHTML=`<button class="icon-button dialog-close" data-action="close-local-data" aria-label="Đóng">${icon('close',22)}</button><h2>Đồng bộ và dữ liệu</h2><div id="learning-sync-panel"></div>`;window.LearningSync?.draw();d.showModal();window.LearningSync?.prepare().catch(()=>{});}
 
-document.addEventListener('click',e=>{if(e.target.closest('[data-action="close-local-data"]'))document.querySelector('#local-data').close();if(e.target.closest('[data-action="export-local-data"]')){const blob=new Blob([JSON.stringify(window.LearningSync?.exportData()||{version:2,kind:'official',attempts},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='goc-hoc-tap-bai-lam.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}});
+document.addEventListener('click',e=>{if(e.target.closest('[data-action="close-local-data"]'))document.querySelector('#local-data').close();});
 renderHome();
 
 function preserveClassifiedProgress(previous,next){

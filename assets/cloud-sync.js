@@ -161,13 +161,13 @@
  async function disconnect(){
   enabled=false;try{write(enabledKey,false);}catch{}stop();user=null;status('off');if(auth)try{await auth.signOut();}catch{}
  }
- function exportData(){return {version:3,kind:'learning-data',exportedAt:new Date().toISOString(),records:collect(),recovery:owner?read(prefix+'sync-recovery.v1.'+owner.uid,[]):[]};}
+
  function draw(){
   const box=document.querySelector('#learning-sync-panel');if(!box)return;
   const labels={off:'Chưa kết nối đồng bộ',loading:'Đang mở kết nối…',signedout:'Hãy đăng nhập Google để đồng bộ',syncing:'Đang đồng bộ…',synced:'Đã đồng bộ'+(lastSynced?' lúc '+new Date(lastSynced).toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'}):''),offline:'Đang ngoại tuyến',error:'Cần kiểm tra kết nối'};
   box.innerHTML=`<h3>Đồng bộ giữa các máy</h3><p>Dùng cùng một tài khoản Google trên các máy để tiếp tục bài làm. Khi mất mạng, bài làm vẫn lưu trên máy và sẽ tự đồng bộ khi có mạng trở lại.</p>${user?`<p class="sync-account">${escapeHTML(user.email||'Tài khoản Google đã kết nối')}</p>`:''}<p class="sync-status" role="status" aria-live="polite">${escapeHTML(message||labels[phase]||labels.off)}</p><div class="sync-actions">${!user?`<button type="button" class="primary-button" data-sync-connect ${busy?'disabled':''}>${busy?'Đang kết nối…':'Kết nối tài khoản Google'}</button>`:`<button type="button" class="primary-button" data-sync-now>Đồng bộ ngay</button><button type="button" class="secondary-button" data-sync-disconnect>Ngắt đồng bộ</button>`}</div><p class="settings-note">Đồng bộ bài làm, phân loại chủ đề và giao diện. Mật khẩu và vị trí đang xem giữ riêng trên mỗi máy. Ngắt đồng bộ vẫn giữ bài làm trên thiết bị.</p><a href="./firebase-setup.html" target="_blank" rel="noopener">Hướng dẫn bật Firebase lần đầu</a>`;
  }
- window.LearningSync={changed,connect,disconnect,draw,prepare,exportData};
+ window.LearningSync={changed,connect,disconnect,draw,prepare};
  document.addEventListener('click',e=>{
   if(e.target.closest('[data-sync-connect]'))connect();
   if(e.target.closest('[data-sync-disconnect]'))disconnect();
