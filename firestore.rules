@@ -4,7 +4,7 @@ service cloud.firestore {
     match /users/{userId}/learning/{recordId} {
       function owner() {
         return request.auth != null && request.auth.uid == userId
-          && request.auth.token.firebase.sign_in_provider == 'google.com';
+          && request.auth.token.firebase.sign_in_provider in ['google.com', 'password'];
       }
       allow read: if owner();
       allow create, update: if owner()

@@ -11,7 +11,7 @@
  let device=read(deviceKey);if(!device){device=crypto.randomUUID();try{write(deviceKey,device);}catch{}}
  device=device+'.'+crypto.randomUUID();
  let owner=read(ownerKey),enabled=read(enabledKey,false),records={},dirty=new Set(),counter=0,logicalTime=0,applying=false;
- let auth,db,collection,user=null,unsubscribe=null,authUnsubscribe=null,sdkPromise=null,serverReady=false,flushing=false,timer=null,generation=0,retryDelay=2000,phase='off',message='',lastSynced=null,busy=false;
+ let auth,db,collection,user=null,unsubscribe=null,authUnsubscribe=null,sdkPromise=null,serverReady=false,flushing=false,timer=null,generation=0,retryDelay=2000,phase='off',message='',lastSynced=null,busy=false,emailMode='login',emailDraft='',emailNotice='';
  const id=(kind,key)=>kind+'_'+encodeURIComponent(key);
  const metaKey=()=>prefix+'sync-state.v1.'+owner.uid;
  function persist(){if(owner)write(metaKey(),records);}
@@ -98,7 +98,7 @@
  function explain(error){
   const code=String(error?.code||'');
   if(code.includes('unauthorized-domain'))return 'Cần thêm j57pz9vtgg-hue.github.io vào Firebase → Authentication → Settings → Authorized domains.';
-  if(code.includes('operation-not-allowed')||code.includes('configuration-not-found'))return 'Cần bật Google trong Firebase → Authentication → Sign-in method.';
+  if(code.includes('operation-not-allowed')||code.includes('configuration-not-found'))return 'Cần bật Google hoặc Email/Password trong Firebase → Authentication → Sign-in method.';
   if(code.includes('permission-denied'))return 'Chưa có quyền đồng bộ. Hãy tạo Cloud Firestore và đăng quy tắc bảo mật theo hướng dẫn.';
   if(code.includes('popup-blocked'))return 'Trình duyệt đang chặn cửa sổ Google. Cho phép cửa sổ bật lên rồi bấm kết nối lại.';
   if(code.includes('popup-closed')||code.includes('cancelled-popup'))return 'Bạn đã đóng đăng nhập Google. Bài làm vẫn được lưu trên máy.';
@@ -137,7 +137,7 @@
  function stop(){generation++;serverReady=false;clearTimeout(timer);unsubscribe?.();unsubscribe=null;collection=null;}
  async function signedIn(account){
   stop();user=account;if(!enabled||!account){status(enabled?'signedout':'off');return;}
-  if(owner&&owner.uid!==account.uid){status('error','Máy này đang giữ dữ liệu của tài khoản '+(owner.email||'Google đã kết nối')+'. Hãy kết nối lại đúng tài khoản đó để tránh trộn bài làm.');await auth.signOut();status('error','Máy này đang giữ dữ liệu của '+(owner.email||'tài khoản đã kết nối')+'. Hãy kết nối đúng tài khoản để tránh trộn bài làm.');return;}
+  if(owner&&owner.uid!==account.uid){status('error','Máy này đang giữ dữ liệu của tài khoản '+(owner.email||'tài khoản đã kết nối')+'. Hãy kết nối lại đúng tài khoản đó để tránh trộn bài làm.');await auth.signOut();status('error','Máy này đang giữ dữ liệu của '+(owner.email||'tài khoản đã kết nối')+'. Hãy kết nối đúng tài khoản để tránh trộn bài làm.');return;}
   try{
    owner={uid:account.uid,email:account.email||''};write(ownerKey,owner);loadRecords();backup();seed();
    collection=db.collection('users').doc(account.uid).collection('learning');status('syncing');const token=generation;
@@ -162,18 +162,75 @@
   enabled=false;try{write(enabledKey,false);}catch{}stop();user=null;status('off');if(auth)try{await auth.signOut();}catch{}
  }
 
+ function hasPasswordProvider(account){return account?.providerData?.some(p=>p.providerId==='password')===true;}
+ function explainEmail(error){
+  const code=String(error?.code||'');
+  if(code.includes('email-already-in-use'))return 'Email này đã có tài khoản. Hãy chọn Đăng nhập. Nếu trước đây dùng Google, kết nối Google rồi thêm mật khẩu cho chính tài khoản đó.';
+  if(code.includes('invalid-email'))return 'Địa chỉ email chưa hợp lệ.';
+  if(code.includes('weak-password')||code.includes('password-does-not-meet-requirements'))return 'Mật khẩu chưa đủ mạnh. Hãy dùng ít nhất 6 ký tự hoặc theo chính sách của dự án Firebase.';
+  if(['invalid-credential','invalid-login-credentials','wrong-password','user-not-found'].some(c=>code.includes(c)))return 'Email hoặc mật khẩu chưa đúng. Hãy kiểm tra lại hoặc chọn Quên mật khẩu.';
+  if(code.includes('user-disabled'))return 'Tài khoản này đã bị vô hiệu hóa.';
+  if(code.includes('too-many-requests'))return 'Bạn đã thử quá nhiều lần. Vui lòng chờ một lúc rồi thử lại.';
+  if(code.includes('requires-recent-login'))return 'Hãy ngắt đồng bộ, kết nối lại tài khoản Google rồi thêm mật khẩu.';
+  if(code.includes('provider-already-linked'))return 'Tài khoản này đã có mật khẩu. Bạn có thể dùng Đăng nhập hoặc Quên mật khẩu.';
+  return explain(error);
+ }
+ function validEmailInput(box){
+  const input=box?.querySelector('[data-sync-email]');
+  if(input){input.value=input.value.trim();if(!input.reportValidity())return null;return input.value;}
+  return user?.email||null;
+ }
+ async function submitEmail(form){
+  if(busy)return;const email=validEmailInput(form),mode=form.dataset.syncEmailForm,password=form.querySelector('[data-sync-password]')?.value||'',confirmation=form.querySelector('[data-sync-confirm]')?.value;
+  if(!email||!form.reportValidity())return;
+  if(mode!=='login'&&password!==confirmation){emailNotice='Hai mật khẩu chưa giống nhau.';draw();return;}
+  if(mode==='register'&&owner){emailNotice='Thiết bị đã gắn với '+(owner.email||'một tài khoản')+'. Hãy đăng nhập tài khoản đó hoặc kết nối Google để thêm mật khẩu.';draw();return;}
+  emailDraft=email;emailNotice='';busy=true;status('loading','Đang xác nhận tài khoản…');
+  try{
+   enabled=true;write(enabledKey,true);await prepare();
+   if(mode==='link'){
+    if(!user||!auth.currentUser||auth.currentUser.uid!==user.uid)throw {code:'auth/requires-recent-login'};
+    const result=await auth.currentUser.linkWithCredential(firebase.auth.EmailAuthProvider.credential(email,password));user=result.user;
+    status(phase==='loading'?'syncing':phase,'Đã thêm đăng nhập bằng email và mật khẩu cho cùng tài khoản.');
+   }else if(mode==='register')await auth.createUserWithEmailAndPassword(email,password);
+   else await auth.signInWithEmailAndPassword(email,password);
+  }catch(error){emailNotice=explainEmail(error);status('error',emailNotice);}
+  finally{busy=false;document.querySelectorAll('#learning-sync-panel [data-sync-password],#learning-sync-panel [data-sync-confirm]').forEach(el=>el.value='');notify();}
+ }
+ async function resetEmailPassword(){
+  if(busy)return;const box=document.querySelector('#learning-sync-panel'),email=validEmailInput(box);if(!email){emailNotice='Nhập email của bạn trước khi chọn Quên mật khẩu.';draw();return;}
+  emailDraft=email;emailNotice='';busy=true;notify();
+  try{await prepare();await auth.sendPasswordResetEmail(email);emailNotice='Nếu email này đã đăng ký, hệ thống sẽ gửi hướng dẫn đặt lại mật khẩu. Hãy kiểm tra cả thư rác.';}
+  catch(error){emailNotice=String(error?.code||'').includes('user-not-found')?'Nếu email này đã đăng ký, hệ thống sẽ gửi hướng dẫn đặt lại mật khẩu. Hãy kiểm tra cả thư rác.':explainEmail(error);}
+  finally{busy=false;notify();}
+ }
+ function emailForm(mode){
+  const link=mode==='link',register=mode==='register',email=link?user.email:emailDraft;
+  return `<form class="sync-email-form" data-sync-email-form="${mode}"><h4>${link?'Thêm mật khẩu cho tài khoản này':'Đồng bộ bằng email và mật khẩu'}</h4>${link?'<p class="settings-note">Dùng cùng tài khoản đang kết nối, giữ nguyên dữ liệu đã đồng bộ.</p>':''}<label>Email<input data-sync-email name="email" type="email" autocomplete="username" inputmode="email" autocapitalize="off" spellcheck="false" maxlength="254" value="${escapeHTML(email||'')}" ${link?'readonly':''} required></label><label>Mật khẩu đồng bộ<input data-sync-password name="password" type="password" autocomplete="${mode==='login'?'current-password':'new-password'}" autocapitalize="off" spellcheck="false" minlength="6" maxlength="128" required></label>${mode!=='login'?'<label>Nhập lại mật khẩu<input data-sync-confirm type="password" autocomplete="new-password" autocapitalize="off" minlength="6" maxlength="128" required></label>':''}<p class="sync-email-status" role="status" aria-live="polite">${escapeHTML(emailNotice)}</p><div class="sync-actions"><button type="submit" class="primary-button">${link?'Thêm mật khẩu':register?'Đăng ký':'Đăng nhập'}</button>${!link?`<button type="button" class="secondary-button" data-sync-email-mode="${register?'login':'register'}">${register?'Đã có tài khoản? Đăng nhập':'Chưa có tài khoản? Đăng ký'}</button>`:''}</div>${!link?'<button type="button" class="sync-text-button" data-sync-reset>Quên mật khẩu?</button>':''}<p class="settings-note">Đây là mật khẩu tài khoản đồng bộ, riêng với mật khẩu mở ứng dụng và mật khẩu phụ huynh.</p></form>`;
+ }
  function draw(){
   const box=document.querySelector('#learning-sync-panel');if(!box)return;
-  const labels={off:'Chưa kết nối đồng bộ',loading:'Đang mở kết nối…',signedout:'Hãy đăng nhập Google để đồng bộ',syncing:'Đang đồng bộ…',synced:'Đã đồng bộ'+(lastSynced?' lúc '+new Date(lastSynced).toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'}):''),offline:'Đang ngoại tuyến',error:'Cần kiểm tra kết nối'};
-  box.innerHTML=`<h3>Đồng bộ giữa các máy</h3><p>Dùng cùng một tài khoản Google trên các máy để tiếp tục bài làm. Khi mất mạng, bài làm vẫn lưu trên máy và sẽ tự đồng bộ khi có mạng trở lại.</p>${user?`<p class="sync-account">${escapeHTML(user.email||'Tài khoản Google đã kết nối')}</p>`:''}<p class="sync-status" role="status" aria-live="polite">${escapeHTML(message||labels[phase]||labels.off)}</p><div class="sync-actions">${!user?`<button type="button" class="primary-button" data-sync-connect ${busy?'disabled':''}>${busy?'Đang kết nối…':'Kết nối tài khoản Google'}</button>`:`<button type="button" class="primary-button" data-sync-now>Đồng bộ ngay</button><button type="button" class="secondary-button" data-sync-disconnect>Ngắt đồng bộ</button>`}</div><p class="settings-note">Đồng bộ bài làm, phân loại chủ đề và giao diện. Mật khẩu và vị trí đang xem giữ riêng trên mỗi máy. Ngắt đồng bộ vẫn giữ bài làm trên thiết bị.</p><a href="./firebase-setup.html" target="_blank" rel="noopener">Hướng dẫn bật Firebase lần đầu</a>`;
+  const labels={off:'Chưa kết nối đồng bộ',loading:'Đang mở kết nối…',signedout:'Hãy đăng nhập bằng Google hoặc email để đồng bộ',syncing:'Đang đồng bộ…',synced:'Đã đồng bộ'+(lastSynced?' lúc '+new Date(lastSynced).toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'}):''),offline:'Đang ngoại tuyến',error:'Cần kiểm tra kết nối'};
+  const password=hasPasswordProvider(user),view=user?user.uid+':'+password:'signedout:'+emailMode;
+  if(box.dataset.syncView!==view||!box.querySelector('.sync-status')){
+   box.dataset.syncView=view;
+   box.innerHTML=`<h3>Đồng bộ giữa các máy</h3><p>Dùng cùng một tài khoản Google hoặc email trên các máy để tiếp tục bài làm. Khi mất mạng, bài làm vẫn lưu trên máy và sẽ tự đồng bộ khi có mạng trở lại.</p>${user?`<p class="sync-account">${escapeHTML(user.email||'Tài khoản đã kết nối')}</p>`:''}<p class="sync-status" role="status" aria-live="polite"></p><div class="sync-actions">${!user?'<button type="button" class="primary-button" data-sync-connect>Kết nối tài khoản Google</button>':'<button type="button" class="primary-button" data-sync-now>Đồng bộ ngay</button><button type="button" class="secondary-button" data-sync-disconnect>Ngắt đồng bộ</button>'}</div>${!user?`<p class="sync-method-divider">Hoặc</p>${emailForm(emailMode)}`:!password?emailForm('link'):'<button type="button" class="sync-text-button" data-sync-reset>Gửi email đặt lại mật khẩu</button><p class="sync-email-status" role="status" aria-live="polite"></p>'}<p class="settings-note">Đồng bộ bài làm, lịch dự kiến, phân loại chủ đề và giao diện. Mật khẩu phụ huynh và vị trí đang xem giữ riêng trên mỗi máy. Ngắt đồng bộ vẫn giữ bài làm trên thiết bị.</p><a href="./firebase-setup.html" target="_blank" rel="noopener">Hướng dẫn bật đồng bộ lần đầu</a>`;
+  }
+  box.querySelector('.sync-status').textContent=message||labels[phase]||labels.off;
+  const notice=box.querySelector('.sync-email-status');if(notice)notice.textContent=emailNotice;
+  box.querySelectorAll('button,input').forEach(el=>el.disabled=busy);
  }
  window.LearningSync={changed,connect,disconnect,draw,prepare};
+ document.addEventListener('submit',event=>{if(event.target.matches('[data-sync-email-form]')){event.preventDefault();submitEmail(event.target);}});
  document.addEventListener('click',e=>{
-  if(e.target.closest('[data-sync-connect]'))connect();
-  if(e.target.closest('[data-sync-disconnect]'))disconnect();
+  if(e.target.closest('[data-sync-connect]')){emailNotice='';connect();}
+  if(e.target.closest('[data-sync-disconnect]')){emailNotice='';disconnect();}
+  if(e.target.closest('[data-sync-reset]'))resetEmailPassword();
+  const toggle=e.target.closest('[data-sync-email-mode]');if(toggle&&!busy){emailDraft=document.querySelector('#learning-sync-panel [data-sync-email]')?.value.trim()||emailDraft;emailMode=toggle.dataset.syncEmailMode;emailNotice='';draw();}
   if(e.target.closest('[data-sync-now]')){if(state.practice)saveAttempt();if(serverReady)schedule(0);else if(auth?.currentUser)signedIn(auth.currentUser);}
   if(e.target.closest('[data-action="access-logout"]'))disconnect();
  });
+ document.querySelector('#local-data').addEventListener('close',()=>{document.querySelectorAll('#learning-sync-panel [data-sync-password],#learning-sync-panel [data-sync-confirm]').forEach(el=>el.value='');});
  window.addEventListener('online',()=>{if(enabled&&user){if(serverReady)schedule(0);else signedIn(user);}});
  window.addEventListener('offline',()=>{if(enabled&&user)status('offline','Đang ngoại tuyến. Bài làm đã lưu trên máy và sẽ tự đồng bộ khi có mạng.');});
  window.addEventListener('focus',()=>{if(enabled&&user&&serverReady)schedule();});
