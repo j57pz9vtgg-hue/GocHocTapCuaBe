@@ -333,13 +333,13 @@ function applyPracticeSearch(value){
   while(next&&!next.classList.contains('paper-section-heading')){if(next.classList.contains('paper-question')&&!next.hidden)hasVisible=true;next=next.nextElementSibling;}
   heading.hidden=!hasVisible;
  });
- const count=app.querySelector('[data-practice-search-count]');if(count)count.textContent=tokens.length?`${visible}/${p.questions.length} câu phù hợp`:`${p.questions.length} câu hỏi`;
+ const count=app.querySelector('[data-practice-search-count]');if(count){count.hidden=!tokens.length;count.textContent=tokens.length?`${visible}/${p.questions.length} câu phù hợp`:'';}
  const clear=app.querySelector('[data-practice-search-clear]');if(clear)clear.hidden=!p.searchQuery;
  const empty=app.querySelector('.paper-search-empty');if(empty)empty.hidden=!tokens.length||visible>0||!p.questions.length;
  saveCurrentView();
 }
 function renderPracticeSearch(){
- return `<aside class="paper-search-tools" aria-label="Tìm kiếm câu hỏi"><div class="paper-search-box">${icon('search',20)}<input type="search" id="practice-question-search" aria-label="Tìm câu hỏi trong bài" aria-controls="quiz" maxlength="200" placeholder="Tìm câu hỏi…" value="${escapeHTML(state.practice.searchQuery||'')}"><button type="button" data-practice-search-clear aria-label="Xóa tìm kiếm câu hỏi" ${state.practice.searchQuery?'':'hidden'}>${icon('close',18)}</button></div><p data-practice-search-count role="status" aria-live="polite"></p></aside>`;
+ return `<aside class="paper-search-tools" aria-label="Tìm kiếm câu hỏi"><div class="paper-search-box">${icon('search',20)}<input type="search" id="practice-question-search" aria-label="Tìm câu hỏi trong bài" aria-controls="quiz" maxlength="200" placeholder="Tìm câu hỏi…" value="${escapeHTML(state.practice.searchQuery||'')}"><button type="button" data-practice-search-clear aria-label="Xóa tìm kiếm câu hỏi" ${state.practice.searchQuery?'':'hidden'}>${icon('close',18)}</button></div><p data-practice-search-count hidden role="status" aria-live="polite"></p></aside>`;
 }
 function renderPractice(){
  stopPracticeClock();
