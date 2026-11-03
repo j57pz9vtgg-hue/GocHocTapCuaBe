@@ -12,6 +12,7 @@ for(const paper of officialPapers){
  if(!programs.includes(paper.program)||!getSubjects(paper.program).includes(paper.subject))issues.push(`${label}: chương trình/môn học không hợp lệ.`);
  if(!modes.includes(paper.mode)||!Number.isInteger(Number(paper.grade))||Number(paper.grade)<1||Number(paper.grade)>12||!paper.title?.trim())issues.push(`${label}: thiếu lớp, nội dung hoặc tên đề hợp lệ.`);
  if(paper.program==='TIMO'&&[modes[0],modes[1]].includes(paper.mode))issues.push(...getTimoPaperIssues(paper).map(issue=>`${label}: ${issue}`));
+ if(paper.pendingContent===true&&Array.isArray(paper.questions)&&paper.questions.length===0)continue;
  if(!Array.isArray(paper.questions)||!paper.questions.length){issues.push(`${label}: chưa có câu hỏi.`);continue;}
  paper.questions.forEach((q,i)=>{
   if(!q||(typeof q.english!=='string'&&typeof q.text!=='string')||!Array.isArray(q.options)||(q.responseType==='text'?q.options.length!==0:q.options.length<2)||q.options.some(option=>typeof option!=='string'))issues.push(`${label}, câu ${i+1}: thiếu nội dung hoặc lựa chọn.`);
