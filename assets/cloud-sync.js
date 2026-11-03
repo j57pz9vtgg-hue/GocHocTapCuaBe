@@ -19,7 +19,7 @@
  function status(next,text=''){phase=next;message=text;notify();}
  function clock(time=Date.now()){logicalTime=Math.max(time,logicalTime);return {t:logicalTime,n:++counter,d:device};}
  function observe(doc){for(const r of Object.values(doc.fields)){logicalTime=Math.max(logicalTime,r.t);counter=Math.max(counter,r.n);}}
- function loadRecords(){records={};dirty=new Set();if(!owner)return;for(const [key,value]of Object.entries(read(metaKey(),{})))try{C.validate(value);if(value.kind==='classification'&&value.key!==classificationKey)continue;records[key]=value;dirty.add(key);observe(value);}catch{}}
+ function loadRecords(){records={};dirty=new Set();if(!owner)return;for(const [key,value]of Object.entries(read(metaKey(),{})))try{C.validate(value);if(value.kind==='classification'&&value.key!==classificationKey)continue;if(value.kind==='attempt'&&!accepts(value.kind,value.key,C.decode(value)))continue;records[key]=value;dirty.add(key);observe(value);}catch{}}
  loadRecords();
  function collect(){
   const result=[];for(const [key,value]of Object.entries(attempts))if(value&&typeof value==='object')result.push(['attempt',key,value]);
@@ -129,6 +129,7 @@
    for(const item of changes){
     if(item.type==='removed')continue;const remote=C.validate(JSON.parse(item.doc.data().body));if(item.doc.id!==id(remote.kind,remote.key))throw Error('Invalid record ID');
     if(remote.kind==='classification'&&remote.key!==classificationKey)continue;
+    if(remote.kind==='attempt'&&!accepts(remote.kind,remote.key,C.decode(remote)))continue;
     const k=item.doc.id,merged=C.merge(records[k],remote);observe(remote);
     if(!C.equal(records[k],merged)){records[k]=merged;persist();apply(merged);}
     if(!C.equal(merged,remote))dirty.add(k);
