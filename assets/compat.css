@@ -699,7 +699,7 @@
 .paper-world .paper-toolbar .paper-title h2,.paper-world .paper-toolbar:has(.paper-result-inline) .paper-title h2{font-size:18px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;overflow-wrap:normal}
 .paper-world .paper-toolbar .exam-number{width:32px;height:32px;flex:0 0 32px;font-size:23px}
 .paper-world .paper-toolbar .paper-stat,.paper-world .paper-toolbar:has(.paper-result-inline) .paper-stat{flex:0 0 auto;padding-left:8px;gap:5px;border-left:1px solid #d3dff2;white-space:nowrap}
-.paper-world .paper-toolbar .paper-title+.paper-stat{margin-inline-start:auto}
+.paper-world .paper-toolbar .paper-title+.paper-stat,.paper-world .paper-toolbar .paper-title+.paper-result-inline{margin-inline-start:auto}
 .paper-world .paper-toolbar .paper-stat>svg,.paper-world .paper-toolbar:has(.paper-result-inline) .paper-stat>svg{width:20px;height:20px}
 .paper-world .paper-toolbar .paper-stat small{font-size:11px;line-height:1.4}
 .paper-world .paper-toolbar .paper-stat strong,.paper-world .paper-toolbar:has(.paper-result-inline) .paper-stat strong,.paper-world .paper-toolbar .unlimited-time{font-size:15px;line-height:1.3}
