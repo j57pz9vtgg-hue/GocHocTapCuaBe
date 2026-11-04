@@ -5384,6 +5384,467 @@ const officialPapers = [
       "imageAlt": "Mê cung với lối vào A ở trên, B ở giữa, C ở dưới bên trái và cây nến ở giữa."
     }
   ]
+},
+{
+  "id": "violympic-grade1-math-round5-20261103",
+  "title": "Vòng 5",
+  "sourceTitle": "Violympic lớp 1 — Toán — Vòng loại — Vòng 5",
+  "program": "Violympic",
+  "subject": "Toán",
+  "grade": "1",
+  "mode": "Vòng loại",
+  "questions": [
+    {
+      "number": 1,
+      "text": "Số ?",
+      "responseType": "text",
+      "options": [],
+      "image": "./assets/violympic/round5/q01-reference.ac16673d5f7b.svg",
+      "imageAlt": "Số ?",
+      "answer": "5",
+      "answerSource": "user"
+    },
+    {
+      "number": 2,
+      "text": "Con nào có 4 chân?",
+      "options": [
+        "Chim",
+        "Gà",
+        "Lợn",
+        "Vịt"
+      ],
+      "optionColumns": 2,
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 3,
+      "text": "Hình trên có ... quả dâu tây.",
+      "options": [
+        "Sáu",
+        "Tám",
+        "Bảy",
+        "Chín"
+      ],
+      "optionColumns": 2,
+      "answer": 1,
+      "answerSource": "user",
+      "image": "./assets/violympic/round5/q03-strawberries.09fd1ce3ecca.svg",
+      "imageAlt": "Hình trên có ... quả dâu tây."
+    },
+    {
+      "number": 4,
+      "text": "Số cần điền vào dấu hỏi chấm là ...",
+      "responseType": "text",
+      "options": [],
+      "image": "./assets/violympic/round5/q04-crab-split.6384fac497e4.svg",
+      "imageAlt": "Số cần điền vào dấu hỏi chấm là ...",
+      "answer": "7",
+      "answerSource": "user"
+    },
+    {
+      "number": 5,
+      "text": "Số ?",
+      "responseType": "text",
+      "options": [],
+      "image": "./assets/violympic/round5/q05-hens.eaa8fde6d647.svg",
+      "imageAlt": "Số ?",
+      "answer": "3",
+      "answerSource": "user"
+    },
+    {
+      "number": 6,
+      "text": "Số ?",
+      "responseType": "text",
+      "options": [],
+      "image": "./assets/violympic/round5/q06-fruit-inventory.da824b4ec87f.svg",
+      "imageAlt": "Số ?",
+      "answer": "5",
+      "answerSource": "user"
+    },
+    {
+      "number": 7,
+      "text": "Hình trên có ... con chim màu xanh lá.",
+      "options": [
+        "Hai",
+        "Bốn",
+        "Ba",
+        "Một"
+      ],
+      "optionColumns": 2,
+      "answer": 1,
+      "answerSource": "user",
+      "image": "./assets/violympic/round5/q07-q26-birds.224bf0863354.svg",
+      "imageAlt": "Hình trên có ... con chim màu xanh lá."
+    },
+    {
+      "number": 8,
+      "text": "Hình trên có hai con ...",
+      "options": [
+        "Lợn",
+        "Dế mèn",
+        "Hươu",
+        "Voi"
+      ],
+      "optionColumns": 2,
+      "answer": 1,
+      "answerSource": "user",
+      "image": "./assets/violympic/round5/q08-animals.3045988d91bb.svg",
+      "imageAlt": "Hình trên có hai con ..."
+    },
+    {
+      "number": 9,
+      "text": "Chọn câu đúng: Bỏ thêm bánh vào đĩa để trên đĩa có 9 cái bánh.",
+      "options": [
+        "2 cái bánh",
+        "4 cái bánh",
+        "1 cái bánh",
+        "3 cái bánh"
+      ],
+      "optionColumns": 2,
+      "answer": 3,
+      "answerSource": "user",
+      "image": "./assets/violympic/round5/q09-cupcake-plate.45d2e02c688f.svg",
+      "imageAlt": "Chọn câu đúng: Bỏ thêm bánh vào đĩa để trên đĩa có 9 cái bánh.",
+      "optionImages": [
+        "./assets/violympic/round5/q09-a.b2a48de1eea6.svg",
+        "./assets/violympic/round5/q09-b.b84be51a65ad.svg",
+        "./assets/violympic/round5/q09-c.b9c13ed9888d.svg",
+        "./assets/violympic/round5/q09-d.4277a8357cd4.svg"
+      ],
+      "largeOptionImages": true
+    },
+    {
+      "number": 10,
+      "text": "Đếm số lượng mỗi loại quả rồi viết cách đọc số đó vào hàng tương ứng. Cột màu vàng thu được chữ gì?",
+      "options": [
+        "CHÔM",
+        "CHĂM",
+        "CHIM",
+        "CHÓM"
+      ],
+      "optionColumns": 2,
+      "answer": 1,
+      "answerSource": "user",
+      "image": "./assets/violympic/round5/q10-fruit-crossword.9ddd628a66c2.svg",
+      "imageAlt": "Đếm số lượng mỗi loại quả rồi viết cách đọc số đó vào hàng tương ứng. Cột màu vàng thu được chữ gì?"
+    },
+    {
+      "number": 11,
+      "text": "Có mấy bạn nhỏ trong tranh?",
+      "options": [
+        "8",
+        "10",
+        "7",
+        "9"
+      ],
+      "optionColumns": 2,
+      "answer": 1,
+      "answerSource": "user",
+      "image": "./assets/violympic/round5/q11-playground.1b3ce1616945.svg",
+      "imageAlt": "Có mấy bạn nhỏ trong tranh?"
+    },
+    {
+      "number": 12,
+      "text": "Chọn đáp án khoanh vào số đúng theo mẫu trên:",
+      "options": [
+        "Khoanh số 3",
+        "Khoanh số 4",
+        "Khoanh số 6",
+        "Khoanh số 5"
+      ],
+      "optionColumns": 2,
+      "answer": 3,
+      "answerSource": "user",
+      "image": "./assets/violympic/round5/q12-model.b17a63a29eb9.svg",
+      "imageAlt": "Chọn đáp án khoanh vào số đúng theo mẫu trên:",
+      "optionImages": [
+        "./assets/violympic/round5/q12-a.81d058b01a00.svg",
+        "./assets/violympic/round5/q12-b.b6f4925c4cd2.svg",
+        "./assets/violympic/round5/q12-c.fd6567986e50.svg",
+        "./assets/violympic/round5/q12-d.0b4a0540665d.svg"
+      ],
+      "largeOptionImages": true
+    },
+    {
+      "number": 13,
+      "text": "Số cần điền vào dấu hỏi chấm là ...",
+      "responseType": "text",
+      "options": [],
+      "image": "./assets/violympic/round5/q13-hands.dd5a430cce8d.svg",
+      "imageAlt": "Số cần điền vào dấu hỏi chấm là ...",
+      "answer": "8",
+      "answerSource": "user"
+    },
+    {
+      "number": 14,
+      "text": "Số cần điền vào dấu hỏi chấm là ...",
+      "responseType": "text",
+      "options": [],
+      "image": "./assets/violympic/round5/q14-scorpion-split.1390f3b11cfb.svg",
+      "imageAlt": "Số cần điền vào dấu hỏi chấm là ...",
+      "answer": "2",
+      "answerSource": "user"
+    },
+    {
+      "number": 15,
+      "text": "Số ?",
+      "responseType": "text",
+      "options": [],
+      "image": "./assets/violympic/round5/q15-reference.b3ab13436306.svg",
+      "imageAlt": "Số ?",
+      "answer": "6",
+      "answerSource": "user"
+    },
+    {
+      "number": 16,
+      "text": "Số ?",
+      "responseType": "text",
+      "options": [],
+      "image": "./assets/violympic/round5/q16-circles.41399f8d2ccd.svg",
+      "imageAlt": "Số ?",
+      "answer": "5",
+      "answerSource": "user"
+    },
+    {
+      "number": 17,
+      "text": "Số ?",
+      "responseType": "text",
+      "options": [],
+      "image": "./assets/violympic/round5/q17-frog-split.b35c279f409d.svg",
+      "imageAlt": "Số ?",
+      "answer": "4",
+      "answerSource": "user"
+    },
+    {
+      "number": 18,
+      "text": "Trên đĩa có ...",
+      "options": [
+        "1 quả xoài",
+        "3 quả xoài",
+        "2 quả cam",
+        "1 quả cam"
+      ],
+      "optionColumns": 2,
+      "answer": 3,
+      "answerSource": "user",
+      "image": "./assets/violympic/round5/q18-fruit-plate.beda13b1d04e.svg",
+      "imageAlt": "Trên đĩa có ..."
+    },
+    {
+      "number": 19,
+      "text": "Có 5 mảnh giấy hình vuông được xếp chồng lên nhau như hình trên. Nếu ta lấy lần lượt từng mảnh giấy ra theo thứ tự từ trên xuống dưới thì chúng được lấy ra theo thứ tự như thế nào?",
+      "options": [
+        "Xanh, đỏ, vàng, cam, tím",
+        "Xanh, đỏ, vàng, tím, cam",
+        "Đỏ, tím, xanh, cam, tím",
+        "Xanh, vàng, đỏ, cam, tím"
+      ],
+      "optionColumns": 2,
+      "answer": 0,
+      "answerSource": "user",
+      "image": "./assets/violympic/round5/q19-paper-stack.ccd576f3011a.svg",
+      "imageAlt": "Có 5 mảnh giấy hình vuông được xếp chồng lên nhau như hình trên. Nếu ta lấy lần lượt từng mảnh giấy ra theo thứ tự từ trên xuống dưới thì chúng được lấy ra theo thứ tự như thế nào?"
+    },
+    {
+      "number": 20,
+      "text": "Hình tiếp theo là",
+      "options": [
+        "Khuôn mặt xanh",
+        "Khuôn mặt ma cà rồng",
+        "Phù thủy mũ nghiêng",
+        "Phù thủy mũ nhọn"
+      ],
+      "optionColumns": 2,
+      "answer": 3,
+      "answerSource": "user",
+      "image": "./assets/violympic/round5/q20-pattern.d6fd1f872168.svg",
+      "imageAlt": "Hình tiếp theo là",
+      "optionImages": [
+        "./assets/violympic/round5/q20-a.b34344be9b92.svg",
+        "./assets/violympic/round5/q20-b.deec4992605e.svg",
+        "./assets/violympic/round5/q20-c.88ea3b622f08.svg",
+        "./assets/violympic/round5/q20-d.26eb3e991826.svg"
+      ],
+      "largeOptionImages": true
+    },
+    {
+      "number": 21,
+      "text": "Chọn đáp án tô màu vào số đúng theo mẫu bên:",
+      "options": [
+        "Tô số 7",
+        "Tô số 6",
+        "Tô số 9",
+        "Tô số 8"
+      ],
+      "optionColumns": 2,
+      "answer": 3,
+      "answerSource": "user",
+      "image": "./assets/violympic/round5/q21-model.da92c584a5ba.svg",
+      "imageAlt": "Chọn đáp án tô màu vào số đúng theo mẫu bên:",
+      "optionImages": [
+        "./assets/violympic/round5/q21-a.238ab220e9b6.svg",
+        "./assets/violympic/round5/q21-b.49523c1fe503.svg",
+        "./assets/violympic/round5/q21-c.067e49ac341d.svg",
+        "./assets/violympic/round5/q21-d.94aff6f5092a.svg"
+      ],
+      "largeOptionImages": true
+    },
+    {
+      "number": 22,
+      "text": "Chọn đáp án tô màu vào số đúng theo mẫu bên:",
+      "options": [
+        "Tô số 8",
+        "Tô số 9",
+        "Tô số 6",
+        "Tô số 7"
+      ],
+      "optionColumns": 2,
+      "answer": 1,
+      "answerSource": "user",
+      "image": "./assets/violympic/round5/q22-model.df10084a6b92.svg",
+      "imageAlt": "Chọn đáp án tô màu vào số đúng theo mẫu bên:",
+      "optionImages": [
+        "./assets/violympic/round5/q22-a.524ff255c904.svg",
+        "./assets/violympic/round5/q22-b.36539484726b.svg",
+        "./assets/violympic/round5/q22-c.734cffab3100.svg",
+        "./assets/violympic/round5/q22-d.107301b7386d.svg"
+      ],
+      "largeOptionImages": true
+    },
+    {
+      "number": 23,
+      "text": "Chọn đáp án tô màu vào số đúng theo mẫu trên:",
+      "options": [
+        "Tô số 6",
+        "Tô số 9",
+        "Tô số 8",
+        "Tô số 7"
+      ],
+      "optionColumns": 2,
+      "answer": 3,
+      "answerSource": "user",
+      "image": "./assets/violympic/round5/q23-model.301d9291db2c.svg",
+      "imageAlt": "Chọn đáp án tô màu vào số đúng theo mẫu trên:",
+      "optionImages": [
+        "./assets/violympic/round5/q23-a.788e7c4fa8d7.svg",
+        "./assets/violympic/round5/q23-b.b81117c828d1.svg",
+        "./assets/violympic/round5/q23-c.5448d1542732.svg",
+        "./assets/violympic/round5/q23-d.b6a13babcf07.svg"
+      ],
+      "largeOptionImages": true
+    },
+    {
+      "number": 24,
+      "text": "Chọn hình có ít cây thông nhất:",
+      "options": [
+        "9 cây thông",
+        "8 cây thông",
+        "7 cây thông",
+        "5 cây thông"
+      ],
+      "optionColumns": 2,
+      "answer": 3,
+      "answerSource": "user",
+      "optionImages": [
+        "./assets/violympic/round5/q24-a.f51baf19360c.svg",
+        "./assets/violympic/round5/q24-b.ea77643eff05.svg",
+        "./assets/violympic/round5/q24-c.60bf399f0168.svg",
+        "./assets/violympic/round5/q24-d.3b84e322dde5.svg"
+      ],
+      "largeOptionImages": true
+    },
+    {
+      "number": 25,
+      "text": "Số ?",
+      "responseType": "text",
+      "options": [],
+      "image": "./assets/violympic/round5/q25-ant-split.48132d7ca0f3.svg",
+      "imageAlt": "Số ?",
+      "answer": "7",
+      "answerSource": "user"
+    },
+    {
+      "number": 26,
+      "text": "Hình trên có ... con chim màu cam.",
+      "options": [
+        "Ba",
+        "Bốn",
+        "Một",
+        "Hai"
+      ],
+      "optionColumns": 2,
+      "answer": 0,
+      "answerSource": "user",
+      "image": "./assets/violympic/round5/q07-q26-birds.224bf0863354.svg",
+      "imageAlt": "Hình trên có ... con chim màu cam."
+    },
+    {
+      "number": 27,
+      "text": "Số ?",
+      "responseType": "text",
+      "options": [],
+      "image": "./assets/violympic/round5/q27-hands.4c2874f089e7.svg",
+      "imageAlt": "Số ?",
+      "answer": "3",
+      "answerSource": "user"
+    },
+    {
+      "number": 28,
+      "text": "Chọn hình tô màu bông hoa số 4.",
+      "options": [
+        "Tô bông hoa số 4",
+        "Tô bông hoa số 3",
+        "Tô bông hoa số 1",
+        "Tô bông hoa số 2"
+      ],
+      "optionColumns": 2,
+      "answer": 0,
+      "answerSource": "user",
+      "optionImages": [
+        "./assets/violympic/round5/q28-a.0174a42908b8.svg",
+        "./assets/violympic/round5/q28-b.5e31a3494c1b.svg",
+        "./assets/violympic/round5/q28-c.7baa5c1de9ec.svg",
+        "./assets/violympic/round5/q28-d.9486c4c60d74.svg"
+      ],
+      "largeOptionImages": true
+    },
+    {
+      "number": 29,
+      "text": "Anh Thành có hai người chị em gái. Mỗi người chị hoặc em gái đều có hai người anh em trai. Vậy nhà anh Thành có mấy người con?",
+      "options": [
+        "2",
+        "5",
+        "4",
+        "3"
+      ],
+      "optionColumns": 2,
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 30,
+      "text": "Hình nào có số lượng ít nhất?",
+      "options": [
+        "Ấm cao",
+        "Chảo",
+        "Ấm trà tròn",
+        "Nồi hình trụ"
+      ],
+      "optionColumns": 2,
+      "answer": 1,
+      "answerSource": "user",
+      "image": "./assets/violympic/round5/q30-kitchen-inventory.0511b4f8dd8c.svg",
+      "imageAlt": "Hình nào có số lượng ít nhất?",
+      "optionImages": [
+        "./assets/violympic/round5/q30-a.0e2796462cf1.svg",
+        "./assets/violympic/round5/q30-b.96a24e280bd2.svg",
+        "./assets/violympic/round5/q30-c.04dacd243335.svg",
+        "./assets/violympic/round5/q30-d.8b14ca6de03a.svg"
+      ],
+      "largeOptionImages": true
+    }
+  ]
 }
 ];
 function getPapers(program, subject, grade, mode) {
