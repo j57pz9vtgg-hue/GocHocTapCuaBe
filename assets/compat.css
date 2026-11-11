@@ -755,3 +755,9 @@
 /* Examples are created only on explicit expansion, using one source question and its supplied solution. */
 .topic-example-toggle{grid-column:1/-1;grid-row:4;min-height:44px;border:1px solid var(--theme-edge,#b9e3f9);border-radius:8px;background:#ffffffb8;color:var(--theme-text,#174b6d);font:inherit;font-size:13px;font-weight:700;cursor:pointer;padding:8px 12px}.topic-example-toggle:focus-visible{outline:2px solid var(--theme-accent,#087fb8);outline-offset:3px}.topic-example-panel{grid-column:1/-1;grid-row:5;min-width:0;padding:14px;border:1px solid var(--theme-edge,#b9e3f9);border-radius:9px;background:white;color:#153557}.topic-small-card.topic-example-expanded{grid-column:1/-1}.topic-example-question{font:16px/1.6 'Times New Roman',Times,serif;overflow-wrap:anywhere}.topic-example-question>p,.topic-example-solution>p{white-space:pre-line;margin:8px 0}.topic-example-question .topic-example-source{font:12px/1.5 Arial,sans-serif;color:#587085}.topic-example-question figure{margin:12px 0;text-align:center}.topic-example-question img{max-width:100%;height:auto;max-height:340px;object-fit:contain}.topic-example-options{list-style-type:upper-alpha;padding-left:25px;margin:12px 0}.topic-example-options li{padding:3px 0}.topic-example-solution{border-top:1px solid #d8e5ed;margin-top:14px;padding-top:12px}.topic-example-solution h5{font-size:16px;margin:0 0 8px}.topic-example-solution p{margin-bottom:0}
 @media(max-width:760px){.topic-example-toggle{grid-row:3}.topic-example-panel{grid-row:4;padding:10px}}
+
+/* On phones, let the catalog heading and filters scroll away with the content. */
+@media(max-width:760px),(max-width:960px) and (max-height:500px){
+ html{scroll-padding-top:12px}
+ #site-shell .catalog-masthead{position:relative;top:auto}
+}
