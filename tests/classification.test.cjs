@@ -33,35 +33,47 @@ test('owner publishing importer checks the complete source snapshot and ignores 
  const wrong=structuredClone(report);wrong.questions[0].status=wrong.questions[0].status==='classified'?'unclassified':'classified';assert.throws(()=>prepareOwnerClassification(wrong));
 });
 
-test('method-based logical schema covers all70 questions and leaves the other four groups intact',()=>{
+test('method-based schema covers all350 questions in five unchanged main groups',()=>{
  const c={};vm.runInNewContext(fs.readFileSync('assets/classification-base.js','utf8')+';globalThis.value=publishedTimoClassification;',c);
  const api=load(null,JSON.parse(JSON.stringify(c.value))),groups=api.groups('2');
- assert.deepEqual(Array.from(groups,g=>g.topics.filter(t=>t.id.includes('-review-')).length),[4,4,3,5,4]);
- assert.equal(api.classification.snapshot().topics.length,20);assert.equal(Object.keys(api.classification.snapshot().assignments).length,222);
- assert.deepEqual(Array.from(groups,g=>g.topics.find(t=>t.id.endsWith('-unclassified')).entries.length),[41,1,30,19,37]);
+ assert.deepEqual(Array.from(groups,g=>g.topics.filter(t=>t.id.includes('-review-')).length),[7,6,7,6,6]);
+ assert.equal(api.classification.snapshot().topics.length,32);assert.equal(Object.keys(api.classification.snapshot().assignments).length,242);
+ assert.deepEqual(Array.from(groups,g=>g.topics.find(t=>t.id.endsWith('-unclassified')).entries.length),[24,11,23,18,32]);
  assert.deepEqual(Array.from(groups,g=>g.topics.reduce((n,t)=>n+t.entries.length,0)),[70,70,70,70,70]);
  const ids=Array.from(groups).flatMap(g=>Array.from(g.topics).flatMap(t=>Array.from(t.entries,e=>e.id)));assert.equal(new Set(ids).size,350);
 });
 test('explicit owner reset replaces old local classification once, backs it up, and retains later edits',()=>{
  const c={};vm.runInNewContext(fs.readFileSync(require('node:path').join(__dirname,'../assets/classification-base.js'),'utf8')+';globalThis.value=publishedTimoClassification;',c);const base=JSON.parse(JSON.stringify(c.value));
- const old=fixture(),api=load(old,base);assert.equal(api.classification.usesPublished(),true);assert.equal(api.classification.snapshot().topics.length,20);
+ const old=fixture(),api=load(old,base);assert.equal(api.classification.usesPublished(),true);assert.equal(api.classification.snapshot().topics.length,32);
  assert.equal(api.store.get('goc-hoc-tap.classification-backup.'+base.resetId),JSON.stringify(old));
  assert.equal(api.store.get('goc-hoc-tap.classification-reset.v1'),base.resetId);
  const edited={...fixture(),scopeRevisions:base.scopeRevisions},again=load(edited,base,api.store);assert.deepEqual(JSON.parse(JSON.stringify(again.classification.snapshot())),edited);assert.equal(again.classification.usesPublished(),false);
 });
 
 function methodBase(){const c={};vm.runInNewContext(fs.readFileSync('assets/classification-base.js','utf8')+';globalThis.value=publishedTimoClassification;',c);return JSON.parse(JSON.stringify(c.value));}
-function oldMethodBase(){const base=methodBase();base.topics=base.topics.filter(t=>t.grade!=='2'||t.groupId!=='timo-group-1');base.topics.unshift(...['Quy luật dãy số','Quy luật hình ảnh','Bài toán tuổi','Bài toán ngày tháng'].map((name,i)=>({id:'timo-group-1-review-default-'+(i+1),name,grade:'2',groupId:'timo-group-1'})));base.assignments=Object.fromEntries(Object.entries(base.assignments).filter(([id])=>!/^timo-grade2-(qualifying|national)-0[1-7]:[1-5]$/.test(id)));Object.assign(base.assignments,{'timo-grade2-qualifying-01:1':'timo-group-1-review-default-1','timo-grade2-qualifying-04:3':'timo-group-1-review-default-1','timo-grade2-qualifying-01:4':'timo-group-1-review-default-2','timo-grade2-qualifying-01:3':'timo-group-1-review-default-3','timo-grade2-qualifying-01:5':'timo-group-1-review-default-4'});delete base.scopeRevisions;return base;}
+function oldMethodBase(){return JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'fixtures/classification-before-all-min5.json'),'utf8'));}
 
-test('scoped migration backs up old logical grouping and preserves user topics in other groups and grades',()=>{
+test('five-scope migration backs up old grouping, replaces grade2 groups and preserves other grades',()=>{
  const base=methodBase(),old=oldMethodBase();old.topics.push({id:'timo-group-2-review-user-method',groupId:'timo-group-2',grade:'2',name:'Nhóm riêng'},{id:'timo-group-1-review-grade3-custom',groupId:'timo-group-1',grade:'3',name:'Lớp 3 riêng'});old.assignments['timo-grade2-qualifying-01:6']='timo-group-2-review-user-method';
  const memory=new Map([['goc-hoc-tap.classification-reset.v1',base.resetId]]),api=load(old,base,memory),snapshot=api.classification.snapshot();
- assert.equal(snapshot.assignments['timo-grade2-qualifying-01:6'],'timo-group-2-review-user-method');assert(snapshot.topics.some(t=>t.id==='timo-group-1-review-grade3-custom'));assert.equal(api.groups('2')[0].topics.filter(t=>t.id.includes('-review-')&&t.entries.length).length,4);assert(api.classification.scopeMigrationPrevious());assert.equal(api.store.get('goc-hoc-tap.classification-backup.scope-'+base.revision),JSON.stringify(api.classification.validate(old)));
+ assert.equal(snapshot.assignments['timo-grade2-qualifying-01:6'],'timo-group-2-review-method-sum-pairing');assert(!snapshot.topics.some(t=>t.id==='timo-group-2-review-user-method'));assert(snapshot.topics.some(t=>t.id==='timo-group-1-review-grade3-custom'));assert.equal(api.groups('2')[0].topics.filter(t=>t.id.includes('-review-')&&t.entries.length).length,7);assert(api.classification.scopeMigrationPrevious());assert.equal(api.store.get('goc-hoc-tap.classification-backup.scope-'+base.revision),JSON.stringify(api.classification.validate(old)));
  snapshot.topics.find(t=>t.id==='timo-group-1-review-method-number-growing-gaps').name='Tên chỉnh riêng';delete snapshot.assignments['timo-grade2-qualifying-01:1'];
  const again=load(snapshot,base,memory);assert.equal(again.classification.snapshot().topics.find(t=>t.id==='timo-group-1-review-method-number-growing-gaps').name,'Tên chỉnh riêng');assert(!again.classification.snapshot().assignments['timo-grade2-qualifying-01:1']);
 });
-test('old cloud classifications cannot restore the four broad logical topics',()=>{
- const base=methodBase(),api=load(null,base),old=oldMethodBase();api.classification.acceptSynced(old);const current=api.classification.snapshot();assert.equal(current.scopeRevisions['2|timo-group-1'],base.scopeRevisions['2|timo-group-1']);assert.equal(current.topics.filter(t=>t.groupId==='timo-group-1'&&t.grade==='2').length,4);assert.equal(current.assignments['timo-grade2-national-02:3'],undefined);assert.equal(current.assignments['timo-grade2-qualifying-01:1'],'timo-group-1-review-method-number-growing-gaps');
+test('stale cloud classifications cannot restore former grouping in any of five scopes',()=>{
+ const base=methodBase(),api=load(null,base),old=oldMethodBase();api.classification.acceptSynced(old);const current=api.classification.snapshot();assert.equal(current.scopeRevisions['2|timo-group-1'],base.scopeRevisions['2|timo-group-1']);assert.equal(current.topics.filter(t=>t.groupId==='timo-group-1'&&t.grade==='2').length,7);assert.equal(current.assignments['timo-grade2-national-02:3'],undefined);assert.equal(current.assignments['timo-grade2-qualifying-01:1'],'timo-group-1-review-method-number-growing-gaps');assert.deepEqual(JSON.parse(JSON.stringify(current.assignments)),base.assignments);assert.deepEqual(JSON.parse(JSON.stringify(current.scopeRevisions)),base.scopeRevisions);
 });
 
-test('each named logical topic has at least6 questions with one shared method and all leftovers stay unclassified',()=>{const a=load(null,methodBase()),group=a.groups('2')[0],topics=group.topics.filter(t=>t.id.includes('-review-'));assert.deepEqual(Array.from(topics,t=>t.entries.length),[6,6,7,10]);assert(topics.every(t=>t.entries.length>=6));assert.equal(group.topics.find(t=>t.id.endsWith('-unclassified')).entries.length,41);const ids=group.topics.flatMap(t=>t.entries.map(e=>e.id));assert.equal(new Set(ids).size,70);assert.equal(a.classification.snapshot().assignments['timo-grade2-qualifying-04:3'],undefined);assert.equal(a.classification.snapshot().assignments['timo-grade2-national-02:3'],undefined);assert.equal(a.classification.snapshot().assignments['timo-grade2-qualifying-07:3'],'timo-group-1-review-method-number-growing-gaps');});
+test('every named topic has at least5 source questions and a supplied example solution',()=>{
+ const a=load(null,methodBase()),groups=a.groups('2');
+ for(const group of groups){const topics=group.topics.filter(t=>!t.id.endsWith('-unclassified'));assert(topics.length);assert(topics.every(t=>t.entries.length>=5));assert(topics.every(t=>t.entries.some(e=>e.question.explanation?.trim())));const ids=group.topics.flatMap(t=>t.entries.map(e=>e.id));assert.equal(new Set(ids).size,70);}
+ const assignments=a.classification.snapshot().assignments;
+ assert.equal(assignments['timo-grade2-qualifying-06:2'],'timo-group-1-review-method-number-constant');
+ assert.equal(assignments['timo-grade2-qualifying-02:4'],assignments['timo-grade2-qualifying-06:2']);
+ assert.equal(assignments['timo-grade2-qualifying-07:4'],'timo-group-1-review-method-number-growing-gaps');
+ assert.equal(assignments['timo-grade2-qualifying-04:3'],undefined);assert.equal(assignments['timo-grade2-national-02:3'],undefined);
+ assert.equal(assignments['timo-grade2-national-07:7'],'timo-group-2-review-method-common-factor');
+ assert.equal(assignments['timo-grade2-qualifying-05:10'],undefined); // Fibonacci adds a different prerequisite.
+ assert.equal(assignments['timo-grade2-qualifying-05:18'],undefined); // Triangles do not join the square-counting group.
+ assert.equal(assignments['timo-grade2-national-05:25'],undefined); // Minimum difference differs from constructing one extreme number.
+});
