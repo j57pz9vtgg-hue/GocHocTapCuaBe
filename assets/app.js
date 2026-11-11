@@ -70,9 +70,22 @@ function renderTimoTopics(){
  return `<div class="timo-topic-browser" aria-label="Các chủ đề luyện tập TIMO">${groups.map((group,row)=>{
  const open=selected===group.index;
  return `<section class="timo-topic-group" style="--topic-row:${row+1}"><button class="topic-group-toggle ${open?'selected':''}" data-topic-group="${group.index}" id="${group.id}-toggle" aria-expanded="${open}" aria-controls="${group.id}-panel">${renderTopicBadge(group.index)}<span class="topic-group-label">${escapeHTML(group.name)}</span>${icon(open?'down':'arrow',19)}</button><div class="topic-group-panel" id="${group.id}-panel" aria-labelledby="${group.id}-title" ${open?'':'hidden'}><h3 id="${group.id}-title">${escapeHTML(group.name)}</h3><div class="topic-small-grid">${!group.matches.length?'<div class="topic-content-empty">Chưa có chủ đề nhỏ</div>':group.matches.map((topic,index)=>{
- return `<article class="topic-small-card"><div class="topic-small-heading">${renderTopicBadge(index)}<h4>${escapeHTML(topic.name)}</h4></div><p class="topic-state"><span aria-hidden="true"></span>${topic.entries.length} câu hỏi</p>${activeTheme().id==='pixel'?`<img class="topic-book" src="${publicAsset('pixel-book')}" alt="">`:`<span class="topic-book topic-theme-art" aria-hidden="true" style="background-image:url('${publicAsset(activeTheme().id+'-sprites')}');background-position:${(index%4)*100/3}% ${Math.floor(index/4)*100/3}%"></span>`}<button class="topic-practice" data-topic-open="${escapeHTML(topic.id)}" aria-label="Luyện tập ${escapeHTML(topic.name)}, ${escapeHTML(group.name)}">Luyện tập</button></article>`;
+ const example=state.grade==='2'&&group.id==='timo-group-1'&&topic.entries.length>=6&&!topic.id.endsWith('-unclassified')?topic.entries.find(e=>typeof e.question.explanation==='string'&&e.question.explanation.trim()):null;
+ return `<article class="topic-small-card"><div class="topic-small-heading">${renderTopicBadge(index)}<h4>${escapeHTML(topic.name)}</h4></div><p class="topic-state"><span aria-hidden="true"></span>${topic.entries.length} câu hỏi</p>${activeTheme().id==='pixel'?`<img class="topic-book" src="${publicAsset('pixel-book')}" alt="">`:`<span class="topic-book topic-theme-art" aria-hidden="true" style="background-image:url('${publicAsset(activeTheme().id+'-sprites')}');background-position:${(index%4)*100/3}% ${Math.floor(index/4)*100/3}%"></span>`}<button class="topic-practice" data-topic-open="${escapeHTML(topic.id)}" aria-label="Luyện tập ${escapeHTML(topic.name)}, ${escapeHTML(group.name)}">Luyện tập</button>${example?`<button type="button" class="topic-example-toggle" data-topic-example="${escapeHTML(topic.id)}" aria-expanded="false" aria-controls="example-${escapeHTML(topic.id)}">Ví dụ</button><div class="topic-example-panel" id="example-${escapeHTML(topic.id)}" hidden></div>`:''}</article>`;
  }).join('')}</div></div></section>`;
  }).join('')}</div>`;
+}
+function renderTopicExample(entry){
+ const q=entry.question,safeImage=src=>typeof src==='string'&&/^\.\/assets\/[a-zA-Z0-9_./-]+\.(png|webp|jpg|jpeg|svg)$/.test(src),picture=(src,alt)=>safeImage(src)?`<figure><img src="${escapeHTML(src)}" alt="${escapeHTML(alt||'Hình minh họa ví dụ')}"></figure>`:'';
+ return `<div class="topic-example-question" data-example-question-id="${escapeHTML(entry.id)}"><p class="topic-example-source">${escapeHTML(entry.paperTitle)} · Câu ${entry.number}</p><p ${q.english?'lang="en"':''}>${escapeHTML(q.english||q.text||'')}</p>${q.translation||q.vietnamese?`<p class="question-translation">${escapeHTML(q.translation||q.vietnamese)}</p>`:''}${q.detail?`<p>${escapeHTML(q.detail)}</p>`:''}${picture(q.image,q.imageAlt)}${q.responseType!=='text'&&q.options?.length?`<ol class="topic-example-options">${q.options.map((option,j)=>`<li>${q.optionImages?.[j]?picture(q.optionImages[j],option):escapeHTML(option)}</li>`).join('')}</ol>`:''}<section class="topic-example-solution" aria-label="Cách giải ví dụ"><h5>Cách giải</h5><p>${escapeHTML(q.explanation)}</p>${picture(q.explanationImage,q.explanationImageAlt)}</section></div>`;
+}
+function toggleTopicExample(button){
+ const panel=document.getElementById(button.getAttribute('aria-controls'));if(!panel)return;
+ const expanded=button.getAttribute('aria-expanded')==='true';
+ if(expanded){panel.replaceChildren();panel.hidden=true;button.setAttribute('aria-expanded','false');button.textContent='Ví dụ';button.closest('.topic-small-card').classList.remove('topic-example-expanded');return;}
+ const topic=getTimoTopicGroups(state.grade).find(g=>g.id==='timo-group-1')?.topics.find(t=>t.id===button.dataset.topicExample),entry=topic?.entries.find(e=>typeof e.question.explanation==='string'&&e.question.explanation.trim());
+ if(state.grade!=='2'||!entry||topic.entries.length<6)return;
+ panel.innerHTML=renderTopicExample(entry);panel.hidden=false;button.setAttribute('aria-expanded','true');button.textContent='Thu gọn ví dụ';button.closest('.topic-small-card').classList.add('topic-example-expanded');
 }
 // Store only question IDs so reordering never changes the source question or its options.
 const topicOrderMemory=new Map();
@@ -243,16 +256,23 @@ for(const [sourceKey,returnSource] of Object.entries(attempts)){
 }
 if(topicAttemptsMigrated)try{(globalThis.LearningAccounts?.storage||localStorage).setItem(attemptStorageKey,JSON.stringify(attempts));}catch{}
 // Preserve responses from former topic buckets when a device first receives an owner-published revision.
-if(typeof publishedTimoClassification!=='undefined'&&TimoClassification.usesPublished()){
+if(typeof publishedTimoClassification!=='undefined'&&(TimoClassification.usesPublished()||TimoClassification.scopeMigrationPrevious?.())){
  try{
   const revision=publishedTimoClassification.revision,marker='goc-hoc-tap.published-classification-progress.v1';
-  if(revision&&(globalThis.LearningAccounts?.storage||localStorage).getItem(marker)!==revision){
-   const previous={assignments:{}},resetId=publishedTimoClassification.resetId,resetMarker='goc-hoc-tap.classification-reset-progress.v1';
+  if(revision&&((globalThis.LearningAccounts?.storage||localStorage).getItem(marker)!==revision||TimoClassification.scopeMigrationPrevious?.())){
+   const previous=TimoClassification.scopeMigrationPrevious?.()||{assignments:{}},resetId=publishedTimoClassification.resetId,resetMarker='goc-hoc-tap.classification-reset-progress.v1';
    if(resetId&&(globalThis.LearningAccounts?.storage||localStorage).getItem(resetMarker)!==resetId){
     const questions=new Map(officialPapers.flatMap(p=>p.questions.map(q=>[p.id+':'+q.number,q])));
     for(const record of Object.values(attempts))if(Array.isArray(record?.questionIds))record.questionIds.forEach((id,i)=>{if(questions.has(id)&&validResponse(questions.get(id),record.answers?.[i]))previous.assignments[id]='former-topic';});
    }
-   if(Object.values(attempts).some(record=>Array.isArray(record?.questionIds)))preserveClassifiedProgress(previous,TimoClassification.snapshot());
+   const next=TimoClassification.snapshot();
+   if(publishedTimoClassification.scopeRevisions){
+    const scopeIds=new Set(Object.keys(publishedTimoClassification.scopeRevisions).flatMap(scope=>{const [grade,groupId]=scope.split('|');return buildTimoTopicGroups(officialPapers,grade).find(g=>g.id===groupId).topics.flatMap(t=>t.entries.map(e=>e.id));}));
+    for(const [key,record]of Object.entries(attempts))if(key.includes('|TIMO|Toán|Luyện theo chủ đề|')&&Array.isArray(record?.questionIds))for(const id of record.questionIds)if(scopeIds.has(id)&&!previous.assignments[id])previous.assignments[id]='former-topic';
+    previous.assignments=Object.fromEntries(Object.entries(previous.assignments).filter(([id])=>scopeIds.has(id)));
+    next.assignments=Object.fromEntries(Object.entries(next.assignments).filter(([id])=>scopeIds.has(id)));
+   }
+   if(Object.values(attempts).some(record=>Array.isArray(record?.questionIds)))preserveClassifiedProgress(previous,next);
    if(resetId)(globalThis.LearningAccounts?.storage||localStorage).setItem(resetMarker,resetId);
    (globalThis.LearningAccounts?.storage||localStorage).setItem(marker,revision);
   }
@@ -355,6 +375,7 @@ function renderPractice(){
 function home(){state.practice=null;state.search='';renderHome();window.scrollTo({top:0});}
 document.addEventListener('click',event=>{
  const button=event.target.closest('button');if(!button)return;
+ if(button.hasAttribute('data-topic-example')){toggleTopicExample(button);return;}
  if(button.hasAttribute('data-practice-search-clear')){const input=app.querySelector('#practice-question-search');if(input){input.value='';applyPracticeSearch('');input.focus();}return;}
  if(button.dataset.topicGroup!==undefined){
   const group=Number(button.dataset.topicGroup),collapse=window.matchMedia('(max-width:760px)').matches&&state.topicGroup===group;

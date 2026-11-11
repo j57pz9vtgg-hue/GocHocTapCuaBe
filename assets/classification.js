@@ -2,7 +2,7 @@
 const TimoClassification=(()=>{
  const storageKey='goc-hoc-tap.classification.v1';
  const empty=()=>({version:1,kind:'timo-classification',topics:[],assignments:{}});
- let saved=empty(),draft=null,trigger=null,lastGroup=null,hasLocalOverride=false;
+ let saved=empty(),draft=null,trigger=null,lastGroup=null,hasLocalOverride=false,published=null,scopeMigrationPrevious=null;
  const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').toLowerCase();
  const html=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  function validate(value){
@@ -21,15 +21,43 @@ const TimoClassification=(()=>{
    if(!e||!t||e.groupId!==t.groupId||e.grade!==t.grade)throw Error('Câu hỏi không thuộc đúng lớp hoặc nhóm chủ đề lớn.');
    assignments[id]=topicId;
   }
-  return {version:1,kind:'timo-classification',topics,assignments};
+  const scopeRevisions={};
+  if(value.scopeRevisions!==undefined){
+   if(!value.scopeRevisions||typeof value.scopeRevisions!=='object'||Array.isArray(value.scopeRevisions)||Object.keys(value.scopeRevisions).length>60)throw Error('Phiên bản nhóm chủ đề không hợp lệ.');
+   for(const [scope,revision]of Object.entries(value.scopeRevisions)){if(!/^([1-9]|1[0-2])\|timo-group-[1-5]$/.test(scope)||typeof revision!=='string'||!/^[a-zA-Z0-9-]{1,80}$/.test(revision))throw Error('Phiên bản nhóm chủ đề không hợp lệ.');scopeRevisions[scope]=revision;}
+  }
+  return {version:1,kind:'timo-classification',topics,assignments,...(Object.keys(scopeRevisions).length?{scopeRevisions}:{})};
  }
- try{if(typeof publishedTimoClassification!=='undefined')saved=validate(publishedTimoClassification);}catch{}
+ function upgradeScopes(value){
+  if(!published?.scopeRevisions)return value;
+  const next=JSON.parse(JSON.stringify(value));
+  for(const [scope,revision]of Object.entries(published.scopeRevisions)){
+   if(next.scopeRevisions?.[scope]===revision)continue;
+   const [grade,groupId]=scope.split('|'),entries=new Set(buildTimoTopicGroups(officialPapers,grade).find(g=>g.id===groupId).topics.flatMap(t=>t.entries.map(e=>e.id)));
+   next.topics=next.topics.filter(t=>t.grade!==grade||t.groupId!==groupId);
+   for(const id of entries)delete next.assignments[id];
+   next.topics.push(...published.topics.filter(t=>t.grade===grade&&t.groupId===groupId));
+   for(const id of entries)if(published.assignments[id])next.assignments[id]=published.assignments[id];
+   next.scopeRevisions={...next.scopeRevisions,[scope]:revision};
+  }
+  return validate(next);
+ }
+ try{if(typeof publishedTimoClassification!=='undefined')saved=published=validate(publishedTimoClassification);}catch{}
  try{
   const raw=(globalThis.LearningAccounts?.storage||localStorage).getItem(storageKey),resetId=typeof publishedTimoClassification!=='undefined'?publishedTimoClassification.resetId:null;
   if(resetId&&(globalThis.LearningAccounts?.storage||localStorage).getItem('goc-hoc-tap.classification-reset.v1')!==resetId){
    if(raw)(globalThis.LearningAccounts?.storage||localStorage).setItem('goc-hoc-tap.classification-backup.'+resetId,raw);
    (globalThis.LearningAccounts?.storage||localStorage).removeItem(storageKey);(globalThis.LearningAccounts?.storage||localStorage).setItem('goc-hoc-tap.classification-reset.v1',resetId);
   }else if(raw){saved=validate(JSON.parse(raw));hasLocalOverride=true;}
+ }catch{}
+ try{
+  const upgraded=upgradeScopes(saved);
+  if(JSON.stringify(upgraded)!==JSON.stringify(saved)){
+   scopeMigrationPrevious=saved;saved=upgraded;hasLocalOverride=true;
+   const storage=globalThis.LearningAccounts?.storage||localStorage,backup='goc-hoc-tap.classification-backup.scope-'+publishedTimoClassification.revision;
+   if(storage.getItem(backup)===null)storage.setItem(backup,JSON.stringify(scopeMigrationPrevious));
+   storage.setItem(storageKey,JSON.stringify(saved));
+  }
  }catch{}
  function apply(groups,grade){
   for(const group of groups){
@@ -79,7 +107,7 @@ const TimoClassification=(()=>{
  }
  function status(message){const el=getDialog().querySelector('.classification-status');if(el){el.textContent=message;el.focus();}}
  function commit(next,remote=false){
-  const value=validate(next),old=saved;
+  const value=upgradeScopes(validate(next)),old=saved;
   if(state.practice?.topicId)saveAttempt();
   try{(globalThis.LearningAccounts?.storage||localStorage).setItem(storageKey,JSON.stringify(value));}catch{throw Error('Không lưu được phân loại. Hãy kiểm tra dung lượng hoặc quyền lưu dữ liệu của trình duyệt.');}
   saved=value;hasLocalOverride=true;
@@ -139,5 +167,5 @@ const TimoClassification=(()=>{
   }
  }
  document.addEventListener('click',event=>{const b=event.target.closest('[data-classify-group]');if(b)openReview(b.dataset.classifyGroup);const edit=event.target.closest('[data-edit-classified-topic]');if(edit){trigger=edit;openEditor(edit.dataset.editClassifiedTopic)}});
- return {apply,validate,openReview,buildSharingExport,acceptSynced:value=>commit(value,true),usesPublished:()=>!hasLocalOverride,snapshot:()=>JSON.parse(JSON.stringify(saved))};
+ return {apply,validate,openReview,buildSharingExport,acceptSynced:value=>commit(value,true),usesPublished:()=>!hasLocalOverride,scopeMigrationPrevious:()=>scopeMigrationPrevious&&JSON.parse(JSON.stringify(scopeMigrationPrevious)),snapshot:()=>JSON.parse(JSON.stringify(saved))};
 })();
