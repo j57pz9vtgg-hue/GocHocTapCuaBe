@@ -20,7 +20,7 @@ const publishedTimoClassification = {
       "id": "timo-group-1-review-method-letter-interleaved",
       "grade": "2",
       "groupId": "timo-group-1",
-      "name": "Dãy chữ: hai quy luật xen kẽ"
+      "name": "Hai quy luật xen kẽ: tách vị trí lẻ và chẵn"
     },
     {
       "id": "timo-group-1-review-method-age-timeline",
@@ -439,11 +439,13 @@ const publishedTimoClassification = {
     "timo-grade2-national-03:25": "timo-group-5-review-method-evaluate-filter",
     "timo-grade2-national-04:25": "timo-group-5-review-method-evaluate-filter",
     "timo-grade2-national-05:22": "timo-group-5-review-method-evaluate-filter",
-    "timo-grade2-national-07:21": "timo-group-5-review-method-evaluate-filter"
+    "timo-grade2-national-07:21": "timo-group-5-review-method-evaluate-filter",
+    "timo-grade2-qualifying-04:5": "timo-group-1-review-method-letter-interleaved",
+    "timo-grade2-qualifying-05:5": "timo-group-1-review-method-letter-interleaved"
   },
-  "revision": "1ca1d8343eb8",
+  "revision": "ac4665ac1ada",
   "scopeRevisions": {
-    "2|timo-group-1": "all-methods-min5-2026-11-11",
+    "2|timo-group-1": "interleaved-numbers-letters-2026-11-12",
     "2|timo-group-2": "all-methods-min5-2026-11-11",
     "2|timo-group-3": "all-methods-min5-2026-11-11",
     "2|timo-group-4": "all-methods-min5-2026-11-11",
