@@ -37,8 +37,8 @@ test('method-based schema covers all350 questions in five unchanged main groups'
  const c={};vm.runInNewContext(fs.readFileSync('assets/classification-base.js','utf8')+';globalThis.value=publishedTimoClassification;',c);
  const api=load(null,JSON.parse(JSON.stringify(c.value))),groups=api.groups('2');
  assert.deepEqual(Array.from(groups,g=>g.topics.filter(t=>t.id.includes('-review-')).length),[7,6,7,6,6]);
- assert.equal(api.classification.snapshot().topics.length,32);assert.equal(Object.keys(api.classification.snapshot().assignments).length,244);
- assert.deepEqual(Array.from(groups,g=>g.topics.find(t=>t.id.endsWith('-unclassified')).entries.length),[22,11,23,18,32]);
+ assert.equal(api.classification.snapshot().topics.length,32);assert.equal(Object.keys(api.classification.snapshot().assignments).length,287);
+ assert.deepEqual(Array.from(groups,g=>g.topics.find(t=>t.id.endsWith('-unclassified')).entries.length),[14,5,11,13,20]);
  assert.deepEqual(Array.from(groups,g=>g.topics.reduce((n,t)=>n+t.entries.length,0)),[70,70,70,70,70]);
  const ids=Array.from(groups).flatMap(g=>Array.from(g.topics).flatMap(t=>Array.from(t.entries,e=>e.id)));assert.equal(new Set(ids).size,350);
 });
@@ -74,17 +74,40 @@ test('every named topic has at least5 source questions and a supplied example so
  assert.equal(assignments['timo-grade2-qualifying-04:3'],undefined);assert.equal(assignments['timo-grade2-national-02:3'],undefined);
  assert.equal(assignments['timo-grade2-national-07:7'],'timo-group-2-review-method-common-factor');
  assert.equal(assignments['timo-grade2-qualifying-05:10'],undefined); // Fibonacci adds a different prerequisite.
- assert.equal(assignments['timo-grade2-qualifying-05:18'],undefined); // Triangles do not join the square-counting group.
+ assert.equal(assignments['timo-grade2-qualifying-05:18'],'timo-group-4-review-method-count-squares'); // Same fixed-figure decomposition; the group now covers flat shapes.
  assert.equal(assignments['timo-grade2-national-05:25'],undefined); // Minimum difference differs from constructing one extreme number.
 });
 
 test('numeric and letter interleaved sequences share the odd-even separation method',()=>{
  const base=methodBase(),id='timo-group-1-review-method-letter-interleaved',topic=load(null,base).groups('2')[0].topics.find(t=>t.id===id);
- assert.equal(topic.entries.length,8);assert.equal(topic.name,'Hai quy luật xen kẽ: tách vị trí lẻ và chẵn');
+ assert.equal(topic.entries.length,9);assert.equal(topic.name,'Hai quy luật xen kẽ: tách vị trí lẻ và chẵn');
  for(const qid of ['timo-grade2-qualifying-04:5','timo-grade2-qualifying-05:5'])assert(topic.entries.some(e=>e.id===qid));
  const old=structuredClone(base);delete old.assignments['timo-grade2-qualifying-04:5'];delete old.assignments['timo-grade2-qualifying-05:5'];old.scopeRevisions['2|timo-group-1']='all-methods-min5-2026-11-11';old.topics.find(t=>t.id===id).name='Dãy chữ: hai quy luật xen kẽ';
  old.topics.find(t=>t.id==='timo-group-2-review-method-sum-pairing').name='Tên riêng được giữ';
  const api=load(old,base,new Map([['goc-hoc-tap.classification-reset.v1',base.resetId]]));
  assert.equal(api.classification.snapshot().assignments['timo-grade2-qualifying-05:5'],id);assert.equal(api.classification.snapshot().topics.find(t=>t.id==='timo-group-2-review-method-sum-pairing').name,'Tên riêng được giữ');
  api.classification.acceptSynced(old);assert.equal(api.classification.snapshot().assignments['timo-grade2-qualifying-04:5'],id);
+});
+
+test('refinement groups equivalent operations across representations and keeps distinct techniques separate',()=>{
+ const assignments=methodBase().assignments;
+ for(const [source,topic]of [
+  ['timo-grade2-national-06:4','timo-group-1-review-method-number-constant'],
+  ['timo-grade2-national-06:5','timo-group-1-review-method-number-growing-gaps'],
+  ['timo-grade2-qualifying-06:4','timo-group-1-review-method-letter-interleaved'],
+  ['timo-grade2-qualifying-05:1','timo-group-1-review-method-line-remaining'],
+  ['timo-grade2-national-02:7','timo-group-2-review-method-sum-pairing'],
+  ['timo-grade2-national-05:9','timo-group-2-review-method-common-factor'],
+  ['timo-grade2-national-02:13','timo-group-3-review-method-constant-sequence'],
+  ['timo-grade2-qualifying-01:11','timo-group-3-review-method-count-range'],
+  ['timo-grade2-national-06:13','timo-group-3-review-method-fill-plus-minus'],
+  ['timo-grade2-national-02:19','timo-group-4-review-method-count-squares'],
+  ['timo-grade2-qualifying-07:20','timo-group-4-review-method-repeat-next'],
+  ['timo-grade2-qualifying-01:23','timo-group-5-review-method-extreme-digits'],
+  ['timo-grade2-qualifying-01:25','timo-group-5-review-method-budget-quotient'],
+  ['timo-grade2-national-06:23','timo-group-5-review-method-independent-choices']
+ ])assert.equal(assignments[source],topic,source);
+ // Rounding up for sufficient boxes differs from counting complete affordable groups;
+ // maximum construction, unordered choices and minimizing a difference add different methods.
+ for(const source of ['timo-grade2-national-01:13','timo-grade2-national-05:20','timo-grade2-qualifying-04:24','timo-grade2-national-05:24','timo-grade2-national-05:25'])assert.equal(assignments[source],undefined,source);
 });

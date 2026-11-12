@@ -8,7 +8,7 @@ const publishedTimoClassification = {
       "id": "timo-group-1-review-method-number-constant",
       "grade": "2",
       "groupId": "timo-group-1",
-      "name": "Quy luật: cộng thêm một số cố định"
+      "name": "Quy luật cách đều: số, chữ và số lượng hình"
     },
     {
       "id": "timo-group-1-review-method-number-growing-gaps",
@@ -38,19 +38,19 @@ const publishedTimoClassification = {
       "id": "timo-group-1-review-method-weekday-cycle",
       "grade": "2",
       "groupId": "timo-group-1",
-      "name": "Tìm thứ trong tuần: chu kỳ 7 ngày"
+      "name": "Chu kỳ thời gian: tìm thứ trong tuần và tháng trong năm"
     },
     {
       "id": "timo-group-1-review-method-line-remaining",
       "grade": "2",
       "groupId": "timo-group-1",
-      "name": "Xếp hàng: trừ số bạn đã biết và người đang xét"
+      "name": "Đếm người còn lại: trừ người đang xét và phần đã biết"
     },
     {
       "id": "timo-group-2-review-method-sum-pairing",
       "grade": "2",
       "groupId": "timo-group-2",
-      "name": "Tính tổng: ghép các số thành nhóm thuận tiện"
+      "name": "Tính nhanh: ghép nhóm thuận tiện khi cộng, trừ, nhân"
     },
     {
       "id": "timo-group-2-review-method-alternating-pairs",
@@ -80,13 +80,13 @@ const publishedTimoClassification = {
       "id": "timo-group-2-review-method-common-factor",
       "grade": "2",
       "groupId": "timo-group-2",
-      "name": "Tính nhanh: đặt thừa số chung"
+      "name": "Tính nhanh: gom thừa số hoặc số chia chung"
     },
     {
       "id": "timo-group-3-review-method-constant-sequence",
       "grade": "2",
       "groupId": "timo-group-3",
-      "name": "Dãy số cách đều: tìm số ở vị trí cho trước"
+      "name": "Dãy số cách đều: tìm số theo vị trí và tính tổng"
     },
     {
       "id": "timo-group-3-review-method-count-range",
@@ -104,7 +104,7 @@ const publishedTimoClassification = {
       "id": "timo-group-3-review-method-evaluate-parity",
       "grade": "2",
       "groupId": "timo-group-3",
-      "name": "Tính giá trị biểu thức rồi xác định chẵn, lẻ"
+      "name": "Xác định tính chẵn, lẻ của tổng và tích"
     },
     {
       "id": "timo-group-3-review-method-count-parity",
@@ -116,19 +116,19 @@ const publishedTimoClassification = {
       "id": "timo-group-3-review-method-equal-transfer",
       "grade": "2",
       "groupId": "timo-group-3",
-      "name": "Chuyển giữa hai nhóm để có số lượng bằng nhau"
+      "name": "Chuyển giữa hai nhóm: chia đều hoặc đạt chênh lệch cho trước"
     },
     {
       "id": "timo-group-3-review-method-fill-plus-minus",
       "grade": "2",
       "groupId": "timo-group-3",
-      "name": "Thử dấu cộng, trừ để được phép tính đúng"
+      "name": "Thử dấu phép tính để được đẳng thức đúng"
     },
     {
       "id": "timo-group-4-review-method-count-squares",
       "grade": "2",
       "groupId": "timo-group-4",
-      "name": "Đếm hình vuông: hình đơn và hình ghép"
+      "name": "Đếm hình phẳng: hình đơn và hình ghép"
     },
     {
       "id": "timo-group-4-review-method-count-segments",
@@ -152,7 +152,7 @@ const publishedTimoClassification = {
       "id": "timo-group-4-review-method-repeat-next",
       "grade": "2",
       "groupId": "timo-group-4",
-      "name": "Hình lặp: xác định nhóm lặp và tìm hình còn thiếu"
+      "name": "Hình lặp: tìm hình và đếm theo chu kỳ"
     },
     {
       "id": "timo-group-4-review-method-pyramid-base",
@@ -176,19 +176,19 @@ const publishedTimoClassification = {
       "id": "timo-group-5-review-method-extreme-digits",
       "grade": "2",
       "groupId": "timo-group-5",
-      "name": "Chọn và xếp chữ số để tạo số lớn nhất, nhỏ nhất"
+      "name": "Xếp chữ số theo giá trị hàng để tối ưu số hoặc tổng"
     },
     {
       "id": "timo-group-5-review-method-independent-choices",
       "grade": "2",
       "groupId": "timo-group-5",
-      "name": "Đếm cách chọn qua các bước độc lập"
+      "name": "Quy tắc nhân: đếm lựa chọn qua từng bước"
     },
     {
       "id": "timo-group-5-review-method-budget-quotient",
       "grade": "2",
       "groupId": "timo-group-5",
-      "name": "Tính tổng tiền rồi chia để tìm số lượng nhiều nhất"
+      "name": "Chia thành nhóm đủ: mua hàng, đổi tiền và quà tặng"
     },
     {
       "id": "timo-group-5-review-method-evaluate-filter",
@@ -441,14 +441,57 @@ const publishedTimoClassification = {
     "timo-grade2-national-05:22": "timo-group-5-review-method-evaluate-filter",
     "timo-grade2-national-07:21": "timo-group-5-review-method-evaluate-filter",
     "timo-grade2-qualifying-04:5": "timo-group-1-review-method-letter-interleaved",
-    "timo-grade2-qualifying-05:5": "timo-group-1-review-method-letter-interleaved"
+    "timo-grade2-qualifying-05:5": "timo-group-1-review-method-letter-interleaved",
+    "timo-grade2-national-06:4": "timo-group-1-review-method-number-constant",
+    "timo-grade2-national-07:5": "timo-group-1-review-method-number-constant",
+    "timo-grade2-national-06:5": "timo-group-1-review-method-number-growing-gaps",
+    "timo-grade2-qualifying-06:4": "timo-group-1-review-method-letter-interleaved",
+    "timo-grade2-qualifying-07:1": "timo-group-1-review-method-weekday-cycle",
+    "timo-grade2-qualifying-03:2": "timo-group-1-review-method-line-remaining",
+    "timo-grade2-qualifying-05:1": "timo-group-1-review-method-line-remaining",
+    "timo-grade2-national-07:1": "timo-group-1-review-method-line-remaining",
+    "timo-grade2-national-02:7": "timo-group-2-review-method-sum-pairing",
+    "timo-grade2-national-03:7": "timo-group-2-review-method-sum-pairing",
+    "timo-grade2-national-04:7": "timo-group-2-review-method-sum-pairing",
+    "timo-grade2-national-05:10": "timo-group-2-review-method-sum-pairing",
+    "timo-grade2-national-06:6": "timo-group-2-review-method-sum-pairing",
+    "timo-grade2-national-05:9": "timo-group-2-review-method-common-factor",
+    "timo-grade2-qualifying-01:11": "timo-group-3-review-method-count-range",
+    "timo-grade2-qualifying-02:11": "timo-group-3-review-method-count-range",
+    "timo-grade2-qualifying-03:11": "timo-group-3-review-method-count-range",
+    "timo-grade2-national-02:13": "timo-group-3-review-method-constant-sequence",
+    "timo-grade2-national-03:13": "timo-group-3-review-method-constant-sequence",
+    "timo-grade2-national-04:13": "timo-group-3-review-method-constant-sequence",
+    "timo-grade2-national-05:11": "timo-group-3-review-method-constant-sequence",
+    "timo-grade2-national-01:12": "timo-group-3-review-method-evaluate-parity",
+    "timo-grade2-national-06:14": "timo-group-3-review-method-evaluate-parity",
+    "timo-grade2-qualifying-06:11": "timo-group-3-review-method-equal-transfer",
+    "timo-grade2-national-06:13": "timo-group-3-review-method-fill-plus-minus",
+    "timo-grade2-national-07:12": "timo-group-3-review-method-fill-plus-minus",
+    "timo-grade2-qualifying-05:18": "timo-group-4-review-method-count-squares",
+    "timo-grade2-national-02:19": "timo-group-4-review-method-count-squares",
+    "timo-grade2-qualifying-04:20": "timo-group-4-review-method-repeat-next",
+    "timo-grade2-qualifying-05:20": "timo-group-4-review-method-repeat-next",
+    "timo-grade2-qualifying-07:20": "timo-group-4-review-method-repeat-next",
+    "timo-grade2-qualifying-01:23": "timo-group-5-review-method-extreme-digits",
+    "timo-grade2-qualifying-02:23": "timo-group-5-review-method-extreme-digits",
+    "timo-grade2-qualifying-03:23": "timo-group-5-review-method-extreme-digits",
+    "timo-grade2-qualifying-04:25": "timo-group-5-review-method-extreme-digits",
+    "timo-grade2-qualifying-07:21": "timo-group-5-review-method-extreme-digits",
+    "timo-grade2-national-01:25": "timo-group-5-review-method-extreme-digits",
+    "timo-grade2-qualifying-01:25": "timo-group-5-review-method-budget-quotient",
+    "timo-grade2-qualifying-02:25": "timo-group-5-review-method-budget-quotient",
+    "timo-grade2-qualifying-03:25": "timo-group-5-review-method-budget-quotient",
+    "timo-grade2-qualifying-07:24": "timo-group-5-review-method-budget-quotient",
+    "timo-grade2-qualifying-07:23": "timo-group-5-review-method-independent-choices",
+    "timo-grade2-national-06:23": "timo-group-5-review-method-independent-choices"
   },
-  "revision": "ac4665ac1ada",
+  "revision": "8b920cab61ee",
   "scopeRevisions": {
-    "2|timo-group-1": "interleaved-numbers-letters-2026-11-12",
-    "2|timo-group-2": "all-methods-min5-2026-11-11",
-    "2|timo-group-3": "all-methods-min5-2026-11-11",
-    "2|timo-group-4": "all-methods-min5-2026-11-11",
-    "2|timo-group-5": "all-methods-min5-2026-11-11"
+    "2|timo-group-1": "existing-methods-refined-2026-11-12",
+    "2|timo-group-2": "existing-methods-refined-2026-11-12",
+    "2|timo-group-3": "existing-methods-refined-2026-11-12",
+    "2|timo-group-4": "existing-methods-refined-2026-11-12",
+    "2|timo-group-5": "existing-methods-refined-2026-11-12"
   }
 };
