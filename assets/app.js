@@ -313,6 +313,8 @@ function openPaperIntro(paper) {
 }
 function showPracticeIntro(selection){
  if(!selection.questions.length)return;
+ // Topic practice opens immediately, including an introduction saved by an older version.
+ if(selection.topicId){pendingPaper=selection;startPendingPaper();return;}
  pendingPaper=selection;introTrigger=document.activeElement;
  const previous=attempts[attemptKey(selection)],resume=previous&&!previous.submitted;
  const sourcePaper=getPapers(selection.program,selection.subject,selection.grade,selection.mode)[selection.paper];
@@ -324,6 +326,7 @@ introDialog.addEventListener('close',()=>{pendingPaper=null;introTrigger?.focus(
 function startPendingPaper() {
  if(!pendingPaper||!pendingPaper.questions.length)return;
  const selection=pendingPaper,previous=attempts[attemptKey(selection)],resume=previous&&!previous.submitted;
+ pendingPaper=null;
  state.answers={};state.submitted=false;state.solutionsVisible=false;
  if(resume&&previous.answers&&typeof previous.answers==='object')selection.questions.forEach((q,i)=>{const originalIndex=selection.topicId&&Array.isArray(previous.questionIds)?previous.questionIds.indexOf(selection.questionIds[i]):i;const value=originalIndex>=0?previous.answers[originalIndex]:undefined;if(validResponse(q,value))state.answers[i]=value;});
  state.practice={...selection,syncRunId:resume?(previous.syncRunId||String(previous.startedAt)):Date.now()+'.'+crypto.randomUUID(),startedAt:!selection.topicId&&resume&&Number.isFinite(previous.startedAt)&&previous.startedAt>0&&previous.startedAt<=Date.now()?previous.startedAt:Date.now()};
