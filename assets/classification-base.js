@@ -1,4 +1,4 @@
-// Owner-requested solving methods: at least five existing questions per named topic; leftovers remain unclassified.
+// Owner-requested solving methods; explicitly requested smaller topics are retained.
 const publishedTimoClassification = {
   "version": 1,
   "kind": "timo-classification",
@@ -45,6 +45,12 @@ const publishedTimoClassification = {
       "grade": "2",
       "groupId": "timo-group-1",
       "name": "Đếm người còn lại: trừ người đang xét và phần đã biết"
+    },
+    {
+      "id": "timo-group-1-review-method-table-product",
+      "grade": "2",
+      "groupId": "timo-group-1",
+      "name": "Quy luật trong bảng: nhân hai số để tìm số còn lại"
     },
     {
       "id": "timo-group-2-review-method-sum-pairing",
@@ -484,11 +490,15 @@ const publishedTimoClassification = {
     "timo-grade2-qualifying-03:25": "timo-group-5-review-method-budget-quotient",
     "timo-grade2-qualifying-07:24": "timo-group-5-review-method-budget-quotient",
     "timo-grade2-qualifying-07:23": "timo-group-5-review-method-independent-choices",
-    "timo-grade2-national-06:23": "timo-group-5-review-method-independent-choices"
+    "timo-grade2-national-06:23": "timo-group-5-review-method-independent-choices",
+    "timo-grade2-national-02:3": "timo-group-1-review-method-table-product",
+    "timo-grade2-national-03:3": "timo-group-1-review-method-table-product",
+    "timo-grade2-national-04:3": "timo-group-1-review-method-table-product",
+    "timo-grade2-national-05:4": "timo-group-1-review-method-table-product"
   },
-  "revision": "8b920cab61ee",
+  "revision": "03580fe96138",
   "scopeRevisions": {
-    "2|timo-group-1": "existing-methods-refined-2026-11-12",
+    "2|timo-group-1": "table-product-owner-request-2026-11-13",
     "2|timo-group-2": "existing-methods-refined-2026-11-12",
     "2|timo-group-3": "existing-methods-refined-2026-11-12",
     "2|timo-group-4": "existing-methods-refined-2026-11-12",
