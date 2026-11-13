@@ -6535,6 +6535,686 @@ const officialPapers = [
       "answerSource": "user"
     }
   ]
+},
+{
+  "id": "asmo-grade1-science-national-02-20261113",
+  "title": "Bộ 2 — Khoa học lớp 1–2",
+  "sourceTitle": "ASMO Khoa học lớp 1–2 — Vòng quốc gia — Bộ 2",
+  "program": "ASMO",
+  "subject": "Khoa học",
+  "grade": "1",
+  "mode": "Đề quốc gia",
+  "questions": [
+    {
+      "number": 1,
+      "english": "How many days does a leap year have?",
+      "translation": "Một năm nhuận có bao nhiêu ngày?",
+      "options": [
+        "365",
+        "30",
+        "366",
+        "7"
+      ],
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 2,
+      "english": "Humans breathe in and out thanks to which of the following organs?",
+      "translation": "Con người hít vào thở ra nhờ vào bộ phận nào sau đây?",
+      "options": [
+        "Eye / Mắt",
+        "Ears / Tai",
+        "Nose / Mũi",
+        "Hand / Tay"
+      ],
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 3,
+      "english": "Living things need food and water to _____.",
+      "translation": "Các sinh vật sống cần thức ăn và nước để _____.",
+      "options": [
+        "Sleep / Ngủ",
+        "Talk / Nói chuyện",
+        "Survive / Tồn tại",
+        "Drink / Uống nước",
+        "None of the above / Không có đáp án đúng"
+      ],
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 4,
+      "english": "What are the two poles of a magnet called?",
+      "translation": "Hai cực của một nam châm được gọi là gì?",
+      "options": [
+        "North and South (Bắc và Nam)",
+        "East and West (Đông và Tây)",
+        "Top and Bottom (Trên và Dưới)",
+        "Left and Right (Trái và Phải)"
+      ],
+      "answer": 0,
+      "answerSource": "user"
+    },
+    {
+      "number": 5,
+      "english": "Which gas do humans need to breathe?",
+      "translation": "Khí nào con người cần để thở?",
+      "options": [
+        "Carbon dioxide (Cacbon đioxit)",
+        "Oxygen (Oxy)",
+        "Nitrogen (Nitơ)",
+        "Helium (Hêli)"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 6,
+      "english": "Which part of the body helps us see?",
+      "translation": "Bộ phận nào của cơ thể giúp chúng ta nhìn thấy?",
+      "options": [
+        "Ears (Tai)",
+        "Eyes (Mắt)",
+        "Nose (Mũi)",
+        "Hands (Tay)"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 7,
+      "english": "What do you call the tool that is used to measure temperature?",
+      "translation": "Dụng cụ dùng để đo nhiệt độ gọi là gì?",
+      "options": [
+        "Anemometer / máy đo gió",
+        "Hard Lens / Ống kính cứng",
+        "Speedometer / Đồng hồ tốc độ",
+        "Thermometer / Nhiệt kế"
+      ],
+      "answer": 3,
+      "answerSource": "user"
+    },
+    {
+      "number": 8,
+      "english": "Which is the correct definition of the word offspring?",
+      "translation": "Định nghĩa nào đúng về từ con cái?",
+      "options": [
+        "the living things that come from a living thing / những sinh vật sống đến từ một sinh vật sống",
+        "what happens when an insect changes form / điều xảy ra khi côn trùng thay đổi hình dạng",
+        "a trait that is passed on from parent / một đặc điểm được truyền lại từ cha mẹ"
+      ],
+      "answer": 0,
+      "answerSource": "user"
+    },
+    {
+      "number": 9,
+      "english": "What is the largest planet in our solar system?",
+      "translation": "Hành tinh lớn nhất trong hệ Mặt Trời của chúng ta là gì?",
+      "options": [
+        "Earth (Trái Đất)",
+        "Mars (Sao Hỏa)",
+        "Jupiter (Sao Mộc)",
+        "Saturn (Sao Thổ)"
+      ],
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 10,
+      "english": "Which of these is a source of light?",
+      "translation": "Cái nào dưới đây là nguồn sáng?",
+      "options": [
+        "Moon (Mặt Trăng)",
+        "Mirror (Gương)",
+        "Lamp (Đèn)",
+        "Book (Sách)"
+      ],
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 11,
+      "english": "A hibiscus has ________ petals.",
+      "translation": "Một bông hoa dâm bụt có ____ cánh hoa.",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "None of the above / Không có đáp án đúng"
+      ],
+      "answer": 3,
+      "answerSource": "user"
+    },
+    {
+      "number": 12,
+      "english": "Rice is most commonly grown in which of the following soil types?",
+      "translation": "Lúa nước được trồng nhiều nhất ở loại đất nào sau đây?",
+      "options": [
+        "Slob / Đất phù sa",
+        "Basalt red soil / Đất đỏ ba - zan",
+        "Salty land / Đất ngập mặn",
+        "Sand / Đất cát"
+      ],
+      "answer": 0,
+      "answerSource": "user"
+    },
+    {
+      "number": 13,
+      "english": "What is a tool that can help you stay safe in laboratory?",
+      "translation": "Công cụ nào có thể giúp bạn giữ an toàn trong phòng thí nghiệm?",
+      "options": [
+        "meter stick / thanh đo mét",
+        "goggles / kính bảo hộ",
+        "magnets / nam châm",
+        "stopwatch / đồng hồ bấm giờ"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 14,
+      "english": "Which of the following is not a state of matter?",
+      "translation": "Cái nào dưới đây không phải là trạng thái của vật chất?",
+      "options": [
+        "Solid (Rắn)",
+        "Liquid (Lỏng)",
+        "Gas (Khí)",
+        "Light (Ánh sáng)"
+      ],
+      "answer": 3,
+      "answerSource": "user"
+    },
+    {
+      "number": 15,
+      "english": "What does the Earth orbit around?",
+      "translation": "Trái Đất quay quanh gì?",
+      "options": [
+        "The Moon (Mặt Trăng)",
+        "The Sun (Mặt Trời)",
+        "Mars (Sao Hỏa)",
+        "Itself (Chính nó)"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 16,
+      "english": "Which planet is known as the Red Planet?",
+      "translation": "Hành tinh nào được biết đến là Hành tinh Đỏ?",
+      "options": [
+        "Venus (Sao Kim)",
+        "Mars (Sao Hỏa)",
+        "Jupiter (Sao Mộc)",
+        "Mercury (Sao Thủy)"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 17,
+      "english": "Which of the following fish lives in salt water?",
+      "translation": "Loài cá nào sau đây sống ở nước mặn?",
+      "options": [
+        "Shark / Cá mập",
+        "Carp / Cá chép",
+        "Catfish / Cá trê",
+        "Snake head / Cá quả"
+      ],
+      "answer": 0,
+      "answerSource": "user"
+    },
+    {
+      "number": 18,
+      "english": "Which pole of a magnet is attracted to the north pole of another magnet?",
+      "translation": "Cực nào của nam châm hút cực bắc của nam châm khác?",
+      "options": [
+        "North pole / Cực bắc",
+        "South pole / Cực nam",
+        "Both poles equally / Cả hai cực",
+        "None of the pole / Không có cực nào",
+        "None of the above / Không có lựa chọn nào ở trên"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 19,
+      "english": "Which of the following is NOT a natural resource?",
+      "translation": "Tài nguyên nào sau đây KHÔNG phải là tài nguyên thiên nhiên?",
+      "options": [
+        "Coal / Than đá",
+        "Electricity / Điện",
+        "Sunlight / Ánh sáng mặt trời",
+        "Water / Nước"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 20,
+      "english": "A man-made light source is any source of light that is created or produced by humans. Which of the following is an example of a man-made light source?",
+      "translation": "Nguồn sáng nhân tạo là bất kỳ nguồn sáng nào được tạo ra hoặc sản xuất bởi con người. Ví dụ nào sau đây là một nguồn sáng nhân tạo?",
+      "options": [
+        "Firefly / Đom đóm",
+        "Moon / Mặt trăng",
+        "Flashlight / Đèn pin",
+        "Stars / Ngôi sao",
+        "None of the above / Không có lựa chọn nào ở trên"
+      ],
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 21,
+      "english": "Why do we boil the water before drinking?",
+      "translation": "Tại sao chúng ta đun sôi nước trước khi uống?",
+      "options": [
+        "Remove the color of the water / Loại bỏ màu của nước",
+        "Kill the bacteria / Tiêu diệt vi khuẩn",
+        "Get the pure water / Lấy nước tinh khiết",
+        "Make it tastier / Làm cho nó ngon hơn",
+        "None of the above / Không có đáp án đúng"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 22,
+      "english": "What helps a mammal to breathe?",
+      "translation": "Điều gì giúp động vật có vú thở được?",
+      "options": [
+        "Gills / Mang",
+        "Skin / Da",
+        "Lungs / Phổi",
+        "Pistil / Nhụy hoa",
+        "None of the above / Không có lựa chọn nào ở trên"
+      ],
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 23,
+      "english": "Of the following animals, which one has the most developed communication language?",
+      "translation": "Trong các loài động vật sau đây, loài nào có ngôn ngữ giao tiếp phát triển nhất?",
+      "options": [
+        "Buffalo / Trâu",
+        "Cow / Bò",
+        "Pig / Lợn",
+        "Human / Con người"
+      ],
+      "answer": 3,
+      "answerSource": "user"
+    },
+    {
+      "number": 24,
+      "english": "Why do owls have extra eyelids?",
+      "translation": "Vì sao cú có thêm mí mắt?",
+      "options": [
+        "So that they can blink twice as much / Để nó có thể chớp mắt nhiều gấp đôi",
+        "To protect their eyes when they fly / Để bảo vệ mắt khi bay",
+        "So that their eyes are always closed / Để mắt nó luôn nhắm lại"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 25,
+      "english": "The way the heart circles blood around the body and back again is called ........",
+      "translation": "Cách trái tim luân chuyển máu đi khắp cơ thể và ngược lại được gọi là ........",
+      "options": [
+        "heart rate / nhịp tim",
+        "heart beating / nhịp đập tim",
+        "circulation / vòng tuần hoàn",
+        "pumping / bơm"
+      ],
+      "answer": 2,
+      "answerSource": "user"
+    }
+  ]
+},
+{
+  "id": "asmo-grade2-science-national-02-20261113",
+  "title": "Bộ 2 — Khoa học lớp 1–2",
+  "sourceTitle": "ASMO Khoa học lớp 1–2 — Vòng quốc gia — Bộ 2",
+  "program": "ASMO",
+  "subject": "Khoa học",
+  "grade": "2",
+  "mode": "Đề quốc gia",
+  "questions": [
+    {
+      "number": 1,
+      "english": "How many days does a leap year have?",
+      "translation": "Một năm nhuận có bao nhiêu ngày?",
+      "options": [
+        "365",
+        "30",
+        "366",
+        "7"
+      ],
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 2,
+      "english": "Humans breathe in and out thanks to which of the following organs?",
+      "translation": "Con người hít vào thở ra nhờ vào bộ phận nào sau đây?",
+      "options": [
+        "Eye / Mắt",
+        "Ears / Tai",
+        "Nose / Mũi",
+        "Hand / Tay"
+      ],
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 3,
+      "english": "Living things need food and water to _____.",
+      "translation": "Các sinh vật sống cần thức ăn và nước để _____.",
+      "options": [
+        "Sleep / Ngủ",
+        "Talk / Nói chuyện",
+        "Survive / Tồn tại",
+        "Drink / Uống nước",
+        "None of the above / Không có đáp án đúng"
+      ],
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 4,
+      "english": "What are the two poles of a magnet called?",
+      "translation": "Hai cực của một nam châm được gọi là gì?",
+      "options": [
+        "North and South (Bắc và Nam)",
+        "East and West (Đông và Tây)",
+        "Top and Bottom (Trên và Dưới)",
+        "Left and Right (Trái và Phải)"
+      ],
+      "answer": 0,
+      "answerSource": "user"
+    },
+    {
+      "number": 5,
+      "english": "Which gas do humans need to breathe?",
+      "translation": "Khí nào con người cần để thở?",
+      "options": [
+        "Carbon dioxide (Cacbon đioxit)",
+        "Oxygen (Oxy)",
+        "Nitrogen (Nitơ)",
+        "Helium (Hêli)"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 6,
+      "english": "Which part of the body helps us see?",
+      "translation": "Bộ phận nào của cơ thể giúp chúng ta nhìn thấy?",
+      "options": [
+        "Ears (Tai)",
+        "Eyes (Mắt)",
+        "Nose (Mũi)",
+        "Hands (Tay)"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 7,
+      "english": "What do you call the tool that is used to measure temperature?",
+      "translation": "Dụng cụ dùng để đo nhiệt độ gọi là gì?",
+      "options": [
+        "Anemometer / máy đo gió",
+        "Hard Lens / Ống kính cứng",
+        "Speedometer / Đồng hồ tốc độ",
+        "Thermometer / Nhiệt kế"
+      ],
+      "answer": 3,
+      "answerSource": "user"
+    },
+    {
+      "number": 8,
+      "english": "Which is the correct definition of the word offspring?",
+      "translation": "Định nghĩa nào đúng về từ con cái?",
+      "options": [
+        "the living things that come from a living thing / những sinh vật sống đến từ một sinh vật sống",
+        "what happens when an insect changes form / điều xảy ra khi côn trùng thay đổi hình dạng",
+        "a trait that is passed on from parent / một đặc điểm được truyền lại từ cha mẹ"
+      ],
+      "answer": 0,
+      "answerSource": "user"
+    },
+    {
+      "number": 9,
+      "english": "What is the largest planet in our solar system?",
+      "translation": "Hành tinh lớn nhất trong hệ Mặt Trời của chúng ta là gì?",
+      "options": [
+        "Earth (Trái Đất)",
+        "Mars (Sao Hỏa)",
+        "Jupiter (Sao Mộc)",
+        "Saturn (Sao Thổ)"
+      ],
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 10,
+      "english": "Which of these is a source of light?",
+      "translation": "Cái nào dưới đây là nguồn sáng?",
+      "options": [
+        "Moon (Mặt Trăng)",
+        "Mirror (Gương)",
+        "Lamp (Đèn)",
+        "Book (Sách)"
+      ],
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 11,
+      "english": "A hibiscus has ________ petals.",
+      "translation": "Một bông hoa dâm bụt có ____ cánh hoa.",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "None of the above / Không có đáp án đúng"
+      ],
+      "answer": 3,
+      "answerSource": "user"
+    },
+    {
+      "number": 12,
+      "english": "Rice is most commonly grown in which of the following soil types?",
+      "translation": "Lúa nước được trồng nhiều nhất ở loại đất nào sau đây?",
+      "options": [
+        "Slob / Đất phù sa",
+        "Basalt red soil / Đất đỏ ba - zan",
+        "Salty land / Đất ngập mặn",
+        "Sand / Đất cát"
+      ],
+      "answer": 0,
+      "answerSource": "user"
+    },
+    {
+      "number": 13,
+      "english": "What is a tool that can help you stay safe in laboratory?",
+      "translation": "Công cụ nào có thể giúp bạn giữ an toàn trong phòng thí nghiệm?",
+      "options": [
+        "meter stick / thanh đo mét",
+        "goggles / kính bảo hộ",
+        "magnets / nam châm",
+        "stopwatch / đồng hồ bấm giờ"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 14,
+      "english": "Which of the following is not a state of matter?",
+      "translation": "Cái nào dưới đây không phải là trạng thái của vật chất?",
+      "options": [
+        "Solid (Rắn)",
+        "Liquid (Lỏng)",
+        "Gas (Khí)",
+        "Light (Ánh sáng)"
+      ],
+      "answer": 3,
+      "answerSource": "user"
+    },
+    {
+      "number": 15,
+      "english": "What does the Earth orbit around?",
+      "translation": "Trái Đất quay quanh gì?",
+      "options": [
+        "The Moon (Mặt Trăng)",
+        "The Sun (Mặt Trời)",
+        "Mars (Sao Hỏa)",
+        "Itself (Chính nó)"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 16,
+      "english": "Which planet is known as the Red Planet?",
+      "translation": "Hành tinh nào được biết đến là Hành tinh Đỏ?",
+      "options": [
+        "Venus (Sao Kim)",
+        "Mars (Sao Hỏa)",
+        "Jupiter (Sao Mộc)",
+        "Mercury (Sao Thủy)"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 17,
+      "english": "Which of the following fish lives in salt water?",
+      "translation": "Loài cá nào sau đây sống ở nước mặn?",
+      "options": [
+        "Shark / Cá mập",
+        "Carp / Cá chép",
+        "Catfish / Cá trê",
+        "Snake head / Cá quả"
+      ],
+      "answer": 0,
+      "answerSource": "user"
+    },
+    {
+      "number": 18,
+      "english": "Which pole of a magnet is attracted to the north pole of another magnet?",
+      "translation": "Cực nào của nam châm hút cực bắc của nam châm khác?",
+      "options": [
+        "North pole / Cực bắc",
+        "South pole / Cực nam",
+        "Both poles equally / Cả hai cực",
+        "None of the pole / Không có cực nào",
+        "None of the above / Không có lựa chọn nào ở trên"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 19,
+      "english": "Which of the following is NOT a natural resource?",
+      "translation": "Tài nguyên nào sau đây KHÔNG phải là tài nguyên thiên nhiên?",
+      "options": [
+        "Coal / Than đá",
+        "Electricity / Điện",
+        "Sunlight / Ánh sáng mặt trời",
+        "Water / Nước"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 20,
+      "english": "A man-made light source is any source of light that is created or produced by humans. Which of the following is an example of a man-made light source?",
+      "translation": "Nguồn sáng nhân tạo là bất kỳ nguồn sáng nào được tạo ra hoặc sản xuất bởi con người. Ví dụ nào sau đây là một nguồn sáng nhân tạo?",
+      "options": [
+        "Firefly / Đom đóm",
+        "Moon / Mặt trăng",
+        "Flashlight / Đèn pin",
+        "Stars / Ngôi sao",
+        "None of the above / Không có lựa chọn nào ở trên"
+      ],
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 21,
+      "english": "Why do we boil the water before drinking?",
+      "translation": "Tại sao chúng ta đun sôi nước trước khi uống?",
+      "options": [
+        "Remove the color of the water / Loại bỏ màu của nước",
+        "Kill the bacteria / Tiêu diệt vi khuẩn",
+        "Get the pure water / Lấy nước tinh khiết",
+        "Make it tastier / Làm cho nó ngon hơn",
+        "None of the above / Không có đáp án đúng"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 22,
+      "english": "What helps a mammal to breathe?",
+      "translation": "Điều gì giúp động vật có vú thở được?",
+      "options": [
+        "Gills / Mang",
+        "Skin / Da",
+        "Lungs / Phổi",
+        "Pistil / Nhụy hoa",
+        "None of the above / Không có lựa chọn nào ở trên"
+      ],
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 23,
+      "english": "Of the following animals, which one has the most developed communication language?",
+      "translation": "Trong các loài động vật sau đây, loài nào có ngôn ngữ giao tiếp phát triển nhất?",
+      "options": [
+        "Buffalo / Trâu",
+        "Cow / Bò",
+        "Pig / Lợn",
+        "Human / Con người"
+      ],
+      "answer": 3,
+      "answerSource": "user"
+    },
+    {
+      "number": 24,
+      "english": "Why do owls have extra eyelids?",
+      "translation": "Vì sao cú có thêm mí mắt?",
+      "options": [
+        "So that they can blink twice as much / Để nó có thể chớp mắt nhiều gấp đôi",
+        "To protect their eyes when they fly / Để bảo vệ mắt khi bay",
+        "So that their eyes are always closed / Để mắt nó luôn nhắm lại"
+      ],
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 25,
+      "english": "The way the heart circles blood around the body and back again is called ........",
+      "translation": "Cách trái tim luân chuyển máu đi khắp cơ thể và ngược lại được gọi là ........",
+      "options": [
+        "heart rate / nhịp tim",
+        "heart beating / nhịp đập tim",
+        "circulation / vòng tuần hoàn",
+        "pumping / bơm"
+      ],
+      "answer": 2,
+      "answerSource": "user"
+    }
+  ]
 }
 ];
 function getPapers(program, subject, grade, mode) {
@@ -6663,15 +7343,21 @@ function getAsmoScienceTopicGroups(grade) {
   const papers=officialPapers.filter(p=>p.program==='ASMO'&&p.subject==='Khoa học'&&String(p.grade)===String(grade)&&[modes[0],modes[1]].includes(p.mode));
   if(!papers.length)return [];
   const topics=[
-    {id:'asmo-science-life',name:'Cơ thể và nhu cầu sống',numbers:[2,3,6,11,16,18]},
-    {id:'asmo-science-animals',name:'Động vật: đặc điểm, tập tính và vòng đời',numbers:[13,14,23,24,25]},
-    {id:'asmo-science-tools-safety',name:'Dụng cụ, vật dụng và an toàn',numbers:[7,12,15,19,22]},
-    {id:'asmo-science-unclassified',name:'Chưa phân loại',numbers:[]}
+    {id:'asmo-science-life',name:'Cơ thể, giác quan và nhu cầu sống',numbers:[[2,3,6,11,16,18],[2,3,6,23,25]]},
+    {id:'asmo-science-animals',name:'Động vật: đặc điểm, tập tính và vòng đời',numbers:[[13,14,23,24,25],[8,17,24]]},
+    {id:'asmo-science-tools-safety',name:'Dụng cụ, vật dụng và an toàn',numbers:[[7,12,15,19,22],[7,18]]},
+    {id:'asmo-science-earth',name:'Trái Đất, vũ trụ và tài nguyên',numbers:[[9,10,17,21],[1,9,12,15,16,19]]},
+    {id:'asmo-science-unclassified',name:'Chưa phân loại',numbers:[[],[]]}
   ].map(t=>({...t,entries:[]}));
+  const first=`asmo-grade${grade}-science-national-01-20261113`,second=`asmo-grade${grade}-science-national-02-20261113`;
+  // Reviewed duplicates only. Similar knowledge with a different question remains separate.
+  const duplicateOf={4:12,5:6,13:15,20:20,21:8,22:11},sourceIds=new Set(papers.flatMap(p=>p.questions.map(q=>p.id+':'+q.number)));
   for(const paper of papers)for(const question of paper.questions){
-    const number=question.number;
-    const topic=paper.id===`asmo-grade${grade}-science-national-01-20261113`?topics.find(t=>t.numbers.includes(number))||topics[3]:topics[3];
-    topic.entries.push({id:paper.id+':'+number,paperId:paper.id,paperTitle:paper.title,number,question});
+    const number=question.number,id=paper.id+':'+number;
+    if(paper.id===second&&duplicateOf[number]&&sourceIds.has(first+':'+duplicateOf[number]))continue;
+    const set=paper.id===first?0:paper.id===second?1:-1;
+    const topic=set>=0?topics.find(t=>t.numbers[set].includes(number))||topics[4]:topics[4];
+    topic.entries.push({id,paperId:paper.id,paperTitle:paper.title,number,question});
   }
   return [{id:'asmo-science',name:'Khoa học / Science',topics:topics.map(({numbers,...topic})=>topic)}];
 }

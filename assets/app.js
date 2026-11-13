@@ -300,6 +300,31 @@ if(typeof publishedTimoClassification!=='undefined'&&(TimoClassification.usesPub
 }
 
 
+// Reconcile expanded ASMO topics without mixing full-paper attempts or losing moved responses.
+function reconcileAsmoTopicAttempts(){
+ const updates={},originals={};
+ for(const grade of ['1','2']){
+  const prefix=[grade,'ASMO','Khoa học',modes[2],''].join('|'),topics=getAsmoScienceTopicGroups(grade).flatMap(g=>g.topics);
+  const records=Object.entries(attempts).filter(([key,r])=>key.startsWith(prefix)&&Array.isArray(r?.questionIds)).sort((a,b)=>(a[1].updatedAt||0)-(b[1].updatedAt||0));
+  if(!records.length)continue;
+  const questions=new Map(topics.flatMap(t=>t.entries.map(e=>[e.id,e.question]))),responses=new Map();
+  for(const [key,r]of records){originals[key]=r;r.questionIds.forEach((id,i)=>{if(questions.has(id)&&validResponse(questions.get(id),r.answers?.[i]))responses.set(id,r.answers[i]);});}
+  for(const topic of topics){
+   const key=prefix+topic.id,record=attempts[key],allowed=new Set(topic.entries.map(e=>e.id));
+   if(record&&Array.isArray(record.questionIds)&&record.questionIds.length===allowed.size&&record.questionIds.every(id=>allowed.has(id)))continue;
+   if(!record&&!topic.entries.some(e=>responses.has(e.id)))continue;
+   const ids=[...new Set([...(record?.questionIds||[]).filter(id=>allowed.has(id)),...allowed])],answers={};
+   ids.forEach((id,i)=>{const old=record?.questionIds?.indexOf(id),own=old>=0?record.answers?.[old]:undefined,value=validResponse(questions.get(id),own)?own:responses.get(id);if(validResponse(questions.get(id),value))answers[i]=value;});
+   const startedAt=record?.startedAt||records[0][1].startedAt||Date.now();
+   updates[key]={...record,questionIds:ids,answers,startedAt,syncRunId:record?.syncRunId||String(startedAt),updatedAt:Date.now(),submitted:false,mergedTopicProgress:true};delete updates[key].finishedAt;
+  }
+ }
+ const keys=Object.keys(updates);if(!keys.length)return keys;
+ try{const storage=globalThis.LearningAccounts?.storage||localStorage,backup='goc-hoc-tap.classification-backup.asmo-science-b2-20261113';if(storage.getItem(backup)===null)storage.setItem(backup,JSON.stringify(originals));Object.assign(attempts,updates);storage.setItem(attemptStorageKey,JSON.stringify(attempts));}catch{return [];}
+ return keys;
+}
+reconcileAsmoTopicAttempts();
+
 function rebuildCompletedAttempts(){
  state.completed={};
 for(const [savedKey,record] of Object.entries(attempts)){

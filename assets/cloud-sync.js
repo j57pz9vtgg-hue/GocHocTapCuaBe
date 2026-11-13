@@ -47,12 +47,12 @@
   const k=prefix+'sync-recovery.v1.'+owner.uid,history=read(k,[]);history.push({kind,key,value:before,at:Date.now()});write(k,history.slice(-20));
  }
  function apply(doc){
-  const value=C.decode(doc);if(!accepts(doc.kind,doc.key,value))throw Error('Bản đồng bộ không khớp nội dung học hiện tại.');
+  let value=C.decode(doc);if(!accepts(doc.kind,doc.key,value))throw Error('Bản đồng bộ không khớp nội dung học hiện tại.');
   const current=localValue(doc.kind,doc.key);if(current&&C.equal(C.normalize(doc.kind,current),C.normalize(doc.kind,value)))return;
-  recovery(doc.kind,doc.key,current,value);applying=true;
+  recovery(doc.kind,doc.key,current,value);let topicUpdates=[];applying=true;
   try{
    if(doc.kind==='attempt'){
-    attempts[doc.key]=value;write(attemptStore,attempts);rebuildCompletedAttempts();
+    attempts[doc.key]=value;topicUpdates=typeof reconcileAsmoTopicAttempts==='function'?reconcileAsmoTopicAttempts():[];value=attempts[doc.key];write(attemptStore,attempts);rebuildCompletedAttempts();
     if(state.practice&&attemptKey(state.practice)===doc.key){
      const p=state.practice,oldRun=String(p.syncRunId||p.startedAt),newRun=String(value.syncRunId||value.startedAt);
      if(oldRun!==newRun){state.practice=null;state.answers={};state.submitted=false;renderHome();}
@@ -79,6 +79,7 @@
    }else if(doc.kind==='classification')TimoClassification.acceptSynced(value);
    else {write(preferenceStore,value);document.documentElement.dataset.theme=value.theme;if(!state.practice)renderHome();}
   }finally{applying=false;}
+  for(const key of topicUpdates)changed('attempt',key,attempts[key]);
  }
  function changed(kind,key,value){
   if(applying||deletionPending||!LearningAccounts.isCurrent()||!owner||!accepts(kind,key,value))return;
@@ -293,7 +294,7 @@
   if(applying)return;
   if(event.key===ownerKey){const next=read(ownerKey);if(next?.uid!==LearningAccounts.profileId){stop();LearningAccounts.reload();}return;}
   if(event.key===enabledKey&&!read(enabledKey,false)){enabled=false;stop();user=null;status('off');return;}
-  if(event.key===attemptStore){const value=read(attemptStore,{});Object.assign(attempts,value);for(const [key,v]of Object.entries(value))changed('attempt',key,v);rebuildCompletedAttempts();}
+  if(event.key===attemptStore){const value=read(attemptStore,{});Object.assign(attempts,value);const topicUpdates=typeof reconcileAsmoTopicAttempts==='function'?reconcileAsmoTopicAttempts():[];for(const key of new Set([...Object.keys(value),...topicUpdates]))changed('attempt',key,attempts[key]);rebuildCompletedAttempts();}
   else if(event.key?.startsWith(worksheetPrefix))changed('worksheet',event.key.slice(worksheetPrefix.length),read(event.key));
   else if(event.key===classificationStore)changed('classification',classificationKey,read(event.key));
   else if(event.key===preferenceStore)changed('preferences','theme',read(event.key));
