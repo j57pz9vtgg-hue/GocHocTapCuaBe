@@ -37,7 +37,7 @@
   if(kind==='worksheet')return !!schoolExerciseWorksheets[key]&&Array.isArray(value.blanks)&&value.blanks.length<=4&&value.blanks.every(v=>typeof v==='string'&&v.length<=20)&&Array.isArray(value.choices)&&value.choices.length<=4&&value.choices.every(v=>typeof v==='boolean');
   const [grade,program,subject,mode,paper]=key.split('|');
   if(key.split('|').length!==5||!/^([1-9]|1[0-2])$/.test(grade)||!programs.includes(program)||!getSubjects(program).includes(subject)||!modes.includes(mode)||!value.answers||typeof value.answers!=='object'||Array.isArray(value.answers)||!Number.isFinite(value.startedAt)||!Number.isFinite(value.updatedAt))return false;
-  if(!getPapers(program,subject,grade,mode).some(p=>p.id===paper)&&!/^timo-group-[1-5]-/.test(paper))return false;
+  if(!getPapers(program,subject,grade,mode).some(p=>p.id===paper)&&!/^timo-group-[1-5]-/.test(paper)&&!(mode===modes[2]&&typeof getPracticeTopicGroups==='function'&&getPracticeTopicGroups(program,subject,grade).some(g=>g.topics.some(t=>t.id===paper))))return false;
   return (!value.questionIds||Array.isArray(value.questionIds)&&value.questionIds.length<=1000&&value.questionIds.every(v=>typeof v==='string'&&v.length<200))&&Object.keys(value.answers).length<=1000&&Object.values(value.answers).every(v=>Number.isInteger(v)&&v>=0&&v<20||typeof v==='string'&&v.length<=200);
  }
  function recovery(kind,key,before,after){

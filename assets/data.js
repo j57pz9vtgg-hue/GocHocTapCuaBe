@@ -6657,3 +6657,26 @@ function resolveTimoTopicId(id) {
   if (grades.some(grade => getTimoTopicGroups(grade).some(group => group.topics.some(topic => topic.id === canonical && topic.entries.length)))) return canonical;
   return `timo-group-${match[1]}-unclassified`;
 }
+
+// Existing ASMO questions are referenced by stable source IDs, never copied or rewritten.
+function getAsmoScienceTopicGroups(grade) {
+  const papers=officialPapers.filter(p=>p.program==='ASMO'&&p.subject==='Khoa học'&&String(p.grade)===String(grade)&&[modes[0],modes[1]].includes(p.mode));
+  if(!papers.length)return [];
+  const topics=[
+    {id:'asmo-science-life',name:'Cơ thể và nhu cầu sống',numbers:[2,3,6,11,16,18]},
+    {id:'asmo-science-animals',name:'Động vật: đặc điểm, tập tính và vòng đời',numbers:[13,14,23,24,25]},
+    {id:'asmo-science-tools-safety',name:'Dụng cụ, vật dụng và an toàn',numbers:[7,12,15,19,22]},
+    {id:'asmo-science-unclassified',name:'Chưa phân loại',numbers:[]}
+  ].map(t=>({...t,entries:[]}));
+  for(const paper of papers)for(const question of paper.questions){
+    const number=question.number;
+    const topic=paper.id===`asmo-grade${grade}-science-national-01-20261113`?topics.find(t=>t.numbers.includes(number))||topics[3]:topics[3];
+    topic.entries.push({id:paper.id+':'+number,paperId:paper.id,paperTitle:paper.title,number,question});
+  }
+  return [{id:'asmo-science',name:'Khoa học / Science',topics:topics.map(({numbers,...topic})=>topic)}];
+}
+function getPracticeTopicGroups(program,subject,grade) {
+  if(program==='TIMO'&&subject==='Toán')return getTimoTopicGroups(grade);
+  if(program==='ASMO'&&subject==='Khoa học')return getAsmoScienceTopicGroups(grade);
+  return [];
+}
