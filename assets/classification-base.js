@@ -53,6 +53,12 @@ const publishedTimoClassification = {
       "name": "Quy luật trong bảng: nhân hai số để tìm số còn lại"
     },
     {
+      "id": "timo-group-1-review-method-repeat-cycle",
+      "grade": "2",
+      "groupId": "timo-group-1",
+      "name": "Hình lặp: tìm hình và đếm theo chu kỳ"
+    },
+    {
       "id": "timo-group-2-review-method-sum-pairing",
       "grade": "2",
       "groupId": "timo-group-2",
@@ -494,11 +500,14 @@ const publishedTimoClassification = {
     "timo-grade2-national-02:3": "timo-group-1-review-method-table-product",
     "timo-grade2-national-03:3": "timo-group-1-review-method-table-product",
     "timo-grade2-national-04:3": "timo-group-1-review-method-table-product",
-    "timo-grade2-national-05:4": "timo-group-1-review-method-table-product"
+    "timo-grade2-national-05:4": "timo-group-1-review-method-table-product",
+    "timo-grade2-qualifying-04:3": "timo-group-1-review-method-repeat-cycle",
+    "timo-grade2-qualifying-05:3": "timo-group-1-review-method-repeat-cycle",
+    "timo-grade2-national-07:2": "timo-group-1-review-method-repeat-cycle"
   },
-  "revision": "03580fe96138",
+  "revision": "7aee0eed7be7",
   "scopeRevisions": {
-    "2|timo-group-1": "table-product-owner-request-2026-11-13",
+    "2|timo-group-1": "repeat-cycle-owner-request-2026-11-13",
     "2|timo-group-2": "existing-methods-refined-2026-11-12",
     "2|timo-group-3": "existing-methods-refined-2026-11-12",
     "2|timo-group-4": "existing-methods-refined-2026-11-12",
