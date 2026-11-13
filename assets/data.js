@@ -7215,6 +7215,746 @@ const officialPapers = [
       "answerSource": "user"
     }
   ]
+},
+{
+  "id": "asmo-grade1-math-national-01-20261113",
+  "title": "Bộ 1 — Toán lớp 1–2",
+  "sourceTitle": "ASMO Toán lớp 1–2 — Vòng quốc gia — Bộ 1",
+  "program": "ASMO",
+  "subject": "Toán",
+  "grade": "1",
+  "mode": "Đề quốc gia",
+  "questions": [
+    {
+      "number": 1,
+      "english": "Observe the following picture, how many more circles are there than triangles?",
+      "options": [
+        "14",
+        "5",
+        "9",
+        "6"
+      ],
+      "translation": "Quan sát hình dưới đây, số hình tròn nhiều hơn số hình tam giác là bao nhiêu?",
+      "answer": 3,
+      "answerSource": "user",
+      "image": "./assets/papers/asmo-math-national-01/q01.1d2c848a0bb7.svg",
+      "imageAlt": "Hình ghép: 5 khoang chữ nhật liền nhau; khoang1/3/5 có hai đoạn chéo giao nhau; khoang2/4 có nhóm4đường tròn và tháp bên trên hình chữnhật-tròn-tamgiác;3vòngtròn chồng nhau ngang trên khoang3;tháp tròn-tamgiác trên khoang5.",
+      "imageSource": "redrawn-from-user-screenshot"
+    },
+    {
+      "number": 2,
+      "english": "The diagram below is a ruler and four pencils. Which pencil is the longest?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "translation": "Sơ đồ bên dưới là một cây thước và bốn cây bút chì. Cây bút chì nào dài nhất?",
+      "answer": 1,
+      "answerSource": "user",
+      "image": "./assets/papers/asmo-math-national-01/q02.80a3dba0a327.svg",
+      "imageAlt": "4bútA/B/C/D xếp song song lệch gốc,thước0–17;A khoảng6–13,B0–10,C7–15,D3–12. Không coi các khoảng đọc ảnh là đáp án.",
+      "imageSource": "redrawn-from-user-screenshot"
+    },
+    {
+      "number": 3,
+      "english": "What is the sum of the smallest three digit number and the largest two digit number?",
+      "options": [
+        "1",
+        "199",
+        "111",
+        "9",
+        "10"
+      ],
+      "translation": "Tổng của số nhỏ nhất có 3 chữ số và số lớn nhất có 2 chữ số?",
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 4,
+      "english": "Kim gives half of her 24 grapes to a friend. How many grapes does she give away?",
+      "options": [
+        "4",
+        "6",
+        "12",
+        "48"
+      ],
+      "translation": "Kim cho bạn mình một nửa trong số 24 quả nho mà cô ấy có. Hỏi cô ấy cho bạn bao nhiêu quả nho?",
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 5,
+      "english": "What is the sum of the smallest three digit number and the largest two-digit number?",
+      "options": [
+        "1",
+        "199",
+        "111",
+        "9"
+      ],
+      "translation": "Tổng của số nhỏ nhất có 3 chữ số và số lớn nhất có 2 chữ số?",
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 6,
+      "english": "What is the greatest number you can fill in?",
+      "options": [
+        "48",
+        "39",
+        "56",
+        "55",
+        "60"
+      ],
+      "translation": "Số lớn nhất có thể điền vào ô trống dưới đây",
+      "answer": 3,
+      "answerSource": "user",
+      "detail": "8 + ________ < 64"
+    },
+    {
+      "number": 7,
+      "english": "How many multiples of 8 are there from 1 to 500?",
+      "options": [
+        "492",
+        "72",
+        "66",
+        "62"
+      ],
+      "translation": "Có bao nhiêu số chia hết cho 8 từ 1 đến 500?",
+      "answer": 3,
+      "answerSource": "user"
+    },
+    {
+      "number": 8,
+      "english": "Alan bought some chocolates to share evenly with his father, mother and brother, but right before he shares to them, he realized that he wanted to have some too. So, he shared all his chocolate among 4 of them, each of them got the same amount of chocolate without any extra left. How many chocolates did Alan buy?",
+      "options": [
+        "12",
+        "10",
+        "9",
+        "4"
+      ],
+      "translation": "Alan đã mua một số sô cô la để chia đều cho bố, mẹ và anh trai của mình, nhưng ngay trước khi chia cho họ, anh ấy nhận ra rằng mình cũng muốn có một ít. Vì vậy, anh ấy đã chia tất cả số sô cô la của mình cho 4 người, mỗi người đều nhận được số lượng sô cô la như nhau mà không còn dư. Hỏi Alan đã mua bao nhiêu sô cô la?",
+      "answer": 0,
+      "answerSource": "user"
+    },
+    {
+      "number": 9,
+      "english": "A gardener is planting flowers along the edge of a circular flowerbed, planting one flower every 1 metre. How many flowers are needed for 4 flowerbeds with perimeter of 10 metre?",
+      "options": [
+        "44",
+        "40",
+        "36",
+        "10"
+      ],
+      "translation": "Một người làm vườn đang trồng hoa dọc theo mép của một luống hoa hình tròn, cứ 1 mét thì trồng một cây hoa. Hỏi 4 luống hoa có chu vi 10m thì cần bao nhiêu cây hoa?",
+      "answer": 1,
+      "answerSource": "user",
+      "image": "./assets/papers/asmo-math-national-01/q09.4fa88b106cdc.svg",
+      "imageAlt": "Ảnh luống hoa hình tròn,nhiều bônghoa,mũi tên nhãn Flowerbed.",
+      "imageSource": "redrawn-from-user-screenshot"
+    },
+    {
+      "number": 10,
+      "english": "This figure is formed by SIX lines segments. What is the total number of triangles in this figure?",
+      "options": [
+        "9",
+        "10",
+        "12",
+        "8",
+        "15"
+      ],
+      "translation": "Hình dưới đây được tạo thành từ 6 đoạn thẳng. Hỏi tổng số hình tam giác là bao nhiêu?",
+      "answer": 0,
+      "answerSource": "user",
+      "image": "./assets/papers/asmo-math-national-01/q10.ca792e1a2b8e.svg",
+      "imageAlt": "TamgiácABC đỉnhA ởtrên,B/Cđáy,DởgiữaBC;đườngADthẳngđứng;2đườngngang trongtamgiác,cùngvớiđáyBC tạo3mứcđáy.",
+      "imageSource": "redrawn-from-user-screenshot"
+    },
+    {
+      "number": 11,
+      "english": "Which of the figure has the largest area?",
+      "options": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "translation": "Hình nào dưới đây có diện tích lớn nhất?",
+      "answer": 0,
+      "answerSource": "user",
+      "image": "./assets/papers/asmo-math-national-01/q11.980bef89d7d9.svg",
+      "imageAlt": "Lưới ôvuông 8cột5hàng;4miền viềnđậm a/b/c/d có đoạnchéo nửaô. Cần ảnh gốc khi nhập.",
+      "imageSource": "redrawn-from-user-screenshot"
+    },
+    {
+      "number": 12,
+      "english": "Adam built a cottage for his dog. He cut the plank into 10 sections, and each cut took 4 in minutes. How long did Adam spend to cut all the boards?",
+      "options": [
+        "42",
+        "40",
+        "44",
+        "36",
+        "14"
+      ],
+      "translation": "Adam xây một ngôi nhà cho con chó của mình. Anh ấy cắt tấm ván thành 10 phần, và mỗi phần mất 4 phút. Adam mất bao lâu để cắt hết các tấm ván?",
+      "answer": 3,
+      "answerSource": "user"
+    },
+    {
+      "number": 13,
+      "english": "It is Tuesday on 1-March-2016. What day is it on 31-March-2016?",
+      "options": [
+        "Monday / Thứ 2",
+        "Tuesday / Thứ 3",
+        "Wednesday / Thứ 4",
+        "Thursday / Thứ 5"
+      ],
+      "translation": "Hôm nay là thứ ba ngày 1-tháng 3-2016. Ngày 31 tháng 3 năm 2016 là thứ mấy?",
+      "answer": 3,
+      "answerSource": "user"
+    },
+    {
+      "number": 14,
+      "english": "Amy is 12 years old this year, and her grandmother is 57 years old. How old is Amy when her grandmother’s age is four times of her age?",
+      "options": [
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "translation": "Amy năm nay 12 tuổi còn bà của cô ấy là 57 tuổi. Hỏi tuổi của Amy là bao nhiêu khi tuổi của bà gấp 4 lần tuổi của cô ấy?",
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 15,
+      "english": "Alice can finish reading a book in three days. The average of the first 2 days are 120 pages read, the third day she read 85 pages. How many pages of this book?",
+      "options": [
+        "324",
+        "300",
+        "325",
+        "298",
+        "360"
+      ],
+      "translation": "Alice đọc hết 1 quyển sách trong 3 ngày. Trong 2 ngày đầu tiên trung bình mỗi ngày Alice đọc 120 trang, ngày thứ 3 Alice đọc 85 trang. Hỏi quyển sách có bao nhiêu trang?",
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 16,
+      "english": "Mother bought a bag of apples. She kept half of the apples for apple pie, 3 apples for grandmother, and another 3 apples for me. How many apples are in the bag?",
+      "options": [
+        "14",
+        "10",
+        "16",
+        "12"
+      ],
+      "translation": "Mẹ đi chợ mua một túi táo. Mẹ giữ lại 1 nửa để làm bánh táo, số còn lại chia cho bà 3 quả, cho tôi 3 quả là vừa hết. Hỏi ban đầu có bao nhiêu quả táo trong túi?",
+      "answer": 3,
+      "answerSource": "user"
+    },
+    {
+      "number": 17,
+      "english": "Find the pattern to fill in the suitable number.",
+      "options": [
+        "21, 25",
+        "25, 21",
+        "21, 27",
+        "21, 28"
+      ],
+      "translation": "Điền số thích hợp vào chỗ trống dưới đây",
+      "answer": 3,
+      "answerSource": "user",
+      "detail": "1, 6, 11, 16, ( ), 26\n18, 19, 21, 24, ( )"
+    },
+    {
+      "number": 18,
+      "english": "Find the sum of the following equation.",
+      "options": [
+        "350",
+        "355",
+        "250",
+        "255"
+      ],
+      "translation": "Tính phép tính dưới đây:",
+      "answer": 3,
+      "answerSource": "user",
+      "detail": "21+22+23+24+25+26+27+28+29+30=?"
+    },
+    {
+      "number": 19,
+      "english": "Quynh bought 15 mangoes, 12 watermelons and 17 pineapples. She gave 4 mangoes to Minh and 6 watermelons to Ha. Then, she gave 2 mangoes, 2 watermelons and 5 pineapples to An. How many mangoes, watermelons and pineapples did Quynh give Ha and An in total?",
+      "options": [
+        "12",
+        "15",
+        "17",
+        "19"
+      ],
+      "translation": "Quỳnh đã mua 15 quả xoài, 12 quả dưa hấu và 17 quả dứa. Cô ấy đưa 4 quả xoài cho Minh và 6 quả dưa hấu cho Hà. Sau đó, cô đưa 2 quả xoài, 2 quả dưa hấu và 5 quả dứa cho An. Hỏi Quỳnh đã đưa cho Hà và An tổng cộng bao nhiêu quả xoài, dưa hấu và dứa?",
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 20,
+      "english": "What alphabet is missing in the diagram?",
+      "options": [
+        "A",
+        "S",
+        "M",
+        "O"
+      ],
+      "translation": "Chữ cái nào bị thiếu trong hình sau đây?",
+      "answer": 3,
+      "answerSource": "user",
+      "image": "./assets/papers/asmo-math-national-01/q20.e7145a56c59e.svg",
+      "imageAlt": "Các chữA,S,H,M,T,L,A,H kiểuphôngvàgócxoaykhácnhau;phầnảnhdướicóvếtcắt. Cần ảnh gốc khi nhập.",
+      "imageSource": "redrawn-from-user-screenshot"
+    },
+    {
+      "number": 21,
+      "english": "Jason built a model by stacking some cubes, he then glued the cubes together and decided to paint it in red. If each side of the cube needs 1 unit of paint, how much paint does he need to paint the model?",
+      "options": [
+        "82",
+        "80",
+        "40",
+        "94"
+      ],
+      "translation": "Jason xây dựng một mô hình bằng cách xếp chồng các hình khối lên nhau, anh ấy dán các hình khối lại với nhau và quyết định sơn nó màu đỏ. Nếu mỗi mặt của hình lập phương cần 1 đơn vị sơn thì anh ta cần bao nhiêu đơn vị sơn để sơn mô hình?",
+      "answer": 0,
+      "answerSource": "user",
+      "image": "./assets/papers/asmo-math-national-01/q21.315c5427f3a5.svg",
+      "imageAlt": "Hìnhkhốilập phươngxếp3tầng bậcthangkhôngđều,ảnhphốicảnhđỉnh4ô mặttrên;ảnhngười dùng13/11.",
+      "imageSource": "redrawn-from-user-screenshot"
+    },
+    {
+      "number": 22,
+      "english": "The digit in the ones place and the digit in the tens place differs by 3, how many 2-digit numbers satisfy this condition?",
+      "options": [
+        "6",
+        "7",
+        "13",
+        "14"
+      ],
+      "translation": "Chữ số hàng đơn vị và chữ số hàng chục hơn kém nhau 3 đơn vị thì có bao nhiêu số có 2 chữ số thỏa mãn điều kiện trên?",
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 23,
+      "english": "There are RM1, RM5, RM10, RM20, RM50 and RM100 notes in Malaysia Ringgit. If no change is needed, what is the minimum number of notes needed to buy an item that cost RM48?",
+      "options": [
+        "1",
+        "6",
+        "12",
+        "48"
+      ],
+      "translation": "Có các mệnh giá 1RM, 5RM, 10RM, 20RM, 50RM và 100RM bằng Ringgit Malaysia. Nếu không cần tiền thừa trả lại, số tờ tiền tối thiểu để mua một món hàng có giá 48RM là bao nhiêu?",
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 24,
+      "english": "Find the number in the blanks.",
+      "options": [
+        "21, 28",
+        "12, 20",
+        "22, 25",
+        "19, 24",
+        "25, 30"
+      ],
+      "translation": "Tìm số còn thiếu trong ngoặc",
+      "answer": 0,
+      "answerSource": "user",
+      "detail": "1, 3, 6, 10, 15, ( ), ( )"
+    },
+    {
+      "number": 25,
+      "english": "The pictogram below shows the number of books read by students in a book reading competition. If Richard wanted to win the competition alone, at least how many more books must he read?",
+      "options": [
+        "2",
+        "1",
+        "4",
+        "3"
+      ],
+      "translation": "Biểu đồ dưới đây cho thấy số lượng sách được học sinh đọc trong một cuộc thi đọc sách. Nếu Richard muốn một mình giành chiến thắng trong cuộc thi, anh ấy sẽ đọc ít nhất bao nhiêu cuốn sách nữa?",
+      "answer": 3,
+      "answerSource": "user",
+      "image": "./assets/papers/asmo-math-national-01/q25.5d01cb60ae9f.svg",
+      "imageAlt": "BảngEthan1icon,Avery3icons,Richard2icons,Halley1icon,Celine4icons;iconquyển sách represents1book.",
+      "imageSource": "redrawn-from-user-screenshot"
+    }
+  ]
+},
+{
+  "id": "asmo-grade2-math-national-01-20261113",
+  "title": "Bộ 1 — Toán lớp 1–2",
+  "sourceTitle": "ASMO Toán lớp 1–2 — Vòng quốc gia — Bộ 1",
+  "program": "ASMO",
+  "subject": "Toán",
+  "grade": "2",
+  "mode": "Đề quốc gia",
+  "questions": [
+    {
+      "number": 1,
+      "english": "Observe the following picture, how many more circles are there than triangles?",
+      "options": [
+        "14",
+        "5",
+        "9",
+        "6"
+      ],
+      "translation": "Quan sát hình dưới đây, số hình tròn nhiều hơn số hình tam giác là bao nhiêu?",
+      "answer": 3,
+      "answerSource": "user",
+      "image": "./assets/papers/asmo-math-national-01/q01.1d2c848a0bb7.svg",
+      "imageAlt": "Hình ghép: 5 khoang chữ nhật liền nhau; khoang1/3/5 có hai đoạn chéo giao nhau; khoang2/4 có nhóm4đường tròn và tháp bên trên hình chữnhật-tròn-tamgiác;3vòngtròn chồng nhau ngang trên khoang3;tháp tròn-tamgiác trên khoang5.",
+      "imageSource": "redrawn-from-user-screenshot"
+    },
+    {
+      "number": 2,
+      "english": "The diagram below is a ruler and four pencils. Which pencil is the longest?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "translation": "Sơ đồ bên dưới là một cây thước và bốn cây bút chì. Cây bút chì nào dài nhất?",
+      "answer": 1,
+      "answerSource": "user",
+      "image": "./assets/papers/asmo-math-national-01/q02.80a3dba0a327.svg",
+      "imageAlt": "4bútA/B/C/D xếp song song lệch gốc,thước0–17;A khoảng6–13,B0–10,C7–15,D3–12. Không coi các khoảng đọc ảnh là đáp án.",
+      "imageSource": "redrawn-from-user-screenshot"
+    },
+    {
+      "number": 3,
+      "english": "What is the sum of the smallest three digit number and the largest two digit number?",
+      "options": [
+        "1",
+        "199",
+        "111",
+        "9",
+        "10"
+      ],
+      "translation": "Tổng của số nhỏ nhất có 3 chữ số và số lớn nhất có 2 chữ số?",
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 4,
+      "english": "Kim gives half of her 24 grapes to a friend. How many grapes does she give away?",
+      "options": [
+        "4",
+        "6",
+        "12",
+        "48"
+      ],
+      "translation": "Kim cho bạn mình một nửa trong số 24 quả nho mà cô ấy có. Hỏi cô ấy cho bạn bao nhiêu quả nho?",
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 5,
+      "english": "What is the sum of the smallest three digit number and the largest two-digit number?",
+      "options": [
+        "1",
+        "199",
+        "111",
+        "9"
+      ],
+      "translation": "Tổng của số nhỏ nhất có 3 chữ số và số lớn nhất có 2 chữ số?",
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 6,
+      "english": "What is the greatest number you can fill in?",
+      "options": [
+        "48",
+        "39",
+        "56",
+        "55",
+        "60"
+      ],
+      "translation": "Số lớn nhất có thể điền vào ô trống dưới đây",
+      "answer": 3,
+      "answerSource": "user",
+      "detail": "8 + ________ < 64"
+    },
+    {
+      "number": 7,
+      "english": "How many multiples of 8 are there from 1 to 500?",
+      "options": [
+        "492",
+        "72",
+        "66",
+        "62"
+      ],
+      "translation": "Có bao nhiêu số chia hết cho 8 từ 1 đến 500?",
+      "answer": 3,
+      "answerSource": "user"
+    },
+    {
+      "number": 8,
+      "english": "Alan bought some chocolates to share evenly with his father, mother and brother, but right before he shares to them, he realized that he wanted to have some too. So, he shared all his chocolate among 4 of them, each of them got the same amount of chocolate without any extra left. How many chocolates did Alan buy?",
+      "options": [
+        "12",
+        "10",
+        "9",
+        "4"
+      ],
+      "translation": "Alan đã mua một số sô cô la để chia đều cho bố, mẹ và anh trai của mình, nhưng ngay trước khi chia cho họ, anh ấy nhận ra rằng mình cũng muốn có một ít. Vì vậy, anh ấy đã chia tất cả số sô cô la của mình cho 4 người, mỗi người đều nhận được số lượng sô cô la như nhau mà không còn dư. Hỏi Alan đã mua bao nhiêu sô cô la?",
+      "answer": 0,
+      "answerSource": "user"
+    },
+    {
+      "number": 9,
+      "english": "A gardener is planting flowers along the edge of a circular flowerbed, planting one flower every 1 metre. How many flowers are needed for 4 flowerbeds with perimeter of 10 metre?",
+      "options": [
+        "44",
+        "40",
+        "36",
+        "10"
+      ],
+      "translation": "Một người làm vườn đang trồng hoa dọc theo mép của một luống hoa hình tròn, cứ 1 mét thì trồng một cây hoa. Hỏi 4 luống hoa có chu vi 10m thì cần bao nhiêu cây hoa?",
+      "answer": 1,
+      "answerSource": "user",
+      "image": "./assets/papers/asmo-math-national-01/q09.4fa88b106cdc.svg",
+      "imageAlt": "Ảnh luống hoa hình tròn,nhiều bônghoa,mũi tên nhãn Flowerbed.",
+      "imageSource": "redrawn-from-user-screenshot"
+    },
+    {
+      "number": 10,
+      "english": "This figure is formed by SIX lines segments. What is the total number of triangles in this figure?",
+      "options": [
+        "9",
+        "10",
+        "12",
+        "8",
+        "15"
+      ],
+      "translation": "Hình dưới đây được tạo thành từ 6 đoạn thẳng. Hỏi tổng số hình tam giác là bao nhiêu?",
+      "answer": 0,
+      "answerSource": "user",
+      "image": "./assets/papers/asmo-math-national-01/q10.ca792e1a2b8e.svg",
+      "imageAlt": "TamgiácABC đỉnhA ởtrên,B/Cđáy,DởgiữaBC;đườngADthẳngđứng;2đườngngang trongtamgiác,cùngvớiđáyBC tạo3mứcđáy.",
+      "imageSource": "redrawn-from-user-screenshot"
+    },
+    {
+      "number": 11,
+      "english": "Which of the figure has the largest area?",
+      "options": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "translation": "Hình nào dưới đây có diện tích lớn nhất?",
+      "answer": 0,
+      "answerSource": "user",
+      "image": "./assets/papers/asmo-math-national-01/q11.980bef89d7d9.svg",
+      "imageAlt": "Lưới ôvuông 8cột5hàng;4miền viềnđậm a/b/c/d có đoạnchéo nửaô. Cần ảnh gốc khi nhập.",
+      "imageSource": "redrawn-from-user-screenshot"
+    },
+    {
+      "number": 12,
+      "english": "Adam built a cottage for his dog. He cut the plank into 10 sections, and each cut took 4 in minutes. How long did Adam spend to cut all the boards?",
+      "options": [
+        "42",
+        "40",
+        "44",
+        "36",
+        "14"
+      ],
+      "translation": "Adam xây một ngôi nhà cho con chó của mình. Anh ấy cắt tấm ván thành 10 phần, và mỗi phần mất 4 phút. Adam mất bao lâu để cắt hết các tấm ván?",
+      "answer": 3,
+      "answerSource": "user"
+    },
+    {
+      "number": 13,
+      "english": "It is Tuesday on 1-March-2016. What day is it on 31-March-2016?",
+      "options": [
+        "Monday / Thứ 2",
+        "Tuesday / Thứ 3",
+        "Wednesday / Thứ 4",
+        "Thursday / Thứ 5"
+      ],
+      "translation": "Hôm nay là thứ ba ngày 1-tháng 3-2016. Ngày 31 tháng 3 năm 2016 là thứ mấy?",
+      "answer": 3,
+      "answerSource": "user"
+    },
+    {
+      "number": 14,
+      "english": "Amy is 12 years old this year, and her grandmother is 57 years old. How old is Amy when her grandmother’s age is four times of her age?",
+      "options": [
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "translation": "Amy năm nay 12 tuổi còn bà của cô ấy là 57 tuổi. Hỏi tuổi của Amy là bao nhiêu khi tuổi của bà gấp 4 lần tuổi của cô ấy?",
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 15,
+      "english": "Alice can finish reading a book in three days. The average of the first 2 days are 120 pages read, the third day she read 85 pages. How many pages of this book?",
+      "options": [
+        "324",
+        "300",
+        "325",
+        "298",
+        "360"
+      ],
+      "translation": "Alice đọc hết 1 quyển sách trong 3 ngày. Trong 2 ngày đầu tiên trung bình mỗi ngày Alice đọc 120 trang, ngày thứ 3 Alice đọc 85 trang. Hỏi quyển sách có bao nhiêu trang?",
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 16,
+      "english": "Mother bought a bag of apples. She kept half of the apples for apple pie, 3 apples for grandmother, and another 3 apples for me. How many apples are in the bag?",
+      "options": [
+        "14",
+        "10",
+        "16",
+        "12"
+      ],
+      "translation": "Mẹ đi chợ mua một túi táo. Mẹ giữ lại 1 nửa để làm bánh táo, số còn lại chia cho bà 3 quả, cho tôi 3 quả là vừa hết. Hỏi ban đầu có bao nhiêu quả táo trong túi?",
+      "answer": 3,
+      "answerSource": "user"
+    },
+    {
+      "number": 17,
+      "english": "Find the pattern to fill in the suitable number.",
+      "options": [
+        "21, 25",
+        "25, 21",
+        "21, 27",
+        "21, 28"
+      ],
+      "translation": "Điền số thích hợp vào chỗ trống dưới đây",
+      "answer": 3,
+      "answerSource": "user",
+      "detail": "1, 6, 11, 16, ( ), 26\n18, 19, 21, 24, ( )"
+    },
+    {
+      "number": 18,
+      "english": "Find the sum of the following equation.",
+      "options": [
+        "350",
+        "355",
+        "250",
+        "255"
+      ],
+      "translation": "Tính phép tính dưới đây:",
+      "answer": 3,
+      "answerSource": "user",
+      "detail": "21+22+23+24+25+26+27+28+29+30=?"
+    },
+    {
+      "number": 19,
+      "english": "Quynh bought 15 mangoes, 12 watermelons and 17 pineapples. She gave 4 mangoes to Minh and 6 watermelons to Ha. Then, she gave 2 mangoes, 2 watermelons and 5 pineapples to An. How many mangoes, watermelons and pineapples did Quynh give Ha and An in total?",
+      "options": [
+        "12",
+        "15",
+        "17",
+        "19"
+      ],
+      "translation": "Quỳnh đã mua 15 quả xoài, 12 quả dưa hấu và 17 quả dứa. Cô ấy đưa 4 quả xoài cho Minh và 6 quả dưa hấu cho Hà. Sau đó, cô đưa 2 quả xoài, 2 quả dưa hấu và 5 quả dứa cho An. Hỏi Quỳnh đã đưa cho Hà và An tổng cộng bao nhiêu quả xoài, dưa hấu và dứa?",
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 20,
+      "english": "What alphabet is missing in the diagram?",
+      "options": [
+        "A",
+        "S",
+        "M",
+        "O"
+      ],
+      "translation": "Chữ cái nào bị thiếu trong hình sau đây?",
+      "answer": 3,
+      "answerSource": "user",
+      "image": "./assets/papers/asmo-math-national-01/q20.e7145a56c59e.svg",
+      "imageAlt": "Các chữA,S,H,M,T,L,A,H kiểuphôngvàgócxoaykhácnhau;phầnảnhdướicóvếtcắt. Cần ảnh gốc khi nhập.",
+      "imageSource": "redrawn-from-user-screenshot"
+    },
+    {
+      "number": 21,
+      "english": "Jason built a model by stacking some cubes, he then glued the cubes together and decided to paint it in red. If each side of the cube needs 1 unit of paint, how much paint does he need to paint the model?",
+      "options": [
+        "82",
+        "80",
+        "40",
+        "94"
+      ],
+      "translation": "Jason xây dựng một mô hình bằng cách xếp chồng các hình khối lên nhau, anh ấy dán các hình khối lại với nhau và quyết định sơn nó màu đỏ. Nếu mỗi mặt của hình lập phương cần 1 đơn vị sơn thì anh ta cần bao nhiêu đơn vị sơn để sơn mô hình?",
+      "answer": 0,
+      "answerSource": "user",
+      "image": "./assets/papers/asmo-math-national-01/q21.315c5427f3a5.svg",
+      "imageAlt": "Hìnhkhốilập phươngxếp3tầng bậcthangkhôngđều,ảnhphốicảnhđỉnh4ô mặttrên;ảnhngười dùng13/11.",
+      "imageSource": "redrawn-from-user-screenshot"
+    },
+    {
+      "number": 22,
+      "english": "The digit in the ones place and the digit in the tens place differs by 3, how many 2-digit numbers satisfy this condition?",
+      "options": [
+        "6",
+        "7",
+        "13",
+        "14"
+      ],
+      "translation": "Chữ số hàng đơn vị và chữ số hàng chục hơn kém nhau 3 đơn vị thì có bao nhiêu số có 2 chữ số thỏa mãn điều kiện trên?",
+      "answer": 2,
+      "answerSource": "user"
+    },
+    {
+      "number": 23,
+      "english": "There are RM1, RM5, RM10, RM20, RM50 and RM100 notes in Malaysia Ringgit. If no change is needed, what is the minimum number of notes needed to buy an item that cost RM48?",
+      "options": [
+        "1",
+        "6",
+        "12",
+        "48"
+      ],
+      "translation": "Có các mệnh giá 1RM, 5RM, 10RM, 20RM, 50RM và 100RM bằng Ringgit Malaysia. Nếu không cần tiền thừa trả lại, số tờ tiền tối thiểu để mua một món hàng có giá 48RM là bao nhiêu?",
+      "answer": 1,
+      "answerSource": "user"
+    },
+    {
+      "number": 24,
+      "english": "Find the number in the blanks.",
+      "options": [
+        "21, 28",
+        "12, 20",
+        "22, 25",
+        "19, 24",
+        "25, 30"
+      ],
+      "translation": "Tìm số còn thiếu trong ngoặc",
+      "answer": 0,
+      "answerSource": "user",
+      "detail": "1, 3, 6, 10, 15, ( ), ( )"
+    },
+    {
+      "number": 25,
+      "english": "The pictogram below shows the number of books read by students in a book reading competition. If Richard wanted to win the competition alone, at least how many more books must he read?",
+      "options": [
+        "2",
+        "1",
+        "4",
+        "3"
+      ],
+      "translation": "Biểu đồ dưới đây cho thấy số lượng sách được học sinh đọc trong một cuộc thi đọc sách. Nếu Richard muốn một mình giành chiến thắng trong cuộc thi, anh ấy sẽ đọc ít nhất bao nhiêu cuốn sách nữa?",
+      "answer": 3,
+      "answerSource": "user",
+      "image": "./assets/papers/asmo-math-national-01/q25.5d01cb60ae9f.svg",
+      "imageAlt": "BảngEthan1icon,Avery3icons,Richard2icons,Halley1icon,Celine4icons;iconquyển sách represents1book.",
+      "imageSource": "redrawn-from-user-screenshot"
+    }
+  ]
 }
 ];
 function getPapers(program, subject, grade, mode) {
@@ -7361,8 +8101,27 @@ function getAsmoScienceTopicGroups(grade) {
   }
   return [{id:'asmo-science',name:'Khoa học / Science',topics:topics.map(({numbers,...topic})=>topic)}];
 }
+// Reviewed source memberships; Q5 repeats Q3 and appears once in topic practice.
+function getAsmoMathTopicGroups(grade) {
+ const papers=officialPapers.filter(p=>p.program==='ASMO'&&p.subject==='Toán'&&String(p.grade)===String(grade)&&[modes[0],modes[1]].includes(p.mode));
+ if(!papers.length)return [];
+ const topics=[
+  {id:'asmo-math-numbers',name:'Số và phép tính',numbers:[3,4,6,16,18,19]},
+  {id:'asmo-math-word-problems',name:'Bài toán có lời văn',numbers:[8,9,12,14,15,23,25]},
+  {id:'asmo-math-geometry',name:'Quan sát hình và đo lường',numbers:[1,2,10,11,21]},
+  {id:'asmo-math-unclassified',name:'Chưa phân loại',numbers:[]}
+ ].map(t=>({...t,entries:[]}));
+ const source=`asmo-grade${grade}-math-national-01-20261113`;
+ for(const paper of papers)for(const question of paper.questions){
+  if(paper.id===source&&question.number===5&&paper.questions.some(q=>q.number===3))continue;
+  const topic=paper.id===source?topics.find(t=>t.numbers.includes(question.number))||topics[3]:topics[3];
+  topic.entries.push({id:paper.id+':'+question.number,paperId:paper.id,paperTitle:paper.title,number:question.number,question});
+ }
+ return [{id:'asmo-math',name:'Toán / Mathematics',topics:topics.map(({numbers,...topic})=>topic)}];
+}
 function getPracticeTopicGroups(program,subject,grade) {
   if(program==='TIMO'&&subject==='Toán')return getTimoTopicGroups(grade);
   if(program==='ASMO'&&subject==='Khoa học')return getAsmoScienceTopicGroups(grade);
+  if(program==='ASMO'&&subject==='Toán')return getAsmoMathTopicGroups(grade);
   return [];
 }

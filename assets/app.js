@@ -139,7 +139,7 @@ function openTopicResult(topicId){
 }
 function renderHome(){
  stopPracticeClock();
- const isTopicPractice=state.mode===modes[2]&&(state.program==='TIMO'||state.program==='ASMO'&&state.subject==='Khoa học');
+ const isTopicPractice=state.mode===modes[2]&&(state.program==='TIMO'||state.program==='ASMO'&&['Khoa học','Toán'].includes(state.subject));
  const theme=activeTheme().id,all=getPapers(state.program,state.subject,state.grade,state.mode).map((_,i)=>i);
  const normalized=value=>value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[đĐ]/g,'d').toLowerCase();
  const papers=all.filter(i=>normalized(paperTitle(i)).includes(normalized(state.search.trim()))),title=state.search.trim()?'Kết quả tìm kiếm':`${state.mode} ${state.program}`;
