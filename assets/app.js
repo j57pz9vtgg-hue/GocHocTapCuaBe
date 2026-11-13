@@ -62,6 +62,13 @@ function renderTopicBadge(index){
  const colors=['#ffae21','#f84e7b','#30bf66','#28a9ef','#a143ec','#ff8627'];
  return `<span class="topic-number" aria-hidden="true" style="color:${colors[index%colors.length]}"><svg viewBox="0 0 40 44" shape-rendering="crispEdges"><path d="M10 2h20v3h5v5h3v24h-3v5h-5v3H10v-3H5v-5H2V10h3V5h5z" fill="#10234b"/><path d="M11 5h18v3h5v4h1v20h-3v5h-5v2H11v-3H7v-5H5V12h3V8h3z" fill="currentColor"/><path d="M11 7h15v2H12v4H9v9H7V12h3V9h1z" fill="#ffffff88"/></svg><span>${String(index+1).padStart(2,'0')}</span></span>`;
 }
+// Match saved responses by source ID so shuffled or reclassified topics keep their result.
+function topicAttemptSummary(topic,record){
+ const answers={};
+ topic.entries.forEach((entry,i)=>{const index=Array.isArray(record?.questionIds)?record.questionIds.indexOf(entry.id):i,value=index<0?undefined:record?.answers?.[index];if(validResponse(entry.question,value))answers[i]=value;});
+ const answered=Object.keys(answers).length,submitted=record?.submitted===true&&answered>0;
+ return {answers,answered,submitted,status:submitted?'done':answered?'progress':'new',label:submitted?'Đã làm':answered?'Đang làm':'Chưa làm',result:submitted?practiceGradingSummary(topic.entries.map(e=>e.question),answers).result:'—'};
+}
 function renderPracticeTopics(){
  const query=normalizedTopicSearch(state.search.trim());
  const groups=getPracticeTopicGroups(state.program,state.subject,state.grade).map((group,index)=>{const visible=group.topics.filter(topic=>topic.entries.length||topic.id.includes('-review-')||!group.topics.some(t=>t.entries.length)).slice().sort((a,b)=>Number(a.id.endsWith('-unclassified'))-Number(b.id.endsWith('-unclassified')));return {...group,index,matches:visible.filter(topic=>!query||normalizedTopicSearch(group.name+' '+topic.name).includes(query))};}).filter(group=>!query||group.matches.length||normalizedTopicSearch(group.name).includes(query));
@@ -70,7 +77,8 @@ function renderPracticeTopics(){
  return `<div class="timo-topic-browser" aria-label="Các chủ đề luyện tập ${escapeHTML(state.program)}">${groups.map((group,row)=>{
  const open=selected===group.index;
  return `<section class="timo-topic-group" style="--topic-row:${row+1}"><button class="topic-group-toggle ${open?'selected':''}" data-topic-group="${group.index}" id="${group.id}-toggle" aria-expanded="${open}" aria-controls="${group.id}-panel">${renderTopicBadge(group.index)}<span class="topic-group-label">${escapeHTML(group.name)}</span>${icon(open?'down':'arrow',19)}</button><div class="topic-group-panel" id="${group.id}-panel" aria-labelledby="${group.id}-title" ${open?'':'hidden'}><h3 id="${group.id}-title">${escapeHTML(group.name)}</h3><div class="topic-small-grid">${!group.matches.length?'<div class="topic-content-empty">Chưa có chủ đề nhỏ</div>':group.matches.map((topic,index)=>{
- return `<article class="topic-small-card"><div class="topic-small-heading">${renderTopicBadge(index)}<h4>${escapeHTML(topic.name)}</h4></div><p class="topic-state"><span aria-hidden="true"></span>${topic.entries.length} câu hỏi</p>${activeTheme().id==='pixel'?`<img class="topic-book" src="${publicAsset('pixel-book')}" alt="">`:`<span class="topic-book topic-theme-art" aria-hidden="true" style="background-image:url('${publicAsset(activeTheme().id+'-sprites')}');background-position:${(index%4)*100/3}% ${Math.floor(index/4)*100/3}%"></span>`}<button class="topic-practice" data-topic-open="${escapeHTML(topic.id)}" aria-label="Luyện tập ${escapeHTML(topic.name)}, ${escapeHTML(group.name)}">Luyện tập</button></article>`;
+ const record=attempts[[state.grade,state.program,state.subject,modes[2],topic.id].join('|')],outcome=topicAttemptSummary(topic,record);
+ return `<article class="topic-small-card" data-topic-card="${escapeHTML(topic.id)}" data-topic-state="${outcome.status}"><div class="topic-small-heading">${renderTopicBadge(index)}<h4>${escapeHTML(topic.name)}</h4></div><p class="topic-state"><span aria-hidden="true"></span>${topic.entries.length} câu hỏi</p>${activeTheme().id==='pixel'?`<img class="topic-book" src="${publicAsset('pixel-book')}" alt="">`:`<span class="topic-book topic-theme-art" aria-hidden="true" style="background-image:url('${publicAsset(activeTheme().id+'-sprites')}');background-position:${(index%4)*100/3}% ${Math.floor(index/4)*100/3}%"></span>`}<div class="topic-outcome"><span class="topic-completion" data-topic-status>${icon(outcome.submitted?'check':'clock',14)}${outcome.label}${outcome.status==='progress'?` · ${outcome.answered}/${topic.entries.length} câu`:''}</span><span class="topic-card-score">Kết quả: <strong>${escapeHTML(outcome.result)}</strong></span>${outcome.submitted?`<button type="button" class="topic-result-button" data-topic-result="${escapeHTML(topic.id)}" aria-label="Xem kết quả ${escapeHTML(topic.name)}">Kết quả</button>`:''}</div><button class="topic-practice" data-topic-open="${escapeHTML(topic.id)}" aria-label="Luyện tập ${escapeHTML(topic.name)}, ${escapeHTML(group.name)}">Luyện tập</button></article>`;
  }).join('')}</div></div></section>`;
  }).join('')}</div>`;
 }
@@ -119,6 +127,15 @@ function openTopicIntro(topicId){
  pendingPaper=null;introTrigger=document.activeElement;
  introDialog.innerHTML=`<button class="icon-button dialog-close" data-action="close-intro" aria-label="Đóng giới thiệu chủ đề">${icon('close',22)}</button><div class="topic-empty-intro"><img class="${activeTheme().id==='pixel'?'':'topic-intro-banner'}" src="${publicAsset(activeTheme().id==='pixel'?'pixel-book':activeTheme().hero)}" alt=""><h2 id="paper-intro-title">${escapeHTML(topic.name)}</h2><p>${escapeHTML(group.name)} · ${escapeHTML(state.program)} · Lớp ${state.grade} · ${escapeHTML(state.subject)}</p><p>Chưa có nội dung luyện tập.</p><button class="primary-button" data-action="close-intro">Đóng</button></div>`;
  introDialog.showModal();introDialog.querySelector('[data-action="close-intro"]').focus();
+}
+function openTopicResult(topicId){
+ const topic=getPracticeTopicGroups(state.program,state.subject,state.grade).flatMap(g=>g.topics).find(t=>t.id===topicId);if(!topic)return;
+ const record=attempts[[state.grade,state.program,state.subject,modes[2],topic.id].join('|')],outcome=topicAttemptSummary(topic,record);if(!outcome.submitted)return;
+ const selection=selectionFromView({grade:state.grade,program:state.program,subject:state.subject,mode:modes[2],topicId:topic.id,questionIds:record.questionIds});if(!selection)return;
+ const byId=new Map(topic.entries.map((entry,i)=>[entry.id,outcome.answers[i]]));state.answers={};
+ selection.questions.forEach((q,i)=>{const value=byId.get(selection.questionIds[i]);if(validResponse(q,value))state.answers[i]=value;});
+ state.practice={...selection,syncRunId:record.syncRunId||String(record.startedAt),startedAt:record.startedAt,finishedAt:Number.isFinite(record.finishedAt)?record.finishedAt:record.updatedAt};state.submitted=true;state.solutionsVisible=false;
+ renderPractice();app.querySelector('.result h2').focus();window.scrollTo({top:0});
 }
 function renderHome(){
  stopPracticeClock();
@@ -368,6 +385,7 @@ document.addEventListener('click',event=>{
   const group=Number(button.dataset.topicGroup),collapse=window.matchMedia('(max-width:760px)').matches&&state.topicGroup===group;
   state.topicGroup=collapse?null:group;renderHome();app.querySelector(`[data-topic-group="${group}"]`)?.focus({preventScroll:true});return;
  }
+ if(button.dataset.topicResult){openTopicResult(button.dataset.topicResult);return;}
  if(button.dataset.topicOpen){openTopicIntro(button.dataset.topicOpen);return;}
  const action=button.dataset.action;
  if(action==='help')document.querySelector('#help').showModal();

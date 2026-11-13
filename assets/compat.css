@@ -748,3 +748,13 @@
  html{scroll-padding-top:12px}
  #site-shell .catalog-masthead{position:relative;top:auto}
 }
+
+/* Each topic shows saved progress and its latest submitted result on the card. */
+.topic-outcome{grid-column:1/-1;grid-row:3;display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;min-width:0;padding-top:8px;border-top:1px solid var(--theme-edge,#d3e6f3);font-size:12px;line-height:1.5;color:#46627c}
+.topic-completion{display:inline-flex;align-items:center;gap:5px;font-weight:700}.topic-completion>svg{flex:0 0 14px}
+.topic-small-card[data-topic-state="done"] .topic-completion{color:#166744}.topic-small-card[data-topic-state="progress"] .topic-completion{color:#885100}
+.topic-card-score{min-width:0;overflow-wrap:anywhere}.topic-card-score strong{font-weight:700}
+.topic-result-button{min-height:44px;padding:7px 12px;border:1px solid var(--theme-edge,#b9dff1);border-radius:8px;background:#f4faff;color:#155277;font:inherit;font-weight:700;cursor:pointer;margin-left:auto}
+.topic-result-button:focus-visible{outline:2px solid var(--theme-accent,#087fb8);outline-offset:3px}
+@media(min-width:761px){.topic-small-card{grid-template-rows:auto 1fr auto auto}.topic-small-card>.topic-practice{grid-row:4}}
+@media(max-width:760px){.topic-outcome{font-size:11px;gap:5px 8px}.topic-outcome .topic-result-button{padding-inline:10px}}
