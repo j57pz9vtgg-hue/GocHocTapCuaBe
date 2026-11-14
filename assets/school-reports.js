@@ -1,6 +1,29 @@
 // School reports contain only owner-provided dates, subjects and lesson content.
 const schoolReports = [
 {
+  "id": "school-week-2026-11-09-toan",
+  "grade": "1",
+  "subject": "Toán",
+  "start": "2026-11-09",
+  "end": "2026-11-13",
+  "title": "Báo bài tuần 09/11/2026 - 13/11/2026",
+  "layout": "table",
+  "entries": [
+    {
+      "id": "toan-week-2026-11-09",
+      "date": "2026-11-09",
+      "weekStart": "2026-11-09",
+      "weekEnd": "2026-11-13",
+      "day": "Tuần",
+      "periods": "",
+      "subject": "Toán",
+      "title": "Toán: Bài tập tuần",
+      "sections": [],
+      "preparation": []
+    }
+  ]
+},
+{
   "id": "school-week-2026-11-09-vietnamese",
   "grade": "1",
   "subject": "Tiếng Việt",
