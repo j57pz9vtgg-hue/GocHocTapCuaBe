@@ -27,7 +27,7 @@ const LearningSyncCore=(()=>{
  function decode(doc){
   let value=expand(doc.fields);if(doc.kind==='classification')return JSON.parse(value.value);
   if(doc.kind==='worksheet'&&['school-math-v1','school-plan-v1'].includes(value.type))return value;
-  if(doc.kind==='worksheet')return {blanks:Array.from({length:4},(_,i)=>String(value.blanks?.[i]??'')),choices:Array.from({length:4},(_,i)=>value.choices?.[i]===true),updatedAt:value.updatedAt||0};
+  if(doc.kind==='worksheet')return {blanks:Array.from({length:Math.min(6,Math.max(4,...Object.keys(value.blanks||{}).filter(k=>/^[0-5]$/.test(k)).map(k=>Number(k)+1)))},(_,i)=>String(value.blanks?.[i]??'')),choices:Array.from({length:4},(_,i)=>value.choices?.[i]===true),updatedAt:value.updatedAt||0};
   if(doc.kind==='attempt'){const answers={};for(const [id,answer]of Object.entries(value.answers||{})){const i=Array.isArray(value.questionIds)?value.questionIds.indexOf(id):Number(id);if(i>=0&&Number.isInteger(i))answers[i]=answer;}value.answers=answers;}
   return value;
  }

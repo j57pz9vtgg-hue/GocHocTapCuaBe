@@ -13,7 +13,7 @@ test('other subjects use the same table and only supplied Monday lessons are add
 });
 
 test('owner Vietnamese worksheet is attached only to the matching lesson without invented keys',()=>{
- const sheets=api.schoolExerciseWorksheets;assert.deepEqual(Object.keys(sheets),['tieng-viet-2026-10-23']);
+ const sheets=api.schoolExerciseWorksheets;assert.deepEqual(Object.keys(sheets).filter(id=>!id.startsWith('tieng-viet-week-')),['tieng-viet-2026-10-23']);
  const w=sheets['tieng-viet-2026-10-23'];assert.deepEqual(Array.from(w.sounds),['om','ôm','ơm','em','êm','im','um','ai','ay','ây','oi','ôi','ơi']);
  assert.equal(w.blanks.length,4);assert.equal(w.choices.length,2);assert.equal(w.reading.length,2);
  assert.equal(w.words[1][4],'chum');assert.equal(w.phrases[0][3],'gối xôi');
@@ -38,11 +38,11 @@ test('remaining three days preserve all supplied subjects, split-page content an
  assert.equal(all.find(e=>e.id==='global-2026-10-23').preparation[0],'LB: 46-49');
  assert.equal(all.find(e=>e.id==='tieng-viet-2026-10-23').title,'Thực hành');
  for(const r of api.schoolReports)assert.ok(r.entries.every(e=>e.subject===r.subject));
- assert.deepEqual(Object.keys(api.schoolExerciseWorksheets),['tieng-viet-2026-10-23']);
+ assert.deepEqual(Object.keys(api.schoolExerciseWorksheets).filter(id=>!id.startsWith('tieng-viet-week-')),['tieng-viet-2026-10-23']);
 });
 
 test('Lesson36 matches the two supplied textbook pages without invented explanations or exercises',()=>{
- const lessons=api.schoolLessonContents;assert.deepEqual(Object.keys(lessons).filter(id=>!id.startsWith('planned-')),['tieng-viet-2026-10-28-a','tieng-viet-2026-10-27','tieng-viet-2026-10-26','tieng-viet-2026-10-19','tieng-viet-2026-10-20','tieng-viet-2026-10-21-a','tieng-viet-2026-10-21-b','tieng-viet-2026-10-22']);const l=lessons['tieng-viet-2026-10-19'];
+ const lessons=api.schoolLessonContents;assert.deepEqual(Object.keys(lessons).filter(id=>!id.startsWith('planned-')&&!id.startsWith('tieng-viet-week-')),['tieng-viet-2026-10-28-a','tieng-viet-2026-10-27','tieng-viet-2026-10-26','tieng-viet-2026-10-19','tieng-viet-2026-10-20','tieng-viet-2026-10-21-a','tieng-viet-2026-10-21-b','tieng-viet-2026-10-22']);const l=lessons['tieng-viet-2026-10-19'];
  assert.equal(l.recognition,'Hương cốm thơm thôn xóm.');assert.equal(l.blend.word,'xóm');assert.equal(l.words.length,6);assert.deepEqual(Array.from(l.pictureWords),['đom đóm','chó đốm','mâm cơm']);
  assert.equal(l.reading.join(' '),'Hôm qua, cô Mơ ở xóm Hạ đến thăm nhà Hà. Cô cho Hà giỏ cam. Hà chọn quả cam to phần bố. Mẹ khen và thơm lên má Hà.');assert.equal(l.speaking,'Xin lỗi');assert.equal(l.writing[1],'chó đốm mâm cơm');assert.equal('answers' in l,false);
 });
@@ -74,7 +74,7 @@ test('Lesson40 keeps review text and all four supplied story questions without i
 });
 
 test('newly supplied October26–30 week coexists with the original week and is selected independently',()=>{
- assert.equal(api.schoolReports.filter(r=>r.grade==='1'&&r.start<'2026-11-02').length,12);assert.deepEqual(Array.from(api.getModes('Báo bài của trường','1')),['Báo bài tuần 02/11/2026 - 06/11/2026',newWeek,oldWeek,'Tất cả các tuần']);assert.deepEqual(Array.from(api.getModes('Báo bài của trường','2')),[newWeek,'Tất cả các tuần']);
+ assert.equal(api.schoolReports.filter(r=>r.grade==='1'&&r.start<'2026-11-02').length,12);assert.deepEqual(Array.from(api.getModes('Báo bài của trường','1')),['Báo bài tuần 09/11/2026 - 13/11/2026','Báo bài tuần 02/11/2026 - 06/11/2026',newWeek,oldWeek,'Tất cả các tuần']);assert.deepEqual(Array.from(api.getModes('Báo bài của trường','2')),[newWeek,'Tất cả các tuần']);
  for(const [subject,count] of [['Toán',3],['Tiếng Việt',5],['SCIENCE',2],['GLOBAL',1],['ESL',4],['MATHEMATICS',3]]){
   const result=api.getSchoolReports('1',subject,'',newWeek);assert.equal(result.length,1);assert.equal(result[0].entries.length,count);assert.ok(result[0].entries.every(e=>e.subject===subject&&e.date>='2026-10-26'&&e.date<='2026-10-30'));assert.equal(api.getSchoolReports('1',subject).filter(r=>r.start<'2026-11-02').length,2);
  }
@@ -87,7 +87,7 @@ test('new report preserves tests, split-page feelings vocabulary and the newly s
  assert.equal(all.find(e=>e.id==='tieng-viet-2026-10-29').sections[0].lines[0],'Bài 45: Kể chuyện: Sự tích hoa cúc trắng');
  const events=all.filter(e=>e.kind==='event');assert.equal(events.length,0);assert.equal(api.schoolGeneralActivities.length,1);assert.equal(api.schoolGeneralActivities[0].preparation[1],'Mang theo 1 giỏ/túi đựng kẹo để tham gia hoạt động Trick or Treat.');assert.equal('subject' in api.schoolGeneralActivities[0],false);
  for(const e of all){if(!['tieng-viet-2026-10-26','tieng-viet-2026-10-27','tieng-viet-2026-10-28-a'].includes(e.id))assert.equal(api.schoolLessonContents[e.id],undefined);assert.equal(api.schoolExerciseWorksheets[e.id],undefined);}
- assert.deepEqual(Object.keys(api.schoolExerciseWorksheets),['tieng-viet-2026-10-23']);
+ assert.deepEqual(Object.keys(api.schoolExerciseWorksheets).filter(id=>!id.startsWith('tieng-viet-week-')),['tieng-viet-2026-10-23']);
 });
 
 test('all-weeks lessons are ordered oldest first and same-day lessons by their first period without mutating source',()=>{
@@ -97,7 +97,7 @@ test('all-weeks lessons are ordered oldest first and same-day lessons by their f
   for(let i=1;i<rows.length;i++){assert.ok(rows[i-1].date<=rows[i].date);if(rows[i-1].date===rows[i].date)assert.ok(parseInt(rows[i-1].periods,10)<=parseInt(rows[i].periods,10));}
   assert.ok(rows.every(e=>e.subject===subject&&!e.title.includes('HALLOWEEN')));
  }
- const vietnamese=Array.from(api.getSchoolReportEntries('1','Tiếng Việt'));assert.equal(vietnamese[0].id,'tieng-viet-2026-10-19');assert.equal(vietnamese.at(-1).id,'tieng-viet-2026-11-06');assert.ok(vietnamese.findIndex(e=>e.id==='tieng-viet-2026-10-21-a')<vietnamese.findIndex(e=>e.id==='tieng-viet-2026-10-21-b'));
+ const vietnamese=Array.from(api.getSchoolReportEntries('1','Tiếng Việt'));assert.equal(vietnamese[0].id,'tieng-viet-2026-10-19');assert.equal(vietnamese.at(-1).id,'tieng-viet-week-2026-11-09');assert.ok(vietnamese.findIndex(e=>e.id==='tieng-viet-2026-10-21-a')<vietnamese.findIndex(e=>e.id==='tieng-viet-2026-10-21-b'));
  assert.equal(JSON.stringify(api.schoolReports),before);assert.equal(api.getSchoolReportEntries('1','Tiếng Việt','Halloween').length,0);assert.equal(api.getSchoolReportEntries('2','Tiếng Việt').length,0);
 });
 
@@ -123,6 +123,6 @@ test('Grade2 Mathematics has the two owner-requested October29 lessons with inde
 
 test('November2-6 Grade1 report contains only the six supported subjects with20 source lessons',()=>{const week='Báo bài tuần 02/11/2026 - 06/11/2026',reports=api.schoolReports.filter(r=>r.start==='2026-11-02');assert.equal(reports.length,6);const all=reports.flatMap(r=>r.entries);assert.equal(all.length,20);assert.equal(new Set(all.map(e=>e.id)).size,20);for(const [subject,n]of [['Tiếng Việt',6],['Toán',3],['SCIENCE',3],['ESL',4],['GLOBAL',1],['MATHEMATICS',3]]){const es=api.getSchoolReportEntries('1',subject,'',week);assert.equal(es.length,n);assert(es.every(e=>e.date>='2026-11-02'&&e.date<='2026-11-06'));}assert(reports.every(r=>r.grade==='1'));assert.equal(api.getSchoolReportEntries('2','MATHEMATICS','',week).length,0);});
 test('November Vietnamese pages46-50, Friday practice and split Thursday story match the supplied rows',()=>{const es=api.getSchoolReportEntries('1','Tiếng Việt','','Báo bài tuần 02/11/2026 - 06/11/2026');assert.deepEqual(Array.from(es,e=>e.title),['Bài 46: ac ăc âc','Bài 47: oc ôc uc ưc','Bài 48: at ăt ât','Bài 49: ot ôt ơt','Bài 50: Ôn tập','Thực hành']);assert.deepEqual(Array.from(es,e=>e.periods),['8,9','8,9','1,2','3,4','5,6','7,8']);assert.equal(es[4].sections[0].lines[0],'Bài 50: Kể chuyện: Bài học đầu tiên của thỏ con');assert.equal(es[4].preparation[0],'Đọc SGK tr.112-113');for(const e of es){assert.equal(api.schoolLessonContents[e.id],undefined);assert.equal(api.schoolExerciseWorksheets[e.id],undefined);}});
-test('November Science link/pages, continued Math prerequisites and Global vocabulary are preserved',()=>{const week='Báo bài tuần 02/11/2026 - 06/11/2026',science=api.getSchoolReportEntries('1','SCIENCE','',week);assert(science.every(e=>e.links[0].url==='https://wordwall.net/resource/93430256'));assert(science.every(e=>e.preparation[1]==='WB Page: 29 - 31'));const math=api.getSchoolReportEntries('1','MATHEMATICS','',week)[2];assert.equal(math.sections[2].lines[3],'Recall number bonds to 10.');const global=api.getSchoolReportEntries('1','GLOBAL','',week)[0];assert.equal(global.preparation[0],'LB: 54-57');assert.match(global.sections[2].lines[3],/unopened/);assert.equal(api.schoolReports.filter(r=>r.grade==='1').flatMap(r=>r.entries).length,58);});
+test('November Science link/pages, continued Math prerequisites and Global vocabulary are preserved',()=>{const week='Báo bài tuần 02/11/2026 - 06/11/2026',science=api.getSchoolReportEntries('1','SCIENCE','',week);assert(science.every(e=>e.links[0].url==='https://wordwall.net/resource/93430256'));assert(science.every(e=>e.preparation[1]==='WB Page: 29 - 31'));const math=api.getSchoolReportEntries('1','MATHEMATICS','',week)[2];assert.equal(math.sections[2].lines[3],'Recall number bonds to 10.');const global=api.getSchoolReportEntries('1','GLOBAL','',week)[0];assert.equal(global.preparation[0],'LB: 54-57');assert.match(global.sections[2].lines[3],/unopened/);assert.equal(api.schoolReports.filter(r=>r.grade==='1'&&r.start<'2026-11-09').flatMap(r=>r.entries).length,58);});
 
 test('Lesson61 preserves both owner pages134-135 at its stable planned ID',()=>{const id='planned-tieng-viet-lesson-61',l=api.schoolLessonContents[id];assert.equal(l.number,61);assert.equal(l.pages,'134–135');assert.equal(l.partial,false);assert.deepEqual(Array.from(l.sounds),['ong','ông','ung','ưng']);assert.equal(l.recognition,'Những bông hồng rung rinh trong gió.');assert.deepEqual(JSON.parse(JSON.stringify(l.blend)),{initial:'tr',sound:'ong',word:'trong'});assert.deepEqual(Array.from(l.words),['dòng','vòng','bỗng','cộng','thúng','vững','đựng','hừng']);assert.equal(l.wordColumns,4);assert.deepEqual(Array.from(l.pictureWords),['chong chóng','bông súng','bánh chưng']);assert.deepEqual(Array.from(l.writing),['ong ông ung ưng','bông súng bánh chưng']);assert.equal(l.artLabels.length,7);assert.equal(l.reading.length,1);assert.equal(l.reading.join(' '),'Nam theo mẹ đi chợ. Chợ đông vui và bán đủ thứ. Ngay từ cổng là những dãy hàng đồ dùng gia đình. Bên trong là hàng rau, thịt và cá. Nam thích lắm vì lần đầu cùng mẹ đi chợ.');assert.equal(l.speaking,'Chợ và siêu thị');assert.deepEqual(Array.from(l.speakingImages),[5,6]);assert.equal(api.schoolExerciseWorksheets[id],undefined);assert.equal('answer' in l,false);});

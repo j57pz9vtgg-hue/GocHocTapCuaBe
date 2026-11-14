@@ -1,6 +1,29 @@
 // School reports contain only owner-provided dates, subjects and lesson content.
 const schoolReports = [
 {
+  "id": "school-week-2026-11-09-vietnamese",
+  "grade": "1",
+  "subject": "Tiếng Việt",
+  "start": "2026-11-09",
+  "end": "2026-11-13",
+  "title": "Báo bài tuần 09/11/2026 - 13/11/2026",
+  "layout": "table",
+  "entries": [
+    {
+      "id": "tieng-viet-week-2026-11-09",
+      "date": "2026-11-09",
+      "weekStart": "2026-11-09",
+      "weekEnd": "2026-11-13",
+      "day": "Tuần",
+      "periods": "",
+      "subject": "Tiếng Việt",
+      "title": "Tiếng Việt: Ôn tập và bài tập tuần",
+      "sections": [],
+      "preparation": []
+    }
+  ]
+},
+{
   "id": "school-week-2026-11-02-vietnamese",
   "grade": "1",
   "subject": "Tiếng Việt",
@@ -1511,13 +1534,14 @@ function getSchoolReportEntries(grade,subject,query='',week='Tất cả các tu�
  return getSchoolReports(grade,subject,query,week).flatMap(report=>report.entries).sort(compareSchoolEntryDates);
 }
 let schoolReportSelection=null;
+function schoolEntryDateLabel(entry){return entry.weekStart&&entry.weekEnd?`Tuần ${entry.weekStart.slice(8)}/${entry.weekStart.slice(5,7)}–${entry.weekEnd.slice(8)}/${entry.weekEnd.slice(5,7)}`:(({'Thứ Hai':'Thứ 2','Thứ Ba':'Thứ 3','Thứ Tư':'Thứ 4','Thứ Năm':'Thứ 5','Thứ Sáu':'Thứ 6'})[entry.day]||entry.day)+' - '+entry.date.slice(8)+'/'+entry.date.slice(5,7);}
 function renderSchoolLessonCard(entry,index){
  const theme=activeTheme().id,selected=schoolReportSelection?.id===entry.id;
- return `<article class="exercise-card school-report-card ${selected?'school-card-selected':''}" data-school-card="${entry.id}"><div class="exercise-top"><span class="school-card-date">${escapeHTML(({'Thứ Hai':'Thứ 2','Thứ Ba':'Thứ 3','Thứ Tư':'Thứ 4','Thứ Năm':'Thứ 5','Thứ Sáu':'Thứ 6'})[entry.day]||entry.day)} - ${escapeHTML(entry.date.slice(8)+'/'+entry.date.slice(5,7))}</span><div class="exercise-name"><h2>${escapeHTML(entry.title)}</h2>${entry.projected?'<span class="school-plan-tag">Dự kiến</span>':''}</div></div>${entry.projected?`<button type="button" class="school-plan-edit" data-school-plan-edit="${entry.id}" aria-label="Sửa lịch dự kiến ${escapeHTML(entry.title)}">Sửa</button>`:theme!=='pixel'?`<span class="exercise-card-art" aria-hidden="true" style="background-position:${(index%4)*100/3}% ${Math.floor(index%16/4)*100/3}%"></span>`:''}<div class="card-actions"><button class="start-button" data-school-lesson="${entry.id}" aria-controls="school-report-content" aria-pressed="${selected&&schoolReportSelection.kind==='lesson'}">Xem bài học</button><button class="start-button" data-school-exercises="${entry.id}" aria-controls="school-report-content" aria-pressed="${selected&&schoolReportSelection.kind==='exercises'}">Làm bài tập</button></div></article>`;
+ return `<article class="exercise-card school-report-card ${selected?'school-card-selected':''}" data-school-card="${entry.id}"><div class="exercise-top"><span class="school-card-date">${escapeHTML(schoolEntryDateLabel(entry))}</span><div class="exercise-name"><h2>${escapeHTML(entry.title)}</h2>${entry.projected?'<span class="school-plan-tag">Dự kiến</span>':''}</div></div>${entry.projected?`<button type="button" class="school-plan-edit" data-school-plan-edit="${entry.id}" aria-label="Sửa lịch dự kiến ${escapeHTML(entry.title)}">Sửa</button>`:theme!=='pixel'?`<span class="exercise-card-art" aria-hidden="true" style="background-position:${(index%4)*100/3}% ${Math.floor(index%16/4)*100/3}%"></span>`:''}<div class="card-actions"><button class="start-button" data-school-lesson="${entry.id}" aria-controls="school-report-content" aria-pressed="${selected&&schoolReportSelection.kind==='lesson'}">Xem bài học</button><button class="start-button" data-school-exercises="${entry.id}" aria-controls="school-report-content" aria-pressed="${selected&&schoolReportSelection.kind==='exercises'}">Làm bài tập</button></div></article>`;
 }
 function renderSchoolReportContent(entry,kind){
  if(!entry)return '<div class="school-panel-empty"><h2 id="school-content-title" tabindex="-1">Nội dung bài học và bài tập</h2><p>Chọn Xem bài học hoặc Làm bài tập ở danh sách bên trái.</p></div>';
- const header=`<header class="school-content-heading"><p>${kind==='exercises'?'Làm bài tập':'Xem bài học'} · ${escapeHTML(entry.day)} · ${escapeHTML(entry.date.slice(8)+'/'+entry.date.slice(5,7))}</p><h2 id="school-content-title" tabindex="-1">${escapeHTML(entry.title)}</h2>${entry.projected?`<div class="school-plan-tools"><span class="school-plan-tag">Dự kiến</span><button type="button" data-school-plan-edit="${entry.id}">Sửa lịch dự kiến</button></div>`:''}</header>`;
+ const header=`<header class="school-content-heading"><p>${kind==='exercises'?'Làm bài tập':'Xem bài học'} · ${escapeHTML(schoolEntryDateLabel(entry))}</p><h2 id="school-content-title" tabindex="-1">${escapeHTML(entry.title)}</h2>${entry.projected?`<div class="school-plan-tools"><span class="school-plan-tag">Dự kiến</span><button type="button" data-school-plan-edit="${entry.id}">Sửa lịch dự kiến</button></div>`:''}</header>`;
  if(kind==='lesson'&&schoolLessonContents[entry.id])return header+renderSchoolLessonContent(entry);
  if(kind==='exercises'&&schoolMathWorksheets[entry.id])return header+renderSchoolMathWorksheet(entry);
  if(kind==='exercises'&&schoolExerciseWorksheets[entry.id])return header+renderSchoolWorksheet(entry);
@@ -1549,6 +1573,70 @@ document.addEventListener('click',event=>{
 document.addEventListener('input',event=>{if(event.target.matches('[data-school-blank],[data-school-choice]')){const panel=event.target.closest('#school-report-content');if(panel)saveSchoolExerciseDraft(panel);}});
 // Exercise text transcribed from the owner's worksheet. No answer key has been supplied.
 const schoolExerciseWorksheets={
+ "tieng-viet-week-2026-11-09":{
+  "kind": "weekly-vietnamese",
+  "blankCount": 6,
+  "sounds": [
+    "et",
+    "êt",
+    "it",
+    "ut",
+    "ưt",
+    "ap",
+    "ăp",
+    "âp",
+    "op",
+    "ôp",
+    "ơp"
+  ],
+  "words": [
+    [
+      "lũ lụt",
+      "bắp cải",
+      "hộp sữa",
+      "lớp học",
+      "con vịt"
+    ],
+    [
+      "lắp ráp",
+      "bút sáp",
+      "nắp chai",
+      "quả mít",
+      "vết mực"
+    ]
+  ],
+  "reading": [
+    "Lớp học của em ngăn nắp.",
+    "Bà cho mẹ quả mít to."
+  ],
+  "blanks": [
+    {
+      "before": "v",
+      "after": " mực",
+      "tone": "sắc"
+    },
+    {
+      "before": "chim v",
+      "after": "",
+      "tone": "nặng"
+    },
+    {
+      "before": "h",
+      "after": " thở",
+      "tone": "sắc"
+    }
+  ],
+  "columnA": [
+    "Bé hồi hộp",
+    "Ba cho bé",
+    "Mẹ xào"
+  ],
+  "columnB": [
+    "cái xe đạp màu tím.",
+    "bắp cải.",
+    "khi mở hộp quà."
+  ]
+},
  'tieng-viet-2026-10-23':{
   sounds:['om','ôm','ơm','em','êm','im','um','ai','ay','ây','oi','ôi','ơi'],
   words:[['khom','tôm','cơm','kem','nệm','chai','tay','môi'],['mới','may','bờm','đêm','chum','bay','xây','chơi']],
@@ -1578,11 +1666,85 @@ function saveSchoolExerciseDraft(dialog){
 function renderSchoolWorksheet(entry){
  const art=(index,label)=>`<span class="school-worksheet-art school-worksheet-art-${index}" role="img" aria-label="${label}"></span>`;
  const id=entry.id,worksheet=schoolExerciseWorksheets[id];
+ if(worksheet.kind==='weekly-vietnamese')return renderSchoolWeeklyVietnamese(entry,worksheet);
  const draft=readSchoolExerciseDraft(id),table=(rows,label)=>`<table aria-label="${label}"><tbody>${rows.map(row=>`<tr>${row.map(word=>`<td>${escapeHTML(word)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
  return `<div class="school-exercise-paper"><section aria-labelledby="school-reading-title"><h3 id="school-reading-title"><span>1</span> Luyện đọc <small>(Nhờ phụ huynh giúp con luyện đọc nhiều lần)</small></h3><p class="school-sounds">${worksheet.sounds.map(word=>`<span>${word}</span>`).join('')}</p>${table(worksheet.words,'Luyện đọc từ')}${table(worksheet.phrases,'Luyện đọc cụm từ')}${worksheet.reading.map(line=>`<p class="school-reading-line">${escapeHTML(line)}</p>`).join('')}</section><section aria-labelledby="school-blanks-title"><h3 id="school-blanks-title"><span>2</span> Điền vào chỗ trống: <em>ai/ay</em></h3><div class="school-blanks">${worksheet.blanks.map(([before,after],i)=>`<div class="school-blank-item">${art(i,['Những bàn tay giơ lên','Máy bay đồ chơi','Máy sấy màu hồng','Gà mái trong ổ'][i])}<label><span>${escapeHTML(before)}</span><input data-school-blank="${i}" aria-label="Điền ai hoặc ay, câu ${i+1}: ${escapeHTML(before)}…${escapeHTML(after)}" type="text" maxlength="20" autocomplete="off" spellcheck="false" value="${escapeHTML(typeof draft.blanks?.[i]==='string'?draft.blanks[i].slice(0,20):'')}"><span>${escapeHTML(after)}</span></label></div>`).join('')}</div></section><section aria-labelledby="school-choices-title"><h3 id="school-choices-title"><span>3</span> Đánh dấu ✓ vào câu phù hợp với hình:</h3><div class="school-picture-choices">${worksheet.choices.map((rows,group)=>`<fieldset><legend>Hình ${group+1}</legend>${art(group+4,group===0?'Hai bạn nhỏ với dây nhảy':'Hai bạn nhỏ ngồi trên đu quay có các ghế hình máy bay')}${rows.map((text,i)=>`<label><input type="checkbox" data-school-choice="${group*2+i}" ${draft.choices?.[group*2+i]===true?'checked':''}><span>${escapeHTML(text)}</span></label>`).join('')}</fieldset>`).join('')}</div></section><footer><p>Chờ đáp án do phụ huynh cung cấp.</p><button type="button" data-school-exercise-save>Lưu bài làm</button><p data-school-save-status role="status">Bài làm được lưu trên trình duyệt này.</p></footer></div>`;
 }
 // Lesson 36, pages84–85, transcribed from the owner's two textbook pages.
 const schoolLessonContents={
+ "tieng-viet-week-2026-11-09":{
+  "kind": "weekly-review",
+  "groups": [
+    {
+      "sounds": [
+        "et",
+        "êt",
+        "it"
+      ],
+      "blend": {
+        "initial": "v",
+        "sound": "et",
+        "word": "vẹt"
+      },
+      "words": [
+        "con vẹt",
+        "bồ kết",
+        "quả mít"
+      ]
+    },
+    {
+      "sounds": [
+        "ut",
+        "ưt"
+      ],
+      "blend": {
+        "initial": "s",
+        "sound": "ut",
+        "word": "sút"
+      },
+      "words": [
+        "bút chì",
+        "mứt dừa",
+        "nứt nẻ"
+      ]
+    },
+    {
+      "sounds": [
+        "ap",
+        "ăp",
+        "âp"
+      ],
+      "blend": {
+        "initial": "đ",
+        "sound": "ap",
+        "word": "đạp"
+      },
+      "words": [
+        "xe đạp",
+        "cặp da",
+        "cá mập"
+      ]
+    },
+    {
+      "sounds": [
+        "op",
+        "ôp",
+        "ơp"
+      ],
+      "blend": {
+        "initial": "h",
+        "sound": "op",
+        "word": "họp"
+      },
+      "words": [
+        "con cọp",
+        "lốp xe",
+        "tia chớp"
+      ]
+    }
+  ],
+  "reading": "Trời xám xịt, mưa sầm sập như trút. Sấm sét ì ầm xa xa. Cây cỏ ngả rạp vào nhau. Một lúc sau, mưa lộp độp rồi dứt hẳn. Mặt trời ló khỏi chân mây. Vạn vật như thức dậy, đầy ắp sắc màu."
+},
  'planned-tieng-viet-lesson-61':{
   number:61,pages:'134–135',partial:false,sounds:['ong','ông','ung','ưng'],
   recognition:'Những bông hồng rung rinh trong gió.',
@@ -1658,7 +1820,7 @@ const schoolLessonContents={
  }
 };
 function renderSchoolLessonContent(entry){
- const lesson=schoolLessonContents[entry.id];if(lesson.kind==='review')return renderSchoolReviewLesson(lesson,entry.id);
+ const lesson=schoolLessonContents[entry.id];if(lesson.kind==='weekly-review')return renderSchoolWeeklyReview(lesson,entry.id);if(lesson.kind==='review')return renderSchoolReviewLesson(lesson,entry.id);
  const labels=lesson.artLabels||['Bà và em bé bên những mẹt cốm và lá sen trong sân nhà','đom đóm','chó đốm','mâm cơm','Cô Mơ trao giỏ cam cho Hà trước hiên nhà','Bạn nhỏ đá bóng trong nhà làm lọ hoa đổ, mẹ đứng ở cửa'],art=(index,label)=>`<span class="school-lesson-art school-lesson-art-${index}" role="img" aria-label="${escapeHTML(label)}"></span>`;
  const passage=lesson.reading?.length?`<section aria-labelledby="school-read-passage">${schoolReadingHeading(entry.id,"school-read-passage",4)}${art(lesson.readingImage??4,labels[lesson.readingImage??4])}<div class="school-lesson-passage">${lesson.reading.map(line=>`<p>${escapeHTML(line)}</p>`).join('')}</div></section>`:'';
  const speaking=lesson.speaking?`<section aria-labelledby="school-speaking"><h3 id="school-speaking"><span>5</span> Nói</h3><p class="school-speaking-topic">${escapeHTML(lesson.speaking)}</p><div class="school-speaking-images" style="--school-speaking-columns:${(lesson.speakingImages||[5]).length}">${(lesson.speakingImages||[5]).map(index=>art(index,labels[index])).join('')}</div></section>`:'';
@@ -1672,4 +1834,14 @@ function renderSchoolReviewLesson(lesson,entryId){
 
 function renderSchoolWritingModel(lines,number){
  return `<div class="school-writing-model school-writing-grid">${lines.map((line,i)=>{const id=`school-writing-${number}-${i}`;return `<svg class="school-writing-line" viewBox="0 0 680 80" role="img" aria-label="${escapeHTML(line)}"><defs><pattern id="${id}" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M 8 0 H 0 V 8" fill="none" stroke="#b8e0e8" stroke-width="0.6"/></pattern></defs><rect width="680" height="80" fill="url(#${id})"/><path d="M0 48H680" stroke="#69bbc9" stroke-width="0.8"/><text x="12" y="48">${escapeHTML(line)}</text></svg>`;}).join('')}</div>`;
+}
+
+// Weekly materials keep the source's date range; they do not confirm a daily timetable.
+function schoolWeeklyArt(index,label){return `<span class="school-weekly-art" style="--art-x:${(index%4)*100/3}%;--art-y:${Math.floor(index/4)*100/3}%" role="img" aria-label="${escapeHTML(label)}"></span>`;}
+function renderSchoolWeeklyReview(lesson,id){
+ return `<article class="school-lesson-page school-weekly-review"><h3>Nội dung Tiếng Việt tuần 09–13/11/2026</h3><section aria-labelledby="school-weekly-read">${schoolReadingHeading(id,'school-weekly-read',1)}<div class="school-weekly-groups">${lesson.groups.map((group,i)=>`<section class="school-weekly-group"><h4>${group.sounds.map(escapeHTML).join('　')}</h4><div class="school-lesson-blend"><span>${escapeHTML(group.blend.initial)}</span><span>${escapeHTML(group.blend.sound)}</span><strong>${escapeHTML(group.blend.word)}</strong></div><div class="school-weekly-words">${group.words.map((word,j)=>`<figure>${schoolWeeklyArt(i*3+j,word)}<figcaption>${escapeHTML(word)}</figcaption></figure>`).join('')}</div></section>`).join('')}</div></section><section aria-labelledby="school-weekly-passage">${schoolReadingHeading(id,'school-weekly-passage',2)}<p class="school-weekly-passage">${escapeHTML(lesson.reading)}</p>${schoolWeeklyArt(12,'Ao cá sau cơn mưa, mặt trời và cầu vồng')}</section></article>`;
+}
+function renderSchoolWeeklyVietnamese(entry,worksheet){
+ const draft=readSchoolExerciseDraft(entry.id),value=i=>escapeHTML(typeof draft.blanks?.[i]==='string'?draft.blanks[i].slice(0,20):'');
+ return `<div class="school-exercise-paper school-weekly-vietnamese"><section aria-labelledby="school-reading-title"><h3 id="school-reading-title"><span>1</span> Luyện đọc <small>(Nhờ phụ huynh giúp con luyện đọc nhiều lần)</small></h3><p class="school-sounds">${worksheet.sounds.map(word=>`<span>${escapeHTML(word)}</span>`).join('')}</p><table aria-label="Luyện đọc từ"><tbody>${worksheet.words.map(row=>`<tr>${row.map(word=>`<td>${escapeHTML(word)}</td>`).join('')}</tr>`).join('')}</tbody></table>${worksheet.reading.map(line=>`<p class="school-reading-line">${escapeHTML(line)}</p>`).join('')}</section><section aria-labelledby="school-blanks-title"><h3 id="school-blanks-title"><span>2</span> Điền vào chỗ trống <em>et, êt hay it.</em></h3><div class="school-blanks">${worksheet.blanks.map((item,i)=>`<div class="school-blank-item">${schoolWeeklyArt(13+i,['Vết mực tím','Chim vẹt','Bạn nhỏ đang hít thở'][i])}<label><span>${escapeHTML(item.before)}</span><span class="school-tone-slot ${item.tone==='nặng'?'tone-below':'tone-above'}"><input data-school-blank="${i}" aria-label="Câu ${i+1}: ${escapeHTML(item.before)}…${escapeHTML(item.after)}; dấu ${item.tone} in sẵn, điền et, êt hoặc it" type="text" maxlength="3" autocomplete="off" spellcheck="false" value="${value(i)}"><span aria-hidden="true" class="school-printed-tone">${item.tone==='nặng'?'̣':'́'}</span></span><span>${escapeHTML(item.after)}</span></label></div>`).join('')}</div></section><section aria-labelledby="school-matching-title"><h3 id="school-matching-title"><span>3</span> Nối từ ngữ ở cột A với từ ngữ ở cột B để tạo câu:</h3><p>Chọn phần ở cột B để nối với mỗi phần ở cột A.</p><div class="school-weekly-matching"><div><h4>Cột A</h4>${worksheet.columnA.map((left,i)=>`<label><span>${escapeHTML(left)}</span><select data-school-blank="${i+3}" aria-label="Nối ${escapeHTML(left)} với cột B"><option value="">Chọn ở cột B</option>${worksheet.columnB.map((right,j)=>`<option value="${j}" ${value(i+3)===String(j)?'selected':''}>B${j+1}: ${escapeHTML(right)}</option>`).join('')}</select></label>`).join('')}</div><div><h4>Cột B</h4><ol>${worksheet.columnB.map(right=>`<li>${escapeHTML(right)}</li>`).join('')}</ol></div></div></section><footer><p>Chờ đáp án do phụ huynh cung cấp.</p><button type="button" data-school-exercise-save>Lưu bài làm</button><p data-school-save-status role="status">Bài làm được tự lưu trên trình duyệt này.</p></footer></div>`;
 }

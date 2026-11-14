@@ -34,7 +34,7 @@
   if(kind==='preferences')return key==='theme'&&referenceThemes.some(t=>t.id===value.theme);
   if(kind==='worksheet'&&typeof isSchoolPlanId==='function'&&isSchoolPlanId(key))return validSchoolPlanDraft(key,value);
   if(kind==='worksheet'&&schoolMathWorksheets[key])return validSchoolMathDraft(key,value);
-  if(kind==='worksheet')return !!schoolExerciseWorksheets[key]&&Array.isArray(value.blanks)&&value.blanks.length<=4&&value.blanks.every(v=>typeof v==='string'&&v.length<=20)&&Array.isArray(value.choices)&&value.choices.length<=4&&value.choices.every(v=>typeof v==='boolean');
+  if(kind==='worksheet')return !!schoolExerciseWorksheets[key]&&Array.isArray(value.blanks)&&value.blanks.length<=(schoolExerciseWorksheets[key].blankCount||4)&&value.blanks.every(v=>typeof v==='string'&&v.length<=20)&&Array.isArray(value.choices)&&value.choices.length<=4&&value.choices.every(v=>typeof v==='boolean');
   const [grade,program,subject,mode,paper]=key.split('|');
   if(key.split('|').length!==5||!/^([1-9]|1[0-2])$/.test(grade)||!programs.includes(program)||!getSubjects(program).includes(subject)||!modes.includes(mode)||!value.answers||typeof value.answers!=='object'||Array.isArray(value.answers)||!Number.isFinite(value.startedAt)||!Number.isFinite(value.updatedAt))return false;
   if(!getPapers(program,subject,grade,mode).some(p=>p.id===paper)&&!/^timo-group-[1-5]-/.test(paper)&&!(mode===modes[2]&&typeof getPracticeTopicGroups==='function'&&getPracticeTopicGroups(program,subject,grade).some(g=>g.topics.some(t=>t.id===paper))))return false;
