@@ -1,6 +1,28 @@
 // School reports contain only owner-provided dates, subjects and lesson content.
 const schoolReports = [
 {
+  "id": "school-week-2026-11-16-grade2-vietnamese",
+  "grade": "2",
+  "subject": "Tiếng Việt",
+  "start": "2026-11-16",
+  "end": "2026-11-20",
+  "title": "Báo bài tuần 16/11/2026 - 20/11/2026",
+  "layout": "table",
+  "entries": [
+    {
+      "id": "grade2-tieng-viet-homework-2026-11-16",
+      "date": "2026-11-16",
+      "day": "Thứ Hai",
+      "periods": "",
+      "subject": "Tiếng Việt",
+      "title": "Bài tập về nhà thứ Hai",
+      "sections": [],
+      "preparation": [],
+      "homeworkTitle": "Nghe – viết: Nặn đồ chơi"
+    }
+  ]
+},
+{
   "id": "school-week-2026-11-09-toan",
   "grade": "1",
   "subject": "Toán",
@@ -1565,10 +1587,11 @@ function renderSchoolLessonCard(entry,index){
 function renderSchoolReportContent(entry,kind){
  if(!entry)return '<div class="school-panel-empty"><h2 id="school-content-title" tabindex="-1">Nội dung bài học và bài tập</h2><p>Chọn Xem bài học hoặc Làm bài tập ở danh sách bên trái.</p></div>';
  const header=`<header class="school-content-heading"><p>${kind==='exercises'?'Làm bài tập':'Xem bài học'} · ${escapeHTML(schoolEntryDateLabel(entry))}</p><h2 id="school-content-title" tabindex="-1">${escapeHTML(entry.title)}</h2>${entry.projected?`<div class="school-plan-tools"><span class="school-plan-tag">Dự kiến</span><button type="button" data-school-plan-edit="${entry.id}">Sửa lịch dự kiến</button></div>`:''}</header>`;
+ if(kind==='lesson'&&schoolExerciseWorksheets[entry.id]?.kind==='dictation')return header+renderSchoolDictation(entry,false);
  if(kind==='lesson'&&schoolLessonContents[entry.id])return header+renderSchoolLessonContent(entry);
  if(kind==='exercises'&&schoolMathWorksheets[entry.id])return header+renderSchoolMathWorksheet(entry);
  if(kind==='exercises'&&schoolExerciseWorksheets[entry.id])return header+renderSchoolWorksheet(entry);
- return header+`<p class="school-panel-notice" role="status">${kind==='lesson'?'Đang chờ nội dung bài học mới để bổ sung.':'Bài học này chưa có bài tập. Đang chờ bổ sung.'}</p>`;
+ return header+`<p class="school-panel-notice" role="status">${kind==='lesson'?'Đang chờ nội dung bài học mới để bổ sung.':escapeHTML(entry.pendingExerciseMessage||'Bài học này chưa có bài tập. Đang chờ bổ sung.')}</p>`;
 }
 function renderSchoolReports(){
  const entries=getSchoolReportEntries(state.grade,state.subject,state.search,state.mode);
@@ -1596,6 +1619,32 @@ document.addEventListener('click',event=>{
 document.addEventListener('input',event=>{if(event.target.matches('[data-school-blank],[data-school-choice]')){const panel=event.target.closest('#school-report-content');if(panel)saveSchoolExerciseDraft(panel);}});
 // Exercise text transcribed from the owner's worksheet. No answer key has been supplied.
 const schoolExerciseWorksheets={
+ "grade2-tieng-viet-homework-2026-11-16":{
+  "kind": "dictation",
+  "blankMaxLength": 2000,
+  "title": "Nghe – viết: Nặn đồ chơi",
+  "author": "Nguyễn Nhật Ánh",
+  "stanzas": [
+    [
+      "Bên thềm gió mát,",
+      "Bé nặn đồ chơi.",
+      "Mèo nằm vẫy đuôi,",
+      "Tròn xoe đôi mắt."
+    ],
+    [
+      "Đây là quả thị,",
+      "Đây là quả na,",
+      "Quả này phần mẹ,",
+      "Quả này phần cha."
+    ],
+    [
+      "Đây chiếc cối nhỏ,",
+      "Bé nặn thật tròn",
+      "Biếu bà đấy nhé,",
+      "Giã trầu thêm ngon."
+    ]
+  ]
+},
  "tieng-viet-week-2026-11-09":{
   "kind": "weekly-vietnamese",
   "blankCount": 6,
@@ -1689,6 +1738,7 @@ function saveSchoolExerciseDraft(dialog){
 function renderSchoolWorksheet(entry){
  const art=(index,label)=>`<span class="school-worksheet-art school-worksheet-art-${index}" role="img" aria-label="${label}"></span>`;
  const id=entry.id,worksheet=schoolExerciseWorksheets[id];
+ if(worksheet.kind==='dictation')return renderSchoolDictation(entry,true);
  if(worksheet.kind==='weekly-vietnamese')return renderSchoolWeeklyVietnamese(entry,worksheet);
  const draft=readSchoolExerciseDraft(id),table=(rows,label)=>`<table aria-label="${label}"><tbody>${rows.map(row=>`<tr>${row.map(word=>`<td>${escapeHTML(word)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
  return `<div class="school-exercise-paper"><section aria-labelledby="school-reading-title"><h3 id="school-reading-title"><span>1</span> Luyện đọc <small>(Nhờ phụ huynh giúp con luyện đọc nhiều lần)</small></h3><p class="school-sounds">${worksheet.sounds.map(word=>`<span>${word}</span>`).join('')}</p>${table(worksheet.words,'Luyện đọc từ')}${table(worksheet.phrases,'Luyện đọc cụm từ')}${worksheet.reading.map(line=>`<p class="school-reading-line">${escapeHTML(line)}</p>`).join('')}</section><section aria-labelledby="school-blanks-title"><h3 id="school-blanks-title"><span>2</span> Điền vào chỗ trống: <em>ai/ay</em></h3><div class="school-blanks">${worksheet.blanks.map(([before,after],i)=>`<div class="school-blank-item">${art(i,['Những bàn tay giơ lên','Máy bay đồ chơi','Máy sấy màu hồng','Gà mái trong ổ'][i])}<label><span>${escapeHTML(before)}</span><input data-school-blank="${i}" aria-label="Điền ai hoặc ay, câu ${i+1}: ${escapeHTML(before)}…${escapeHTML(after)}" type="text" maxlength="20" autocomplete="off" spellcheck="false" value="${escapeHTML(typeof draft.blanks?.[i]==='string'?draft.blanks[i].slice(0,20):'')}"><span>${escapeHTML(after)}</span></label></div>`).join('')}</div></section><section aria-labelledby="school-choices-title"><h3 id="school-choices-title"><span>3</span> Đánh dấu ✓ vào câu phù hợp với hình:</h3><div class="school-picture-choices">${worksheet.choices.map((rows,group)=>`<fieldset><legend>Hình ${group+1}</legend>${art(group+4,group===0?'Hai bạn nhỏ với dây nhảy':'Hai bạn nhỏ ngồi trên đu quay có các ghế hình máy bay')}${rows.map((text,i)=>`<label><input type="checkbox" data-school-choice="${group*2+i}" ${draft.choices?.[group*2+i]===true?'checked':''}><span>${escapeHTML(text)}</span></label>`).join('')}</fieldset>`).join('')}</div></section><footer><p>Chờ đáp án do phụ huynh cung cấp.</p><button type="button" data-school-exercise-save>Lưu bài làm</button><p data-school-save-status role="status">Bài làm được lưu trên trình duyệt này.</p></footer></div>`;
@@ -1867,4 +1917,9 @@ function renderSchoolWeeklyReview(lesson,id){
 function renderSchoolWeeklyVietnamese(entry,worksheet){
  const draft=readSchoolExerciseDraft(entry.id),value=i=>escapeHTML(typeof draft.blanks?.[i]==='string'?draft.blanks[i].slice(0,20):'');
  return `<div class="school-exercise-paper school-weekly-vietnamese"><section aria-labelledby="school-reading-title"><h3 id="school-reading-title"><span>1</span> Luyện đọc <small>(Nhờ phụ huynh giúp con luyện đọc nhiều lần)</small></h3><p class="school-sounds">${worksheet.sounds.map(word=>`<span>${escapeHTML(word)}</span>`).join('')}</p><table aria-label="Luyện đọc từ"><tbody>${worksheet.words.map(row=>`<tr>${row.map(word=>`<td>${escapeHTML(word)}</td>`).join('')}</tr>`).join('')}</tbody></table>${worksheet.reading.map(line=>`<p class="school-reading-line">${escapeHTML(line)}</p>`).join('')}</section><section aria-labelledby="school-blanks-title"><h3 id="school-blanks-title"><span>2</span> Điền vào chỗ trống <em>et, êt hay it.</em></h3><div class="school-blanks">${worksheet.blanks.map((item,i)=>`<div class="school-blank-item">${schoolWeeklyArt(13+i,['Vết mực tím','Chim vẹt','Bạn nhỏ đang hít thở'][i])}<label><span>${escapeHTML(item.before)}</span><span class="school-tone-slot ${item.tone==='nặng'?'tone-below':'tone-above'}"><input data-school-blank="${i}" aria-label="Câu ${i+1}: ${escapeHTML(item.before)}…${escapeHTML(item.after)}; dấu ${item.tone} in sẵn, điền et, êt hoặc it" type="text" maxlength="3" autocomplete="off" spellcheck="false" value="${value(i)}"><span aria-hidden="true" class="school-printed-tone">${item.tone==='nặng'?'̣':'́'}</span></span><span>${escapeHTML(item.after)}</span></label></div>`).join('')}</div></section><section aria-labelledby="school-matching-title"><h3 id="school-matching-title"><span>3</span> Nối từ ngữ ở cột A với từ ngữ ở cột B để tạo câu:</h3><p>Chọn phần ở cột B để nối với mỗi phần ở cột A.</p><div class="school-weekly-matching"><div><h4>Cột A</h4>${worksheet.columnA.map((left,i)=>`<label><span>${escapeHTML(left)}</span><select data-school-blank="${i+3}" aria-label="Nối ${escapeHTML(left)} với cột B"><option value="">Chọn ở cột B</option>${worksheet.columnB.map((right,j)=>`<option value="${j}" ${value(i+3)===String(j)?'selected':''}>B${j+1}: ${escapeHTML(right)}</option>`).join('')}</select></label>`).join('')}</div><div><h4>Cột B</h4><ol>${worksheet.columnB.map(right=>`<li>${escapeHTML(right)}</li>`).join('')}</ol></div></div></section><footer><p>Chờ đáp án do phụ huynh cung cấp.</p><button type="button" data-school-exercise-save>Lưu bài làm</button><p data-school-save-status role="status">Bài làm được tự lưu trên trình duyệt này.</p></footer></div>`;
+}
+
+function renderSchoolDictation(entry,exercise){
+ const sheet=schoolExerciseWorksheets[entry.id],draft=exercise?readSchoolExerciseDraft(entry.id):{};
+ return `<article class="school-exercise-paper school-dictation"><h3>${escapeHTML(sheet.title)}</h3>${schoolDictationSpeech(sheet.stanzas.map(lines=>lines.join("\n")).join("\n\n"))}${sheet.stanzas.map(lines=>`<p>${lines.map(escapeHTML).join('<br>')}</p>`).join('')}<p><em>${escapeHTML(sheet.author)}</em></p>${exercise?`<label for="school-dictation-writing">Bài viết của em</label><textarea id="school-dictation-writing" data-school-blank="0" aria-label="Bài viết Nghe – viết: Nặn đồ chơi" maxlength="2000" rows="12" style="display:block;box-sizing:border-box;width:100%;font:inherit;line-height:1.8;padding:12px;border:1px solid #8dbbd8;border-radius:8px" spellcheck="false">${escapeHTML(typeof draft.blanks?.[0]==='string'?draft.blanks[0]:'')}</textarea><footer><p>Chờ đáp án do phụ huynh cung cấp.</p><button type="button" data-school-exercise-save>Lưu bài làm</button><p data-school-save-status role="status">Bài làm được tự lưu trên trình duyệt này.</p></footer>`:''}</article>`;
 }

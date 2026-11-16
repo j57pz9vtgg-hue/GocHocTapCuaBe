@@ -55,3 +55,31 @@ function schoolReadingHeading(lessonId,headingId,number){
  if(globalThis.LearningAccounts?.isBlocked())window.LearningReading.eraseCurrent().catch(()=>{});
  window.addEventListener('pagehide',stop);
 })();
+
+// Dictation speech is started only by the learner's button; no microphone is needed.
+function schoolDictationSpeech(text){return `<div class="school-dictation-speech" data-dictation-speech="${escapeHTML(text)}"><label>Tốc độ đọc <select data-dictation-rate aria-label="Tốc độ đọc tiếng Việt"><option value="0.65">Chậm</option><option value="0.85">Vừa</option><option value="1">Bình thường</option></select></label><div><button type="button" data-dictation-read>▶ Đọc tiếng Việt</button><button type="button" data-dictation-pause disabled>Tạm dừng</button><button type="button" data-dictation-stop disabled>Dừng</button></div><p data-dictation-status role="status" aria-live="polite">Bấm Đọc tiếng Việt để nghe và chép theo.</p></div>`;}
+(()=>{
+ let active=null;
+ function status(panel,text){panel.querySelector('[data-dictation-status]').textContent=text;}
+ function reset(panel){panel.querySelector('[data-dictation-pause]').disabled=true;panel.querySelector('[data-dictation-pause]').textContent='Tạm dừng';panel.querySelector('[data-dictation-stop]').disabled=true;}
+ function stop(message='Đã dừng đọc.'){if(!active)return;const old=active;active=null;globalThis.speechSynthesis?.cancel();reset(old.panel);status(old.panel,message);}
+ document.addEventListener('click',event=>{
+  const button=event.target.closest('[data-dictation-read],[data-dictation-pause],[data-dictation-stop]');if(!button)return;
+  const panel=button.closest('[data-dictation-speech]'),synth=globalThis.speechSynthesis;
+  if(!synth||typeof SpeechSynthesisUtterance==='undefined'){status(panel,'Trình duyệt chưa hỗ trợ đọc thành tiếng. Hãy thử Chrome hoặc Safari mới.');return;}
+  if(button.hasAttribute('data-dictation-stop')){stop();return;}
+  if(button.hasAttribute('data-dictation-pause')){if(active?.panel!==panel)return;if(active.paused){synth.resume();active.paused=false;button.textContent='Tạm dừng';status(panel,'Đang đọc tiếng Việt…');}else{synth.pause();active.paused=true;button.textContent='Đọc tiếp';status(panel,'Đã tạm dừng. Bấm Đọc tiếp khi chép xong.');}return;}
+  stop();
+  const utterance=new SpeechSynthesisUtterance(panel.dataset.dictationSpeech);utterance.lang='vi-VN';utterance.rate=Number(panel.querySelector('[data-dictation-rate]').value)||0.65;
+  const voices=synth.getVoices(),voice=voices.find(v=>/^vi(-|_)?/i.test(v.lang));if(voice)utterance.voice=voice;
+  const session={panel,utterance,paused:false};active=session;
+  panel.querySelector('[data-dictation-pause]').disabled=false;panel.querySelector('[data-dictation-stop]').disabled=false;
+  status(panel,'Đang đọc tiếng Việt…');
+  utterance.onend=()=>{if(active!==session)return;active=null;reset(panel);status(panel,'Đã đọc xong. Bé có thể bấm đọc lại.');};
+  utterance.onerror=()=>{if(active!==session)return;active=null;reset(panel);status(panel,'Chưa đọc được tiếng Việt. Hãy kiểm tra âm lượng và giọng tiếng Việt của thiết bị rồi thử lại.');};
+  try{synth.speak(utterance);}catch{utterance.onerror();}
+ });
+ document.addEventListener('change',event=>{if(event.target.matches('[data-dictation-rate]')&&active?.panel===event.target.closest('[data-dictation-speech]'))stop('Đã đổi tốc độ. Bấm Đọc tiếng Việt để nghe lại.');});
+ new MutationObserver(()=>{if(active&&!active.panel.isConnected)stop();}).observe(document.documentElement,{childList:true,subtree:true});
+ window.addEventListener('pagehide',()=>stop());
+})();

@@ -777,3 +777,5 @@
 .weekly-math-house:nth-child(2) strong{top:48%}.weekly-math-house:nth-child(3) strong{top:55%}.weekly-math-house:nth-child(4) strong{top:54%;left:28%}
 
 .weekly-math-candy:nth-child(7){background:repeating-linear-gradient(35deg,#ffc270 0 14px,#ff8b87 14px 28px)}.weekly-math-story>.school-weekly-math-art{clip-path:inset(0 2% 0 0)}
+.school-dictation-speech{border:1px solid #a6c9df;border-radius:10px;padding:12px;background:#f2f9ff;margin-bottom:20px;font:16px/1.5 Arial,sans-serif;color:#173653}.school-dictation-speech>div{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.school-dictation-speech button,.school-dictation-speech select{min-height:44px;border:1px solid #78abc8;border-radius:7px;background:white;color:#17425f;padding:8px 12px;font:inherit}.school-dictation-speech button:disabled{opacity:.55}.school-dictation-speech p{margin-bottom:0;font-size:14px}
+.school-dictation>p{margin:0 0 18px}
