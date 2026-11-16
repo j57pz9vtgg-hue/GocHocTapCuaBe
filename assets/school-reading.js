@@ -57,28 +57,61 @@ function schoolReadingHeading(lessonId,headingId,number){
 })();
 
 // Dictation speech is started only by the learner's button; no microphone is needed.
-function schoolDictationSpeech(text){return `<details class="school-dictation-speech" data-dictation-speech="${escapeHTML(text)}"><summary aria-label="Tùy chọn đọc tiếng Việt" title="Đọc tiếng Việt"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></svg></summary><div class="school-dictation-options"><label>Tốc độ đọc <select data-dictation-rate aria-label="Tốc độ đọc tiếng Việt"><option value="0.65">Chậm</option><option value="0.85">Vừa</option><option value="1">Bình thường</option></select></label><div><button type="button" data-dictation-read>Đọc tiếng Việt</button><button type="button" data-dictation-pause disabled>Tạm dừng</button><button type="button" data-dictation-stop disabled>Dừng</button></div><p data-dictation-status role="status" aria-live="polite">Chọn Đọc tiếng Việt để nghe và chép theo.</p></div></details>`;}
+function schoolDictationSpeech(text){return `<details class="school-dictation-speech" data-dictation-speech="${escapeHTML(text)}"><summary aria-label="Tùy chọn đọc tiếng Việt" title="Đọc tiếng Việt"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></svg></summary><div class="school-dictation-options"><label>Tốc độ đọc <select data-dictation-rate aria-label="Tốc độ đọc tiếng Việt"><option value="0.65">Chậm</option><option value="0.85">Vừa</option><option value="1">Bình thường</option></select></label><div><button type="button" data-dictation-read>Đọc tiếng Việt</button><button type="button" data-dictation-pause disabled>Tạm dừng</button><button type="button" data-dictation-stop disabled>Dừng</button></div><p data-dictation-status role="status" aria-live="polite">Mỗi dòng đọc hai lần, lần sau thật chậm; nghỉ 1 phút để bé viết.</p></div></details>`;}
 
+// Read each source line twice, announce punctuation, then allow one minute to write.
 (()=>{
  let active=null;
- function status(panel,text){panel.querySelector('[data-dictation-status]').textContent=text;}
+ function status(panel,text){panel.querySelector('[data-dictation-status]').textContent=text;panel.querySelector('summary').title=text;}
  function reset(panel){panel.querySelector('[data-dictation-pause]').disabled=true;panel.querySelector('[data-dictation-pause]').textContent='Tạm dừng';panel.querySelector('[data-dictation-stop]').disabled=true;}
- function stop(message='Đã dừng đọc.'){if(!active)return;const old=active;active=null;globalThis.speechSynthesis?.cancel();reset(old.panel);status(old.panel,message);}
+ function stop(message='Đã dừng đọc.'){if(!active)return;const old=active;active=null;clearTimeout(old.timer);globalThis.speechSynthesis?.cancel();reset(old.panel);status(old.panel,message);}
+ function spokenLine(line){const marks={',':'phẩy','.':'chấm','?':'dấu hỏi','!':'dấu chấm than',':':'hai chấm',';':'chấm phẩy'};return line.replace(/[,.?!:;]/g,ch=>' '+marks[ch]+'.');}
+ function waitForWriting(session){
+  session.waiting=true;session.waitStarted=Date.now();
+  status(session.panel,`Nghỉ ${Math.ceil(session.remaining/1000)} giây để bé viết dòng ${session.index+1}.`);
+  session.timer=setTimeout(()=>{
+   if(active!==session)return;session.waiting=false;session.index++;session.pass=0;
+   if(session.index>=session.lines.length){active=null;reset(session.panel);status(session.panel,'Đã đọc xong. Bé có thể bấm đọc lại.');return;}
+   readLine(session);
+  },session.remaining);
+ }
+ function readLine(session){
+  if(active!==session)return;
+  const synth=globalThis.speechSynthesis,u=new SpeechSynthesisUtterance(spokenLine(session.lines[session.index]));
+  u.lang='vi-VN';u.rate=session.pass===0?session.rate:0.45;
+  const voice=synth.getVoices().find(v=>/^vi(-|_)?/i.test(v.lang));if(voice)u.voice=voice;
+  session.utterance=u;
+  status(session.panel,`Dòng ${session.index+1}/${session.lines.length}: ${session.pass===0?'đọc lần đầu':'đọc lại thật chậm'}.`);
+  u.onend=()=>{
+   if(active!==session||session.utterance!==u)return;
+   session.utterance=null;
+   if(session.pass===0){session.pass=1;readLine(session);}else{session.remaining=60000;waitForWriting(session);}
+  };
+  u.onerror=()=>{if(active!==session||session.utterance!==u)return;stop('Chưa đọc được tiếng Việt. Hãy kiểm tra âm lượng và giọng tiếng Việt của thiết bị rồi thử lại.');session.panel.open=true;};
+  try{synth.speak(u);}catch{u.onerror();}
+ }
  document.addEventListener('click',event=>{
   const button=event.target.closest('[data-dictation-read],[data-dictation-pause],[data-dictation-stop]');if(!button)return;
   const panel=button.closest('[data-dictation-speech]'),synth=globalThis.speechSynthesis;
   if(!synth||typeof SpeechSynthesisUtterance==='undefined'){status(panel,'Trình duyệt chưa hỗ trợ đọc thành tiếng. Hãy thử Chrome hoặc Safari mới.');return;}
   if(button.hasAttribute('data-dictation-stop')){stop();panel.open=false;return;}
-  if(button.hasAttribute('data-dictation-pause')){if(active?.panel!==panel)return;if(active.paused){synth.resume();active.paused=false;button.textContent='Tạm dừng';status(panel,'Đang đọc tiếng Việt…');}else{synth.pause();active.paused=true;button.textContent='Đọc tiếp';status(panel,'Đã tạm dừng. Bấm Đọc tiếp khi chép xong.');}panel.open=false;return;}
+  if(button.hasAttribute('data-dictation-pause')){
+   if(active?.panel!==panel)return;
+   if(active.paused){
+    active.paused=false;button.textContent='Tạm dừng';
+    if(active.waiting)waitForWriting(active);else{synth.resume();status(panel,'Đang đọc tiếng Việt…');}
+   }else{
+    active.paused=true;button.textContent='Đọc tiếp';
+    if(active.waiting){active.remaining=Math.max(0,active.remaining-(Date.now()-active.waitStarted));clearTimeout(active.timer);}else synth.pause();
+    status(panel,'Đã tạm dừng. Bấm Đọc tiếp khi chép xong.');
+   }
+   panel.open=false;return;
+  }
   stop();
-  const utterance=new SpeechSynthesisUtterance(panel.dataset.dictationSpeech);utterance.lang='vi-VN';utterance.rate=Number(panel.querySelector('[data-dictation-rate]').value)||0.65;
-  const voices=synth.getVoices(),voice=voices.find(v=>/^vi(-|_)?/i.test(v.lang));if(voice)utterance.voice=voice;
-  const session={panel,utterance,paused:false};active=session;
+  const lines=panel.dataset.dictationSpeech.split(/\n+/).map(line=>line.trim()).filter(Boolean);if(!lines.length)return;
+  const session={panel,lines,index:0,pass:0,paused:false,waiting:false,remaining:60000,timer:null,rate:Number(panel.querySelector('[data-dictation-rate]').value)||0.65};active=session;
   panel.querySelector('[data-dictation-pause]').disabled=false;panel.querySelector('[data-dictation-stop]').disabled=false;
-  status(panel,'Đang đọc tiếng Việt…');
-  utterance.onend=()=>{if(active!==session)return;active=null;reset(panel);status(panel,'Đã đọc xong. Bé có thể bấm đọc lại.');};
-  utterance.onerror=()=>{if(active!==session)return;active=null;reset(panel);panel.open=true;status(panel,'Chưa đọc được tiếng Việt. Hãy kiểm tra âm lượng và giọng tiếng Việt của thiết bị rồi thử lại.');};
-  try{synth.speak(utterance);if(active===session)panel.open=false;}catch{utterance.onerror();}
+  readLine(session);if(active===session)panel.open=false;
  });
  document.addEventListener('change',event=>{if(event.target.matches('[data-dictation-rate]')&&active?.panel===event.target.closest('[data-dictation-speech]'))stop('Đã đổi tốc độ. Bấm Đọc tiếng Việt để nghe lại.');});
  new MutationObserver(()=>{if(active&&!active.panel.isConnected)stop();}).observe(document.documentElement,{childList:true,subtree:true});
