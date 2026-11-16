@@ -1921,5 +1921,5 @@ function renderSchoolWeeklyVietnamese(entry,worksheet){
 
 function renderSchoolDictation(entry){
  const sheet=schoolExerciseWorksheets[entry.id];
- return `<article class="school-exercise-paper school-dictation"><h3>${escapeHTML(sheet.title)}</h3>${schoolDictationSpeech(sheet.stanzas.map(lines=>lines.join("\n")).join("\n\n"))}${sheet.stanzas.map(lines=>`<p>${lines.map(escapeHTML).join('<br>')}</p>`).join('')}<p><em>${escapeHTML(sheet.author)}</em></p></article>`;
+ return `<article class="school-exercise-paper school-dictation"><div class="school-dictation-heading">${schoolDictationSpeech(sheet.stanzas.map(lines=>lines.join("\n")).join("\n\n"))}<h3>${escapeHTML(sheet.title)}</h3></div>${sheet.stanzas.map(lines=>`<p>${lines.map(escapeHTML).join('<br>')}</p>`).join('')}<p><em>${escapeHTML(sheet.author)}</em></p></article>`;
 }
